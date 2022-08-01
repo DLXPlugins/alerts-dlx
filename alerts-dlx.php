@@ -64,7 +64,7 @@ class AlertsDLX {
 			basename( dirname( __FILE__ ) ) . '/languages'
 		);
 
-		// Blocks::run();
+		Blocks::run();
 		// Ajax::run();
 
 		// Admin\Plugin_Settings_Links::run();

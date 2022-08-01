@@ -4,7 +4,7 @@
   "description": "An alert and notification block inspired by Bootstrap, Material UI, and Chakra UI.",
   "main": "src/index.js",
   "scripts": {
-    "build": "wp-scripts build alerts-dlx=./src/js/blocks/alerts/index.js common=./src/index.js --env mode=production",
+    "build": "wp-scripts build alerts-dlx=./src/js/blocks/index.js common=./src/index.js --env mode=production",
     "check-engines": "wp-scripts check-engines",
     "check-licenses": "wp-scripts check-licenses",
     "format": "wp-scripts format",
@@ -15,7 +15,7 @@
     "lint:pkg-json": "wp-scripts lint-pkg-json",
     "packages-update": "wp-scripts packages-update",
     "plugin-zip": "wp-scripts plugin-zip",
-    "start": "wp-scripts start alerts-dlx=./src/js/blocks/alerts/index.js common=./src/index.js --env mode=development",
+    "start": "wp-scripts start alerts-dlx=./src/js/blocks/index.js common=./src/index.js --env mode=development",
     "test:e2e": "wp-scripts test-e2e",
     "test:unit": "wp-scripts test-unit-js"
   },

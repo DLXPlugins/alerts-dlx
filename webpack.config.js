@@ -17,6 +17,7 @@ module.exports = ( env ) => {
 			entry: {
 				'alerts-dlx-frontend': './src/scss/frontend.scss',
 				'alerts-dlx-admin': { import: './src/scss/admin.scss' },
+				'alerts-dlx-block-editor': './src/scss/block-editor.scss',
 			},
 			resolve: {
 				alias: {
