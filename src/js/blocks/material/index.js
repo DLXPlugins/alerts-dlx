@@ -2,10 +2,10 @@ import { registerBlockType } from '@wordpress/blocks';
 import metadata from './block.json';
 import AlertsLogo from '../components/icons/AlertsLogo';
 
+import Edit from './edit';
+
 registerBlockType( metadata, {
-	edit: () => {
-		return ( <>test</> );
-	},
+	edit: Edit,
 	save() {
 		return null;
 	},
