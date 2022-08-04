@@ -131,18 +131,20 @@ const MaterialAlerts = ( props ) => {
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
 			{ blockToolbar }
-			<figure role="alert">
+			<figure role="alert" className="alerts-dlx-alert alertx-dlx-material alerts-dlx-material-success">
 				<div className="alerts-dlx-icon" aria-hidden="true">icon</div>
-				<figcaption>This is the title of the alert</figcaption>
-				<div className="alerts-dlx-content-wrapper">
-					<div className="alerts-dlx-content">
-						<p>This is alert content.</p>
-						<p>This is alert content.</p>
+				<figcaption>
+					<h2 className="alertx-dlx-title">This is the title of the alert</h2>
+					<div className="alerts-dlx-content-wrapper">
+						<div className="alerts-dlx-content">
+							<p>This is alert content.</p>
+							<p>This is alert content.</p>
+						</div>
+						<div className="alerts-dlx-button">
+							<button>Test</button>
+						</div>
 					</div>
-					<div className="alerts-dlx-button">
-						<button>Test</button>
-					</div>
-				</div>
+				</figcaption>
 			</figure>
 		</>
 	);

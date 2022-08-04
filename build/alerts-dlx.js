@@ -161,17 +161,20 @@ var MaterialAlerts = function MaterialAlerts(props) {
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Turn Preview Mode Off', 'quotes-dlx'))));
   var htmlToReactParser = new HtmlToReactParser();
   var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__.InspectorControls, null, inspectorControls), blockToolbar, /*#__PURE__*/React.createElement("figure", {
-    role: "alert"
+    role: "alert",
+    className: "alerts-dlx-alert alertx-dlx-material alerts-dlx-material-success"
   }, /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-icon",
     "aria-hidden": "true"
-  }, "icon"), /*#__PURE__*/React.createElement("figcaption", null, "This is the title of the alert"), /*#__PURE__*/React.createElement("div", {
+  }, "icon"), /*#__PURE__*/React.createElement("figcaption", null, /*#__PURE__*/React.createElement("h2", {
+    className: "alertx-dlx-title"
+  }, "This is the title of the alert"), /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-content-wrapper"
   }, /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-content"
   }, /*#__PURE__*/React.createElement("p", null, "This is alert content."), /*#__PURE__*/React.createElement("p", null, "This is alert content.")), /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-button"
-  }, /*#__PURE__*/React.createElement("button", null, "Test")))));
+  }, /*#__PURE__*/React.createElement("button", null, "Test"))))));
   var blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__.useBlockProps)({
     className: "alerts-dlx template-material"
   });

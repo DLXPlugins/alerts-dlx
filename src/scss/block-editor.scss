@@ -1,0 +1,27 @@
+:root {
+	--alerts-dlx--success-text-color: #1e4620;
+	--alerts-dlx--success-background-color: #edf7ed;
+}
+
+/* MaterialUI Success */
+.alertx-dlx-material {
+	display: grid;
+	grid-template-columns: 24px 1fr;
+	font-size: 16px;
+	padding: 16px;
+	border-radius: 4px;
+
+	h2.alertx-dlx-title {
+		font-size: 1.0em;
+		font-weight: 500;
+		line-height: 1.2em;
+		margin: 0;
+		padding: 0;
+	}
+}
+.alerts-dlx-material-success {
+	background-color: var(--alerts-dlx--success-background-color);
+	color: var(--alerts-dlx--success-text-color);
+}
+
+
