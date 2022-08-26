@@ -42,7 +42,7 @@ import {
 const HtmlToReactParser = require( 'html-to-react' ).Parser;
 
 const MaterialAlerts = ( props ) => {
-	const manualUrlInput = createRef( null );
+	const alertTitleField = createRef( null );
 	const shareTextInput = createRef( null );
 
 	// Shortcuts.
@@ -56,6 +56,7 @@ const MaterialAlerts = ( props ) => {
 	const {
 		uniqueId,
 		preview,
+		alert_title,
 	} = attributes;
 
 	const inspectorControls = (
@@ -134,6 +135,26 @@ const MaterialAlerts = ( props ) => {
 			<figure role="alert" className="alerts-dlx-alert alertx-dlx-material alerts-dlx-material-success">
 				<div className="alerts-dlx-icon" aria-hidden="true">icon</div>
 				<figcaption>
+					<RichText
+						tagName="h2"
+						placeholder={ __( 'Alert title', 'quotes-dlx' ) }
+						value={ alert_title }
+						className="alertx-dlx-title"
+						disableLineBreaks={ true }
+						allowedFormats={ [
+							'core/bold',
+							'core/italic',
+							'core/text-color',
+							'core/subscript',
+							'core/superscript',
+							'core/strikethrough',
+							'core/link',
+						] }
+						onChange={ ( value ) => {
+							setAttributes( { alert_title: value } );
+						} }
+						ref={ alertTitleField }
+					/>
 					<h2 className="alertx-dlx-title">This is the title of the alert</h2>
 					<div className="alerts-dlx-content-wrapper">
 						<div className="alerts-dlx-content">

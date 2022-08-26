@@ -10,9 +10,9 @@
 	"version": "1.0.0",
 	"textdomain": "alerts-dlx",
 	"attributes": {
-		"show_copy": {
-			"type": "boolean",
-			"default": true
+		"alert_title": {
+			"type": "string",
+			"default": ""
 		},
 		"show_permalink": {
 			"type": "boolean",
