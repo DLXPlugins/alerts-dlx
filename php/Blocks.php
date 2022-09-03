@@ -29,7 +29,7 @@ class Blocks {
 	public function init() {
 
 		register_block_type(
-			Functions::get_plugin_dir( 'src/js/blocks/material/block.json' ),
+			Functions::get_plugin_dir( 'build/js/blocks/material/block.json' ),
 			array(
 				'render_callback' => array( $this, 'frontend' ),
 			)
@@ -73,20 +73,12 @@ class Blocks {
 
 		// Register styles here because array in block.json fails when using array of styles (enqueues wrong script).
 		wp_register_style(
-			'alerts-dlx-block-editor',
+			'alerts-dlx-block-editor-styles',
 			Functions::get_plugin_url( 'dist/alerts-dlx-block-editor.css' ),
 			array(),
 			Functions::get_plugin_version(),
 			'all'
 		);
-		wp_register_style(
-			'alerts-dlx-block-editor-styles',
-			Functions::get_plugin_url( 'build/alerts-dlx.css' ),
-			array( 'alerts-dlx-block-editor' ),
-			Functions::get_plugin_version(),
-			'all'
-		);
-
 		wp_register_script(
 			'alerts-dlx-block',
 			Functions::get_plugin_url( 'build/alerts-dlx.js' ),
