@@ -17,4 +17,11 @@
   align-items: center;
 }
 
+.alerts-dlx-button-wrapper .alertx-dlx-button-link-icon {
+  visibility: hidden;
+}
+.alerts-dlx-button-wrapper:hover .alertx-dlx-button-link-icon, .alerts-dlx-button-wrapper:focus .alertx-dlx-button-link-icon {
+  visibility: visible;
+}
+
 /*# sourceMappingURL=alerts-dlx.css.map*/

@@ -10,13 +10,17 @@
 	"version": "1.0.0",
 	"textdomain": "alerts-dlx",
 	"attributes": {
-		"alert_title": {
+		"alertTitle": {
 			"type": "string",
 			"default": ""
 		},
-		"alert_description": {
+		"alertDescription": {
 			"type": "string",
 			"default": ""
+		},
+		"buttonEnabled": {
+			"type": "boolean",
+			"default": false
 		},
 		"buttonText": {
 			"type": "string",

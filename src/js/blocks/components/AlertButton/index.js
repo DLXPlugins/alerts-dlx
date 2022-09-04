@@ -47,7 +47,7 @@ const AlertButton = ( props ) => {
 					/>
 				</Button>
 				<Button
-					className="button-reset"
+					className="button-reset alertx-dlx-button-link-icon"
 					icon={ link }
 					iconSize={ 25 }
 					label={ __( 'Choose Link', 'quotes-dlx' ) }

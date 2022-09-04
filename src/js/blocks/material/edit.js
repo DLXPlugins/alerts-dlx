@@ -57,27 +57,36 @@ const MaterialAlerts = ( props ) => {
 	const {
 		uniqueId,
 		preview,
-		alert_title,
-		alert_description,
+		alertTitle,
+		alertDescription,
+		buttonEnabled,
 	} = attributes;
 
 	const inspectorControls = (
 		<>
 			<PanelBody
 				initialOpen={ true }
-				title={ __( 'Container Settings', 'quotes-dlx' ) }
+				title={ __( 'Alert Settings', 'quotes-dlx' ) }
 			>
 				<>
-					test
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Button', 'alerts-dlx' ) }
+							checked={ buttonEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									buttonEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
 				</>
 			</PanelBody>
 		</>
 	);
 
 	const blockToolbar = (
-		<>
-			test
-		</>
+		<></>
 	);
 
 	// const blockToolbar = (
@@ -133,25 +142,19 @@ const MaterialAlerts = ( props ) => {
 	const block = (
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
-			{ blockToolbar }
 			<figure role="alert" className="alerts-dlx-alert alerts-dlx-material alerts-dlx-material-success">
 				<div className="alerts-dlx-icon" aria-hidden="true">icon</div>
 				<figcaption>
 					<RichText
 						tagName="h2"
 						placeholder={ __( 'Alert title', 'quotes-dlx' ) }
-						value={ alert_title }
+						value={ alertTitle }
 						className="alerts-dlx-title"
 						disableLineBreaks={ true }
-						allowedFormats={ [
-							'core/bold',
-							'core/italic',
-							'core/link',
-						] }
+						allowedFormats={ [] }
 						onChange={ ( value ) => {
-							setAttributes( { alert_title: value } );
+							setAttributes( { alertTitle: value } );
 						} }
-						ref={ alertTitleField }
 					/>
 					<div className="alerts-dlx-content-wrapper">
 						<div className="alerts-dlx-content">
@@ -159,22 +162,24 @@ const MaterialAlerts = ( props ) => {
 								tagName="p"
 								multiline="p"
 								placeholder={ __( 'Alert Description', 'quotes-dlx' ) }
-								value={ alert_description }
+								value={ alertDescription }
 								className="alerts-dlx-content"
 								allowedFormats={ [
 									'core/bold',
 									'core/italic',
-									'core/link',
 								] }
 								onChange={ ( value ) => {
-									setAttributes( { alert_description: value } );
+									setAttributes( { alertDescription: value } );
 								} }
 							/>
 						</div>
-						<AlertButton
-							attributes={ attributes }
-							setAttributes={ setAttributes }
-						/>
+						{ buttonEnabled && (
+							<AlertButton
+								attributes={ attributes }
+								setAttributes={ setAttributes }
+							/>
+						) }
+						
 					</div>
 				</figcaption>
 			</figure>

@@ -12,3 +12,12 @@
 	display: inline-flex;
 	align-items: center;
 }
+.alerts-dlx-button-wrapper {
+	.alertx-dlx-button-link-icon {
+		visibility: hidden;
+	}
+
+	&:hover .alertx-dlx-button-link-icon, &:focus .alertx-dlx-button-link-icon{
+		visibility: visible;
+	}
+}
