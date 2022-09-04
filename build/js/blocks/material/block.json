@@ -24,143 +24,31 @@
       "type": "string",
       "default": ""
     },
-    "show_permalink": {
-      "type": "boolean",
-      "default": true
-    },
-    "template": {
-      "type": "string",
-      "default": "light"
-    },
-    "button_style": {
-      "type": "string",
-      "default": "default"
-    },
-    "share_text": {
+    "alert_description": {
       "type": "string",
       "default": ""
     },
-    "share_text_override": {
+    "buttonText": {
       "type": "string",
       "default": ""
     },
-    "share_button_text": {
-      "type": "string",
-      "default": "Click to Tweet"
-    },
-    "share_text_override_enabled": {
-      "type": "boolean",
-      "default": false
-    },
-    "align": {
-      "type": "string",
-      "default": "center"
-    },
-    "hashtags": {
-      "type": "array",
-      "default": []
-    },
-    "twitter_username": {
+    "buttonUrl": {
       "type": "string",
       "default": ""
     },
-    "maximum_width": {
-      "type": "number",
-      "default": 850
-    },
-    "maximum_width_unit": {
-      "type": "string",
-      "default": "px"
-    },
-    "rtl": {
+    "buttonHasUrl": {
       "type": "boolean",
       "default": false
     },
-    "tweet_button_alignment": {
+    "buttonTarget": {
       "type": "string",
-      "default": "right"
+      "default": false
     },
-    "tweet_icon_alignment": {
-      "type": "string",
-      "default": "right"
-    },
-    "tweet_button_enabled": {
-      "type": "boolean",
-      "default": true
-    },
-    "tweet_button_display": {
-      "type": "string",
-      "default": "full"
-    },
-    "tweet_styles_disabled": {
+    "buttonRelNoFollow": {
       "type": "boolean",
       "default": false
     },
-    "anchor": {
-      "type": "string",
-      "default": ""
-    },
-    "anchor_prefix": {
-      "type": "string",
-      "default": "qdlx"
-    },
-    "has_anchor": {
-      "type": "boolean",
-      "default": true
-    },
-    "url_shortener": {
-      "type": "boolean",
-      "default": true
-    },
-    "url_shortening_service": {
-      "type": "string",
-      "default": "none"
-    },
-    "permalink": {
-      "type": "string",
-      "default": ""
-    },
-    "manualPermalink": {
-      "type": "string",
-      "default": ""
-    },
-    "enable_links_in_tweet": {
-      "type": "boolean",
-      "default": true
-    },
-    "enable_contextual_menu": {
-      "type": "boolean",
-      "default": true
-    },
-    "enable_copy_text": {
-      "type": "boolean",
-      "default": true
-    },
-    "enable_copy_tweet": {
-      "type": "boolean",
-      "default": true
-    },
-    "enable_copy_link": {
-      "type": "boolean",
-      "default": true
-    },
-    "enable_tweet_this": {
-      "type": "boolean",
-      "default": true
-    },
-    "preview": {
-      "type": "boolean",
-      "default": false
-    },
-    "blockOnly": {
-      "type": "boolean",
-      "default": false
-    },
-    "defaultsApplied": {
-      "type": "boolean",
-      "default": false
-    },
-    "transforming": {
+    "buttonRelSponsored": {
       "type": "boolean",
       "default": false
     }

@@ -39,11 +39,12 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 
+import AlertButton from '../components/AlertButton';
+
 const HtmlToReactParser = require( 'html-to-react' ).Parser;
 
 const MaterialAlerts = ( props ) => {
 	const alertTitleField = createRef( null );
-	const shareTextInput = createRef( null );
 
 	// Shortcuts.
 	const { attributes, setAttributes, isSelected } = props;
@@ -57,6 +58,7 @@ const MaterialAlerts = ( props ) => {
 		uniqueId,
 		preview,
 		alert_title,
+		alert_description,
 	} = attributes;
 
 	const inspectorControls = (
@@ -74,7 +76,7 @@ const MaterialAlerts = ( props ) => {
 
 	const blockToolbar = (
 		<>
-		test
+			test
 		</>
 	);
 
@@ -132,22 +134,18 @@ const MaterialAlerts = ( props ) => {
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
 			{ blockToolbar }
-			<figure role="alert" className="alerts-dlx-alert alertx-dlx-material alerts-dlx-material-success">
+			<figure role="alert" className="alerts-dlx-alert alerts-dlx-material alerts-dlx-material-success">
 				<div className="alerts-dlx-icon" aria-hidden="true">icon</div>
 				<figcaption>
 					<RichText
 						tagName="h2"
 						placeholder={ __( 'Alert title', 'quotes-dlx' ) }
 						value={ alert_title }
-						className="alertx-dlx-title"
+						className="alerts-dlx-title"
 						disableLineBreaks={ true }
 						allowedFormats={ [
 							'core/bold',
 							'core/italic',
-							'core/text-color',
-							'core/subscript',
-							'core/superscript',
-							'core/strikethrough',
 							'core/link',
 						] }
 						onChange={ ( value ) => {
@@ -155,15 +153,28 @@ const MaterialAlerts = ( props ) => {
 						} }
 						ref={ alertTitleField }
 					/>
-					<h2 className="alertx-dlx-title">This is the title of the alert</h2>
 					<div className="alerts-dlx-content-wrapper">
 						<div className="alerts-dlx-content">
-							<p>This is alert content.</p>
-							<p>This is alert content.</p>
+							<RichText
+								tagName="p"
+								multiline="p"
+								placeholder={ __( 'Alert Description', 'quotes-dlx' ) }
+								value={ alert_description }
+								className="alerts-dlx-content"
+								allowedFormats={ [
+									'core/bold',
+									'core/italic',
+									'core/link',
+								] }
+								onChange={ ( value ) => {
+									setAttributes( { alert_description: value } );
+								} }
+							/>
 						</div>
-						<div className="alerts-dlx-button">
-							<button>Test</button>
-						</div>
+						<AlertButton
+							attributes={ attributes }
+							setAttributes={ setAttributes }
+						/>
 					</div>
 				</figcaption>
 			</figure>

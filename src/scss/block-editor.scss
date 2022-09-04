@@ -1,27 +1,60 @@
 :root {
 	--alerts-dlx--success-text-color: #1e4620;
 	--alerts-dlx--success-background-color: #edf7ed;
+	--alerts-dlx--success-button-background-color: #1e4620;
+	--alerts-dlx--success-button-text-color: #FFFFFF;
+	--alerts-dlx--success-button-border-color: #FFFFFF;
 }
 
 /* MaterialUI Success */
-.alertx-dlx-material {
+.alerts-dlx-material {
 	display: grid;
 	grid-template-columns: 24px 1fr;
 	font-size: 16px;
 	padding: 16px;
 	border-radius: 4px;
 
-	h2.alertx-dlx-title {
-		font-size: 1.0em;
+	h2.alerts-dlx-title {
+		font-size: 1.2em;
 		font-weight: 500;
+		line-height: 1.5em;
+		margin: 0;
+		padding: 0;
+		margin-bottom: 0.5em;
+		color: var(--alerts-dlx--success-text-color);
+	}
+	.alerts-dlx-content p {
+		color: var(--alerts-dlx--success-text-color);
+		font-size: 1.0em;
+		font-weight: 400;
 		line-height: 1.2em;
 		margin: 0;
 		padding: 0;
+		&:not(:first-child) {
+			margin-top: 0.5em;
+		}
 	}
 }
 .alerts-dlx-material-success {
 	background-color: var(--alerts-dlx--success-background-color);
 	color: var(--alerts-dlx--success-text-color);
+	max-width: 600px;
+	margin: 0 auto;
+}
+button.button-reset.alerts-dlx-button--success,
+button.button-reset.alerts-dlx-button--success:hover {
+	color: var( --alerts-dlx--success-button-text-color);
+	border: 1px solid var(--alerts-dlx--success-button-border-color);
+	padding: 10px;
+	border-radius: 5px;
+	margin-top: 0.5em;
+	line-height: 1.5em;
+	font-size: 1.0em;
+	background-color: var(--alerts-dlx--success-button-background-color);
+
+	& ~ .button-reset {
+		margin-top: 0.5em;
+	}
 }
 
 
