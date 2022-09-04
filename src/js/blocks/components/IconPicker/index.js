@@ -18,6 +18,8 @@ import sanitizeSVG from '../../utils/sanitize-svg';
 const IconPicker = ( props ) => {
 	const [ isCustomIcon, setIsCustomIcon ] = useState( false );
 	const [ selectedIcon, setSelectedIcon ] = useState( props.defaultSvg );
+	const [ isPopoverVisible, setIsPopOverVisible ] = useState( false );
+	const [ isFocusedOutside, setIsFocusedOutside ] = useState( false );
 
 	const { defaultSvg, setAttributes, alertType } = props;
 
@@ -118,17 +120,35 @@ const IconPicker = ( props ) => {
 		);
 	};
 
+	const toggleVisible = () => {
+		setIsPopOverVisible( ( state ) => ! state );
+	};
+
 	const icons = getIcons();
 
 	return (
 		<>
-			<BaseControl className="alerts-dlx-icon-preview">
-				<div className="gb-icon-preview">
-					<span dangerouslySetInnerHTML={ { __html: sanitizeSVG( defaultSvg ) } } />
+			<BaseControl className="alerts-dlx-icon-wrapper">
+				<div className="alerts-dlx-icon-preview">
+					<Button
+						className="button-reset alerts-dlx-icon-preview-button"
+						onClick={ ( e ) => {
+							if ( isFocusedOutside ) {
+								setIsFocusedOutside( false );
+								return;
+							}
+							toggleVisible();
+						} }
+					>
+						<span dangerouslySetInnerHTML={ { __html: sanitizeSVG( defaultSvg ) } } />
+					</Button>
 				</div>
 			</BaseControl>
-			{ true && (
-				<Popover noArrow={ false } className="alerts-dlx-icon-popover">
+			{ isPopoverVisible && (
+				<Popover noArrow={ false } className="alerts-dlx-icon-popover" onFocusOutside={ () => {
+					setIsFocusedOutside( true );
+					setIsPopOverVisible( false );
+				} }>
 					<BaseControl className="alerts-dlx-icon-picker">
 						<h2>{ __( 'Select an Icon', 'alerts-dlx' ) }</h2>
 						{ getPopoverContent() }

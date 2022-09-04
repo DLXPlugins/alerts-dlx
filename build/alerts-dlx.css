@@ -96,9 +96,23 @@
   margin-left: 15px;
 }
 
+.alerts-dlx-icon-preview svg {
+  width: 1.6em;
+  height: 1.6em;
+}
+
 .alerts-dlx-custom-icon-preview svg {
   max-width: 48px;
   max-height: 48px;
+}
+
+button.components-button.alerts-dlx-icon-preview-button {
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  line-height: 0;
 }
 
 /*# sourceMappingURL=alerts-dlx.css.map*/
