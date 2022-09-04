@@ -194,14 +194,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./editor.scss */ "./src/js/blocks/components/IconPicker/editor.scss");
-/* harmony import */ var _icons_success__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../icons/success */ "./src/js/blocks/components/icons/success.js");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/sanitize-svg */ "./src/js/blocks/utils/sanitize-svg/index.js");
+/* harmony import */ var _icons_MaterialSuccess__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../icons/MaterialSuccess */ "./src/js/blocks/components/icons/MaterialSuccess.js");
+/* harmony import */ var _icons_MaterialInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../icons/MaterialInfo */ "./src/js/blocks/components/icons/MaterialInfo.js");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../utils/sanitize-svg */ "./src/js/blocks/utils/sanitize-svg/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -221,23 +222,24 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var IconPicker = function IconPicker(props) {
-  var _useState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false),
+  var _useState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       isCustomIcon = _useState2[0],
       setIsCustomIcon = _useState2[1];
 
-  var _useState3 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(props.defaultSvg),
+  var _useState3 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(props.defaultSvg),
       _useState4 = _slicedToArray(_useState3, 2),
       selectedIcon = _useState4[0],
       setSelectedIcon = _useState4[1];
 
-  var _useState5 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false),
+  var _useState5 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false),
       _useState6 = _slicedToArray(_useState5, 2),
       isPopoverVisible = _useState6[0],
       setIsPopOverVisible = _useState6[1];
 
-  var _useState7 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false),
+  var _useState7 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)(false),
       _useState8 = _slicedToArray(_useState7, 2),
       isFocusedOutside = _useState8[0],
       setIsFocusedOutside = _useState8[1];
@@ -249,10 +251,13 @@ var IconPicker = function IconPicker(props) {
   var getIcons = function getIcons() {
     switch (alertType) {
       case 'success':
-        return _icons_success__WEBPACK_IMPORTED_MODULE_1__["default"];
+        return _icons_MaterialSuccess__WEBPACK_IMPORTED_MODULE_1__["default"];
+
+      case 'info':
+        return _icons_MaterialInfo__WEBPACK_IMPORTED_MODULE_2__["default"];
 
       default:
-        return _icons_success__WEBPACK_IMPORTED_MODULE_1__["default"];
+        return _icons_MaterialSuccess__WEBPACK_IMPORTED_MODULE_1__["default"];
     }
   };
   /**
@@ -269,27 +274,27 @@ var IconPicker = function IconPicker(props) {
       }, Object.keys(icons).map(function (svg, i) {
         return /*#__PURE__*/React.createElement("li", {
           key: "alerts-dlx-icon-".concat(i)
-        }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Tooltip, {
+        }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Tooltip, {
           text: icons[svg].label
-        }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+        }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Button, {
           className: "editor-block-list-item-button",
           onClick: function onClick() {
             setAttributes({
-              icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.renderToString)(icons[svg].icon)
+              icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.renderToString)(icons[svg].icon)
             });
           }
         }, /*#__PURE__*/React.createElement("span", {
           className: "editor-block-types-list__item-icon"
         }, icons[svg].icon))));
-      })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+      })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Button, {
         className: "alerts-dlx-custom-icon-button",
         variant: "secondary",
         showTooltip: true,
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Add in a custom SVG instead of selecting an icon.', 'alerts-dlx'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Add in a custom SVG instead of selecting an icon.', 'alerts-dlx'),
         onClick: function onClick() {
           setIsCustomIcon(true);
         }
-      }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set a Custom Icon', 'alerts-dlx')));
+      }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Set a Custom Icon', 'alerts-dlx')));
     } // Return custom icon interface.
 
 
@@ -297,30 +302,30 @@ var IconPicker = function IconPicker(props) {
       className: "alerts-dlx-custom-icon-preview"
     }, /*#__PURE__*/React.createElement("span", {
       dangerouslySetInnerHTML: {
-        __html: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_5__["default"])(selectedIcon)
+        __html: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_6__["default"])(selectedIcon)
       }
     })), /*#__PURE__*/React.createElement("div", {
       className: "alerts-dlx-custom-icon-input"
-    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('SVG Code', 'alerts-dlx'),
-      value: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_5__["default"])(selectedIcon),
+    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.TextControl, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('SVG Code', 'alerts-dlx'),
+      value: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_6__["default"])(selectedIcon),
       onChange: function onChange(value) {
         setSelectedIcon(value);
       }
-    }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+    }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Button, {
       isPrimary: true,
       onClick: function onClick() {
         setAttributes({
-          icon: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_5__["default"])(selectedIcon)
+          icon: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_6__["default"])(selectedIcon)
         });
         setSelectedIcon(selectedIcon);
       }
-    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set Icon', 'alerts-dlx')), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Set Icon', 'alerts-dlx')), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Button, {
       variant: "tertiary",
       onClick: function onClick() {
         setIsCustomIcon(false);
       }
-    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Back to Icons', 'alerts-dlx'))));
+    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Back to Icons', 'alerts-dlx'))));
   };
 
   var toggleVisible = function toggleVisible() {
@@ -330,11 +335,11 @@ var IconPicker = function IconPicker(props) {
   };
 
   var icons = getIcons();
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.BaseControl, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.BaseControl, {
     className: "alerts-dlx-icon-wrapper"
   }, /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-icon-preview"
-  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Button, {
     className: "button-reset alerts-dlx-icon-preview-button",
     onClick: function onClick(e) {
       if (isFocusedOutside) {
@@ -346,18 +351,18 @@ var IconPicker = function IconPicker(props) {
     }
   }, /*#__PURE__*/React.createElement("span", {
     dangerouslySetInnerHTML: {
-      __html: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_5__["default"])(defaultSvg)
+      __html: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_6__["default"])(defaultSvg)
     }
-  })))), isPopoverVisible && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Popover, {
+  })))), isPopoverVisible && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.Popover, {
     noArrow: false,
     className: "alerts-dlx-icon-popover",
     onFocusOutside: function onFocusOutside() {
       setIsFocusedOutside(true);
       setIsPopOverVisible(false);
     }
-  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.BaseControl, {
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.BaseControl, {
     className: "alerts-dlx-icon-picker"
-  }, /*#__PURE__*/React.createElement("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Select an Icon', 'alerts-dlx')), getPopoverContent())));
+  }, /*#__PURE__*/React.createElement("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Select an Icon', 'alerts-dlx')), getPopoverContent())));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IconPicker);
@@ -417,10 +422,207 @@ var AlertsLogo = function AlertsLogo(props) {
 
 /***/ }),
 
-/***/ "./src/js/blocks/components/icons/success.js":
-/*!***************************************************!*\
-  !*** ./src/js/blocks/components/icons/success.js ***!
-  \***************************************************/
+/***/ "./src/js/blocks/components/icons/MaterialInfo.js":
+/*!********************************************************!*\
+  !*** ./src/js/blocks/components/icons/MaterialInfo.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * WordPress dependencies
+ */
+var _x = wp.i18n._x;
+var svgs = {
+  deviceInformation: {
+    label: _x('Device Information', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M22.5 33.1V20.3h3v12.8Zm1.5-15q-.7 0-1.175-.475-.475-.475-.475-1.175 0-.7.45-1.175.45-.475 1.15-.475t1.2.475q.5.475.5 1.175 0 .7-.475 1.175Q24.7 18.1 24 18.1ZM13 46q-1.2 0-2.1-.9-.9-.9-.9-2.1V5q0-1.2.9-2.1.9-.9 2.1-.9h22q1.2 0 2.1.9.9.9.9 2.1v38q0 1.2-.9 2.1-.9.9-2.1.9Zm0-4.5V43h22v-1.5Zm0-3h22v-29H13Zm0-32h22V5H13Zm0 0V5v1.5Zm0 35V43Z"
+    }))
+  },
+  lightbulbCircle: {
+    label: _x('Lightbulb Circle', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M24 38q.9 0 1.6-.575.7-.575.85-1.425h-4.9q.2.85.875 1.425Q23.1 38 24 38Zm-6-5.5h12v-2H18Zm.05-4.5h11.9q1.85-1.35 2.95-3.425Q34 22.5 34 20q0-4.15-2.925-7.075T24 10q-4.15 0-7.075 2.925T14 20q0 2.5 1.1 4.575T18.05 28Zm.7-2q-1.3-1.25-2.025-2.825Q16 21.6 16 20q0-3.3 2.35-5.65Q20.7 12 24 12q3.3 0 5.65 2.35Q32 16.7 32 20q0 1.6-.725 3.175Q30.55 24.75 29.25 26ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z"
+    }))
+  },
+  privacyTip: {
+    label: _x('Privacy Tip', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M22.5 33.8h3V20.95h-3ZM24 17.65q.7 0 1.2-.5t.5-1.2q0-.7-.5-1.2t-1.2-.5q-.7 0-1.2.5t-.5 1.2q0 .7.5 1.2t1.2.5Zm0 26.3q-7-1.75-11.5-8.125T8 21.85V9.95l16-6 16 6v11.9q0 7.6-4.5 13.975T24 43.95Zm0-3.1q5.75-1.9 9.375-7.175T37 21.85v-9.8l-13-4.9-13 4.9v9.8q0 6.55 3.625 11.825Q18.25 38.95 24 40.85ZM24 24Z"
+    }))
+  },
+  psychologyAlt: {
+    label: _x('Psychology Alt', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M25.05 27.9q.6 0 1-.4t.4-1q0-.6-.4-1t-1-.4q-.6 0-1 .4t-.4 1q0 .6.4 1t1 .4Zm-.95-4.5H26q0-.75.125-1.125t.575-.925q.2-.2.45-.5t.5-.55q.7-.8 1-1.425.3-.625.3-1.325 0-1.55-1.025-2.5T25.2 14.1q-1.45 0-2.525.725T21.15 16.85l1.75.7q.25-.85.85-1.275.6-.425 1.35-.425.85 0 1.4.525.55.525.55 1.325 0 .45-.225.875t-.725.925q-.4.4-.775.7-.375.3-.625.7-.3.45-.45 1.025-.15.575-.15 1.475ZM18.45 42v-6.35H14.9q-1.2 0-2.1-.9-.9-.9-.9-2.1V27.1h-2q-1 0-1.5-.925t.05-1.975L11.9 18q1.3-5.45 5.125-8.725Q20.85 6 26 6q5.75 0 9.875 4.125T40 20q0 4.25-2.35 7.5t-6.4 5.2V42Zm3-3h6.8v-8.25l1.4-.65Q33 28.55 35 25.875 37 23.2 37 20q0-4.55-3.225-7.775Q30.55 9 26 9q-4.45 0-7.575 2.975T15.05 18.6L12 24.1h2.9v8.55h6.55Zm3.05-15Z"
+    }))
+  },
+  helpCenter: {
+    label: _x('Help Center', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M23.85 35.7q.8 0 1.35-.55t.55-1.35q0-.8-.55-1.35t-1.35-.55q-.8 0-1.35.55t-.55 1.35q0 .8.55 1.35t1.35.55Zm-1.65-7.4h2.85q0-1.55.5-2.525.5-.975 1.75-2.225 1.65-1.65 2.3-2.925.65-1.275.65-2.675 0-2.65-1.7-4.2-1.7-1.55-4.6-1.55-2.55 0-4.375 1.225Q17.75 14.65 16.9 16.8l2.65 1.1q.7-1.4 1.8-2.125 1.1-.725 2.6-.725 1.6 0 2.525.8.925.8.925 2.2 0 1-.55 1.925T25 22.15q-1.85 1.75-2.325 3-.475 1.25-.475 3.15ZM9 42q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h30q1.2 0 2.1.9.9.9.9 2.1v30q0 1.2-.9 2.1-.9.9-2.1.9Zm0-3h30V9H9v30ZM9 9v30V9Z"
+    }))
+  },
+  quiz: {
+    label: _x('Quiz', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M27.15 31q.85 0 1.45-.6t.6-1.45q0-.85-.6-1.45t-1.45-.6q-.85 0-1.45.6t-.6 1.45q0 .85.6 1.45t1.45.6Zm-1.25-6.3h2.35q.1-1.45.425-2.15.325-.7 1.625-1.95 1.35-1.3 1.875-2.275.525-.975.525-2.275 0-2.3-1.575-3.75Q29.55 10.85 27 10.85q-1.9 0-3.4 1.025t-2.2 2.875l2.25.95q.55-1.25 1.375-1.9.825-.65 1.975-.65 1.5 0 2.425.85.925.85.925 2.15 0 1-.45 1.75t-1.6 1.6q-1.6 1.45-2 2.325-.4.875-.4 2.875ZM13 38q-1.2 0-2.1-.9-.9-.9-.9-2.1V7q0-1.2.9-2.1.9-.9 2.1-.9h28q1.2 0 2.1.9.9.9.9 2.1v28q0 1.2-.9 2.1-.9.9-2.1.9Zm0-3h28V7H13v28Zm-6 9q-1.2 0-2.1-.9Q4 42.2 4 41V10h3v31h31v3Zm6-37v28V7Z"
+    }))
+  },
+  barChart: {
+    label: _x('Bar Chart', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M8 40V18h7v22Zm12.5 0V8h7v32ZM33 40V26h7v14Z"
+    }))
+  },
+  insights: {
+    label: _x('Insights', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M5.5 40.5q-1.45 0-2.475-1.025Q2 38.45 2 37q0-1.45 1.025-2.475Q4.05 33.5 5.5 33.5q.25 0 .5.025t.65.125l10-10q-.1-.4-.125-.65-.025-.25-.025-.5 0-1.45 1.025-2.475Q18.55 19 20 19q1.45 0 2.475 1.025Q23.5 21.05 23.5 22.5q0 .1-.15 1.15l5.5 5.5q.4-.1.65-.125.25-.025.5-.025t.5.025q.25.025.65.125l8-8q-.1-.4-.125-.65Q39 20.25 39 20q0-1.45 1.025-2.475Q41.05 16.5 42.5 16.5q1.45 0 2.475 1.025Q46 18.55 46 20q0 1.45-1.025 2.475Q43.95 23.5 42.5 23.5q-.25 0-.5-.025t-.65-.125l-8 8q.1.4.125.65.025.25.025.5 0 1.45-1.025 2.475Q31.45 36 30 36q-1.45 0-2.475-1.025Q26.5 33.95 26.5 32.5q0-.25.025-.5t.125-.65l-5.5-5.5q-.4.1-.65.125-.25.025-.5.025-.1 0-1.15-.15l-10 10q.1.4.125.65.025.25.025.5 0 1.45-1.025 2.475Q6.95 40.5 5.5 40.5ZM8 18.4l-1-2.2-2.2-1 2.2-1L8 12l1 2.2 2.2 1-2.2 1Zm22-2.55-1.55-3.3-3.3-1.55 3.3-1.55L30 6.15l1.55 3.3 3.3 1.55-3.3 1.55Z"
+    }))
+  },
+  questionMark: {
+    label: _x('Star', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M21.55 31.5q.05-3.6.825-5.25.775-1.65 2.925-3.6 2.1-1.9 3.225-3.525t1.125-3.475q0-2.25-1.5-3.75t-4.2-1.5q-2.6 0-4 1.475T17.9 14.95l-4.2-1.85q1.1-2.95 3.725-5.025T23.95 6q5 0 7.7 2.775t2.7 6.675q0 2.4-1.025 4.35-1.025 1.95-3.275 4.1-2.45 2.35-2.95 3.6t-.55 4Zm2.4 12.5q-1.45 0-2.475-1.025Q20.45 41.95 20.45 40.5q0-1.45 1.025-2.475Q22.5 37 23.95 37q1.45 0 2.475 1.025Q27.45 39.05 27.45 40.5q0 1.45-1.025 2.475Q25.4 44 23.95 44Z"
+    }))
+  },
+  lightbulb: {
+    label: _x('Lightbulb', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M24 44q-1.7 0-2.875-1.175T19.95 39.95h8.1q0 1.7-1.175 2.875T24 44Zm-8.1-7.15v-3h16.2v3Zm.25-6.05q-3.3-2.15-5.225-5.375Q9 22.2 9 18.15q0-6.1 4.45-10.55Q17.9 3.15 24 3.15q6.1 0 10.55 4.45Q39 12.05 39 18.15q0 4.05-1.9 7.275-1.9 3.225-5.25 5.375Zm1.1-3H30.8q2.4-1.6 3.8-4.15 1.4-2.55 1.4-5.5 0-4.95-3.525-8.475Q28.95 6.15 24 6.15q-4.95 0-8.475 3.525Q12 13.2 12 18.15q0 2.95 1.4 5.5t3.85 4.15Zm6.75 0Z"
+    }))
+  },
+  contactSupport: {
+    label: _x('Contact Support', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "m25.75 44-.5-5.5h-2q-7.15 0-12.2-5.05Q6 28.4 6 21.25q0-7.15 5.075-12.2Q16.15 4 23.35 4q3.55 0 6.575 1.275Q32.95 6.55 35.2 8.85q2.25 2.3 3.525 5.425T40 21.1q0 3.3-.975 6.6T36.2 34q-1.85 3-4.5 5.55T25.75 44Zm2.5-5.4q4.1-3.45 6.425-8.125T37 21.1q0-6.2-3.875-10.15T23.35 7q-6 0-10.175 4.175Q9 15.35 9 21.25q0 5.9 4.175 10.075Q17.35 35.5 23.25 35.5h5Zm-4.9-5.75q.8 0 1.35-.55t.55-1.35q0-.8-.55-1.35t-1.35-.55q-.8 0-1.35.55t-.55 1.35q0 .8.55 1.35t1.35.55ZM22 26.05h2.5q0-1.25.425-2.075.425-.825 1.775-2.175 1.35-1.35 1.9-2.475.55-1.125.55-2.425 0-2.25-1.525-3.7-1.525-1.45-4.075-1.45-2.1 0-3.75 1.1t-2.45 3l2.3.95q.55-1.3 1.525-1.925.975-.625 2.225-.625 1.5 0 2.35.725.85.725.85 1.925 0 .95-.55 1.925-.55.975-1.95 2.425-1.35 1.4-1.725 2.25-.375.85-.375 2.55Zm1-3.25Z"
+    }))
+  },
+  tipsUpdates: {
+    label: _x('Tips and Updates', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "m44.35 19.65-1.15-2.5L40.7 16l2.5-1.15 1.15-2.5 1.15 2.5L48 16l-2.5 1.15ZM38 10.9l-1.75-3.7-3.7-1.75 3.7-1.75L38 0l1.75 3.7 3.7 1.75-3.7 1.75ZM18 44q-1.7 0-2.875-1.175T13.95 39.95h8.1q0 1.7-1.175 2.875T18 44Zm-8.1-7.15v-3h16.2v3Zm.25-6.05q-3.3-2.15-5.225-5.375Q3 22.2 3 18.15q0-6.1 4.45-10.55Q11.9 3.15 18 3.15q6.1 0 10.55 4.45Q33 12.05 33 18.15q0 4.05-1.9 7.275-1.9 3.225-5.25 5.375Zm1.1-3H24.8q2.4-1.6 3.8-4.15 1.4-2.55 1.4-5.5 0-4.95-3.525-8.475Q22.95 6.15 18 6.15q-4.95 0-8.475 3.525Q6 13.2 6 18.15q0 2.95 1.4 5.5t3.85 4.15Zm6.75 0Z"
+    }))
+  },
+  trendingUp: {
+    label: _x('Trending Up', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M6.15 36 4 33.85 18.6 19.3l8.35 8.35L39 15.6h-6.35v-3H44v11.35h-2.95V17.8L26.9 31.95l-8.35-8.35Z"
+    }))
+  },
+  help: {
+    label: _x('Help', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M24.2 35.65q.8 0 1.35-.55t.55-1.35q0-.8-.55-1.35t-1.35-.55q-.8 0-1.35.55t-.55 1.35q0 .8.55 1.35t1.35.55Zm-1.75-7.3h2.95q0-1.3.325-2.375T27.75 23.5q1.55-1.3 2.2-2.55.65-1.25.65-2.75 0-2.65-1.725-4.25t-4.575-1.6q-2.45 0-4.325 1.225T17.25 16.95l2.65 1q.55-1.4 1.65-2.175 1.1-.775 2.6-.775 1.7 0 2.75.925t1.05 2.375q0 1.1-.65 2.075-.65.975-1.9 2.025-1.5 1.3-2.225 2.575-.725 1.275-.725 3.375ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 24q0-4.15 1.575-7.8 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24 4q4.15 0 7.8 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm0-3q7.1 0 12.05-4.975Q41 31.05 41 24q0-7.1-4.95-12.05Q31.1 7 24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24 41Zm0-17Z"
+    }))
+  },
+  info: {
+    label: _x('Info', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "M22.65 34h3V22h-3ZM24 18.3q.7 0 1.175-.45.475-.45.475-1.15t-.475-1.2Q24.7 15 24 15q-.7 0-1.175.5-.475.5-.475 1.2t.475 1.15q.475.45 1.175.45ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z"
+    }))
+  },
+  settings: {
+    label: _x('Settings', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "m19.4 44-1-6.3q-.95-.35-2-.95t-1.85-1.25l-5.9 2.7L4 30l5.4-3.95q-.1-.45-.125-1.025Q9.25 24.45 9.25 24q0-.45.025-1.025T9.4 21.95L4 18l4.65-8.2 5.9 2.7q.8-.65 1.85-1.25t2-.9l1-6.35h9.2l1 6.3q.95.35 2.025.925Q32.7 11.8 33.45 12.5l5.9-2.7L44 18l-5.4 3.85q.1.5.125 1.075.025.575.025 1.075t-.025 1.05q-.025.55-.125 1.05L44 30l-4.65 8.2-5.9-2.7q-.8.65-1.825 1.275-1.025.625-2.025.925l-1 6.3ZM24 30.5q2.7 0 4.6-1.9 1.9-1.9 1.9-4.6 0-2.7-1.9-4.6-1.9-1.9-4.6-1.9-2.7 0-4.6 1.9-1.9 1.9-1.9 4.6 0 2.7 1.9 4.6 1.9 1.9 4.6 1.9Zm0-3q-1.45 0-2.475-1.025Q20.5 25.45 20.5 24q0-1.45 1.025-2.475Q22.55 20.5 24 20.5q1.45 0 2.475 1.025Q27.5 22.55 27.5 24q0 1.45-1.025 2.475Q25.45 27.5 24 27.5Zm0-3.5Zm-2.2 17h4.4l.7-5.6q1.65-.4 3.125-1.25T32.7 32.1l5.3 2.3 2-3.6-4.7-3.45q.2-.85.325-1.675.125-.825.125-1.675 0-.85-.1-1.675-.1-.825-.35-1.675L40 17.2l-2-3.6-5.3 2.3q-1.15-1.3-2.6-2.175-1.45-.875-3.2-1.125L26.2 7h-4.4l-.7 5.6q-1.7.35-3.175 1.2-1.475.85-2.625 2.1L10 13.6l-2 3.6 4.7 3.45q-.2.85-.325 1.675-.125.825-.125 1.675 0 .85.125 1.675.125.825.325 1.675L8 30.8l2 3.6 5.3-2.3q1.2 1.2 2.675 2.05Q19.45 35 21.1 35.4Z"
+    }))
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (svgs);
+
+/***/ }),
+
+/***/ "./src/js/blocks/components/icons/MaterialSuccess.js":
+/*!***********************************************************!*\
+  !*** ./src/js/blocks/components/icons/MaterialSuccess.js ***!
+  \***********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -781,7 +983,7 @@ var MaterialAlerts = function MaterialAlerts(props) {
   }, /*#__PURE__*/React.createElement(_components_IconPicker__WEBPACK_IMPORTED_MODULE_11__["default"], {
     defaultSvg: icon,
     setAttributes: setAttributes,
-    alertType: "success"
+    alertType: "info"
   })), /*#__PURE__*/React.createElement("figcaption", null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__.RichText, {
     tagName: "h2",
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Alert title', 'quotes-dlx'),

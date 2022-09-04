@@ -1,16 +1,13 @@
 import './editor.scss';
-import successSvgs from '../icons/success';
+import successSvgs from '../icons/MaterialSuccess';
+import infoSvgs from '../icons/MaterialInfo';
 import { __ } from '@wordpress/i18n';
 import { renderToString, useState } from '@wordpress/element';
 import {
 	BaseControl,
-	SelectControl,
-	ToggleControl,
 	TextControl,
 	Tooltip,
 	Button,
-	PanelBody,
-	PanelRow,
 	Popover,
 } from '@wordpress/components';
 import sanitizeSVG from '../../utils/sanitize-svg';
@@ -27,6 +24,8 @@ const IconPicker = ( props ) => {
 		switch ( alertType ) {
 			case 'success':
 				return successSvgs;
+			case 'info':
+				return infoSvgs;
 			default:
 				return successSvgs;
 		}

@@ -174,7 +174,7 @@ const MaterialAlerts = ( props ) => {
 					<IconPicker
 						defaultSvg={ icon }
 						setAttributes={ setAttributes }
-						alertType="success"
+						alertType="info"
 					/>
 				</div>
 				<figcaption>
