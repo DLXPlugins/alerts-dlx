@@ -63,10 +63,22 @@
   min-width: 350px;
 }
 
+.alerts-dlx-icon-picker {
+  padding: 16px;
+}
+.alerts-dlx-icon-picker h2 {
+  margin: 0;
+  padding: 0;
+}
+
 .alerts-dlx-icon-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
+}
+.alerts-dlx-icon-list svg {
+  width: 24px;
+  height: 24px;
 }
 
 /*# sourceMappingURL=alerts-dlx.css.map*/

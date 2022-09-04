@@ -1,8 +1,21 @@
 .alerts-dlx-icon-popover .components-popover__content > div {
 	min-width: 350px;
 }
+.alerts-dlx-icon-picker {
+	padding: 16px;
+
+	h2 {
+		margin: 0;
+		padding: 0;
+	}
+}
 .alerts-dlx-icon-list {
 	display: grid;
-	grid-template-columns: repeat( auto-fit, minmax( 100px, 1fr ) );
+	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 10px;
+
+	svg {
+		width: 24px;
+		height: 24px;
+	}
 }
