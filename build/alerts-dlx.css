@@ -23,5 +23,50 @@
 .alerts-dlx-button-wrapper:hover .alertx-dlx-button-link-icon, .alerts-dlx-button-wrapper:focus .alertx-dlx-button-link-icon {
   visibility: visible;
 }
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/js/blocks/components/unit-picker/editor.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************/
+/* Unit Picker Component - Forked from @GenerateBlocks */
+.components-has-units-control-header__units {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.components-has-control__units .components-has-control-buttons__units button.components-button {
+  background: #fff;
+  box-shadow: none !important;
+  color: #929da7;
+  font-size: 10px;
+  padding: 0 5px;
+  position: relative;
+  text-align: center;
+  text-shadow: none;
+  border: 0;
+  border-radius: 0 !important;
+  line-height: 20px;
+  padding: 0 5px;
+  height: auto;
+}
+.components-has-control__units .components-has-control-buttons__units button.components-button.is-primary {
+  background: #fff !important;
+  color: #000 !important;
+  cursor: default;
+  z-index: 1;
+  font-weight: bold;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/js/blocks/components/IconPicker/editor.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************/
+.alerts-dlx-icon-popover .components-popover__content > div {
+  min-width: 350px;
+}
+
+.alerts-dlx-icon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-gap: 10px;
+}
 
 /*# sourceMappingURL=alerts-dlx.css.map*/

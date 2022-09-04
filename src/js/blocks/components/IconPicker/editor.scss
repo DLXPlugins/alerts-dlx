@@ -1,0 +1,8 @@
+.alerts-dlx-icon-popover .components-popover__content > div {
+	min-width: 350px;
+}
+.alerts-dlx-icon-list {
+	display: grid;
+	grid-template-columns: repeat( auto-fit, minmax( 100px, 1fr ) );
+	grid-gap: 10px;
+}

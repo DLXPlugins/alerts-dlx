@@ -55,6 +55,14 @@
     "buttonRelSponsored": {
       "type": "boolean",
       "default": false
+    },
+    "maximumWidthUnit": {
+      "type": "string",
+      "default": "px"
+    },
+    "maximumWidth": {
+      "type": "number",
+      "default": 650
     }
   },
   "example": {
