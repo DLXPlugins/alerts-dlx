@@ -65,6 +65,7 @@
 
 .alerts-dlx-icon-picker {
   padding: 16px;
+  text-align: center;
 }
 .alerts-dlx-icon-picker h2 {
   margin: 0;
@@ -75,10 +76,29 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
+  justify-content: center;
+  max-height: 350px;
+  overflow: auto;
+  padding-top: 15px;
+}
+.alerts-dlx-icon-list li {
+  text-align: center;
 }
 .alerts-dlx-icon-list svg {
   width: 24px;
   height: 24px;
+}
+
+.alerts-dlx-custom-icon-input button:first-child {
+  margin-right: 15px;
+}
+.alerts-dlx-custom-icon-input button:last-child {
+  margin-left: 15px;
+}
+
+.alerts-dlx-custom-icon-preview svg {
+  max-width: 48px;
+  max-height: 48px;
 }
 
 /*# sourceMappingURL=alerts-dlx.css.map*/

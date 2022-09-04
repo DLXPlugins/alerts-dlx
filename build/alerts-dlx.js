@@ -202,9 +202,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/sanitize-svg */ "./src/js/blocks/utils/sanitize-svg/index.js");
-var _this = undefined;
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
@@ -214,6 +222,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 var IconPicker = function IconPicker(props) {
+  var _useState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      isCustomIcon = _useState2[0],
+      setIsCustomIcon = _useState2[1];
+
+  var _useState3 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useState)(props.defaultSvg),
+      _useState4 = _slicedToArray(_useState3, 2),
+      selectedIcon = _useState4[0],
+      setSelectedIcon = _useState4[1];
+
   var defaultSvg = props.defaultSvg,
       setAttributes = props.setAttributes,
       alertType = props.alertType;
@@ -226,6 +244,73 @@ var IconPicker = function IconPicker(props) {
       default:
         return _icons_success__WEBPACK_IMPORTED_MODULE_1__["default"];
     }
+  };
+  /**
+   * Retrieve popover content for custom icons or regular icons.
+   *
+   * @return {string} Popover content.
+   */
+
+
+  var getPopoverContent = function getPopoverContent() {
+    if (!isCustomIcon) {
+      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("ul", {
+        className: "alerts-dlx-icon-list"
+      }, Object.keys(icons).map(function (svg, i) {
+        return /*#__PURE__*/React.createElement("li", {
+          key: "alerts-dlx-icon-".concat(i)
+        }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Tooltip, {
+          text: icons[svg].label
+        }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+          className: "editor-block-list-item-button",
+          onClick: function onClick() {
+            setAttributes({
+              icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.renderToString)(icons[svg].icon)
+            });
+          }
+        }, /*#__PURE__*/React.createElement("span", {
+          className: "editor-block-types-list__item-icon"
+        }, icons[svg].icon))));
+      })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+        className: "alerts-dlx-custom-icon-button",
+        variant: "secondary",
+        showTooltip: true,
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Add in a custom SVG instead of selecting an icon.', 'alerts-dlx'),
+        onClick: function onClick() {
+          setIsCustomIcon(true);
+        }
+      }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set a Custom Icon', 'alerts-dlx')));
+    } // Return custom icon interface.
+
+
+    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+      className: "alerts-dlx-custom-icon-preview"
+    }, /*#__PURE__*/React.createElement("span", {
+      dangerouslySetInnerHTML: {
+        __html: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_5__["default"])(selectedIcon)
+      }
+    })), /*#__PURE__*/React.createElement("div", {
+      className: "alerts-dlx-custom-icon-input"
+    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('SVG Code', 'alerts-dlx'),
+      value: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_5__["default"])(selectedIcon),
+      onChange: function onChange(value) {
+        setSelectedIcon(value);
+      }
+    }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+      isPrimary: true,
+      onClick: function onClick() {
+        setAttributes({
+          icon: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_5__["default"])(selectedIcon)
+        });
+        setSelectedIcon(selectedIcon);
+      }
+    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set Icon', 'alerts-dlx')), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+      variant: "tertiary",
+      onClick: function onClick() {
+        setIsCustomIcon(false);
+      }
+    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Back to Icons', 'alerts-dlx'))));
   };
 
   var icons = getIcons();
@@ -242,24 +327,7 @@ var IconPicker = function IconPicker(props) {
     className: "alerts-dlx-icon-popover"
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.BaseControl, {
     className: "alerts-dlx-icon-picker"
-  }, /*#__PURE__*/React.createElement("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Select an Icon', 'alerts-dlx')), /*#__PURE__*/React.createElement("ul", {
-    className: "alerts-dlx-icon-list"
-  }, Object.keys(icons).map(function (svg, i) {
-    return /*#__PURE__*/React.createElement("li", {
-      key: "alerts-dlx-icon-".concat(i)
-    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Tooltip, {
-      text: icons[svg].label
-    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
-      className: "editor-block-list-item-button",
-      onClick: function onClick() {
-        var _setAttributes;
-
-        setAttributes((_setAttributes = {}, _defineProperty(_setAttributes, _this.props['attrIcon'], (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.renderToString)(icons[svg]['icon'])), _defineProperty(_setAttributes, 'hasIcon', true), _setAttributes));
-      }
-    }, /*#__PURE__*/React.createElement("span", {
-      className: "editor-block-types-list__item-icon"
-    }, icons[svg].icon))));
-  })))));
+  }, /*#__PURE__*/React.createElement("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Select an Icon', 'alerts-dlx')), getPopoverContent())));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IconPicker);
@@ -410,6 +478,28 @@ var svgs = {
       viewBox: "0 0 48 48"
     }, /*#__PURE__*/React.createElement("path", {
       d: "m17.3 45-3.8-6.5-7.55-1.55.85-7.35L2 24l4.8-5.55-.85-7.35 7.55-1.55L17.3 3 24 6.1 30.7 3l3.85 6.55 7.5 1.55-.85 7.35L46 24l-4.8 5.6.85 7.35-7.5 1.55L30.7 45 24 41.9Zm1.35-3.95L24 38.8l5.5 2.25 3.35-5 5.85-1.5-.6-5.95 4.05-4.6-4.05-4.7.6-5.95-5.85-1.4-3.45-5L24 9.2l-5.5-2.25-3.35 5-5.85 1.4.6 5.95L5.85 24l4.05 4.6-.6 6.05 5.85 1.4ZM24 24Zm-2.15 6.65L33.2 19.4l-2.25-2.05-9.1 9-4.75-4.95-2.3 2.25Z"
+    }))
+  },
+  heart: {
+    label: _x('Heart', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "m24 41.95-2.05-1.85q-5.3-4.85-8.75-8.375-3.45-3.525-5.5-6.3T4.825 20.4Q4 18.15 4 15.85q0-4.5 3.025-7.525Q10.05 5.3 14.5 5.3q2.85 0 5.275 1.35Q22.2 8 24 10.55q2.1-2.7 4.45-3.975T33.5 5.3q4.45 0 7.475 3.025Q44 11.35 44 15.85q0 2.3-.825 4.55T40.3 25.425q-2.05 2.775-5.5 6.3T26.05 40.1ZM24 38q5.05-4.65 8.325-7.975 3.275-3.325 5.2-5.825 1.925-2.5 2.7-4.45.775-1.95.775-3.9 0-3.3-2.1-5.425T33.5 8.3q-2.55 0-4.75 1.575T25.2 14.3h-2.45q-1.3-2.8-3.5-4.4-2.2-1.6-4.75-1.6-3.3 0-5.4 2.125Q7 12.55 7 15.85q0 1.95.775 3.925.775 1.975 2.7 4.5Q12.4 26.8 15.7 30.1 19 33.4 24 38Zm0-14.85Z"
+    }))
+  },
+  star: {
+    label: _x('Star', 'label', 'alerts-dlx'),
+    icon: /*#__PURE__*/React.createElement("svg", {
+      xmlns: "http://www.w3.org/2000/svg",
+      height: "48",
+      width: "48",
+      viewBox: "0 0 48 48"
+    }, /*#__PURE__*/React.createElement("path", {
+      d: "m16.15 37.75 7.85-4.7 7.85 4.75-2.1-8.9 6.9-6-9.1-.8L24 13.7l-3.55 8.35-9.1.8 6.9 6ZM11.65 44l3.25-14.05L4 20.5l14.4-1.25L24 6l5.6 13.25L44 20.5l-10.9 9.45L36.35 44 24 36.55ZM24 26.25Z"
     }))
   }
 };
@@ -576,7 +666,8 @@ var MaterialAlerts = function MaterialAlerts(props) {
       alertDescription = attributes.alertDescription,
       buttonEnabled = attributes.buttonEnabled,
       maximumWidthUnit = attributes.maximumWidthUnit,
-      maximumWidth = attributes.maximumWidth;
+      maximumWidth = attributes.maximumWidth,
+      icon = attributes.icon;
   var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__.PanelBody, {
     initialOpen: true,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Alert Settings', 'quotes-dlx')
@@ -658,7 +749,7 @@ var MaterialAlerts = function MaterialAlerts(props) {
     className: "alerts-dlx-icon",
     "aria-hidden": "true"
   }, /*#__PURE__*/React.createElement(_components_IconPicker__WEBPACK_IMPORTED_MODULE_11__["default"], {
-    defaultSvg: " <svg xmlns=\"http://www.w3.org/2000/svg\" height=\"48\" width=\"48\"><path d=\"M24 44q-4.25 0-7.9-1.525-3.65-1.525-6.35-4.225-2.7-2.7-4.225-6.35Q4 28.25 4 24q0-4.2 1.525-7.85Q7.05 12.5 9.75 9.8q2.7-2.7 6.35-4.25Q19.75 4 24 4q3.75 0 7 1.2t5.85 3.3l-2.15 2.15q-2.2-1.75-4.9-2.7Q27.1 7 24 7q-7.25 0-12.125 4.875T7 24q0 7.25 4.875 12.125T24 41q7.25 0 12.125-4.875T41 24q0-1.5-.225-2.925-.225-1.425-.675-2.775l2.3-2.3q.8 1.85 1.2 3.85.4 2 .4 4.15 0 4.25-1.55 7.9-1.55 3.65-4.25 6.35-2.7 2.7-6.35 4.225Q28.2 44 24 44Zm-2.95-10.9-8.25-8.3 2.25-2.25 6 6 20.7-20.7 2.3 2.25Z\"/></svg>",
+    defaultSvg: icon,
     setAttributes: setAttributes,
     alertType: "success"
   })), /*#__PURE__*/React.createElement("figcaption", null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_8__.RichText, {
@@ -8061,7 +8152,7 @@ module.exports = window["wp"]["richText"];
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"AlertsDLX - Material UI","apiVersion":2,"name":"mediaron/alerts-dlx-material","category":"widgets","icon":"<svg width=\'100%\' height=\'100%\' viewBox=\'0 0 15463 13646\' version=\'1.1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\' xml:space=\'preserve\' xmlns:serif=\'http://www.serif.com/\' style=\'fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;\'><g><path d=\'M7729.12,13643.9c1930.92,-0 3861.92,-0 5792.83,-0.042c341.667,0 683.417,-0.708 1025.08,-1.167c141.375,-0.166 277.041,-41.083 392.75,-111.041c206.666,-124.834 367.875,-296.875 455.375,-531.167c78.125,-208.917 91.291,-418.875 23.541,-629.292c-61.124,-189.958 -176.25,-356.625 -277.708,-524.958c-186.792,-310 -358.708,-628.458 -545.292,-938.542c-154.083,-256.041 -297.208,-518.583 -447.291,-777.083c-187,-322 -382.167,-639.458 -562.875,-965.042c-187.375,-337.5 -387.917,-667.208 -578.167,-1002.83c-118.75,-209.5 -231.25,-422.792 -358,-627.333c-124.958,-201.959 -234.958,-412.042 -357.291,-615.25c-100.876,-167.251 -193.376,-339.708 -291.501,-508.709c-111.5,-191.833 -229.374,-379.958 -336.417,-574.083c-213.333,-386.708 -447.583,-761.167 -655.416,-1151.17c-127.667,-239.708 -278.166,-467.166 -410.625,-705.033c-206.792,-371.804 -426.791,-736.25 -640.583,-1104.09c-204.834,-352.204 -409.084,-704.596 -613.001,-1057.28c-183.999,-318.108 -367.624,-636.395 -550.624,-955.133c-85.459,-148.971 -157.459,-307.025 -255.584,-446.859c-167.458,-238.353 -401.708,-379.457 -695.625,-408.749c-269,-26.879 -511,36.8 -728.958,205.033c-135.083,104.217 -219.042,241.225 -299.958,383.596c-154.042,271.07 -304.584,544.133 -460.334,814.221c-159.666,276.762 -329.249,547.883 -484.499,827.092c-182.542,328.066 -371.042,652.537 -559.875,976.97c-99.626,171.196 -205.001,339.971 -299.251,513.279c-112.249,206.588 -235.333,406.912 -346.875,613.951c-148.916,276.249 -316.208,542.625 -473.125,814.583c-186.308,322.875 -368.866,647.958 -555.204,970.75c-215.325,373.041 -433.991,744.042 -649.392,1117c-209.916,363.333 -416.712,728.416 -626.379,1091.83c-194.187,336.583 -390.125,672.167 -585.766,1007.83c-149,255.584 -306.609,506.625 -445.754,767.292c-108.234,202.75 -238.717,391.833 -343.755,596.458c-90.375,176.084 -200.454,342.125 -300.529,513.417c-158.704,271.375 -317.121,542.875 -474.071,815.292c-67.233,116.583 -139.075,232.083 -173.766,363.75c-64.813,245.666 -41.084,483.958 78.825,708.416c173.383,324.167 436.433,520.417 812.954,531.959c256.7,7.833 513.837,1.875 770.746,1.875c2010.5,0.041 4020.97,0.041 6031.38,0.25Z\' style=\'fill:#fcdc2f;\'/><path d=\'M7729.12,13643.8c-2010.42,-0.042 -4020.88,-0.042 -6031.38,-0.083c-256.909,-0 -514.046,5.958 -770.746,-1.875c-376.521,-11.542 -639.571,-207.792 -812.954,-531.959c-119.909,-224.458 -143.638,-462.75 -78.825,-708.416c34.691,-131.667 106.533,-247.167 173.766,-363.75c156.95,-272.417 315.367,-543.917 474.071,-815.292c100.075,-171.292 210.154,-337.333 300.529,-513.417c105.038,-204.625 235.521,-393.708 343.755,-596.458c139.145,-260.667 296.754,-511.708 445.754,-767.292c195.641,-335.666 391.579,-671.25 585.766,-1007.83c209.667,-363.417 416.463,-728.5 626.379,-1091.83c215.401,-372.958 434.067,-743.959 649.392,-1117c186.338,-322.792 368.896,-647.875 555.204,-970.75c156.917,-271.958 324.209,-538.334 473.125,-814.583c111.542,-207.039 234.626,-407.363 346.875,-613.951c94.25,-173.308 199.625,-342.083 299.251,-513.279c188.833,-324.433 377.333,-648.904 559.875,-976.97c155.25,-279.209 324.833,-550.33 484.499,-827.092c155.75,-270.088 306.292,-543.151 460.334,-814.221c80.916,-142.371 164.875,-279.379 299.958,-383.596c217.958,-168.233 459.958,-231.912 728.958,-205.033c293.917,29.292 528.167,170.396 695.625,408.749c98.125,139.834 170.125,297.888 255.584,446.859c183,318.738 366.625,637.025 550.624,955.133c203.917,352.683 408.167,705.075 613.001,1057.28c213.792,367.838 433.791,732.284 640.583,1104.09c132.459,237.867 282.958,465.325 410.625,705.033c207.833,390 442.083,764.459 655.416,1151.17c107.043,194.125 224.917,382.25 336.417,574.083c98.125,169.001 190.625,341.458 291.501,508.709c122.333,203.208 232.333,413.291 357.291,615.25c126.75,204.541 239.25,417.833 358,627.333c190.25,335.625 390.792,665.333 578.167,1002.83c180.708,325.584 375.875,643.042 562.875,965.042c150.083,258.5 293.208,521.042 447.291,777.083c186.584,310.084 358.5,628.542 545.292,938.542c101.458,168.333 216.584,335 277.708,524.958c67.75,210.417 54.584,420.375 -23.541,629.292c-87.5,234.292 -248.709,406.333 -455.375,531.167c-115.709,69.958 -251.375,110.875 -392.75,111.041c-341.667,0.459 -683.417,1.167 -1025.08,1.167c-1930.92,0.042 -3861.92,0.042 -5792.83,-0.125Z\' style=\'fill:#874c9e;\'/><path d=\'M9083.38,5193.79c-74.708,454.166 -164.959,991.583 -251.125,1529.62c-138.75,866.25 -278.875,1732.33 -410.166,2599.71c-64.251,424.5 -330.001,710.292 -688,711.958c-359.293,1.625 -634.167,-284.958 -699.959,-705.333c-207.667,-1327.21 -420.042,-2653.75 -633.834,-3980c-104.916,-650.833 179.917,-1061.17 822.167,-1179.08c402.709,-73.975 800.375,-77.488 1196.46,43.75c427.333,130.792 670.042,451.166 664.458,979.375Z\' style=\'fill:#fff;fill-rule:nonzero;\'/><path d=\'M8775.71,11734c0,581.25 -471.25,1052.5 -1052.5,1052.5c-581.291,-0 -1052.5,-471.25 -1052.5,-1052.5c0,-581.292 471.209,-1052.5 1052.5,-1052.5c581.25,-0 1052.5,471.208 1052.5,1052.5Z\' style=\'fill:#fff;fill-rule:nonzero;\'/></g></svg>","description":"An alert and notification block inspired by Material UI.","keywords":["alert","info","hint","success","error","notice","notification","warning","material"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"buttonEnabled":{"type":"boolean","default":false},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"string","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"number","default":650}},"example":{"attributes":{"preview":true,"blockOnly":true,"share_text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada dui id nisi vulputate semper. Nam sagittis ac nulla id pharetra. Maecenas congue, tellus a blandit cursus, lorem dolor hendrerit erat, sed luctus arcu velit eget ligula.","template":"purple-bliss","enable_contextual_menu":true,"enable_copy_text":true,"enable_copy_tweet":true,"enable_copy_link":true,"enable_tweet_this":true,"maximum_width":800,"maximum_width_unit":"px"}},"supports":{"anchor":true,"align":true,"className":true},"editorScript":"alerts-dlx-block","editorStyle":"alerts-dlx-block-editor-styles","style":"alerts-dlx-frontend"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"AlertsDLX - Material UI","apiVersion":2,"name":"mediaron/alerts-dlx-material","category":"widgets","icon":"<svg width=\'100%\' height=\'100%\' viewBox=\'0 0 15463 13646\' version=\'1.1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\' xml:space=\'preserve\' xmlns:serif=\'http://www.serif.com/\' style=\'fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;\'><g><path d=\'M7729.12,13643.9c1930.92,-0 3861.92,-0 5792.83,-0.042c341.667,0 683.417,-0.708 1025.08,-1.167c141.375,-0.166 277.041,-41.083 392.75,-111.041c206.666,-124.834 367.875,-296.875 455.375,-531.167c78.125,-208.917 91.291,-418.875 23.541,-629.292c-61.124,-189.958 -176.25,-356.625 -277.708,-524.958c-186.792,-310 -358.708,-628.458 -545.292,-938.542c-154.083,-256.041 -297.208,-518.583 -447.291,-777.083c-187,-322 -382.167,-639.458 -562.875,-965.042c-187.375,-337.5 -387.917,-667.208 -578.167,-1002.83c-118.75,-209.5 -231.25,-422.792 -358,-627.333c-124.958,-201.959 -234.958,-412.042 -357.291,-615.25c-100.876,-167.251 -193.376,-339.708 -291.501,-508.709c-111.5,-191.833 -229.374,-379.958 -336.417,-574.083c-213.333,-386.708 -447.583,-761.167 -655.416,-1151.17c-127.667,-239.708 -278.166,-467.166 -410.625,-705.033c-206.792,-371.804 -426.791,-736.25 -640.583,-1104.09c-204.834,-352.204 -409.084,-704.596 -613.001,-1057.28c-183.999,-318.108 -367.624,-636.395 -550.624,-955.133c-85.459,-148.971 -157.459,-307.025 -255.584,-446.859c-167.458,-238.353 -401.708,-379.457 -695.625,-408.749c-269,-26.879 -511,36.8 -728.958,205.033c-135.083,104.217 -219.042,241.225 -299.958,383.596c-154.042,271.07 -304.584,544.133 -460.334,814.221c-159.666,276.762 -329.249,547.883 -484.499,827.092c-182.542,328.066 -371.042,652.537 -559.875,976.97c-99.626,171.196 -205.001,339.971 -299.251,513.279c-112.249,206.588 -235.333,406.912 -346.875,613.951c-148.916,276.249 -316.208,542.625 -473.125,814.583c-186.308,322.875 -368.866,647.958 -555.204,970.75c-215.325,373.041 -433.991,744.042 -649.392,1117c-209.916,363.333 -416.712,728.416 -626.379,1091.83c-194.187,336.583 -390.125,672.167 -585.766,1007.83c-149,255.584 -306.609,506.625 -445.754,767.292c-108.234,202.75 -238.717,391.833 -343.755,596.458c-90.375,176.084 -200.454,342.125 -300.529,513.417c-158.704,271.375 -317.121,542.875 -474.071,815.292c-67.233,116.583 -139.075,232.083 -173.766,363.75c-64.813,245.666 -41.084,483.958 78.825,708.416c173.383,324.167 436.433,520.417 812.954,531.959c256.7,7.833 513.837,1.875 770.746,1.875c2010.5,0.041 4020.97,0.041 6031.38,0.25Z\' style=\'fill:#fcdc2f;\'/><path d=\'M7729.12,13643.8c-2010.42,-0.042 -4020.88,-0.042 -6031.38,-0.083c-256.909,-0 -514.046,5.958 -770.746,-1.875c-376.521,-11.542 -639.571,-207.792 -812.954,-531.959c-119.909,-224.458 -143.638,-462.75 -78.825,-708.416c34.691,-131.667 106.533,-247.167 173.766,-363.75c156.95,-272.417 315.367,-543.917 474.071,-815.292c100.075,-171.292 210.154,-337.333 300.529,-513.417c105.038,-204.625 235.521,-393.708 343.755,-596.458c139.145,-260.667 296.754,-511.708 445.754,-767.292c195.641,-335.666 391.579,-671.25 585.766,-1007.83c209.667,-363.417 416.463,-728.5 626.379,-1091.83c215.401,-372.958 434.067,-743.959 649.392,-1117c186.338,-322.792 368.896,-647.875 555.204,-970.75c156.917,-271.958 324.209,-538.334 473.125,-814.583c111.542,-207.039 234.626,-407.363 346.875,-613.951c94.25,-173.308 199.625,-342.083 299.251,-513.279c188.833,-324.433 377.333,-648.904 559.875,-976.97c155.25,-279.209 324.833,-550.33 484.499,-827.092c155.75,-270.088 306.292,-543.151 460.334,-814.221c80.916,-142.371 164.875,-279.379 299.958,-383.596c217.958,-168.233 459.958,-231.912 728.958,-205.033c293.917,29.292 528.167,170.396 695.625,408.749c98.125,139.834 170.125,297.888 255.584,446.859c183,318.738 366.625,637.025 550.624,955.133c203.917,352.683 408.167,705.075 613.001,1057.28c213.792,367.838 433.791,732.284 640.583,1104.09c132.459,237.867 282.958,465.325 410.625,705.033c207.833,390 442.083,764.459 655.416,1151.17c107.043,194.125 224.917,382.25 336.417,574.083c98.125,169.001 190.625,341.458 291.501,508.709c122.333,203.208 232.333,413.291 357.291,615.25c126.75,204.541 239.25,417.833 358,627.333c190.25,335.625 390.792,665.333 578.167,1002.83c180.708,325.584 375.875,643.042 562.875,965.042c150.083,258.5 293.208,521.042 447.291,777.083c186.584,310.084 358.5,628.542 545.292,938.542c101.458,168.333 216.584,335 277.708,524.958c67.75,210.417 54.584,420.375 -23.541,629.292c-87.5,234.292 -248.709,406.333 -455.375,531.167c-115.709,69.958 -251.375,110.875 -392.75,111.041c-341.667,0.459 -683.417,1.167 -1025.08,1.167c-1930.92,0.042 -3861.92,0.042 -5792.83,-0.125Z\' style=\'fill:#874c9e;\'/><path d=\'M9083.38,5193.79c-74.708,454.166 -164.959,991.583 -251.125,1529.62c-138.75,866.25 -278.875,1732.33 -410.166,2599.71c-64.251,424.5 -330.001,710.292 -688,711.958c-359.293,1.625 -634.167,-284.958 -699.959,-705.333c-207.667,-1327.21 -420.042,-2653.75 -633.834,-3980c-104.916,-650.833 179.917,-1061.17 822.167,-1179.08c402.709,-73.975 800.375,-77.488 1196.46,43.75c427.333,130.792 670.042,451.166 664.458,979.375Z\' style=\'fill:#fff;fill-rule:nonzero;\'/><path d=\'M8775.71,11734c0,581.25 -471.25,1052.5 -1052.5,1052.5c-581.291,-0 -1052.5,-471.25 -1052.5,-1052.5c0,-581.292 471.209,-1052.5 1052.5,-1052.5c581.25,-0 1052.5,471.208 1052.5,1052.5Z\' style=\'fill:#fff;fill-rule:nonzero;\'/></g></svg>","description":"An alert and notification block inspired by Material UI.","keywords":["alert","info","hint","success","error","notice","notification","warning","material"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"buttonEnabled":{"type":"boolean","default":false},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"string","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"number","default":650},"icon":{"type":"string","default":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\'><path d=\'M24 44q-4.25 0-7.9-1.525-3.65-1.525-6.35-4.225-2.7-2.7-4.225-6.35Q4 28.25 4 24q0-4.2 1.525-7.85Q7.05 12.5 9.75 9.8q2.7-2.7 6.35-4.25Q19.75 4 24 4q3.75 0 7 1.2t5.85 3.3l-2.15 2.15q-2.2-1.75-4.9-2.7Q27.1 7 24 7q-7.25 0-12.125 4.875T7 24q0 7.25 4.875 12.125T24 41q7.25 0 12.125-4.875T41 24q0-1.5-.225-2.925-.225-1.425-.675-2.775l2.3-2.3q.8 1.85 1.2 3.85.4 2 .4 4.15 0 4.25-1.55 7.9-1.55 3.65-4.25 6.35-2.7 2.7-6.35 4.225Q28.2 44 24 44Zm-2.95-10.9-8.25-8.3 2.25-2.25 6 6 20.7-20.7 2.3 2.25Z\'/></svg>"}},"example":{"attributes":{"preview":true,"blockOnly":true,"share_text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada dui id nisi vulputate semper. Nam sagittis ac nulla id pharetra. Maecenas congue, tellus a blandit cursus, lorem dolor hendrerit erat, sed luctus arcu velit eget ligula.","template":"purple-bliss","enable_contextual_menu":true,"enable_copy_text":true,"enable_copy_tweet":true,"enable_copy_link":true,"enable_tweet_this":true,"maximum_width":800,"maximum_width_unit":"px"}},"supports":{"anchor":true,"align":true,"className":true},"editorScript":"alerts-dlx-block","editorStyle":"alerts-dlx-block-editor-styles","style":"alerts-dlx-frontend"}');
 
 /***/ })
 
