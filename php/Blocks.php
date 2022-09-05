@@ -87,12 +87,28 @@ class Blocks {
 			'all'
 		);
 
+		wp_register_style(
+			'alerts-dlx-block-editor-styles-roboto',
+			Functions::get_plugin_url( 'dist/dlx-gfont-roboto.css' ),
+			array( 'alerts-dlx-block-editor-styles' ),
+			Functions::get_plugin_version(),
+			'all'
+		);
+
 		wp_register_script(
 			'alerts-dlx-block',
 			Functions::get_plugin_url( 'build/alerts-dlx.js' ),
 			array(),
 			Functions::get_plugin_version(),
 			true
+		);
+
+		wp_localize_script(
+			'alerts-dlx-block',
+			'alertsDlxBlock',
+			array(
+				'roboto_font_stylesheet' => Functions::get_plugin_url( 'dist/alerts-dlx-gfont-roboto.css' ),
+			)
 		);
 	}
 }

@@ -66,9 +66,11 @@ const MaterialAlerts = ( props ) => {
 		maximumWidth,
 		icon,
 		descriptionEnabled,
+		titleEnabled,
 		iconEnabled,
 		className,
 		baseFontSize,
+		enableCustomFonts,
 	} = attributes;
 
 	const inspectorControls = (
@@ -86,7 +88,17 @@ const MaterialAlerts = ( props ) => {
 							} }
 						/>
 					</PanelRow>
-
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Title', 'alerts-dlx' ) }
+							checked={ titleEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									titleEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
 					<PanelRow>
 						<ToggleControl
 							label={ __( 'Enable Alert Description', 'alerts-dlx' ) }
@@ -107,6 +119,18 @@ const MaterialAlerts = ( props ) => {
 									buttonEnabled: value,
 								} );
 							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Custom Fonts', 'alerts-dlx' ) }
+							checked={ enableCustomFonts }
+							onChange={ ( value ) => {
+								setAttributes( {
+									enableCustomFonts: value,
+								} );
+							} }
+							help={ __( 'Material themed alert boxes use the Roboto font. If you want to use your own fonts, disable this option.', 'alerts-dlx' ) }
 						/>
 					</PanelRow>
 				</>
@@ -255,6 +279,9 @@ const MaterialAlerts = ( props ) => {
 			<style>
 				{ baseStyles }
 			</style>
+			{ enableCustomFonts && (
+				<link rel="stylesheet" href={ `${ alertsDlxBlock.roboto_font_stylesheet }` } />
+			) }
 			<figure
 				role="alert"
 				className={
@@ -279,17 +306,19 @@ const MaterialAlerts = ( props ) => {
 					</div>
 				) }
 				<figcaption>
-					<RichText
-						tagName="h2"
-						placeholder={ __( 'Alert title', 'quotes-dlx' ) }
-						value={ alertTitle }
-						className="alerts-dlx-title"
-						disableLineBreaks={ true }
-						allowedFormats={ [] }
-						onChange={ ( value ) => {
-							setAttributes( { alertTitle: value } );
-						} }
-					/>
+					{ titleEnabled && (
+						<RichText
+							tagName="h2"
+							placeholder={ __( 'Alert title', 'quotes-dlx' ) }
+							value={ alertTitle }
+							className="alerts-dlx-title"
+							disableLineBreaks={ true }
+							allowedFormats={ [] }
+							onChange={ ( value ) => {
+								setAttributes( { alertTitle: value } );
+							} }
+						/>
+					) }
 					<div className="alerts-dlx-content-wrapper">
 						{ descriptionEnabled && (
 							<div className="alerts-dlx-content">
@@ -325,6 +354,7 @@ const MaterialAlerts = ( props ) => {
 			{
 				'is-style-success': ( className === undefined && 'success' === alertType ),
 				'is-style-info': ( className === undefined && 'info' === alertType ),
+				'custom-fonts-enabled': enableCustomFonts,
 			}
 		),
 	} );

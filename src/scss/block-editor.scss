@@ -13,10 +13,15 @@
 	--alerts-dlx--info-button-border-color: #FFFFFF;
 }
 
+/* MaterialUI Fonts */
+.template-material.custom-fonts-enabled * {
+	font-family: var(--alerts-dlx-material-font-family, 'Roboto', 'Helvetica', 'Arial', sans-serif);
+}
+
 /* MaterialUI Success */
 .alerts-dlx-material {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
 	font-size: var(--alerts-dlx-material-base-size, 16px);
 	padding: 16px;
 	border-radius: 4px;
@@ -27,7 +32,7 @@
 		padding-left: 0;
 	}
 
-	h2.alerts-dlx-title {
+	figcaption h2.alerts-dlx-title {
 		font-size: 1.0em;
 		font-weight: 500;
 		line-height: 1.5em;
@@ -48,10 +53,10 @@
 }
 button.button-reset,
 button.button-reset.components-button {
-	padding: 0.5em;
+	padding: 0.6em 0.925em;
 	border-radius: 0.3125em;
 	margin-top: 0.5em;
-	line-height: 1.5em;
+	line-height: 1.2em;
 	font-size: 1.0em;
 	height: auto;
 

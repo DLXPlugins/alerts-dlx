@@ -18,6 +18,7 @@ module.exports = ( env ) => {
 				'alerts-dlx-frontend': './src/scss/frontend.scss',
 				'alerts-dlx-admin': { import: './src/scss/admin.scss' },
 				'alerts-dlx-block-editor': './src/scss/block-editor.scss',
+				'alerts-dlx-gfont-roboto': { import: './src/scss/fonts/roboto.scss' },
 			},
 			resolve: {
 				alias: {
@@ -30,6 +31,7 @@ module.exports = ( env ) => {
 				filename: '[name].js',
 				sourceMapFilename: '[file].map[query]',
 				assetModuleFilename: 'fonts/[name][ext]',
+				clean: true,
 			},
 			module: {
 				rules: [

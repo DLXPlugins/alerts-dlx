@@ -5,7 +5,7 @@
 		"wpApiSettings": true,
 		"window": true,
 		"document": true,
-		"quotes_dlx_admin": "readonly"
+		"alertsDlxBlock": "readonly"
 	},
 	"env": {
 		"browser": true,
