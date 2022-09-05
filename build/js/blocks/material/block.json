@@ -121,6 +121,14 @@
     {
       "name": "info",
       "label": "Info"
+    },
+    {
+      "name": "warning",
+      "label": "Warning"
+    },
+    {
+      "name": "error",
+      "label": "Error"
     }
   ],
   "supports": {

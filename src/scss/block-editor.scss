@@ -12,12 +12,27 @@
 	--alerts-dlx--info-button-text-color: #FFFFFF;
 	--alerts-dlx--info-button-border-color: #FFFFFF;
 }
+$white: #FFFFFF;
 $success-color: #1e4620;
 $success-color-accent: #295e2c;
 $success-color-alt: #2e7d32;
 $success-color-bold: #4caf50;
 $success-color-light: #edf7ed;
-$white: #FFFFFF;
+$info-color: #014361;
+$info-color-accent: #035e88;
+$info-color-alt: #0277bd;
+$info-color-bold: #03a9f4;
+$info-color-light: #e5f6fd;
+$warning-color: #663c00;
+$warning-color-accent: #8c5e00;
+$warning-color-alt: #ed6c02;
+$warning-color-bold: #ff9800;
+$warning-color-light: #fff4e5;
+$error-color: #5f2120;
+$error-color-accent: #8c2d2b;
+$error-color-alt: #d32f2f;
+$error-color-bold: #ef5350;
+$error-color-light: #fdeded;
 
 /* MaterialUI Fonts */
 .template-material.custom-fonts-enabled * {
@@ -163,28 +178,272 @@ button.button-reset.components-button {
 }
 
 .is-style-info {
-	h2.alerts-dlx-title {
-		color: var(--alerts-dlx--info-text-color);
+	&.is-appearance-default {
+		h2.alerts-dlx-title {
+			color: $info-color;
+		}
+		.alerts-dlx-content p {
+			color: $info-color;
+		}
+		.alerts-dlx-material {
+			background-color: $info-color-light;
+			color: $info-color;
+	
+			button.button-reset.alerts-dlx-button,
+			button.button-reset.alerts-dlx-button:hover {
+				color: $white;
+				border: 1px solid $white;
+				
+				background-color: $info-color;
+			}
+			button.button-reset.alerts-dlx-button:hover {
+				background-color: $info-color-accent;
+			}
+	
+			svg, svg path {
+				fill: $info-color-bold;
+			}
+		}
 	}
-	.alerts-dlx-content p {
-		color: var(--alerts-dlx--info-text-color);
+	&.is-appearance-outlined {
+		h2.alerts-dlx-title {
+			color: $info-color;
+		}
+		.alerts-dlx-content p {
+			color: $info-color;
+		}
+		.alerts-dlx-material {
+			background-color: $white;
+			color: $info-color;
+			border: 2px solid $info-color-bold;
+	
+			button.button-reset.alerts-dlx-button,
+			button.button-reset.alerts-dlx-button:hover {
+				color: $info-color;
+				border: 2px solid $info-color-bold;
+				background-color: $white;
+			}
+			button.button-reset.alerts-dlx-button:hover {
+				background-color: $info-color-alt;
+				color: $white;
+				border: 2px solid $info-color-alt;
+			}
+	
+			svg, svg path {
+				fill: $info-color-bold;
+			}
+		}
 	}
-	.alerts-dlx-material {
-		background-color: var(--alerts-dlx--info-background-color);
-		color: var(--alerts-dlx--info-text-color);
+	
+	&.is-appearance-filled {
+		h2.alerts-dlx-title {
+			color: $white;
+		}
+		.alerts-dlx-content p {
+			color: $white;
+		}
+		.alerts-dlx-material {
+			background-color: $info-color-alt;
+			color: $white;
+			border: 2px solid $info-color-alt;
+	
+			button.button-reset.alerts-dlx-button,
+			button.button-reset.alerts-dlx-button:hover {
+				color: $info-color-alt;
+				border: 2px solid $info-color-alt;
+				background-color: $white;
+			}
+			button.button-reset.alerts-dlx-button:hover {
+				background-color: $info-color-alt;
+				color: $white;
+				border: 2px solid $white;
+			}
+	
+			svg, svg path {
+				fill: $white;
+			}
+		}
+	}
+}
 
-		button.button-reset.alerts-dlx-button,
-		button.button-reset.alerts-dlx-button:hover {
-			color: var( --alerts-dlx--info-button-text-color);
-			border: 1px solid var(--alerts-dlx--info-button-border-color);
-			background-color: var(--alerts-dlx--info-button-background-color);
-		}
-		button.button-reset.alerts-dlx-button:hover {
-			background-color: var(--alerts-dlx--info-button-background-color-hover);
-		}
+.is-style-warning {
 
-		svg, svg path {
-			fill: #03a9f4;
+	&.is-appearance-default {
+		h2.alerts-dlx-title {
+			color: $warning-color;
+		}
+		.alerts-dlx-content p {
+			color: $warning-color;
+		}
+		.alerts-dlx-material {
+			background-color: $warning-color-light;
+			color: $warning-color;
+	
+			button.button-reset.alerts-dlx-button,
+			button.button-reset.alerts-dlx-button:hover {
+				color: $white;
+				border: 1px solid $white;
+				
+				background-color: $warning-color;
+			}
+			button.button-reset.alerts-dlx-button:hover {
+				background-color: $warning-color-accent;
+			}
+
+			svg, svg path {
+				fill: $warning-color-bold;
+			}
 		}
 	}
+	&.is-appearance-outlined {
+		h2.alerts-dlx-title {
+			color: $warning-color;
+		}
+		.alerts-dlx-content p {
+			color: $warning-color;
+		}
+		.alerts-dlx-material {
+			background-color: $white;
+			color: $warning-color;
+			border: 2px solid $warning-color-bold;
+	
+			button.button-reset.alerts-dlx-button,
+			button.button-reset.alerts-dlx-button:hover {
+				color: $warning-color;
+				border: 2px solid $warning-color-bold;
+				background-color: $white;
+			}
+			button.button-reset.alerts-dlx-button:hover {
+				background-color: $warning-color-alt;
+				color: $white;
+				border: 2px solid $warning-color-alt;
+			}
+
+			svg, svg path {
+				fill: $warning-color-bold;
+			}
+		}
+	}
+
+	&.is-appearance-filled {
+		h2.alerts-dlx-title {
+			color: $white;
+		}
+		.alerts-dlx-content p {
+			color: $white;
+		}
+		.alerts-dlx-material {
+			background-color: $warning-color-alt;
+			color: $white;
+			border: 2px solid $warning-color-alt;
+	
+			button.button-reset.alerts-dlx-button,
+			button.button-reset.alerts-dlx-button:hover {
+				color: $warning-color-alt;
+				border: 2px solid $warning-color-alt;
+				background-color: $white;
+			}
+			button.button-reset.alerts-dlx-button:hover {
+				background-color: $warning-color-alt;
+				color: $white;
+				border: 2px solid $white;
+			}
+
+			svg, svg path {
+				fill: $white;
+			}
+		}
+	}
+	
+}
+
+.is-style-error {
+
+	&.is-appearance-default {
+		h2.alerts-dlx-title {
+			color: $error-color;
+		}
+		.alerts-dlx-content p {
+			color: $error-color;
+		}
+		.alerts-dlx-material {
+			background-color: $error-color-light;
+			color: $error-color;
+	
+			button.button-reset.alerts-dlx-button,
+			button.button-reset.alerts-dlx-button:hover {
+				color: $white;
+				border: 1px solid $white;
+				
+				background-color: $error-color;
+			}
+			button.button-reset.alerts-dlx-button:hover {
+				background-color: $error-color-accent;
+			}
+
+			svg, svg path {
+				fill: $error-color-bold;
+			}
+		}
+	}
+	&.is-appearance-outlined {
+		h2.alerts-dlx-title {
+			color: $error-color;
+		}
+		.alerts-dlx-content p {
+			color: $error-color;
+		}
+		.alerts-dlx-material {
+			background-color: $white;
+			color: $error-color;
+			border: 2px solid $error-color-bold;
+	
+			button.button-reset.alerts-dlx-button,
+			button.button-reset.alerts-dlx-button:hover {
+				color: $error-color;
+				border: 2px solid $error-color-bold;
+				background-color: $white;
+			}
+			button.button-reset.alerts-dlx-button:hover {
+				background-color: $error-color-alt;
+				color: $white;
+				border: 2px solid $error-color-alt;
+			}
+
+			svg, svg path {
+				fill: $error-color-bold;
+			}
+		}
+	}
+
+	&.is-appearance-filled {
+		h2.alerts-dlx-title {
+			color: $white;
+		}
+		.alerts-dlx-content p {
+			color: $white;
+		}
+		.alerts-dlx-material {
+			background-color: $error-color-alt;
+			color: $white;
+			border: 2px solid $error-color-alt;
+	
+			button.button-reset.alerts-dlx-button,
+			button.button-reset.alerts-dlx-button:hover {
+				color: $error-color-alt;
+				border: 2px solid $error-color-alt;
+				background-color: $white;
+			}
+			button.button-reset.alerts-dlx-button:hover {
+				background-color: $error-color-alt;
+				color: $white;
+				border: 2px solid $white;
+			}
+
+			svg, svg path {
+				fill: $white;
+			}
+		}
+	}
+	
 }

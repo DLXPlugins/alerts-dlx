@@ -78,69 +78,6 @@ const MaterialAlerts = ( props ) => {
 
 	const inspectorControls = (
 		<>
-			<PanelBody initialOpen={ false } title={ __( 'Alert Settings', 'quotes-dlx' ) }>
-				<>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Alert Icon', 'alerts-dlx' ) }
-							checked={ iconEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									iconEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Title', 'alerts-dlx' ) }
-							checked={ titleEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									titleEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Alert Description', 'alerts-dlx' ) }
-							checked={ descriptionEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									descriptionEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Alert Button', 'alerts-dlx' ) }
-							checked={ buttonEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									buttonEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Custom Fonts', 'alerts-dlx' ) }
-							checked={ enableCustomFonts }
-							onChange={ ( value ) => {
-								setAttributes( {
-									enableCustomFonts: value,
-								} );
-							} }
-							help={ __(
-								'Material themed alert boxes use the Roboto font. If you want to use your own fonts, disable this option.',
-								'alerts-dlx'
-							) }
-						/>
-					</PanelRow>
-				</>
-			</PanelBody>
 			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'quotes-dlx' ) }>
 				<>
 					<UnitChooser
@@ -218,6 +155,69 @@ const MaterialAlerts = ( props ) => {
 						help={ __( 'Set the base font size for the alert.', 'alerts-dlx' ) }
 					/>
 				</PanelRow>
+			</PanelBody>
+			<PanelBody initialOpen={ false } title={ __( 'Alert Settings', 'quotes-dlx' ) }>
+				<>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Icon', 'alerts-dlx' ) }
+							checked={ iconEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									iconEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Title', 'alerts-dlx' ) }
+							checked={ titleEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									titleEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Description', 'alerts-dlx' ) }
+							checked={ descriptionEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									descriptionEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Button', 'alerts-dlx' ) }
+							checked={ buttonEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									buttonEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Custom Fonts', 'alerts-dlx' ) }
+							checked={ enableCustomFonts }
+							onChange={ ( value ) => {
+								setAttributes( {
+									enableCustomFonts: value,
+								} );
+							} }
+							help={ __(
+								'Material themed alert boxes use the Roboto font. If you want to use your own fonts, disable this option.',
+								'alerts-dlx'
+							) }
+						/>
+					</PanelRow>
+				</>
 			</PanelBody>
 		</>
 	);
@@ -383,6 +383,8 @@ const MaterialAlerts = ( props ) => {
 		className: classnames( className, 'alerts-dlx template-material', {
 			'is-style-success': className === undefined && 'success' === alertType,
 			'is-style-info': className === undefined && 'info' === alertType,
+			'is-style-warning': className === undefined && 'warning' === alertType,
+			'is-style-error': className === undefined && 'error' === alertType,
 			'custom-fonts-enabled': enableCustomFonts,
 			'is-appearance-default': 'default' === variant,
 			'is-appearance-outlined': 'outlined' === variant,

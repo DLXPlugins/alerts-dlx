@@ -104,7 +104,9 @@
 	},
 	"styles": [
         { "name": "success", "label": "Success", "isDefault": true },
-        { "name": "info", "label": "Info" }
+        { "name": "info", "label": "Info" },
+		{ "name": "warning", "label": "Warning" },
+		{ "name": "error", "label": "Error" }
     ],
 	"supports": {
 		"anchor": true,
