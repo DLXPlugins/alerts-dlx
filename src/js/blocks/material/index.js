@@ -1,6 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 import metadata from './block.json';
-import AlertsLogo from '../components/icons/AlertsLogo';
+import MaterialIconsLogo from '../components/icons/MaterialIconsLogo';
 
 import Edit from './edit';
 
@@ -9,5 +9,5 @@ registerBlockType( metadata, {
 	save() {
 		return null;
 	},
-	icon: <AlertsLogo />,
+	icon: <MaterialIconsLogo />,
 } );

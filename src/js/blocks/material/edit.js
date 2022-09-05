@@ -7,38 +7,22 @@
 
 import classnames from 'classnames';
 
-import { useEffect, useState, createRef } from '@wordpress/element';
-
-import { useSelect } from '@wordpress/data';
-
-import { createHooks } from '@wordpress/hooks';
-
+import { useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
-
-import { create, toHTMLString } from '@wordpress/rich-text';
-
-import { useInstanceId } from '@wordpress/compose';
 import {
 	PanelBody,
 	PanelRow,
-	ToolbarGroup,
 	ToggleControl,
 	TextControl,
-	TextareaControl,
 	Button,
 	ButtonGroup,
-	TabPanel,
-	FormTokenField,
-	RadioControl,
 	RangeControl,
 	BaseControl,
-	Notice,
 } from '@wordpress/components';
 
 import {
 	InspectorControls,
 	RichText,
-	BlockControls,
 	useBlockProps,
 } from '@wordpress/block-editor';
 
@@ -47,19 +31,13 @@ import UnitChooser from '../components/unit-picker';
 import IconPicker from '../components/IconPicker';
 import successSvgs from '../components/icons/MaterialSuccess';
 import infoSvgs from '../components/icons/MaterialInfo';
-
-const HtmlToReactParser = require( 'html-to-react' ).Parser;
+import warningSvgs from '../components/icons/MaterialWarning';
 
 const MaterialAlerts = ( props ) => {
-	const alertTitleField = createRef( null );
-
 	// Shortcuts.
-	const { attributes, setAttributes, isSelected } = props;
-	const generatedUniqueId = useInstanceId( MaterialAlerts, 'dlxalert' );
+	const { attributes, setAttributes } = props;
 
 	const {
-		uniqueId,
-		preview,
 		alertType,
 		alertTitle,
 		alertDescription,
@@ -74,6 +52,7 @@ const MaterialAlerts = ( props ) => {
 		baseFontSize,
 		enableCustomFonts,
 		variant,
+		enableDropShadow,
 	} = attributes;
 
 	const inspectorControls = (
@@ -155,6 +134,20 @@ const MaterialAlerts = ( props ) => {
 						help={ __( 'Set the base font size for the alert.', 'alerts-dlx' ) }
 					/>
 				</PanelRow>
+				{ 'default' === variant && (
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Drop Shadow', 'alerts-dlx' ) }
+							checked={ enableDropShadow }
+							onChange={ ( value ) => {
+								setAttributes( {
+									enableDropShadow: value,
+								} );
+							} }
+							help={ __( 'Enable or disable the drop shadow for the default variant.', 'alerts-dlx' ) }
+						/>
+					</PanelRow>
+				) }
 			</PanelBody>
 			<PanelBody initialOpen={ false } title={ __( 'Alert Settings', 'quotes-dlx' ) }>
 				<>
@@ -222,69 +215,30 @@ const MaterialAlerts = ( props ) => {
 		</>
 	);
 
-	const blockToolbar = <></>;
+	/**
+	 * Attempt to check when block styles are changed.
+	 */
+	useEffect( () => {
+		if ( undefined === className ) {
+			return;
+		}
 
-	// const blockToolbar = (
-	// 	<BlockControls>
-	// 		<>
-	// 			<ToolbarGroup
-	// 				icon={ <PaintbrushIcon width={ 24 } height={ 24 } fill="#000000" /> }
-	// 				label={ __( 'Select a Theme', 'quotes-dlx' ) }
-	// 				isCollapsed={ true }
-	// 				popoverProps={ { className: `quotes-dlx-popover ${ template }` } }
-	// 				controls={ [ toolbarThemes ] }
-	// 			/>
-	// 			<ToolbarGroup
-	// 				icon={
-	// 					<PreviewIcon
-	// 						width={ 25 }
-	// 						height={ 25 }
-	// 						opacity={ preview ? 0.8 : 0.4 }
-	// 						fill="#000000"
-	// 					/>
-	// 				}
-	// 				label={ __( 'Preview Mode', 'quotes-dlx' ) }
-	// 				isCollapsed={ true }
-	// 				popoverProps={ {
-	// 					className: `quotes-dlx-preview-popover ${ template }`,
-	// 				} }
-	// 				controls={ [ toolbarPreview ] }
-	// 			/>
-	// 		</>
-	// 	</BlockControls>
-	// );
-
-	const previewBlockInspectorControls = (
-		<>
-			<PanelBody
-				initialOpen={ true }
-				title={ __( 'Preview Mode Active', 'quotes-dlx' ) }
-			>
-				<Button
-					variant="link"
-					onClick={ ( e ) => {
-						setAttributes( { preview: false } );
-					} }
-				>
-					{ __( 'Turn Preview Mode Off', 'quotes-dlx' ) }
-				</Button>
-			</PanelBody>
-		</>
-	);
-
-	// useEffect( () => {
-	// 	if ( undefined === className ) {
-	// 		return;
-	// 	}
-	// 	switch ( className ) {
-	// 		case 'is-style-success':
-	// 			setAttributes( { alertType: 'success' } );
-	// 			break;
-	// 		case 'is-style-info':
-	// 			setAttributes( { alertType: 'info' } );
-	// 			break;
-	// 	}
-	// }, [ className ] );
+		const styleMatch = new RegExp( /is-style-([^\s]*)/g ).exec( className );
+		if ( null !== styleMatch ) {
+			const match = styleMatch[ 1 ];
+			switch ( match ) {
+				case 'success':
+					setAttributes( { alertType: 'success' } );
+					break;
+				case 'info':
+					setAttributes( { alertType: 'info' } );
+					break;
+				case 'warning':
+					setAttributes( { alertType: 'warning' } );
+					break;
+			}
+		}
+	}, [ className ] );
 
 	const getIconSets = () => {
 		switch ( alertType ) {
@@ -292,18 +246,18 @@ const MaterialAlerts = ( props ) => {
 				return successSvgs;
 			case 'info':
 				return infoSvgs;
+			case 'warning':
+			case 'error':
+				return warningSvgs;
 			default:
 				return successSvgs;
 		}
 	};
 
-	const htmlToReactParser = new HtmlToReactParser();
-
 	// Calculate max width.
 	const maxWidthStyle = {
 		maxWidth: maximumWidth + maximumWidthUnit,
 	};
-	4;
 	const baseFontSizeStyles = `--alerts-dlx-material-base-size: ${ parseInt(
 		baseFontSize
 	) }px ;`;
@@ -389,6 +343,7 @@ const MaterialAlerts = ( props ) => {
 			'is-appearance-default': 'default' === variant,
 			'is-appearance-outlined': 'outlined' === variant,
 			'is-appearance-filled': 'filled' === variant,
+			'is-dropshadow-enabled': enableDropShadow,
 		} ),
 	} );
 

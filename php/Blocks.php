@@ -40,6 +40,22 @@ class Blocks {
 
 		// Enqueue block assets.
 		add_action( 'enqueue_block_editor_assets', array( $this, 'register_block_editor_scripts' ) );
+
+		// Add alertsdlx block category.
+		add_filter(
+			'block_categories_all',
+			function( $categories ) {
+				return array_merge(
+					$categories,
+					array(
+						array(
+							'slug'  => 'alertsdlx',
+							'title' => __( 'AlertsDLX', 'alerts-dlx' ),
+						),
+					)
+				);
+			}
+		);
 	}
 
 	/**
