@@ -26,10 +26,12 @@ import {
 	TextControl,
 	TextareaControl,
 	Button,
+	ButtonGroup,
 	TabPanel,
 	FormTokenField,
 	RadioControl,
 	RangeControl,
+	BaseControl,
 	Notice,
 } from '@wordpress/components';
 
@@ -71,11 +73,12 @@ const MaterialAlerts = ( props ) => {
 		className,
 		baseFontSize,
 		enableCustomFonts,
+		variant,
 	} = attributes;
 
 	const inspectorControls = (
 		<>
-			<PanelBody initialOpen={ true } title={ __( 'Alert Settings', 'quotes-dlx' ) }>
+			<PanelBody initialOpen={ false } title={ __( 'Alert Settings', 'quotes-dlx' ) }>
 				<>
 					<PanelRow>
 						<ToggleControl
@@ -130,15 +133,15 @@ const MaterialAlerts = ( props ) => {
 									enableCustomFonts: value,
 								} );
 							} }
-							help={ __( 'Material themed alert boxes use the Roboto font. If you want to use your own fonts, disable this option.', 'alerts-dlx' ) }
+							help={ __(
+								'Material themed alert boxes use the Roboto font. If you want to use your own fonts, disable this option.',
+								'alerts-dlx'
+							) }
 						/>
 					</PanelRow>
 				</>
 			</PanelBody>
-			<PanelBody
-				initialOpen={ true }
-				title={ __( 'Settings', 'quotes-dlx' ) }
-			>
+			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'quotes-dlx' ) }>
 				<>
 					<UnitChooser
 						label={ __( 'Maximum Width', 'quotes-dlx' ) }
@@ -162,11 +165,44 @@ const MaterialAlerts = ( props ) => {
 					/>
 				</>
 				<PanelRow>
+					<BaseControl id="alerts-dlx-variants-button-group" label={ __( 'Set the Alert Variant', 'quotes-dlx' ) }>
+						<ButtonGroup label="test">
+							<Button
+								variant={ variant === 'default' ? 'primary' : 'secondary' }
+								onClick={ ( e ) => {
+									setAttributes( {
+										variant: 'default',
+									} );
+								} }
+							>
+								{ __( 'Default', 'alerts-dlx' ) }
+							</Button>
+							<Button
+								variant={ variant === 'outlined' ? 'primary' : 'secondary' }
+								onClick={ ( e ) => {
+									setAttributes( {
+										variant: 'outlined',
+									} );
+								} }
+							>
+								{ __( 'Outlined', 'alerts-dlx' ) }
+							</Button>
+							<Button
+								variant={ variant === 'filled' ? 'primary' : 'secondary' }
+								onClick={ ( e ) => {
+									setAttributes( {
+										variant: 'filled',
+									} );
+								} }
+							>
+								{ __( 'Filled', 'alerts-dlx' ) }
+							</Button>
+						</ButtonGroup>
+					</BaseControl>
+				</PanelRow>
+				<PanelRow>
 					<RangeControl
-						label={ __(
-							'Set the Base Font Size',
-							'alerts-dlx'
-						) }
+						label={ __( 'Set the Base Font Size', 'alerts-dlx' ) }
 						step={ 1 }
 						value={ baseFontSize }
 						max={ 36 }
@@ -179,10 +215,7 @@ const MaterialAlerts = ( props ) => {
 								baseFontSize: fontSizeValue,
 							} );
 						} }
-						help={ __(
-							'Set the base font size for the alert.',
-							'alerts-dlx'
-						) }
+						help={ __( 'Set the base font size for the alert.', 'alerts-dlx' ) }
 					/>
 				</PanelRow>
 			</PanelBody>
@@ -270,29 +303,28 @@ const MaterialAlerts = ( props ) => {
 	const maxWidthStyle = {
 		maxWidth: maximumWidth + maximumWidthUnit,
 	};
-4
-	const baseFontSizeStyles = `--alerts-dlx-material-base-size: ${ parseInt( baseFontSize ) }px ;`;
+	4;
+	const baseFontSizeStyles = `--alerts-dlx-material-base-size: ${ parseInt(
+		baseFontSize
+	) }px ;`;
 	const baseStyles = `:root { ${ baseFontSizeStyles } }`;
 	const block = (
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
-			<style>
-				{ baseStyles }
-			</style>
+			<style>{ baseStyles }</style>
 			{ enableCustomFonts && (
-				<link rel="stylesheet" href={ `${ alertsDlxBlock.roboto_font_stylesheet }` } />
+				<link
+					rel="stylesheet"
+					href={ `${ alertsDlxBlock.roboto_font_stylesheet }` }
+				/>
 			) }
 			<figure
 				role="alert"
-				className={
-					classnames(
-						'alerts-dlx-alert alerts-dlx-material',
-						{
-							'alerts-dlx-has-icon': iconEnabled,
-							'alerts-dlx-has-description': descriptionEnabled,
-							'alerts-dlx-has-button': buttonEnabled,
-						}
-					) }
+				className={ classnames( 'alerts-dlx-alert alerts-dlx-material', {
+					'alerts-dlx-has-icon': iconEnabled,
+					'alerts-dlx-has-description': descriptionEnabled,
+					'alerts-dlx-has-button': buttonEnabled,
+				} ) }
 				style={ maxWidthStyle }
 			>
 				{ iconEnabled && (
@@ -348,15 +380,14 @@ const MaterialAlerts = ( props ) => {
 	);
 
 	const blockProps = useBlockProps( {
-		className: classnames(
-			className,
-			'alerts-dlx template-material',
-			{
-				'is-style-success': ( className === undefined && 'success' === alertType ),
-				'is-style-info': ( className === undefined && 'info' === alertType ),
-				'custom-fonts-enabled': enableCustomFonts,
-			}
-		),
+		className: classnames( className, 'alerts-dlx template-material', {
+			'is-style-success': className === undefined && 'success' === alertType,
+			'is-style-info': className === undefined && 'info' === alertType,
+			'custom-fonts-enabled': enableCustomFonts,
+			'is-appearance-default': 'default' === variant,
+			'is-appearance-outlined': 'outlined' === variant,
+			'is-appearance-filled': 'filled' === variant,
+		} ),
 	} );
 
 	return (

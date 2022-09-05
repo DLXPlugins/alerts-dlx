@@ -85,6 +85,10 @@
 		"enableCustomFonts": {
 			"type": "boolean",
 			"default": true
+		},
+		"variant": {
+			"type": "string",
+			"default": "default"
 		}
 	},
 	"example": {
