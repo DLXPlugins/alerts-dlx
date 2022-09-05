@@ -203,19 +203,19 @@ const MaterialAlerts = ( props ) => {
 		</>
 	);
 
-	useEffect( () => {
-		if ( undefined === className ) {
-			return;
-		}
-		switch ( className ) {
-			case 'is-style-success':
-				setAttributes( { alertType: 'success' } );
-				break;
-			case 'is-style-info':
-				setAttributes( { alertType: 'info' } );
-				break;
-		}
-	}, [ className ] );
+	// useEffect( () => {
+	// 	if ( undefined === className ) {
+	// 		return;
+	// 	}
+	// 	switch ( className ) {
+	// 		case 'is-style-success':
+	// 			setAttributes( { alertType: 'success' } );
+	// 			break;
+	// 		case 'is-style-info':
+	// 			setAttributes( { alertType: 'info' } );
+	// 			break;
+	// 	}
+	// }, [ className ] );
 
 	const getIconSets = () => {
 		switch ( alertType ) {
@@ -235,7 +235,7 @@ const MaterialAlerts = ( props ) => {
 			<InspectorControls>{ inspectorControls }</InspectorControls>
 			<figure
 				role="alert"
-				className={ `alerts-dlx-alert alerts-dlx-material alerts-dlx-material-${ alertType }` }
+				className={ `alerts-dlx-alert alerts-dlx-material` }
 			>
 				<div className="alerts-dlx-icon" aria-hidden="true">
 					<IconPicker
@@ -273,7 +273,6 @@ const MaterialAlerts = ( props ) => {
 						</div>
 						{ buttonEnabled && (
 							<AlertButton
-								alertType={ alertType }
 								attributes={ attributes }
 								setAttributes={ setAttributes }
 							/>
@@ -286,9 +285,11 @@ const MaterialAlerts = ( props ) => {
 
 	const blockProps = useBlockProps( {
 		className: classnames(
+			className,
 			'alerts-dlx template-material',
 			{
-				'is-style-success': className === undefined,
+				'is-style-success': ( className === undefined && 'success' === alertType ),
+				'is-style-info': ( className === undefined && 'info' === alertType ),
 			}
 		),
 	} );
