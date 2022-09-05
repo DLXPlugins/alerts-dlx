@@ -37,10 +37,17 @@
 		}
 	}
 }
+.components-base-control.alerts-dlx-icon-wrapper {
+	font-size: 1em;
+}
 .alerts-dlx-icon-preview {
+	display: flex;
+	justify-content: center;
+	font-size: 1em;
 	svg {
-		width: 1.6em;
-		height: 1.6em;
+		width: 1.2em;
+		height: 1.2em;
+		margin-top: 0.175em;
 	}
 }
 .alerts-dlx-custom-icon-preview {

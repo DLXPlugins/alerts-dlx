@@ -16,10 +16,16 @@
 /* MaterialUI Success */
 .alerts-dlx-material {
 	display: grid;
-	grid-template-columns: 2.2em 1fr;
-	font-size: 16px;
+	grid-template-columns: 1fr 1fr;
+	font-size: var(--alerts-dlx-material-base-size, 16px);
 	padding: 16px;
 	border-radius: 4px;
+	margin: 0 auto;
+
+	&.alerts-dlx-has-icon {
+		grid-template-columns: 2.2em 1fr;
+		padding-left: 0;
+	}
 
 	h2.alerts-dlx-title {
 		font-size: 1.0em;
@@ -41,12 +47,13 @@
 	}
 }
 button.button-reset,
-button.button-reset {
-	padding: 10px;
-	border-radius: 5px;
+button.button-reset.components-button {
+	padding: 0.5em;
+	border-radius: 0.3125em;
 	margin-top: 0.5em;
 	line-height: 1.5em;
 	font-size: 1.0em;
+	height: auto;
 
 	& ~ .button-reset {
 		margin-top: 0.5em;
@@ -63,23 +70,13 @@ button.button-reset {
 	.alerts-dlx-material {
 		background-color: var(--alerts-dlx--success-background-color);
 		color: var(--alerts-dlx--success-text-color);
-		max-width: 600px;
-		margin: 0 auto;
 
 		button.button-reset.alerts-dlx-button,
 		button.button-reset.alerts-dlx-button:hover {
 			color: var( --alerts-dlx--success-button-text-color);
 			border: 1px solid var(--alerts-dlx--success-button-border-color);
-			padding: 10px;
-			border-radius: 5px;
-			margin-top: 0.5em;
-			line-height: 1.5em;
-			font-size: 1.0em;
+			
 			background-color: var(--alerts-dlx--success-button-background-color);
-
-			& ~ .button-reset {
-				margin-top: 0.5em;
-			}
 		}
 		button.button-reset.alerts-dlx-button:hover {
 			background-color: var(--alerts-dlx--success-button-background-color-hover);
@@ -97,23 +94,12 @@ button.button-reset {
 	.alerts-dlx-material {
 		background-color: var(--alerts-dlx--info-background-color);
 		color: var(--alerts-dlx--info-text-color);
-		max-width: 600px;
-		margin: 0 auto;
 
 		button.button-reset.alerts-dlx-button,
 		button.button-reset.alerts-dlx-button:hover {
 			color: var( --alerts-dlx--info-button-text-color);
 			border: 1px solid var(--alerts-dlx--info-button-border-color);
-			padding: 10px;
-			border-radius: 5px;
-			margin-top: 0.5em;
-			line-height: 1.5em;
-			font-size: 1.0em;
 			background-color: var(--alerts-dlx--info-button-background-color);
-
-			& ~ .button-reset {
-				margin-top: 0.5em;
-			}
 		}
 		button.button-reset.alerts-dlx-button:hover {
 			background-color: var(--alerts-dlx--info-button-background-color-hover);

@@ -23,6 +23,10 @@
 .alerts-dlx-button-wrapper:hover .alertx-dlx-button-link-icon, .alerts-dlx-button-wrapper:focus .alertx-dlx-button-link-icon {
   visibility: visible;
 }
+
+.alerts-dlx-link-toggle {
+  margin-top: 15px;
+}
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/js/blocks/components/unit-picker/editor.scss ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -96,9 +100,19 @@
   margin-left: 15px;
 }
 
+.components-base-control.alerts-dlx-icon-wrapper {
+  font-size: 1em;
+}
+
+.alerts-dlx-icon-preview {
+  display: flex;
+  justify-content: center;
+  font-size: 1em;
+}
 .alerts-dlx-icon-preview svg {
-  width: 1.6em;
-  height: 1.6em;
+  width: 1.2em;
+  height: 1.2em;
+  margin-top: 0.175em;
 }
 
 .alerts-dlx-custom-icon-preview svg {

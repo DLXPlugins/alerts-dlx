@@ -95,6 +95,7 @@ const AlertButton = ( props ) => {
 												buttonTarget: value,
 											} );
 										} }
+										className="alerts-dlx-link-toggle"
 									/>
 
 									<ToggleControl
@@ -105,6 +106,7 @@ const AlertButton = ( props ) => {
 												buttonRelNoFollow: value,
 											} );
 										} }
+										className="alerts-dlx-link-toggle"
 									/>
 
 									<ToggleControl
@@ -115,6 +117,7 @@ const AlertButton = ( props ) => {
 												buttonRelSponsored: value,
 											} );
 										} }
+										className="alerts-dlx-link-toggle"
 									/>
 								</>
 							</div>

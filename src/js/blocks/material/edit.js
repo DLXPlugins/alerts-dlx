@@ -66,9 +66,9 @@ const MaterialAlerts = ( props ) => {
 		maximumWidth,
 		icon,
 		descriptionEnabled,
-		titleEnabled,
 		iconEnabled,
 		className,
+		baseFontSize,
 	} = attributes;
 
 	const inspectorControls = (
@@ -77,11 +77,23 @@ const MaterialAlerts = ( props ) => {
 				<>
 					<PanelRow>
 						<ToggleControl
-							label={ __( 'Enable Alert Title', 'alerts-dlx' ) }
-							checked={ titleEnabled }
+							label={ __( 'Enable Alert Icon', 'alerts-dlx' ) }
+							checked={ iconEnabled }
 							onChange={ ( value ) => {
 								setAttributes( {
-									titleEnabled: value,
+									iconEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Description', 'alerts-dlx' ) }
+							checked={ descriptionEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									descriptionEnabled: value,
 								} );
 							} }
 						/>
@@ -97,58 +109,58 @@ const MaterialAlerts = ( props ) => {
 							} }
 						/>
 					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Alert Description', 'alerts-dlx' ) }
-							checked={ descriptionEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									descriptionEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Alert Icon', 'alerts-dlx' ) }
-							checked={ iconEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									iconEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
 				</>
 			</PanelBody>
 			<PanelBody
 				initialOpen={ true }
-				title={ __( 'Container Settings', 'quotes-dlx' ) }
+				title={ __( 'Settings', 'quotes-dlx' ) }
 			>
 				<>
-					<PanelRow>
-						<UnitChooser
-							label={ __( 'Maximum Width', 'quotes-dlx' ) }
-							value={ maximumWidthUnit }
-							units={ [ 'px', '%', 'vw' ] }
-							onClick={ ( value ) => {
-								setAttributes( {
-									maximumWidthUnit: value,
-								} );
-							} }
-						/>
+					<UnitChooser
+						label={ __( 'Maximum Width', 'quotes-dlx' ) }
+						value={ maximumWidthUnit }
+						units={ [ 'px', '%', 'vw' ] }
+						onClick={ ( value ) => {
+							setAttributes( {
+								maximumWidthUnit: value,
+							} );
+						} }
+					/>
 
-						<TextControl
-							type={ 'text' }
-							value={ maximumWidth }
-							onChange={ ( value ) => {
-								setAttributes( {
-									maximumWidth: value,
-								} );
-							} }
-						/>
-					</PanelRow>
+					<TextControl
+						type={ 'text' }
+						value={ maximumWidth }
+						onChange={ ( value ) => {
+							setAttributes( {
+								maximumWidth: value,
+							} );
+						} }
+					/>
 				</>
+				<PanelRow>
+					<RangeControl
+						label={ __(
+							'Set the Base Font Size',
+							'alerts-dlx'
+						) }
+						step={ 1 }
+						value={ baseFontSize }
+						max={ 36 }
+						min={ 12 }
+						currentInput={ 16 }
+						initialPosition={ 16 }
+						allowReset={ true }
+						onChange={ ( fontSizeValue ) => {
+							setAttributes( {
+								baseFontSize: fontSizeValue,
+							} );
+						} }
+						help={ __(
+							'Set the base font size for the alert.',
+							'alerts-dlx'
+						) }
+					/>
+				</PanelRow>
 			</PanelBody>
 		</>
 	);
@@ -230,21 +242,42 @@ const MaterialAlerts = ( props ) => {
 
 	const htmlToReactParser = new HtmlToReactParser();
 
+	// Calculate max width.
+	const maxWidthStyle = {
+		maxWidth: maximumWidth + maximumWidthUnit,
+	};
+4
+	const baseFontSizeStyles = `--alerts-dlx-material-base-size: ${ parseInt( baseFontSize ) }px ;`;
+	const baseStyles = `:root { ${ baseFontSizeStyles } }`;
 	const block = (
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
+			<style>
+				{ baseStyles }
+			</style>
 			<figure
 				role="alert"
-				className={ `alerts-dlx-alert alerts-dlx-material` }
+				className={
+					classnames(
+						'alerts-dlx-alert alerts-dlx-material',
+						{
+							'alerts-dlx-has-icon': iconEnabled,
+							'alerts-dlx-has-description': descriptionEnabled,
+							'alerts-dlx-has-button': buttonEnabled,
+						}
+					) }
+				style={ maxWidthStyle }
 			>
-				<div className="alerts-dlx-icon" aria-hidden="true">
-					<IconPicker
-						defaultSvg={ icon }
-						setAttributes={ setAttributes }
-						alertType={ alertType }
-						icons={ getIconSets() }
-					/>
-				</div>
+				{ iconEnabled && (
+					<div className="alerts-dlx-icon" aria-hidden="true">
+						<IconPicker
+							defaultSvg={ icon }
+							setAttributes={ setAttributes }
+							alertType={ alertType }
+							icons={ getIconSets() }
+						/>
+					</div>
+				) }
 				<figcaption>
 					<RichText
 						tagName="h2"
@@ -258,19 +291,21 @@ const MaterialAlerts = ( props ) => {
 						} }
 					/>
 					<div className="alerts-dlx-content-wrapper">
-						<div className="alerts-dlx-content">
-							<RichText
-								tagName="p"
-								multiline="p"
-								placeholder={ __( 'Alert Description', 'quotes-dlx' ) }
-								value={ alertDescription }
-								className="alerts-dlx-content"
-								allowedFormats={ [ 'core/bold', 'core/italic' ] }
-								onChange={ ( value ) => {
-									setAttributes( { alertDescription: value } );
-								} }
-							/>
-						</div>
+						{ descriptionEnabled && (
+							<div className="alerts-dlx-content">
+								<RichText
+									tagName="p"
+									multiline="p"
+									placeholder={ __( 'Alert Description', 'quotes-dlx' ) }
+									value={ alertDescription }
+									className="alerts-dlx-content"
+									allowedFormats={ [ 'core/bold', 'core/italic' ] }
+									onChange={ ( value ) => {
+										setAttributes( { alertDescription: value } );
+									} }
+								/>
+							</div>
+						) }
 						{ buttonEnabled && (
 							<AlertButton
 								attributes={ attributes }
@@ -293,7 +328,6 @@ const MaterialAlerts = ( props ) => {
 			}
 		),
 	} );
-
 
 	return (
 		<>

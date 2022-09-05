@@ -10,6 +10,10 @@
 	"version": "1.0.0",
 	"textdomain": "alerts-dlx",
 	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "center"
+		},
 		"alertType": {
 			"type": "string",
 			"default": "success"
@@ -21,10 +25,6 @@
 		"alertDescription": {
 			"type": "string",
 			"default": ""
-		},
-		"titleEnabled": {
-			"type": "boolean",
-			"default": true
 		},
 		"descriptionEnabled": {
 			"type": "boolean",
@@ -67,8 +67,12 @@
 			"default": "px"
 		},
 		"maximumWidth": {
+			"type": "string",
+			"default": "650"
+		},
+		"baseFontSize": {
 			"type": "number",
-			"default": 650
+			"default": 16
 		},
 		"icon": {
 			"type": "string",
