@@ -12,6 +12,12 @@
 	--alerts-dlx--info-button-text-color: #FFFFFF;
 	--alerts-dlx--info-button-border-color: #FFFFFF;
 }
+$success-color: #1e4620;
+$success-color-accent: #295e2c;
+$success-color-alt: #2e7d32;
+$success-color-bold: #4caf50;
+$success-color-light: #edf7ed;
+$white: #FFFFFF;
 
 /* MaterialUI Fonts */
 .template-material.custom-fonts-enabled * {
@@ -69,87 +75,87 @@ button.button-reset.components-button {
 
 	&.is-appearance-default {
 		h2.alerts-dlx-title {
-			color: var(--alerts-dlx--success-text-color);
+			color: $success-color;
 		}
 		.alerts-dlx-content p {
-			color: var(--alerts-dlx--success-text-color);
+			color: $success-color;
 		}
 		.alerts-dlx-material {
-			background-color: var(--alerts-dlx--success-background-color);
-			color: var(--alerts-dlx--success-text-color);
+			background-color: $success-color-light;
+			color: $success-color;
 	
 			button.button-reset.alerts-dlx-button,
 			button.button-reset.alerts-dlx-button:hover {
-				color: var( --alerts-dlx--success-button-text-color);
-				border: 1px solid var(--alerts-dlx--success-button-border-color);
+				color: $white;
+				border: 1px solid $white;
 				
-				background-color: var(--alerts-dlx--success-button-background-color);
+				background-color: $success-color;
 			}
 			button.button-reset.alerts-dlx-button:hover {
-				background-color: var(--alerts-dlx--success-button-background-color-hover);
+				background-color: $success-color-accent;
 			}
 
 			svg, svg path {
-				fill: #4caf50;
+				fill: $success-color-bold;
 			}
 		}
 	}
 	&.is-appearance-outlined {
 		h2.alerts-dlx-title {
-			color: #1e4620;
+			color: $success-color;
 		}
 		.alerts-dlx-content p {
-			color: #1e4620;
+			color: $success-color;
 		}
 		.alerts-dlx-material {
-			background-color: #FFFFFF;
-			color: #1e4620;
-			border: 2px solid #4caf50;
+			background-color: $white;
+			color: $success-color;
+			border: 2px solid $success-color-bold;
 	
 			button.button-reset.alerts-dlx-button,
 			button.button-reset.alerts-dlx-button:hover {
-				color: #1e4620;
-				border: 2px solid #4caf50;
-				background-color: #FFFFFF;
+				color: $success-color;
+				border: 2px solid $success-color-bold;
+				background-color: $white;
 			}
 			button.button-reset.alerts-dlx-button:hover {
-				background-color: #2e7d32;
-				color: #FFFFFF;
-				border: 2px solid #2e7d32;
+				background-color: $success-color-alt;
+				color: $white;
+				border: 2px solid $success-color-alt;
 			}
 
 			svg, svg path {
-				fill: #4caf50;
+				fill: $success-color-bold;
 			}
 		}
 	}
 
 	&.is-appearance-filled {
 		h2.alerts-dlx-title {
-			color: #FFFFFF;
+			color: $white;
 		}
 		.alerts-dlx-content p {
-			color: #FFFFFF;
+			color: $white;
 		}
 		.alerts-dlx-material {
-			background-color: #2e7d32;
-			color: #FFFFFF;
-			border: 2px solid #2e7d32;
+			background-color: $success-color-alt;
+			color: $white;
+			border: 2px solid $success-color-alt;
 	
 			button.button-reset.alerts-dlx-button,
 			button.button-reset.alerts-dlx-button:hover {
 				color: #2e7d32;
-				border: 2px solid #2e7d32;
-				background-color: #FFFFFF;
+				border: 2px solid $success-color-alt;
+				background-color: $white;
 			}
 			button.button-reset.alerts-dlx-button:hover {
-				background-color: #2e7d32;
-				color: #FFFFFF;
-				border: 2px solid #FFFFFF;
+				background-color: $success-color-alt;
+				color: $white;
+				border: 2px solid $white;
 			}
 
 			svg, svg path {
-				fill: #FFFFFF;
+				fill: $white;
 			}
 		}
 	}
