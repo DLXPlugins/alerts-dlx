@@ -29,6 +29,7 @@ import {
 	TabPanel,
 	FormTokenField,
 	RadioControl,
+	RangeControl,
 	Notice,
 } from '@wordpress/components';
 
@@ -42,6 +43,8 @@ import {
 import AlertButton from '../components/AlertButton';
 import UnitChooser from '../components/unit-picker';
 import IconPicker from '../components/IconPicker';
+import successSvgs from '../components/icons/MaterialSuccess';
+import infoSvgs from '../components/icons/MaterialInfo';
 
 const HtmlToReactParser = require( 'html-to-react' ).Parser;
 
@@ -50,24 +53,39 @@ const MaterialAlerts = ( props ) => {
 
 	// Shortcuts.
 	const { attributes, setAttributes, isSelected } = props;
-
 	const generatedUniqueId = useInstanceId( MaterialAlerts, 'dlxalert' );
 
 	const {
 		uniqueId,
 		preview,
+		alertType,
 		alertTitle,
 		alertDescription,
 		buttonEnabled,
 		maximumWidthUnit,
 		maximumWidth,
 		icon,
+		descriptionEnabled,
+		titleEnabled,
+		iconEnabled,
+		className,
 	} = attributes;
 
 	const inspectorControls = (
 		<>
 			<PanelBody initialOpen={ true } title={ __( 'Alert Settings', 'quotes-dlx' ) }>
 				<>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Title', 'alerts-dlx' ) }
+							checked={ titleEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									titleEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
 					<PanelRow>
 						<ToggleControl
 							label={ __( 'Enable Alert Button', 'alerts-dlx' ) }
@@ -79,6 +97,28 @@ const MaterialAlerts = ( props ) => {
 							} }
 						/>
 					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Description', 'alerts-dlx' ) }
+							checked={ descriptionEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									descriptionEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Icon', 'alerts-dlx' ) }
+							checked={ iconEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									iconEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
 				</>
 			</PanelBody>
 			<PanelBody
@@ -86,26 +126,28 @@ const MaterialAlerts = ( props ) => {
 				title={ __( 'Container Settings', 'quotes-dlx' ) }
 			>
 				<>
-					<UnitChooser
-						label={ __( 'Maximum Width', 'quotes-dlx' ) }
-						value={ maximumWidthUnit }
-						units={ [ 'px', '%', 'vw' ] }
-						onClick={ ( value ) => {
-							setAttributes( {
-								maximumWidthUnit: value,
-							} );
-						} }
-					/>
+					<PanelRow>
+						<UnitChooser
+							label={ __( 'Maximum Width', 'quotes-dlx' ) }
+							value={ maximumWidthUnit }
+							units={ [ 'px', '%', 'vw' ] }
+							onClick={ ( value ) => {
+								setAttributes( {
+									maximumWidthUnit: value,
+								} );
+							} }
+						/>
 
-					<TextControl
-						type={ 'text' }
-						value={ maximumWidth }
-						onChange={ ( value ) => {
-							setAttributes( {
-								maximumWidth: value,
-							} );
-						} }
-					/>
+						<TextControl
+							type={ 'text' }
+							value={ maximumWidth }
+							onChange={ ( value ) => {
+								setAttributes( {
+									maximumWidth: value,
+								} );
+							} }
+						/>
+					</PanelRow>
 				</>
 			</PanelBody>
 		</>
@@ -161,6 +203,31 @@ const MaterialAlerts = ( props ) => {
 		</>
 	);
 
+	useEffect( () => {
+		if ( undefined === className ) {
+			return;
+		}
+		switch ( className ) {
+			case 'is-style-success':
+				setAttributes( { alertType: 'success' } );
+				break;
+			case 'is-style-info':
+				setAttributes( { alertType: 'info' } );
+				break;
+		}
+	}, [ className ] );
+
+	const getIconSets = () => {
+		switch ( alertType ) {
+			case 'success':
+				return successSvgs;
+			case 'info':
+				return infoSvgs;
+			default:
+				return successSvgs;
+		}
+	};
+
 	const htmlToReactParser = new HtmlToReactParser();
 
 	const block = (
@@ -168,13 +235,14 @@ const MaterialAlerts = ( props ) => {
 			<InspectorControls>{ inspectorControls }</InspectorControls>
 			<figure
 				role="alert"
-				className="alerts-dlx-alert alerts-dlx-material alerts-dlx-material-success"
+				className={ `alerts-dlx-alert alerts-dlx-material alerts-dlx-material-${ alertType }` }
 			>
 				<div className="alerts-dlx-icon" aria-hidden="true">
 					<IconPicker
 						defaultSvg={ icon }
 						setAttributes={ setAttributes }
-						alertType="info"
+						alertType={ alertType }
+						icons={ getIconSets() }
 					/>
 				</div>
 				<figcaption>
@@ -205,6 +273,7 @@ const MaterialAlerts = ( props ) => {
 						</div>
 						{ buttonEnabled && (
 							<AlertButton
+								alertType={ alertType }
 								attributes={ attributes }
 								setAttributes={ setAttributes }
 							/>
@@ -216,8 +285,14 @@ const MaterialAlerts = ( props ) => {
 	);
 
 	const blockProps = useBlockProps( {
-		className: `alerts-dlx template-material`,
+		className: classnames(
+			'alerts-dlx template-material',
+			{
+				'is-style-success': className === undefined,
+			}
+		),
 	} );
+
 
 	return (
 		<>

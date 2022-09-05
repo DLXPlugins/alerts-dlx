@@ -1,6 +1,4 @@
 import './editor.scss';
-import successSvgs from '../icons/MaterialSuccess';
-import infoSvgs from '../icons/MaterialInfo';
 import { __ } from '@wordpress/i18n';
 import { renderToString, useState } from '@wordpress/element';
 import {
@@ -18,18 +16,7 @@ const IconPicker = ( props ) => {
 	const [ isPopoverVisible, setIsPopOverVisible ] = useState( false );
 	const [ isFocusedOutside, setIsFocusedOutside ] = useState( false );
 
-	const { defaultSvg, setAttributes, alertType } = props;
-
-	const getIcons = () => {
-		switch ( alertType ) {
-			case 'success':
-				return successSvgs;
-			case 'info':
-				return infoSvgs;
-			default:
-				return successSvgs;
-		}
-	};
+	const { defaultSvg, setAttributes, icons } = props;
 
 	/**
 	 * Retrieve popover content for custom icons or regular icons.
@@ -122,8 +109,6 @@ const IconPicker = ( props ) => {
 	const toggleVisible = () => {
 		setIsPopOverVisible( ( state ) => ! state );
 	};
-
-	const icons = getIcons();
 
 	return (
 		<>

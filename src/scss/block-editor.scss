@@ -2,8 +2,15 @@
 	--alerts-dlx--success-text-color: #1e4620;
 	--alerts-dlx--success-background-color: #edf7ed;
 	--alerts-dlx--success-button-background-color: #1e4620;
+	--alerts-dlx--success-button-background-color-hover: #295e2c;
 	--alerts-dlx--success-button-text-color: #FFFFFF;
 	--alerts-dlx--success-button-border-color: #FFFFFF;
+	--alerts-dlx--info-text-color: #014361;
+	--alerts-dlx--info-background-color: #e5f6fd;
+	--alerts-dlx--info-button-background-color: #014361;
+	--alerts-dlx--info-button-background-color-hover: #035e88;
+	--alerts-dlx--info-button-text-color: #FFFFFF;
+	--alerts-dlx--info-button-border-color: #FFFFFF;
 }
 
 /* MaterialUI Success */
@@ -21,10 +28,8 @@
 		margin: 0;
 		padding: 0;
 		margin-bottom: 0.35em;
-		color: var(--alerts-dlx--success-text-color);
 	}
 	.alerts-dlx-content p {
-		color: var(--alerts-dlx--success-text-color);
 		font-size: 1.0em;
 		font-weight: 400;
 		line-height: 1.5em;
@@ -35,26 +40,83 @@
 		}
 	}
 }
-.alerts-dlx-material-success {
-	background-color: var(--alerts-dlx--success-background-color);
-	color: var(--alerts-dlx--success-text-color);
-	max-width: 600px;
-	margin: 0 auto;
-}
-button.button-reset.alerts-dlx-button--success,
-button.button-reset.alerts-dlx-button--success:hover {
-	color: var( --alerts-dlx--success-button-text-color);
-	border: 1px solid var(--alerts-dlx--success-button-border-color);
+button.button-reset,
+button.button-reset {
 	padding: 10px;
 	border-radius: 5px;
 	margin-top: 0.5em;
 	line-height: 1.5em;
 	font-size: 1.0em;
-	background-color: var(--alerts-dlx--success-button-background-color);
 
 	& ~ .button-reset {
 		margin-top: 0.5em;
 	}
 }
 
+.is-style-success {
+	h2.alerts-dlx-title {
+		color: var(--alerts-dlx--success-text-color);
+	}
+	.alerts-dlx-content p {
+		color: var(--alerts-dlx--success-text-color);
+	}
+	.alerts-dlx-material-success {
+		background-color: var(--alerts-dlx--success-background-color);
+		color: var(--alerts-dlx--success-text-color);
+		max-width: 600px;
+		margin: 0 auto;
 
+		button.button-reset.alerts-dlx-button--success,
+		button.button-reset.alerts-dlx-button--success:hover {
+			color: var( --alerts-dlx--success-button-text-color);
+			border: 1px solid var(--alerts-dlx--success-button-border-color);
+			padding: 10px;
+			border-radius: 5px;
+			margin-top: 0.5em;
+			line-height: 1.5em;
+			font-size: 1.0em;
+			background-color: var(--alerts-dlx--success-button-background-color);
+
+			& ~ .button-reset {
+				margin-top: 0.5em;
+			}
+		}
+		button.button-reset.alerts-dlx-button--success:hover {
+			background-color: var(--alerts-dlx--success-button-background-color-hover);
+		}
+	}
+}
+
+.is-style-info {
+	h2.alerts-dlx-title {
+		color: var(--alerts-dlx--info-text-color);
+	}
+	.alerts-dlx-content p {
+		color: var(--alerts-dlx--info-text-color);
+	}
+	.alerts-dlx-material-info {
+		background-color: var(--alerts-dlx--info-background-color);
+		color: var(--alerts-dlx--info-text-color);
+		max-width: 600px;
+		margin: 0 auto;
+
+		button.button-reset.alerts-dlx-button--info,
+		button.button-reset.alerts-dlx-button--info:hover {
+			color: var( --alerts-dlx--info-button-text-color);
+			border: 1px solid var(--alerts-dlx--info-button-border-color);
+			padding: 10px;
+			border-radius: 5px;
+			margin-top: 0.5em;
+			line-height: 1.5em;
+			font-size: 1.0em;
+			background-color: var(--alerts-dlx--info-button-background-color);
+
+			& ~ .button-reset {
+				margin-top: 0.5em;
+			}
+		}
+		button.button-reset.alerts-dlx-button--info:hover {
+			background-color: var(--alerts-dlx--info-button-background-color-hover);
+		}
+	}
+}

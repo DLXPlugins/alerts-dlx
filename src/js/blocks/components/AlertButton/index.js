@@ -17,7 +17,7 @@ const AlertButton = ( props ) => {
 
 	const { attributes, setAttributes } = props;
 
-	const { buttonText, buttonUrl, buttonTarget, buttonRelNoFollow, buttonRelSponsored } =
+	const { alertType, buttonText, buttonUrl, buttonTarget, buttonRelNoFollow, buttonRelSponsored } =
 		attributes;
 
 	const toggleVisible = () => {
@@ -31,7 +31,7 @@ const AlertButton = ( props ) => {
 				style={ { display: 'inline-flex' } }
 			>
 				<Button
-					className="alerts-dlx-button alerts-dlx-button--success button-reset"
+					className={ `alerts-dlx-button alerts-dlx-button--${ alertType } button-reset` }
 				>
 					<RichText
 						tagName="span"

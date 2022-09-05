@@ -10,6 +10,10 @@
 	"version": "1.0.0",
 	"textdomain": "alerts-dlx",
 	"attributes": {
+		"alertType": {
+			"type": "string",
+			"default": "success"
+		},
 		"alertTitle": {
 			"type": "string",
 			"default": ""
@@ -18,9 +22,21 @@
 			"type": "string",
 			"default": ""
 		},
+		"titleEnabled": {
+			"type": "boolean",
+			"default": true
+		},
+		"descriptionEnabled": {
+			"type": "boolean",
+			"default": true
+		},
 		"buttonEnabled": {
 			"type": "boolean",
 			"default": false
+		},
+		"iconEnabled": {
+			"type": "boolean",
+			"default": true
 		},
 		"buttonText": {
 			"type": "string",
@@ -74,6 +90,10 @@
 			"maximum_width_unit": "px"
 		}
 	},
+	"styles": [
+        { "name": "success", "label": "Success", "isDefault": true },
+        { "name": "info", "label": "Info" }
+    ],
 	"supports": {
 		"anchor": true,
 		"align": true,
