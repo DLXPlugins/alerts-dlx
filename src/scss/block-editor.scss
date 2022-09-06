@@ -68,6 +68,22 @@ button.button-reset.components-button {
 	}
 }
 
+/* Consolidate variants for ChakraUI options */
+.alerts-dlx-chakra-variants {
+	.components-button-group {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		row-gap: 8px;
+		column-gap: 8px;
+		justify-content: center;
+		button {
+			display: flex;
+			justify-content: center;
+			width: 100%;
+		}
+	}
+}
+
 .template-chakra {
 	/* MaterialUI Success */
 	.alerts-dlx-chakra {
@@ -119,8 +135,36 @@ button.button-reset.components-button {
 		}
 	}
 
+	&.is-appearance-centered {
+		.alerts-dlx-chakra {
+			display: block;
+		}
+		.alerts-dlx-icon-preview svg {
+			width: 1.6em;
+			height: 1.6em;
+		}
+
+		figcaption {
+			text-align: center;
+		}
+
+		.alerts-dlx-button-wrapper {
+			position: relative;
+			flex-wrap: wrap;
+			button:first-child {
+				width: 100%;
+				justify-content: center;
+			}
+			button:not(:first-child) {
+				position: absolute;
+				right: -35px;
+			}
+		}
+	}
+
 	&.is-style-success {
-		&.is-appearance-subtle {
+		&.is-appearance-subtle,
+		&.is-appearance-centered {
 			h2.alerts-dlx-title {
 				color: $chakra-success-color;
 			}
@@ -256,7 +300,8 @@ button.button-reset.components-button {
 	}
 
 	&.is-style-info {
-		&.is-appearance-subtle {
+		&.is-appearance-subtle,
+		&.is-appearance-centered {
 			h2.alerts-dlx-title {
 				color: $chakra-info-color;
 			}
@@ -393,7 +438,8 @@ button.button-reset.components-button {
 	}
 
 	&.is-style-warning {
-		&.is-appearance-subtle {
+		&.is-appearance-subtle,
+		&.is-appearance-centered {
 			h2.alerts-dlx-title {
 				color: $chakra-warning-color;
 			}
@@ -528,7 +574,8 @@ button.button-reset.components-button {
 	}
 
 	&.is-style-error {
-		&.is-appearance-subtle {
+		&.is-appearance-subtle,
+		&.is-appearance-centered {
 			h2.alerts-dlx-title {
 				color: $chakra-error-color;
 			}

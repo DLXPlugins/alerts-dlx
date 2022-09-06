@@ -81,7 +81,7 @@ const MaterialAlerts = ( props ) => {
 					/>
 				</>
 				<PanelRow>
-					<BaseControl id="alerts-dlx-variants-button-group" label={ __( 'Set the Alert Variant', 'quotes-dlx' ) }>
+					<BaseControl id="alerts-dlx-variants-button-group" label={ __( 'Set the Alert Variant', 'quotes-dlx' ) } className="alerts-dlx-chakra-variants">
 						<ButtonGroup>
 							<Button
 								variant={ variant === 'subtle' ? 'primary' : 'secondary' }
@@ -122,6 +122,16 @@ const MaterialAlerts = ( props ) => {
 								} }
 							>
 								{ __( 'Top Accent', 'alerts-dlx' ) }
+							</Button>
+							<Button
+								variant={ variant === 'centered' ? 'primary' : 'secondary' }
+								onClick={ ( e ) => {
+									setAttributes( {
+										variant: 'centered',
+									} );
+								} }
+							>
+								{ __( 'Centered', 'alerts-dlx' ) }
 							</Button>
 						</ButtonGroup>
 					</BaseControl>
@@ -330,6 +340,7 @@ const MaterialAlerts = ( props ) => {
 			'is-appearance-solid': 'solid' === variant,
 			'is-appearance-left-accent': 'left-accent' === variant,
 			'is-appearance-top-accent': 'top-accent' === variant,
+			'is-appearance-centered': 'centered' === variant,
 		} ),
 	} );
 
