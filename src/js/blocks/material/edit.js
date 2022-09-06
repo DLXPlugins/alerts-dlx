@@ -81,7 +81,7 @@ const CharkaAlerts = ( props ) => {
 					/>
 				</>
 				<PanelRow>
-					<BaseControl id="alerts-dlx-variants-button-group" label={ __( 'Set the Alert Variant', 'quotes-dlx' ) }>
+					<BaseControl id="alerts-dlx-variants-button-group" label={ __( 'Set the Alert Variant', 'quotes-dlx' ) } className="alerts-dlx-material-variants">
 						<ButtonGroup label="test">
 							<Button
 								variant={ variant === 'default' ? 'primary' : 'secondary' }
@@ -112,6 +112,16 @@ const CharkaAlerts = ( props ) => {
 								} }
 							>
 								{ __( 'Filled', 'alerts-dlx' ) }
+							</Button>
+							<Button
+								variant={ variant === 'centered' ? 'primary' : 'secondary' }
+								onClick={ ( e ) => {
+									setAttributes( {
+										variant: 'centered',
+									} );
+								} }
+							>
+								{ __( 'Centered', 'alerts-dlx' ) }
 							</Button>
 						</ButtonGroup>
 					</BaseControl>
@@ -309,7 +319,7 @@ const CharkaAlerts = ( props ) => {
 						{ descriptionEnabled && (
 							<div className="alerts-dlx-content">
 								<RichText
-									tagName="p"
+									tagName="div"
 									multiline="p"
 									placeholder={ __( 'Alert Description', 'quotes-dlx' ) }
 									value={ alertDescription }
@@ -343,6 +353,7 @@ const CharkaAlerts = ( props ) => {
 			'is-appearance-default': 'default' === variant,
 			'is-appearance-outlined': 'outlined' === variant,
 			'is-appearance-filled': 'filled' === variant,
+			'is-appearance-centered': 'centered' === variant,
 			'is-dropshadow-enabled': enableDropShadow,
 		} ),
 	} );

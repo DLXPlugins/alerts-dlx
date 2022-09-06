@@ -69,7 +69,8 @@ button.button-reset.components-button {
 }
 
 /* Consolidate variants for ChakraUI options */
-.alerts-dlx-chakra-variants {
+.alerts-dlx-chakra-variants,
+.alerts-dlx-material-variants {
 	.components-button-group {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -130,7 +131,7 @@ button.button-reset.components-button {
 
 		.alerts-dlx-icon {
 			display: flex;
-			align-items: center;
+			align-items: flex-start;
 			justify-content: center;
 		}
 	}
@@ -717,13 +718,17 @@ button.button-reset.components-button {
 		border-radius: 4px;
 		margin: 0 auto;
 
+		.alerts-dlx-icon-preview svg {
+			width: 1.8em;
+			height: 1.8em;
+		}
 		&.alerts-dlx-has-icon {
-			grid-template-columns: 2.2em 1fr;
+			grid-template-columns: 3.8em 1fr;
 			padding-left: 0;
 		}
 
 		figcaption h2.alerts-dlx-title {
-			font-size: 1em;
+			font-size: 1.2em;
 			font-weight: 500;
 			line-height: 1.5em;
 			margin: 0;
@@ -731,7 +736,7 @@ button.button-reset.components-button {
 			margin-bottom: 0.35em;
 		}
 		.alerts-dlx-content p {
-			font-size: 1em;
+			font-size: 1.2em;
 			font-weight: 400;
 			line-height: 1.5em;
 			margin: 0;
@@ -739,6 +744,22 @@ button.button-reset.components-button {
 			&:not(:first-child) {
 				margin-top: 0.5em;
 			}
+		}
+
+		button.button-reset,
+		button.button-reset.components-button {
+			font-size: 1.2em;
+		}
+
+		.alerts-dlx-icon-preview svg {
+			width: 1.4em;
+			height: 1.4em;
+		}
+
+		.alerts-dlx-icon {
+			display: flex;
+			align-items: flex-start;
+			justify-content: center;
 		}
 	}
 
@@ -760,8 +781,36 @@ button.button-reset.components-button {
 		box-shadow: 1px 1px 5px 1px rgba(211, 47, 47, 0.2);
 	}
 
+	&.is-appearance-centered {
+		.alerts-dlx-material {
+			display: block;
+		}
+		.alerts-dlx-icon-preview svg {
+			width: 1.6em;
+			height: 1.6em;
+		}
+
+		figcaption {
+			text-align: center;
+		}
+
+		.alerts-dlx-button-wrapper {
+			position: relative;
+			flex-wrap: wrap;
+			button:first-child {
+				width: 100%;
+				justify-content: center;
+			}
+			button:not(:first-child) {
+				position: absolute;
+				right: -35px;
+			}
+		}
+	}
+
 	&.is-style-success {
-		&.is-appearance-default {
+		&.is-appearance-default,
+		&.is-appearance-centered {
 			h2.alerts-dlx-title {
 				color: $material-success-color;
 			}
@@ -853,7 +902,8 @@ button.button-reset.components-button {
 	}
 
 	&.is-style-info {
-		&.is-appearance-default {
+		&.is-appearance-default,
+		&.is-appearance-centered {
 			h2.alerts-dlx-title {
 				color: $material-info-color;
 			}
@@ -945,7 +995,8 @@ button.button-reset.components-button {
 	}
 
 	&.is-style-warning {
-		&.is-appearance-default {
+		&.is-appearance-default,
+		&.is-appearance-centered{
 			h2.alerts-dlx-title {
 				color: $material-warning-color;
 			}
@@ -1037,7 +1088,8 @@ button.button-reset.components-button {
 	}
 
 	&.is-style-error {
-		&.is-appearance-default {
+		&.is-appearance-default,
+		&.is-appearance-centered {
 			h2.alerts-dlx-title {
 				color: $material-error-color;
 			}

@@ -86,7 +86,7 @@
     },
     "baseFontSize": {
       "type": "number",
-      "default": 16
+      "default": 18
     },
     "icon": {
       "type": "string",
