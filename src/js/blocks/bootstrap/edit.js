@@ -34,7 +34,7 @@ import infoSvgs from '../components/icons/MaterialInfo';
 import warningSvgs from '../components/icons/MaterialWarning';
 import ChakraIcons from '../components/icons/ChakraIcons';
 
-const ChakraAlerts = ( props ) => {
+const BootstrapAlerts = ( props ) => {
 	// Shortcuts.
 	const { attributes, setAttributes } = props;
 
@@ -382,4 +382,4 @@ const ChakraAlerts = ( props ) => {
 	);
 };
 
-export default ChakraAlerts;
+export default BootstrapAlerts;
