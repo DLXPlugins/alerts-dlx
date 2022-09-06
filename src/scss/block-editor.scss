@@ -136,6 +136,12 @@ button.button-reset.components-button {
 		}
 	}
 
+	&.icon-vertical-align-centered {
+		.alerts-dlx-icon {
+			align-items: center;
+		}
+	}
+
 	&.is-appearance-centered {
 		.alerts-dlx-chakra {
 			display: block;
@@ -760,6 +766,12 @@ button.button-reset.components-button {
 			display: flex;
 			align-items: flex-start;
 			justify-content: center;
+		}
+	}
+
+	&.icon-vertical-align-centered {
+		.alerts-dlx-icon {
+			align-items: center;
 		}
 	}
 

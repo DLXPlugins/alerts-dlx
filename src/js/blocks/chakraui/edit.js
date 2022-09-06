@@ -53,6 +53,7 @@ const MaterialAlerts = ( props ) => {
 		baseFontSize,
 		enableCustomFonts,
 		variant,
+		iconVerticalAlignment,
 	} = attributes;
 
 	const inspectorControls = (
@@ -136,6 +137,34 @@ const MaterialAlerts = ( props ) => {
 						</ButtonGroup>
 					</BaseControl>
 				</PanelRow>
+				{ ( buttonEnabled && 'centered' !== variant ) && (
+					<PanelRow>
+						<BaseControl id="alerts-dlx-button-group-icon-alignment" label={ __( 'Icon Vertical Alignment', 'quotes-dlx' ) } className="alerts-dlx-material-variants">
+							<ButtonGroup>
+								<Button
+									variant={ iconVerticalAlignment === 'top' ? 'primary' : 'secondary' }
+									onClick={ ( e ) => {
+										setAttributes( {
+											iconVerticalAlignment: 'top',
+										} );
+									} }
+								>
+									{ __( 'Top', 'alerts-dlx' ) }
+								</Button>
+								<Button
+									variant={ iconVerticalAlignment === 'centered' ? 'primary' : 'secondary' }
+									onClick={ ( e ) => {
+										setAttributes( {
+											iconVerticalAlignment: 'centered',
+										} );
+									} }
+								>
+									{ __( 'Centered', 'alerts-dlx' ) }
+								</Button>
+							</ButtonGroup>
+						</BaseControl>
+					</PanelRow>
+				) }
 				<PanelRow>
 					<RangeControl
 						label={ __( 'Set the Base Font Size', 'alerts-dlx' ) }
@@ -341,6 +370,8 @@ const MaterialAlerts = ( props ) => {
 			'is-appearance-left-accent': 'left-accent' === variant,
 			'is-appearance-top-accent': 'top-accent' === variant,
 			'is-appearance-centered': 'centered' === variant,
+			'icon-vertical-align-top': 'top' === iconVerticalAlignment,
+			'icon-vertical-align-centered': 'centered' === iconVerticalAlignment,
 		} ),
 	} );
 

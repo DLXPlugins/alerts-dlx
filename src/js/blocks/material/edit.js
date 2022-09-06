@@ -53,6 +53,7 @@ const CharkaAlerts = ( props ) => {
 		enableCustomFonts,
 		variant,
 		enableDropShadow,
+		iconVerticalAlignment,
 	} = attributes;
 
 	const inspectorControls = (
@@ -82,7 +83,7 @@ const CharkaAlerts = ( props ) => {
 				</>
 				<PanelRow>
 					<BaseControl id="alerts-dlx-variants-button-group" label={ __( 'Set the Alert Variant', 'quotes-dlx' ) } className="alerts-dlx-material-variants">
-						<ButtonGroup label="test">
+						<ButtonGroup>
 							<Button
 								variant={ variant === 'default' ? 'primary' : 'secondary' }
 								onClick={ ( e ) => {
@@ -126,6 +127,34 @@ const CharkaAlerts = ( props ) => {
 						</ButtonGroup>
 					</BaseControl>
 				</PanelRow>
+				{ ( buttonEnabled && 'centered' !== variant ) && (
+					<PanelRow>
+						<BaseControl id="alerts-dlx-button-group-icon-alignment" label={ __( 'Icon Vertical Alignment', 'quotes-dlx' ) } className="alerts-dlx-material-variants">
+							<ButtonGroup>
+								<Button
+									variant={ iconVerticalAlignment === 'top' ? 'primary' : 'secondary' }
+									onClick={ ( e ) => {
+										setAttributes( {
+											iconVerticalAlignment: 'top',
+										} );
+									} }
+								>
+									{ __( 'Top', 'alerts-dlx' ) }
+								</Button>
+								<Button
+									variant={ iconVerticalAlignment === 'centered' ? 'primary' : 'secondary' }
+									onClick={ ( e ) => {
+										setAttributes( {
+											iconVerticalAlignment: 'centered',
+										} );
+									} }
+								>
+									{ __( 'Centered', 'alerts-dlx' ) }
+								</Button>
+							</ButtonGroup>
+						</BaseControl>
+					</PanelRow>
+				) }
 				<PanelRow>
 					<RangeControl
 						label={ __( 'Set the Base Font Size', 'alerts-dlx' ) }
@@ -355,6 +384,8 @@ const CharkaAlerts = ( props ) => {
 			'is-appearance-filled': 'filled' === variant,
 			'is-appearance-centered': 'centered' === variant,
 			'is-dropshadow-enabled': enableDropShadow,
+			'icon-vertical-align-top': 'top' === iconVerticalAlignment,
+			'icon-vertical-align-centered': 'centered' === iconVerticalAlignment,
 		} ),
 	} );
 

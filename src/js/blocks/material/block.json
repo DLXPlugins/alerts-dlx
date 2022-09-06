@@ -93,6 +93,10 @@
 		"enableDropShadow": {
 			"type": "boolean",
 			"default": false
+		},
+		"iconVerticalAlignment": {
+			"type": "string",
+			"default": "top"
 		}
 	},
 	"example": {
