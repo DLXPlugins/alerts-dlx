@@ -32,8 +32,9 @@ import IconPicker from '../components/IconPicker';
 import successSvgs from '../components/icons/MaterialSuccess';
 import infoSvgs from '../components/icons/MaterialInfo';
 import warningSvgs from '../components/icons/MaterialWarning';
+import ChakraIcons from '../components/icons/ChakraIcons';
 
-const CharkaAlerts = ( props ) => {
+const MaterialAlerts = ( props ) => {
 	// Shortcuts.
 	const { attributes, setAttributes } = props;
 
@@ -52,7 +53,6 @@ const CharkaAlerts = ( props ) => {
 		baseFontSize,
 		enableCustomFonts,
 		variant,
-		enableDropShadow,
 	} = attributes;
 
 	const inspectorControls = (
@@ -82,36 +82,46 @@ const CharkaAlerts = ( props ) => {
 				</>
 				<PanelRow>
 					<BaseControl id="alerts-dlx-variants-button-group" label={ __( 'Set the Alert Variant', 'quotes-dlx' ) }>
-						<ButtonGroup label="test">
+						<ButtonGroup>
 							<Button
-								variant={ variant === 'default' ? 'primary' : 'secondary' }
+								variant={ variant === 'subtle' ? 'primary' : 'secondary' }
 								onClick={ ( e ) => {
 									setAttributes( {
-										variant: 'default',
+										variant: 'subtle',
 									} );
 								} }
 							>
-								{ __( 'Default', 'alerts-dlx' ) }
+								{ __( 'Subtle', 'alerts-dlx' ) }
 							</Button>
 							<Button
-								variant={ variant === 'outlined' ? 'primary' : 'secondary' }
+								variant={ variant === 'solid' ? 'primary' : 'secondary' }
 								onClick={ ( e ) => {
 									setAttributes( {
-										variant: 'outlined',
+										variant: 'solid',
 									} );
 								} }
 							>
-								{ __( 'Outlined', 'alerts-dlx' ) }
+								{ __( 'Solid', 'alerts-dlx' ) }
 							</Button>
 							<Button
-								variant={ variant === 'filled' ? 'primary' : 'secondary' }
+								variant={ variant === 'left-accent' ? 'primary' : 'secondary' }
 								onClick={ ( e ) => {
 									setAttributes( {
-										variant: 'filled',
+										variant: 'left-accent',
 									} );
 								} }
 							>
-								{ __( 'Filled', 'alerts-dlx' ) }
+								{ __( 'Left Accent', 'alerts-dlx' ) }
+							</Button>
+							<Button
+								variant={ variant === 'top-accent' ? 'primary' : 'secondary' }
+								onClick={ ( e ) => {
+									setAttributes( {
+										variant: 'top-accent',
+									} );
+								} }
+							>
+								{ __( 'Top Accent', 'alerts-dlx' ) }
 							</Button>
 						</ButtonGroup>
 					</BaseControl>
@@ -134,20 +144,6 @@ const CharkaAlerts = ( props ) => {
 						help={ __( 'Set the base font size for the alert.', 'alerts-dlx' ) }
 					/>
 				</PanelRow>
-				{ 'default' === variant && (
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Drop Shadow', 'alerts-dlx' ) }
-							checked={ enableDropShadow }
-							onChange={ ( value ) => {
-								setAttributes( {
-									enableDropShadow: value,
-								} );
-							} }
-							help={ __( 'Enable or disable the drop shadow for the default variant.', 'alerts-dlx' ) }
-						/>
-					</PanelRow>
-				) }
 			</PanelBody>
 			<PanelBody initialOpen={ false } title={ __( 'Alert Settings', 'quotes-dlx' ) }>
 				<>
@@ -241,24 +237,14 @@ const CharkaAlerts = ( props ) => {
 	}, [ className ] );
 
 	const getIconSets = () => {
-		switch ( alertType ) {
-			case 'success':
-				return successSvgs;
-			case 'info':
-				return infoSvgs;
-			case 'warning':
-			case 'error':
-				return warningSvgs;
-			default:
-				return successSvgs;
-		}
+		return ChakraIcons;
 	};
 
 	// Calculate max width.
 	const maxWidthStyle = {
 		maxWidth: maximumWidth + maximumWidthUnit,
 	};
-	const baseFontSizeStyles = `--alerts-dlx-material-base-size: ${ parseInt(
+	const baseFontSizeStyles = `--alerts-dlx-chakra-base-size: ${ parseInt(
 		baseFontSize
 	) }px ;`;
 	const baseStyles = `:root { ${ baseFontSizeStyles } }`;
@@ -274,7 +260,7 @@ const CharkaAlerts = ( props ) => {
 			) }
 			<figure
 				role="alert"
-				className={ classnames( 'alerts-dlx-alert alerts-dlx-material', {
+				className={ classnames( 'alerts-dlx-alert alerts-dlx-chakra', {
 					'alerts-dlx-has-icon': iconEnabled,
 					'alerts-dlx-has-description': descriptionEnabled,
 					'alerts-dlx-has-button': buttonEnabled,
@@ -309,7 +295,7 @@ const CharkaAlerts = ( props ) => {
 						{ descriptionEnabled && (
 							<div className="alerts-dlx-content">
 								<RichText
-									tagName="p"
+									tagName="div"
 									multiline="p"
 									placeholder={ __( 'Alert Description', 'quotes-dlx' ) }
 									value={ alertDescription }
@@ -334,16 +320,16 @@ const CharkaAlerts = ( props ) => {
 	);
 
 	const blockProps = useBlockProps( {
-		className: classnames( className, 'alerts-dlx template-material', {
+		className: classnames( className, 'alerts-dlx template-chakra', {
 			'is-style-success': className === undefined && 'success' === alertType,
 			'is-style-info': className === undefined && 'info' === alertType,
 			'is-style-warning': className === undefined && 'warning' === alertType,
 			'is-style-error': className === undefined && 'error' === alertType,
 			'custom-fonts-enabled': enableCustomFonts,
-			'is-appearance-default': 'default' === variant,
-			'is-appearance-outlined': 'outlined' === variant,
-			'is-appearance-filled': 'filled' === variant,
-			'is-dropshadow-enabled': enableDropShadow,
+			'is-appearance-subtle': 'subtle' === variant,
+			'is-appearance-solid': 'solid' === variant,
+			'is-appearance-left-accent': 'left-accent' === variant,
+			'is-appearance-top-accent': 'top-accent' === variant,
 		} ),
 	} );
 
@@ -354,4 +340,4 @@ const CharkaAlerts = ( props ) => {
 	);
 };
 
-export default CharkaAlerts;
+export default MaterialAlerts;

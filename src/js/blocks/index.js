@@ -1,4 +1,5 @@
 import './material';
+import './chakraui';
 import AlertsLogo from './components/icons/AlertsLogo';
 
 ( function() {
