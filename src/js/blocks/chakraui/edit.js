@@ -29,9 +29,6 @@ import {
 import AlertButton from '../components/AlertButton';
 import UnitChooser from '../components/unit-picker';
 import IconPicker from '../components/IconPicker';
-import successSvgs from '../components/icons/MaterialSuccess';
-import infoSvgs from '../components/icons/MaterialInfo';
-import warningSvgs from '../components/icons/MaterialWarning';
 import ChakraIcons from '../components/icons/ChakraIcons';
 
 const ChakraAlerts = ( props ) => {

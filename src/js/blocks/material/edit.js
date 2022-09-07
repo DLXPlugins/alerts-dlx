@@ -29,9 +29,7 @@ import {
 import AlertButton from '../components/AlertButton';
 import UnitChooser from '../components/unit-picker';
 import IconPicker from '../components/IconPicker';
-import successSvgs from '../components/icons/MaterialSuccess';
-import infoSvgs from '../components/icons/MaterialInfo';
-import warningSvgs from '../components/icons/MaterialWarning';
+import materialSvgs from '../components/icons/MaterialIcons';
 
 const CharkaAlerts = ( props ) => {
 	// Shortcuts.
@@ -280,17 +278,7 @@ const CharkaAlerts = ( props ) => {
 	}, [ className ] );
 
 	const getIconSets = () => {
-		switch ( alertType ) {
-			case 'success':
-				return successSvgs;
-			case 'info':
-				return infoSvgs;
-			case 'warning':
-			case 'error':
-				return warningSvgs;
-			default:
-				return successSvgs;
-		}
+		return materialSvgs;
 	};
 
 	// Calculate max width.
