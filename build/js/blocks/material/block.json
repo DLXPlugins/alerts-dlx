@@ -107,6 +107,14 @@
     "iconVerticalAlignment": {
       "type": "string",
       "default": "top"
+    },
+    "uniqueId": {
+      "type": "string",
+      "default": ""
+    },
+    "alertGroup": {
+      "type": "string",
+      "default": "material"
     }
   },
   "example": {

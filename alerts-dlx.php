@@ -94,15 +94,15 @@ class AlertsDLX {
 		// $license     = \MediaRonLLC\QuotesDLX\Options_License::get_options();
 		// $license_key = $license['license_key'] ?? '';
 		// $edd_updater = new \MediaRonLLC\QuotesDLX\Admin\Plugin_Updater(
-		// 	'https://dlxplugins.com',
-		// 	__FILE__,
-		// 	array(
-		// 		'version' => QUOTES_DLX_VERSION,
-		// 		'license' => $license_key,
-		// 		'item_id' => 676,
-		// 		'author'  => 'DLX Plugins',
-		// 		'beta'    => false,
-		// 	)
+		// 'https://dlxplugins.com',
+		// __FILE__,
+		// array(
+		// 'version' => QUOTES_DLX_VERSION,
+		// 'license' => $license_key,
+		// 'item_id' => 676,
+		// 'author'  => 'DLX Plugins',
+		// 'beta'    => false,
+		// )
 		// );
 	}
 }
@@ -114,5 +114,13 @@ add_action(
 		$alerts_dlx->plugins_loaded();
 	}
 );
-// register_activation_hook( __FILE__, array( '\MediaRonLLC\QuotesDLX\Admin\Plugin_Settings_Links', 'plugin_activate' ) );
-// add_action( 'admin_init', array( '\MediaRonLLC\QuotesDLX\Admin\Plugin_Settings_Links', 'redirect_to_import_screen' ) );
+
+// Custom the_content filter for output and no conflicts.
+global $wp_embed;
+add_filter( 'alerts_dlx_the_content', array( $wp_embed, 'run_shortcode' ), 8 );
+add_filter( 'alerts_dlx_the_content', array( $wp_embed, 'autoembed' ), 8 );
+add_filter( 'alerts_dlx_the_content', 'wptexturize' );
+add_filter( 'alerts_dlx_the_content', 'convert_chars' );
+add_filter( 'alerts_dlx_the_content', 'wpautop' );
+add_filter( 'alerts_dlx_the_content', 'shortcode_unautop' );
+add_filter( 'alerts_dlx_the_content', 'do_shortcode' );
