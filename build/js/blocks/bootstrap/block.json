@@ -98,7 +98,7 @@
     },
     "variant": {
       "type": "string",
-      "default": "subtle"
+      "default": "default"
     },
     "enableDropShadow": {
       "type": "boolean",

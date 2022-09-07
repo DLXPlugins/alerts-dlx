@@ -1,6 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 import metadata from './block.json';
-import ChakraUILogo from '../components/icons/ChakraUILogo';
+import BootstrapLogo from '../components/icons/BootstrapLogo';
 import Edit from './edit';
 
 registerBlockType( metadata, {
@@ -8,5 +8,5 @@ registerBlockType( metadata, {
 	save() {
 		return null;
 	},
-	icon: <ChakraUILogo />,
+	icon: <BootstrapLogo />,
 } );

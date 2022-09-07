@@ -32,7 +32,7 @@ import IconPicker from '../components/IconPicker';
 import successSvgs from '../components/icons/MaterialSuccess';
 import infoSvgs from '../components/icons/MaterialInfo';
 import warningSvgs from '../components/icons/MaterialWarning';
-import ChakraIcons from '../components/icons/ChakraIcons';
+import BootstrapIcons from '../components/icons/BootstrapIcons';
 
 const BootstrapAlerts = ( props ) => {
 	// Shortcuts.
@@ -82,47 +82,17 @@ const BootstrapAlerts = ( props ) => {
 					/>
 				</>
 				<PanelRow>
-					<BaseControl id="alerts-dlx-variants-button-group" label={ __( 'Set the Alert Variant', 'quotes-dlx' ) } className="alerts-dlx-chakra-variants">
+					<BaseControl id="alerts-dlx-variants-button-group" label={ __( 'Set the Alert Variant', 'quotes-dlx' ) } className="alerts-dlx-bootstrap-variants">
 						<ButtonGroup>
 							<Button
-								variant={ variant === 'subtle' ? 'primary' : 'secondary' }
+								variant={ variant === 'default' ? 'primary' : 'secondary' }
 								onClick={ ( e ) => {
 									setAttributes( {
-										variant: 'subtle',
+										variant: 'default',
 									} );
 								} }
 							>
-								{ __( 'Subtle', 'alerts-dlx' ) }
-							</Button>
-							<Button
-								variant={ variant === 'solid' ? 'primary' : 'secondary' }
-								onClick={ ( e ) => {
-									setAttributes( {
-										variant: 'solid',
-									} );
-								} }
-							>
-								{ __( 'Solid', 'alerts-dlx' ) }
-							</Button>
-							<Button
-								variant={ variant === 'left-accent' ? 'primary' : 'secondary' }
-								onClick={ ( e ) => {
-									setAttributes( {
-										variant: 'left-accent',
-									} );
-								} }
-							>
-								{ __( 'Left Accent', 'alerts-dlx' ) }
-							</Button>
-							<Button
-								variant={ variant === 'top-accent' ? 'primary' : 'secondary' }
-								onClick={ ( e ) => {
-									setAttributes( {
-										variant: 'top-accent',
-									} );
-								} }
-							>
-								{ __( 'Top Accent', 'alerts-dlx' ) }
+								{ __( 'Default', 'alerts-dlx' ) }
 							</Button>
 							<Button
 								variant={ variant === 'centered' ? 'primary' : 'secondary' }
@@ -261,29 +231,19 @@ const BootstrapAlerts = ( props ) => {
 		const styleMatch = new RegExp( /is-style-([^\s]*)/g ).exec( className );
 		if ( null !== styleMatch ) {
 			const match = styleMatch[ 1 ];
-			switch ( match ) {
-				case 'success':
-					setAttributes( { alertType: 'success' } );
-					break;
-				case 'info':
-					setAttributes( { alertType: 'info' } );
-					break;
-				case 'warning':
-					setAttributes( { alertType: 'warning' } );
-					break;
-			}
+			setAttributes( { alertType: match } );
 		}
 	}, [ className ] );
 
 	const getIconSets = () => {
-		return ChakraIcons;
+		return BootstrapIcons;
 	};
 
 	// Calculate max width.
 	const maxWidthStyle = {
 		maxWidth: maximumWidth + maximumWidthUnit,
 	};
-	const baseFontSizeStyles = `--alerts-dlx-chakra-base-size: ${ parseInt(
+	const baseFontSizeStyles = `--alerts-dlx-bootstrap-base-size: ${ parseInt(
 		baseFontSize
 	) }px ;`;
 	const baseStyles = `:root { ${ baseFontSizeStyles } }`;
@@ -299,7 +259,7 @@ const BootstrapAlerts = ( props ) => {
 			) }
 			<figure
 				role="alert"
-				className={ classnames( 'alerts-dlx-alert alerts-dlx-chakra', {
+				className={ classnames( 'alerts-dlx-alert alerts-dlx-bootstrap', {
 					'alerts-dlx-has-icon': iconEnabled,
 					'alerts-dlx-has-description': descriptionEnabled,
 					'alerts-dlx-has-button': buttonEnabled,
@@ -359,16 +319,9 @@ const BootstrapAlerts = ( props ) => {
 	);
 
 	const blockProps = useBlockProps( {
-		className: classnames( className, 'alerts-dlx template-chakra', {
-			'is-style-success': className === undefined && 'success' === alertType,
-			'is-style-info': className === undefined && 'info' === alertType,
-			'is-style-warning': className === undefined && 'warning' === alertType,
-			'is-style-error': className === undefined && 'error' === alertType,
+		className: classnames( className, `alerts-dlx template-bootstrap is-style-${ alertType }`, {
 			'custom-fonts-enabled': enableCustomFonts,
-			'is-appearance-subtle': 'subtle' === variant,
-			'is-appearance-solid': 'solid' === variant,
-			'is-appearance-left-accent': 'left-accent' === variant,
-			'is-appearance-top-accent': 'top-accent' === variant,
+			'is-appearance-default': 'default' === variant,
 			'is-appearance-centered': 'centered' === variant,
 			'icon-vertical-align-top': 'top' === iconVerticalAlignment,
 			'icon-vertical-align-centered': 'centered' === iconVerticalAlignment,
