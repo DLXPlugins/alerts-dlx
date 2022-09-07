@@ -116,8 +116,10 @@ $bootstrap-dark-color-light: #d3d3d4;
 a.alerts-dlx-button.button-reset,
 a.alerts-dlx-button,
 button.button-reset,
+button.button-reset:hover,
 a.alerts-dlx-button,
-button.button-reset.components-button {
+button.button-reset.components-button,
+button.button-reset.components-button:hover {
 	padding: 10px 30px;
 	border-radius: 0.3125em;
 	margin-top: 0.5em;
@@ -126,9 +128,21 @@ button.button-reset.components-button {
 	height: auto;
 	text-decoration: none;
 
-	& ~ .button-reset {
+	& ~ .button-reset,
+	& ~ .button-reset:hover {
 		margin-top: 0.5em;
+		padding: 0;
 	}
+}
+
+/* Block margins on front-end and block editor */
+.template-material,
+.template-chakra,
+.template-bootstrap {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	margin-block-start: 1.5rem;
+    margin-block-end: 1.5rem;
 }
 
 /* Consolidate variants for ChakraUI options */
