@@ -175,20 +175,20 @@ class Blocks {
 						}
 						?>
 						<?php
-						if ( $button_enabled ) {
+						if ( $button_enabled && ! empty( $button_text ) && ! empty( $button_url ) ) {
 							?>
 							<div
 								class="alerts-dlx-button-wrapper"
 								style="display: inline-flex;"
 							>
-								<button
+								<a
 									class="alerts-dlx-button button-reset"
 									href="<?php echo esc_url( $button_url ); ?>"
 								>
 									<?php
 										echo esc_html( $button_text );
 									?>
-								</button>
+								</a>
 							</div>
 							<?php
 						}
