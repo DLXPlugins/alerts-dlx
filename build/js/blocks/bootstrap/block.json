@@ -162,5 +162,5 @@
   },
   "editorScript": "alerts-dlx-block",
   "editorStyle": "alerts-dlx-block-editor-styles",
-  "style": "alerts-dlx-frontend"
+  "style": "alerts-dlx-common"
 }

@@ -26,16 +26,24 @@ import {
 	useBlockProps,
 } from '@wordpress/block-editor';
 
+import { useInstanceId } from '@wordpress/compose';
+
 import AlertButton from '../components/AlertButton';
 import UnitChooser from '../components/unit-picker';
 import IconPicker from '../components/IconPicker';
 import materialSvgs from '../components/icons/MaterialIcons';
 
-const CharkaAlerts = ( props ) => {
+const MaterialAlerts = ( props ) => {
+	const generatedUniqueId = useInstanceId(
+		MaterialAlerts,
+		'adlx-material'
+	);
+
 	// Shortcuts.
 	const { attributes, setAttributes } = props;
 
 	const {
+		uniqueId,
 		alertType,
 		alertTitle,
 		alertDescription,
@@ -237,6 +245,10 @@ const CharkaAlerts = ( props ) => {
 		</>
 	);
 
+	useEffect( () => {
+		setAttributes( { uniqueId: generatedUniqueId } );
+	}, [] );
+
 	/**
 	 * Attempt to check when block styles are changed.
 	 */
@@ -270,14 +282,11 @@ const CharkaAlerts = ( props ) => {
 	const maxWidthStyle = {
 		maxWidth: maximumWidth + maximumWidthUnit,
 	};
-	const baseFontSizeStyles = `--alerts-dlx-material-base-size: ${ parseInt(
-		baseFontSize
-	) }px ;`;
-	const baseStyles = `:root { ${ baseFontSizeStyles } }`;
+	const baseFontSizeStyles = `#${ uniqueId } { font-size: ${ parseInt( baseFontSize ) }px; }`;
 	const block = (
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
-			<style>{ baseStyles }</style>
+			<style>{ baseFontSizeStyles }</style>
 			<link
 				rel="stylesheet"
 				href={ `${ alertsDlxBlock.font_stylesheet }` }
@@ -290,6 +299,7 @@ const CharkaAlerts = ( props ) => {
 					'alerts-dlx-has-button': buttonEnabled,
 				} ) }
 				style={ maxWidthStyle }
+				id={ uniqueId }
 			>
 				{ iconEnabled && (
 					<div className="alerts-dlx-icon" aria-hidden="true">
@@ -367,4 +377,4 @@ const CharkaAlerts = ( props ) => {
 	);
 };
 
-export default CharkaAlerts;
+export default MaterialAlerts;

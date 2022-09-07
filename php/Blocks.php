@@ -65,6 +65,19 @@ class Blocks {
 	 * @param string $content   Current content.
 	 */
 	public function frontend( array $attributes, string $content ) {
+
+		$alert_type = Functions::sanitize_attribute( $attributes, 'alertType', 'text' );
+		$alert_title = Functions::sanitize_attribute( $attributes, 'alertTitle', 'text' );
+		$alert_description = Functions::sanitize_attribute( $attributes, 'alertDescription', 'text' );
+		$button_enabled = Functions::sanitize_attribute( $attributes, 'buttonEnabled', 'boolean' );
+		$maximum_width_unit = Functions::sanitize_attribute( $attributes, 'maximumWidthUnit', 'text' );
+		$maximum_width = Functions::sanitize_attribute( $attributes, 'maximumWidth', 'integer' );
+		$icon = Functions::sanitize_attribute( $attributes, 'icon', 'raw' );
+		$description_enabled = Functions::sanitize_attribute( $attributes, 'descriptionEnabled', 'boolean' );
+		$title_enabled = Functions::sanitize_attribute( $attributes, 'titleEnabled', 'boolean' );
+		$icon_enabled = Functions::sanitize_attribute( $attributes, 'iconEnabled', 'boolean' );
+		$base_font_size = Functions::sanitize_attribute( $attributes, 'baseFontSize', 'integer' );
+		$icon_vertical_alignment = Functions::sanitize_attribute( $attributes, 'iconVerticalAlignment', 'text' );
 		return 'hi';
 	}
 
@@ -104,9 +117,17 @@ class Blocks {
 		);
 
 		wp_register_style(
-			'alerts-dlx-block-editor-styles-roboto',
-			Functions::get_plugin_url( 'dist/dlx-gfont-roboto.css' ),
+			'alerts-dlx-block-editor-styles-lato',
+			Functions::get_plugin_url( 'dist/alerts-dlx-gfont-lato.css' ),
 			array( 'alerts-dlx-block-editor-styles' ),
+			Functions::get_plugin_version(),
+			'all'
+		);
+
+		wp_register_style(
+			'alerts-dlx-common',
+			Functions::get_plugin_url( 'dist/alerts-dlx-common.css' ),
+			array( 'alerts-dlx-block-editor-styles-lato' ),
 			Functions::get_plugin_version(),
 			'all'
 		);

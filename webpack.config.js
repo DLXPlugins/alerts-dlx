@@ -17,6 +17,7 @@ module.exports = ( env ) => {
 			entry: {
 				'alerts-dlx-frontend': './src/scss/frontend.scss',
 				'alerts-dlx-admin': { import: './src/scss/admin.scss' },
+				'alerts-dlx-common': { import: './src/scss/common.scss' },
 				'alerts-dlx-block-editor': './src/scss/block-editor.scss',
 				'alerts-dlx-gfont-roboto': { import: './src/scss/fonts/roboto.scss' },
 				'alerts-dlx-gfont-lato': { import: './src/scss/fonts/lato.scss' },
