@@ -202,15 +202,6 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
         buttonEnabled: value
       });
     }
-  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Custom Fonts', 'alerts-dlx'),
-    checked: enableCustomFonts,
-    onChange: function onChange(value) {
-      setAttributes({
-        enableCustomFonts: value
-      });
-    },
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Material themed alert boxes use the Roboto font. If you want to use your own fonts, disable this option.', 'alerts-dlx')
   })))));
   /**
    * Attempt to check when block styles are changed.
@@ -241,9 +232,9 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
   };
   var baseFontSizeStyles = "--alerts-dlx-bootstrap-base-size: ".concat(parseInt(baseFontSize), "px ;");
   var baseStyles = ":root { ".concat(baseFontSizeStyles, " }");
-  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseStyles), enableCustomFonts && /*#__PURE__*/React.createElement("link", {
+  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseStyles), /*#__PURE__*/React.createElement("link", {
     rel: "stylesheet",
-    href: "".concat(alertsDlxBlock.roboto_font_stylesheet)
+    href: "".concat(alertsDlxBlock.font_stylesheet)
   }), /*#__PURE__*/React.createElement("figure", {
     role: "alert",
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('alerts-dlx-alert alerts-dlx-bootstrap', {
@@ -525,15 +516,6 @@ var ChakraAlerts = function ChakraAlerts(props) {
         buttonEnabled: value
       });
     }
-  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Custom Fonts', 'alerts-dlx'),
-    checked: enableCustomFonts,
-    onChange: function onChange(value) {
-      setAttributes({
-        enableCustomFonts: value
-      });
-    },
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Material themed alert boxes use the Roboto font. If you want to use your own fonts, disable this option.', 'alerts-dlx')
   })))));
   /**
    * Attempt to check when block styles are changed.
@@ -581,9 +563,9 @@ var ChakraAlerts = function ChakraAlerts(props) {
   };
   var baseFontSizeStyles = "--alerts-dlx-chakra-base-size: ".concat(parseInt(baseFontSize), "px ;");
   var baseStyles = ":root { ".concat(baseFontSizeStyles, " }");
-  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseStyles), enableCustomFonts && /*#__PURE__*/React.createElement("link", {
+  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseStyles), /*#__PURE__*/React.createElement("link", {
     rel: "stylesheet",
-    href: "".concat(alertsDlxBlock.roboto_font_stylesheet)
+    href: "".concat(alertsDlxBlock.font_stylesheet)
   }), /*#__PURE__*/React.createElement("figure", {
     role: "alert",
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('alerts-dlx-alert alerts-dlx-chakra', {
@@ -3411,15 +3393,6 @@ var CharkaAlerts = function CharkaAlerts(props) {
         buttonEnabled: value
       });
     }
-  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Custom Fonts', 'alerts-dlx'),
-    checked: enableCustomFonts,
-    onChange: function onChange(value) {
-      setAttributes({
-        enableCustomFonts: value
-      });
-    },
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Material themed alert boxes use the Roboto font. If you want to use your own fonts, disable this option.', 'alerts-dlx')
   })))));
   /**
    * Attempt to check when block styles are changed.
@@ -3467,9 +3440,9 @@ var CharkaAlerts = function CharkaAlerts(props) {
   };
   var baseFontSizeStyles = "--alerts-dlx-material-base-size: ".concat(parseInt(baseFontSize), "px ;");
   var baseStyles = ":root { ".concat(baseFontSizeStyles, " }");
-  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseStyles), enableCustomFonts && /*#__PURE__*/React.createElement("link", {
+  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseStyles), /*#__PURE__*/React.createElement("link", {
     rel: "stylesheet",
-    href: "".concat(alertsDlxBlock.roboto_font_stylesheet)
+    href: "".concat(alertsDlxBlock.font_stylesheet)
   }), /*#__PURE__*/React.createElement("figure", {
     role: "alert",
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('alerts-dlx-alert alerts-dlx-material', {

@@ -107,14 +107,13 @@ $bootstrap-dark-color-bold: #141619;
 $bootstrap-dark-color-light: #d3d3d4;
 
 /* MaterialUI Fonts */
-.template-material.custom-fonts-enabled * {
-	font-family: var(
-		--alerts-dlx-material-font-family,
-		'Roboto',
+.template-material *,
+.template-chakra *,
+.template-bootstrap * {
+	font-family: 'Lato',
 		'Helvetica',
 		'Arial',
-		sans-serif
-	);
+		sans-serif;
 }
 
 button.button-reset,

@@ -197,21 +197,6 @@ const BootstrapAlerts = ( props ) => {
 							} }
 						/>
 					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Custom Fonts', 'alerts-dlx' ) }
-							checked={ enableCustomFonts }
-							onChange={ ( value ) => {
-								setAttributes( {
-									enableCustomFonts: value,
-								} );
-							} }
-							help={ __(
-								'Material themed alert boxes use the Roboto font. If you want to use your own fonts, disable this option.',
-								'alerts-dlx'
-							) }
-						/>
-					</PanelRow>
 				</>
 			</PanelBody>
 		</>
@@ -248,12 +233,10 @@ const BootstrapAlerts = ( props ) => {
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
 			<style>{ baseStyles }</style>
-			{ enableCustomFonts && (
-				<link
-					rel="stylesheet"
-					href={ `${ alertsDlxBlock.roboto_font_stylesheet }` }
-				/>
-			) }
+			<link
+				rel="stylesheet"
+				href={ `${ alertsDlxBlock.font_stylesheet }` }
+			/>
 			<figure
 				role="alert"
 				className={ classnames( 'alerts-dlx-alert alerts-dlx-bootstrap', {

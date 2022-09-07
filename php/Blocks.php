@@ -123,7 +123,7 @@ class Blocks {
 			'alerts-dlx-block',
 			'alertsDlxBlock',
 			array(
-				'roboto_font_stylesheet' => Functions::get_plugin_url( 'dist/alerts-dlx-gfont-roboto.css' ),
+				'font_stylesheet' => Functions::get_plugin_url( 'dist/alerts-dlx-gfont-lato.css' ),
 			)
 		);
 	}

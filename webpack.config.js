@@ -19,6 +19,7 @@ module.exports = ( env ) => {
 				'alerts-dlx-admin': { import: './src/scss/admin.scss' },
 				'alerts-dlx-block-editor': './src/scss/block-editor.scss',
 				'alerts-dlx-gfont-roboto': { import: './src/scss/fonts/roboto.scss' },
+				'alerts-dlx-gfont-lato': { import: './src/scss/fonts/lato.scss' },
 			},
 			resolve: {
 				alias: {
