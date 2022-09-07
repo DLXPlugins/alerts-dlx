@@ -142,7 +142,7 @@ const ChakraAlerts = ( props ) => {
 						</ButtonGroup>
 					</BaseControl>
 				</PanelRow>
-				{ ( buttonEnabled && 'centered' !== variant ) && (
+				{ ( iconEnabled && 'centered' !== variant ) && (
 					<PanelRow>
 						<BaseControl id="alerts-dlx-button-group-icon-alignment" label={ __( 'Icon Vertical Alignment', 'quotes-dlx' ) } className="alerts-dlx-material-variants">
 							<ButtonGroup>
