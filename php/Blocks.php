@@ -83,6 +83,7 @@ class Blocks {
 		$unique_id               = Functions::sanitize_attribute( $attributes, 'uniqueId', 'text' );
 		$alert_group             = Functions::sanitize_attribute( $attributes, 'alertGroup', 'text' );
 		$alert_type              = Functions::sanitize_attribute( $attributes, 'alertType', 'text' );
+		$align 				     = Functions::sanitize_attribute( $attributes, 'align', 'text' );
 		$alert_title             = Functions::sanitize_attribute( $attributes, 'alertTitle', 'text' );
 		$alert_description       = Functions::sanitize_attribute( $attributes, 'alertDescription', 'text' );
 		$button_enabled          = Functions::sanitize_attribute( $attributes, 'buttonEnabled', 'boolean' );
@@ -125,6 +126,7 @@ class Blocks {
 			'is-style-' . $alert_type,
 			'is-appearance-' . $variant,
 			'icon-vertical-align-' . $icon_vertical_alignment,
+			'align' . $align,
 		);
 		?>
 		<!-- begin AlertsDLX output -->
