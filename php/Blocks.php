@@ -97,7 +97,7 @@ class Blocks {
 		$variant                 = Functions::sanitize_attribute( $attributes, 'variant', 'text' );
 		$button_text             = Functions::sanitize_attribute( $attributes, 'buttonText', 'text' );
 		$button_url              = Functions::sanitize_attribute( $attributes, 'buttonUrl', 'text' );
-		$button_target           = Functions::sanitize_attribute( $attributes, 'buttonTarget', 'text' );
+		$button_target           = Functions::sanitize_attribute( $attributes, 'buttonTarget', 'boolean' );
 		$button_rel_no_follow    = Functions::sanitize_attribute( $attributes, 'buttonRelNoFollow', 'boolean' );
 		$button_rel_sponsored    = Functions::sanitize_attribute( $attributes, 'buttonRelSponsored', 'boolean' );
 
@@ -184,11 +184,28 @@ class Blocks {
 								<a
 									class="alerts-dlx-button button-reset"
 									href="<?php echo esc_url( $button_url ); ?>"
-								>
 									<?php
-										echo esc_html( $button_text );
+									if ( $button_target ) {
+										?>
+										target="_blank"
+										<?php
+									}
 									?>
-								</a>
+									<?php
+									$rel = array();
+									if ( $button_rel_no_follow ) {
+										$rel[] = 'nofollow';
+									}
+									if ( $button_rel_sponsored ) {
+										$rel[] = 'sponsored';
+									}
+									if ( ! empty( $rel ) ) {
+										?>
+										rel="<?php echo esc_attr( implode( ' ', $rel ) ); ?>"
+										<?php
+									}
+									?>
+								><?php echo esc_html( $button_text ); ?></a>
 							</div>
 							<?php
 						}

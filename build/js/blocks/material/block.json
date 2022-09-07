@@ -65,7 +65,7 @@
       "default": false
     },
     "buttonTarget": {
-      "type": "string",
+      "type": "boolean",
       "default": false
     },
     "buttonRelNoFollow": {
