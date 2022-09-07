@@ -83,7 +83,7 @@ class Blocks {
 		$unique_id               = Functions::sanitize_attribute( $attributes, 'uniqueId', 'text' );
 		$alert_group             = Functions::sanitize_attribute( $attributes, 'alertGroup', 'text' );
 		$alert_type              = Functions::sanitize_attribute( $attributes, 'alertType', 'text' );
-		$align 				     = Functions::sanitize_attribute( $attributes, 'align', 'text' );
+		$align                   = Functions::sanitize_attribute( $attributes, 'align', 'text' );
 		$alert_title             = Functions::sanitize_attribute( $attributes, 'alertTitle', 'text' );
 		$alert_description       = Functions::sanitize_attribute( $attributes, 'alertDescription', 'raw' );
 		$button_enabled          = Functions::sanitize_attribute( $attributes, 'buttonEnabled', 'boolean' );
@@ -228,13 +228,7 @@ class Blocks {
 
 		// Register front-end script if blocks are present on the post/page.
 		if ( has_block( 'mediaron/alerts-dlx-material' ) || has_block( '"mediaron/alerts-dlx-bootstrap' ) || has_block( 'mediaron/alerts-dlx-chakra' ) ) {
-			wp_enqueue_style(
-				'alerts-dlx-frontend',
-				Functions::get_plugin_url( 'dist/alerts-dlx-frontend.css' ),
-				array(),
-				Functions::get_plugin_version(),
-				'all'
-			);
+			// Placeholder for now.
 		}
 
 		wp_register_style(

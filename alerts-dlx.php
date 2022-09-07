@@ -3,7 +3,7 @@
  * Plugin Name:       AlertsDLX
  * Plugin URI:        https://dlxplugins.com/plugins/alertsdlx/
  * Description:       An alert and notification block inspired by Bootstrap, Material UI, and Chakra UI.
- * Version:           0.0.7
+ * Version:           1.0.0
  * Requires at least: 5.9
  * Requires PHP:      7.2
  * Author:            DLX Plugins
@@ -18,7 +18,7 @@
 
 namespace DLXPlugins\AlertsDLX;
 
-define( 'ALERTS_DLX_VERSION', '1.0.37' );
+define( 'ALERTS_DLX_VERSION', '1.0.0' );
 define( 'ALERTS_DLX_FILE', __FILE__ );
 
 // Support for site-level autoloading.
@@ -65,12 +65,6 @@ class AlertsDLX {
 		);
 
 		Blocks::run();
-		// Ajax::run();
-
-		// Admin\Plugin_Settings_Links::run();
-		// Admin\Register_Menu::run();
-
-		// add_action( 'init', array( $this, 'init' ) );
 
 		/**
 		 * When AlertsDLX can be extended.
@@ -80,9 +74,6 @@ class AlertsDLX {
 		 * @since 1.0.0
 		 */
 		do_action( 'alerts_dlx_loaded' );
-
-		// Init all the core themes.
-		// Themes\Themes_Init::run();
 	}
 
 	/**
@@ -90,20 +81,7 @@ class AlertsDLX {
 	 */
 	public function init() {
 
-		// Setup EDD licensing.
-		// $license     = \MediaRonLLC\QuotesDLX\Options_License::get_options();
-		// $license_key = $license['license_key'] ?? '';
-		// $edd_updater = new \MediaRonLLC\QuotesDLX\Admin\Plugin_Updater(
-		// 'https://dlxplugins.com',
-		// __FILE__,
-		// array(
-		// 'version' => QUOTES_DLX_VERSION,
-		// 'license' => $license_key,
-		// 'item_id' => 676,
-		// 'author'  => 'DLX Plugins',
-		// 'beta'    => false,
-		// )
-		// );
+		// Nothing here yet.
 	}
 }
 
