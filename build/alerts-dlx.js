@@ -283,7 +283,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert Description', 'quotes-dlx'),
     value: alertDescription,
     className: "alerts-dlx-content",
-    allowedFormats: ['core/bold', 'core/italic'],
+    allowedFormats: ['core/bold', 'core/italic', 'core/link'],
     onChange: function onChange(value) {
       setAttributes({
         alertDescription: value
@@ -624,7 +624,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert Description', 'quotes-dlx'),
     value: alertDescription,
     className: "alerts-dlx-content",
-    allowedFormats: ['core/bold', 'core/italic'],
+    allowedFormats: ['core/bold', 'core/italic', 'core/link'],
     onChange: function onChange(value) {
       setAttributes({
         alertDescription: value
@@ -2911,7 +2911,7 @@ var MaterialAlerts = function MaterialAlerts(props) {
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert Description', 'quotes-dlx'),
     value: alertDescription,
     className: "alerts-dlx-content",
-    allowedFormats: ['core/bold', 'core/italic'],
+    allowedFormats: ['core/bold', 'core/italic', 'core/link'],
     onChange: function onChange(value) {
       setAttributes({
         alertDescription: value

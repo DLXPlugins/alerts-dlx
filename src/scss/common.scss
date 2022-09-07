@@ -148,6 +148,15 @@ button.button-reset.components-button {
 	}
 }
 
+figure.alerts-dlx-alert {
+	text-align: left;
+}
+.alerts-dlx-content a,
+.alerts-dlx-content a:hover {
+	color: inherit;
+	text-decoration: underline;
+}
+
 .template-chakra {
 	.alerts-dlx-chakra {
 		display: grid;

@@ -329,7 +329,7 @@ const ChakraAlerts = ( props ) => {
 									placeholder={ __( 'Alert Description', 'quotes-dlx' ) }
 									value={ alertDescription }
 									className="alerts-dlx-content"
-									allowedFormats={ [ 'core/bold', 'core/italic' ] }
+									allowedFormats={ [ 'core/bold', 'core/italic', 'core/link' ] }
 									onChange={ ( value ) => {
 										setAttributes( { alertDescription: value } );
 									} }

@@ -85,7 +85,7 @@ class Blocks {
 		$alert_type              = Functions::sanitize_attribute( $attributes, 'alertType', 'text' );
 		$align 				     = Functions::sanitize_attribute( $attributes, 'align', 'text' );
 		$alert_title             = Functions::sanitize_attribute( $attributes, 'alertTitle', 'text' );
-		$alert_description       = Functions::sanitize_attribute( $attributes, 'alertDescription', 'text' );
+		$alert_description       = Functions::sanitize_attribute( $attributes, 'alertDescription', 'raw' );
 		$button_enabled          = Functions::sanitize_attribute( $attributes, 'buttonEnabled', 'boolean' );
 		$maximum_width_unit      = Functions::sanitize_attribute( $attributes, 'maximumWidthUnit', 'text' );
 		$maximum_width           = Functions::sanitize_attribute( $attributes, 'maximumWidth', 'integer' );
