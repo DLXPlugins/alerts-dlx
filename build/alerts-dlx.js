@@ -339,6 +339,7 @@ __webpack_require__.r(__webpack_exports__);
       transform: function transform(props) {
         props.alertType = 'success';
         props.variant = 'default';
+        props.className = 'is-style-success';
         return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-bootstrap', props);
       }
     }, {
@@ -347,6 +348,7 @@ __webpack_require__.r(__webpack_exports__);
       transform: function transform(props) {
         props.alertType = 'success';
         props.variant = 'default';
+        props.className = 'is-style-success';
         return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-bootstrap', props);
       }
     }],
@@ -356,6 +358,7 @@ __webpack_require__.r(__webpack_exports__);
       transform: function transform(props) {
         props.alertType = 'success';
         props.variant = 'default';
+        props.className = 'is-style-success';
         return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-material', props);
       }
     }, {
@@ -364,6 +367,7 @@ __webpack_require__.r(__webpack_exports__);
       transform: function transform(props) {
         props.alertType = 'success';
         props.variant = 'subtle';
+        props.className = 'is-style-success';
         return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-chakra', props);
       }
     }]
@@ -723,6 +727,7 @@ __webpack_require__.r(__webpack_exports__);
       transform: function transform(props) {
         props.alertType = 'success';
         props.variant = 'subtle';
+        props.className = 'is-style-success';
         return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-chakra', props);
       }
     }, {
@@ -731,6 +736,7 @@ __webpack_require__.r(__webpack_exports__);
       transform: function transform(props) {
         props.alertType = 'success';
         props.variant = 'subtle';
+        props.className = 'is-style-success';
         return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-chakra', props);
       }
     }],
@@ -740,6 +746,7 @@ __webpack_require__.r(__webpack_exports__);
       transform: function transform(props) {
         props.alertType = 'success';
         props.variant = 'default';
+        props.className = 'is-style-success';
         return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-material', props);
       }
     }, {
@@ -748,6 +755,7 @@ __webpack_require__.r(__webpack_exports__);
       transform: function transform(props) {
         props.alertType = 'success';
         props.variant = 'default';
+        props.className = 'is-style-success';
         return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-bootstrap', props);
       }
     }]
@@ -3046,6 +3054,7 @@ __webpack_require__.r(__webpack_exports__);
       transform: function transform(props) {
         props.alertType = 'success';
         props.variant = 'default';
+        props.className = 'is-style-success';
         return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-material', props);
       }
     }, {
@@ -3054,6 +3063,7 @@ __webpack_require__.r(__webpack_exports__);
       transform: function transform(props) {
         props.alertType = 'success';
         props.variant = 'default';
+        props.className = 'is-style-success';
         return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-material', props);
       }
     }],
@@ -3063,6 +3073,7 @@ __webpack_require__.r(__webpack_exports__);
       transform: function transform(props) {
         props.alertType = 'success';
         props.variant = 'subtle';
+        props.className = 'is-style-success';
         return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-chakra', props);
       }
     }, {
@@ -3071,6 +3082,7 @@ __webpack_require__.r(__webpack_exports__);
       transform: function transform(props) {
         props.alertType = 'success';
         props.variant = 'default';
+        props.className = 'is-style-success';
         return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-bootstrap', props);
       }
     }]

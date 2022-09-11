@@ -18,6 +18,7 @@ registerBlockType( metadata, {
 				transform: ( props ) => {
 					props.alertType = 'success';
 					props.variant = 'default';
+					props.className = 'is-style-success';
 					return createBlock( 'mediaron/alerts-dlx-material', props );
 				},
 			},
@@ -27,6 +28,7 @@ registerBlockType( metadata, {
 				transform: ( props ) => {
 					props.alertType = 'success';
 					props.variant = 'default';
+					props.className = 'is-style-success';
 					return createBlock( 'mediaron/alerts-dlx-material', props );
 				},
 			},
@@ -38,6 +40,7 @@ registerBlockType( metadata, {
 				transform: ( props ) => {
 					props.alertType = 'success';
 					props.variant = 'subtle';
+					props.className = 'is-style-success';
 					return createBlock( 'mediaron/alerts-dlx-chakra', props );
 				},
 			},
@@ -47,6 +50,7 @@ registerBlockType( metadata, {
 				transform: ( props ) => {
 					props.alertType = 'success';
 					props.variant = 'default';
+					props.className = 'is-style-success';
 					return createBlock( 'mediaron/alerts-dlx-bootstrap', props );
 				},
 			},
