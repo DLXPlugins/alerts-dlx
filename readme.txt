@@ -37,6 +37,10 @@ Icons included are from:
 * <a href="https://github.com/chakra-ui/chakra-ui/tree/main/packages/components/icons/src">Chakra UI Icons</a> (GitHub)
 * <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>
 
+Development:
+
+Development happens on GitHub. Please <a href="https://github.com/dlxplugins/alerts-dlx">check out the GitHub code repository for AlertsDLX</a>.
+
 == Installation ==
 
 1. Search for AlertsDLX on the Add Plugins screen.
