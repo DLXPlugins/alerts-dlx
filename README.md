@@ -4,6 +4,7 @@ AlertsDLX is a alert and notification WordPress block inspired by Bootstrap, Mat
 
 ![alerts-dlx-editor-adjust-font-size](https://user-images.githubusercontent.com/636521/189466082-bb14478e-b526-4f57-aeb1-9ce76c8decaf.jpg)
 
+https://www.youtube.com/watch?v=7dKpw5uBi5o
 
 ## Quick Links
 
