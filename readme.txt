@@ -9,11 +9,13 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://github.com/sponsors/DLXPlugins
 
-AlertsDLX is an alert block that uses MaterialUI, ChakraUI and Bootstrap styled alerts.
+AlertsDLX is an alerts and notifications block that uses MaterialUI, ChakraUI and Bootstrap styled alerts.
 
 == Description ==
 
-AlertsDLX offers styled alerts for the Block Editor.
+AlertsDLX offers beautifully styled alerts and notifications for the Block Editor.
+
+https://www.youtube.com/watch?v=7dKpw5uBi5o
 
 Quick Links:
 
@@ -34,6 +36,10 @@ Icons included are from:
 * <a href="https://fonts.google.com/icons">Google Fonts Material Icons</a>
 * <a href="https://github.com/chakra-ui/chakra-ui/tree/main/packages/components/icons/src">Chakra UI Icons</a> (GitHub)
 * <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>
+
+Development:
+
+Development happens on GitHub. Please <a href="https://github.com/dlxplugins/alerts-dlx">check out the GitHub code repository for AlertsDLX</a>.
 
 == Installation ==
 
@@ -70,11 +76,18 @@ Yes. The icon picker used allows you to enter an SVG.
 
 == Changelog ==
 
+= 1.0.1 =
+* Released 2022-09-11
+* Added transforms to the blocks so that they are interchangeable.
+
 = 1.0.0 =
 * Released 2022-09-09
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.1 =
+Added transforms to the blocks so that they are interchangeable.
 
 = 1.0.0 =
 Initial release.
