@@ -3,7 +3,7 @@
  * Plugin Name:       AlertsDLX
  * Plugin URI:        https://dlxplugins.com/plugins/alertsdlx/
  * Description:       An alert and notification block inspired by Bootstrap, Material UI, and Chakra UI.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 5.9
  * Requires PHP:      7.2
  * Author:            DLX Plugins
@@ -18,7 +18,7 @@
 
 namespace DLXPlugins\AlertsDLX;
 
-define( 'ALERTS_DLX_VERSION', '1.0.0' );
+define( 'ALERTS_DLX_VERSION', '1.0.1' );
 define( 'ALERTS_DLX_FILE', __FILE__ );
 
 // Support for site-level autoloading.
