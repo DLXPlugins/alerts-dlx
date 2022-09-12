@@ -3,7 +3,7 @@ Contributors: ronalfy
 Tags: alerts, notifications, notice, warning, blocks
 Requires at least: 5.9
 Tested up to: 6.0
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -91,7 +91,7 @@ Yes. The icon picker used allows you to enter an SVG.
 
 == Upgrade Notice ==
 
-= 1.0.5 =
+= 1.0.6 =
 Fixed "error" alerts in the backend/frontend.
 
 = 1.0.1 =
