@@ -270,6 +270,9 @@ const MaterialAlerts = ( props ) => {
 				case 'warning':
 					setAttributes( { alertType: 'warning' } );
 					break;
+				case 'error':
+					setAttributes( { alertType: 'error' } );
+					break;
 			}
 		}
 	}, [ className ] );
