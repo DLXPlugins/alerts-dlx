@@ -3,7 +3,7 @@ Contributors: ronalfy
 Tags: alerts, notifications, notice, warning, blocks
 Requires at least: 5.9
 Tested up to: 6.0
-Stable tag: 1.0.0
+Stable tag: 1.0.5
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -76,6 +76,11 @@ Yes. The icon picker used allows you to enter an SVG.
 
 == Changelog ==
 
+= 1.0.5 =
+* Released 2022-09-12
+* Fixed "error" alert styles in the block editor/frontend.
+* Updated SVG icons for .org.
+
 = 1.0.1 =
 * Released 2022-09-11
 * Added transforms to the blocks so that they are interchangeable.
@@ -85,6 +90,9 @@ Yes. The icon picker used allows you to enter an SVG.
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.5 =
+Fixed "error" alerts in the backend/frontend.
 
 = 1.0.1 =
 Added transforms to the blocks so that they are interchangeable.
