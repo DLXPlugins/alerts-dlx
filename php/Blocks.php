@@ -96,6 +96,7 @@ class Blocks {
 		$base_font_size          = Functions::sanitize_attribute( $attributes, 'baseFontSize', 'integer' );
 		$icon_vertical_alignment = Functions::sanitize_attribute( $attributes, 'iconVerticalAlignment', 'text' );
 		$variant                 = Functions::sanitize_attribute( $attributes, 'variant', 'text' );
+		$mode                    = Functions::sanitize_attribute( $attributes, 'mode', 'text' );
 		$button_text             = Functions::sanitize_attribute( $attributes, 'buttonText', 'text' );
 		$button_url              = Functions::sanitize_attribute( $attributes, 'buttonUrl', 'text' );
 		$button_target           = Functions::sanitize_attribute( $attributes, 'buttonTarget', 'boolean' );
@@ -128,6 +129,9 @@ class Blocks {
 			'icon-vertical-align-' . $icon_vertical_alignment,
 			'align' . $align,
 		);
+		if ( 'dark' === $mode ) {
+			$container_classes[] = 'is-dark-mode';
+		}
 		?>
 		<!-- begin AlertsDLX output -->
 		<style>

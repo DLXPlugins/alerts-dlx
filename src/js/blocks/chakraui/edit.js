@@ -58,6 +58,7 @@ const ChakraAlerts = ( props ) => {
 		baseFontSize,
 		enableCustomFonts,
 		variant,
+		mode,
 		iconVerticalAlignment,
 	} = attributes;
 
@@ -138,6 +139,32 @@ const ChakraAlerts = ( props ) => {
 								} }
 							>
 								{ __( 'Centered', 'alerts-dlx' ) }
+							</Button>
+						</ButtonGroup>
+					</BaseControl>
+				</PanelRow>
+				<PanelRow>
+					<BaseControl id="alerts-dlx-mode-button-group" label={ __( 'Set Light or Dark Mode', 'quotes-dlx' ) } className="alerts-dlx-chakra-mode">
+						<ButtonGroup>
+							<Button
+								variant={ mode === 'light' ? 'primary' : 'secondary' }
+								onClick={ ( e ) => {
+									setAttributes( {
+										mode: 'light',
+									} );
+								} }
+							>
+								{ __( 'Light Mode', 'alerts-dlx' ) }
+							</Button>
+							<Button
+								variant={ mode === 'dark' ? 'primary' : 'secondary' }
+								onClick={ ( e ) => {
+									setAttributes( {
+										mode: 'dark',
+									} );
+								} }
+							>
+								{ __( 'Dark Mode', 'alerts-dlx' ) }
 							</Button>
 						</ButtonGroup>
 					</BaseControl>
@@ -357,6 +384,7 @@ const ChakraAlerts = ( props ) => {
 			'is-style-info': className === undefined && 'info' === alertType,
 			'is-style-warning': className === undefined && 'warning' === alertType,
 			'is-style-error': className === undefined && 'error' === alertType,
+			'is-dark-mode': 'dark' === mode,
 			'custom-fonts-enabled': enableCustomFonts,
 			'is-appearance-subtle': 'subtle' === variant,
 			'is-appearance-solid': 'solid' === variant,
