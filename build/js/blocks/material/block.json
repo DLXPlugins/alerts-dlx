@@ -100,6 +100,10 @@
       "type": "string",
       "default": "default"
     },
+    "mode": {
+      "type": "string",
+      "default": "light"
+    },
     "enableDropShadow": {
       "type": "boolean",
       "default": false
