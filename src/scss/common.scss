@@ -129,11 +129,13 @@ button.button-reset.components-button:hover {
 	font-size: 1em;
 	height: auto;
 	text-decoration: none;
+	transition: all 0.3s ease-in-out;
 
 	& ~ .button-reset,
 	& ~ .button-reset:hover {
 		margin-top: 0.5em;
 		padding: 0;
+		transition: all 0.3s ease-in-out;
 	}
 }
 
