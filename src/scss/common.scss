@@ -139,6 +139,18 @@ button.button-reset.components-button:hover {
 	}
 }
 
+.template-chakra {
+	a.alerts-dlx-button.button-reset,
+	a.alerts-dlx-button,
+	button.button-reset,
+	button.button-reset:hover,
+	a.alerts-dlx-button,
+	button.button-reset.components-button,
+	button.button-reset.components-button:hover {
+		border-radius: 0;
+	}
+}
+
 /* Block margins on front-end and block editor */
 .template-material,
 .template-chakra,
