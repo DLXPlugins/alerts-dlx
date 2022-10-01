@@ -2793,6 +2793,7 @@ var MaterialAlerts = function MaterialAlerts(props) {
       baseFontSize = attributes.baseFontSize,
       enableCustomFonts = attributes.enableCustomFonts,
       variant = attributes.variant,
+      mode = attributes.mode,
       enableDropShadow = attributes.enableDropShadow,
       iconVerticalAlignment = attributes.iconVerticalAlignment;
   var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
@@ -2847,7 +2848,25 @@ var MaterialAlerts = function MaterialAlerts(props) {
         variant: 'centered'
       });
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Centered', 'alerts-dlx'))))), iconEnabled && 'centered' !== variant && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Centered', 'alerts-dlx'))))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
+    id: "alerts-dlx-mode-button-group",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set Light or Dark Mode', 'quotes-dlx'),
+    className: "alerts-dlx-chakra-mode"
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    variant: mode === 'light' ? 'primary' : 'secondary',
+    onClick: function onClick(e) {
+      setAttributes({
+        mode: 'light'
+      });
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Light Mode', 'alerts-dlx')), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    variant: mode === 'dark' ? 'primary' : 'secondary',
+    onClick: function onClick(e) {
+      setAttributes({
+        mode: 'dark'
+      });
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Dark Mode', 'alerts-dlx'))))), iconEnabled && 'centered' !== variant && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
     id: "alerts-dlx-button-group-icon-alignment",
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Icon Vertical Alignment', 'quotes-dlx'),
     className: "alerts-dlx-material-variants"
@@ -3039,6 +3058,7 @@ var MaterialAlerts = function MaterialAlerts(props) {
       'is-style-info': className === undefined && 'info' === alertType,
       'is-style-warning': className === undefined && 'warning' === alertType,
       'is-style-error': className === undefined && 'error' === alertType,
+      'is-dark-mode': 'dark' === mode,
       'custom-fonts-enabled': enableCustomFonts,
       'is-appearance-default': 'default' === variant,
       'is-appearance-outlined': 'outlined' === variant,
