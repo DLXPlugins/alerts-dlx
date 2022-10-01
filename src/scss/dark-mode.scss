@@ -1,11 +1,11 @@
 $white: #ffffff;
 
 // Material colors.
-$material-dark-success-color: #1e4620;
-$material-dark-success-color-accent: #295e2c;
-$material-dark-success-color-alt: #2e7d32;
-$material-dark-success-color-bold: #4caf50;
-$material-dark-success-color-light: #edf7ed;
+$material-dark-success-color: #cce8cd;
+$material-dark-success-color-accent: #49a44e;
+$material-dark-success-color-alt: #5cbb60;
+$material-dark-success-color-bold: #66bb6a;
+$material-dark-success-color-light: #0c130d;
 $material-dark-info-color: #b8e7fb;
 $material-dark-info-color-accent: #23abea;
 $material-dark-info-color-alt: #20a2df;
@@ -890,14 +890,15 @@ $bootstrap-dark-dark-color-light: #d3d3d4;
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: $white;
+					color: $material-dark-success-color-light;
 					border: 1px solid transparent;
 
-					background-color: $material-dark-success-color;
+					background-color: $material-dark-success-color-bold;
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
 					background-color: $material-dark-success-color-accent;
+					color: $material-dark-success-color-light;
 				}
 
 				svg,
@@ -914,7 +915,7 @@ $bootstrap-dark-dark-color-light: #d3d3d4;
 				color: $material-dark-success-color;
 			}
 			.alerts-dlx-material {
-				background-color: $white;
+				background-color: $material-dark-error-color-light;
 				color: $material-dark-success-color;
 				border: 2px solid $material-dark-success-color-bold;
 
@@ -922,14 +923,14 @@ $bootstrap-dark-dark-color-light: #d3d3d4;
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: $material-dark-success-color;
+					color: $material-dark-success-color-light;
 					border: 2px solid $material-dark-success-color-bold;
-					background-color: $white;
+					background-color: $material-dark-success-color-bold;
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: $material-dark-success-color-alt;
-					color: $white;
+					background-color: $material-dark-success-color-accent;
+					color: $material-dark-success-color-light;
 					border: 2px solid $material-dark-success-color-alt;
 				}
 
@@ -948,23 +949,23 @@ $bootstrap-dark-dark-color-light: #d3d3d4;
 				color: $white;
 			}
 			.alerts-dlx-material {
-				background-color: $material-dark-success-color-alt;
+				background-color: $material-dark-success-color-bold;
 				color: $white;
-				border: 2px solid $material-dark-success-color-alt;
+				border: 2px solid $material-dark-success-color-bold;
 
 				button.button-reset.alerts-dlx-button,
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: $material-dark-success-color-alt;
-					border: 2px solid $material-dark-success-color-alt;
-					background-color: $white;
+					color: $white;
+					border: 2px solid $white;
+					background-color: transparent;
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: $material-dark-success-color-alt;
+					background-color: $material-dark-success-color-light;
 					color: $white;
-					border: 2px solid $white;
+					border: 2px solid $material-dark-success-color-light;
 				}
 
 				svg,
