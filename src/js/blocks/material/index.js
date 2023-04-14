@@ -1,4 +1,5 @@
 import { registerBlockType, createBlock } from '@wordpress/blocks';
+import { InnerBlocks } from '@wordpress/block-editor';
 import metadata from './block.json';
 import MaterialIconsLogo from '../components/icons/MaterialIconsLogo';
 
@@ -7,7 +8,7 @@ import Edit from './edit';
 registerBlockType( metadata, {
 	edit: Edit,
 	save() {
-		return null;
+		return <InnerBlocks.Content />;
 	},
 	icon: <MaterialIconsLogo />,
 	transforms: {

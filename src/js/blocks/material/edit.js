@@ -7,7 +7,7 @@
 
 import classnames from 'classnames';
 
-import { useEffect } from '@wordpress/element';
+import { useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 import {
 	PanelBody,
@@ -20,10 +20,15 @@ import {
 	BaseControl,
 } from '@wordpress/components';
 
+import { rawHandler } from '@wordpress/blocks';
+import { useDispatch } from '@wordpress/data';
+
 import {
 	InspectorControls,
 	RichText,
 	useBlockProps,
+	useInnerBlocksProps,
+	store,
 } from '@wordpress/block-editor';
 
 import { useInstanceId } from '@wordpress/compose';
@@ -39,8 +44,21 @@ const MaterialAlerts = ( props ) => {
 		'adlx-material'
 	);
 
+	const innerBlocksRef = useRef( null );
+	const innerBlockProps = useInnerBlocksProps(
+		{
+			className: 'alerts-dlx-content',
+			ref: innerBlocksRef,
+		},
+		{
+			allowedBlocks: [ 'core/paragraph' ],
+			template: [ [ 'core/paragraph', { placeholder: '' } ] ],
+		}
+	);
+	const { replaceInnerBlocks } = useDispatch( store );
+
 	// Shortcuts.
-	const { attributes, setAttributes } = props;
+	const { attributes, setAttributes, clientId } = props;
 
 	const {
 		uniqueId,
@@ -62,6 +80,19 @@ const MaterialAlerts = ( props ) => {
 		enableDropShadow,
 		iconVerticalAlignment,
 	} = attributes;
+
+	/**
+	 * Migrate RichText to InnerBlocks.
+	 */
+	useEffect( () => {
+		// Port shareText attribute to use innerBlocks instead.
+		if ( alertDescription !== '' && null !== innerBlocksRef.current ) {
+			// Convert text over to blocks.
+			const richTextConvertedToBlocks = rawHandler( { HTML: alertDescription } );
+			replaceInnerBlocks( clientId, richTextConvertedToBlocks );
+			setAttributes( { alertDescription: '' } );
+		}
+	}, [ innerBlocksRef ] );
 
 	const inspectorControls = (
 		<>
@@ -357,19 +388,7 @@ const MaterialAlerts = ( props ) => {
 					) }
 					<div className="alerts-dlx-content-wrapper">
 						{ descriptionEnabled && (
-							<div className="alerts-dlx-content">
-								<RichText
-									tagName="div"
-									multiline="p"
-									placeholder={ __( 'Alert Description', 'quotes-dlx' ) }
-									value={ alertDescription }
-									className="alerts-dlx-content"
-									allowedFormats={ [ 'core/bold', 'core/italic', 'core/link' ] }
-									onChange={ ( value ) => {
-										setAttributes( { alertDescription: value } );
-									} }
-								/>
-							</div>
+							<div { ...innerBlockProps } />
 						) }
 						{ buttonEnabled && (
 							<AlertButton

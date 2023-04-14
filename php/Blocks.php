@@ -175,7 +175,7 @@ class Blocks {
 						if ( $description_enabled ) {
 							?>
 							<div class="alerts-dlx-content">
-								<?php echo wp_kses_post( apply_filters( 'alerts_dlx_the_content', $alert_description ) ); ?>
+								<?php echo wp_kses_post( apply_filters( 'alerts_dlx_the_content', $content ) ); ?>
 							</div>
 							<?php
 						}
