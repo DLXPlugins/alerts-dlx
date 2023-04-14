@@ -52,14 +52,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
-/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_AlertButton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/AlertButton */ "./src/js/blocks/components/AlertButton/index.js");
-/* harmony import */ var _components_unit_picker__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/unit-picker */ "./src/js/blocks/components/unit-picker/index.js");
-/* harmony import */ var _components_IconPicker__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/IconPicker */ "./src/js/blocks/components/IconPicker/index.js");
-/* harmony import */ var _components_icons_BootstrapIcons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/icons/BootstrapIcons */ "./src/js/blocks/components/icons/BootstrapIcons.js");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
+/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_AlertButton__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/AlertButton */ "./src/js/blocks/components/AlertButton/index.js");
+/* harmony import */ var _components_unit_picker__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/unit-picker */ "./src/js/blocks/components/unit-picker/index.js");
+/* harmony import */ var _components_IconPicker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/IconPicker */ "./src/js/blocks/components/IconPicker/index.js");
+/* harmony import */ var _components_icons_BootstrapIcons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/icons/BootstrapIcons */ "./src/js/blocks/components/icons/BootstrapIcons.js");
 /* eslint-disable no-undef */
 
 /* eslint-disable no-unused-vars */
@@ -80,11 +84,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 var BootstrapAlerts = function BootstrapAlerts(props) {
-  var generatedUniqueId = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.useInstanceId)(BootstrapAlerts, 'adlx-bootstrap'); // Shortcuts.
+  var generatedUniqueId = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_7__.useInstanceId)(BootstrapAlerts, 'adlx-bootstrap');
+  var innerBlocksRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
+  var innerBlockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.useInnerBlocksProps)({
+    className: 'alerts-dlx-content',
+    ref: innerBlocksRef
+  }, {
+    allowedBlocks: ['core/paragraph'],
+    template: [['core/paragraph', {
+      placeholder: ''
+    }]]
+  });
+
+  var _useDispatch = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_5__.useDispatch)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.store),
+      replaceInnerBlocks = _useDispatch.replaceInnerBlocks; // Shortcuts.
+
 
   var attributes = props.attributes,
-      setAttributes = props.setAttributes;
+      setAttributes = props.setAttributes,
+      clientId = props.clientId;
   var uniqueId = attributes.uniqueId,
       alertType = attributes.alertType,
       alertTitle = attributes.alertTitle,
@@ -101,10 +122,27 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
       enableCustomFonts = attributes.enableCustomFonts,
       variant = attributes.variant,
       iconVerticalAlignment = attributes.iconVerticalAlignment;
+  /**
+   * Migrate RichText to InnerBlocks.
+   */
+
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    // Port shareText attribute to use innerBlocks instead.
+    if (alertDescription !== '' && null !== innerBlocksRef.current) {
+      // Convert text over to blocks.
+      var richTextConvertedToBlocks = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__.rawHandler)({
+        HTML: alertDescription
+      });
+      replaceInnerBlocks(clientId, richTextConvertedToBlocks);
+      setAttributes({
+        alertDescription: ''
+      });
+    }
+  }, [innerBlocksRef]);
   var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     initialOpen: true,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Appearance', 'quotes-dlx')
-  }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_components_unit_picker__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_components_unit_picker__WEBPACK_IMPORTED_MODULE_9__["default"], {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Maximum Width', 'quotes-dlx'),
     value: maximumWidthUnit,
     units: ['px', '%', 'vw'],
@@ -233,7 +271,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
   }, [className]);
 
   var getIconSets = function getIconSets() {
-    return _components_icons_BootstrapIcons__WEBPACK_IMPORTED_MODULE_9__["default"];
+    return _components_icons_BootstrapIcons__WEBPACK_IMPORTED_MODULE_11__["default"];
   }; // Calculate max width.
 
 
@@ -241,7 +279,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
     maxWidth: maximumWidth + maximumWidthUnit
   };
   var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
-  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("link", {
+  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("link", {
     rel: "stylesheet",
     href: "".concat(alertsDlxBlock.font_stylesheet)
   }), /*#__PURE__*/React.createElement("figure", {
@@ -256,12 +294,12 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
   }, iconEnabled && /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-icon",
     "aria-hidden": "true"
-  }, /*#__PURE__*/React.createElement(_components_IconPicker__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, /*#__PURE__*/React.createElement(_components_IconPicker__WEBPACK_IMPORTED_MODULE_10__["default"], {
     defaultSvg: icon,
     setAttributes: setAttributes,
     alertType: alertType,
     icons: getIconSets()
-  })), /*#__PURE__*/React.createElement("figcaption", null, titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.RichText, {
+  })), /*#__PURE__*/React.createElement("figcaption", null, titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.RichText, {
     tagName: "h2",
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert title', 'quotes-dlx'),
     value: alertTitle,
@@ -275,25 +313,11 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
     }
   }), /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-content-wrapper"
-  }, descriptionEnabled && /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-content"
-  }, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.RichText, {
-    tagName: "div",
-    multiline: "p",
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert Description', 'quotes-dlx'),
-    value: alertDescription,
-    className: "alerts-dlx-content",
-    allowedFormats: ['core/bold', 'core/italic', 'core/link'],
-    onChange: function onChange(value) {
-      setAttributes({
-        alertDescription: value
-      });
-    }
-  })), buttonEnabled && /*#__PURE__*/React.createElement(_components_AlertButton__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, descriptionEnabled && /*#__PURE__*/React.createElement("div", innerBlockProps), buttonEnabled && /*#__PURE__*/React.createElement(_components_AlertButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
   })))));
-  var blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.useBlockProps)({
+  var blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.useBlockProps)({
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, "alerts-dlx template-bootstrap is-style-".concat(alertType), {
       'custom-fonts-enabled': enableCustomFonts,
       'is-appearance-default': 'default' === variant,
@@ -319,60 +343,63 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block.json */ "./src/js/blocks/bootstrap/block.json");
-/* harmony import */ var _components_icons_BootstrapLogo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/icons/BootstrapLogo */ "./src/js/blocks/components/icons/BootstrapLogo.js");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/js/blocks/bootstrap/edit.js");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block.json */ "./src/js/blocks/bootstrap/block.json");
+/* harmony import */ var _components_icons_BootstrapLogo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/icons/BootstrapLogo */ "./src/js/blocks/components/icons/BootstrapLogo.js");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./src/js/blocks/bootstrap/edit.js");
 
 
 
 
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_1__, {
-  edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
+
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_2__, {
+  edit: _edit__WEBPACK_IMPORTED_MODULE_4__["default"],
   save: function save() {
-    return null;
+    return /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, null);
   },
-  icon: /*#__PURE__*/React.createElement(_components_icons_BootstrapLogo__WEBPACK_IMPORTED_MODULE_2__["default"], null),
+  icon: /*#__PURE__*/React.createElement(_components_icons_BootstrapLogo__WEBPACK_IMPORTED_MODULE_3__["default"], null),
   transforms: {
     from: [{
       type: 'block',
       blocks: ['mediaron/alerts-dlx-chakra'],
-      transform: function transform(props) {
-        props.alertType = 'success';
-        props.variant = 'default';
-        props.className = 'is-style-success';
-        props.alertGroup = 'bootstrap';
-        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-bootstrap', props);
+      transform: function transform(attributes, innerBlocks) {
+        attributes.alertType = 'success';
+        attributes.variant = 'default';
+        attributes.className = 'is-style-success';
+        attributes.alertGroup = 'bootstrap';
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-bootstrap', attributes, innerBlocks);
       }
     }, {
       type: 'block',
       blocks: ['mediaron/alerts-dlx-material'],
-      transform: function transform(props) {
-        props.alertType = 'success';
-        props.variant = 'default';
-        props.className = 'is-style-success';
-        props.alertGroup = 'bootstrap';
-        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-bootstrap', props);
+      transform: function transform(attributes, innerBlocks) {
+        attributes.alertType = 'success';
+        attributes.variant = 'default';
+        attributes.className = 'is-style-success';
+        attributes.alertGroup = 'bootstrap';
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-bootstrap', attributes, innerBlocks);
       }
     }],
     to: [{
       type: 'block',
       blocks: ['mediaron/alerts-dlx-material'],
-      transform: function transform(props) {
-        props.alertType = 'success';
-        props.variant = 'default';
-        props.className = 'is-style-success';
-        props.alertGroup = 'material';
-        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-material', props);
+      transform: function transform(attributes, innerBlocks) {
+        attributes.alertType = 'success';
+        attributes.variant = 'default';
+        attributes.className = 'is-style-success';
+        attributes.alertGroup = 'material';
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-material', attributes, innerBlocks);
       }
     }, {
       type: 'block',
       blocks: ['mediaron/alerts-dlx-chakra'],
-      transform: function transform(props) {
-        props.alertType = 'success';
-        props.variant = 'subtle';
-        props.className = 'is-style-success';
-        props.alertGroup = 'material';
-        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-chakra', props);
+      transform: function transform(attributes, innerBlocks) {
+        attributes.alertType = 'success';
+        attributes.variant = 'subtle';
+        attributes.className = 'is-style-success';
+        attributes.alertGroup = 'chakra';
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-chakra', attributes, innerBlocks);
       }
     }]
   }
@@ -399,14 +426,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
-/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _components_AlertButton__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/AlertButton */ "./src/js/blocks/components/AlertButton/index.js");
-/* harmony import */ var _components_unit_picker__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/unit-picker */ "./src/js/blocks/components/unit-picker/index.js");
-/* harmony import */ var _components_IconPicker__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/IconPicker */ "./src/js/blocks/components/IconPicker/index.js");
-/* harmony import */ var _components_icons_ChakraIcons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/icons/ChakraIcons */ "./src/js/blocks/components/icons/ChakraIcons.js");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
+/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _components_AlertButton__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/AlertButton */ "./src/js/blocks/components/AlertButton/index.js");
+/* harmony import */ var _components_unit_picker__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/unit-picker */ "./src/js/blocks/components/unit-picker/index.js");
+/* harmony import */ var _components_IconPicker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/IconPicker */ "./src/js/blocks/components/IconPicker/index.js");
+/* harmony import */ var _components_icons_ChakraIcons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/icons/ChakraIcons */ "./src/js/blocks/components/icons/ChakraIcons.js");
 /* eslint-disable no-undef */
 
 /* eslint-disable no-unused-vars */
@@ -427,11 +458,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 var ChakraAlerts = function ChakraAlerts(props) {
-  var generatedUniqueId = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_5__.useInstanceId)(ChakraAlerts, 'adlx-chakra'); // Shortcuts.
+  var generatedUniqueId = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_7__.useInstanceId)(ChakraAlerts, 'adlx-chakra');
+  var innerBlocksRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
+  var innerBlockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.useInnerBlocksProps)({
+    className: 'alerts-dlx-content',
+    ref: innerBlocksRef
+  }, {
+    allowedBlocks: ['core/paragraph'],
+    template: [['core/paragraph', {
+      placeholder: ''
+    }]]
+  });
+
+  var _useDispatch = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_5__.useDispatch)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.store),
+      replaceInnerBlocks = _useDispatch.replaceInnerBlocks; // Shortcuts.
+
 
   var attributes = props.attributes,
-      setAttributes = props.setAttributes;
+      setAttributes = props.setAttributes,
+      clientId = props.clientId;
   var uniqueId = attributes.uniqueId,
       alertType = attributes.alertType,
       alertTitle = attributes.alertTitle,
@@ -449,10 +497,27 @@ var ChakraAlerts = function ChakraAlerts(props) {
       variant = attributes.variant,
       mode = attributes.mode,
       iconVerticalAlignment = attributes.iconVerticalAlignment;
+  /**
+   * Migrate RichText to InnerBlocks.
+   */
+
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    // Port shareText attribute to use innerBlocks instead.
+    if (alertDescription !== '' && null !== innerBlocksRef.current) {
+      // Convert text over to blocks.
+      var richTextConvertedToBlocks = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__.rawHandler)({
+        HTML: alertDescription
+      });
+      replaceInnerBlocks(clientId, richTextConvertedToBlocks);
+      setAttributes({
+        alertDescription: ''
+      });
+    }
+  }, [innerBlocksRef]);
   var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     initialOpen: true,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Appearance', 'quotes-dlx')
-  }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_components_unit_picker__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_components_unit_picker__WEBPACK_IMPORTED_MODULE_9__["default"], {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Maximum Width', 'quotes-dlx'),
     value: maximumWidthUnit,
     units: ['px', '%', 'vw'],
@@ -643,7 +708,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
   }, [className]);
 
   var getIconSets = function getIconSets() {
-    return _components_icons_ChakraIcons__WEBPACK_IMPORTED_MODULE_9__["default"];
+    return _components_icons_ChakraIcons__WEBPACK_IMPORTED_MODULE_11__["default"];
   }; // Calculate max width.
 
 
@@ -651,7 +716,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
     maxWidth: maximumWidth + maximumWidthUnit
   };
   var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
-  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("link", {
+  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("link", {
     rel: "stylesheet",
     href: "".concat(alertsDlxBlock.font_stylesheet)
   }), /*#__PURE__*/React.createElement("figure", {
@@ -666,12 +731,12 @@ var ChakraAlerts = function ChakraAlerts(props) {
   }, iconEnabled && /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-icon",
     "aria-hidden": "true"
-  }, /*#__PURE__*/React.createElement(_components_IconPicker__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, /*#__PURE__*/React.createElement(_components_IconPicker__WEBPACK_IMPORTED_MODULE_10__["default"], {
     defaultSvg: icon,
     setAttributes: setAttributes,
     alertType: alertType,
     icons: getIconSets()
-  })), /*#__PURE__*/React.createElement("figcaption", null, titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.RichText, {
+  })), /*#__PURE__*/React.createElement("figcaption", null, titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.RichText, {
     tagName: "h2",
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert title', 'quotes-dlx'),
     value: alertTitle,
@@ -685,25 +750,11 @@ var ChakraAlerts = function ChakraAlerts(props) {
     }
   }), /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-content-wrapper"
-  }, descriptionEnabled && /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-content"
-  }, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.RichText, {
-    tagName: "div",
-    multiline: "p",
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert Description', 'quotes-dlx'),
-    value: alertDescription,
-    className: "alerts-dlx-content",
-    allowedFormats: ['core/bold', 'core/italic', 'core/link'],
-    onChange: function onChange(value) {
-      setAttributes({
-        alertDescription: value
-      });
-    }
-  })), buttonEnabled && /*#__PURE__*/React.createElement(_components_AlertButton__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, descriptionEnabled && /*#__PURE__*/React.createElement("div", innerBlockProps), buttonEnabled && /*#__PURE__*/React.createElement(_components_AlertButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
   })))));
-  var blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.useBlockProps)({
+  var blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.useBlockProps)({
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, 'alerts-dlx template-chakra', {
       'is-style-success': className === undefined && 'success' === alertType,
       'is-style-info': className === undefined && 'info' === alertType,
@@ -737,60 +788,63 @@ var ChakraAlerts = function ChakraAlerts(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./block.json */ "./src/js/blocks/chakraui/block.json");
-/* harmony import */ var _components_icons_ChakraUILogo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/icons/ChakraUILogo */ "./src/js/blocks/components/icons/ChakraUILogo.js");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/js/blocks/chakraui/edit.js");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./block.json */ "./src/js/blocks/chakraui/block.json");
+/* harmony import */ var _components_icons_ChakraUILogo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/icons/ChakraUILogo */ "./src/js/blocks/components/icons/ChakraUILogo.js");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./src/js/blocks/chakraui/edit.js");
 
 
 
 
-(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_1__, {
-  edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
+
+(0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_2__, {
+  edit: _edit__WEBPACK_IMPORTED_MODULE_4__["default"],
   save: function save() {
-    return null;
+    return /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, null);
   },
-  icon: /*#__PURE__*/React.createElement(_components_icons_ChakraUILogo__WEBPACK_IMPORTED_MODULE_2__["default"], null),
+  icon: /*#__PURE__*/React.createElement(_components_icons_ChakraUILogo__WEBPACK_IMPORTED_MODULE_3__["default"], null),
   transforms: {
     from: [{
       type: 'block',
       blocks: ['mediaron/alerts-dlx-material'],
-      transform: function transform(props) {
-        props.alertType = 'success';
-        props.variant = 'subtle';
-        props.className = 'is-style-success';
-        props.alertGroup = 'chakra';
-        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-chakra', props);
+      transform: function transform(attributes, innerBlocks) {
+        attributes.alertType = 'success';
+        attributes.variant = 'subtle';
+        attributes.className = 'is-style-success';
+        attributes.alertGroup = 'chakra';
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-chakra', attributes, innerBlocks);
       }
     }, {
       type: 'block',
       blocks: ['mediaron/alerts-dlx-bootstrap'],
-      transform: function transform(props) {
-        props.alertType = 'success';
-        props.variant = 'subtle';
-        props.className = 'is-style-success';
-        props.alertGroup = 'chakra';
-        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-chakra', props);
+      transform: function transform(attributes, innerBlocks) {
+        attributes.alertType = 'success';
+        attributes.variant = 'subtle';
+        attributes.className = 'is-style-success';
+        attributes.alertGroup = 'chakra';
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-chakra', attributes, innerBlocks);
       }
     }],
     to: [{
       type: 'block',
       blocks: ['mediaron/alerts-dlx-material'],
-      transform: function transform(props) {
-        props.alertType = 'success';
-        props.variant = 'default';
-        props.className = 'is-style-success';
-        props.alertGroup = 'material';
-        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-material', props);
+      transform: function transform(attributes, innerBlocks) {
+        attributes.alertType = 'success';
+        attributes.variant = 'default';
+        attributes.className = 'is-style-success';
+        attributes.alertGroup = 'material';
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-material', attributes, innerBlocks);
       }
     }, {
       type: 'block',
       blocks: ['mediaron/alerts-dlx-bootstrap'],
-      transform: function transform(props) {
-        props.alertType = 'success';
-        props.variant = 'default';
-        props.className = 'is-style-success';
-        props.alertGroup = 'bootstrap';
-        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-bootstrap', props);
+      transform: function transform(attributes, innerBlocks) {
+        attributes.alertType = 'success';
+        attributes.variant = 'default';
+        attributes.className = 'is-style-success';
+        attributes.alertGroup = 'bootstrap';
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-bootstrap', attributes, innerBlocks);
       }
     }]
   }
@@ -915,7 +969,8 @@ var AlertButton = function AlertButton(props) {
         buttonUrl: value,
         buttonHasUrl: !!value
       });
-    }
+    },
+    __nextHasNoMarginBottom: true
   }), /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Open link in a new tab', 'alerts-dlx'),
     checked: buttonTarget || '',
@@ -2797,7 +2852,8 @@ var MaterialAlerts = function MaterialAlerts(props) {
     allowedBlocks: ['core/paragraph'],
     template: [['core/paragraph', {
       placeholder: ''
-    }]]
+    }]],
+    renderAppender: _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InnerBlocks.DefaultBlockAppender
   });
 
   var _useDispatch = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_5__.useDispatch)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.store),
@@ -3138,43 +3194,43 @@ __webpack_require__.r(__webpack_exports__);
     from: [{
       type: 'block',
       blocks: ['mediaron/alerts-dlx-bootstrap'],
-      transform: function transform(props) {
-        props.alertType = 'success';
-        props.variant = 'default';
-        props.className = 'is-style-success';
-        props.alertGroup = 'material';
-        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-material', props);
+      transform: function transform(attributes, innerBlocks) {
+        attributes.alertType = 'success';
+        attributes.variant = 'default';
+        attributes.className = 'is-style-success';
+        attributes.alertGroup = 'material';
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-material', attributes, innerBlocks);
       }
     }, {
       type: 'block',
       blocks: ['mediaron/alerts-dlx-chakra'],
-      transform: function transform(props) {
-        props.alertType = 'success';
-        props.variant = 'default';
-        props.className = 'is-style-success';
-        props.alertGroup = 'material';
-        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-material', props);
+      transform: function transform(attributes, innerBlocks) {
+        attributes.alertType = 'success';
+        attributes.variant = 'default';
+        attributes.className = 'is-style-success';
+        attributes.alertGroup = 'material';
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-material', attributes, innerBlocks);
       }
     }],
     to: [{
       type: 'block',
       blocks: ['mediaron/alerts-dlx-chakra'],
-      transform: function transform(props) {
-        props.alertType = 'success';
-        props.variant = 'subtle';
-        props.className = 'is-style-success';
-        props.alertGroup = 'chakra';
-        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-chakra', props);
+      transform: function transform(attributes, innerBlocks) {
+        attributes.alertType = 'success';
+        attributes.variant = 'subtle';
+        attributes.className = 'is-style-success';
+        attributes.alertGroup = 'chakra';
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-chakra', attributes, innerBlocks);
       }
     }, {
       type: 'block',
       blocks: ['mediaron/alerts-dlx-bootstrap'],
-      transform: function transform(props) {
-        props.alertType = 'success';
-        props.variant = 'default';
-        props.className = 'is-style-success';
-        props.alertGroup = 'chakra';
-        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-bootstrap', props);
+      transform: function transform(attributes, innerBlocks) {
+        attributes.alertType = 'success';
+        attributes.variant = 'default';
+        attributes.className = 'is-style-success';
+        attributes.alertGroup = 'bootstrap';
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)('mediaron/alerts-dlx-bootstrap', attributes, innerBlocks);
       }
     }]
   }

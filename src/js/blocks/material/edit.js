@@ -28,6 +28,7 @@ import {
 	RichText,
 	useBlockProps,
 	useInnerBlocksProps,
+	InnerBlocks,
 	store,
 } from '@wordpress/block-editor';
 
@@ -53,6 +54,7 @@ const MaterialAlerts = ( props ) => {
 		{
 			allowedBlocks: [ 'core/paragraph' ],
 			template: [ [ 'core/paragraph', { placeholder: '' } ] ],
+			renderAppender: InnerBlocks.DefaultBlockAppender,
 		}
 	);
 	const { replaceInnerBlocks } = useDispatch( store );

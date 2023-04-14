@@ -152,7 +152,7 @@ class Blocks {
 				<?php
 				if ( $icon_enabled ) {
 					?>
-					<div class="alerts-dlx-icon" aria-hidden="true">
+					<div class="alerts-dlx-icon alerts-dlx-icon-frontend" aria-hidden="true">
 						<div class="alerts-dlx-icon-preview">
 							<?php echo wp_kses( $icon, Functions::get_kses_allowed_html() ); ?>
 						</div>

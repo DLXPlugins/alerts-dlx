@@ -16,23 +16,23 @@ registerBlockType( metadata, {
 			{
 				type: 'block',
 				blocks: [ 'mediaron/alerts-dlx-bootstrap' ],
-				transform: ( props ) => {
-					props.alertType = 'success';
-					props.variant = 'default';
-					props.className = 'is-style-success';
-					props.alertGroup = 'material';
-					return createBlock( 'mediaron/alerts-dlx-material', props );
+				transform: ( attributes, innerBlocks ) => {
+					attributes.alertType = 'success';
+					attributes.variant = 'default';
+					attributes.className = 'is-style-success';
+					attributes.alertGroup = 'material';
+					return createBlock( 'mediaron/alerts-dlx-material', attributes, innerBlocks );
 				},
 			},
 			{
 				type: 'block',
 				blocks: [ 'mediaron/alerts-dlx-chakra' ],
-				transform: ( props ) => {
-					props.alertType = 'success';
-					props.variant = 'default';
-					props.className = 'is-style-success';
-					props.alertGroup = 'material';
-					return createBlock( 'mediaron/alerts-dlx-material', props );
+				transform: ( attributes, innerBlocks ) => {
+					attributes.alertType = 'success';
+					attributes.variant = 'default';
+					attributes.className = 'is-style-success';
+					attributes.alertGroup = 'material';
+					return createBlock( 'mediaron/alerts-dlx-material', attributes, innerBlocks );
 				},
 			},
 		],
@@ -40,23 +40,23 @@ registerBlockType( metadata, {
 			{
 				type: 'block',
 				blocks: [ 'mediaron/alerts-dlx-chakra' ],
-				transform: ( props ) => {
-					props.alertType = 'success';
-					props.variant = 'subtle';
-					props.className = 'is-style-success';
-					props.alertGroup = 'chakra';
-					return createBlock( 'mediaron/alerts-dlx-chakra', props );
+				transform: ( attributes, innerBlocks ) => {
+					attributes.alertType = 'success';
+					attributes.variant = 'subtle';
+					attributes.className = 'is-style-success';
+					attributes.alertGroup = 'chakra';
+					return createBlock( 'mediaron/alerts-dlx-chakra', attributes, innerBlocks );
 				},
 			},
 			{
 				type: 'block',
 				blocks: [ 'mediaron/alerts-dlx-bootstrap' ],
-				transform: ( props ) => {
-					props.alertType = 'success';
-					props.variant = 'default';
-					props.className = 'is-style-success';
-					props.alertGroup = 'chakra';
-					return createBlock( 'mediaron/alerts-dlx-bootstrap', props );
+				transform: ( attributes, innerBlocks ) => {
+					attributes.alertType = 'success';
+					attributes.variant = 'default';
+					attributes.className = 'is-style-success';
+					attributes.alertGroup = 'bootstrap';
+					return createBlock( 'mediaron/alerts-dlx-bootstrap', attributes, innerBlocks );
 				},
 			},
 		],

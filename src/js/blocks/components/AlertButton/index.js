@@ -84,6 +84,7 @@ const AlertButton = ( props ) => {
 											buttonHasUrl: !! value,
 										} );
 									} }
+									__nextHasNoMarginBottom={ true }
 								/>
 
 								<>
