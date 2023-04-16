@@ -2,18 +2,18 @@
 Contributors: ronalfy
 Tags: alerts, notifications, notice, warning, blocks
 Requires at least: 5.9
-Tested up to: 6.0
-Stable tag: 1.1.0
+Tested up to: 6.2
+Stable tag: 1.2.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://github.com/sponsors/DLXPlugins
 
-AlertsDLX is an alerts and notifications block that uses MaterialUI, ChakraUI and Bootstrap styled alerts.
+AlertsDLX is an alerts and notifications block that uses MaterialUI, ChakraUI, Bootstrap, and Shoelace styled alerts.
 
 == Description ==
 
-AlertsDLX offers beautifully styled alerts and notifications for the Block Editor.
+AlertsDLX offers beautifully styled alerts and notifications blocks for the Block Editor.
 
 https://www.youtube.com/watch?v=7dKpw5uBi5o
 
@@ -28,6 +28,7 @@ Blocks are styled with inspiration from:
 * <a href="https://mui.com/material-ui/react-alert/">Material UI Alerts</a>
 * <a href="https://chakra-ui.com/docs/components/alert">Chakra UI</a>
 * <a href="https://getbootstrap.com/docs/5.0/components/alerts/">Bootstrap</a>.
+* <a href="https://shoelace.style/">Shoelace</a>
 
 Each Alert can have built-in icons or you can set your own with SVGs.
 
@@ -76,6 +77,11 @@ Yes. The icon picker used allows you to enter an SVG.
 
 == Changelog ==
 
+= 1.2.0 =
+* Released 2023-04-16
+* Added Shoelace alert styles.
+* Changing internal structure to innerBlocks.
+
 = 1.1.0 =
 * Released 2022-10-01
 * Added Darkmode for Chakra and Material alert boxes.
@@ -95,5 +101,5 @@ Yes. The icon picker used allows you to enter an SVG.
 
 == Upgrade Notice ==
 
-= 1.1.0 =
-Added darkmode to Chakra and Material alert boxes.
+= 1.2.0 =
+Added Shoelace alert styles. Converting internals to innerBlocks.
