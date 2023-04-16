@@ -3594,6 +3594,7 @@ var ShoelaceAlerts = function ShoelaceAlerts(props) {
       'is-appearance-left-accent': 'left-accent' === variant,
       'is-appearance-default': 'default' === variant,
       'is-appearance-centered': 'centered' === variant,
+      'is-appearance-solid': 'solid' === variant,
       'icon-vertical-align-top': 'top' === iconVerticalAlignment,
       'icon-vertical-align-centered': 'centered' === iconVerticalAlignment
     })
