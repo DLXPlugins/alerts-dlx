@@ -49,6 +49,13 @@ class Blocks {
 			)
 		);
 
+		register_block_type(
+			Functions::get_plugin_dir( 'build/js/blocks/shoelace/block.json' ),
+			array(
+				'render_callback' => array( $this, 'frontend' ),
+			)
+		);
+
 		// Enqueue general front-end style.
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_frontend_scripts' ) );
 

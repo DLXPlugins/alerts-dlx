@@ -1,6 +1,7 @@
 import './material';
 import './chakraui';
 import './bootstrap';
+import './shoelace';
 import AlertsLogo from './components/icons/AlertsLogo';
 
 ( function() {
