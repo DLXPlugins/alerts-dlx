@@ -49,6 +49,13 @@ class Blocks {
 			)
 		);
 
+		register_block_type(
+			Functions::get_plugin_dir( 'build/js/blocks/shoelace/block.json' ),
+			array(
+				'render_callback' => array( $this, 'frontend' ),
+			)
+		);
+
 		// Enqueue general front-end style.
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_frontend_scripts' ) );
 
@@ -102,6 +109,7 @@ class Blocks {
 		$button_target           = Functions::sanitize_attribute( $attributes, 'buttonTarget', 'boolean' );
 		$button_rel_no_follow    = Functions::sanitize_attribute( $attributes, 'buttonRelNoFollow', 'boolean' );
 		$button_rel_sponsored    = Functions::sanitize_attribute( $attributes, 'buttonRelSponsored', 'boolean' );
+		$icon_appearance         = Functions::sanitize_attribute( $attributes, 'iconAppearance', 'text' );
 
 		ob_start();
 
@@ -131,6 +139,9 @@ class Blocks {
 		);
 		if ( 'dark' === $mode ) {
 			$container_classes[] = 'is-dark-mode';
+		}
+		if ( 'rounded' === $icon_appearance ) {
+			$container_classes[] = 'icon-appearance-rounded';
 		}
 		?>
 		<!-- begin AlertsDLX output -->
@@ -175,7 +186,13 @@ class Blocks {
 						if ( $description_enabled ) {
 							?>
 							<div class="alerts-dlx-content">
-								<?php echo wp_kses_post( apply_filters( 'alerts_dlx_the_content', $content ) ); ?>
+								<?php
+								if ( ! empty( $alert_description ) ) {
+									echo wp_kses_post( apply_filters( 'alerts_dlx_the_content', $content ) );
+								} else {
+									echo wp_kses_post( apply_filters( 'alerts_dlx_the_content', $content ) );
+								}
+								?>
 							</div>
 							<?php
 						}
