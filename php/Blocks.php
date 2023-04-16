@@ -109,6 +109,7 @@ class Blocks {
 		$button_target           = Functions::sanitize_attribute( $attributes, 'buttonTarget', 'boolean' );
 		$button_rel_no_follow    = Functions::sanitize_attribute( $attributes, 'buttonRelNoFollow', 'boolean' );
 		$button_rel_sponsored    = Functions::sanitize_attribute( $attributes, 'buttonRelSponsored', 'boolean' );
+		$icon_appearance         = Functions::sanitize_attribute( $attributes, 'iconAppearance', 'text' );
 
 		ob_start();
 
@@ -138,6 +139,9 @@ class Blocks {
 		);
 		if ( 'dark' === $mode ) {
 			$container_classes[] = 'is-dark-mode';
+		}
+		if ( 'rounded' === $icon_appearance ) {
+			$container_classes[] = 'icon-appearance-rounded';
 		}
 		?>
 		<!-- begin AlertsDLX output -->

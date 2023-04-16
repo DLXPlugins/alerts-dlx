@@ -190,7 +190,7 @@ const ShoelaceAlerts = ( props ) => {
 						</ButtonGroup>
 					</BaseControl>
 				</PanelRow>
-				{ ( iconEnabled && 'centered' !== variant ) && (
+				{ ( iconEnabled && 'centered' !== variant && 'left-accent' !== variant ) && (
 					<PanelRow>
 						<BaseControl id="alerts-dlx-button-group-icon-alignment" label={ __( 'Icon Vertical Alignment', 'quotes-dlx' ) } className="alerts-dlx-material-variants">
 							<ButtonGroup>

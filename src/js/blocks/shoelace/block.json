@@ -90,6 +90,10 @@
 			"type": "string",
 			"default": "top-accent"
 		},
+		"iconAppearance": {
+			"type": "string",
+			"default": "rounded"
+		},
 		"mode": {
 			"type": "string",
 			"default": "light"
