@@ -188,7 +188,7 @@ class Blocks {
 							<div class="alerts-dlx-content">
 								<?php
 								if ( ! empty( $alert_description ) ) {
-									echo wp_kses_post( apply_filters( 'alerts_dlx_the_content', $content ) );
+									echo wp_kses_post( apply_filters( 'alerts_dlx_the_content', $alert_description ) );
 								} else {
 									echo wp_kses_post( apply_filters( 'alerts_dlx_the_content', $content ) );
 								}
