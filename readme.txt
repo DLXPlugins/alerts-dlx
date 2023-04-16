@@ -3,7 +3,7 @@ Contributors: ronalfy
 Tags: alerts, notifications, notice, warning, blocks
 Requires at least: 5.9
 Tested up to: 6.2
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -77,6 +77,10 @@ Yes. The icon picker used allows you to enter an SVG.
 
 == Changelog ==
 
+= 1.2.1 =
+* Released 2023-04-16
+* Hot fix for outputting the block description.
+
 = 1.2.0 =
 * Released 2023-04-16
 * Added Shoelace alert styles.
@@ -100,6 +104,9 @@ Yes. The icon picker used allows you to enter an SVG.
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.2.1 =
+Hot fix for outputting the block description.
 
 = 1.2.0 =
 Added Shoelace alert styles. Converting internals to innerBlocks.
