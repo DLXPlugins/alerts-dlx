@@ -378,11 +378,13 @@ const ShoelaceAlerts = ( props ) => {
 		className: classnames( className, `alerts-dlx template-shoelace is-style-${ alertType }`, {
 			'custom-fonts-enabled': enableCustomFonts,
 			'is-appearance-left-accent': 'left-accent' === variant,
+			'is-appearance-top-accent': 'top-accent' === variant,
 			'is-appearance-default': 'default' === variant,
 			'is-appearance-centered': 'centered' === variant,
 			'is-appearance-solid': 'solid' === variant,
 			'icon-vertical-align-top': 'top' === iconVerticalAlignment,
 			'icon-vertical-align-centered': 'centered' === iconVerticalAlignment,
+			'is-dark-mode': 'dark' === mode,
 		} ),
 	} );
 

@@ -3592,11 +3592,13 @@ var ShoelaceAlerts = function ShoelaceAlerts(props) {
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, "alerts-dlx template-shoelace is-style-".concat(alertType), {
       'custom-fonts-enabled': enableCustomFonts,
       'is-appearance-left-accent': 'left-accent' === variant,
+      'is-appearance-top-accent': 'top-accent' === variant,
       'is-appearance-default': 'default' === variant,
       'is-appearance-centered': 'centered' === variant,
       'is-appearance-solid': 'solid' === variant,
       'icon-vertical-align-top': 'top' === iconVerticalAlignment,
-      'icon-vertical-align-centered': 'centered' === iconVerticalAlignment
+      'icon-vertical-align-centered': 'centered' === iconVerticalAlignment,
+      'is-dark-mode': 'dark' === mode
     })
   });
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", blockProps, block));
