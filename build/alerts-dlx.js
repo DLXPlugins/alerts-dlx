@@ -3591,6 +3591,7 @@ var ShoelaceAlerts = function ShoelaceAlerts(props) {
   var blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.useBlockProps)({
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, "alerts-dlx template-shoelace is-style-".concat(alertType), {
       'custom-fonts-enabled': enableCustomFonts,
+      'is-appearance-left-accent': 'left-accent' === variant,
       'is-appearance-default': 'default' === variant,
       'is-appearance-centered': 'centered' === variant,
       'icon-vertical-align-top': 'top' === iconVerticalAlignment,

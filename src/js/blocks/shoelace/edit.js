@@ -377,6 +377,7 @@ const ShoelaceAlerts = ( props ) => {
 	const blockProps = useBlockProps( {
 		className: classnames( className, `alerts-dlx template-shoelace is-style-${ alertType }`, {
 			'custom-fonts-enabled': enableCustomFonts,
+			'is-appearance-left-accent': 'left-accent' === variant,
 			'is-appearance-default': 'default' === variant,
 			'is-appearance-centered': 'centered' === variant,
 			'icon-vertical-align-top': 'top' === iconVerticalAlignment,
