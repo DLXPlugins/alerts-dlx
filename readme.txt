@@ -2,7 +2,7 @@
 Contributors: ronalfy
 Tags: alerts, notifications, notice, warning, blocks
 Requires at least: 5.9
-Tested up to: 6.2
+Tested up to: 6.3
 Stable tag: 1.2.1
 Requires PHP: 7.2
 License: GPLv2 or later
