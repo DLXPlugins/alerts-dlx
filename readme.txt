@@ -3,7 +3,7 @@ Contributors: ronalfy
 Tags: alerts, notifications, notice, warning, blocks
 Requires at least: 5.9
 Tested up to: 6.3
-Stable tag: 1.2.1
+Stable tag: 1.2.5
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,6 +16,8 @@ AlertsDLX is an alerts and notifications block that uses MaterialUI, ChakraUI, B
 AlertsDLX offers beautifully styled alerts and notifications blocks for the Block Editor.
 
 https://www.youtube.com/watch?v=7dKpw5uBi5o
+
+> <a href="https://app.instawp.io/launch?t=alerts-dlx&d=v2">Spin up a quick demo here</a>.
 
 Quick Links:
 
@@ -77,6 +79,10 @@ Yes. The icon picker used allows you to enter an SVG.
 
 == Changelog ==
 
+= 1.2.5 =
+* Released 2023-09-10
+* Optimizing scripts and styles to only load when needed to prevent unnecessary style loading.
+
 = 1.2.1 =
 * Released 2023-04-16
 * Hot fix for outputting the block description.
@@ -105,8 +111,5 @@ Yes. The icon picker used allows you to enter an SVG.
 
 == Upgrade Notice ==
 
-= 1.2.1 =
-Hot fix for outputting the block description.
-
-= 1.2.0 =
-Added Shoelace alert styles. Converting internals to innerBlocks.
+= 1.2.5 =
+Optimizing scripts and styles to only load when needed to prevent unnecessary style loading.
