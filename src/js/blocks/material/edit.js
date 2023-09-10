@@ -350,10 +350,6 @@ const MaterialAlerts = ( props ) => {
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
 			<style>{ baseFontSizeStyles }</style>
-			<link
-				rel="stylesheet"
-				href={ `${ alertsDlxBlock.font_stylesheet }` }
-			/>
 			<figure
 				role="alert"
 				className={ classnames( 'alerts-dlx-alert alerts-dlx-material', {

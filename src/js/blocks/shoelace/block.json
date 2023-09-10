@@ -140,5 +140,9 @@
 	},
 	"editorScript": "alerts-dlx-block",
 	"editorStyle": "alerts-dlx-block-editor-styles",
-	"style": "alerts-dlx-common"
+	"style": [
+		"alerts-dlx-shoelace-light-css",
+		"alerts-dlx-shoelace-dark-css",
+		"alerts-dlx-block-editor-styles-lato"
+	]
 }
