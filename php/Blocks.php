@@ -88,7 +88,7 @@ class Blocks {
 	 */
 	public function shortcode( $atts = array(), $content = '' ) {
 		$defaults = array(
-			'unique_id'               => 'alerts-dlx-' . mt_rand( 0, 1000 ),
+			'unique_id'               => 'alerts-dlx-' . mt_rand( 0, 1000 ) . wp_generate_password( 6, false, false ),
 			'alert_group'             => 'chakra',
 			'alert_type'              => 'success',
 			'align'                   => 'center',
