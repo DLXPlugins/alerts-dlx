@@ -62,7 +62,7 @@ class Blocks {
 		// Add alertsdlx block category.
 		add_filter(
 			'block_categories_all',
-			function( $categories ) {
+			function ( $categories ) {
 				return array_merge(
 					$categories,
 					array(
@@ -74,6 +74,119 @@ class Blocks {
 				);
 			}
 		);
+
+		// Add shortcode to block.
+		add_shortcode( 'alertsdlx', array( $this, 'shortcode' ) );
+	}
+
+	/**
+	 * Shortcode callback.
+	 *
+	 * @param array  $atts    Shortcode attributes.
+	 * @param string $content Shortcode content.
+	 * @return string
+	 */
+	public function shortcode( $atts = array(), $content = '' ) {
+		$defaults = array(
+			'unique_id'               => 'alerts-dlx-' . mt_rand( 0, 1000 ),
+			'alert_group'             => 'chakra',
+			'alert_type'              => 'success',
+			'align'                   => 'center',
+			'alert_title'             => '',
+			'alert_description'       => '',
+			'maximum_width_unit'      => 'px',
+			'maximum_width'           => 650,
+			'icon'                    => '',
+			'base_font_size'          => 16,
+			'icon_vertical_alignment' => 'top',
+			'variant'                 => '',
+			'mode'                    => 'light', /* can be dark */
+			'button_text'             => '',
+			'button_url'              => '',
+			'button_target'           => false,
+			'button_rel_no_follow'    => false,
+			'button_rel_sponsored'    => false,
+			'icon_appearance'         => 'default', /* can be rounded */
+		);
+		$atts     = shortcode_atts( $defaults, $atts, 'alertsdlx' );
+
+		// If alert description is empty, use content.
+		if ( empty( $atts['alert_description'] ) && ! empty( $content ) ) {
+			$atts['alert_description'] = apply_filters( 'alerts_dlx_the_content', $content );
+		}
+
+		// Set the default variant.
+		if ( '' === $atts['variant'] ) {
+			switch ( $atts['alert_group'] ) {
+				case 'bootstrap':
+					$atts['variant'] = 'default';
+					break;
+				case 'chakra':
+					$atts['variant'] = 'subtle';
+					break;
+				case 'material':
+					$atts['variant'] = 'default';
+					break;
+				case 'shoelace':
+					$atts['variant'] = 'top-accent';
+					break;
+			}
+		}
+
+		// Fill in the rest of the attributes.
+		$atts['button_enabled']      = ! empty( $atts['button_text'] ) && ! empty( $atts['button_url'] );
+		$atts['description_enabled'] = ! empty( $atts['alert_description'] );
+		$atts['title_enabled']       = ! empty( $atts['alert_title'] );
+		$atts['icon_enabled']        = ! empty( $atts['icon'] );
+
+		// Register scripts.
+		$this->register_block_editor_scripts();
+
+		$style_handles_to_print = array();
+		if ( ! wp_style_is( 'alerts-dlx-block-editor-styles-lato', 'done' ) ) {
+			$style_handles_to_print[] = 'alerts-dlx-block-editor-styles-lato';
+		}
+
+		switch ( $atts['alert_group'] ) {
+			case 'bootstrap':
+				if ( ! wp_style_is( 'alerts-dlx-bootstrap-light-css', 'done' ) ) {
+					$style_handles_to_print[] = 'alerts-dlx-bootstrap-light-css';
+					$style_handles_to_print[] = 'alerts-dlx-bootstrap-dark-css';
+				}
+				break;
+			case 'chakra':
+				if ( ! wp_style_is( 'alerts-dlx-chakra-light-css', 'done' ) ) {
+					$style_handles_to_print[] = 'alerts-dlx-chakra-light-css';
+					$style_handles_to_print[] = 'alerts-dlx-chakra-dark-css';
+				}
+				break;
+			case 'material':
+				if ( ! wp_style_is( 'alerts-dlx-material-light-css', 'done' ) ) {
+					$style_handles_to_print[] = 'alerts-dlx-material-light-css';
+					$style_handles_to_print[] = 'alerts-dlx-material-dark-css';
+				}
+				break;
+			case 'shoelace':
+				if ( ! wp_style_is( 'alerts-dlx-shoelace-light-css', 'done' ) ) {
+					$style_handles_to_print[] = 'alerts-dlx-shoelace-light-css';
+					$style_handles_to_print[] = 'alerts-dlx-shoelace-dark-css';
+				}
+				break;
+		}
+		ob_start();
+
+		// Print styles.
+		wp_print_styles( $style_handles_to_print );
+
+		// Convert atts to camelCase.
+		$new_atts = array();
+		foreach ( $atts as $key => $value ) {
+			$new_atts[ Functions::to_camelcase( $key ) ] = $value;
+		}
+
+		$return = ob_get_clean() . $this->frontend( $new_atts, $new_atts['alertDescription'] );
+
+		return $return;
 	}
 
 	/**
