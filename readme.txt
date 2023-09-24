@@ -102,6 +102,8 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 = 1.3.0 =
 * Released 2023-09-23
 * Added support for shortcodes.
+* <a href="https://dlxplugins.com/announcements/alertsdlx-1-3-0-includes-shortcode-support/">Read the announcement post</a>.
+* <a href="https://docs.dlxplugins.com/v/alertsdlx/shortcode-usage">See shortcode usage</a>.
 
 = 1.2.5 =
 * Released 2023-09-10
@@ -136,4 +138,4 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 == Upgrade Notice ==
 
 = 1.3.0 =
-Added support for shortcodes.
+Added shortcode support to AlertsDLX. Now place AlertsDLX wherever shortcodes are supported.
