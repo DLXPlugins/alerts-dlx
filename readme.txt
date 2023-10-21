@@ -2,8 +2,8 @@
 Contributors: ronalfy
 Tags: alerts, notifications, notice, shortcode, blocks
 Requires at least: 5.9
-Tested up to: 6.3
-Stable tag: 1.3.0
+Tested up to: 6.4
+Stable tag: 1.3.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -99,6 +99,10 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Changelog ==
 
+= 1.3.1 =
+* Released 2023-10-21
+* Several performance improvements to the frontend. Previously the frontend was loading all styles and scripts for all alert types. Now it only loads the styles and scripts for the alert type(s) being used on the page.
+
 = 1.3.0 =
 * Released 2023-09-23
 * Added support for shortcodes.
@@ -137,5 +141,5 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Upgrade Notice ==
 
-= 1.3.0 =
-Added shortcode support to AlertsDLX. Now place AlertsDLX wherever shortcodes are supported.
+= 1.3.1 =
+Several performance improvements, particularly with style loading.

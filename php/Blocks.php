@@ -238,6 +238,80 @@ class Blocks {
 			$figure_classes[] = 'alerts-dlx-has-button';
 		}
 
+		// Register scripts.
+		$this->register_block_editor_scripts();
+
+		// Print block styles.
+		switch ( $alert_group ) {
+			case 'bootstrap':
+				if ( 'dark' === $mode ) {
+					wp_print_styles(
+						array(
+							'alerts-dlx-bootstrap-dark-css',
+							'alerts-dlx-block-editor-styles-lato',
+						)
+					);
+				} else {
+					wp_print_styles(
+						array(
+							'alerts-dlx-bootstrap-light-css',
+							'alerts-dlx-block-editor-styles-lato',
+						)
+					);
+				}
+				break;
+			case 'chakra':
+				if ( 'dark' === $mode ) {
+					wp_print_styles(
+						array(
+							'alerts-dlx-chakra-dark-css',
+							'alerts-dlx-block-editor-styles-lato',
+						)
+					);
+				} else {
+					wp_print_styles(
+						array(
+							'alerts-dlx-chakra-light-css',
+							'alerts-dlx-block-editor-styles-lato',
+						)
+					);
+				}
+				break;
+			case 'material':
+				if ( 'dark' === $mode ) {
+					wp_print_styles(
+						array(
+							'alerts-dlx-material-dark-css',
+							'alerts-dlx-block-editor-styles-lato',
+						)
+					);
+				} else {
+					wp_print_styles(
+						array(
+							'alerts-dlx-material-light-css',
+							'alerts-dlx-block-editor-styles-lato',
+						)
+					);
+				}
+			case 'shoelace':
+				if ( 'dark' === $mode ) {
+					wp_print_styles(
+						array(
+							'alerts-dlx-shoelace-dark-css',
+							'alerts-dlx-block-editor-styles-lato',
+						)
+					);
+				} else {
+					wp_print_styles(
+						array(
+							'alerts-dlx-shoelace-light-css',
+							'alerts-dlx-block-editor-styles-lato',
+						)
+					);
+				}
+				break;
+		}
+
 		// Add base classes to container element.
 		$container_classes = array(
 			'alerts-dlx',

@@ -15,18 +15,6 @@ module.exports = ( env ) => {
 		},
 		{
 			entry: {
-				'alerts-dlx-common': { import: './src/scss/common.scss' },
-				'alerts-dlx-block-editor': './src/scss/block-editor.scss',
-				'alerts-dlx-gfont-roboto': { import: './src/scss/fonts/roboto.scss' },
-				'alerts-dlx-gfont-lato': { import: './src/scss/fonts/lato.scss' },
-				'alerts-dlx-bootstrap-dark': './src/scss/bootstrap/dark.scss',
-				'alerts-dlx-bootstrap-light': './src/scss/bootstrap/light.scss',
-				'alerts-dlx-chakra-dark': './src/scss/chakra/dark.scss',
-				'alerts-dlx-chakra-light': './src/scss/chakra/light.scss',
-				'alerts-dlx-material-dark': './src/scss/material/dark.scss',
-				'alerts-dlx-material-light': './src/scss/material/light.scss',
-				'alerts-dlx-shoelace-dark': './src/scss/shoelace/dark.scss',
-				'alerts-dlx-shoelace-light': './src/scss/shoelace/light.scss',
 			},
 			resolve: {
 				alias: {
