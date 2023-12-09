@@ -61,9 +61,6 @@ const AlertButton = ( props ) => {
 						}
 					} }
 				/>
-				<SlotFillProvider>
-					<Popover.Slot />
-				</SlotFillProvider>
 
 				{ isPopOverVisible && (
 					<Popover
