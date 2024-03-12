@@ -102,11 +102,11 @@ $shoelace-dark-danger-color-accent: #ef437f;
 			h2, p {
 				color: $white;
 			}
-			figcaption .alerts-dlx-button {
+			section .alerts-dlx-button {
 				background: $shoelace-dark-primary-color-accent;
 				color: $white;
 			}
-			figcaption .alerts-dlx-button:hover {
+			section .alerts-dlx-button:hover {
 				background: darken( $shoelace-dark-primary-color-accent, 5% );
 				color: $white;
 			}
@@ -179,11 +179,11 @@ $shoelace-dark-danger-color-accent: #ef437f;
 			h2, p {
 				color: $white;
 			}
-			figcaption .alerts-dlx-button {
+			section .alerts-dlx-button {
 				background: $shoelace-dark-success-color-accent;
 				color: $white;
 			}
-			figcaption .alerts-dlx-button:hover {
+			section .alerts-dlx-button:hover {
 				background: darken( $shoelace-dark-success-color-accent, 5% );
 				color: $white;
 			}
@@ -256,11 +256,11 @@ $shoelace-dark-danger-color-accent: #ef437f;
 			h2, p {
 				color: $white;
 			}
-			figcaption .alerts-dlx-button {
+			section .alerts-dlx-button {
 				background: $shoelace-dark-neutral-color-accent;
 				color: $white;
 			}
-			figcaption .alerts-dlx-button:hover {
+			section .alerts-dlx-button:hover {
 				background: darken( $shoelace-dark-neutral-color-accent, 5% );
 				color: $white;
 			}
@@ -333,11 +333,11 @@ $shoelace-dark-danger-color-accent: #ef437f;
 			h2, p {
 				color: $white;
 			}
-			figcaption .alerts-dlx-button {
+			section .alerts-dlx-button {
 				background: $shoelace-dark-warning-color-accent;
 				color: $white;
 			}
-			figcaption .alerts-dlx-button:hover {
+			section .alerts-dlx-button:hover {
 				background: darken( $shoelace-dark-warning-color-accent, 5% );
 				color: $white;
 			}
@@ -410,11 +410,11 @@ $shoelace-dark-danger-color-accent: #ef437f;
 			h2, p {
 				color: $white;
 			}
-			figcaption .alerts-dlx-button {
+			section .alerts-dlx-button {
 				background: $shoelace-dark-danger-color-accent;
 				color: $white;
 			}
-			figcaption .alerts-dlx-button:hover {
+			section .alerts-dlx-button:hover {
 				background: darken( $shoelace-dark-danger-color-accent, 5% );
 				color: $white;
 			}

@@ -272,8 +272,11 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
   var maxWidthStyle = {
     maxWidth: maximumWidth + maximumWidthUnit
   };
-  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }#").concat(uniqueId, "  figcaption { --theme-font-size: ").concat(parseInt(baseFontSize), "px; }");
-  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("figure", {
+  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
+  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("link", {
+    rel: "stylesheet",
+    href: "".concat(alertsDlxBlock.font_stylesheet)
+  }), /*#__PURE__*/React.createElement("figure", {
     role: "alert",
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('alerts-dlx-alert alerts-dlx-bootstrap', {
       'alerts-dlx-has-icon': iconEnabled,
@@ -290,7 +293,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
     setAttributes: setAttributes,
     alertType: alertType,
     icons: getIconSets()
-  })), /*#__PURE__*/React.createElement("figcaption", null, titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.RichText, {
+  })), /*#__PURE__*/React.createElement("section", null, titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.RichText, {
     tagName: "h2",
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert title', 'quotes-dlx'),
     value: alertTitle,
@@ -703,7 +706,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
   var maxWidthStyle = {
     maxWidth: maximumWidth + maximumWidthUnit
   };
-  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }#").concat(uniqueId, "  figcaption { --theme-font-size: ").concat(parseInt(baseFontSize), "px; }");
+  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
   var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("figure", {
     role: "alert",
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('alerts-dlx-alert alerts-dlx-chakra', {
@@ -721,7 +724,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
     setAttributes: setAttributes,
     alertType: alertType,
     icons: getIconSets()
-  })), /*#__PURE__*/React.createElement("figcaption", null, titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.RichText, {
+  })), /*#__PURE__*/React.createElement("section", null, titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.RichText, {
     tagName: "h2",
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert title', 'quotes-dlx'),
     value: alertTitle,
@@ -3083,7 +3086,7 @@ var MaterialAlerts = function MaterialAlerts(props) {
   var maxWidthStyle = {
     maxWidth: maximumWidth + maximumWidthUnit
   };
-  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }#").concat(uniqueId, "  figcaption { --theme-font-size: ").concat(parseInt(baseFontSize), "px; }");
+  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
   var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("figure", {
     role: "alert",
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('alerts-dlx-alert alerts-dlx-material', {
@@ -3101,7 +3104,7 @@ var MaterialAlerts = function MaterialAlerts(props) {
     setAttributes: setAttributes,
     alertType: alertType,
     icons: getIconSets()
-  })), /*#__PURE__*/React.createElement("figcaption", null, titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.RichText, {
+  })), /*#__PURE__*/React.createElement("section", null, titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.RichText, {
     tagName: "h2",
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert title', 'quotes-dlx'),
     value: alertTitle,
@@ -3492,7 +3495,7 @@ var ShoelaceAlerts = function ShoelaceAlerts(props) {
   var maxWidthStyle = {
     maxWidth: maximumWidth + maximumWidthUnit
   };
-  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }#").concat(uniqueId, "  figcaption { --theme-font-size: ").concat(parseInt(baseFontSize), "px; }");
+  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
   var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("figure", {
     role: "alert",
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('alerts-dlx-alert alerts-dlx-shoelace', {
@@ -3510,7 +3513,7 @@ var ShoelaceAlerts = function ShoelaceAlerts(props) {
     setAttributes: setAttributes,
     alertType: alertType,
     icons: getIconSets()
-  })), /*#__PURE__*/React.createElement("figcaption", null, titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.RichText, {
+  })), /*#__PURE__*/React.createElement("section", null, titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.RichText, {
     tagName: "h2",
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert title', 'quotes-dlx'),
     value: alertTitle,

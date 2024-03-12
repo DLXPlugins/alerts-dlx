@@ -268,11 +268,15 @@ const BootstrapAlerts = ( props ) => {
 	const maxWidthStyle = {
 		maxWidth: maximumWidth + maximumWidthUnit,
 	};
-	const baseFontSizeStyles = `#${ uniqueId } { font-size: ${ parseInt( baseFontSize ) }px; }#${ uniqueId }  figcaption { --theme-font-size: ${ parseInt( baseFontSize ) }px; }`;
+	const baseFontSizeStyles = `#${ uniqueId } { font-size: ${ parseInt( baseFontSize ) }px; }`;
 	const block = (
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
 			<style>{ baseFontSizeStyles }</style>
+			<link
+				rel="stylesheet"
+				href={ `${ alertsDlxBlock.font_stylesheet }` }
+			/>
 			<figure
 				role="alert"
 				className={ classnames( 'alerts-dlx-alert alerts-dlx-bootstrap', {
@@ -293,7 +297,7 @@ const BootstrapAlerts = ( props ) => {
 						/>
 					</div>
 				) }
-				<figcaption>
+				<section>
 					{ titleEnabled && (
 						<RichText
 							tagName="h2"
@@ -318,7 +322,7 @@ const BootstrapAlerts = ( props ) => {
 							/>
 						) }
 					</div>
-				</figcaption>
+				</section>
 			</figure>
 		</>
 	);

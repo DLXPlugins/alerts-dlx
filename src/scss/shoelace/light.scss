@@ -43,7 +43,7 @@ $shoelace-danger-color-accent: #ef437f;
 			padding-left: 0;
 		}
 
-		figcaption h2.alerts-dlx-title {
+		section h2.alerts-dlx-title {
 			font-size: 1.2em;
 			font-weight: 900;
 			line-height: 1.5em;
@@ -107,7 +107,7 @@ $shoelace-danger-color-accent: #ef437f;
 			height: 1.6em;
 		}
 
-		figcaption {
+		section {
 			text-align: center;
 		}
 
@@ -195,11 +195,11 @@ $shoelace-danger-color-accent: #ef437f;
 			h2, p {
 				color: $white;
 			}
-			figcaption .alerts-dlx-button {
+			section .alerts-dlx-button {
 				background: $shoelace-primary-color-accent;
 				color: $white;
 			}
-			figcaption .alerts-dlx-button:hover {
+			section .alerts-dlx-button:hover {
 				background: darken( $shoelace-primary-color-accent, 5% );
 				color: $white;
 			}
@@ -276,11 +276,11 @@ $shoelace-danger-color-accent: #ef437f;
 			h2, p {
 				color: $white;
 			}
-			figcaption .alerts-dlx-button {
+			section .alerts-dlx-button {
 				background: $shoelace-success-color-accent;
 				color: $white;
 			}
-			figcaption .alerts-dlx-button:hover {
+			section .alerts-dlx-button:hover {
 				background: darken( $shoelace-success-color-accent, 5% );
 				color: $white;
 			}
@@ -357,11 +357,11 @@ $shoelace-danger-color-accent: #ef437f;
 			h2, p {
 				color: $white;
 			}
-			figcaption .alerts-dlx-button {
+			section .alerts-dlx-button {
 				background: $shoelace-neutral-color-accent;
 				color: $white;
 			}
-			figcaption .alerts-dlx-button:hover {
+			section .alerts-dlx-button:hover {
 				background: darken( $shoelace-neutral-color-accent, 5% );
 				color: $white;
 			}
@@ -438,11 +438,11 @@ $shoelace-danger-color-accent: #ef437f;
 			h2, p {
 				color: $white;
 			}
-			figcaption .alerts-dlx-button {
+			section .alerts-dlx-button {
 				background: $shoelace-warning-color-accent;
 				color: $white;
 			}
-			figcaption .alerts-dlx-button:hover {
+			section .alerts-dlx-button:hover {
 				background: darken( $shoelace-warning-color-accent, 5% );
 				color: $white;
 			}
@@ -519,11 +519,11 @@ $shoelace-danger-color-accent: #ef437f;
 			h2, p {
 				color: $white;
 			}
-			figcaption .alerts-dlx-button {
+			section .alerts-dlx-button {
 				background: $shoelace-danger-color-accent;
 				color: $white;
 			}
-			figcaption .alerts-dlx-button:hover {
+			section .alerts-dlx-button:hover {
 				background: darken( $shoelace-danger-color-accent, 5% );
 				color: $white;
 			}

@@ -335,9 +335,6 @@ class Blocks {
 				font-size: <?php echo esc_html( $base_font_size ); ?>px;
 				font-size: clamp(0.75rem, 2vw + 1rem, <?php echo esc_html( $base_font_size ); ?>px);
 			}
-			#<?php echo esc_html( $unique_id ); ?> figcaption {
-				--theme-font-size: <?php echo esc_html( $base_font_size ); ?>px;
-			}
 		</style>
 		<div
 			class="<?php echo esc_html( implode( ' ', $container_classes ) ); ?>"
@@ -358,7 +355,7 @@ class Blocks {
 					<?php
 				}
 				?>
-				<figcaption>
+				<section>
 					<?php
 					if ( $title_enabled ) {
 						?>
@@ -421,7 +418,7 @@ class Blocks {
 						}
 						?>
 					</div>
-				</figcaption>
+				</section>
 			</figure>
 		</div>
 		<!-- end AlertsDLX output -->

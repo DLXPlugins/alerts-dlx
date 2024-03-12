@@ -315,7 +315,7 @@ const ShoelaceAlerts = ( props ) => {
 	const maxWidthStyle = {
 		maxWidth: maximumWidth + maximumWidthUnit,
 	};
-	const baseFontSizeStyles = `#${ uniqueId } { font-size: ${ parseInt( baseFontSize ) }px; }#${ uniqueId }  figcaption { --theme-font-size: ${ parseInt( baseFontSize ) }px; }`;
+	const baseFontSizeStyles = `#${ uniqueId } { font-size: ${ parseInt( baseFontSize ) }px; }`;
 	const block = (
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
@@ -340,7 +340,7 @@ const ShoelaceAlerts = ( props ) => {
 						/>
 					</div>
 				) }
-				<figcaption>
+				<section>
 					{ titleEnabled && (
 						<RichText
 							tagName="h2"
@@ -365,7 +365,7 @@ const ShoelaceAlerts = ( props ) => {
 							/>
 						) }
 					</div>
-				</figcaption>
+				</section>
 			</figure>
 		</>
 	);
