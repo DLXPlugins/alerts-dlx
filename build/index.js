@@ -703,7 +703,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
   var maxWidthStyle = {
     maxWidth: maximumWidth + maximumWidthUnit
   };
-  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
+  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }#").concat(uniqueId, "  figcaption { --theme-font-size: ").concat(parseInt(baseFontSize), "px; }");
   var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("figure", {
     role: "alert",
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('alerts-dlx-alert alerts-dlx-chakra', {
@@ -3083,7 +3083,7 @@ var MaterialAlerts = function MaterialAlerts(props) {
   var maxWidthStyle = {
     maxWidth: maximumWidth + maximumWidthUnit
   };
-  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
+  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }#").concat(uniqueId, "  figcaption { --theme-font-size: ").concat(parseInt(baseFontSize), "px; }");
   var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("figure", {
     role: "alert",
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('alerts-dlx-alert alerts-dlx-material', {
@@ -3492,7 +3492,7 @@ var ShoelaceAlerts = function ShoelaceAlerts(props) {
   var maxWidthStyle = {
     maxWidth: maximumWidth + maximumWidthUnit
   };
-  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
+  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }#").concat(uniqueId, "  figcaption { --theme-font-size: ").concat(parseInt(baseFontSize), "px; }");
   var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("figure", {
     role: "alert",
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('alerts-dlx-alert alerts-dlx-shoelace', {
