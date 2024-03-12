@@ -2,14 +2,14 @@
 Contributors: ronalfy
 Tags: alerts, notifications, notice, shortcode, blocks
 Requires at least: 5.9
-Tested up to: 6.4
-Stable tag: 1.3.5
+Tested up to: 6.5
+Stable tag: 1.4.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://github.com/sponsors/DLXPlugins
 
-Create beautiful and impactful alerts, callouts, and notifications for your site.
+Create beautiful and impactful alerts, callouts, and notifications for the block editor.
 
 == Description ==
 
@@ -99,6 +99,11 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Changelog ==
 
+= 1.4.0 =
+* Released 2024-03-12
+* Reworked markup for better style compatibility and less conflicts.
+* Testing with WP 6.5.
+
 = 1.3.5 =
 * Released 2023-12-09
 * Selecting block styles resulted in a JS error. This has been fixed.
@@ -145,5 +150,5 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Upgrade Notice ==
 
-= 1.3.5 =
-Selecting block styles resulted in a JS error. This has been fixed.
+= 1.4.0 =
+Reworked markup for better style compatibility and less conflicts. Testing with WP 6.5.
