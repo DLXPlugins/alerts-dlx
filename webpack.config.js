@@ -12,9 +12,6 @@ module.exports = ( env ) => {
 			},
 			mode: env.mode,
 			devtool: 'source-map',
-			entry: {
-				'alerts-dlx': './src/js/blocks/index.js',
-			},
 		},
 		{
 			entry: {

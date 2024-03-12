@@ -92,6 +92,9 @@ figure.alerts-dlx-alert {
 	color: inherit;
 	text-decoration: underline;
 }
-body {
-	display: none;
+
+/* Block Editor Fixes for Caption */
+figure.alerts-dlx-alert figcaption {
+	text-align: unset;
+	margin-block: unset;
 }

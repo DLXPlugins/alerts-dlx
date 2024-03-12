@@ -5676,15 +5676,15 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 !function() {
 "use strict";
-/*!********************************!*\
-  !*** ./src/js/blocks/index.js ***!
-  \********************************/
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _material__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./material */ "./src/js/blocks/material/index.js");
-/* harmony import */ var _chakraui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./chakraui */ "./src/js/blocks/chakraui/index.js");
-/* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./bootstrap */ "./src/js/blocks/bootstrap/index.js");
-/* harmony import */ var _shoelace__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./shoelace */ "./src/js/blocks/shoelace/index.js");
-/* harmony import */ var _components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/icons/AlertsLogo */ "./src/js/blocks/components/icons/AlertsLogo.js");
+/* harmony import */ var _js_blocks_material__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./js/blocks/material */ "./src/js/blocks/material/index.js");
+/* harmony import */ var _js_blocks_chakraui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/blocks/chakraui */ "./src/js/blocks/chakraui/index.js");
+/* harmony import */ var _js_blocks_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/blocks/bootstrap */ "./src/js/blocks/bootstrap/index.js");
+/* harmony import */ var _js_blocks_shoelace__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/blocks/shoelace */ "./src/js/blocks/shoelace/index.js");
+/* harmony import */ var _js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/blocks/components/icons/AlertsLogo */ "./src/js/blocks/components/icons/AlertsLogo.js");
 
 
 
@@ -5693,7 +5693,7 @@ __webpack_require__.r(__webpack_exports__);
 
 (function () {
   wp.blocks.updateCategory('alertsdlx', {
-    icon: /*#__PURE__*/React.createElement(_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    icon: /*#__PURE__*/React.createElement(_js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_4__["default"], {
       width: 16,
       height: 16
     })
@@ -5702,4 +5702,4 @@ __webpack_require__.r(__webpack_exports__);
 }();
 /******/ })()
 ;
-//# sourceMappingURL=alerts-dlx.js.map
+//# sourceMappingURL=index.js.map

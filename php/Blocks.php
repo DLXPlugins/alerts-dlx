@@ -441,17 +441,18 @@ class Blocks {
 		);
 		wp_register_style(
 			'alerts-dlx-block-editor-styles',
-			Functions::get_plugin_url( 'build/alerts-dlx.css' ),
+			Functions::get_plugin_url( 'build/index.css' ),
 			array( 'alerts-dlx-block-editor' ),
 			Functions::get_plugin_version(),
 			'all'
 		);
 
+		$deps = require Functions::get_plugin_dir( 'build/index.asset.php' );
 		wp_register_script(
 			'alerts-dlx-block',
-			Functions::get_plugin_url( 'build/alerts-dlx.js' ),
-			array(),
-			Functions::get_plugin_version(),
+			Functions::get_plugin_url( 'build/index.js' ),
+			$deps['dependencies'],
+			$deps['version'],
 			true
 		);
 
