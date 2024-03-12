@@ -94,7 +94,9 @@ figure.alerts-dlx-alert {
 }
 
 /* Block Editor Fixes for Caption */
-figure.alerts-dlx-alert figcaption {
+figure.alerts-dlx-alert figcaption,
+.editor-styles-wrapper div[class*="wp-block-"] .alerts-dlx-alert figcaption  {
 	text-align: unset;
 	margin-block: unset;
+	font-size: unset;
 }
