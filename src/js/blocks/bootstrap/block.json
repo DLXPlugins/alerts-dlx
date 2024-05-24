@@ -42,6 +42,34 @@
 			"type": "boolean",
 			"default": true
 		},
+		"innerBlocksEnabled": {
+			"type": "boolean",
+			"default": false
+		},
+		"colorPrimary": {
+			"type": "string",
+			"default": "var(--alerts-dlx-bootstrap-color-primary, #084298)"
+		},
+		"colorBorder": {
+			"type": "string",
+			"default": "var(--alerts-dlx-bootstrap-color-border, #b6d4fe)"
+		},
+		"colorAccent": {
+			"type": "string",
+			"default": "var(--alerts-dlx-bootstrap-color-accent, #26559c)"
+		},
+		"colorAlt": {
+			"type": "string",
+			"default": "var(--alerts-dlx-bootstrap-color-alt, #084298)"
+		},
+		"colorBold": {
+			"type": "string",
+			"default": "var(--alerts-dlx-bootstrap-color-bold, #084298)"
+		},
+		"colorLight": {
+			"type": "string",
+			"default": "var(--alerts-dlx-bootstrap-color-light, #cfe2ff)"
+		},
 		"buttonText": {
 			"type": "string",
 			"default": ""
@@ -130,7 +158,8 @@
 		{ "name": "warning", "label": "Warning" },
         { "name": "info", "label": "Info" },
 		{ "name": "light", "label": "Light" },
-		{ "name": "dark", "label": "Dark" }
+		{ "name": "dark", "label": "Dark" },
+		{ "name": "custom", "label": "Custom" }
     ],
 	"supports": {
 		"anchor": true,

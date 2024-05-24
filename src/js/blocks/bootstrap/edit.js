@@ -28,6 +28,7 @@ import {
 	RichText,
 	useBlockProps,
 	useInnerBlocksProps,
+	PanelColorSettings,
 	store,
 } from '@wordpress/block-editor';
 
@@ -37,25 +38,12 @@ import AlertButton from '../components/AlertButton';
 import UnitChooser from '../components/unit-picker';
 import IconPicker from '../components/IconPicker';
 import BootstrapIcons from '../components/icons/BootstrapIcons';
+import BootstrapColors from './colors';
+
+// For storing unique IDs.
+const uniqueIds = [];
 
 const BootstrapAlerts = ( props ) => {
-	const generatedUniqueId = useInstanceId(
-		BootstrapAlerts,
-		'adlx-bootstrap'
-	);
-
-	const innerBlocksRef = useRef( null );
-	const innerBlockProps = useInnerBlocksProps(
-		{
-			className: 'alerts-dlx-content',
-			ref: innerBlocksRef,
-		},
-		{
-			allowedBlocks: [ 'core/paragraph' ],
-			template: [ [ 'core/paragraph', { placeholder: '' } ] ],
-		}
-	);
-	const { replaceInnerBlocks } = useDispatch( store );
 
 	// Shortcuts.
 	const { attributes, setAttributes, clientId } = props;
@@ -77,7 +65,41 @@ const BootstrapAlerts = ( props ) => {
 		enableCustomFonts,
 		variant,
 		iconVerticalAlignment,
+		innerBlocksEnabled,
+		colorPrimary,
+		colorBorder,
+		colorAccent,
+		colorAlt,
+		colorBold,
+		colorLight,
 	} = attributes;
+
+	/**
+	 * Get a unique ID for the block for inline styling if necessary.
+	 */
+	useEffect( () => {
+		if ( null === uniqueId || uniqueIds.includes( uniqueId ) ) {
+			const newUniqueId = 'alerts-dlx-' + clientId.substr( 2, 9 ).replace( '-', '' );
+
+			setAttributes( { uniqueId: newUniqueId } );
+			uniqueIds.push( newUniqueId );
+		} else {
+			uniqueIds.push( uniqueId );
+		}
+	}, [] );
+
+	const innerBlocksRef = useRef( null );
+	const innerBlockProps = useInnerBlocksProps(
+		{
+			className: 'alerts-dlx-content',
+			ref: innerBlocksRef,
+		},
+		{
+			allowedBlocks: innerBlocksEnabled ? true : [ 'core/paragraph' ],
+			template: [ [ 'core/paragraph', { placeholder: '' } ] ],
+		}
+	);
+	const { replaceInnerBlocks } = useDispatch( store );
 
 	/**
 	 * Migrate RichText to InnerBlocks.
@@ -92,8 +114,134 @@ const BootstrapAlerts = ( props ) => {
 		}
 	}, [ innerBlocksRef ] );
 
+	const styles = `
+		#${ uniqueId } {
+			--alerts-dlx-bootstrap-color-primary: ${ colorPrimary };
+			--alerts-dlx-bootstrap-color-border: ${ colorBorder };
+			--alerts-dlx-bootstrap-color-accent: ${ colorAccent };
+			--alerts-dlx-bootstrap-color-alt: ${ colorAlt };
+			--alerts-dlx-bootstrap-color-bold: ${ colorBold };
+			--alerts-dlx-bootstrap-color-light: ${ colorLight };
+		}`;
+
 	const inspectorControls = (
 		<>
+			<PanelBody title={ __( 'Alert Settings', 'quotes-dlx' ) }>
+				<>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Icon', 'alerts-dlx' ) }
+							checked={ iconEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									iconEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Title', 'alerts-dlx' ) }
+							checked={ titleEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									titleEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Description', 'alerts-dlx' ) }
+							checked={ descriptionEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									descriptionEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Button', 'alerts-dlx' ) }
+							checked={ buttonEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									buttonEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Flexible InnerBlocks', 'alerts-dlx' ) }
+							checked={ innerBlocksEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									innerBlocksEnabled: value,
+								} );
+							} }
+							help={ __( 'Enable this option to allow the inner blocks to be flexible.', 'alerts-dlx' ) }
+						/>
+					</PanelRow>
+				</>
+			</PanelBody>
+			{
+				'custom' === alertType && (
+					<PanelColorSettings
+						__experimentalIsRenderedInSidebar
+						title={ __( 'Custom Color Settings', 'quotes-dlx' ) }
+						colorSettings={
+							[
+								{
+									label: __( 'Primary Color', 'alerts-dlx' ),
+									value: colorPrimary,
+									onChange: ( value ) => {
+										setAttributes( { colorPrimary: value } );
+									},
+								},
+								{
+									label: __( 'Border Color', 'alerts-dlx' ),
+									value: colorBorder,
+									onChange: ( value ) => {
+										setAttributes( { colorBorder: value } );
+									},
+								},
+								{
+									label: __( 'Accent Color', 'alerts-dlx' ),
+									value: colorAccent,
+									onChange: ( value ) => {
+										setAttributes( { colorAccent: value } );
+									},
+								},
+								{
+									label: __( 'Alt Color', 'alerts-dlx' ),
+									value: colorAlt,
+									onChange: ( value ) => {
+										setAttributes( { colorAlt: value } );
+									},
+								},
+								{
+									label: __( 'Bold Color', 'alerts-dlx' ),
+									value: colorBold,
+									onChange: ( value ) => {
+										setAttributes( { colorBold: value } );
+									},
+								},
+								{
+									label: __( 'Light Color', 'alerts-dlx' ),
+									value: colorLight,
+									onChange: ( value ) => {
+										setAttributes( { colorLight: value } );
+									},
+								},
+							]
+						}
+						colors={ BootstrapColors }
+					/>
+
+				)
+			}
 			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'quotes-dlx' ) }>
 				<>
 					<UnitChooser
@@ -190,60 +338,8 @@ const BootstrapAlerts = ( props ) => {
 					/>
 				</PanelRow>
 			</PanelBody>
-			<PanelBody initialOpen={ false } title={ __( 'Alert Settings', 'quotes-dlx' ) }>
-				<>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Alert Icon', 'alerts-dlx' ) }
-							checked={ iconEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									iconEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Title', 'alerts-dlx' ) }
-							checked={ titleEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									titleEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Alert Description', 'alerts-dlx' ) }
-							checked={ descriptionEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									descriptionEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Alert Button', 'alerts-dlx' ) }
-							checked={ buttonEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									buttonEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-				</>
-			</PanelBody>
 		</>
 	);
-
-	useEffect( () => {
-		setAttributes( { uniqueId: generatedUniqueId } );
-	}, [] );
 
 	/**
 	 * Attempt to check when block styles are changed.
@@ -273,6 +369,11 @@ const BootstrapAlerts = ( props ) => {
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
 			<style>{ baseFontSizeStyles }</style>
+			{
+				'custom' === alertType && (
+					<style>{ styles }</style>
+				)
+			}
 			<link
 				rel="stylesheet"
 				href={ `${ alertsDlxBlock.font_stylesheet }` }

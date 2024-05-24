@@ -220,6 +220,12 @@ class Blocks {
 		$button_rel_no_follow    = Functions::sanitize_attribute( $attributes, 'buttonRelNoFollow', 'boolean' );
 		$button_rel_sponsored    = Functions::sanitize_attribute( $attributes, 'buttonRelSponsored', 'boolean' );
 		$icon_appearance         = Functions::sanitize_attribute( $attributes, 'iconAppearance', 'text' );
+		$color_primary           = Functions::sanitize_attribute( $attributes, 'colorPrimary', 'text' );
+		$color_border            = Functions::sanitize_attribute( $attributes, 'colorBorder', 'text' );
+		$color_accent            = Functions::sanitize_attribute( $attributes, 'colorAccent', 'text' );
+		$color_alt               = Functions::sanitize_attribute( $attributes, 'colorAlt', 'text' );
+		$color_bold              = Functions::sanitize_attribute( $attributes, 'colorBold', 'text' );
+		$color_light             = Functions::sanitize_attribute( $attributes, 'colorLight', 'text' );
 
 		ob_start();
 
@@ -293,6 +299,7 @@ class Blocks {
 						)
 					);
 				}
+				break;
 			case 'shoelace':
 				if ( 'dark' === $mode ) {
 					wp_print_styles(
@@ -310,6 +317,30 @@ class Blocks {
 					);
 				}
 				break;
+		}
+
+		if ( 'custom' === $alert_type ) {
+			ob_start();
+			?>
+			#<?php echo esc_html( $unique_id ); ?> {
+				--alerts-dlx-bootstrap-color-primary: <?php echo esc_html( $color_primary ); ?>;
+				--alerts-dlx-bootstrap-color-border: <?php echo esc_html( $color_border ); ?>;
+				--alerts-dlx-bootstrap-color-accent: <?php echo esc_html( $color_accent ); ?>;
+				--alerts-dlx-bootstrap-color-alt: <?php echo esc_html( $color_alt ); ?>;
+				--alerts-dlx-bootstrap-color-bold: <?php echo esc_html( $color_bold ); ?>;
+				--alerts-dlx-bootstrap-color-light: <?php echo esc_html( $color_light ); ?>;
+			}
+			<?php
+			$custom_css = ob_get_clean();
+			wp_register_style(
+				'alerts-dlx-custom-css',
+				false
+			);
+			wp_add_inline_style(
+				'alerts-dlx-custom-css',
+				$custom_css
+			);
+			wp_print_styles( 'alerts-dlx-custom-css' );
 		}
 
 		// Add base classes to container element.
