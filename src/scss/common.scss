@@ -62,6 +62,19 @@ button.button-reset.components-button:hover {
 	}
 }
 
+.alerts-dlx-close {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	right: 0;
+	padding: 1.25rem 1rem;
+
+	svg,
+	svg:hover {
+		transition: color 0.3s ease-in-out;
+	}
+}
+
 /* Consolidate variants for ChakraUI options */
 .alerts-dlx-chakra-variants,
 .alerts-dlx-material-variants,
@@ -86,6 +99,7 @@ button.button-reset.components-button:hover {
 figure.alerts-dlx-alert {
 	text-align: left;
 	box-sizing: border-box;
+	position: relative;
 }
 .alerts-dlx-content a,
 .alerts-dlx-content a:hover {

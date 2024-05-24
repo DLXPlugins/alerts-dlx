@@ -56,6 +56,10 @@
       "type": "boolean",
       "default": false
     },
+    "closeButtonEnabled": {
+      "type": "boolean",
+      "default": false
+    },
     "colorPrimary": {
       "type": "string",
       "default": "var(--alerts-dlx-bootstrap-color-primary, #084298)"

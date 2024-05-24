@@ -166,6 +166,15 @@ $bootstrap-dark-color-light: #d3d3d4;
 			.alerts-dlx-content p {
 				color: var(--alerts-dlx-bootstrap-color-primary, $bootstrap-primary-color);
 			}
+			.alerts-dlx-close {
+				svg {
+					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-primary-color-alt);
+
+					&:hover {
+						color: var(--alertx-dlx-bootstrap-color-accent, $bootstrap-primary-color-accent);
+					}
+				}
+			}
 			.alerts-dlx-bootstrap {
 				background-color: var(--alerts-dlx-bootstrap-color-light, $bootstrap-primary-color-light);
 				color: var(--alerts-dlx-bootstrap-color-primary, $bootstrap-primary-color);
@@ -184,10 +193,12 @@ $bootstrap-dark-color-light: #d3d3d4;
 					background-color: var(--alertx-dlx-bootstrap-color-accent, $bootstrap-primary-color-accent);
 				}
 
-				svg,
-				svg path svg g {
-					color: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-primary-color-bold);
-					fill: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-primary-color-bold);
+				.alerts-dlx-icon {
+					svg,
+					svg path svg g {
+						color: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-primary-color-bold);
+						fill: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-primary-color-bold);
+					}
 				}
 			}
 		}
@@ -224,10 +235,22 @@ $bootstrap-dark-color-light: #d3d3d4;
 					background-color: $bootstrap-primary-color-accent;
 				}
 
-				svg,
-				svg path svg g {
-					color: $bootstrap-primary-color-bold;
-					fill: $bootstrap-primary-color-bold;
+				.alerts-dlx-icon {
+					svg,
+					svg path svg g {
+						color: $bootstrap-primary-color-bold;
+						fill: $bootstrap-primary-color-bold;
+					}
+				}
+
+				.alerts-dlx-close {
+					svg {
+						color: $bootstrap-primary-color-alt;
+	
+						&:hover {
+							color: $bootstrap-primary-color-accent;
+						}
+					}
 				}
 			}
 		}

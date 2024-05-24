@@ -39,6 +39,7 @@ import UnitChooser from '../components/unit-picker';
 import IconPicker from '../components/IconPicker';
 import BootstrapIcons from '../components/icons/BootstrapIcons';
 import BootstrapColors from './colors';
+import { BootstrapCloseIcon } from '../components/CloseButtonIcons';
 
 // For storing unique IDs.
 const uniqueIds = [];
@@ -60,6 +61,7 @@ const BootstrapAlerts = ( props ) => {
 		descriptionEnabled,
 		titleEnabled,
 		iconEnabled,
+		closeButtonEnabled,
 		className,
 		baseFontSize,
 		enableCustomFonts,
@@ -118,7 +120,7 @@ const BootstrapAlerts = ( props ) => {
 		#${ uniqueId } {
 			--alerts-dlx-bootstrap-color-primary: ${ colorPrimary };
 			--alerts-dlx-bootstrap-color-border: ${ colorBorder };
-			--alerts-dlx-bootstrap-color-accent: ${ colorAccent };
+			--alertx-dlx-bootstrap-color-accent: ${ colorAccent };
 			--alerts-dlx-bootstrap-color-alt: ${ colorAlt };
 			--alerts-dlx-bootstrap-color-bold: ${ colorBold };
 			--alerts-dlx-bootstrap-color-light: ${ colorLight };
@@ -182,6 +184,18 @@ const BootstrapAlerts = ( props ) => {
 								} );
 							} }
 							help={ __( 'Enable this option to allow the inner blocks to be flexible.', 'alerts-dlx' ) }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Close Button', 'alerts-dlx' ) }
+							checked={ closeButtonEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									closeButtonEnabled: value,
+								} );
+							} }
+							help={ __( 'Enable this option to allow the alert to be dismissible.', 'alerts-dlx' ) }
 						/>
 					</PanelRow>
 				</>
@@ -399,6 +413,13 @@ const BootstrapAlerts = ( props ) => {
 					</div>
 				) }
 				<section>
+					{
+						closeButtonEnabled && (
+							<div className="alerts-dlx-close">
+								<BootstrapCloseIcon />
+							</div>
+						)
+					}
 					{ titleEnabled && (
 						<RichText
 							tagName="h2"

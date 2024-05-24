@@ -177,12 +177,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_IconPicker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/IconPicker */ "./src/js/blocks/components/IconPicker/index.js");
 /* harmony import */ var _components_icons_BootstrapIcons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/icons/BootstrapIcons */ "./src/js/blocks/components/icons/BootstrapIcons.js");
 /* harmony import */ var _colors__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./colors */ "./src/js/blocks/bootstrap/colors.js");
+/* harmony import */ var _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/CloseButtonIcons */ "./src/js/blocks/components/CloseButtonIcons/index.js");
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
 /**
  * External dependencies
  */
+
 
 
 
@@ -216,6 +218,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
     descriptionEnabled = attributes.descriptionEnabled,
     titleEnabled = attributes.titleEnabled,
     iconEnabled = attributes.iconEnabled,
+    closeButtonEnabled = attributes.closeButtonEnabled,
     className = attributes.className,
     baseFontSize = attributes.baseFontSize,
     enableCustomFonts = attributes.enableCustomFonts,
@@ -272,7 +275,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
       });
     }
   }, [innerBlocksRef]);
-  var styles = "\n\t\t#".concat(uniqueId, " {\n\t\t\t--alerts-dlx-bootstrap-color-primary: ").concat(colorPrimary, ";\n\t\t\t--alerts-dlx-bootstrap-color-border: ").concat(colorBorder, ";\n\t\t\t--alerts-dlx-bootstrap-color-accent: ").concat(colorAccent, ";\n\t\t\t--alerts-dlx-bootstrap-color-alt: ").concat(colorAlt, ";\n\t\t\t--alerts-dlx-bootstrap-color-bold: ").concat(colorBold, ";\n\t\t\t--alerts-dlx-bootstrap-color-light: ").concat(colorLight, ";\n\t\t}");
+  var styles = "\n\t\t#".concat(uniqueId, " {\n\t\t\t--alerts-dlx-bootstrap-color-primary: ").concat(colorPrimary, ";\n\t\t\t--alerts-dlx-bootstrap-color-border: ").concat(colorBorder, ";\n\t\t\t--alertx-dlx-bootstrap-color-accent: ").concat(colorAccent, ";\n\t\t\t--alerts-dlx-bootstrap-color-alt: ").concat(colorAlt, ";\n\t\t\t--alerts-dlx-bootstrap-color-bold: ").concat(colorBold, ";\n\t\t\t--alerts-dlx-bootstrap-color-light: ").concat(colorLight, ";\n\t\t}");
   var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert Settings', 'quotes-dlx')
   }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
@@ -316,6 +319,15 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
       });
     },
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable this option to allow the inner blocks to be flexible.', 'alerts-dlx')
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Close Button', 'alerts-dlx'),
+    checked: closeButtonEnabled,
+    onChange: function onChange(value) {
+      setAttributes({
+        closeButtonEnabled: value
+      });
+    },
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable this option to allow the alert to be dismissible.', 'alerts-dlx')
   })))), 'custom' === alertType && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.PanelColorSettings, {
     __experimentalIsRenderedInSidebar: true,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Custom Color Settings', 'quotes-dlx'),
@@ -486,7 +498,9 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
     setAttributes: setAttributes,
     alertType: alertType,
     icons: getIconSets()
-  })), /*#__PURE__*/React.createElement("section", null, titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.RichText, {
+  })), /*#__PURE__*/React.createElement("section", null, closeButtonEnabled && /*#__PURE__*/React.createElement("div", {
+    className: "alerts-dlx-close"
+  }, /*#__PURE__*/React.createElement(_components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_13__.BootstrapCloseIcon, null)), titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.RichText, {
     tagName: "h2",
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert title', 'quotes-dlx'),
     value: alertTitle,
@@ -1160,6 +1174,42 @@ var AlertButton = function AlertButton(props) {
   })))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AlertButton);
+
+/***/ }),
+
+/***/ "./src/js/blocks/components/CloseButtonIcons/index.js":
+/*!************************************************************!*\
+  !*** ./src/js/blocks/components/CloseButtonIcons/index.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BootstrapCloseIcon: () => (/* binding */ BootstrapCloseIcon),
+/* harmony export */   ChakraCloseIcon: () => (/* binding */ ChakraCloseIcon)
+/* harmony export */ });
+var BootstrapCloseIcon = function BootstrapCloseIcon(props) {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 16 16",
+    width: "16",
+    height: "16",
+    fill: "currentColor"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"
+  }));
+};
+var ChakraCloseIcon = function ChakraCloseIcon(props) {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 16 16",
+    fill: "currentColor"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"
+  }));
+};
+
 
 /***/ }),
 
@@ -5718,7 +5768,7 @@ module.exports = window["wp"]["primitives"];
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"Bootstrap Alert","apiVersion":2,"name":"mediaron/alerts-dlx-bootstrap","category":"alertsdlx","icon":"<svg width=\'100%\' height=\'100%\' viewBox=\'0 0 167 134\' version=\'1.1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\' xml:space=\'preserve\' xmlns:serif=\'http://www.serif.com/\' style=\'fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;\'><path fill=\'#6500FB\' d=\'M34.617,0.282c-9.51,0 -16.546,8.324 -16.231,17.351c0.302,8.672 -0.091,19.904 -2.918,29.063c-2.837,9.187 -7.633,15.006 -15.468,15.753l0,8.435c7.835,0.747 12.631,6.567 15.468,15.753c2.827,9.16 3.22,20.391 2.918,29.064c-0.315,9.025 6.721,17.35 16.233,17.35l97.443,-0c9.51,-0 16.545,-8.324 16.23,-17.35c-0.302,-8.673 0.091,-19.904 2.918,-29.064c2.838,-9.186 7.622,-15.006 15.457,-15.753l-0,-8.435c-7.835,-0.747 -12.619,-6.566 -15.457,-15.753c-2.827,-9.158 -3.22,-20.391 -2.918,-29.063c0.315,-9.026 -6.72,-17.351 -16.23,-17.351l-97.446,0l0.001,0Zm78.377,81.728c0,12.429 -9.271,19.967 -24.656,19.967l-26.191,0c-1.55,0 -2.825,-1.275 -2.825,-2.824l0,-64.972c0,-1.55 1.275,-2.825 2.825,-2.825l26.041,-0c12.829,-0 21.248,6.949 21.248,17.619c0,7.488 -5.663,14.193 -12.88,15.367l0,0.391c9.824,1.078 16.438,7.88 16.438,17.277Zm-27.512,-41.699l-14.934,-0l0,21.093l12.578,-0c9.723,-0 15.084,-3.915 15.084,-10.914c0,-6.558 -4.61,-10.179 -12.728,-10.179Zm-14.934,29.462l0,23.247l15.483,-0c10.123,-0 15.486,-4.062 15.486,-11.697c-0,-7.635 -5.513,-11.55 -16.137,-11.55l-14.832,-0Z\'/></svg>","description":"An alert and notification block inspired by Bootstrap.","keywords":["alert","info","hint","success","error","notice","notification","warning","bootstrap"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"align":{"type":"string","default":"center"},"alertType":{"type":"string","default":"success"},"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"descriptionEnabled":{"type":"boolean","default":true},"titleEnabled":{"type":"boolean","default":true},"buttonEnabled":{"type":"boolean","default":false},"iconEnabled":{"type":"boolean","default":true},"innerBlocksEnabled":{"type":"boolean","default":false},"colorPrimary":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-primary, #084298)"},"colorBorder":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-border, #b6d4fe)"},"colorAccent":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-accent, #26559c)"},"colorAlt":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-alt, #084298)"},"colorBold":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-bold, #084298)"},"colorLight":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-light, #cfe2ff)"},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"boolean","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"string","default":"650"},"baseFontSize":{"type":"number","default":18},"icon":{"type":"string","default":"<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' fill=\'currentColor\' className=\'bi bi-check\' viewBox=\'0 0 16 16\'><path d=\'M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z\' /></svg>"},"enableCustomFonts":{"type":"boolean","default":true},"variant":{"type":"string","default":"default"},"mode":{"type":"string","default":"light"},"enableDropShadow":{"type":"boolean","default":false},"iconVerticalAlignment":{"type":"string","default":"top"},"uniqueId":{"type":"string","default":""},"alertGroup":{"type":"string","default":"bootstrap"}},"example":{"attributes":{"alertType":"success","alertTitle":"Sample alert title","alertDescription":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>","buttonEnabled":true,"baseFontSize":14,"buttonText":"Learn More","icon":"<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' fill=\'currentColor\' className=\'bi bi-check\' viewBox=\'0 0 16 16\'><path d=\'M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z\' /></svg>"}},"styles":[{"name":"primary","label":"Primary","isDefault":true},{"name":"secondary","label":"Secondary"},{"name":"success","label":"Success"},{"name":"danger","label":"Danger"},{"name":"warning","label":"Warning"},{"name":"info","label":"Info"},{"name":"light","label":"Light"},{"name":"dark","label":"Dark"},{"name":"custom","label":"Custom"}],"supports":{"anchor":true,"align":true,"className":true},"editorScript":"alerts-dlx-block","editorStyle":["alerts-dlx-block-editor-styles","alerts-dlx-bootstrap-light-css","alerts-dlx-bootstrap-dark-css","alerts-dlx-block-editor-styles-lato"]}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"Bootstrap Alert","apiVersion":2,"name":"mediaron/alerts-dlx-bootstrap","category":"alertsdlx","icon":"<svg width=\'100%\' height=\'100%\' viewBox=\'0 0 167 134\' version=\'1.1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\' xml:space=\'preserve\' xmlns:serif=\'http://www.serif.com/\' style=\'fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;\'><path fill=\'#6500FB\' d=\'M34.617,0.282c-9.51,0 -16.546,8.324 -16.231,17.351c0.302,8.672 -0.091,19.904 -2.918,29.063c-2.837,9.187 -7.633,15.006 -15.468,15.753l0,8.435c7.835,0.747 12.631,6.567 15.468,15.753c2.827,9.16 3.22,20.391 2.918,29.064c-0.315,9.025 6.721,17.35 16.233,17.35l97.443,-0c9.51,-0 16.545,-8.324 16.23,-17.35c-0.302,-8.673 0.091,-19.904 2.918,-29.064c2.838,-9.186 7.622,-15.006 15.457,-15.753l-0,-8.435c-7.835,-0.747 -12.619,-6.566 -15.457,-15.753c-2.827,-9.158 -3.22,-20.391 -2.918,-29.063c0.315,-9.026 -6.72,-17.351 -16.23,-17.351l-97.446,0l0.001,0Zm78.377,81.728c0,12.429 -9.271,19.967 -24.656,19.967l-26.191,0c-1.55,0 -2.825,-1.275 -2.825,-2.824l0,-64.972c0,-1.55 1.275,-2.825 2.825,-2.825l26.041,-0c12.829,-0 21.248,6.949 21.248,17.619c0,7.488 -5.663,14.193 -12.88,15.367l0,0.391c9.824,1.078 16.438,7.88 16.438,17.277Zm-27.512,-41.699l-14.934,-0l0,21.093l12.578,-0c9.723,-0 15.084,-3.915 15.084,-10.914c0,-6.558 -4.61,-10.179 -12.728,-10.179Zm-14.934,29.462l0,23.247l15.483,-0c10.123,-0 15.486,-4.062 15.486,-11.697c-0,-7.635 -5.513,-11.55 -16.137,-11.55l-14.832,-0Z\'/></svg>","description":"An alert and notification block inspired by Bootstrap.","keywords":["alert","info","hint","success","error","notice","notification","warning","bootstrap"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"align":{"type":"string","default":"center"},"alertType":{"type":"string","default":"success"},"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"descriptionEnabled":{"type":"boolean","default":true},"titleEnabled":{"type":"boolean","default":true},"buttonEnabled":{"type":"boolean","default":false},"iconEnabled":{"type":"boolean","default":true},"innerBlocksEnabled":{"type":"boolean","default":false},"closeButtonEnabled":{"type":"boolean","default":false},"colorPrimary":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-primary, #084298)"},"colorBorder":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-border, #b6d4fe)"},"colorAccent":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-accent, #26559c)"},"colorAlt":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-alt, #084298)"},"colorBold":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-bold, #084298)"},"colorLight":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-light, #cfe2ff)"},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"boolean","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"string","default":"650"},"baseFontSize":{"type":"number","default":18},"icon":{"type":"string","default":"<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' fill=\'currentColor\' className=\'bi bi-check\' viewBox=\'0 0 16 16\'><path d=\'M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z\' /></svg>"},"enableCustomFonts":{"type":"boolean","default":true},"variant":{"type":"string","default":"default"},"mode":{"type":"string","default":"light"},"enableDropShadow":{"type":"boolean","default":false},"iconVerticalAlignment":{"type":"string","default":"top"},"uniqueId":{"type":"string","default":""},"alertGroup":{"type":"string","default":"bootstrap"}},"example":{"attributes":{"alertType":"success","alertTitle":"Sample alert title","alertDescription":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>","buttonEnabled":true,"baseFontSize":14,"buttonText":"Learn More","icon":"<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' fill=\'currentColor\' className=\'bi bi-check\' viewBox=\'0 0 16 16\'><path d=\'M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z\' /></svg>"}},"styles":[{"name":"primary","label":"Primary","isDefault":true},{"name":"secondary","label":"Secondary"},{"name":"success","label":"Success"},{"name":"danger","label":"Danger"},{"name":"warning","label":"Warning"},{"name":"info","label":"Info"},{"name":"light","label":"Light"},{"name":"dark","label":"Dark"},{"name":"custom","label":"Custom"}],"supports":{"anchor":true,"align":true,"className":true},"editorScript":"alerts-dlx-block","editorStyle":["alerts-dlx-block-editor-styles","alerts-dlx-bootstrap-light-css","alerts-dlx-bootstrap-dark-css","alerts-dlx-block-editor-styles-lato"]}');
 
 /***/ }),
 
