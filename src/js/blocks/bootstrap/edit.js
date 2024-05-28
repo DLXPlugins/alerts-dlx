@@ -25,6 +25,7 @@ import { useDispatch } from '@wordpress/data';
 
 import {
 	InspectorControls,
+	InspectorAdvancedControls,
 	RichText,
 	useBlockProps,
 	useInnerBlocksProps,
@@ -62,6 +63,7 @@ const BootstrapAlerts = ( props ) => {
 		titleEnabled,
 		iconEnabled,
 		closeButtonEnabled,
+		closeButtonExpiration,
 		className,
 		baseFontSize,
 		enableCustomFonts,
@@ -177,18 +179,6 @@ const BootstrapAlerts = ( props ) => {
 					</PanelRow>
 					<PanelRow>
 						<ToggleControl
-							label={ __( 'Enable Flexible InnerBlocks', 'alerts-dlx' ) }
-							checked={ innerBlocksEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									innerBlocksEnabled: value,
-								} );
-							} }
-							help={ __( 'Enable this option to allow the inner blocks to be flexible.', 'alerts-dlx' ) }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
 							label={ __( 'Enable Close Button', 'alerts-dlx' ) }
 							checked={ closeButtonEnabled }
 							onChange={ ( value ) => {
@@ -199,6 +189,23 @@ const BootstrapAlerts = ( props ) => {
 							help={ __( 'Enable this option to allow the alert to be dismissible.', 'alerts-dlx' ) }
 						/>
 					</PanelRow>
+					{
+						closeButtonEnabled && (
+							<PanelRow>
+								<TextControl
+									label={ __( 'Set the Close Button save expiration', 'alerts-dlx' ) }
+									value={ closeButtonExpiration }
+									onChange={ ( value ) => {
+										setAttributes( {
+											closeButtonExpiration: parseInt( value ),
+										} );
+									} }
+									help={ __( 'Set the expiration time in seconds for the close button to reappear. Set to zero to never expire.', 'alerts-dlx' ) }
+									type={ 'number' }
+								/>
+							</PanelRow>
+						)
+					}
 				</>
 			</PanelBody>
 			{
@@ -382,6 +389,21 @@ const BootstrapAlerts = ( props ) => {
 		</>
 	);
 
+	const advancedControls = (
+		<PanelRow>
+			<ToggleControl
+				label={ __( 'Enable Flexible InnerBlocks', 'alerts-dlx' ) }
+				checked={ innerBlocksEnabled }
+				onChange={ ( value ) => {
+					setAttributes( {
+						innerBlocksEnabled: value,
+					} );
+				} }
+				help={ __( 'Enable this option to allow the use of any block within the alert.', 'alerts-dlx' ) }
+			/>
+		</PanelRow>
+	);
+
 	/**
 	 * Attempt to check when block styles are changed.
 	 */
@@ -409,6 +431,7 @@ const BootstrapAlerts = ( props ) => {
 	const block = (
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
+			<InspectorAdvancedControls>{ advancedControls }</InspectorAdvancedControls>
 			<style>{ baseFontSizeStyles }</style>
 			{
 				'custom' === alertType && (

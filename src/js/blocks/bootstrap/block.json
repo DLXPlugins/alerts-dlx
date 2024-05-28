@@ -50,6 +50,10 @@
 			"type": "boolean",
 			"default": false
 		},
+		"closeButtonExpiration": {
+			"type": "number",
+			"default": 0
+		},
 		"colorPrimary": {
 			"type": "string",
 			"default": "var(--alerts-dlx-bootstrap-color-primary, #084298)"

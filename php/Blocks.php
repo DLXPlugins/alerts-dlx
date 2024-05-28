@@ -226,6 +226,14 @@ class Blocks {
 		$color_alt               = Functions::sanitize_attribute( $attributes, 'colorAlt', 'text' );
 		$color_bold              = Functions::sanitize_attribute( $attributes, 'colorBold', 'text' );
 		$color_light             = Functions::sanitize_attribute( $attributes, 'colorLight', 'text' );
+		$close_button_enabled    = Functions::sanitize_attribute( $attributes, 'closeButtonEnabled', 'boolean' );
+		$close_button_expiration = Functions::sanitize_attribute( $attributes, 'closeButtonExpiration', 'integer' );
+
+		// Check to see if expiration cookie is set.
+		$cookie_name = 'alerts-dlx-' . $unique_id;
+		if ( $close_button_enabled && isset( $_COOKIE[ $cookie_name ] ) ) {
+			return '';
+		}
 
 		ob_start();
 
@@ -319,6 +327,22 @@ class Blocks {
 				break;
 		}
 
+
+		// Close button footer and scripts.
+		if ( $close_button_enabled ) {
+			// Add footer SVGs for close button.
+			add_action( 'wp_footer', array( $this, 'print_close_button_svgs' ) );
+
+			// Add close button script.
+			wp_enqueue_script(
+				'alerts-dlx-close-button',
+				Functions::get_plugin_url( 'dist/alerts-dlx-dismiss.js' ),
+				array(),
+				Functions::get_plugin_version(),
+				true
+			);
+		}
+
 		if ( 'custom' === $alert_type ) {
 			ob_start();
 			?>
@@ -369,6 +393,7 @@ class Blocks {
 		</style>
 		<div
 			class="<?php echo esc_html( implode( ' ', $container_classes ) ); ?>"
+			data-expiration="<?php echo esc_attr( absint( $close_button_expiration ) ); ?>"
 		>
 			<figure
 				role="alert"
@@ -388,6 +413,23 @@ class Blocks {
 				?>
 				<section>
 					<?php
+					if ( $close_button_enabled ) {
+						?>
+						<div class="alerts-dlx-close" aria-label="<?php esc_attr_e( 'Close', 'alerts-dlx' ); ?>">
+							<?php
+							switch ( $alert_group ) {
+								case 'bootstrap':
+									?>
+									<svg class="alerts-dlx-close-button-svg" aria-hidden="true" width="16" height="16">
+										<use xlink:href="#alerts-dlx-bootstrap-close-button"></use>
+									</svg>
+									<?php
+									break;
+							}
+							?>
+						</div>
+						<?php
+					}
 					if ( $title_enabled ) {
 						?>
 						<h2 class="alerts-dlx-title">
@@ -558,5 +600,18 @@ class Blocks {
 			Functions::get_plugin_version(),
 			'all'
 		);
+	}
+
+	/**
+	 * Print the close button SVGs.
+	 */
+	public function print_close_button_svgs() {
+		?>
+		<svg width="0" height="0" class="hidden" style="display: none;">
+			<symbol id="alerts-dlx-bootstrap-close-button" viewBox="0 0 16 16" width="16" height="16">
+				<path fill="currentColor" d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/>
+			</symbol>
+		</svg>
+		<?php
 	}
 }

@@ -106,3 +106,21 @@ figure.alerts-dlx-alert {
 	color: inherit;
 	text-decoration: underline;
 }
+
+@keyframes alerts-dlx-dismiss {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		height: 0;
+	}
+}
+
+/** Animation for removal **/
+.alerts-dlx-remove {
+	animation-name: alerts-dlx-dismiss;
+	animation-duration: 0.8s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
+}
