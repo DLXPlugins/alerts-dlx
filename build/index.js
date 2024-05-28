@@ -230,7 +230,8 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
     colorAccent = attributes.colorAccent,
     colorAlt = attributes.colorAlt,
     colorBold = attributes.colorBold,
-    colorLight = attributes.colorLight;
+    colorLight = attributes.colorLight,
+    mode = attributes.mode;
 
   /**
    * Get a unique ID for the block for inline styling if necessary.
@@ -277,7 +278,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
   }, [innerBlocksRef]);
   var styles = "\n\t\t#".concat(uniqueId, " {\n\t\t\t--alerts-dlx-bootstrap-color-primary: ").concat(colorPrimary, ";\n\t\t\t--alerts-dlx-bootstrap-color-border: ").concat(colorBorder, ";\n\t\t\t--alertx-dlx-bootstrap-color-accent: ").concat(colorAccent, ";\n\t\t\t--alerts-dlx-bootstrap-color-alt: ").concat(colorAlt, ";\n\t\t\t--alerts-dlx-bootstrap-color-bold: ").concat(colorBold, ";\n\t\t\t--alerts-dlx-bootstrap-color-light: ").concat(colorLight, ";\n\t\t}");
   var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert Settings', 'quotes-dlx')
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert Settings', 'alerts-dlx')
   }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Alert Icon', 'alerts-dlx'),
     checked: iconEnabled,
@@ -330,7 +331,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable this option to allow the alert to be dismissible.', 'alerts-dlx')
   })))), 'custom' === alertType && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.PanelColorSettings, {
     __experimentalIsRenderedInSidebar: true,
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Custom Color Settings', 'quotes-dlx'),
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Custom Color Settings', 'alerts-dlx'),
     colorSettings: [{
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Primary Color', 'alerts-dlx'),
       value: colorPrimary,
@@ -383,9 +384,9 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
     colors: _colors__WEBPACK_IMPORTED_MODULE_12__["default"]
   }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     initialOpen: true,
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Appearance', 'quotes-dlx')
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Appearance', 'alerts-dlx')
   }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_components_unit_picker__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Maximum Width', 'quotes-dlx'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Maximum Width', 'alerts-dlx'),
     value: maximumWidthUnit,
     units: ['px', '%', 'vw'],
     onClick: function onClick(value) {
@@ -403,7 +404,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
     }
   })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
     id: "alerts-dlx-variants-button-group",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set the Alert Variant', 'quotes-dlx'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set the Alert Variant', 'alerts-dlx'),
     className: "alerts-dlx-bootstrap-variants"
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     variant: variant === 'default' ? 'primary' : 'secondary',
@@ -421,7 +422,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
     }
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Centered', 'alerts-dlx'))))), iconEnabled && 'centered' !== variant && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
     id: "alerts-dlx-button-group-icon-alignment",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Icon Vertical Alignment', 'quotes-dlx'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Icon Vertical Alignment', 'alerts-dlx'),
     className: "alerts-dlx-material-variants"
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     variant: iconVerticalAlignment === 'top' ? 'primary' : 'secondary',
@@ -437,7 +438,25 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
         iconVerticalAlignment: 'centered'
       });
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Centered', 'alerts-dlx'))))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Centered', 'alerts-dlx'))))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
+    id: "alerts-dlx-mode-button-group",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set Light or Dark Mode', 'alerts-dlx'),
+    className: "alerts-dlx-chakra-mode"
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    variant: mode === 'light' ? 'primary' : 'secondary',
+    onClick: function onClick(e) {
+      setAttributes({
+        mode: 'light'
+      });
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Light Mode', 'alerts-dlx')), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    variant: mode === 'dark' ? 'primary' : 'secondary',
+    onClick: function onClick(e) {
+      setAttributes({
+        mode: 'dark'
+      });
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Dark Mode', 'alerts-dlx'))))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set the Base Font Size', 'alerts-dlx'),
     step: 1,
     value: baseFontSize,
@@ -502,7 +521,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
     className: "alerts-dlx-close"
   }, /*#__PURE__*/React.createElement(_components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_13__.BootstrapCloseIcon, null)), titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.RichText, {
     tagName: "h2",
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert title', 'quotes-dlx'),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert title', 'alerts-dlx'),
     value: alertTitle,
     className: "alerts-dlx-title",
     disableLineBreaks: true,
@@ -524,7 +543,8 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
       'is-appearance-default': 'default' === variant,
       'is-appearance-centered': 'centered' === variant,
       'icon-vertical-align-top': 'top' === iconVerticalAlignment,
-      'icon-vertical-align-centered': 'centered' === iconVerticalAlignment
+      'icon-vertical-align-centered': 'centered' === iconVerticalAlignment,
+      'is-dark-mode': 'dark' === mode
     })
   });
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", blockProps, block));

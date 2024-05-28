@@ -74,6 +74,7 @@ const BootstrapAlerts = ( props ) => {
 		colorAlt,
 		colorBold,
 		colorLight,
+		mode,
 	} = attributes;
 
 	/**
@@ -128,7 +129,7 @@ const BootstrapAlerts = ( props ) => {
 
 	const inspectorControls = (
 		<>
-			<PanelBody title={ __( 'Alert Settings', 'quotes-dlx' ) }>
+			<PanelBody title={ __( 'Alert Settings', 'alerts-dlx' ) }>
 				<>
 					<PanelRow>
 						<ToggleControl
@@ -204,7 +205,7 @@ const BootstrapAlerts = ( props ) => {
 				'custom' === alertType && (
 					<PanelColorSettings
 						__experimentalIsRenderedInSidebar
-						title={ __( 'Custom Color Settings', 'quotes-dlx' ) }
+						title={ __( 'Custom Color Settings', 'alerts-dlx' ) }
 						colorSettings={
 							[
 								{
@@ -256,10 +257,10 @@ const BootstrapAlerts = ( props ) => {
 
 				)
 			}
-			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'quotes-dlx' ) }>
+			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'alerts-dlx' ) }>
 				<>
 					<UnitChooser
-						label={ __( 'Maximum Width', 'quotes-dlx' ) }
+						label={ __( 'Maximum Width', 'alerts-dlx' ) }
 						value={ maximumWidthUnit }
 						units={ [ 'px', '%', 'vw' ] }
 						onClick={ ( value ) => {
@@ -280,7 +281,7 @@ const BootstrapAlerts = ( props ) => {
 					/>
 				</>
 				<PanelRow>
-					<BaseControl id="alerts-dlx-variants-button-group" label={ __( 'Set the Alert Variant', 'quotes-dlx' ) } className="alerts-dlx-bootstrap-variants">
+					<BaseControl id="alerts-dlx-variants-button-group" label={ __( 'Set the Alert Variant', 'alerts-dlx' ) } className="alerts-dlx-bootstrap-variants">
 						<ButtonGroup>
 							<Button
 								variant={ variant === 'default' ? 'primary' : 'secondary' }
@@ -307,7 +308,7 @@ const BootstrapAlerts = ( props ) => {
 				</PanelRow>
 				{ ( iconEnabled && 'centered' !== variant ) && (
 					<PanelRow>
-						<BaseControl id="alerts-dlx-button-group-icon-alignment" label={ __( 'Icon Vertical Alignment', 'quotes-dlx' ) } className="alerts-dlx-material-variants">
+						<BaseControl id="alerts-dlx-button-group-icon-alignment" label={ __( 'Icon Vertical Alignment', 'alerts-dlx' ) } className="alerts-dlx-material-variants">
 							<ButtonGroup>
 								<Button
 									variant={ iconVerticalAlignment === 'top' ? 'primary' : 'secondary' }
@@ -333,6 +334,32 @@ const BootstrapAlerts = ( props ) => {
 						</BaseControl>
 					</PanelRow>
 				) }
+				<PanelRow>
+					<BaseControl id="alerts-dlx-mode-button-group" label={ __( 'Set Light or Dark Mode', 'alerts-dlx' ) } className="alerts-dlx-chakra-mode">
+						<ButtonGroup>
+							<Button
+								variant={ mode === 'light' ? 'primary' : 'secondary' }
+								onClick={ ( e ) => {
+									setAttributes( {
+										mode: 'light',
+									} );
+								} }
+							>
+								{ __( 'Light Mode', 'alerts-dlx' ) }
+							</Button>
+							<Button
+								variant={ mode === 'dark' ? 'primary' : 'secondary' }
+								onClick={ ( e ) => {
+									setAttributes( {
+										mode: 'dark',
+									} );
+								} }
+							>
+								{ __( 'Dark Mode', 'alerts-dlx' ) }
+							</Button>
+						</ButtonGroup>
+					</BaseControl>
+				</PanelRow>
 				<PanelRow>
 					<RangeControl
 						label={ __( 'Set the Base Font Size', 'alerts-dlx' ) }
@@ -423,7 +450,7 @@ const BootstrapAlerts = ( props ) => {
 					{ titleEnabled && (
 						<RichText
 							tagName="h2"
-							placeholder={ __( 'Alert title', 'quotes-dlx' ) }
+							placeholder={ __( 'Alert title', 'alerts-dlx' ) }
 							value={ alertTitle }
 							className="alerts-dlx-title"
 							disableLineBreaks={ true }
@@ -456,6 +483,7 @@ const BootstrapAlerts = ( props ) => {
 			'is-appearance-centered': 'centered' === variant,
 			'icon-vertical-align-top': 'top' === iconVerticalAlignment,
 			'icon-vertical-align-centered': 'centered' === iconVerticalAlignment,
+			'is-dark-mode': 'dark' === mode,
 		} ),
 	} );
 
