@@ -639,6 +639,73 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/blocks/chakraui/colors.js":
+/*!******************************************!*\
+  !*** ./src/js/blocks/chakraui/colors.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var chakraColors = [{
+  name: 'Success Color',
+  color: '#2d3748'
+}, {
+  name: 'Success Color Accent',
+  color: '#38a169'
+}, {
+  name: 'Success Color Alt',
+  color: '#3dae71'
+}, {
+  name: 'Success Color Light',
+  color: '#c6f6d5'
+}, {
+  name: 'Info Color',
+  color: '#014361'
+}, {
+  name: 'Info Color Accent',
+  color: '#3182ce'
+}, {
+  name: 'Info Color Alt',
+  color: '#2d75b8'
+}, {
+  name: 'Info Color Bold',
+  color: '#2d76bb'
+}, {
+  name: 'Info Color Light',
+  color: '#bee3f8'
+}, {
+  name: 'Warning Color',
+  color: '#2d3748'
+}, {
+  name: 'Warning Color Accent',
+  color: '#dd6b20'
+}, {
+  name: 'Warning Color Alt',
+  color: '#b35719'
+}, {
+  name: 'Warning Color Light',
+  color: '#feebc8'
+}, {
+  name: 'Error Color Accent',
+  color: '#a92525'
+}, {
+  name: 'Error Color Alt',
+  color: '#d32f2f'
+}, {
+  name: 'Error Color Bold',
+  color: '#ef5350'
+}, {
+  name: 'Error Color Light',
+  color: '#fed7d7'
+}];
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (chakraColors);
+
+/***/ }),
+
 /***/ "./src/js/blocks/chakraui/edit.js":
 /*!****************************************!*\
   !*** ./src/js/blocks/chakraui/edit.js ***!
@@ -669,7 +736,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_AlertButton__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/AlertButton */ "./src/js/blocks/components/AlertButton/index.js");
 /* harmony import */ var _components_unit_picker__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/unit-picker */ "./src/js/blocks/components/unit-picker/index.js");
 /* harmony import */ var _components_IconPicker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/IconPicker */ "./src/js/blocks/components/IconPicker/index.js");
-/* harmony import */ var _components_icons_ChakraIcons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/icons/ChakraIcons */ "./src/js/blocks/components/icons/ChakraIcons.js");
+/* harmony import */ var _colors__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./colors */ "./src/js/blocks/chakraui/colors.js");
+/* harmony import */ var _components_icons_ChakraIcons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/icons/ChakraIcons */ "./src/js/blocks/components/icons/ChakraIcons.js");
+/* harmony import */ var _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/CloseButtonIcons */ "./src/js/blocks/components/CloseButtonIcons/index.js");
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
@@ -689,18 +758,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+// For storing unique IDs.
+var uniqueIds = [];
 var ChakraAlerts = function ChakraAlerts(props) {
-  var generatedUniqueId = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_7__.useInstanceId)(ChakraAlerts, 'adlx-chakra');
   var innerBlocksRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
-  var innerBlockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.useInnerBlocksProps)({
-    className: 'alerts-dlx-content',
-    ref: innerBlocksRef
-  }, {
-    allowedBlocks: ['core/paragraph'],
-    template: [['core/paragraph', {
-      placeholder: ''
-    }]]
-  });
   var _useDispatch = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_5__.useDispatch)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.store),
     replaceInnerBlocks = _useDispatch.replaceInnerBlocks;
 
@@ -724,7 +788,25 @@ var ChakraAlerts = function ChakraAlerts(props) {
     enableCustomFonts = attributes.enableCustomFonts,
     variant = attributes.variant,
     mode = attributes.mode,
-    iconVerticalAlignment = attributes.iconVerticalAlignment;
+    iconVerticalAlignment = attributes.iconVerticalAlignment,
+    colorPrimary = attributes.colorPrimary,
+    colorBorder = attributes.colorBorder,
+    colorAccent = attributes.colorAccent,
+    colorAlt = attributes.colorAlt,
+    colorBold = attributes.colorBold,
+    colorLight = attributes.colorLight,
+    closeButtonEnabled = attributes.closeButtonEnabled,
+    closeButtonExpiration = attributes.closeButtonExpiration,
+    innerBlocksEnabled = attributes.innerBlocksEnabled;
+  var innerBlockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.useInnerBlocksProps)({
+    className: 'alerts-dlx-content',
+    ref: innerBlocksRef
+  }, {
+    allowedBlocks: innerBlocksEnabled ? true : ['core/paragraph'],
+    template: [['core/paragraph', {
+      placeholder: ''
+    }]]
+  });
 
   /**
    * Migrate RichText to InnerBlocks.
@@ -742,7 +824,129 @@ var ChakraAlerts = function ChakraAlerts(props) {
       });
     }
   }, [innerBlocksRef]);
+
+  /**
+   * Get a unique ID for the block for inline styling if necessary.
+   */
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    if (null === uniqueId || uniqueIds.includes(uniqueId)) {
+      var newUniqueId = 'alerts-dlx-' + clientId.substr(2, 9).replace('-', '');
+      setAttributes({
+        uniqueId: newUniqueId
+      });
+      uniqueIds.push(newUniqueId);
+    } else {
+      uniqueIds.push(uniqueId);
+    }
+  }, []);
+  var styles = "\n\t\t#".concat(uniqueId, " {\n\t\t\t--alerts-dlx-chakra-color-primary: ").concat(colorPrimary, ";\n\t\t\t--alerts-dlx-chakra-color-border: ").concat(colorBorder, ";\n\t\t\t--alertx-dlx-chakra-color-accent: ").concat(colorAccent, ";\n\t\t\t--alerts-dlx-chakra-color-alt: ").concat(colorAlt, ";\n\t\t\t--alerts-dlx-chakra-color-bold: ").concat(colorBold, ";\n\t\t\t--alerts-dlx-chakra-color-light: ").concat(colorLight, ";\n\t\t}");
   var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert Settings', 'alerts-dlx')
+  }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Alert Icon', 'alerts-dlx'),
+    checked: iconEnabled,
+    onChange: function onChange(value) {
+      setAttributes({
+        iconEnabled: value
+      });
+    }
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Title', 'alerts-dlx'),
+    checked: titleEnabled,
+    onChange: function onChange(value) {
+      setAttributes({
+        titleEnabled: value
+      });
+    }
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Alert Description', 'alerts-dlx'),
+    checked: descriptionEnabled,
+    onChange: function onChange(value) {
+      setAttributes({
+        descriptionEnabled: value
+      });
+    }
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Alert Button', 'alerts-dlx'),
+    checked: buttonEnabled,
+    onChange: function onChange(value) {
+      setAttributes({
+        buttonEnabled: value
+      });
+    }
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Close Button', 'alerts-dlx'),
+    checked: closeButtonEnabled,
+    onChange: function onChange(value) {
+      setAttributes({
+        closeButtonEnabled: value
+      });
+    },
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable this option to allow the alert to be dismissible.', 'alerts-dlx')
+  })), closeButtonEnabled && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set the Close Button save expiration', 'alerts-dlx'),
+    value: closeButtonExpiration,
+    onChange: function onChange(value) {
+      setAttributes({
+        closeButtonExpiration: parseInt(value)
+      });
+    },
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set the expiration time in seconds for the close button to reappear. Set to zero to never expire.', 'alerts-dlx'),
+    type: 'number'
+  })))), 'custom' === alertType && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.PanelColorSettings, {
+    __experimentalIsRenderedInSidebar: true,
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Custom Color Settings', 'alerts-dlx'),
+    colorSettings: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Primary Color', 'alerts-dlx'),
+      value: colorPrimary,
+      onChange: function onChange(value) {
+        setAttributes({
+          colorPrimary: value
+        });
+      }
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Border Color', 'alerts-dlx'),
+      value: colorBorder,
+      onChange: function onChange(value) {
+        setAttributes({
+          colorBorder: value
+        });
+      }
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Accent Color', 'alerts-dlx'),
+      value: colorAccent,
+      onChange: function onChange(value) {
+        setAttributes({
+          colorAccent: value
+        });
+      }
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alt Color', 'alerts-dlx'),
+      value: colorAlt,
+      onChange: function onChange(value) {
+        setAttributes({
+          colorAlt: value
+        });
+      }
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Bold Color', 'alerts-dlx'),
+      value: colorBold,
+      onChange: function onChange(value) {
+        setAttributes({
+          colorBold: value
+        });
+      }
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Light Color', 'alerts-dlx'),
+      value: colorLight,
+      onChange: function onChange(value) {
+        setAttributes({
+          colorLight: value
+        });
+      }
+    }],
+    colors: _colors__WEBPACK_IMPORTED_MODULE_11__["default"]
+  }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     initialOpen: true,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Appearance', 'quotes-dlx')
   }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_components_unit_picker__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -888,11 +1092,16 @@ var ChakraAlerts = function ChakraAlerts(props) {
       });
     }
   })))));
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    setAttributes({
-      uniqueId: generatedUniqueId
-    });
-  }, []);
+  var advancedControls = /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Flexible InnerBlocks', 'alerts-dlx'),
+    checked: innerBlocksEnabled,
+    onChange: function onChange(value) {
+      setAttributes({
+        innerBlocksEnabled: value
+      });
+    },
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable this option to allow the use of any block within the alert.', 'alerts-dlx')
+  }));
 
   /**
    * Attempt to check when block styles are changed.
@@ -904,32 +1113,13 @@ var ChakraAlerts = function ChakraAlerts(props) {
     var styleMatch = new RegExp(/is-style-([^\s]*)/g).exec(className);
     if (null !== styleMatch) {
       var match = styleMatch[1];
-      switch (match) {
-        case 'success':
-          setAttributes({
-            alertType: 'success'
-          });
-          break;
-        case 'info':
-          setAttributes({
-            alertType: 'info'
-          });
-          break;
-        case 'warning':
-          setAttributes({
-            alertType: 'warning'
-          });
-          break;
-        case 'error':
-          setAttributes({
-            alertType: 'error'
-          });
-          break;
-      }
+      setAttributes({
+        alertType: match
+      });
     }
   }, [className]);
   var getIconSets = function getIconSets() {
-    return _components_icons_ChakraIcons__WEBPACK_IMPORTED_MODULE_11__["default"];
+    return _components_icons_ChakraIcons__WEBPACK_IMPORTED_MODULE_12__["default"];
   };
 
   // Calculate max width.
@@ -937,7 +1127,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
     maxWidth: maximumWidth + maximumWidthUnit
   };
   var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
-  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("figure", {
+  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InspectorAdvancedControls, null, advancedControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), 'custom' === alertType && /*#__PURE__*/React.createElement("style", null, styles), /*#__PURE__*/React.createElement("figure", {
     role: "alert",
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('alerts-dlx-alert alerts-dlx-chakra', {
       'alerts-dlx-has-icon': iconEnabled,
@@ -954,7 +1144,9 @@ var ChakraAlerts = function ChakraAlerts(props) {
     setAttributes: setAttributes,
     alertType: alertType,
     icons: getIconSets()
-  })), /*#__PURE__*/React.createElement("section", null, titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.RichText, {
+  })), /*#__PURE__*/React.createElement("section", null, closeButtonEnabled && /*#__PURE__*/React.createElement("div", {
+    className: "alerts-dlx-close"
+  }, /*#__PURE__*/React.createElement(_components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_13__.ChakraCloseIcon, null)), titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.RichText, {
     tagName: "h2",
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert title', 'quotes-dlx'),
     value: alertTitle,
@@ -973,11 +1165,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
     setAttributes: setAttributes
   })))));
   var blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.useBlockProps)({
-    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, 'alerts-dlx template-chakra', {
-      'is-style-success': className === undefined && 'success' === alertType,
-      'is-style-info': className === undefined && 'info' === alertType,
-      'is-style-warning': className === undefined && 'warning' === alertType,
-      'is-style-error': className === undefined && 'error' === alertType,
+    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, "alerts-dlx template-chakra is-style-".concat(alertType), {
       'is-dark-mode': 'dark' === mode,
       'custom-fonts-enabled': enableCustomFonts,
       'is-appearance-subtle': 'subtle' === variant,
@@ -1234,11 +1422,15 @@ var BootstrapCloseIcon = function BootstrapCloseIcon(props) {
 };
 var ChakraCloseIcon = function ChakraCloseIcon(props) {
   return /*#__PURE__*/React.createElement("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 16 16",
-    fill: "currentColor"
+    viewBox: "0 0 24 24",
+    focusable: "false",
+    className: "chakra-icon css-onkibi",
+    "aria-hidden": "true",
+    width: "16",
+    height: "16"
   }, /*#__PURE__*/React.createElement("path", {
-    d: "M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z"
+    fill: "currentColor",
+    d: "M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z"
   }));
 };
 
@@ -5811,7 +6003,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"Chakra Alert","apiVersion":2,"name":"mediaron/alerts-dlx-chakra","category":"alertsdlx","icon":"<svg width=\'100%\' height=\'100%\' viewBox=\'0 0 804 804\' version=\'1.1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\' xml:space=\'preserve\' xmlns:serif=\'http://www.serif.com/\' style=\'fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;\'><path fill=\'#60BFC1\' d=\'M803.125,401.563c0,-221.629 -179.934,-401.563 -401.563,-401.563c-221.628,0 -401.562,179.934 -401.562,401.563c0,221.628 179.934,401.562 401.563,401.562c221.628,0 401.562,-179.934 401.562,-401.563Z\' style=\'fill:url(#_Linear1);\'/><path fill=\'#FFFFFF\' d=\'M217.369,418.703l273.725,-271.841c5.112,-5.078 13.344,1.102 9.89,7.428l-101.878,186.726c-2.275,4.162 0.741,9.243 5.485,9.243l176.062,0c5.672,0 8.409,6.947 4.263,10.819l-308.525,287.944c-5.532,5.162 -13.766,-2.113 -9.324,-8.238l146.049,-201.478c2.993,-4.131 0.043,-9.918 -5.06,-9.918l-186.283,-0c-5.579,-0 -8.362,-6.754 -4.404,-10.685Z\' style=\'fill:#fff;fill-rule:nonzero;\'/><defs><linearGradient id=\'_Linear1\' x1=\'0\' y1=\'0\' x2=\'1\' y2=\'0\' gradientUnits=\'userSpaceOnUse\' gradientTransform=\'matrix(4.91772e-14,803.125,-803.125,4.91772e-14,401.562,0)\'><stop offset=\'0\' style=\'stop-color:#7bcbd4;stop-opacity:1\'/><stop offset=\'1\' style=\'stop-color:#29c6b7;stop-opacity:1\'/></linearGradient></defs></svg>","description":"An alert and notification block inspired by Chakra UI.","keywords":["alert","info","hint","success","error","notice","notification","warning","chakra"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"align":{"type":"string","default":"center"},"alertType":{"type":"string","default":"success"},"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"descriptionEnabled":{"type":"boolean","default":true},"titleEnabled":{"type":"boolean","default":true},"buttonEnabled":{"type":"boolean","default":false},"iconEnabled":{"type":"boolean","default":true},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"boolean","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"string","default":"650"},"baseFontSize":{"type":"number","default":18},"icon":{"type":"string","default":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M24 44q-4.25 0-7.9-1.525-3.65-1.525-6.35-4.225-2.7-2.7-4.225-6.35Q4 28.25 4 24q0-4.2 1.525-7.85Q7.05 12.5 9.75 9.8q2.7-2.7 6.35-4.25Q19.75 4 24 4q3.75 0 7 1.2t5.85 3.3l-2.15 2.15q-2.2-1.75-4.9-2.7Q27.1 7 24 7q-7.25 0-12.125 4.875T7 24q0 7.25 4.875 12.125T24 41q7.25 0 12.125-4.875T41 24q0-1.5-.225-2.925-.225-1.425-.675-2.775l2.3-2.3q.8 1.85 1.2 3.85.4 2 .4 4.15 0 4.25-1.55 7.9-1.55 3.65-4.25 6.35-2.7 2.7-6.35 4.225Q28.2 44 24 44Zm-2.95-10.9-8.25-8.3 2.25-2.25 6 6 20.7-20.7 2.3 2.25Z\'/></svg>"},"enableCustomFonts":{"type":"boolean","default":true},"variant":{"type":"string","default":"subtle"},"mode":{"type":"string","default":"light"},"enableDropShadow":{"type":"boolean","default":false},"iconVerticalAlignment":{"type":"string","default":"top"},"uniqueId":{"type":"string","default":""},"alertGroup":{"type":"string","default":"chakra"}},"example":{"attributes":{"alertType":"info","alertTitle":"Sample alert title","alertDescription":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>","buttonEnabled":true,"baseFontSize":14,"buttonText":"Learn More","icon":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M22.65 34h3V22h-3ZM24 18.3q.7 0 1.175-.45.475-.45.475-1.15t-.475-1.2Q24.7 15 24 15q-.7 0-1.175.5-.475.5-.475 1.2t.475 1.15q.475.45 1.175.45ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z\' /></svg>"}},"styles":[{"name":"success","label":"Success","isDefault":true},{"name":"info","label":"Info"},{"name":"warning","label":"Warning"},{"name":"error","label":"Error"}],"supports":{"anchor":true,"align":true,"className":true},"editorScript":"alerts-dlx-block","editorStyle":["alerts-dlx-block-editor-styles","alerts-dlx-chakra-light-css","alerts-dlx-chakra-dark-css","alerts-dlx-block-editor-styles-lato"]}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"Chakra Alert","apiVersion":2,"name":"mediaron/alerts-dlx-chakra","category":"alertsdlx","icon":"<svg width=\'100%\' height=\'100%\' viewBox=\'0 0 804 804\' version=\'1.1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\' xml:space=\'preserve\' xmlns:serif=\'http://www.serif.com/\' style=\'fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;\'><path fill=\'#60BFC1\' d=\'M803.125,401.563c0,-221.629 -179.934,-401.563 -401.563,-401.563c-221.628,0 -401.562,179.934 -401.562,401.563c0,221.628 179.934,401.562 401.563,401.562c221.628,0 401.562,-179.934 401.562,-401.563Z\' style=\'fill:url(#_Linear1);\'/><path fill=\'#FFFFFF\' d=\'M217.369,418.703l273.725,-271.841c5.112,-5.078 13.344,1.102 9.89,7.428l-101.878,186.726c-2.275,4.162 0.741,9.243 5.485,9.243l176.062,0c5.672,0 8.409,6.947 4.263,10.819l-308.525,287.944c-5.532,5.162 -13.766,-2.113 -9.324,-8.238l146.049,-201.478c2.993,-4.131 0.043,-9.918 -5.06,-9.918l-186.283,-0c-5.579,-0 -8.362,-6.754 -4.404,-10.685Z\' style=\'fill:#fff;fill-rule:nonzero;\'/><defs><linearGradient id=\'_Linear1\' x1=\'0\' y1=\'0\' x2=\'1\' y2=\'0\' gradientUnits=\'userSpaceOnUse\' gradientTransform=\'matrix(4.91772e-14,803.125,-803.125,4.91772e-14,401.562,0)\'><stop offset=\'0\' style=\'stop-color:#7bcbd4;stop-opacity:1\'/><stop offset=\'1\' style=\'stop-color:#29c6b7;stop-opacity:1\'/></linearGradient></defs></svg>","description":"An alert and notification block inspired by Chakra UI.","keywords":["alert","info","hint","success","error","notice","notification","warning","chakra"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"align":{"type":"string","default":"center"},"alertType":{"type":"string","default":"success"},"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"descriptionEnabled":{"type":"boolean","default":true},"titleEnabled":{"type":"boolean","default":true},"buttonEnabled":{"type":"boolean","default":false},"iconEnabled":{"type":"boolean","default":true},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"boolean","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"string","default":"650"},"baseFontSize":{"type":"number","default":18},"icon":{"type":"string","default":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M24 44q-4.25 0-7.9-1.525-3.65-1.525-6.35-4.225-2.7-2.7-4.225-6.35Q4 28.25 4 24q0-4.2 1.525-7.85Q7.05 12.5 9.75 9.8q2.7-2.7 6.35-4.25Q19.75 4 24 4q3.75 0 7 1.2t5.85 3.3l-2.15 2.15q-2.2-1.75-4.9-2.7Q27.1 7 24 7q-7.25 0-12.125 4.875T7 24q0 7.25 4.875 12.125T24 41q7.25 0 12.125-4.875T41 24q0-1.5-.225-2.925-.225-1.425-.675-2.775l2.3-2.3q.8 1.85 1.2 3.85.4 2 .4 4.15 0 4.25-1.55 7.9-1.55 3.65-4.25 6.35-2.7 2.7-6.35 4.225Q28.2 44 24 44Zm-2.95-10.9-8.25-8.3 2.25-2.25 6 6 20.7-20.7 2.3 2.25Z\'/></svg>"},"enableCustomFonts":{"type":"boolean","default":true},"variant":{"type":"string","default":"subtle"},"mode":{"type":"string","default":"light"},"enableDropShadow":{"type":"boolean","default":false},"iconVerticalAlignment":{"type":"string","default":"top"},"uniqueId":{"type":"string","default":""},"alertGroup":{"type":"string","default":"chakra"},"closeButtonEnabled":{"type":"boolean","default":false},"closeButtonExpiration":{"type":"number","default":0},"innerBlocksEnabled":{"type":"boolean","default":false},"colorPrimary":{"type":"string","default":"var(--alerts-dlx-chakra-color-primary, #014361)"},"colorBorder":{"type":"string","default":"var(--alerts-dlx-chakra-color-border, #014361)"},"colorAccent":{"type":"string","default":"var(--alerts-dlx-chakra-color-accent, #3182ce)"},"colorAlt":{"type":"string","default":"var(--alerts-dlx-chakra-color-alt, #2d76bb)"},"colorBold":{"type":"string","default":"var(--alerts-dlx-chakra-color-bold, #2d76bb)"},"colorLight":{"type":"string","default":"var(--alerts-dlx-chakra-color-light, #bee3f8)"}},"example":{"attributes":{"alertType":"info","alertTitle":"Sample alert title","alertDescription":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>","buttonEnabled":true,"baseFontSize":14,"buttonText":"Learn More","icon":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M22.65 34h3V22h-3ZM24 18.3q.7 0 1.175-.45.475-.45.475-1.15t-.475-1.2Q24.7 15 24 15q-.7 0-1.175.5-.475.5-.475 1.2t.475 1.15q.475.45 1.175.45ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z\' /></svg>"}},"styles":[{"name":"success","label":"Success","isDefault":true},{"name":"info","label":"Info"},{"name":"warning","label":"Warning"},{"name":"error","label":"Error"},{"name":"custom","label":"Custom"}],"supports":{"anchor":true,"align":true,"className":true},"editorScript":"alerts-dlx-block","editorStyle":["alerts-dlx-block-editor-styles","alerts-dlx-chakra-light-css","alerts-dlx-chakra-dark-css","alerts-dlx-block-editor-styles-lato"]}');
 
 /***/ }),
 

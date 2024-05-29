@@ -119,6 +119,42 @@
     "alertGroup": {
       "type": "string",
       "default": "chakra"
+    },
+    "closeButtonEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "closeButtonExpiration": {
+      "type": "number",
+      "default": 0
+    },
+    "innerBlocksEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "colorPrimary": {
+      "type": "string",
+      "default": "var(--alerts-dlx-chakra-color-primary, #014361)"
+    },
+    "colorBorder": {
+      "type": "string",
+      "default": "var(--alerts-dlx-chakra-color-border, #014361)"
+    },
+    "colorAccent": {
+      "type": "string",
+      "default": "var(--alerts-dlx-chakra-color-accent, #3182ce)"
+    },
+    "colorAlt": {
+      "type": "string",
+      "default": "var(--alerts-dlx-chakra-color-alt, #2d76bb)"
+    },
+    "colorBold": {
+      "type": "string",
+      "default": "var(--alerts-dlx-chakra-color-bold, #2d76bb)"
+    },
+    "colorLight": {
+      "type": "string",
+      "default": "var(--alerts-dlx-chakra-color-light, #bee3f8)"
     }
   },
   "example": {
@@ -149,6 +185,10 @@
     {
       "name": "error",
       "label": "Error"
+    },
+    {
+      "name": "custom",
+      "label": "Custom"
     }
   ],
   "supports": {

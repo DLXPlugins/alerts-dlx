@@ -327,7 +327,6 @@ class Blocks {
 				break;
 		}
 
-
 		// Close button footer and scripts.
 		if ( $close_button_enabled ) {
 			// Add footer SVGs for close button.
@@ -347,12 +346,12 @@ class Blocks {
 			ob_start();
 			?>
 			#<?php echo esc_html( $unique_id ); ?> {
-				--alerts-dlx-bootstrap-color-primary: <?php echo esc_html( $color_primary ); ?>;
-				--alerts-dlx-bootstrap-color-border: <?php echo esc_html( $color_border ); ?>;
-				--alerts-dlx-bootstrap-color-accent: <?php echo esc_html( $color_accent ); ?>;
-				--alerts-dlx-bootstrap-color-alt: <?php echo esc_html( $color_alt ); ?>;
-				--alerts-dlx-bootstrap-color-bold: <?php echo esc_html( $color_bold ); ?>;
-				--alerts-dlx-bootstrap-color-light: <?php echo esc_html( $color_light ); ?>;
+				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-primary: <?php echo esc_html( $color_primary ); ?>;
+				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-border: <?php echo esc_html( $color_border ); ?>;
+				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-accent: <?php echo esc_html( $color_accent ); ?>;
+				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-alt: <?php echo esc_html( $color_alt ); ?>;
+				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-bold: <?php echo esc_html( $color_bold ); ?>;
+				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-light: <?php echo esc_html( $color_light ); ?>;
 			}
 			<?php
 			$custom_css = ob_get_clean();
@@ -422,6 +421,13 @@ class Blocks {
 									?>
 									<svg class="alerts-dlx-close-button-svg" aria-hidden="true" width="16" height="16">
 										<use xlink:href="#alerts-dlx-bootstrap-close-button"></use>
+									</svg>
+									<?php
+									break;
+								case 'chakra':
+									?>
+									<svg class="alerts-dlx-close-button-svg" aria-hidden="true" width="16" height="16">
+										<use xlink:href="#alerts-dlx-chakra-close-button"></use>
 									</svg>
 									<?php
 									break;
@@ -610,6 +616,9 @@ class Blocks {
 		<svg width="0" height="0" class="hidden" style="display: none;">
 			<symbol id="alerts-dlx-bootstrap-close-button" viewBox="0 0 16 16" width="16" height="16">
 				<path fill="currentColor" d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/>
+			</symbol>
+			<symbol id="alerts-dlx-chakra-close-button" viewBox="0 0 24 24" width="16" height="16">
+				<path fill="currentColor" d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z" />
 			</symbol>
 		</svg>
 		<?php

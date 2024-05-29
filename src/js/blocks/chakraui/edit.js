@@ -25,10 +25,12 @@ import { useDispatch } from '@wordpress/data';
 
 import {
 	InspectorControls,
+	InspectorAdvancedControls,
 	RichText,
 	useBlockProps,
 	useInnerBlocksProps,
 	store,
+	PanelColorSettings,
 } from '@wordpress/block-editor';
 
 import { useInstanceId } from '@wordpress/compose';
@@ -36,25 +38,16 @@ import { useInstanceId } from '@wordpress/compose';
 import AlertButton from '../components/AlertButton';
 import UnitChooser from '../components/unit-picker';
 import IconPicker from '../components/IconPicker';
+import chakraColors from './colors';
 import ChakraIcons from '../components/icons/ChakraIcons';
+import { ChakraCloseIcon } from '../components/CloseButtonIcons';
+
+// For storing unique IDs.
+const uniqueIds = [];
 
 const ChakraAlerts = ( props ) => {
-	const generatedUniqueId = useInstanceId(
-		ChakraAlerts,
-		'adlx-chakra'
-	);
-
 	const innerBlocksRef = useRef( null );
-	const innerBlockProps = useInnerBlocksProps(
-		{
-			className: 'alerts-dlx-content',
-			ref: innerBlocksRef,
-		},
-		{
-			allowedBlocks: [ 'core/paragraph' ],
-			template: [ [ 'core/paragraph', { placeholder: '' } ] ],
-		}
-	);
+
 	const { replaceInnerBlocks } = useDispatch( store );
 
 	// Shortcuts.
@@ -78,7 +71,27 @@ const ChakraAlerts = ( props ) => {
 		variant,
 		mode,
 		iconVerticalAlignment,
+		colorPrimary,
+		colorBorder,
+		colorAccent,
+		colorAlt,
+		colorBold,
+		colorLight,
+		closeButtonEnabled,
+		closeButtonExpiration,
+		innerBlocksEnabled,
 	} = attributes;
+
+	const innerBlockProps = useInnerBlocksProps(
+		{
+			className: 'alerts-dlx-content',
+			ref: innerBlocksRef,
+		},
+		{
+			allowedBlocks: innerBlocksEnabled ? true : [ 'core/paragraph' ],
+			template: [ [ 'core/paragraph', { placeholder: '' } ] ],
+		}
+	);
 
 	/**
 	 * Migrate RichText to InnerBlocks.
@@ -93,8 +106,165 @@ const ChakraAlerts = ( props ) => {
 		}
 	}, [ innerBlocksRef ] );
 
+	/**
+	 * Get a unique ID for the block for inline styling if necessary.
+	 */
+	useEffect( () => {
+		if ( null === uniqueId || uniqueIds.includes( uniqueId ) ) {
+			const newUniqueId = 'alerts-dlx-' + clientId.substr( 2, 9 ).replace( '-', '' );
+
+			setAttributes( { uniqueId: newUniqueId } );
+			uniqueIds.push( newUniqueId );
+		} else {
+			uniqueIds.push( uniqueId );
+		}
+	}, [] );
+
+	const styles = `
+		#${ uniqueId } {
+			--alerts-dlx-chakra-color-primary: ${ colorPrimary };
+			--alerts-dlx-chakra-color-border: ${ colorBorder };
+			--alertx-dlx-chakra-color-accent: ${ colorAccent };
+			--alerts-dlx-chakra-color-alt: ${ colorAlt };
+			--alerts-dlx-chakra-color-bold: ${ colorBold };
+			--alerts-dlx-chakra-color-light: ${ colorLight };
+		}`;
+
 	const inspectorControls = (
 		<>
+			<PanelBody title={ __( 'Alert Settings', 'alerts-dlx' ) }>
+				<>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Icon', 'alerts-dlx' ) }
+							checked={ iconEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									iconEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Title', 'alerts-dlx' ) }
+							checked={ titleEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									titleEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Description', 'alerts-dlx' ) }
+							checked={ descriptionEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									descriptionEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Button', 'alerts-dlx' ) }
+							checked={ buttonEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									buttonEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Close Button', 'alerts-dlx' ) }
+							checked={ closeButtonEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									closeButtonEnabled: value,
+								} );
+							} }
+							help={ __( 'Enable this option to allow the alert to be dismissible.', 'alerts-dlx' ) }
+						/>
+					</PanelRow>
+					{
+						closeButtonEnabled && (
+							<PanelRow>
+								<TextControl
+									label={ __( 'Set the Close Button save expiration', 'alerts-dlx' ) }
+									value={ closeButtonExpiration }
+									onChange={ ( value ) => {
+										setAttributes( {
+											closeButtonExpiration: parseInt( value ),
+										} );
+									} }
+									help={ __( 'Set the expiration time in seconds for the close button to reappear. Set to zero to never expire.', 'alerts-dlx' ) }
+									type={ 'number' }
+								/>
+							</PanelRow>
+						)
+					}
+				</>
+			</PanelBody>
+			{
+				'custom' === alertType && (
+					<PanelColorSettings
+						__experimentalIsRenderedInSidebar
+						title={ __( 'Custom Color Settings', 'alerts-dlx' ) }
+						colorSettings={
+							[
+								{
+									label: __( 'Primary Color', 'alerts-dlx' ),
+									value: colorPrimary,
+									onChange: ( value ) => {
+										setAttributes( { colorPrimary: value } );
+									},
+								},
+								{
+									label: __( 'Border Color', 'alerts-dlx' ),
+									value: colorBorder,
+									onChange: ( value ) => {
+										setAttributes( { colorBorder: value } );
+									},
+								},
+								{
+									label: __( 'Accent Color', 'alerts-dlx' ),
+									value: colorAccent,
+									onChange: ( value ) => {
+										setAttributes( { colorAccent: value } );
+									},
+								},
+								{
+									label: __( 'Alt Color', 'alerts-dlx' ),
+									value: colorAlt,
+									onChange: ( value ) => {
+										setAttributes( { colorAlt: value } );
+									},
+								},
+								{
+									label: __( 'Bold Color', 'alerts-dlx' ),
+									value: colorBold,
+									onChange: ( value ) => {
+										setAttributes( { colorBold: value } );
+									},
+								},
+								{
+									label: __( 'Light Color', 'alerts-dlx' ),
+									value: colorLight,
+									onChange: ( value ) => {
+										setAttributes( { colorLight: value } );
+									},
+								},
+							]
+						}
+						colors={ chakraColors }
+					/>
+
+				)
+			}
 			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'quotes-dlx' ) }>
 				<>
 					<UnitChooser
@@ -298,9 +468,20 @@ const ChakraAlerts = ( props ) => {
 		</>
 	);
 
-	useEffect( () => {
-		setAttributes( { uniqueId: generatedUniqueId } );
-	}, [] );
+	const advancedControls = (
+		<PanelRow>
+			<ToggleControl
+				label={ __( 'Enable Flexible InnerBlocks', 'alerts-dlx' ) }
+				checked={ innerBlocksEnabled }
+				onChange={ ( value ) => {
+					setAttributes( {
+						innerBlocksEnabled: value,
+					} );
+				} }
+				help={ __( 'Enable this option to allow the use of any block within the alert.', 'alerts-dlx' ) }
+			/>
+		</PanelRow>
+	);
 
 	/**
 	 * Attempt to check when block styles are changed.
@@ -313,20 +494,7 @@ const ChakraAlerts = ( props ) => {
 		const styleMatch = new RegExp( /is-style-([^\s]*)/g ).exec( className );
 		if ( null !== styleMatch ) {
 			const match = styleMatch[ 1 ];
-			switch ( match ) {
-				case 'success':
-					setAttributes( { alertType: 'success' } );
-					break;
-				case 'info':
-					setAttributes( { alertType: 'info' } );
-					break;
-				case 'warning':
-					setAttributes( { alertType: 'warning' } );
-					break;
-				case 'error':
-					setAttributes( { alertType: 'error' } );
-					break;
-			}
+			setAttributes( { alertType: match } );
 		}
 	}, [ className ] );
 
@@ -342,7 +510,13 @@ const ChakraAlerts = ( props ) => {
 	const block = (
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
+			<InspectorAdvancedControls>{ advancedControls }</InspectorAdvancedControls>
 			<style>{ baseFontSizeStyles }</style>
+			{
+				'custom' === alertType && (
+					<style>{ styles }</style>
+				)
+			}
 			<figure
 				role="alert"
 				className={ classnames( 'alerts-dlx-alert alerts-dlx-chakra', {
@@ -364,6 +538,13 @@ const ChakraAlerts = ( props ) => {
 					</div>
 				) }
 				<section>
+					{
+						closeButtonEnabled && (
+							<div className="alerts-dlx-close">
+								<ChakraCloseIcon />
+							</div>
+						)
+					}
 					{ titleEnabled && (
 						<RichText
 							tagName="h2"
@@ -394,11 +575,7 @@ const ChakraAlerts = ( props ) => {
 	);
 
 	const blockProps = useBlockProps( {
-		className: classnames( className, 'alerts-dlx template-chakra', {
-			'is-style-success': className === undefined && 'success' === alertType,
-			'is-style-info': className === undefined && 'info' === alertType,
-			'is-style-warning': className === undefined && 'warning' === alertType,
-			'is-style-error': className === undefined && 'error' === alertType,
+		className: classnames( className, `alerts-dlx template-chakra is-style-${ alertType }`, {
 			'is-dark-mode': 'dark' === mode,
 			'custom-fonts-enabled': enableCustomFonts,
 			'is-appearance-subtle': 'subtle' === variant,
