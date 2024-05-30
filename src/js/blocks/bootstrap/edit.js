@@ -216,7 +216,7 @@ const BootstrapAlerts = ( props ) => {
 						colorSettings={
 							[
 								{
-									label: __( 'Primary Color', 'alerts-dlx' ),
+									label: __( 'Text Color', 'alerts-dlx' ),
 									value: colorPrimary,
 									onChange: ( value ) => {
 										setAttributes( { colorPrimary: value } );
@@ -237,21 +237,21 @@ const BootstrapAlerts = ( props ) => {
 									},
 								},
 								{
-									label: __( 'Alt Color', 'alerts-dlx' ),
+									label: __( 'Button Color', 'alerts-dlx' ),
 									value: colorAlt,
 									onChange: ( value ) => {
 										setAttributes( { colorAlt: value } );
 									},
 								},
 								{
-									label: __( 'Bold Color', 'alerts-dlx' ),
+									label: __( 'Icon Color', 'alerts-dlx' ),
 									value: colorBold,
 									onChange: ( value ) => {
 										setAttributes( { colorBold: value } );
 									},
 								},
 								{
-									label: __( 'Light Color', 'alerts-dlx' ),
+									label: __( 'Background Color', 'alerts-dlx' ),
 									value: colorLight,
 									onChange: ( value ) => {
 										setAttributes( { colorLight: value } );

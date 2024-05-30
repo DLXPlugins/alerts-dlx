@@ -381,7 +381,7 @@ $chakra-error-color-light: #fed7d7;
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: var( --alerts-dlx-chakra-color-accent, $chakra-info-color-accent);
+					background-color: var( --alertx-dlx-chakra-color-accent, $chakra-info-color-accent);
 				}
 
 				.alerts-dlx-icon {
@@ -453,12 +453,12 @@ $chakra-error-color-light: #fed7d7;
 					color: var( --alerts-dlx-chakra-color-primary, $chakra-info-color);
 
 					&:hover {
-						color: var(--alerts-dlx-chakra-color-accent, $white);
+						color: var(--alertx-dlx-chakra-color-accent, $white);
 					}
 				}
 			}
 			.alerts-dlx-chakra {
-				background-color: var(--alerts-dlx-chakra-color-alt, $chakra-info-color-alt);
+				background-color: var(--alerts-dlx-chakra-color-light, $chakra-info-color-light);
 				color:  var(--alerts-dlx-chakra-color-primary, $white);
 				border: 2px solid var(--alerts-dlx-chakra-color-primary, $chakra-info-color);
 
@@ -466,21 +466,21 @@ $chakra-error-color-light: #fed7d7;
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: var( --alerts-dlx-chakra-color-alt, $chakra-info-color-alt);
+					color: var( --alerts-dlx-chakra-color-light, $chakra-info-color-light);
 					border: 2px solid var( --alerts-dlx-chakra-color-alt, $chakra-info-color-alt);
-					background-color:  var(--alerts-dlx-chakra-color-primary, $white);
+					background-color: var( --alerts-dlx-chakra-color-alt, $chakra-info-color-alt);
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
 					background-color: var( --alerts-dlx-chakra-color-alt, $chakra-info-color-alt);
-					color:  var(--alerts-dlx-chakra-color-primary, $white);
+					color:  var(--alerts-dlx-chakra-color-light, $white);
 					border: 2px solid  var(--alerts-dlx-chakra-color-primary, $white);
 				}
 				.alerts-dlx-icon {
 					svg,
 					svg path svg g {
-						color:  var(--alerts-dlx-chakra-color-primary, $white);
-						fill:  var(--alerts-dlx-chakra-color-primary, $white);
+						color:  var(--alerts-dlx-chakra-color-bold, $white);
+						fill:  var(--alerts-dlx-chakra-color-bold, $white);
 					}
 				}
 			}

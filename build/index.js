@@ -335,7 +335,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
     __experimentalIsRenderedInSidebar: true,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Custom Color Settings', 'alerts-dlx'),
     colorSettings: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Primary Color', 'alerts-dlx'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Text Color', 'alerts-dlx'),
       value: colorPrimary,
       onChange: function onChange(value) {
         setAttributes({
@@ -359,7 +359,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
         });
       }
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alt Color', 'alerts-dlx'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Button Color', 'alerts-dlx'),
       value: colorAlt,
       onChange: function onChange(value) {
         setAttributes({
@@ -367,7 +367,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
         });
       }
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Bold Color', 'alerts-dlx'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Icon Color', 'alerts-dlx'),
       value: colorBold,
       onChange: function onChange(value) {
         setAttributes({
@@ -375,7 +375,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
         });
       }
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Light Color', 'alerts-dlx'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Background Color', 'alerts-dlx'),
       value: colorLight,
       onChange: function onChange(value) {
         setAttributes({
@@ -897,7 +897,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
     __experimentalIsRenderedInSidebar: true,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Custom Color Settings', 'alerts-dlx'),
     colorSettings: [{
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Primary Color', 'alerts-dlx'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Text Color', 'alerts-dlx'),
       value: colorPrimary,
       onChange: function onChange(value) {
         setAttributes({
@@ -921,7 +921,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
         });
       }
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alt Color', 'alerts-dlx'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Button Color', 'alerts-dlx'),
       value: colorAlt,
       onChange: function onChange(value) {
         setAttributes({
@@ -929,7 +929,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
         });
       }
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Bold Color', 'alerts-dlx'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Icon Color', 'alerts-dlx'),
       value: colorBold,
       onChange: function onChange(value) {
         setAttributes({
@@ -937,7 +937,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
         });
       }
     }, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Light Color', 'alerts-dlx'),
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Background Color', 'alerts-dlx'),
       value: colorLight,
       onChange: function onChange(value) {
         setAttributes({
