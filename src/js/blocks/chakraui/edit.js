@@ -417,54 +417,6 @@ const ChakraAlerts = ( props ) => {
 					/>
 				</PanelRow>
 			</PanelBody>
-			<PanelBody initialOpen={ false } title={ __( 'Alert Settings', 'quotes-dlx' ) }>
-				<>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Alert Icon', 'alerts-dlx' ) }
-							checked={ iconEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									iconEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Title', 'alerts-dlx' ) }
-							checked={ titleEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									titleEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Alert Description', 'alerts-dlx' ) }
-							checked={ descriptionEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									descriptionEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Alert Button', 'alerts-dlx' ) }
-							checked={ buttonEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									buttonEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-				</>
-			</PanelBody>
 		</>
 	);
 
