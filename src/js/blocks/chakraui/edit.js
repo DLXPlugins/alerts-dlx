@@ -124,7 +124,7 @@ const ChakraAlerts = ( props ) => {
 		#${ uniqueId } {
 			--alerts-dlx-chakra-color-primary: ${ colorPrimary };
 			--alerts-dlx-chakra-color-border: ${ colorBorder };
-			--alertx-dlx-chakra-color-accent: ${ colorAccent };
+			--alerts-dlx-chakra-color-accent: ${ colorAccent };
 			--alerts-dlx-chakra-color-alt: ${ colorAlt };
 			--alerts-dlx-chakra-color-bold: ${ colorBold };
 			--alerts-dlx-chakra-color-light: ${ colorLight };

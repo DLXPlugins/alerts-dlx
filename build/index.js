@@ -277,7 +277,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
       });
     }
   }, [innerBlocksRef]);
-  var styles = "\n\t\t#".concat(uniqueId, " {\n\t\t\t--alerts-dlx-bootstrap-color-primary: ").concat(colorPrimary, ";\n\t\t\t--alerts-dlx-bootstrap-color-border: ").concat(colorBorder, ";\n\t\t\t--alertx-dlx-bootstrap-color-accent: ").concat(colorAccent, ";\n\t\t\t--alerts-dlx-bootstrap-color-alt: ").concat(colorAlt, ";\n\t\t\t--alerts-dlx-bootstrap-color-bold: ").concat(colorBold, ";\n\t\t\t--alerts-dlx-bootstrap-color-light: ").concat(colorLight, ";\n\t\t}");
+  var styles = "\n\t\t#".concat(uniqueId, " {\n\t\t\t--alerts-dlx-bootstrap-color-primary: ").concat(colorPrimary, ";\n\t\t\t--alerts-dlx-bootstrap-color-border: ").concat(colorBorder, ";\n\t\t\t--alerts-dlx-bootstrap-color-accent: ").concat(colorAccent, ";\n\t\t\t--alerts-dlx-bootstrap-color-alt: ").concat(colorAlt, ";\n\t\t\t--alerts-dlx-bootstrap-color-bold: ").concat(colorBold, ";\n\t\t\t--alerts-dlx-bootstrap-color-light: ").concat(colorLight, ";\n\t\t}");
   var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert Settings', 'alerts-dlx')
   }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
@@ -839,7 +839,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
       uniqueIds.push(uniqueId);
     }
   }, []);
-  var styles = "\n\t\t#".concat(uniqueId, " {\n\t\t\t--alerts-dlx-chakra-color-primary: ").concat(colorPrimary, ";\n\t\t\t--alerts-dlx-chakra-color-border: ").concat(colorBorder, ";\n\t\t\t--alertx-dlx-chakra-color-accent: ").concat(colorAccent, ";\n\t\t\t--alerts-dlx-chakra-color-alt: ").concat(colorAlt, ";\n\t\t\t--alerts-dlx-chakra-color-bold: ").concat(colorBold, ";\n\t\t\t--alerts-dlx-chakra-color-light: ").concat(colorLight, ";\n\t\t}");
+  var styles = "\n\t\t#".concat(uniqueId, " {\n\t\t\t--alerts-dlx-chakra-color-primary: ").concat(colorPrimary, ";\n\t\t\t--alerts-dlx-chakra-color-border: ").concat(colorBorder, ";\n\t\t\t--alerts-dlx-chakra-color-accent: ").concat(colorAccent, ";\n\t\t\t--alerts-dlx-chakra-color-alt: ").concat(colorAlt, ";\n\t\t\t--alerts-dlx-chakra-color-bold: ").concat(colorBold, ";\n\t\t\t--alerts-dlx-chakra-color-light: ").concat(colorLight, ";\n\t\t}");
   var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert Settings', 'alerts-dlx')
   }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {

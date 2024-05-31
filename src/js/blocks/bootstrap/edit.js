@@ -123,7 +123,7 @@ const BootstrapAlerts = ( props ) => {
 		#${ uniqueId } {
 			--alerts-dlx-bootstrap-color-primary: ${ colorPrimary };
 			--alerts-dlx-bootstrap-color-border: ${ colorBorder };
-			--alertx-dlx-bootstrap-color-accent: ${ colorAccent };
+			--alerts-dlx-bootstrap-color-accent: ${ colorAccent };
 			--alerts-dlx-bootstrap-color-alt: ${ colorAlt };
 			--alerts-dlx-bootstrap-color-bold: ${ colorBold };
 			--alerts-dlx-bootstrap-color-light: ${ colorLight };

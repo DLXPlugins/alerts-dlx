@@ -171,7 +171,7 @@ $bootstrap-dark-color-light: #d3d3d4;
 					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-primary-color-alt);
 
 					&:hover {
-						color: var(--alertx-dlx-bootstrap-color-accent, $bootstrap-primary-color-accent);
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-primary-color-accent);
 					}
 				}
 			}
@@ -197,7 +197,7 @@ $bootstrap-dark-color-light: #d3d3d4;
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: var(--alertx-dlx-bootstrap-color-accent, $bootstrap-primary-color-accent);
+					background-color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-primary-color-accent);
 				}
 			}
 		}
@@ -221,7 +221,7 @@ $bootstrap-dark-color-light: #d3d3d4;
 					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-primary-color-alt);
 
 					&:hover {
-						color: var(--alertx-dlx-bootstrap-color-accent, $bootstrap-primary-color-accent);
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-primary-color-accent);
 					}
 				}
 			}
@@ -288,7 +288,7 @@ $bootstrap-dark-color-light: #d3d3d4;
 					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-secondary-color-alt);
 
 					&:hover {
-						color: var(--alertx-dlx-bootstrap-color-accent, $bootstrap-secondary-color-accent);
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-secondary-color-accent);
 					}
 				}
 			}
@@ -337,7 +337,7 @@ $bootstrap-dark-color-light: #d3d3d4;
 					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-success-color-alt);
 
 					&:hover {
-						color: var(--alertx-dlx-bootstrap-color-accent, $bootstrap-success-color-accent);
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-success-color-accent);
 					}
 				}
 			}
@@ -386,7 +386,7 @@ $bootstrap-dark-color-light: #d3d3d4;
 					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-danger-color-alt);
 
 					&:hover {
-						color: var(--alertx-dlx-bootstrap-color-accent, $bootstrap-danger-color-accent);
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-danger-color-accent);
 					}
 				}
 			}
@@ -435,7 +435,7 @@ $bootstrap-dark-color-light: #d3d3d4;
 					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-warning-color-alt);
 
 					&:hover {
-						color: var(--alertx-dlx-bootstrap-color-accent, $bootstrap-warning-color-accent);
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-warning-color-accent);
 					}
 				}
 			}
@@ -484,7 +484,7 @@ $bootstrap-dark-color-light: #d3d3d4;
 					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-info-color-alt);
 
 					&:hover {
-						color: var(--alertx-dlx-bootstrap-color-accent, $bootstrap-info-color-accent);
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-info-color-accent);
 					}
 				}
 			}
@@ -533,7 +533,7 @@ $bootstrap-dark-color-light: #d3d3d4;
 					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-light-color-alt);
 
 					&:hover {
-						color: var(--alertx-dlx-bootstrap-color-accent, $bootstrap-light-color-accent);
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-light-color-accent);
 					}
 				}
 			}
@@ -582,7 +582,7 @@ $bootstrap-dark-color-light: #d3d3d4;
 					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-dark-color-alt);
 
 					&:hover {
-						color: var(--alertx-dlx-bootstrap-color-accent, $bootstrap-dark-color-accent);
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-dark-color-accent);
 					}
 				}
 			}
