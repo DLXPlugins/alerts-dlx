@@ -155,6 +155,15 @@ $material-error-color-light: #fdeded;
 
 					background-color: $material-success-color;
 				}
+				.alerts-dlx-close {
+					svg {
+						color: $material-success-color-bold;
+	
+						&:hover {
+							color: $material-success-color-accent;
+						}
+					}
+				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
 					background-color: $material-success-color-accent;
@@ -185,6 +194,15 @@ $material-error-color-light: #fdeded;
 					color: $material-success-color;
 					border: 2px solid $material-success-color-bold;
 					background-color: $white;
+				}
+				.alerts-dlx-close {
+					svg {
+						color: $material-success-color-bold;
+	
+						&:hover {
+							color: $material-success-color-accent;
+						}
+					}
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
@@ -219,6 +237,15 @@ $material-error-color-light: #fdeded;
 					color: $material-success-color-alt;
 					border: 2px solid $material-success-color-alt;
 					background-color: $white;
+				}
+				.alerts-dlx-close {
+					svg {
+						color: $white;
+	
+						&:hover {
+							color: $material-success-color-accent;
+						}
+					}
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
@@ -257,6 +284,15 @@ $material-error-color-light: #fdeded;
 
 					background-color: $material-info-color;
 				}
+				.alerts-dlx-close {
+					svg {
+						color: $material-info-color-bold;
+	
+						&:hover {
+							color: $material-info-color-accent;
+						}
+					}
+				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
 					background-color: $material-info-color-accent;
@@ -287,6 +323,15 @@ $material-error-color-light: #fdeded;
 					color: $material-info-color;
 					border: 2px solid $material-info-color-bold;
 					background-color: $white;
+				}
+				.alerts-dlx-close {
+					svg {
+						color: $material-info-color-bold;
+	
+						&:hover {
+							color: $material-info-color-accent;
+						}
+					}
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
@@ -321,6 +366,15 @@ $material-error-color-light: #fdeded;
 					color: $material-info-color-alt;
 					border: 2px solid $material-info-color-alt;
 					background-color: $white;
+				}
+				.alerts-dlx-close {
+					svg {
+						color: $white;
+	
+						&:hover {
+							color: $material-info-color-accent;
+						}
+					}
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
@@ -359,6 +413,15 @@ $material-error-color-light: #fdeded;
 
 					background-color: $material-warning-color;
 				}
+				.alerts-dlx-close {
+					svg {
+						color: $material-warning-color-bold;
+	
+						&:hover {
+							color: $material-warning-color-accent;
+						}
+					}
+				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
 					background-color: $material-warning-color-accent;
@@ -389,6 +452,15 @@ $material-error-color-light: #fdeded;
 					color: $material-warning-color;
 					border: 2px solid $material-warning-color-bold;
 					background-color: $white;
+				}
+				.alerts-dlx-close {
+					svg {
+						color: $material-warning-color-bold;
+	
+						&:hover {
+							color: $material-warning-color-accent;
+						}
+					}
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
@@ -423,6 +495,15 @@ $material-error-color-light: #fdeded;
 					color: $material-warning-color-alt;
 					border: 2px solid $material-warning-color-alt;
 					background-color: $white;
+				}
+				.alerts-dlx-close {
+					svg {
+						color: $white;
+	
+						&:hover {
+							color: $material-warning-color-accent;
+						}
+					}
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
@@ -461,6 +542,15 @@ $material-error-color-light: #fdeded;
 
 					background-color: $material-error-color;
 				}
+				.alerts-dlx-close {
+					svg {
+						color: $material-error-color-bold;
+	
+						&:hover {
+							color: $material-error-color-accent;
+						}
+					}
+				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
 					background-color: $material-error-color-accent;
@@ -491,6 +581,15 @@ $material-error-color-light: #fdeded;
 					color: $material-error-color;
 					border: 2px solid $material-error-color-bold;
 					background-color: $white;
+				}
+				.alerts-dlx-close {
+					svg {
+						color: $material-error-color-bold;
+	
+						&:hover {
+							color: $material-error-color-accent;
+						}
+					}
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
@@ -526,6 +625,15 @@ $material-error-color-light: #fdeded;
 					border: 2px solid $material-error-color-alt;
 					background-color: $white;
 				}
+				.alerts-dlx-close {
+					svg {
+						color: $white;
+	
+						&:hover {
+							color: $material-error-color-accent;
+						}
+					}
+				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
 					background-color: $material-error-color-alt;
@@ -536,6 +644,94 @@ $material-error-color-light: #fdeded;
 				svg,
 				svg path {
 					fill: $white;
+				}
+			}
+		}
+	}
+
+	&.is-style-custom {
+		h2.alerts-dlx-title {
+			color: var( --alerts-dlx-material-color-primary, $material-info-color );
+		}
+		.alerts-dlx-content p {
+			color: var( --alerts-dlx-material-color-primary, $material-info-color );
+		}
+		&.is-appearance-default,
+		&.is-appearance-centered {
+			.alerts-dlx-material {
+				background-color: var( --alerts-dlx-material-color-light, $material-info-color-light );
+				color: var( --alerts-dlx-material-color-primary, $material-info-color );
+
+				button.button-reset.alerts-dlx-button,
+				a.alerts-dlx-button,
+				a.alerts-dlx-button:hover,
+				button.button-reset.alerts-dlx-button:hover {
+					color: $white;
+					border: 1px solid transparent;
+
+					background-color: var(--alerts-dlx-material-color-alt, $material-info-color-light);
+				}
+				svg,
+				svg path {
+					color: var( --alerts-dlx-material-color-bold, $material-info-color-bold );
+					fill: var( --alerts-dlx-material-color-bold, $material-info-color-bold );
+				}
+			}
+		}
+		&.is-appearance-outlined {
+			.alerts-dlx-material {
+				background-color: $white;
+				color: var( --alerts-dlx-material-color-primary, $material-info-color );
+				border: 2px solid var( --alerts-dlx-material-color-border, $material-info-color-bold );
+
+				button.button-reset.alerts-dlx-button,
+				a.alerts-dlx-button,
+				a.alerts-dlx-button:hover,
+				button.button-reset.alerts-dlx-button:hover {
+					color: var( --alerts-dlx-material-color-primary, $material-info-color );
+					border: 2px solid var( --alerts-dlx-material-color-border, $material-info-color-bold );
+					background-color: $white;
+				}
+				a.alerts-dlx-button:hover,
+				button.button-reset.alerts-dlx-button:hover {
+					background-color: var( --alerts-dlx-material-color-alt, $material-info-color-accent );
+					color: $white;
+					border: 2px solid var( --alerts-dlx-material-color-alt, $material-info-color-accent );
+				}
+
+				svg,
+				svg path {
+					color: var( --alerts-dlx-material-color-bold, $material-info-color-bold );
+					fill: var( --alerts-dlx-material-color-bold, $material-info-color-bold );
+				}
+			}
+		}
+
+		&.is-appearance-filled {
+			.alerts-dlx-material {
+				background-color: var( --alerts-dlx-material-color-light, $material-info-color-light );
+				color: $white;
+				border: 2px solid var( --alerts-dlx-material-color-border, $material-info-color-bold );
+
+				button.button-reset.alerts-dlx-button,
+				a.alerts-dlx-button,
+				a.alerts-dlx-button:hover,
+				button.button-reset.alerts-dlx-button:hover {
+					color: var( --alerts-dlx-material-color-alt, $material-info-color );
+					border: 2px solid var( --alerts-dlx-material-color-alt, $material-info-color );
+					background-color: $white;
+				}
+				a.alerts-dlx-button:hover,
+				button.button-reset.alerts-dlx-button:hover {
+					background-color: var( --alerts-dlx-material-color-alt, $material-info-color-accent );
+					color: $white;
+					border: 2px solid $white;
+				}
+				
+				svg,
+				svg path {
+					color: var( --alerts-dlx-material-color-bold, $material-info-color-bold );
+					fill: var( --alerts-dlx-material-color-bold, $material-info-color-bold );
 				}
 			}
 		}

@@ -25,9 +25,11 @@ import { useDispatch } from '@wordpress/data';
 
 import {
 	InspectorControls,
+	InspectorAdvancedControls,
 	RichText,
 	useBlockProps,
 	useInnerBlocksProps,
+	PanelColorSettings,
 	store,
 } from '@wordpress/block-editor';
 
@@ -37,6 +39,11 @@ import AlertButton from '../components/AlertButton';
 import UnitChooser from '../components/unit-picker';
 import IconPicker from '../components/IconPicker';
 import BootstrapIcons from '../components/icons/BootstrapIcons';
+import shoelaceColors from './colors';
+import { ShoeLaceCloseIcon } from '../components/CloseButtonIcons';
+
+// For storing unique IDs.
+const uniqueIds = [];
 
 const ShoelaceAlerts = ( props ) => {
 	const generatedUniqueId = useInstanceId(
@@ -44,17 +51,6 @@ const ShoelaceAlerts = ( props ) => {
 		'adlx-shoelace'
 	);
 
-	const innerBlocksRef = useRef( null );
-	const innerBlockProps = useInnerBlocksProps(
-		{
-			className: 'alerts-dlx-content',
-			ref: innerBlocksRef,
-		},
-		{
-			allowedBlocks: [ 'core/paragraph' ],
-			template: [ [ 'core/paragraph', { placeholder: '' } ] ],
-		}
-	);
 	const { replaceInnerBlocks } = useDispatch( store );
 
 	// Shortcuts.
@@ -62,6 +58,8 @@ const ShoelaceAlerts = ( props ) => {
 
 	const {
 		uniqueId,
+		closeButtonEnabled,
+		closeButtonExpiration,
 		alertType,
 		alertTitle,
 		alertDescription,
@@ -78,7 +76,40 @@ const ShoelaceAlerts = ( props ) => {
 		variant,
 		iconVerticalAlignment,
 		mode,
+		colorPrimary,
+		colorBorder,
+		colorAccent,
+		colorAlt,
+		colorBold,
+		colorLight,
+		innerBlocksEnabled,
 	} = attributes;
+
+	const innerBlocksRef = useRef( null );
+	const innerBlockProps = useInnerBlocksProps(
+		{
+			className: 'alerts-dlx-content',
+			ref: innerBlocksRef,
+		},
+		{
+			allowedBlocks: innerBlocksEnabled ? true : [ 'core/paragraph' ],
+			template: [ [ 'core/paragraph', { placeholder: '' } ] ],
+		}
+	);
+
+	/**
+	 * Get a unique ID for the block for inline styling if necessary.
+	 */
+	useEffect( () => {
+		if ( null === uniqueId || uniqueIds.includes( uniqueId ) || '' === uniqueId ) {
+			const newUniqueId = 'alerts-dlx-' + clientId.substr( 2, 9 ).replace( '-', '' );
+
+			setAttributes( { uniqueId: newUniqueId } );
+			uniqueIds.push( newUniqueId );
+		} else {
+			uniqueIds.push( uniqueId );
+		}
+	}, [] );
 
 	/**
 	 * Migrate RichText to InnerBlocks.
@@ -93,8 +124,151 @@ const ShoelaceAlerts = ( props ) => {
 		}
 	}, [ innerBlocksRef ] );
 
+	const styles = `
+		#${ uniqueId } {
+			--alerts-dlx-shoelace-color-primary: ${ colorPrimary };
+			--alerts-dlx-shoelace-color-border: ${ colorBorder };
+			--alerts-dlx-shoelace-color-accent: ${ colorAccent };
+			--alerts-dlx-shoelace-color-alt: ${ colorAlt };
+			--alerts-dlx-shoelace-color-bold: ${ colorBold };
+			--alerts-dlx-shoelace-color-light: ${ colorLight };
+		}`;
+
 	const inspectorControls = (
 		<>
+			<PanelBody initialOpen={ true } title={ __( 'Alert Settings', 'quotes-dlx' ) }>
+				<>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Icon', 'alerts-dlx' ) }
+							checked={ iconEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									iconEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Title', 'alerts-dlx' ) }
+							checked={ titleEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									titleEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Description', 'alerts-dlx' ) }
+							checked={ descriptionEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									descriptionEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Button', 'alerts-dlx' ) }
+							checked={ buttonEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									buttonEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Close Button', 'alerts-dlx' ) }
+							checked={ closeButtonEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									closeButtonEnabled: value,
+								} );
+							} }
+							help={ __( 'Enable this option to allow the alert to be dismissible.', 'alerts-dlx' ) }
+						/>
+					</PanelRow>
+					{
+						closeButtonEnabled && (
+							<PanelRow>
+								<TextControl
+									label={ __( 'Set the Close Button save expiration', 'alerts-dlx' ) }
+									value={ closeButtonExpiration }
+									onChange={ ( value ) => {
+										setAttributes( {
+											closeButtonExpiration: parseInt( value ),
+										} );
+									} }
+									help={ __( 'Set the expiration time in seconds for the close button to reappear. Set to zero to never expire.', 'alerts-dlx' ) }
+									type={ 'number' }
+								/>
+							</PanelRow>
+						)
+					}
+				</>
+			</PanelBody>
+			{
+				'custom' === alertType && (
+					<PanelColorSettings
+						__experimentalIsRenderedInSidebar
+						title={ __( 'Custom Color Settings', 'alerts-dlx' ) }
+						colorSettings={
+							[
+								{
+									label: __( 'Text Color', 'alerts-dlx' ),
+									value: colorPrimary,
+									onChange: ( value ) => {
+										setAttributes( { colorPrimary: value } );
+									},
+								},
+								{
+									label: __( 'Border Color', 'alerts-dlx' ),
+									value: colorBorder,
+									onChange: ( value ) => {
+										setAttributes( { colorBorder: value } );
+									},
+								},
+								{
+									label: __( 'Accent Color', 'alerts-dlx' ),
+									value: colorAccent,
+									onChange: ( value ) => {
+										setAttributes( { colorAccent: value } );
+									},
+								},
+								{
+									label: __( 'Button Color', 'alerts-dlx' ),
+									value: colorAlt,
+									onChange: ( value ) => {
+										setAttributes( { colorAlt: value } );
+									},
+								},
+								{
+									label: __( 'Icon Color', 'alerts-dlx' ),
+									value: colorBold,
+									onChange: ( value ) => {
+										setAttributes( { colorBold: value } );
+									},
+								},
+								{
+									label: __( 'Background Color', 'alerts-dlx' ),
+									value: colorLight,
+									onChange: ( value ) => {
+										setAttributes( { colorLight: value } );
+									},
+								},
+							]
+						}
+						colors={ shoelaceColors }
+					/>
+
+				)
+			}
 			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'quotes-dlx' ) }>
 				<>
 					<UnitChooser
@@ -237,55 +411,22 @@ const ShoelaceAlerts = ( props ) => {
 					/>
 				</PanelRow>
 			</PanelBody>
-			<PanelBody initialOpen={ false } title={ __( 'Alert Settings', 'quotes-dlx' ) }>
-				<>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Alert Icon', 'alerts-dlx' ) }
-							checked={ iconEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									iconEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Title', 'alerts-dlx' ) }
-							checked={ titleEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									titleEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Alert Description', 'alerts-dlx' ) }
-							checked={ descriptionEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									descriptionEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Alert Button', 'alerts-dlx' ) }
-							checked={ buttonEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									buttonEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-				</>
-			</PanelBody>
 		</>
+	);
+
+	const advancedControls = (
+		<PanelRow>
+			<ToggleControl
+				label={ __( 'Enable Flexible InnerBlocks', 'alerts-dlx' ) }
+				checked={ innerBlocksEnabled }
+				onChange={ ( value ) => {
+					setAttributes( {
+						innerBlocksEnabled: value,
+					} );
+				} }
+				help={ __( 'Enable this option to allow the use of any block within the alert.', 'alerts-dlx' ) }
+			/>
+		</PanelRow>
 	);
 
 	useEffect( () => {
@@ -319,7 +460,13 @@ const ShoelaceAlerts = ( props ) => {
 	const block = (
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
+			<InspectorAdvancedControls>{ advancedControls }</InspectorAdvancedControls>
 			<style>{ baseFontSizeStyles }</style>
+			{
+				'custom' === alertType && (
+					<style>{ styles }</style>
+				)
+			}
 			<figure
 				role="alert"
 				className={ classnames( 'alerts-dlx-alert alerts-dlx-shoelace', {
@@ -341,6 +488,13 @@ const ShoelaceAlerts = ( props ) => {
 					</div>
 				) }
 				<section>
+					{
+						closeButtonEnabled && (
+							<div className="alerts-dlx-close">
+								<ShoeLaceCloseIcon />
+							</div>
+						)
+					}
 					{ titleEnabled && (
 						<RichText
 							tagName="h2"

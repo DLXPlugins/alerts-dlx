@@ -27,6 +27,7 @@ module.exports = ( env ) => {
 				'alerts-dlx-material-light': './src/scss/material/light.scss',
 				'alerts-dlx-shoelace-dark': './src/scss/shoelace/dark.scss',
 				'alerts-dlx-shoelace-light': './src/scss/shoelace/light.scss',
+				'alerts-dlx-dismiss': './src/js/dismiss/index.js',
 			},
 			resolve: {
 				alias: {

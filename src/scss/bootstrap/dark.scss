@@ -1,70 +1,70 @@
 @import '../common.scss';
 
 // Bootstrap Primary colors.
-$bootstrap-dark-primary-color: #084298;
-$bootstrap-dark-primary-color-border: #b6d4fe;
-$bootstrap-dark-primary-color-accent: #26559c;
-$bootstrap-dark-primary-color-alt: #084298;
-$bootstrap-dark-primary-color-bold: #084298;
-$bootstrap-dark-primary-color-light: #cfe2ff;
+$bootstrap-primary-color: #6ea8fe;
+$bootstrap-primary-color-border: #084298;
+$bootstrap-primary-color-accent: #5a91e4;
+$bootstrap-primary-color-alt: #6ea8fe;
+$bootstrap-primary-color-bold: #6ea8fe;
+$bootstrap-primary-color-light: #031633;
 
 // Bootstrap secondary.
-$bootstrap-dark-secondary-color: #41464b;
-$bootstrap-dark-secondary-color-border: #d3d6d8;
-$bootstrap-dark-secondary-color-accent: #5c6874;
-$bootstrap-dark-secondary-color-alt: #41464b;
-$bootstrap-dark-secondary-color-bold: #41464b;
-$bootstrap-dark-secondary-color-light: #e2e3e5;
+$bootstrap-secondary-color: #a7acb1;
+$bootstrap-secondary-color-border: #084298;
+$bootstrap-secondary-color-accent: #c2c5c9;
+$bootstrap-secondary-color-alt: #a7acb1;
+$bootstrap-secondary-color-bold: #a7acb1;
+$bootstrap-secondary-color-light: #031633;
 
 // Bootstrap Success.
-$bootstrap-dark-success-color: #0f5132;
-$bootstrap-dark-success-color-border: #badbcc;
-$bootstrap-dark-success-color-accent: #167247;
-$bootstrap-dark-success-color-alt: #0f5132;
-$bootstrap-dark-success-color-bold: #0f5132;
-$bootstrap-dark-success-color-light: #d1e7dd;
+$bootstrap-success-color: #75b798;
+$bootstrap-success-color-border: #084298;
+$bootstrap-success-color-accent: #167247;
+$bootstrap-success-color-alt: #75b798;
+$bootstrap-success-color-bold: #75b798;
+$bootstrap-success-color-light: #031633;
 
 // Bootstrap Danger.
-$bootstrap-dark-danger-color: #842029;
-$bootstrap-dark-danger-color-border: #f5c2c7;
-$bootstrap-dark-danger-color-accent: #832e35;
-$bootstrap-dark-danger-color-alt: #842029;
-$bootstrap-dark-danger-color-bold: #842029;
-$bootstrap-dark-danger-color-light: #f8d7da;
+$bootstrap-danger-color: #ea868f;
+$bootstrap-danger-color-border: #084298;
+$bootstrap-danger-color-accent: #832e35;
+$bootstrap-danger-color-alt: #ea868f;
+$bootstrap-danger-color-bold: #ea868f;
+$bootstrap-danger-color-light: #031633;
 
 // Bootstrap Warning
-$bootstrap-dark-warning-color: #664d03;
-$bootstrap-dark-warning-color-border: #ffecb5;
-$bootstrap-dark-warning-color-accent: #7f6002;
-$bootstrap-dark-warning-color-alt: #664d03;
-$bootstrap-dark-warning-color-bold: #664d03;
-$bootstrap-dark-warning-color-light: #fff3cd;
+$bootstrap-warning-color: #ffda6a;
+$bootstrap-warning-color-border: #084298;
+$bootstrap-warning-color-accent: #eec959;
+$bootstrap-warning-color-alt: #ffda6a;
+$bootstrap-warning-color-bold: #ffda6a;
+$bootstrap-warning-color-light: #031633;
 
 // Bootstrap Info
-$bootstrap-dark-info-color: #055160;
-$bootstrap-dark-info-color-border: #b6effb;
-$bootstrap-dark-info-color-accent: #076c81;
-$bootstrap-dark-info-color-alt: #055160;
-$bootstrap-dark-info-color-bold: #055160;
-$bootstrap-dark-info-color-light: #cff4fc;
+$bootstrap-info-color: #6edff6;
+$bootstrap-info-color-border: #084298;
+$bootstrap-info-color-accent: #5cc9df;
+$bootstrap-info-color-alt: #6edff6;
+$bootstrap-info-color-bold: #6edff6;
+$bootstrap-info-color-light: #031633;
 
 // Bootstrap Light
-$bootstrap-dark-light-color: #636464;
-$bootstrap-dark-light-color-border: #fdfdfe;
-$bootstrap-dark-light-color-accent: #7b7c7c;
-$bootstrap-dark-light-color-alt: #636464;
-$bootstrap-dark-light-color-bold: #636464;
-$bootstrap-dark-light-color-light: #fefefe;
+$bootstrap-light-color: #f8f9fa;
+$bootstrap-light-color-border: #084298;
+$bootstrap-light-color-accent: #eaf0f6;
+$bootstrap-light-color-alt: #f8f9fa;
+$bootstrap-light-color-bold: #f8f9fa;
+$bootstrap-light-color-light: #031633;
 
 // Bootstrap Dark
-$bootstrap-dark-dark-color: #141619;
-$bootstrap-dark-dark-color-border: #bcbebf;
-$bootstrap-dark-dark-color-accent: #292d33;
-$bootstrap-dark-dark-color-alt: #141619;
-$bootstrap-dark-dark-color-bold: #141619;
-$bootstrap-dark-dark-color-light: #d3d3d4;
+$bootstrap-dark-color: #f8f9fa;
+$bootstrap-dark-color-border: #084298;
+$bootstrap-dark-color-accent: #eaf0f6;
+$bootstrap-dark-color-alt: #f8f9fa;
+$bootstrap-dark-color-bold: #f8f9fa;
+$bootstrap-dark-color-light: #031633;
 
-.template-bootstrap {
+.template-bootstrap.is-dark-mode {
 	/* MaterialUI Success */
 	.alerts-dlx-bootstrap {
 		display: grid;
@@ -82,7 +82,7 @@ $bootstrap-dark-dark-color-light: #d3d3d4;
 
 		section h2.alerts-dlx-title {
 			font-size: 1.2em;
-			font-weight: 500;
+			font-weight: 900;
 			line-height: 1.5em;
 			margin: 0;
 			padding: 0;
@@ -108,6 +108,10 @@ $bootstrap-dark-dark-color-light: #d3d3d4;
 		.alerts-dlx-icon-preview svg {
 			width: 1.6em;
 			height: 1.6em;
+		}
+		.alerts-dlx-icon-frontend .alerts-dlx-icon-preview {
+			font-size: 1.2em;
+			line-height: 2.2em;
 		}
 
 		.alerts-dlx-icon {
@@ -150,40 +154,100 @@ $bootstrap-dark-dark-color-light: #d3d3d4;
 		}
 	}
 
-	&.is-style-primary {
+	&.is-style-custom {
 		&.is-appearance-default,
 		&.is-appearance-centered {
 			.alerts-dlx-bootstrap {
-				border-color: $bootstrap-dark-primary-color-border;
+				border-color: var(--alerts-dlx-bootstrap-color-border, $bootstrap-primary-color-border);
 			}
 			h2.alerts-dlx-title {
-				color: $bootstrap-dark-primary-color;
+				color: var(--alerts-dlx-bootstrap-color-primary, $bootstrap-primary-color);
 			}
 			.alerts-dlx-content p {
-				color: $bootstrap-dark-primary-color;
+				color: var(--alerts-dlx-bootstrap-color-primary, $bootstrap-primary-color);
+			}
+			.alerts-dlx-close {
+				svg {
+					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-primary-color-alt);
+
+					&:hover {
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-primary-color-accent);
+					}
+				}
+			}
+			.alerts-dlx-icon {
+				svg,
+				svg path svg g {
+					color: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-primary-color-bold);
+					fill: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-primary-color-bold);
+				}
 			}
 			.alerts-dlx-bootstrap {
-				background-color: $bootstrap-dark-primary-color-light;
-				color: $bootstrap-dark-primary-color;
+				background-color: var(--alerts-dlx-bootstrap-color-light, $bootstrap-primary-color-light);
+				color: var(--alerts-dlx-bootstrap-color-primary, $bootstrap-primary-color);
 
 				button.button-reset.alerts-dlx-button,
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: $white;
+					color: var(--alerts-dlx-bootstrap-color-light, $white);
 					border: 1px solid transparent;
 
-					background-color: $bootstrap-dark-primary-color-alt;
+					background-color: var(--alerts-dlx-bootstrap-color-alt, $bootstrap-primary-color-alt);
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: $bootstrap-dark-primary-color-accent;
+					background-color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-primary-color-accent);
 				}
+			}
+		}
+	
+	}
 
+	&.is-style-primary {
+		&.is-appearance-default,
+		&.is-appearance-centered {
+			.alerts-dlx-bootstrap {
+				border-color: $bootstrap-primary-color-border;
+			}
+			h2.alerts-dlx-title {
+				color: $bootstrap-primary-color;
+			}
+			.alerts-dlx-content p {
+				color: $bootstrap-primary-color;
+			}
+			.alerts-dlx-close {
+				svg {
+					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-primary-color-alt);
+
+					&:hover {
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-primary-color-accent);
+					}
+				}
+			}
+			.alerts-dlx-icon {
 				svg,
 				svg path svg g {
-					color: $bootstrap-dark-primary-color-bold;
-					fill: $bootstrap-dark-primary-color-bold;
+					color: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-primary-color-bold);
+					fill: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-primary-color-bold);
+				}
+			}
+			.alerts-dlx-bootstrap {
+				background-color: $bootstrap-primary-color-light;
+				color: $bootstrap-primary-color;
+
+				button.button-reset.alerts-dlx-button,
+				a.alerts-dlx-button,
+				a.alerts-dlx-button:hover,
+				button.button-reset.alerts-dlx-button:hover {
+					color: $bootstrap-primary-color-light;
+					border: 1px solid transparent;
+
+					background-color: $bootstrap-primary-color-alt;
+				}
+				a.alerts-dlx-button:hover,
+				button.button-reset.alerts-dlx-button:hover {
+					background-color: $bootstrap-primary-color-accent;
 				}
 			}
 		}
@@ -193,36 +257,46 @@ $bootstrap-dark-dark-color-light: #d3d3d4;
 		&.is-appearance-default,
 		&.is-appearance-centered {
 			.alerts-dlx-bootstrap {
-				border-color: $bootstrap-dark-secondary-color-border;
+				border-color: $bootstrap-secondary-color-border;
 			}
 			h2.alerts-dlx-title {
-				color: $bootstrap-dark-secondary-color;
+				color: $bootstrap-secondary-color;
 			}
 			.alerts-dlx-content p {
-				color: $bootstrap-dark-secondary-color;
+				color: $bootstrap-secondary-color;
 			}
 			.alerts-dlx-bootstrap {
-				background-color: $bootstrap-dark-secondary-color-light;
-				color: $bootstrap-dark-secondary-color;
+				background-color: $bootstrap-secondary-color-light;
+				color: $bootstrap-secondary-color;
 
 				button.button-reset.alerts-dlx-button,
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: $white;
+					color: $bootstrap-secondary-color-light;
 					border: 1px solid transparent;
 
-					background-color: $bootstrap-dark-secondary-color-alt;
+					background-color: $bootstrap-secondary-color-alt;
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: $bootstrap-dark-secondary-color-accent;
+					background-color: $bootstrap-secondary-color-accent;
 				}
+			}
+			.alerts-dlx-close {
+				svg {
+					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-secondary-color-alt);
 
+					&:hover {
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-secondary-color-accent);
+					}
+				}
+			}
+			.alerts-dlx-icon {
 				svg,
 				svg path svg g {
-					color: $bootstrap-dark-secondary-color-bold;
-					fill: $bootstrap-dark-secondary-color-bold;
+					color: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-secondary-color-bold);
+					fill: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-secondary-color-bold);
 				}
 			}
 		}
@@ -232,17 +306,17 @@ $bootstrap-dark-dark-color-light: #d3d3d4;
 		&.is-appearance-default,
 		&.is-appearance-centered {
 			.alerts-dlx-bootstrap {
-				border-color: $bootstrap-dark-success-color-border;
+				border-color: $bootstrap-success-color-border;
 			}
 			h2.alerts-dlx-title {
-				color: $bootstrap-dark-success-color;
+				color: $bootstrap-success-color;
 			}
 			.alerts-dlx-content p {
-				color: $bootstrap-dark-success-color;
+				color: $bootstrap-success-color;
 			}
 			.alerts-dlx-bootstrap {
-				background-color: $bootstrap-dark-success-color-light;
-				color: $bootstrap-dark-success-color;
+				background-color: $bootstrap-success-color-light;
+				color: $bootstrap-success-color;
 
 				button.button-reset.alerts-dlx-button,
 				a.alerts-dlx-button,
@@ -251,17 +325,27 @@ $bootstrap-dark-dark-color-light: #d3d3d4;
 					color: $white;
 					border: 1px solid transparent;
 
-					background-color: $bootstrap-dark-success-color-alt;
+					background-color: $bootstrap-success-color-alt;
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: $bootstrap-dark-success-color-accent;
+					background-color: $bootstrap-success-color-accent;
 				}
+			}
+			.alerts-dlx-close {
+				svg {
+					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-success-color-alt);
 
+					&:hover {
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-success-color-accent);
+					}
+				}
+			}
+			.alerts-dlx-icon {
 				svg,
 				svg path svg g {
-					color: $bootstrap-dark-success-color-bold;
-					fill: $bootstrap-dark-success-color-bold;
+					color: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-success-color-bold);
+					fill: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-success-color-bold);
 				}
 			}
 		}
@@ -271,17 +355,17 @@ $bootstrap-dark-dark-color-light: #d3d3d4;
 		&.is-appearance-default,
 		&.is-appearance-centered {
 			.alerts-dlx-bootstrap {
-				border-color: $bootstrap-dark-danger-color-border;
+				border-color: $bootstrap-danger-color-border;
 			}
 			h2.alerts-dlx-title {
-				color: $bootstrap-dark-danger-color;
+				color: $bootstrap-danger-color;
 			}
 			.alerts-dlx-content p {
-				color: $bootstrap-dark-danger-color;
+				color: $bootstrap-danger-color;
 			}
 			.alerts-dlx-bootstrap {
-				background-color: $bootstrap-dark-danger-color-light;
-				color: $bootstrap-dark-danger-color;
+				background-color: $bootstrap-danger-color-light;
+				color: $bootstrap-danger-color;
 
 				button.button-reset.alerts-dlx-button,
 				a.alerts-dlx-button,
@@ -290,17 +374,27 @@ $bootstrap-dark-dark-color-light: #d3d3d4;
 					color: $white;
 					border: 1px solid transparent;
 
-					background-color: $bootstrap-dark-danger-color-alt;
+					background-color: $bootstrap-danger-color-alt;
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: $bootstrap-dark-danger-color-accent;
+					background-color: $bootstrap-danger-color-accent;
 				}
+			}
+			.alerts-dlx-close {
+				svg {
+					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-danger-color-alt);
 
+					&:hover {
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-danger-color-accent);
+					}
+				}
+			}
+			.alerts-dlx-icon {
 				svg,
 				svg path svg g {
-					color: $bootstrap-dark-danger-color-bold;
-					fill: $bootstrap-dark-danger-color-bold;
+					color: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-danger-color-bold);
+					fill: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-danger-color-bold);
 				}
 			}
 		}
@@ -310,36 +404,46 @@ $bootstrap-dark-dark-color-light: #d3d3d4;
 		&.is-appearance-default,
 		&.is-appearance-centered {
 			.alerts-dlx-bootstrap {
-				border-color: $bootstrap-dark-warning-color-border;
+				border-color: $bootstrap-warning-color-border;
 			}
 			h2.alerts-dlx-title {
-				color: $bootstrap-dark-warning-color;
+				color: $bootstrap-warning-color;
 			}
 			.alerts-dlx-content p {
-				color: $bootstrap-dark-warning-color;
+				color: $bootstrap-warning-color;
 			}
 			.alerts-dlx-bootstrap {
-				background-color: $bootstrap-dark-warning-color-light;
-				color: $bootstrap-dark-warning-color;
+				background-color: $bootstrap-warning-color-light;
+				color: $bootstrap-warning-color;
 
 				button.button-reset.alerts-dlx-button,
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: $white;
+					color: $bootstrap-warning-color-light;
 					border: 1px solid transparent;
 
-					background-color: $bootstrap-dark-warning-color-alt;
+					background-color: $bootstrap-warning-color-alt;
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: $bootstrap-dark-warning-color-accent;
+					background-color: $bootstrap-warning-color-accent;
 				}
+			}
+			.alerts-dlx-close {
+				svg {
+					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-warning-color-alt);
 
+					&:hover {
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-warning-color-accent);
+					}
+				}
+			}
+			.alerts-dlx-icon {
 				svg,
 				svg path svg g {
-					color: $bootstrap-dark-warning-color-bold;
-					fill: $bootstrap-dark-warning-color-bold;
+					color: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-warning-color-bold);
+					fill: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-warning-color-bold);
 				}
 			}
 		}
@@ -349,36 +453,46 @@ $bootstrap-dark-dark-color-light: #d3d3d4;
 		&.is-appearance-default,
 		&.is-appearance-centered {
 			.alerts-dlx-bootstrap {
-				border-color: $bootstrap-dark-info-color-border;
+				border-color: $bootstrap-info-color-border;
 			}
 			h2.alerts-dlx-title {
-				color: $bootstrap-dark-info-color;
+				color: $bootstrap-info-color;
 			}
 			.alerts-dlx-content p {
-				color: $bootstrap-dark-info-color;
+				color: $bootstrap-info-color;
 			}
 			.alerts-dlx-bootstrap {
-				background-color: $bootstrap-dark-info-color-light;
-				color: $bootstrap-dark-info-color;
+				background-color: $bootstrap-info-color-light;
+				color: $bootstrap-info-color;
 
 				button.button-reset.alerts-dlx-button,
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: $white;
+					color: $bootstrap-info-color-light;
 					border: 1px solid transparent;
 
-					background-color: $bootstrap-dark-info-color-alt;
+					background-color: $bootstrap-info-color-alt;
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: $bootstrap-dark-info-color-accent;
+					background-color: $bootstrap-info-color-accent;
 				}
+			}
+			.alerts-dlx-close {
+				svg {
+					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-info-color-alt);
 
+					&:hover {
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-info-color-accent);
+					}
+				}
+			}
+			.alerts-dlx-icon {
 				svg,
 				svg path svg g {
-					color: $bootstrap-dark-info-color-bold;
-					fill: $bootstrap-dark-info-color-bold;
+					color: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-info-color-bold);
+					fill: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-info-color-bold);
 				}
 			}
 		}
@@ -388,36 +502,46 @@ $bootstrap-dark-dark-color-light: #d3d3d4;
 		&.is-appearance-default,
 		&.is-appearance-centered {
 			.alerts-dlx-bootstrap {
-				border-color: $bootstrap-dark-light-color-border;
+				border-color: $bootstrap-light-color-border;
 			}
 			h2.alerts-dlx-title {
-				color: $bootstrap-dark-light-color;
+				color: $bootstrap-light-color;
 			}
 			.alerts-dlx-content p {
-				color: $bootstrap-dark-light-color;
+				color: $bootstrap-light-color;
 			}
 			.alerts-dlx-bootstrap {
-				background-color: $bootstrap-dark-light-color-light;
-				color: $bootstrap-dark-light-color;
+				background-color: $bootstrap-light-color-light;
+				color: $bootstrap-light-color;
 
 				button.button-reset.alerts-dlx-button,
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: $white;
+					color: $bootstrap-light-color-light;
 					border: 1px solid transparent;
 
-					background-color: $bootstrap-dark-light-color-alt;
+					background-color: $bootstrap-light-color-alt;
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: $bootstrap-dark-light-color-accent;
+					background-color: $bootstrap-light-color-accent;
 				}
+			}
+			.alerts-dlx-close {
+				svg {
+					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-light-color-alt);
 
+					&:hover {
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-light-color-accent);
+					}
+				}
+			}
+			.alerts-dlx-icon {
 				svg,
 				svg path svg g {
-					color: $bootstrap-dark-light-color-bold;
-					fill: $bootstrap-dark-light-color-bold;
+					color: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-light-color-bold);
+					fill: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-light-color-bold);
 				}
 			}
 		}
@@ -427,36 +551,46 @@ $bootstrap-dark-dark-color-light: #d3d3d4;
 		&.is-appearance-default,
 		&.is-appearance-centered {
 			.alerts-dlx-bootstrap {
-				border-color: $bootstrap-dark-dark-color-border;
+				border-color: $bootstrap-dark-color-border;
 			}
 			h2.alerts-dlx-title {
-				color: $bootstrap-dark-dark-color;
+				color: $bootstrap-dark-color;
 			}
 			.alerts-dlx-content p {
-				color: $bootstrap-dark-dark-color;
+				color: $bootstrap-dark-color;
 			}
 			.alerts-dlx-bootstrap {
-				background-color: $bootstrap-dark-dark-color-light;
-				color: $bootstrap-dark-dark-color;
+				background-color: $bootstrap-dark-color-light;
+				color: $bootstrap-dark-color;
 
 				button.button-reset.alerts-dlx-button,
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: $white;
+					color: $bootstrap-dark-color-light;
 					border: 1px solid transparent;
 
-					background-color: $bootstrap-dark-dark-color-alt;
+					background-color: $bootstrap-dark-color-alt;
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: $bootstrap-dark-dark-color-accent;
+					background-color: $bootstrap-dark-color-accent;
 				}
+			}
+			.alerts-dlx-close {
+				svg {
+					color: var( --alerts-dlx-bootstrap-color-alt, $bootstrap-dark-color-alt);
 
+					&:hover {
+						color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-dark-color-accent);
+					}
+				}
+			}
+			.alerts-dlx-icon {
 				svg,
 				svg path svg g {
-					color: $bootstrap-dark-dark-color-bold;
-					fill: $bootstrap-dark-dark-color-bold;
+					color: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-dark-color-bold);
+					fill: var(--alerts-dlx-bootstrap-color-bold, $bootstrap-dark-color-bold);
 				}
 			}
 		}

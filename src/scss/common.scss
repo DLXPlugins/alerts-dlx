@@ -62,6 +62,22 @@ button.button-reset.components-button:hover {
 	}
 }
 
+.alerts-dlx-close {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	right: 0;
+	padding: 1.25rem 1rem;
+	padding-top: 0.75rem;
+
+	svg,
+	svg:hover {
+		transition: color 0.3s ease-in-out;
+		width: 16px;
+		height: 16px;
+	}
+}
+
 /* Consolidate variants for ChakraUI options */
 .alerts-dlx-chakra-variants,
 .alerts-dlx-material-variants,
@@ -86,9 +102,28 @@ button.button-reset.components-button:hover {
 figure.alerts-dlx-alert {
 	text-align: left;
 	box-sizing: border-box;
+	position: relative;
 }
 .alerts-dlx-content a,
 .alerts-dlx-content a:hover {
 	color: inherit;
 	text-decoration: underline;
+}
+
+@keyframes alerts-dlx-dismiss {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		height: 0;
+	}
+}
+
+/** Animation for removal **/
+.alerts-dlx-remove {
+	animation-name: alerts-dlx-dismiss;
+	animation-duration: 0.8s;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: forwards;
 }

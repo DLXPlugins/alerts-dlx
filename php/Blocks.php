@@ -107,6 +107,14 @@ class Blocks {
 			'button_rel_no_follow'    => false,
 			'button_rel_sponsored'    => false,
 			'icon_appearance'         => 'default', /* can be rounded */
+			'color_primary'           => '',
+			'color_border'            => '',
+			'color_accent'            => '',
+			'color_alt'               => '',
+			'color_bold'              => '',
+			'color_light'             => '',
+			'close_button_enabled'    => false,
+			'close_button_expiration' => 0,
 		);
 		$atts     = shortcode_atts( $defaults, $atts, 'alertsdlx' );
 
@@ -175,6 +183,22 @@ class Blocks {
 		}
 		ob_start();
 
+		if ( 'custom' === $atts['alert_type'] ) {
+			ob_start();
+			?>
+			<style>
+			#<?php echo esc_html( $atts['unique_id'] ); ?> {
+				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-primary: <?php echo esc_html( $atts['color_primary'] ); ?>;
+				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-border: <?php echo esc_html( $atts['color_border'] ); ?>;
+				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-accent: <?php echo esc_html( $atts['color_accent'] ); ?>;
+				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-alt: <?php echo esc_html( $atts['color_alt'] ); ?>;
+				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-bold: <?php echo esc_html( $atts['color_bold'] ); ?>;
+				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-light: <?php echo esc_html( $atts['color_light'] ); ?>;
+			}
+			</style>
+			<?php
+		}
+
 		// Print styles.
 		wp_print_styles( $style_handles_to_print );
 
@@ -220,6 +244,20 @@ class Blocks {
 		$button_rel_no_follow    = Functions::sanitize_attribute( $attributes, 'buttonRelNoFollow', 'boolean' );
 		$button_rel_sponsored    = Functions::sanitize_attribute( $attributes, 'buttonRelSponsored', 'boolean' );
 		$icon_appearance         = Functions::sanitize_attribute( $attributes, 'iconAppearance', 'text' );
+		$color_primary           = Functions::sanitize_attribute( $attributes, 'colorPrimary', 'text' );
+		$color_border            = Functions::sanitize_attribute( $attributes, 'colorBorder', 'text' );
+		$color_accent            = Functions::sanitize_attribute( $attributes, 'colorAccent', 'text' );
+		$color_alt               = Functions::sanitize_attribute( $attributes, 'colorAlt', 'text' );
+		$color_bold              = Functions::sanitize_attribute( $attributes, 'colorBold', 'text' );
+		$color_light             = Functions::sanitize_attribute( $attributes, 'colorLight', 'text' );
+		$close_button_enabled    = Functions::sanitize_attribute( $attributes, 'closeButtonEnabled', 'boolean' );
+		$close_button_expiration = Functions::sanitize_attribute( $attributes, 'closeButtonExpiration', 'integer' );
+
+		// Check to see if expiration cookie is set.
+		$cookie_name = 'alerts-dlx-' . $unique_id;
+		if ( $close_button_enabled && isset( $_COOKIE[ $cookie_name ] ) ) {
+			return '';
+		}
 
 		ob_start();
 
@@ -293,6 +331,7 @@ class Blocks {
 						)
 					);
 				}
+				break;
 			case 'shoelace':
 				if ( 'dark' === $mode ) {
 					wp_print_styles(
@@ -310,6 +349,45 @@ class Blocks {
 					);
 				}
 				break;
+		}
+
+		// Close button footer and scripts.
+		if ( $close_button_enabled ) {
+			// Add footer SVGs for close button.
+			add_action( 'wp_footer', array( $this, 'print_close_button_svgs' ) );
+
+			// Add close button script.
+			wp_enqueue_script(
+				'alerts-dlx-close-button',
+				Functions::get_plugin_url( 'dist/alerts-dlx-dismiss.js' ),
+				array(),
+				Functions::get_plugin_version(),
+				true
+			);
+		}
+
+		if ( 'custom' === $alert_type ) {
+			ob_start();
+			?>
+			#<?php echo esc_html( $unique_id ); ?> {
+				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-primary: <?php echo esc_html( $color_primary ); ?>;
+				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-border: <?php echo esc_html( $color_border ); ?>;
+				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-accent: <?php echo esc_html( $color_accent ); ?>;
+				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-alt: <?php echo esc_html( $color_alt ); ?>;
+				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-bold: <?php echo esc_html( $color_bold ); ?>;
+				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-light: <?php echo esc_html( $color_light ); ?>;
+			}
+			<?php
+			$custom_css = ob_get_clean();
+			wp_register_style(
+				'alerts-dlx-custom-css',
+				false
+			);
+			wp_add_inline_style(
+				'alerts-dlx-custom-css',
+				$custom_css
+			);
+			wp_print_styles( 'alerts-dlx-custom-css' );
 		}
 
 		// Add base classes to container element.
@@ -338,6 +416,7 @@ class Blocks {
 		</style>
 		<div
 			class="<?php echo esc_html( implode( ' ', $container_classes ) ); ?>"
+			data-expiration="<?php echo esc_attr( absint( $close_button_expiration ) ); ?>"
 		>
 			<figure
 				role="alert"
@@ -357,6 +436,44 @@ class Blocks {
 				?>
 				<section>
 					<?php
+					if ( $close_button_enabled ) {
+						?>
+						<div class="alerts-dlx-close" aria-label="<?php esc_attr_e( 'Close', 'alerts-dlx' ); ?>">
+							<?php
+							switch ( $alert_group ) {
+								case 'bootstrap':
+									?>
+									<svg class="alerts-dlx-close-button-svg" aria-hidden="true" width="16" height="16">
+										<use xlink:href="#alerts-dlx-bootstrap-close-button"></use>
+									</svg>
+									<?php
+									break;
+								case 'chakra':
+									?>
+									<svg class="alerts-dlx-close-button-svg" aria-hidden="true" width="16" height="16">
+										<use xlink:href="#alerts-dlx-chakra-close-button"></use>
+									</svg>
+									<?php
+									break;
+								case 'shoelace':
+									?>
+									<svg class="alerts-dlx-close-button-svg" aria-hidden="true" width="16" height="16">
+										<use xlink:href="#alerts-dlx-shoelace-close-button"></use>
+									</svg>
+									<?php
+									break;
+								case 'material':
+									?>
+									<svg class="alerts-dlx-close-button-svg" aria-hidden="true" width="16" height="16">
+										<use xlink:href="#alerts-dlx-material-close-button"></use>
+									</svg>
+									<?php
+									break;
+							}
+							?>
+						</div>
+						<?php
+					}
 					if ( $title_enabled ) {
 						?>
 						<h2 class="alerts-dlx-title">
@@ -527,5 +644,28 @@ class Blocks {
 			Functions::get_plugin_version(),
 			'all'
 		);
+	}
+
+	/**
+	 * Print the close button SVGs.
+	 */
+	public function print_close_button_svgs() {
+		?>
+		<svg width="0" height="0" class="hidden" style="display: none;">
+			<symbol id="alerts-dlx-bootstrap-close-button" viewBox="0 0 16 16" width="16" height="16">
+				<path fill="currentColor" d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/>
+			</symbol>
+			<symbol id="alerts-dlx-chakra-close-button" viewBox="0 0 24 24" width="16" height="16">
+				<path fill="currentColor" d="M.439,21.44a1.5,1.5,0,0,0,2.122,2.121L11.823,14.3a.25.25,0,0,1,.354,0l9.262,9.263a1.5,1.5,0,1,0,2.122-2.121L14.3,12.177a.25.25,0,0,1,0-.354l9.263-9.262A1.5,1.5,0,0,0,21.439.44L12.177,9.7a.25.25,0,0,1-.354,0L2.561.44A1.5,1.5,0,0,0,.439,2.561L9.7,11.823a.25.25,0,0,1,0,.354Z" />
+			</symbol>
+			<symbol id="alerts-dlx-shoelace-close-button" viewBox="0 0 16 16" width="16" height="16">
+				<path fill="currentColor" d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"></path>
+			</symbol>
+			<symbol id="alerts-dlx-material-close-button" viewBox="0 0 24 24" width="16" height="16">
+				<path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+			</symbol>
+    </svg>
+		</svg>
+		<?php
 	}
 }

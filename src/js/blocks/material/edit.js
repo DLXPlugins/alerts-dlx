@@ -25,11 +25,13 @@ import { useDispatch } from '@wordpress/data';
 
 import {
 	InspectorControls,
+	InspectorAdvancedControls,
 	RichText,
 	useBlockProps,
 	useInnerBlocksProps,
 	InnerBlocks,
 	store,
+	PanelColorSettings,
 } from '@wordpress/block-editor';
 
 import { useInstanceId } from '@wordpress/compose';
@@ -38,6 +40,8 @@ import AlertButton from '../components/AlertButton';
 import UnitChooser from '../components/unit-picker';
 import IconPicker from '../components/IconPicker';
 import materialSvgs from '../components/icons/MaterialIcons';
+import { MaterialCloseIcon } from '../components/CloseButtonIcons';
+import materialColors from './colors';
 
 const MaterialAlerts = ( props ) => {
 	const generatedUniqueId = useInstanceId(
@@ -45,18 +49,6 @@ const MaterialAlerts = ( props ) => {
 		'adlx-material'
 	);
 
-	const innerBlocksRef = useRef( null );
-	const innerBlockProps = useInnerBlocksProps(
-		{
-			className: 'alerts-dlx-content',
-			ref: innerBlocksRef,
-		},
-		{
-			allowedBlocks: [ 'core/paragraph' ],
-			template: [ [ 'core/paragraph', { placeholder: '' } ] ],
-			renderAppender: InnerBlocks.DefaultBlockAppender,
-		}
-	);
 	const { replaceInnerBlocks } = useDispatch( store );
 
 	// Shortcuts.
@@ -81,7 +73,39 @@ const MaterialAlerts = ( props ) => {
 		mode,
 		enableDropShadow,
 		iconVerticalAlignment,
+		colorPrimary,
+		colorBorder,
+		colorAccent,
+		colorAlt,
+		colorBold,
+		colorLight,
+		closeButtonEnabled,
+		closeButtonExpiration,
+		innerBlocksEnabled,
 	} = attributes;
+
+	const innerBlocksRef = useRef( null );
+	const innerBlockProps = useInnerBlocksProps(
+		{
+			className: 'alerts-dlx-content',
+			ref: innerBlocksRef,
+		},
+		{
+			allowedBlocks: innerBlocksEnabled ? true : [ 'core/paragraph' ],
+			template: [ [ 'core/paragraph', { placeholder: '' } ] ],
+			renderAppender: InnerBlocks.DefaultBlockAppender,
+		}
+	);
+
+	const styles = `
+		#${ uniqueId } {
+			--alerts-dlx-material-color-primary: ${ colorPrimary };
+			--alerts-dlx-material-color-border: ${ colorBorder };
+			--alerts-dlx-material-color-accent: ${ colorAccent };
+			--alerts-dlx-material-color-alt: ${ colorAlt };
+			--alerts-dlx-material-color-bold: ${ colorBold };
+			--alerts-dlx-material-color-light: ${ colorLight };
+		}`;
 
 	/**
 	 * Migrate RichText to InnerBlocks.
@@ -98,6 +122,139 @@ const MaterialAlerts = ( props ) => {
 
 	const inspectorControls = (
 		<>
+			<PanelBody initialOpen={ true } title={ __( 'Alert Settings', 'quotes-dlx' ) }>
+				<>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Icon', 'alerts-dlx' ) }
+							checked={ iconEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									iconEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Title', 'alerts-dlx' ) }
+							checked={ titleEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									titleEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Description', 'alerts-dlx' ) }
+							checked={ descriptionEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									descriptionEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Alert Button', 'alerts-dlx' ) }
+							checked={ buttonEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									buttonEnabled: value,
+								} );
+							} }
+						/>
+					</PanelRow>
+					<PanelRow>
+						<ToggleControl
+							label={ __( 'Enable Close Button', 'alerts-dlx' ) }
+							checked={ closeButtonEnabled }
+							onChange={ ( value ) => {
+								setAttributes( {
+									closeButtonEnabled: value,
+								} );
+							} }
+							help={ __( 'Enable this option to allow the alert to be dismissible.', 'alerts-dlx' ) }
+						/>
+					</PanelRow>
+					{
+						closeButtonEnabled && (
+							<PanelRow>
+								<TextControl
+									label={ __( 'Set the Close Button save expiration', 'alerts-dlx' ) }
+									value={ closeButtonExpiration }
+									onChange={ ( value ) => {
+										setAttributes( {
+											closeButtonExpiration: parseInt( value ),
+										} );
+									} }
+									help={ __( 'Set the expiration time in seconds for the close button to reappear. Set to zero to never expire.', 'alerts-dlx' ) }
+									type={ 'number' }
+								/>
+							</PanelRow>
+						)
+					}
+				</>
+			</PanelBody>
+			{
+				'custom' === alertType && (
+					<PanelColorSettings
+						__experimentalIsRenderedInSidebar
+						title={ __( 'Custom Color Settings', 'alerts-dlx' ) }
+						colorSettings={
+							[
+								{
+									label: __( 'Text Color', 'alerts-dlx' ),
+									value: colorPrimary,
+									onChange: ( value ) => {
+										setAttributes( { colorPrimary: value } );
+									},
+								},
+								{
+									label: __( 'Border Color', 'alerts-dlx' ),
+									value: colorBorder,
+									onChange: ( value ) => {
+										setAttributes( { colorBorder: value } );
+									},
+								},
+								{
+									label: __( 'Accent Color', 'alerts-dlx' ),
+									value: colorAccent,
+									onChange: ( value ) => {
+										setAttributes( { colorAccent: value } );
+									},
+								},
+								{
+									label: __( 'Button Color', 'alerts-dlx' ),
+									value: colorAlt,
+									onChange: ( value ) => {
+										setAttributes( { colorAlt: value } );
+									},
+								},
+								{
+									label: __( 'Icon Color', 'alerts-dlx' ),
+									value: colorBold,
+									onChange: ( value ) => {
+										setAttributes( { colorBold: value } );
+									},
+								},
+								{
+									label: __( 'Background Color', 'alerts-dlx' ),
+									value: colorLight,
+									onChange: ( value ) => {
+										setAttributes( { colorLight: value } );
+									},
+								},
+							]
+						}
+						colors={ materialColors }
+					/>
+
+				)
+			}
 			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'quotes-dlx' ) }>
 				<>
 					<UnitChooser
@@ -254,55 +411,22 @@ const MaterialAlerts = ( props ) => {
 					</PanelRow>
 				) }
 			</PanelBody>
-			<PanelBody initialOpen={ false } title={ __( 'Alert Settings', 'quotes-dlx' ) }>
-				<>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Alert Icon', 'alerts-dlx' ) }
-							checked={ iconEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									iconEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Title', 'alerts-dlx' ) }
-							checked={ titleEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									titleEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Alert Description', 'alerts-dlx' ) }
-							checked={ descriptionEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									descriptionEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-					<PanelRow>
-						<ToggleControl
-							label={ __( 'Enable Alert Button', 'alerts-dlx' ) }
-							checked={ buttonEnabled }
-							onChange={ ( value ) => {
-								setAttributes( {
-									buttonEnabled: value,
-								} );
-							} }
-						/>
-					</PanelRow>
-				</>
-			</PanelBody>
 		</>
+	);
+
+	const advancedControls = (
+		<PanelRow>
+			<ToggleControl
+				label={ __( 'Enable Flexible InnerBlocks', 'alerts-dlx' ) }
+				checked={ innerBlocksEnabled }
+				onChange={ ( value ) => {
+					setAttributes( {
+						innerBlocksEnabled: value,
+					} );
+				} }
+				help={ __( 'Enable this option to allow the use of any block within the alert.', 'alerts-dlx' ) }
+			/>
+		</PanelRow>
 	);
 
 	useEffect( () => {
@@ -320,20 +444,7 @@ const MaterialAlerts = ( props ) => {
 		const styleMatch = new RegExp( /is-style-([^\s]*)/g ).exec( className );
 		if ( null !== styleMatch ) {
 			const match = styleMatch[ 1 ];
-			switch ( match ) {
-				case 'success':
-					setAttributes( { alertType: 'success' } );
-					break;
-				case 'info':
-					setAttributes( { alertType: 'info' } );
-					break;
-				case 'warning':
-					setAttributes( { alertType: 'warning' } );
-					break;
-				case 'error':
-					setAttributes( { alertType: 'error' } );
-					break;
-			}
+			setAttributes( { alertType: match } );
 		}
 	}, [ className ] );
 
@@ -349,7 +460,13 @@ const MaterialAlerts = ( props ) => {
 	const block = (
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
+			<InspectorAdvancedControls>{ advancedControls }</InspectorAdvancedControls>
 			<style>{ baseFontSizeStyles }</style>
+			{
+				'custom' === alertType && (
+					<style>{ styles }</style>
+				)
+			}
 			<figure
 				role="alert"
 				className={ classnames( 'alerts-dlx-alert alerts-dlx-material', {
@@ -371,6 +488,13 @@ const MaterialAlerts = ( props ) => {
 					</div>
 				) }
 				<section>
+					{
+						closeButtonEnabled && (
+							<div className="alerts-dlx-close">
+								<MaterialCloseIcon />
+							</div>
+						)
+					}
 					{ titleEnabled && (
 						<RichText
 							tagName="h2"
