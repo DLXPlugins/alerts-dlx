@@ -110,7 +110,7 @@ const ChakraAlerts = ( props ) => {
 	 * Get a unique ID for the block for inline styling if necessary.
 	 */
 	useEffect( () => {
-		if ( null === uniqueId || uniqueIds.includes( uniqueId ) ) {
+		if ( null === uniqueId || uniqueIds.includes( uniqueId ) || '' === uniqueId ) {
 			const newUniqueId = 'alerts-dlx-' + clientId.substr( 2, 9 ).replace( '-', '' );
 
 			setAttributes( { uniqueId: newUniqueId } );

@@ -203,7 +203,7 @@ __webpack_require__.r(__webpack_exports__);
 // For storing unique IDs.
 var uniqueIds = [];
 var BootstrapAlerts = function BootstrapAlerts(props) {
-  // Shortcuts.
+  // Shortcts.
   var attributes = props.attributes,
     setAttributes = props.setAttributes,
     clientId = props.clientId;
@@ -238,7 +238,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
    * Get a unique ID for the block for inline styling if necessary.
    */
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    if (null === uniqueId || uniqueIds.includes(uniqueId)) {
+    if (null === uniqueId || uniqueIds.includes(uniqueId) || '' === uniqueId) {
       var newUniqueId = 'alerts-dlx-' + clientId.substr(2, 9).replace('-', '');
       setAttributes({
         uniqueId: newUniqueId
@@ -829,7 +829,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
    * Get a unique ID for the block for inline styling if necessary.
    */
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    if (null === uniqueId || uniqueIds.includes(uniqueId)) {
+    if (null === uniqueId || uniqueIds.includes(uniqueId) || '' === uniqueId) {
       var newUniqueId = 'alerts-dlx-' + clientId.substr(2, 9).replace('-', '');
       setAttributes({
         uniqueId: newUniqueId
