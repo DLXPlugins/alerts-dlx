@@ -123,6 +123,42 @@
     "alertGroup": {
       "type": "string",
       "default": "shoelace"
+    },
+    "innerBlocksEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "closeButtonEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "closeButtonExpiration": {
+      "type": "number",
+      "default": 0
+    },
+    "colorPrimary": {
+      "type": "string",
+      "default": "var(--alerts-dlx-shoelace-color-primary, #084298)"
+    },
+    "colorBorder": {
+      "type": "string",
+      "default": "var(--alerts-dlx-shoelace-color-border, #b6d4fe)"
+    },
+    "colorAccent": {
+      "type": "string",
+      "default": "var(--alerts-dlx-shoelace-color-accent, #26559c)"
+    },
+    "colorAlt": {
+      "type": "string",
+      "default": "var(--alerts-dlx-shoelace-color-alt, #084298)"
+    },
+    "colorBold": {
+      "type": "string",
+      "default": "var(--alerts-dlx-shoelace-color-bold, #084298)"
+    },
+    "colorLight": {
+      "type": "string",
+      "default": "var(--alerts-dlx-shoelace-color-light, #cfe2ff)"
     }
   },
   "example": {
@@ -157,6 +193,10 @@
     {
       "name": "danger",
       "label": "Danger"
+    },
+    {
+      "name": "custom",
+      "label": "Custom"
     }
   ],
   "supports": {

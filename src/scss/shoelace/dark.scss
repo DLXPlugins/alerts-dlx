@@ -35,6 +35,63 @@ $shoelace-dark-danger-color-accent: #ef437f;
 		background: #242428;
 		color: #FFF;
 	}
+	.alerts-dlx-shoelace {
+		display: grid;
+		grid-template-columns: 1fr;
+		font-size: var(--alerts-dlx-shoelace-base-size, 16px);
+		padding: 0.75em 1.25em;
+		border-radius: 0px;
+		margin: 0 auto;
+		border-radius: 0.25rem;
+		border: 1px solid #e4e4e7;
+		color: $shoelace-text-color;
+
+		&.alerts-dlx-has-icon {
+			grid-template-columns: 3.8em 1fr;
+			padding-left: 0;
+		}
+
+		section h2.alerts-dlx-title {
+			font-size: 1.2em;
+			font-weight: 900;
+			line-height: 1.5em;
+			margin: 0;
+			padding: 0;
+			margin-bottom: 0.35em;
+		}
+		.alerts-dlx-content p {
+			font-size: 1.2em;
+			font-weight: 400;
+			line-height: 1.5em;
+			margin: 0;
+			padding: 0;
+			&:not(:first-child) {
+				margin-top: 0.5em;
+			}
+		}
+
+		button.button-reset::not(.alerts-dlx-icon-preview-button),
+		a.alerts-dlx-button::not(.alerts-dlx-icon-preview-button),
+		button.button-reset.components-button::not(.alerts-dlx-icon-preview-button) {
+			font-size: 1.2em;
+		}
+
+		.alerts-dlx-icon-preview svg {
+			width: 1.4em;
+			height: 1.4em;
+			font-size: 1.2em;
+		}
+		.alerts-dlx-icon-frontend .alerts-dlx-icon-preview {
+			font-size: 1.2em;
+			line-height: 2.2em;
+		}
+
+		.alerts-dlx-icon {
+			display: flex;
+			align-items: flex-start;
+			justify-content: center;
+		}
+	}
 	&.is-style-primary {
 		h2.alerts-dlx-title {
 			color: $shoelace-text-color;
@@ -50,6 +107,15 @@ $shoelace-dark-danger-color-accent: #ef437f;
 			border: 1px solid transparent;
 
 			background: $shoelace-dark-primary-color;
+		}
+		.alerts-dlx-close {
+			svg {
+				color: $shoelace-dark-primary-color;
+	
+				&:hover {
+					color: $shoelace-dark-primary-color-accent;
+				}
+			}
 		}
 		a.alerts-dlx-button:hover,
 		button.button-reset.alerts-dlx-button:hover {
@@ -128,6 +194,15 @@ $shoelace-dark-danger-color-accent: #ef437f;
 
 			background: $shoelace-dark-success-color;
 		}
+		.alerts-dlx-close {
+			svg {
+				color: $shoelace-dark-success-color;
+	
+				&:hover {
+					color: $shoelace-dark-success-color-accent;
+				}
+			}
+		}
 		a.alerts-dlx-button:hover,
 		button.button-reset.alerts-dlx-button:hover {
 			background: $shoelace-dark-success-color-accent;
@@ -204,6 +279,15 @@ $shoelace-dark-danger-color-accent: #ef437f;
 			border: 1px solid transparent;
 
 			background: $shoelace-dark-neutral-color;
+		}
+		.alerts-dlx-close {
+			svg {
+				color: $shoelace-dark-neutral-color;
+	
+				&:hover {
+					color: $shoelace-dark-neutral-color-accent;
+				}
+			}
 		}
 		a.alerts-dlx-button:hover,
 		button.button-reset.alerts-dlx-button:hover {
@@ -282,6 +366,15 @@ $shoelace-dark-danger-color-accent: #ef437f;
 
 			background: $shoelace-dark-warning-color;
 		}
+		.alerts-dlx-close {
+			svg {
+				color: $shoelace-dark-warning-color;
+	
+				&:hover {
+					color: $shoelace-dark-warning-color-accent;
+				}
+			}
+		}
 		a.alerts-dlx-button:hover,
 		button.button-reset.alerts-dlx-button:hover {
 			background: $shoelace-dark-warning-color-accent;
@@ -359,6 +452,15 @@ $shoelace-dark-danger-color-accent: #ef437f;
 
 			background: $shoelace-dark-danger-color;
 		}
+		.alerts-dlx-close {
+			svg {
+				color: $shoelace-dark-danger-color;
+	
+				&:hover {
+					color: $shoelace-dark-danger-color-accent;
+				}
+			}
+		}
 		a.alerts-dlx-button:hover,
 		button.button-reset.alerts-dlx-button:hover {
 			background: $shoelace-dark-danger-color-accent;
@@ -417,6 +519,96 @@ $shoelace-dark-danger-color-accent: #ef437f;
 			section .alerts-dlx-button:hover {
 				background: darken( $shoelace-dark-danger-color-accent, 5% );
 				color: $white;
+			}
+		}
+	}
+	&.is-style-custom {
+		figure.alerts-dlx-alert.alerts-dlx-shoelace[role="alert"] {
+			background: var( --alerts-dlx-shoelace-color-light, $white );
+			border-top: 3px solid var(--alerts-dlx-shoelace-color-border, $shoelace-dark-primary-color );
+		}
+		h2.alerts-dlx-title {
+			color: var( --alerts-dlx-shoelace-color-primary, $shoelace-text-color );
+		}
+		.alerts-dlx-content p {
+			color: var( --alerts-dlx-shoelace-color-primary, $shoelace-text-color );
+		}
+		button.button-reset.alerts-dlx-button,
+		a.alerts-dlx-button,
+		a.alerts-dlx-button:hover,
+		button.button-reset.alerts-dlx-button:hover {
+			color: $white;
+			border: 1px solid transparent;
+
+			background: var(--alerts-dlx-shoelace-color-alt, $shoelace-dark-primary-color );
+		}
+		.alerts-dlx-close {
+			svg {
+				color: var( --alerts-dlx-shoelace-color-bold, $shoelace-dark-primary-color);
+	
+				&:hover {
+					color: var(--alerts-dlx-shoelace-color-bold, $shoelace-dark-primary-color-accent);
+				}
+			}
+		}
+		a.alerts-dlx-button:hover,
+		button.button-reset.alerts-dlx-button:hover {
+			background: var(--alerts-dlx-shoelace-color-alt, $shoelace-dark-primary-color-accent );
+		}
+
+		svg,
+		svg path svg g {
+			color: var( --alerts-dlx-shoelace-color-bold, $shoelace-dark-primary-color );
+			fill: var( --alerts-dlx-shoelace-color-bold, $shoelace-dark-primary-color );
+		}
+
+		&.is-appearance-left-accent {
+			figure {
+				position: relative;
+				border: 1px solid #e4e4e7;
+				border-left-width: 0.25em;
+				border-left-color: var(--alerts-dlx-shoelace-color-border, $shoelace-dark-primary-color );
+			}
+			.alerts-dlx-has-icon {
+				display: flex;
+				padding-left: 2.8em;
+			}
+			.alerts-dlx-icon {
+				position: absolute;
+				top: calc( 50% - 0.97em );
+				left: calc( (-1.4em/2) - 0.25em );
+			}
+			.alerts-dlx-icon-preview {
+				font-size: unset;
+				line-height: unset;
+			}
+			svg {
+				background: var( --alerts-dlx-shoelace-color-primary, $shoelace-text-color );
+				color: var( --alerts-dlx-shoelace-color-bold, $white );
+				fill: var( --alerts-dlx-shoelace-color-bold, $white );
+			}
+		}
+		&.is-appearance-solid {
+			figure {
+				position: relative;
+				border: 1px solid transparent;
+				background: var(--alerts-dlx-shoelace-color-primary, $shoelace-dark-primary-color );
+				color: var( --alerts-dlx-shoelace-color-bold, $white );
+			}
+			svg {
+				color: var( --alerts-dlx-shoelace-color-bold, $white );
+				fill: var( --alerts-dlx-shoelace-color-bold, $white );
+			}
+			h2, p {
+				color: var( --alerts-dlx-shoelace-color-bold, $white );
+			}
+			section .alerts-dlx-button {
+				background: var(--alerts-dlx-shoelace-color-accent, $shoelace-dark-primary-color-accent );
+				color: var( --alerts-dlx-shoelace-color-bold, $white );
+			}
+			section .alerts-dlx-button:hover {
+				background: var(--alerts-dlx-shoelace-color-accent, $shoelace-dark-primary-color-accent );
+				color: var( --alerts-dlx-shoelace-color-bold, $white );
 			}
 		}
 	}
