@@ -685,9 +685,9 @@ $material-dark-error-color-light: #160b0b;
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: var( --alerts-dlx-material-color-primary, $material-dark-info-color );
+					color: $white;
 					border: 2px solid var( --alerts-dlx-material-color-border, $material-dark-info-color-bold );
-					background-color: $white;
+					background-color: var( --alerts-dlx-material-color-alt, $material-dark-info-color-alt );
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
@@ -714,9 +714,9 @@ $material-dark-error-color-light: #160b0b;
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: var( --alerts-dlx-material-color-alt, $material-dark-info-color );
+					color: $white;
 					border: 2px solid var( --alerts-dlx-material-color-alt, $material-dark-info-color );
-					background-color: $white;
+					background-color: var( --alerts-dlx-material-color-alt, $material-dark-info-color );
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
