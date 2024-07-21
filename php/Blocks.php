@@ -438,6 +438,13 @@ class Blocks {
 									</svg>
 									<?php
 									break;
+								case 'material':
+									?>
+									<svg class="alerts-dlx-close-button-svg" aria-hidden="true" width="16" height="16">
+										<use xlink:href="#alerts-dlx-material-close-button"></use>
+									</svg>
+									<?php
+									break;
 							}
 							?>
 						</div>
@@ -630,7 +637,9 @@ class Blocks {
 			<symbol id="alerts-dlx-shoelace-close-button" viewBox="0 0 16 16" width="16" height="16">
 				<path fill="currentColor" d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"></path>
 			</symbol>
-      
+			<symbol id="alerts-dlx-material-close-button" viewBox="0 0 24 24" width="16" height="16">
+				<path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+			</symbol>
     </svg>
 		</svg>
 		<?php

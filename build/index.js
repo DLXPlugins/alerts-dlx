@@ -1373,6 +1373,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   BootstrapCloseIcon: () => (/* binding */ BootstrapCloseIcon),
 /* harmony export */   ChakraCloseIcon: () => (/* binding */ ChakraCloseIcon),
+/* harmony export */   MaterialCloseIcon: () => (/* binding */ MaterialCloseIcon),
 /* harmony export */   ShoeLaceCloseIcon: () => (/* binding */ ShoeLaceCloseIcon)
 /* harmony export */ });
 var BootstrapCloseIcon = function BootstrapCloseIcon(props) {
@@ -1410,6 +1411,17 @@ var ShoeLaceCloseIcon = function ShoeLaceCloseIcon(props) {
     part: "svg"
   }, /*#__PURE__*/React.createElement("path", {
     d: "M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+  }));
+};
+var MaterialCloseIcon = function MaterialCloseIcon(props) {
+  return /*#__PURE__*/React.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 24 24",
+    width: "16",
+    height: "16",
+    fill: "currentColor"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"
   }));
 };
 
@@ -3192,6 +3204,82 @@ var UnitChooser = function UnitChooser(props) {
 
 /***/ }),
 
+/***/ "./src/js/blocks/material/colors.js":
+/*!******************************************!*\
+  !*** ./src/js/blocks/material/colors.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var materialColors = [{
+  name: 'Success Color',
+  color: '#1e4620'
+}, {
+  name: 'Success Color Accent',
+  color: '#295e2c'
+}, {
+  name: 'Success Color Alt',
+  color: '#2e7d32'
+}, {
+  name: 'Success Color Bold',
+  color: '#4caf50'
+}, {
+  name: 'Success Color Light',
+  color: '#edf7ed'
+}, {
+  name: 'Info Color',
+  color: '#014361'
+}, {
+  name: 'Info Color Accent',
+  color: '#035e88'
+}, {
+  name: 'Info Color Alt',
+  color: '#0277bd'
+}, {
+  name: 'Info Color Bold',
+  color: '#03a9f4'
+}, {
+  name: 'Info Color Light',
+  color: '#e5f6fd'
+}, {
+  name: 'Warning Color',
+  color: '#663c00'
+}, {
+  name: 'Warning Color Accent',
+  color: '#8c5e00'
+}, {
+  name: 'Warning Color Alt',
+  color: '#ed6c02'
+}, {
+  name: 'Warning Color Bold',
+  color: '#ff9800'
+}, {
+  name: 'Warning Color Light',
+  color: '#fff4e5'
+}, {
+  name: 'Error Color',
+  color: '#5f2120'
+}, {
+  name: 'Error Color Accent',
+  color: '#8c2d2b'
+}, {
+  name: 'Error Color Alt',
+  color: '#d32f2f'
+}, {
+  name: 'Error Color Bold',
+  color: '#ef5350'
+}, {
+  name: 'Error Color Light',
+  color: '#fdeded'
+}];
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (materialColors);
+
+/***/ }),
+
 /***/ "./src/js/blocks/material/edit.js":
 /*!****************************************!*\
   !*** ./src/js/blocks/material/edit.js ***!
@@ -3223,6 +3311,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_unit_picker__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/unit-picker */ "./src/js/blocks/components/unit-picker/index.js");
 /* harmony import */ var _components_IconPicker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/IconPicker */ "./src/js/blocks/components/IconPicker/index.js");
 /* harmony import */ var _components_icons_MaterialIcons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/icons/MaterialIcons */ "./src/js/blocks/components/icons/MaterialIcons.js");
+/* harmony import */ var _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/CloseButtonIcons */ "./src/js/blocks/components/CloseButtonIcons/index.js");
+/* harmony import */ var _colors__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./colors */ "./src/js/blocks/material/colors.js");
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
@@ -3242,19 +3332,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 var MaterialAlerts = function MaterialAlerts(props) {
   var generatedUniqueId = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_7__.useInstanceId)(MaterialAlerts, 'adlx-material');
-  var innerBlocksRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
-  var innerBlockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.useInnerBlocksProps)({
-    className: 'alerts-dlx-content',
-    ref: innerBlocksRef
-  }, {
-    allowedBlocks: ['core/paragraph'],
-    template: [['core/paragraph', {
-      placeholder: ''
-    }]],
-    renderAppender: _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InnerBlocks.DefaultBlockAppender
-  });
   var _useDispatch = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_5__.useDispatch)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.store),
     replaceInnerBlocks = _useDispatch.replaceInnerBlocks;
 
@@ -3279,7 +3360,28 @@ var MaterialAlerts = function MaterialAlerts(props) {
     variant = attributes.variant,
     mode = attributes.mode,
     enableDropShadow = attributes.enableDropShadow,
-    iconVerticalAlignment = attributes.iconVerticalAlignment;
+    iconVerticalAlignment = attributes.iconVerticalAlignment,
+    colorPrimary = attributes.colorPrimary,
+    colorBorder = attributes.colorBorder,
+    colorAccent = attributes.colorAccent,
+    colorAlt = attributes.colorAlt,
+    colorBold = attributes.colorBold,
+    colorLight = attributes.colorLight,
+    closeButtonEnabled = attributes.closeButtonEnabled,
+    closeButtonExpiration = attributes.closeButtonExpiration,
+    innerBlocksEnabled = attributes.innerBlocksEnabled;
+  var innerBlocksRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
+  var innerBlockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.useInnerBlocksProps)({
+    className: 'alerts-dlx-content',
+    ref: innerBlocksRef
+  }, {
+    allowedBlocks: innerBlocksEnabled ? true : ['core/paragraph'],
+    template: [['core/paragraph', {
+      placeholder: ''
+    }]],
+    renderAppender: _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InnerBlocks.DefaultBlockAppender
+  });
+  var styles = "\n\t\t#".concat(uniqueId, " {\n\t\t\t--alerts-dlx-material-color-primary: ").concat(colorPrimary, ";\n\t\t\t--alerts-dlx-material-color-border: ").concat(colorBorder, ";\n\t\t\t--alerts-dlx-material-color-accent: ").concat(colorAccent, ";\n\t\t\t--alerts-dlx-material-color-alt: ").concat(colorAlt, ";\n\t\t\t--alerts-dlx-material-color-bold: ").concat(colorBold, ";\n\t\t\t--alerts-dlx-material-color-light: ").concat(colorLight, ";\n\t\t}");
 
   /**
    * Migrate RichText to InnerBlocks.
@@ -3298,6 +3400,113 @@ var MaterialAlerts = function MaterialAlerts(props) {
     }
   }, [innerBlocksRef]);
   var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    initialOpen: true,
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert Settings', 'quotes-dlx')
+  }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Alert Icon', 'alerts-dlx'),
+    checked: iconEnabled,
+    onChange: function onChange(value) {
+      setAttributes({
+        iconEnabled: value
+      });
+    }
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Title', 'alerts-dlx'),
+    checked: titleEnabled,
+    onChange: function onChange(value) {
+      setAttributes({
+        titleEnabled: value
+      });
+    }
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Alert Description', 'alerts-dlx'),
+    checked: descriptionEnabled,
+    onChange: function onChange(value) {
+      setAttributes({
+        descriptionEnabled: value
+      });
+    }
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Alert Button', 'alerts-dlx'),
+    checked: buttonEnabled,
+    onChange: function onChange(value) {
+      setAttributes({
+        buttonEnabled: value
+      });
+    }
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Close Button', 'alerts-dlx'),
+    checked: closeButtonEnabled,
+    onChange: function onChange(value) {
+      setAttributes({
+        closeButtonEnabled: value
+      });
+    },
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable this option to allow the alert to be dismissible.', 'alerts-dlx')
+  })), closeButtonEnabled && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set the Close Button save expiration', 'alerts-dlx'),
+    value: closeButtonExpiration,
+    onChange: function onChange(value) {
+      setAttributes({
+        closeButtonExpiration: parseInt(value)
+      });
+    },
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set the expiration time in seconds for the close button to reappear. Set to zero to never expire.', 'alerts-dlx'),
+    type: 'number'
+  })))), 'custom' === alertType && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.PanelColorSettings, {
+    __experimentalIsRenderedInSidebar: true,
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Custom Color Settings', 'alerts-dlx'),
+    colorSettings: [{
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Text Color', 'alerts-dlx'),
+      value: colorPrimary,
+      onChange: function onChange(value) {
+        setAttributes({
+          colorPrimary: value
+        });
+      }
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Border Color', 'alerts-dlx'),
+      value: colorBorder,
+      onChange: function onChange(value) {
+        setAttributes({
+          colorBorder: value
+        });
+      }
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Accent Color', 'alerts-dlx'),
+      value: colorAccent,
+      onChange: function onChange(value) {
+        setAttributes({
+          colorAccent: value
+        });
+      }
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Button Color', 'alerts-dlx'),
+      value: colorAlt,
+      onChange: function onChange(value) {
+        setAttributes({
+          colorAlt: value
+        });
+      }
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Icon Color', 'alerts-dlx'),
+      value: colorBold,
+      onChange: function onChange(value) {
+        setAttributes({
+          colorBold: value
+        });
+      }
+    }, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Background Color', 'alerts-dlx'),
+      value: colorLight,
+      onChange: function onChange(value) {
+        setAttributes({
+          colorLight: value
+        });
+      }
+    }],
+    colors: _colors__WEBPACK_IMPORTED_MODULE_13__["default"]
+  }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     initialOpen: true,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Appearance', 'quotes-dlx')
   }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_components_unit_picker__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -3409,42 +3618,17 @@ var MaterialAlerts = function MaterialAlerts(props) {
       });
     },
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable or disable the drop shadow for the default variant.', 'alerts-dlx')
-  }))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    initialOpen: false,
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert Settings', 'quotes-dlx')
-  }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Alert Icon', 'alerts-dlx'),
-    checked: iconEnabled,
+  }))));
+  var advancedControls = /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Flexible InnerBlocks', 'alerts-dlx'),
+    checked: innerBlocksEnabled,
     onChange: function onChange(value) {
       setAttributes({
-        iconEnabled: value
+        innerBlocksEnabled: value
       });
-    }
-  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Title', 'alerts-dlx'),
-    checked: titleEnabled,
-    onChange: function onChange(value) {
-      setAttributes({
-        titleEnabled: value
-      });
-    }
-  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Alert Description', 'alerts-dlx'),
-    checked: descriptionEnabled,
-    onChange: function onChange(value) {
-      setAttributes({
-        descriptionEnabled: value
-      });
-    }
-  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Alert Button', 'alerts-dlx'),
-    checked: buttonEnabled,
-    onChange: function onChange(value) {
-      setAttributes({
-        buttonEnabled: value
-      });
-    }
-  })))));
+    },
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable this option to allow the use of any block within the alert.', 'alerts-dlx')
+  }));
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     setAttributes({
       uniqueId: generatedUniqueId
@@ -3461,28 +3645,9 @@ var MaterialAlerts = function MaterialAlerts(props) {
     var styleMatch = new RegExp(/is-style-([^\s]*)/g).exec(className);
     if (null !== styleMatch) {
       var match = styleMatch[1];
-      switch (match) {
-        case 'success':
-          setAttributes({
-            alertType: 'success'
-          });
-          break;
-        case 'info':
-          setAttributes({
-            alertType: 'info'
-          });
-          break;
-        case 'warning':
-          setAttributes({
-            alertType: 'warning'
-          });
-          break;
-        case 'error':
-          setAttributes({
-            alertType: 'error'
-          });
-          break;
-      }
+      setAttributes({
+        alertType: match
+      });
     }
   }, [className]);
   var getIconSets = function getIconSets() {
@@ -3494,7 +3659,7 @@ var MaterialAlerts = function MaterialAlerts(props) {
     maxWidth: maximumWidth + maximumWidthUnit
   };
   var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
-  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("figure", {
+  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.InspectorAdvancedControls, null, advancedControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), 'custom' === alertType && /*#__PURE__*/React.createElement("style", null, styles), /*#__PURE__*/React.createElement("figure", {
     role: "alert",
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('alerts-dlx-alert alerts-dlx-material', {
       'alerts-dlx-has-icon': iconEnabled,
@@ -3511,7 +3676,9 @@ var MaterialAlerts = function MaterialAlerts(props) {
     setAttributes: setAttributes,
     alertType: alertType,
     icons: getIconSets()
-  })), /*#__PURE__*/React.createElement("section", null, titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.RichText, {
+  })), /*#__PURE__*/React.createElement("section", null, closeButtonEnabled && /*#__PURE__*/React.createElement("div", {
+    className: "alerts-dlx-close"
+  }, /*#__PURE__*/React.createElement(_components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_12__.MaterialCloseIcon, null)), titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.RichText, {
     tagName: "h2",
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert title', 'quotes-dlx'),
     value: alertTitle,
@@ -6161,7 +6328,7 @@ module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"Material UI Alert","apiVersion":2,"name":"mediaron/alerts-dlx-material","category":"alertsdlx","icon":"<svg version=\'1.1\' viewBox=\'0 0 600 477\' xmlns=\'http://www.w3.org/2000/svg\'><g><path d=\'m0 260v-260l225 130v86.6l-150-86.6v173z\' fill=\'#1EA0FF\'/><path d=\'m225 130 225-130v260l-150 86.6-75-43.3 150-86.6v-86.6l-150 86.6z\' fill=\'#156DC1\'/><path d=\'m225 303v86.6l150 86.6v-86.6z\' fill=\'#1EA0FF\'/><path d=\'m375 476 225-130v-173l-75 43.3v86.6l-150 86.6zm150-346v-86.6l75-43.3v86.6z\' fill=\'#156DC1\'/></g></svg>","description":"An alert and notification block inspired by Material UI.","keywords":["alert","info","hint","success","error","notice","notification","warning","material"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"align":{"type":"string","default":"center"},"alertType":{"type":"string","default":"success"},"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"descriptionEnabled":{"type":"boolean","default":true},"titleEnabled":{"type":"boolean","default":true},"buttonEnabled":{"type":"boolean","default":false},"iconEnabled":{"type":"boolean","default":true},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"boolean","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"string","default":"650"},"baseFontSize":{"type":"number","default":18},"icon":{"type":"string","default":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M24 44q-4.25 0-7.9-1.525-3.65-1.525-6.35-4.225-2.7-2.7-4.225-6.35Q4 28.25 4 24q0-4.2 1.525-7.85Q7.05 12.5 9.75 9.8q2.7-2.7 6.35-4.25Q19.75 4 24 4q3.75 0 7 1.2t5.85 3.3l-2.15 2.15q-2.2-1.75-4.9-2.7Q27.1 7 24 7q-7.25 0-12.125 4.875T7 24q0 7.25 4.875 12.125T24 41q7.25 0 12.125-4.875T41 24q0-1.5-.225-2.925-.225-1.425-.675-2.775l2.3-2.3q.8 1.85 1.2 3.85.4 2 .4 4.15 0 4.25-1.55 7.9-1.55 3.65-4.25 6.35-2.7 2.7-6.35 4.225Q28.2 44 24 44Zm-2.95-10.9-8.25-8.3 2.25-2.25 6 6 20.7-20.7 2.3 2.25Z\'/></svg>"},"enableCustomFonts":{"type":"boolean","default":true},"variant":{"type":"string","default":"default"},"mode":{"type":"string","default":"light"},"enableDropShadow":{"type":"boolean","default":false},"iconVerticalAlignment":{"type":"string","default":"top"},"uniqueId":{"type":"string","default":""},"alertGroup":{"type":"string","default":"material"}},"example":{"attributes":{"alertType":"info","alertTitle":"Sample alert title","alertDescription":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>","buttonEnabled":true,"baseFontSize":14,"buttonText":"Learn More","icon":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M22.65 34h3V22h-3ZM24 18.3q.7 0 1.175-.45.475-.45.475-1.15t-.475-1.2Q24.7 15 24 15q-.7 0-1.175.5-.475.5-.475 1.2t.475 1.15q.475.45 1.175.45ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z\' /></svg>"}},"styles":[{"name":"success","label":"Success","isDefault":true},{"name":"info","label":"Info"},{"name":"warning","label":"Warning"},{"name":"error","label":"Error"}],"supports":{"anchor":true,"align":true,"className":true},"editorScript":"alerts-dlx-block","editorStyle":["alerts-dlx-block-editor-styles","alerts-dlx-material-light-css","alerts-dlx-material-dark-css","alerts-dlx-block-editor-styles-lato"]}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"Material UI Alert","apiVersion":2,"name":"mediaron/alerts-dlx-material","category":"alertsdlx","icon":"<svg version=\'1.1\' viewBox=\'0 0 600 477\' xmlns=\'http://www.w3.org/2000/svg\'><g><path d=\'m0 260v-260l225 130v86.6l-150-86.6v173z\' fill=\'#1EA0FF\'/><path d=\'m225 130 225-130v260l-150 86.6-75-43.3 150-86.6v-86.6l-150 86.6z\' fill=\'#156DC1\'/><path d=\'m225 303v86.6l150 86.6v-86.6z\' fill=\'#1EA0FF\'/><path d=\'m375 476 225-130v-173l-75 43.3v86.6l-150 86.6zm150-346v-86.6l75-43.3v86.6z\' fill=\'#156DC1\'/></g></svg>","description":"An alert and notification block inspired by Material UI.","keywords":["alert","info","hint","success","error","notice","notification","warning","material"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"align":{"type":"string","default":"center"},"alertType":{"type":"string","default":"success"},"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"descriptionEnabled":{"type":"boolean","default":true},"titleEnabled":{"type":"boolean","default":true},"buttonEnabled":{"type":"boolean","default":false},"iconEnabled":{"type":"boolean","default":true},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"boolean","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"string","default":"650"},"baseFontSize":{"type":"number","default":18},"icon":{"type":"string","default":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M24 44q-4.25 0-7.9-1.525-3.65-1.525-6.35-4.225-2.7-2.7-4.225-6.35Q4 28.25 4 24q0-4.2 1.525-7.85Q7.05 12.5 9.75 9.8q2.7-2.7 6.35-4.25Q19.75 4 24 4q3.75 0 7 1.2t5.85 3.3l-2.15 2.15q-2.2-1.75-4.9-2.7Q27.1 7 24 7q-7.25 0-12.125 4.875T7 24q0 7.25 4.875 12.125T24 41q7.25 0 12.125-4.875T41 24q0-1.5-.225-2.925-.225-1.425-.675-2.775l2.3-2.3q.8 1.85 1.2 3.85.4 2 .4 4.15 0 4.25-1.55 7.9-1.55 3.65-4.25 6.35-2.7 2.7-6.35 4.225Q28.2 44 24 44Zm-2.95-10.9-8.25-8.3 2.25-2.25 6 6 20.7-20.7 2.3 2.25Z\'/></svg>"},"enableCustomFonts":{"type":"boolean","default":true},"variant":{"type":"string","default":"default"},"mode":{"type":"string","default":"light"},"enableDropShadow":{"type":"boolean","default":false},"iconVerticalAlignment":{"type":"string","default":"top"},"uniqueId":{"type":"string","default":""},"alertGroup":{"type":"string","default":"material"},"closeButtonEnabled":{"type":"boolean","default":false},"closeButtonExpiration":{"type":"number","default":0},"innerBlocksEnabled":{"type":"boolean","default":false},"colorPrimary":{"type":"string","default":"var(--alerts-dlx-material-color-primary, #014361)"},"colorBorder":{"type":"string","default":"var(--alerts-dlx-material-color-border, #014361)"},"colorAccent":{"type":"string","default":"var(--alerts-dlx-material-color-accent, #3182ce)"},"colorAlt":{"type":"string","default":"var(--alerts-dlx-material-color-alt, #2d76bb)"},"colorBold":{"type":"string","default":"var(--alerts-dlx-material-color-bold, #2d76bb)"},"colorLight":{"type":"string","default":"var(--alerts-dlx-material-color-light, #bee3f8)"}},"example":{"attributes":{"alertType":"info","alertTitle":"Sample alert title","alertDescription":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>","buttonEnabled":true,"baseFontSize":14,"buttonText":"Learn More","icon":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M22.65 34h3V22h-3ZM24 18.3q.7 0 1.175-.45.475-.45.475-1.15t-.475-1.2Q24.7 15 24 15q-.7 0-1.175.5-.475.5-.475 1.2t.475 1.15q.475.45 1.175.45ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z\' /></svg>"}},"styles":[{"name":"success","label":"Success","isDefault":true},{"name":"info","label":"Info"},{"name":"warning","label":"Warning"},{"name":"error","label":"Error"},{"name":"custom","label":"Custom"}],"supports":{"anchor":true,"align":true,"className":true},"editorScript":"alerts-dlx-block","editorStyle":["alerts-dlx-block-editor-styles","alerts-dlx-material-light-css","alerts-dlx-material-dark-css","alerts-dlx-block-editor-styles-lato"]}');
 
 /***/ }),
 
