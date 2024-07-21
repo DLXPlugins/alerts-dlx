@@ -68,10 +68,13 @@ button.button-reset.components-button:hover {
 	top: 0;
 	right: 0;
 	padding: 1.25rem 1rem;
+	padding-top: 0.75rem;
 
 	svg,
 	svg:hover {
 		transition: color 0.3s ease-in-out;
+		width: 16px;
+		height: 16px;
 	}
 }
 
