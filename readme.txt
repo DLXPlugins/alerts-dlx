@@ -2,8 +2,8 @@
 Contributors: ronalfy
 Tags: alerts, notifications, notice, shortcode, blocks
 Requires at least: 5.9
-Tested up to: 6.5
-Stable tag: 1.4.0
+Tested up to: 6.6
+Stable tag: 2.0.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -20,6 +20,14 @@ https://www.youtube.com/watch?v=7dKpw5uBi5o
 > <strong>Now Supports Shortcodes!</strong> <a href="https://docs.dlxplugins.com/v/alertsdlx/shortcode-usage">See shortcode usage</a>.
 
 > <a href="https://app.instawp.io/launch?t=alerts-dlx&d=v2">Spin up a quick demo here</a>.
+
+Major features:
+
+1. Four alert styles: Material, Bootstrap, Chakra, and Shoelace.
+2. Use branded colors, or choose custom for your own styles.
+3. Add your own SVG icons, or choose from the ones included.
+4. Add dismissble alerts, and have it remember the user's choice.
+5. Add an optional title, description, and button.
 
 Quick Links:
 
@@ -58,7 +66,7 @@ Development happens on GitHub. Please <a href="https://github.com/dlxplugins/ale
 
 == Frequently Asked Questions ==
 
-= Does this work with the Classic Editor? =
+= Does this work with the Classic Editor and Page Builders? =
 
 Yes. AlertsDLX works with the Classic Editor <a href="https://docs.dlxplugins.com/v/alertsdlx/shortcode-usage">via its shortcode support</a>.
 
@@ -98,6 +106,13 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 6. Font Size Option
 
 == Changelog ==
+
+= 2.0.0 =
+* Released 2024-07-21
+* New feature: Added a close button and dismissible alerts. You can set an expiration to hide the alert for a certain time after user action.
+* New feature: Advanced setting in the blocks to allow for custom inner blocks.
+* New feature: Custom colors. Set custom colors for eåçh alert type and variation.
+* Block tweaks: The options for showing sections in the block is now near the top and open by default.
 
 = 1.4.0 =
 * Released 2024-03-12
@@ -150,5 +165,5 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Upgrade Notice ==
 
-= 1.4.0 =
-Reworked markup for better style compatibility and less conflicts. Testing with WP 6.5.
+= 2.0.0 =
+Alerts can now be dismissed. You can select custom colors for each alert type. Custom inner blocks are now supported.
