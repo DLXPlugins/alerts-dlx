@@ -1,7 +1,7 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"title": "Material UI Alert",
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "mediaron/alerts-dlx-material",
 	"category": "alertsdlx",
 	"icon": "<svg version='1.1' viewBox='0 0 600 477' xmlns='http://www.w3.org/2000/svg'><g><path d='m0 260v-260l225 130v86.6l-150-86.6v173z' fill='#1EA0FF'/><path d='m225 130 225-130v260l-150 86.6-75-43.3 150-86.6v-86.6l-150 86.6z' fill='#156DC1'/><path d='m225 303v86.6l150 86.6v-86.6z' fill='#1EA0FF'/><path d='m375 476 225-130v-173l-75 43.3v86.6l-150 86.6zm150-346v-86.6l75-43.3v86.6z' fill='#156DC1'/></g></svg>",
