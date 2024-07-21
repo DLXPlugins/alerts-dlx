@@ -107,6 +107,14 @@ class Blocks {
 			'button_rel_no_follow'    => false,
 			'button_rel_sponsored'    => false,
 			'icon_appearance'         => 'default', /* can be rounded */
+			'color_primary'           => '',
+			'color_border'            => '',
+			'color_accent'            => '',
+			'color_alt'               => '',
+			'color_bold'              => '',
+			'color_light'             => '',
+			'close_button_enabled'    => false,
+			'close_button_expiration' => 0,
 		);
 		$atts     = shortcode_atts( $defaults, $atts, 'alertsdlx' );
 
@@ -174,6 +182,22 @@ class Blocks {
 				break;
 		}
 		ob_start();
+
+		if ( 'custom' === $atts['alert_type'] ) {
+			ob_start();
+			?>
+			<style>
+			#<?php echo esc_html( $atts['unique_id'] ); ?> {
+				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-primary: <?php echo esc_html( $atts['color_primary'] ); ?>;
+				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-border: <?php echo esc_html( $atts['color_border'] ); ?>;
+				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-accent: <?php echo esc_html( $atts['color_accent'] ); ?>;
+				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-alt: <?php echo esc_html( $atts['color_alt'] ); ?>;
+				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-bold: <?php echo esc_html( $atts['color_bold'] ); ?>;
+				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-light: <?php echo esc_html( $atts['color_light'] ); ?>;
+			}
+			</style>
+			<?php
+		}
 
 		// Print styles.
 		wp_print_styles( $style_handles_to_print );
