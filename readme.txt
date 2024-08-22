@@ -3,7 +3,7 @@ Contributors: ronalfy
 Tags: alerts, notifications, notice, shortcode, blocks
 Requires at least: 5.9
 Tested up to: 6.6
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -107,6 +107,11 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Changelog ==
 
+= 2.0.1 =
+* Released 2024-08-22
+* Fixing Shoelace dark mode styles not aligning properly.
+* Fixed Chakra UI styles where info icon was the wrong color.
+
 = 2.0.0 =
 * Released 2024-07-21
 * New feature: Added a close button and dismissible alerts. You can set an expiration to hide the alert for a certain time after user action.
@@ -165,5 +170,5 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Upgrade Notice ==
 
-= 2.0.0 =
-Alerts can now be dismissed. You can select custom colors for each alert type. Custom inner blocks are now supported.
+= 2.0.1 =
+* Fixing Shoelace dark mode styles not aligning properly. Fixed Chakra UI styles where info icon was the wrong color.
