@@ -41,7 +41,7 @@
             "step": "importWxr",
             "file": {
                 "resource": "url",
-                "url": "hhttps://raw.githubusercontent.com/DLXPlugins/alerts-dlx/main/blueprint.xml"
+                "url": "https://raw.githubusercontent.com/DLXPlugins/alerts-dlx/main/blueprint.xml"
             }
         },
 		{
