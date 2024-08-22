@@ -48,7 +48,6 @@ $shoelace-dark-danger-color-accent: #ef437f;
 
 		&.alerts-dlx-has-icon {
 			grid-template-columns: 3.8em 1fr;
-			padding-left: 0;
 		}
 
 		section h2.alerts-dlx-title {
@@ -91,6 +90,12 @@ $shoelace-dark-danger-color-accent: #ef437f;
 			align-items: flex-start;
 			justify-content: center;
 		}
+	}
+	&.is-appearance-centered figure {
+		display: block;
+	}
+	&.is-appearance-centered section {
+		text-align: center;
 	}
 	&.is-style-primary {
 		h2.alerts-dlx-title {

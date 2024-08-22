@@ -527,8 +527,8 @@ $chakra-error-color-light: #fed7d7;
 				.alerts-dlx-icon {
 					svg,
 					svg path svg g {
-						color:  var(--alerts-dlx-chakra-color-primary, $white);
-						fill:  var(--alerts-dlx-chakra-color-primary, $white);
+						color:  var(--alerts-dlx-chakra-color-primary, $chakra-info-color);
+						fill:  var(--alerts-dlx-chakra-color-primary, $chakra-info-color);
 					}
 				}
 			}
