@@ -1,25 +1,25 @@
-=== AlertsDLX - Alerts, Callouts, and Notifications ===
+=== Alerts DLX - Alerts, Callouts, and Notifications Block and Shortcode ===
 Contributors: ronalfy
 Tags: alerts, notifications, notice, shortcode, blocks
 Requires at least: 5.9
 Tested up to: 6.6
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://github.com/sponsors/DLXPlugins
 
-Create beautiful and impactful alerts, callouts, and notifications for the block editor.
+A beautiful and easy to use alerts block, with support for shortcodes.
 
 == Description ==
 
 AlertsDLX offers beautifully styled alerts and notifications blocks for the Block Editor, Classic Editor, or anywhere blocks and shortcodes can go.
 
+This plugin is perfect for adding alerts, callouts, and notifications to your site. It comes with four alert styles: Material, Bootstrap, Chakra, and Shoelace. Each alert style has its own unique look and feel.
+
 https://www.youtube.com/watch?v=7dKpw5uBi5o
 
-> <strong>Now Supports Shortcodes!</strong> <a href="https://docs.dlxplugins.com/v/alertsdlx/shortcode-usage">See shortcode usage</a>.
-
-> <a href="https://app.instawp.io/launch?t=alerts-dlx&d=v2">Spin up a quick demo here</a>.
+> <strong>Alert Shortcodes are here!</strong> <a href="https://docs.dlxplugins.com/v/alertsdlx/shortcode-usage">See shortcode usage</a>.
 
 Major features:
 
@@ -62,8 +62,6 @@ Development happens on GitHub. Please <a href="https://github.com/dlxplugins/ale
 
 > <a href="https://docs.dlxplugins.com/v/alertsdlx/">In-depth Documentation</a> - Please check out our thorough documentation ❤️️
 
-> <a href="https://app.instawp.io/launch?t=alerts-dlx&d=v2">View a demo</a>
-
 == Frequently Asked Questions ==
 
 = Does this work with the Classic Editor and Page Builders? =
@@ -81,11 +79,9 @@ Yes, AlertsDLX comes with four blocks, one for each style of alert (Bootstrap, C
 * <a href="https://chakra-ui.com/docs/components/alert">Chakra UI</a>
 * <a href="https://shoelace.style/">Shoelace</a>
 
-To see all the alerts in one place, <a href="https://app.instawp.io/launch?t=alerts-dlx&d=v2">spin up a quick demo here</a>.
-
 = Can I customize the colors? =
 
-I'm afraid not. For the time being, the colors will match the alert style presented.
+Yes, you can choose custom colors via the shortcode or built-in blocks.
 
 = How can I get help? =
 
@@ -106,6 +102,10 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 6. Font Size Option
 
 == Changelog ==
+
+= 2.0.2 =
+* Released 2024-08-23
+* Some minor copy updates.
 
 = 2.0.1 =
 * Released 2024-08-22
@@ -170,5 +170,5 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Upgrade Notice ==
 
-= 2.0.1 =
-* Fixing Shoelace dark mode styles not aligning properly. Fixed Chakra UI styles where info icon was the wrong color.
+= 2.0.2 =
+Some minor copy updates.

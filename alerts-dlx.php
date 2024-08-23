@@ -3,11 +3,11 @@
  * Plugin Name:       AlertsDLX
  * Plugin URI:        https://dlxplugins.com/plugins/alertsdlx/
  * Description:       Create beautiful and impactful alerts and notifications in your content, inspired by Bootstrap, Material, Chakra UI, and Shoelace.
- * Version:           2.0.1
+ * Version:           2.0.2
  * Requires at least: 5.9
  * Requires PHP:      7.2
  * Author:            DLX Plugins
- * Author URI:        https://dlxplugins.com
+ * Author URI:        https://dlxplugins.com/plugins/alertsdlx/
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       alerts-dlx
@@ -18,7 +18,7 @@
 
 namespace DLXPlugins\AlertsDLX;
 
-define( 'ALERTS_DLX_VERSION', '2.0.1' );
+define( 'ALERTS_DLX_VERSION', '2.0.2' );
 define( 'ALERTS_DLX_FILE', __FILE__ );
 
 // Support for site-level autoloading.
