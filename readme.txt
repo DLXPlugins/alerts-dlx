@@ -2,7 +2,7 @@
 Contributors: ronalfy
 Tags: alerts, notifications, notice, shortcode, blocks
 Requires at least: 5.9
-Tested up to: 6.6
+Tested up to: 6.7
 Stable tag: 2.0.2
 Requires PHP: 7.2
 License: GPLv2 or later
