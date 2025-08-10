@@ -2354,7 +2354,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
   })))));
 
   /**
-   * Filter: alerts-dlx/block-classes
+   * Filter: alerts-dlx-block-classes
    *
    * This filter allows you to add custom classes to the block.
    *
@@ -2363,7 +2363,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
    *
    * @return {Object} The block classes.
    */
-  var blockClasses = (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_2__.applyFilters)('alerts-dlx/block-classes', {
+  var blockClasses = (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_2__.applyFilters)('alertsDlx.blockClasses', {
     'custom-fonts-enabled': enableCustomFonts,
     'is-appearance-default': 'default' === variant,
     'is-appearance-centered': 'centered' === variant,
@@ -5789,7 +5789,7 @@ var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createH
  *
  * @return {Object} The block classes.
  */
-(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.addFilter)('alerts-dlx-block-classes', 'alerts-dlx/with-alerts-panel', function (blockClasses, attributes) {
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.addFilter)('alertsDlx.blockClasses', 'alerts-dlx/with-alerts-panel', function (blockClasses, attributes) {
   return _objectSpread(_objectSpread({}, blockClasses), {}, {
     'alerts-dlx-editorial-only': attributes.isBlockEditorialOnly,
     'alerts-dlx-read-only': attributes.isBlockReadOnly

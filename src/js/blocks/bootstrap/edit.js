@@ -572,7 +572,7 @@ const BootstrapAlerts = ( props ) => {
 	);
 
 	/**
-	 * Filter: alerts-dlx/block-classes
+	 * Filter: alerts-dlx-block-classes
 	 *
 	 * This filter allows you to add custom classes to the block.
 	 *
@@ -582,7 +582,7 @@ const BootstrapAlerts = ( props ) => {
 	 * @return {Object} The block classes.
 	 */
 	const blockClasses = applyFilters(
-		'alerts-dlx/block-classes',
+		'alertsDlx.blockClasses',
 		{
 			'custom-fonts-enabled': enableCustomFonts,
 			'is-appearance-default': 'default' === variant,

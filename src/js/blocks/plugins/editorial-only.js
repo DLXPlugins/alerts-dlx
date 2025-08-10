@@ -133,7 +133,7 @@ addFilter( 'editor.BlockEdit', 'alerts-dlx/with-alerts-panel', withAlertsPanel )
  * @return {Object} The block classes.
  */
 addFilter(
-	'alerts-dlx-block-classes',
+	'alertsDlx.blockClasses',
 	'alerts-dlx/with-alerts-panel',
 	( blockClasses, attributes ) => {
 		return {
