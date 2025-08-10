@@ -4,8 +4,8 @@
   "description": "An alert and notification block inspired by Bootstrap, Material UI, and Chakra UI.",
   "main": "src/index.js",
   "scripts": {
-    "build": "wp-scripts build --env mode=production",
-    "start": "wp-scripts start --env mode=development"
+    "build": "wp-scripts build --blocks-manifest --source-path=src --env mode=production",
+    "start": "wp-scripts start --blocks-manifest --source-path=src --env mode=development"
   },
   "repository": {
     "type": "git",
@@ -34,7 +34,7 @@
     "@wordpress/element": "^4.9.0",
     "@wordpress/eslint-plugin": "^12.8.0",
     "@wordpress/i18n": "^4.11.0",
-    "@wordpress/scripts": "^27.9.0",
+    "@wordpress/scripts": "^30.20.0",
     "axios": "^1.7.2",
     "babel-plugin-macros": "^3.1.0",
     "classnames": "^2.3.1",

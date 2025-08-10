@@ -2,8 +2,8 @@
 Contributors: ronalfy
 Tags: alerts, notifications, notice, shortcode, blocks
 Requires at least: 5.9
-Tested up to: 6.7
-Stable tag: 2.0.2
+Tested up to: 6.8
+Stable tag: 2.1.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -103,6 +103,12 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Changelog ==
 
+= 2.1.0 =
+* Released 2025-08-10
+* New feature: Place blocks in "Editorial Only" mode so they only show up in the block editor and not the frontend.
+* New feature: Thenme colors are now included when choosing custom colors.
+* New feature: Added block manifests to speed up block loading time and performance.
+
 = 2.0.2 =
 * Released 2024-08-23
 * Some minor copy updates.
@@ -170,5 +176,5 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Upgrade Notice ==
 
-= 2.0.2 =
-Some minor copy updates.
+= 2.1.0 =
+Added Editorial Only feature so you can mark blocks that only show up in the block editor. Added theme colors to custom colors. Added block manifests to speed up block performance.

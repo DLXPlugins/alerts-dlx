@@ -2,6 +2,7 @@ import './js/blocks/material';
 import './js/blocks/chakraui';
 import './js/blocks/bootstrap';
 import './js/blocks/shoelace';
+import './js/blocks/plugins/editorial-only';
 import AlertsLogo from './js/blocks/components/icons/AlertsLogo';
 
 ( function() {

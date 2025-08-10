@@ -145,6 +145,14 @@
 		"colorLight": {
 			"type": "string",
 			"default": "var(--alerts-dlx-material-color-light, #bee3f8)"
+		},
+		"isBlockEditorialOnly": {
+			"type": "boolean",
+			"default": false
+		},
+		"isBlockReadOnly": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"example": {

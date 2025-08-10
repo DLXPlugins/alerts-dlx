@@ -28,33 +28,36 @@ class Blocks {
 	 */
 	public function init() {
 
-		register_block_type(
-			Functions::get_plugin_dir( 'build/js/blocks/material/block.json' ),
-			array(
-				'render_callback' => array( $this, 'frontend' ),
-			)
+		$render_callbacks = array(
+			'mediaron/alerts-dlx-bootstrap' => array( $this, 'frontend' ),
+			'mediaron/alerts-dlx-chakra'    => array( $this, 'frontend' ),
+			'mediaron/alerts-dlx-material'  => array( $this, 'frontend' ),
+			'mediaron/alerts-dlx-shoelace'  => array( $this, 'frontend' ),
 		);
 
-		register_block_type(
-			Functions::get_plugin_dir( 'build/js/blocks/chakraui/block.json' ),
-			array(
-				'render_callback' => array( $this, 'frontend' ),
-			)
+		add_filter(
+			'block_type_metadata_settings',
+			function ( $settings, $metadata ) use ( $render_callbacks ) {
+				if ( isset( $render_callbacks[ $metadata['name'] ] ) ) {
+					$settings['render_callback'] = $render_callbacks[ $metadata['name'] ];
+				}
+				return $settings;
+			},
+			10,
+			2
 		);
 
-		register_block_type(
-			Functions::get_plugin_dir( 'build/js/blocks/bootstrap/block.json' ),
-			array(
-				'render_callback' => array( $this, 'frontend' ),
-			)
-		);
-
-		register_block_type(
-			Functions::get_plugin_dir( 'build/js/blocks/shoelace/block.json' ),
-			array(
-				'render_callback' => array( $this, 'frontend' ),
-			)
-		);
+		if ( function_exists( 'wp_register_block_types_from_metadata_collection' ) ) {
+			wp_register_block_types_from_metadata_collection( Functions::get_plugin_dir( 'build/js/blocks/' ), Functions::get_plugin_dir( 'build/blocks-manifest.php' ) );
+		} else {
+			if ( function_exists( 'wp_register_block_metadata_collection' ) ) {
+				wp_register_block_metadata_collection( Functions::get_plugin_dir( 'build/js/blocks/' ), Functions::get_plugin_dir( 'build/blocks-manifest.php' ) );
+			}
+			$manifest_data = require Functions::get_plugin_dir( 'build/blocks-manifest.php' );
+			foreach ( array_keys( $manifest_data ) as $block_type ) {
+				register_block_type( __DIR__ . "/build/js/blocks/{$block_type}" );
+			}
+		}
 
 		// Enqueue block assets.
 		add_action( 'enqueue_block_assets', array( $this, 'register_block_editor_scripts' ) );
@@ -252,6 +255,12 @@ class Blocks {
 		$color_light             = Functions::sanitize_attribute( $attributes, 'colorLight', 'text' );
 		$close_button_enabled    = Functions::sanitize_attribute( $attributes, 'closeButtonEnabled', 'boolean' );
 		$close_button_expiration = Functions::sanitize_attribute( $attributes, 'closeButtonExpiration', 'integer' );
+		$is_block_editorial_only = Functions::sanitize_attribute( $attributes, 'isBlockEditorialOnly', 'boolean' );
+
+		// If block is editorial only, return early.
+		if ( $is_block_editorial_only ) {
+			return '';
+		}
 
 		// Check to see if expiration cookie is set.
 		$cookie_name = 'alerts-dlx-' . $unique_id;
@@ -578,6 +587,10 @@ class Blocks {
 			'alertsDlxBlock',
 			array(
 				'font_stylesheet' => Functions::get_plugin_url( 'dist/alerts-dlx-gfont-lato.css' ),
+				'isEditor'        => current_user_can( 'edit_others_posts' ),
+				'isAuthor'        => current_user_can( 'edit_posts' ),
+				'isAdmin'         => current_user_can( 'manage_options' ),
+				'colorPalette'    => Functions::get_theme_color_palette(),
 			)
 		);
 
@@ -664,7 +677,7 @@ class Blocks {
 			<symbol id="alerts-dlx-material-close-button" viewBox="0 0 24 24" width="16" height="16">
 				<path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
 			</symbol>
-    </svg>
+	</svg>
 		</svg>
 		<?php
 	}
