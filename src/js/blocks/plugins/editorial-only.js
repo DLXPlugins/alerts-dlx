@@ -45,7 +45,7 @@ const withAlertsPanel = createHigherOrderComponent( ( BlockEdit ) => {
 			return <BlockEdit { ...props } />;
 		}
 
-		const { isBlockEditorialOnly, isBlockReadOnly } = props.attributes;
+		const { isBlockEditorialOnly } = props.attributes;
 
 		// Create the block content with or without the panel.
 		let blockContent = <BlockEdit { ...props } />;
@@ -56,8 +56,7 @@ const withAlertsPanel = createHigherOrderComponent( ( BlockEdit ) => {
 				<Fragment>
 					<BlockEdit { ...props } />
 					<style>
-						{
-							`
+						{ `
 								.alerts-dlx-editorial-only:before {
 									content: '${ __( 'Editorial Only', 'alerts-dlx' ) }';
 									position: absolute;
@@ -72,8 +71,7 @@ const withAlertsPanel = createHigherOrderComponent( ( BlockEdit ) => {
 									z-index: 1;
 									background: #ff9800;
 								}
-							`
-						}
+							` }
 					</style>
 					<InspectorControls>
 						<PanelBody
@@ -92,19 +90,6 @@ const withAlertsPanel = createHigherOrderComponent( ( BlockEdit ) => {
 									'alerts-dlx'
 								) }
 							/>
-							{ isBlockEditorialOnly && (
-								<ToggleControl
-									label={ __( 'Make This Block Read Only', 'alerts-dlx' ) }
-									checked={ isBlockReadOnly }
-									onChange={ ( value ) => {
-										props.setAttributes( { isBlockReadOnly: value } );
-									} }
-									help={ __(
-										'This block will not be editable by the user. It will behave as a normal alert in the editor.',
-										'alerts-dlx'
-									) }
-								/>
-							) }
 						</PanelBody>
 					</InspectorControls>
 				</Fragment>

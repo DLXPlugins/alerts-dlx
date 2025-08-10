@@ -8,6 +8,7 @@
 import classnames from 'classnames';
 
 import { useEffect, useRef } from '@wordpress/element';
+import { applyFilters } from '@wordpress/hooks';
 import { __ } from '@wordpress/i18n';
 import {
 	PanelBody,
@@ -526,8 +527,19 @@ const ChakraAlerts = ( props ) => {
 		</>
 	);
 
-	const blockProps = useBlockProps( {
-		className: classnames( className, `alerts-dlx template-chakra is-style-${ alertType }`, {
+	/**
+	 * Filter: alertsDlx.blockClasses
+	 *
+	 * This filter allows you to add custom classes to the block.
+	 *
+	 * @param {Object} blockClasses - The block classes.
+	 * @param {Object} attributes   - The block attributes.
+	 *
+	 * @return {Object} The block classes.
+	 */
+	const blockClasses = applyFilters(
+		'alertsDlx.blockClasses',
+		{
 			'is-dark-mode': 'dark' === mode,
 			'custom-fonts-enabled': enableCustomFonts,
 			'is-appearance-subtle': 'subtle' === variant,
@@ -537,6 +549,13 @@ const ChakraAlerts = ( props ) => {
 			'is-appearance-centered': 'centered' === variant,
 			'icon-vertical-align-top': 'top' === iconVerticalAlignment,
 			'icon-vertical-align-centered': 'centered' === iconVerticalAlignment,
+		},
+		attributes
+	);
+
+	const blockProps = useBlockProps( {
+		className: classnames( className, `alerts-dlx template-chakra is-style-${ alertType }`, {
+			...blockClasses,
 		} ),
 	} );
 

@@ -8,6 +8,7 @@
 import classnames from 'classnames';
 
 import { useEffect, useRef } from '@wordpress/element';
+import { applyFilters } from '@wordpress/hooks';
 import { __ } from '@wordpress/i18n';
 import {
 	PanelBody,
@@ -44,10 +45,7 @@ import { MaterialCloseIcon } from '../components/CloseButtonIcons';
 import materialColors from './colors';
 
 const MaterialAlerts = ( props ) => {
-	const generatedUniqueId = useInstanceId(
-		MaterialAlerts,
-		'adlx-material'
-	);
+	const generatedUniqueId = useInstanceId( MaterialAlerts, 'adlx-material' );
 
 	const { replaceInnerBlocks } = useDispatch( store );
 
@@ -177,84 +175,83 @@ const MaterialAlerts = ( props ) => {
 									closeButtonEnabled: value,
 								} );
 							} }
-							help={ __( 'Enable this option to allow the alert to be dismissible.', 'alerts-dlx' ) }
+							help={ __(
+								'Enable this option to allow the alert to be dismissible.',
+								'alerts-dlx'
+							) }
 						/>
 					</PanelRow>
-					{
-						closeButtonEnabled && (
-							<PanelRow>
-								<TextControl
-									label={ __( 'Set the Close Button save expiration', 'alerts-dlx' ) }
-									value={ closeButtonExpiration }
-									onChange={ ( value ) => {
-										setAttributes( {
-											closeButtonExpiration: parseInt( value ),
-										} );
-									} }
-									help={ __( 'Set the expiration time in seconds for the close button to reappear. Set to zero to never expire.', 'alerts-dlx' ) }
-									type={ 'number' }
-								/>
-							</PanelRow>
-						)
-					}
+					{ closeButtonEnabled && (
+						<PanelRow>
+							<TextControl
+								label={ __( 'Set the Close Button save expiration', 'alerts-dlx' ) }
+								value={ closeButtonExpiration }
+								onChange={ ( value ) => {
+									setAttributes( {
+										closeButtonExpiration: parseInt( value ),
+									} );
+								} }
+								help={ __(
+									'Set the expiration time in seconds for the close button to reappear. Set to zero to never expire.',
+									'alerts-dlx'
+								) }
+								type={ 'number' }
+							/>
+						</PanelRow>
+					) }
 				</>
 			</PanelBody>
-			{
-				'custom' === alertType && (
-					<PanelColorSettings
-						__experimentalIsRenderedInSidebar
-						title={ __( 'Custom Color Settings', 'alerts-dlx' ) }
-						colorSettings={
-							[
-								{
-									label: __( 'Text Color', 'alerts-dlx' ),
-									value: colorPrimary,
-									onChange: ( value ) => {
-										setAttributes( { colorPrimary: value } );
-									},
-								},
-								{
-									label: __( 'Border Color', 'alerts-dlx' ),
-									value: colorBorder,
-									onChange: ( value ) => {
-										setAttributes( { colorBorder: value } );
-									},
-								},
-								{
-									label: __( 'Accent Color', 'alerts-dlx' ),
-									value: colorAccent,
-									onChange: ( value ) => {
-										setAttributes( { colorAccent: value } );
-									},
-								},
-								{
-									label: __( 'Button Color', 'alerts-dlx' ),
-									value: colorAlt,
-									onChange: ( value ) => {
-										setAttributes( { colorAlt: value } );
-									},
-								},
-								{
-									label: __( 'Icon Color', 'alerts-dlx' ),
-									value: colorBold,
-									onChange: ( value ) => {
-										setAttributes( { colorBold: value } );
-									},
-								},
-								{
-									label: __( 'Background Color', 'alerts-dlx' ),
-									value: colorLight,
-									onChange: ( value ) => {
-										setAttributes( { colorLight: value } );
-									},
-								},
-							]
-						}
-						colors={ materialColors }
-					/>
-
-				)
-			}
+			{ 'custom' === alertType && (
+				<PanelColorSettings
+					__experimentalIsRenderedInSidebar
+					title={ __( 'Custom Color Settings', 'alerts-dlx' ) }
+					colorSettings={ [
+						{
+							label: __( 'Text Color', 'alerts-dlx' ),
+							value: colorPrimary,
+							onChange: ( value ) => {
+								setAttributes( { colorPrimary: value } );
+							},
+						},
+						{
+							label: __( 'Border Color', 'alerts-dlx' ),
+							value: colorBorder,
+							onChange: ( value ) => {
+								setAttributes( { colorBorder: value } );
+							},
+						},
+						{
+							label: __( 'Accent Color', 'alerts-dlx' ),
+							value: colorAccent,
+							onChange: ( value ) => {
+								setAttributes( { colorAccent: value } );
+							},
+						},
+						{
+							label: __( 'Button Color', 'alerts-dlx' ),
+							value: colorAlt,
+							onChange: ( value ) => {
+								setAttributes( { colorAlt: value } );
+							},
+						},
+						{
+							label: __( 'Icon Color', 'alerts-dlx' ),
+							value: colorBold,
+							onChange: ( value ) => {
+								setAttributes( { colorBold: value } );
+							},
+						},
+						{
+							label: __( 'Background Color', 'alerts-dlx' ),
+							value: colorLight,
+							onChange: ( value ) => {
+								setAttributes( { colorLight: value } );
+							},
+						},
+					] }
+					colors={ materialColors }
+				/>
+			) }
 			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'quotes-dlx' ) }>
 				<>
 					<UnitChooser
@@ -279,7 +276,11 @@ const MaterialAlerts = ( props ) => {
 					/>
 				</>
 				<PanelRow>
-					<BaseControl id="alerts-dlx-variants-button-group" label={ __( 'Set the Alert Variant', 'quotes-dlx' ) } className="alerts-dlx-material-variants">
+					<BaseControl
+						id="alerts-dlx-variants-button-group"
+						label={ __( 'Set the Alert Variant', 'quotes-dlx' ) }
+						className="alerts-dlx-material-variants"
+					>
 						<ButtonGroup>
 							<Button
 								variant={ variant === 'default' ? 'primary' : 'secondary' }
@@ -325,7 +326,11 @@ const MaterialAlerts = ( props ) => {
 					</BaseControl>
 				</PanelRow>
 				<PanelRow>
-					<BaseControl id="alerts-dlx-mode-button-group" label={ __( 'Set Light or Dark Mode', 'quotes-dlx' ) } className="alerts-dlx-chakra-mode">
+					<BaseControl
+						id="alerts-dlx-mode-button-group"
+						label={ __( 'Set Light or Dark Mode', 'quotes-dlx' ) }
+						className="alerts-dlx-chakra-mode"
+					>
 						<ButtonGroup>
 							<Button
 								variant={ mode === 'light' ? 'primary' : 'secondary' }
@@ -350,12 +355,18 @@ const MaterialAlerts = ( props ) => {
 						</ButtonGroup>
 					</BaseControl>
 				</PanelRow>
-				{ ( iconEnabled && 'centered' !== variant ) && (
+				{ iconEnabled && 'centered' !== variant && (
 					<PanelRow>
-						<BaseControl id="alerts-dlx-button-group-icon-alignment" label={ __( 'Icon Vertical Alignment', 'quotes-dlx' ) } className="alerts-dlx-material-variants">
+						<BaseControl
+							id="alerts-dlx-button-group-icon-alignment"
+							label={ __( 'Icon Vertical Alignment', 'quotes-dlx' ) }
+							className="alerts-dlx-material-variants"
+						>
 							<ButtonGroup>
 								<Button
-									variant={ iconVerticalAlignment === 'top' ? 'primary' : 'secondary' }
+									variant={
+										iconVerticalAlignment === 'top' ? 'primary' : 'secondary'
+									}
 									onClick={ ( e ) => {
 										setAttributes( {
 											iconVerticalAlignment: 'top',
@@ -365,7 +376,11 @@ const MaterialAlerts = ( props ) => {
 									{ __( 'Top', 'alerts-dlx' ) }
 								</Button>
 								<Button
-									variant={ iconVerticalAlignment === 'centered' ? 'primary' : 'secondary' }
+									variant={
+										iconVerticalAlignment === 'centered'
+											? 'primary'
+											: 'secondary'
+									}
 									onClick={ ( e ) => {
 										setAttributes( {
 											iconVerticalAlignment: 'centered',
@@ -406,7 +421,10 @@ const MaterialAlerts = ( props ) => {
 									enableDropShadow: value,
 								} );
 							} }
-							help={ __( 'Enable or disable the drop shadow for the default variant.', 'alerts-dlx' ) }
+							help={ __(
+								'Enable or disable the drop shadow for the default variant.',
+								'alerts-dlx'
+							) }
 						/>
 					</PanelRow>
 				) }
@@ -424,7 +442,10 @@ const MaterialAlerts = ( props ) => {
 						innerBlocksEnabled: value,
 					} );
 				} }
-				help={ __( 'Enable this option to allow the use of any block within the alert.', 'alerts-dlx' ) }
+				help={ __(
+					'Enable this option to allow the use of any block within the alert.',
+					'alerts-dlx'
+				) }
 			/>
 		</PanelRow>
 	);
@@ -456,17 +477,15 @@ const MaterialAlerts = ( props ) => {
 	const maxWidthStyle = {
 		maxWidth: maximumWidth + maximumWidthUnit,
 	};
-	const baseFontSizeStyles = `#${ uniqueId } { font-size: ${ parseInt( baseFontSize ) }px; }`;
+	const baseFontSizeStyles = `#${ uniqueId } { font-size: ${ parseInt(
+		baseFontSize
+	) }px; }`;
 	const block = (
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
 			<InspectorAdvancedControls>{ advancedControls }</InspectorAdvancedControls>
 			<style>{ baseFontSizeStyles }</style>
-			{
-				'custom' === alertType && (
-					<style>{ styles }</style>
-				)
-			}
+			{ 'custom' === alertType && <style>{ styles }</style> }
 			<figure
 				role="alert"
 				className={ classnames( 'alerts-dlx-alert alerts-dlx-material', {
@@ -488,13 +507,11 @@ const MaterialAlerts = ( props ) => {
 					</div>
 				) }
 				<section>
-					{
-						closeButtonEnabled && (
-							<div className="alerts-dlx-close">
-								<MaterialCloseIcon />
-							</div>
-						)
-					}
+					{ closeButtonEnabled && (
+						<div className="alerts-dlx-close">
+							<MaterialCloseIcon />
+						</div>
+					) }
 					{ titleEnabled && (
 						<RichText
 							tagName="h2"
@@ -509,9 +526,7 @@ const MaterialAlerts = ( props ) => {
 						/>
 					) }
 					<div className="alerts-dlx-content-wrapper">
-						{ descriptionEnabled && (
-							<div { ...innerBlockProps } />
-						) }
+						{ descriptionEnabled && <div { ...innerBlockProps } /> }
 						{ buttonEnabled && (
 							<AlertButton
 								attributes={ attributes }
@@ -524,8 +539,19 @@ const MaterialAlerts = ( props ) => {
 		</>
 	);
 
-	const blockProps = useBlockProps( {
-		className: classnames( className, 'alerts-dlx template-material', {
+	/**
+	 * Filter: alertsDlx.blockClasses
+	 *
+	 * This filter allows you to add custom classes to the block.
+	 *
+	 * @param {Object} blockClasses - The block classes.
+	 * @param {Object} attributes   - The block attributes.
+	 *
+	 * @return {Object} The block classes.
+	 */
+	const blockClasses = applyFilters(
+		'alertsDlx.blockClasses',
+		{
 			'is-style-success': className === undefined && 'success' === alertType,
 			'is-style-info': className === undefined && 'info' === alertType,
 			'is-style-warning': className === undefined && 'warning' === alertType,
@@ -539,6 +565,13 @@ const MaterialAlerts = ( props ) => {
 			'is-dropshadow-enabled': enableDropShadow,
 			'icon-vertical-align-top': 'top' === iconVerticalAlignment,
 			'icon-vertical-align-centered': 'centered' === iconVerticalAlignment,
+		},
+		attributes
+	);
+
+	const blockProps = useBlockProps( {
+		className: classnames( className, 'alerts-dlx template-material', {
+			...blockClasses,
 		} ),
 	} );
 
