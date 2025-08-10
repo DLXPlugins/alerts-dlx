@@ -255,6 +255,12 @@ class Blocks {
 		$color_light             = Functions::sanitize_attribute( $attributes, 'colorLight', 'text' );
 		$close_button_enabled    = Functions::sanitize_attribute( $attributes, 'closeButtonEnabled', 'boolean' );
 		$close_button_expiration = Functions::sanitize_attribute( $attributes, 'closeButtonExpiration', 'integer' );
+		$is_block_editorial_only = Functions::sanitize_attribute( $attributes, 'isBlockEditorialOnly', 'boolean' );
+
+		// If block is editorial only, return early.
+		if ( $is_block_editorial_only ) {
+			return '';
+		}
 
 		// Check to see if expiration cookie is set.
 		$cookie_name = 'alerts-dlx-' . $unique_id;
