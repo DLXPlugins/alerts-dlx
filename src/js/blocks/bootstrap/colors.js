@@ -39,4 +39,8 @@ const bootstrapColors = [
 	{ name: 'Dark Color Accent', color: '#292d33' },
 	{ name: 'Dark Color Light', color: '#d3d3d4' },
 ];
+
+const themeColors = alertsDlxBlock.colorPalette;
+bootstrapColors.push( ...themeColors );
+
 export default bootstrapColors;

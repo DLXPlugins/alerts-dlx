@@ -18,4 +18,7 @@ const shoelaceColors = [
 
 	{ name: 'White', color: '#fff' },
 ];
+
+const themeColors = alertsDlxBlock.colorPalette;
+shoelaceColors.push( ...themeColors );
 export default shoelaceColors;
