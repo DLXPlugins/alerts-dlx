@@ -1796,7 +1796,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"Bootstrap Alert","apiVersion":3,"name":"mediaron/alerts-dlx-bootstrap","category":"alertsdlx","icon":"<svg width=\'100%\' height=\'100%\' viewBox=\'0 0 167 134\' version=\'1.1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\' xml:space=\'preserve\' xmlns:serif=\'http://www.serif.com/\' style=\'fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;\'><path fill=\'#6500FB\' d=\'M34.617,0.282c-9.51,0 -16.546,8.324 -16.231,17.351c0.302,8.672 -0.091,19.904 -2.918,29.063c-2.837,9.187 -7.633,15.006 -15.468,15.753l0,8.435c7.835,0.747 12.631,6.567 15.468,15.753c2.827,9.16 3.22,20.391 2.918,29.064c-0.315,9.025 6.721,17.35 16.233,17.35l97.443,-0c9.51,-0 16.545,-8.324 16.23,-17.35c-0.302,-8.673 0.091,-19.904 2.918,-29.064c2.838,-9.186 7.622,-15.006 15.457,-15.753l-0,-8.435c-7.835,-0.747 -12.619,-6.566 -15.457,-15.753c-2.827,-9.158 -3.22,-20.391 -2.918,-29.063c0.315,-9.026 -6.72,-17.351 -16.23,-17.351l-97.446,0l0.001,0Zm78.377,81.728c0,12.429 -9.271,19.967 -24.656,19.967l-26.191,0c-1.55,0 -2.825,-1.275 -2.825,-2.824l0,-64.972c0,-1.55 1.275,-2.825 2.825,-2.825l26.041,-0c12.829,-0 21.248,6.949 21.248,17.619c0,7.488 -5.663,14.193 -12.88,15.367l0,0.391c9.824,1.078 16.438,7.88 16.438,17.277Zm-27.512,-41.699l-14.934,-0l0,21.093l12.578,-0c9.723,-0 15.084,-3.915 15.084,-10.914c0,-6.558 -4.61,-10.179 -12.728,-10.179Zm-14.934,29.462l0,23.247l15.483,-0c10.123,-0 15.486,-4.062 15.486,-11.697c-0,-7.635 -5.513,-11.55 -16.137,-11.55l-14.832,-0Z\'/></svg>","description":"An alert and notification block inspired by Bootstrap.","keywords":["alert","info","hint","success","error","notice","notification","warning","bootstrap"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"align":{"type":"string","default":"center"},"alertType":{"type":"string","default":"success"},"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"descriptionEnabled":{"type":"boolean","default":true},"titleEnabled":{"type":"boolean","default":true},"buttonEnabled":{"type":"boolean","default":false},"iconEnabled":{"type":"boolean","default":true},"innerBlocksEnabled":{"type":"boolean","default":false},"closeButtonEnabled":{"type":"boolean","default":false},"closeButtonExpiration":{"type":"number","default":0},"colorPrimary":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-primary, #084298)"},"colorBorder":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-border, #b6d4fe)"},"colorAccent":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-accent, #26559c)"},"colorAlt":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-alt, #084298)"},"colorBold":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-bold, #084298)"},"colorLight":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-light, #cfe2ff)"},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"boolean","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"string","default":"650"},"baseFontSize":{"type":"number","default":18},"icon":{"type":"string","default":"<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' fill=\'currentColor\' className=\'bi bi-check\' viewBox=\'0 0 16 16\'><path d=\'M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z\' /></svg>"},"enableCustomFonts":{"type":"boolean","default":true},"variant":{"type":"string","default":"default"},"mode":{"type":"string","default":"light"},"enableDropShadow":{"type":"boolean","default":false},"iconVerticalAlignment":{"type":"string","default":"top"},"uniqueId":{"type":"string","default":""},"alertGroup":{"type":"string","default":"bootstrap"}},"example":{"attributes":{"alertType":"success","alertTitle":"Sample alert title","alertDescription":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>","buttonEnabled":true,"baseFontSize":14,"buttonText":"Learn More","icon":"<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' fill=\'currentColor\' className=\'bi bi-check\' viewBox=\'0 0 16 16\'><path d=\'M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z\' /></svg>"}},"styles":[{"name":"primary","label":"Primary","isDefault":true},{"name":"secondary","label":"Secondary"},{"name":"success","label":"Success"},{"name":"danger","label":"Danger"},{"name":"warning","label":"Warning"},{"name":"info","label":"Info"},{"name":"light","label":"Light"},{"name":"dark","label":"Dark"},{"name":"custom","label":"Custom"}],"supports":{"anchor":true,"align":true,"className":true},"editorScript":"alerts-dlx-block","editorStyle":["alerts-dlx-block-editor-styles","alerts-dlx-bootstrap-light-css","alerts-dlx-bootstrap-dark-css","alerts-dlx-block-editor-styles-lato"]}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"Bootstrap Alert","apiVersion":3,"name":"mediaron/alerts-dlx-bootstrap","category":"alertsdlx","icon":"<svg width=\'100%\' height=\'100%\' viewBox=\'0 0 167 134\' version=\'1.1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\' xml:space=\'preserve\' xmlns:serif=\'http://www.serif.com/\' style=\'fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;\'><path fill=\'#6500FB\' d=\'M34.617,0.282c-9.51,0 -16.546,8.324 -16.231,17.351c0.302,8.672 -0.091,19.904 -2.918,29.063c-2.837,9.187 -7.633,15.006 -15.468,15.753l0,8.435c7.835,0.747 12.631,6.567 15.468,15.753c2.827,9.16 3.22,20.391 2.918,29.064c-0.315,9.025 6.721,17.35 16.233,17.35l97.443,-0c9.51,-0 16.545,-8.324 16.23,-17.35c-0.302,-8.673 0.091,-19.904 2.918,-29.064c2.838,-9.186 7.622,-15.006 15.457,-15.753l-0,-8.435c-7.835,-0.747 -12.619,-6.566 -15.457,-15.753c-2.827,-9.158 -3.22,-20.391 -2.918,-29.063c0.315,-9.026 -6.72,-17.351 -16.23,-17.351l-97.446,0l0.001,0Zm78.377,81.728c0,12.429 -9.271,19.967 -24.656,19.967l-26.191,0c-1.55,0 -2.825,-1.275 -2.825,-2.824l0,-64.972c0,-1.55 1.275,-2.825 2.825,-2.825l26.041,-0c12.829,-0 21.248,6.949 21.248,17.619c0,7.488 -5.663,14.193 -12.88,15.367l0,0.391c9.824,1.078 16.438,7.88 16.438,17.277Zm-27.512,-41.699l-14.934,-0l0,21.093l12.578,-0c9.723,-0 15.084,-3.915 15.084,-10.914c0,-6.558 -4.61,-10.179 -12.728,-10.179Zm-14.934,29.462l0,23.247l15.483,-0c10.123,-0 15.486,-4.062 15.486,-11.697c-0,-7.635 -5.513,-11.55 -16.137,-11.55l-14.832,-0Z\'/></svg>","description":"An alert and notification block inspired by Bootstrap.","keywords":["alert","info","hint","success","error","notice","notification","warning","bootstrap"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"align":{"type":"string","default":"center"},"alertType":{"type":"string","default":"success"},"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"descriptionEnabled":{"type":"boolean","default":true},"titleEnabled":{"type":"boolean","default":true},"buttonEnabled":{"type":"boolean","default":false},"iconEnabled":{"type":"boolean","default":true},"innerBlocksEnabled":{"type":"boolean","default":false},"closeButtonEnabled":{"type":"boolean","default":false},"closeButtonExpiration":{"type":"number","default":0},"colorPrimary":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-primary, #084298)"},"colorBorder":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-border, #b6d4fe)"},"colorAccent":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-accent, #26559c)"},"colorAlt":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-alt, #084298)"},"colorBold":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-bold, #084298)"},"colorLight":{"type":"string","default":"var(--alerts-dlx-bootstrap-color-light, #cfe2ff)"},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"boolean","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"string","default":"650"},"baseFontSize":{"type":"number","default":18},"icon":{"type":"string","default":"<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' fill=\'currentColor\' className=\'bi bi-check\' viewBox=\'0 0 16 16\'><path d=\'M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z\' /></svg>"},"enableCustomFonts":{"type":"boolean","default":true},"variant":{"type":"string","default":"default"},"mode":{"type":"string","default":"light"},"enableDropShadow":{"type":"boolean","default":false},"iconVerticalAlignment":{"type":"string","default":"top"},"uniqueId":{"type":"string","default":""},"alertGroup":{"type":"string","default":"bootstrap"},"isBlockAdminOnly":{"type":"boolean","default":false},"adminOnlyBlockExpiresEnabled":{"type":"boolean","default":false},"adminOnlyBlockExpires":{"type":"string","default":null}},"example":{"attributes":{"alertType":"success","alertTitle":"Sample alert title","alertDescription":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>","buttonEnabled":true,"baseFontSize":14,"buttonText":"Learn More","icon":"<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' fill=\'currentColor\' className=\'bi bi-check\' viewBox=\'0 0 16 16\'><path d=\'M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z\' /></svg>"}},"styles":[{"name":"primary","label":"Primary","isDefault":true},{"name":"secondary","label":"Secondary"},{"name":"success","label":"Success"},{"name":"danger","label":"Danger"},{"name":"warning","label":"Warning"},{"name":"info","label":"Info"},{"name":"light","label":"Light"},{"name":"dark","label":"Dark"},{"name":"custom","label":"Custom"}],"supports":{"anchor":true,"align":true,"className":true},"editorScript":"alerts-dlx-block","editorStyle":["alerts-dlx-block-editor-styles","alerts-dlx-bootstrap-light-css","alerts-dlx-bootstrap-dark-css","alerts-dlx-block-editor-styles-lato"]}');
 
 /***/ }),
 
@@ -1999,7 +1999,10 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
     colorAlt = attributes.colorAlt,
     colorBold = attributes.colorBold,
     colorLight = attributes.colorLight,
-    mode = attributes.mode;
+    mode = attributes.mode,
+    isBlockAdminOnly = attributes.isBlockAdminOnly,
+    adminOnlyBlockExpiresEnabled = attributes.adminOnlyBlockExpiresEnabled,
+    adminOnlyBlockExpires = attributes.adminOnlyBlockExpires;
 
   /**
    * Get a unique ID for the block for inline styling if necessary.
@@ -2098,7 +2101,37 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
     },
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set the expiration time in seconds for the close button to reappear. Set to zero to never expire.', 'alerts-dlx'),
     type: 'number'
-  })))), 'custom' === alertType && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.PanelColorSettings, {
+  })))), (alertsDlxBlock.isAdmin || alertsDlxBlock.isEditor) && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Block Visibility', 'alerts-dlx')
+  }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Make This Block Admin Only', 'alerts-dlx'),
+    checked: isBlockAdminOnly,
+    onChange: function onChange(value) {
+      setAttributes({
+        isBlockAdminOnly: value
+      });
+    }
+  })), isBlockAdminOnly && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Enable Block Expiration', 'alerts-dlx'),
+    checked: adminOnlyBlockExpiresEnabled,
+    onChange: function onChange(value) {
+      setAttributes({
+        adminOnlyBlockExpiresEnabled: value
+      });
+    }
+  })), adminOnlyBlockExpiresEnabled && /*#__PURE__*/React.createElement("div", {
+    className: "dlx-admin-only-block-expires"
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.DateTimePicker, {
+    currentDate: adminOnlyBlockExpires ? new Date(adminOnlyBlockExpires) : new Date(),
+    onChange: function onChange(value) {
+      setAttributes({
+        adminOnlyBlockExpires: value
+      });
+    },
+    startOfWeek: 1,
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set the Block Expiration', 'alerts-dlx'),
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set the expiration date and time for the block. If the time has passed, the block will be removed automatically.', 'alerts-dlx')
+  })))))), 'custom' === alertType && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__.PanelColorSettings, {
     __experimentalIsRenderedInSidebar: true,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Custom Color Settings', 'alerts-dlx'),
     colorSettings: [{
@@ -5621,6 +5654,116 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/blocks/plugins/editorial-only.js":
+/*!*************************************************!*\
+  !*** ./src/js/blocks/plugins/editorial-only.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/hooks */ "@wordpress/hooks");
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
+/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__);
+/**
+ * AlertsDLX Admin-Only Plugin
+ *
+ * This plugin hooks into AlertsDLX Gutenberg blocks to add a custom panel
+ * that only appears in the block editor (admin-side). It uses WordPress's
+ * higher-order component pattern to wrap block edit functions and filters
+ * to only affect blocks that are part of the AlertsDLX plugin.
+ *
+ * @since 1.0.0
+ */
+
+
+
+
+
+
+
+
+/**
+ * Higher-order component that wraps block edit functions to add our custom panel.
+ *
+ * This HOC intercepts the block edit component and conditionally renders
+ * our custom InspectorControls panel when the block is selected.
+ *
+ * @param {Function} BlockEdit - The original block edit component.
+ * @return {Function} Enhanced block edit component with our custom panel.
+ */
+var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createHigherOrderComponent)(function (BlockEdit) {
+  return function (props) {
+    // Only show our panel when the block is selected in the editor.
+    if (!props.isSelected) {
+      return /*#__PURE__*/React.createElement(BlockEdit, props);
+    }
+
+    // Make sure we only show this panel for admins and editors.
+    if (!alertsDlxBlock.isAdmin || !alertsDlxBlock.isEditor) {
+      return /*#__PURE__*/React.createElement(BlockEdit, props);
+    }
+    var _props$attributes = props.attributes,
+      isBlockEditorialOnly = _props$attributes.isBlockEditorialOnly,
+      isBlockReadOnly = _props$attributes.isBlockReadOnly;
+
+    // List of AlertsDLX block namespaces.
+    var alertsDLXBlockNamespaces = ['mediaron/alerts-dlx-bootstrap', 'mediaron/alerts-dlx-chakra', 'mediaron/alerts-dlx-material', 'mediaron/alerts-dlx-shoelace'];
+
+    // Check if this is an AlertsDLX block.
+    var isAlertsDLXBlock = props.name && alertsDLXBlockNamespaces.includes(props.name);
+
+    // If it's not an AlertsDLX block, return the original component without our panel.
+    if (!isAlertsDLXBlock) {
+      return /*#__PURE__*/React.createElement(BlockEdit, props);
+    }
+
+    // Return the original block edit component wrapped with our custom panel for AlertsDLX blocks.
+    return /*#__PURE__*/React.createElement(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.Fragment, null, /*#__PURE__*/React.createElement(BlockEdit, props), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Editorial Options', 'alerts-dlx'),
+      initialOpen: false,
+      className: "alerts-dlx-panel"
+    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Make This Block Editorial Only', 'alerts-dlx'),
+      checked: isBlockEditorialOnly,
+      onChange: function onChange(value) {
+        props.setAttributes({
+          isBlockEditorialOnly: value
+        });
+      },
+      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('This block will only be visible to viewers of this post in the editor. It will not be visible on the front end.', 'alerts-dlx')
+    }), isBlockEditorialOnly && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Make This Block Read Only', 'alerts-dlx'),
+      checked: isBlockReadOnly,
+      onChange: function onChange(value) {
+        props.setAttributes({
+          isBlockReadOnly: value
+        });
+      },
+      help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('This block will not be editable by the user. It will behave as a normal alert in the editor.', 'alerts-dlx')
+    }))));
+  };
+}, 'withAlertsPanel');
+
+/**
+ * Apply our higher-order component to all blocks in the editor.
+ *
+ * This filter runs on every block edit component, allowing us to
+ * inject our custom panel into the InspectorControls sidebar.
+ */
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.addFilter)('editor.BlockEdit', 'alerts-dlx/with-alerts-panel', withAlertsPanel);
+
+/***/ }),
+
 /***/ "./src/js/blocks/shoelace/block.json":
 /*!*******************************************!*\
   !*** ./src/js/blocks/shoelace/block.json ***!
@@ -6311,6 +6454,17 @@ module.exports = window["wp"]["element"];
 
 /***/ }),
 
+/***/ "@wordpress/hooks":
+/*!*******************************!*\
+  !*** external ["wp","hooks"] ***!
+  \*******************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["wp"]["hooks"];
+
+/***/ }),
+
 /***/ "@wordpress/i18n":
 /*!******************************!*\
   !*** external ["wp","i18n"] ***!
@@ -6424,7 +6578,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_blocks_chakraui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/blocks/chakraui */ "./src/js/blocks/chakraui/index.js");
 /* harmony import */ var _js_blocks_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/blocks/bootstrap */ "./src/js/blocks/bootstrap/index.js");
 /* harmony import */ var _js_blocks_shoelace__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/blocks/shoelace */ "./src/js/blocks/shoelace/index.js");
-/* harmony import */ var _js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/blocks/components/icons/AlertsLogo */ "./src/js/blocks/components/icons/AlertsLogo.js");
+/* harmony import */ var _js_blocks_plugins_editorial_only__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/blocks/plugins/editorial-only */ "./src/js/blocks/plugins/editorial-only.js");
+/* harmony import */ var _js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/blocks/components/icons/AlertsLogo */ "./src/js/blocks/components/icons/AlertsLogo.js");
+
 
 
 
@@ -6432,7 +6588,7 @@ __webpack_require__.r(__webpack_exports__);
 
 (function () {
   wp.blocks.updateCategory('alertsdlx', {
-    icon: /*#__PURE__*/React.createElement(_js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    icon: /*#__PURE__*/React.createElement(_js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_5__["default"], {
       width: 16,
       height: 16
     })

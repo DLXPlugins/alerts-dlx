@@ -155,6 +155,18 @@
     "alertGroup": {
       "type": "string",
       "default": "bootstrap"
+    },
+    "isBlockAdminOnly": {
+      "type": "boolean",
+      "default": false
+    },
+    "adminOnlyBlockExpiresEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "adminOnlyBlockExpires": {
+      "type": "string",
+      "default": null
     }
   },
   "example": {

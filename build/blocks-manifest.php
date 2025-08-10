@@ -158,6 +158,18 @@ return array(
 			'alertGroup' => array(
 				'type' => 'string',
 				'default' => 'bootstrap'
+			),
+			'isBlockAdminOnly' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'adminOnlyBlockExpiresEnabled' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'adminOnlyBlockExpires' => array(
+				'type' => 'string',
+				'default' => null
 			)
 		),
 		'example' => array(

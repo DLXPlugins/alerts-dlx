@@ -13,6 +13,7 @@ import {
 	PanelBody,
 	PanelRow,
 	ToggleControl,
+	DateTimePicker,
 	TextControl,
 	Button,
 	ButtonGroup,
@@ -77,6 +78,9 @@ const BootstrapAlerts = ( props ) => {
 		colorBold,
 		colorLight,
 		mode,
+		isBlockAdminOnly,
+		adminOnlyBlockExpiresEnabled,
+		adminOnlyBlockExpires,
 	} = attributes;
 
 	/**
@@ -208,6 +212,61 @@ const BootstrapAlerts = ( props ) => {
 					}
 				</>
 			</PanelBody>
+			{
+				( alertsDlxBlock.isAdmin || alertsDlxBlock.isEditor ) && (
+					<>
+						<PanelBody title={ __( 'Block Visibility', 'alerts-dlx' ) }>
+							<>
+								<PanelRow>
+									<ToggleControl
+										label={ __( 'Make This Block Admin Only', 'alerts-dlx' ) }
+										checked={ isBlockAdminOnly }
+										onChange={ ( value ) => {
+											setAttributes( {
+												isBlockAdminOnly: value,
+											} );
+										} }
+									/>
+								</PanelRow>
+								{
+									isBlockAdminOnly && (
+										<>
+											<PanelRow>
+												<ToggleControl
+													label={ __( 'Enable Block Expiration', 'alerts-dlx' ) }
+													checked={ adminOnlyBlockExpiresEnabled }
+													onChange={ ( value ) => {
+														setAttributes( {
+															adminOnlyBlockExpiresEnabled: value,
+														} );
+													} }
+												/>
+											</PanelRow>
+											{
+												adminOnlyBlockExpiresEnabled && (
+													<div className="dlx-admin-only-block-expires">
+														<DateTimePicker
+															currentDate={ adminOnlyBlockExpires ? new Date( adminOnlyBlockExpires ) : new Date() }
+															onChange={ ( value ) => {
+																setAttributes( {
+																	adminOnlyBlockExpires: value,
+																} );
+															} }
+															startOfWeek={ 1 }
+															label={ __( 'Set the Block Expiration', 'alerts-dlx' ) }
+															help={ __( 'Set the expiration date and time for the block. If the time has passed, the block will be removed automatically.', 'alerts-dlx' ) }
+														/>
+													</div>
+												)
+											}
+										</>
+									)
+								}
+							</>
+						</PanelBody>
+					</>
+				)
+			}
 			{
 				'custom' === alertType && (
 					<PanelColorSettings

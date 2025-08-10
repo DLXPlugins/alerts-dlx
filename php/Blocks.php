@@ -581,6 +581,10 @@ class Blocks {
 			'alertsDlxBlock',
 			array(
 				'font_stylesheet' => Functions::get_plugin_url( 'dist/alerts-dlx-gfont-lato.css' ),
+				'isEditor'        => current_user_can( 'edit_others_posts' ),
+				'isAuthor'        => current_user_can( 'edit_posts' ),
+				'isAdmin'         => current_user_can( 'manage_options' ),
+				'colorPalette'    => Functions::get_theme_color_palette(),
 			)
 		);
 
