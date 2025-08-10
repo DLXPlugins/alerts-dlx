@@ -170,6 +170,14 @@ return array(
 			'adminOnlyBlockExpires' => array(
 				'type' => 'string',
 				'default' => null
+			),
+			'isBlockEditorialOnly' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'isBlockReadOnly' => array(
+				'type' => 'boolean',
+				'default' => false
 			)
 		),
 		'example' => array(
@@ -392,6 +400,14 @@ return array(
 			'colorLight' => array(
 				'type' => 'string',
 				'default' => 'var(--alerts-dlx-chakra-color-light, #bee3f8)'
+			),
+			'isBlockEditorialOnly' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'isBlockReadOnly' => array(
+				'type' => 'boolean',
+				'default' => false
 			)
 		),
 		'example' => array(
@@ -598,6 +614,14 @@ return array(
 			'colorLight' => array(
 				'type' => 'string',
 				'default' => 'var(--alerts-dlx-material-color-light, #bee3f8)'
+			),
+			'isBlockEditorialOnly' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'isBlockReadOnly' => array(
+				'type' => 'boolean',
+				'default' => false
 			)
 		),
 		'example' => array(
@@ -808,6 +832,14 @@ return array(
 			'colorLight' => array(
 				'type' => 'string',
 				'default' => 'var(--alerts-dlx-shoelace-color-light, #cfe2ff)'
+			),
+			'isBlockEditorialOnly' => array(
+				'type' => 'boolean',
+				'default' => false
+			),
+			'isBlockReadOnly' => array(
+				'type' => 'boolean',
+				'default' => false
 			)
 		),
 		'example' => array(

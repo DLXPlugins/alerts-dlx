@@ -21,27 +21,13 @@ import { __ } from '@wordpress/i18n';
  *
  * This HOC intercepts the block edit component and conditionally renders
  * our custom InspectorControls panel when the block is selected.
+ * It also adds CSS classes to the block wrapper for editorial-only and read-only blocks.
  *
  * @param {Function} BlockEdit - The original block edit component.
- * @return {Function} Enhanced block edit component with our custom panel.
+ * @return {Function} Enhanced block edit component with our custom panel and CSS classes.
  */
 const withAlertsPanel = createHigherOrderComponent( ( BlockEdit ) => {
 	return ( props ) => {
-		// Only show our panel when the block is selected in the editor.
-		if ( ! props.isSelected ) {
-			return <BlockEdit { ...props } />;
-		}
-
-		// Make sure we only show this panel for admins and editors.
-		if ( ! alertsDlxBlock.isAdmin || ! alertsDlxBlock.isEditor ) {
-			return <BlockEdit { ...props } />;
-		}
-
-		const {
-			isBlockEditorialOnly,
-			isBlockReadOnly,
-		} = props.attributes;
-
 		// List of AlertsDLX block namespaces.
 		const alertsDLXBlockNamespaces = [
 			'mediaron/alerts-dlx-bootstrap',
@@ -51,47 +37,61 @@ const withAlertsPanel = createHigherOrderComponent( ( BlockEdit ) => {
 		];
 
 		// Check if this is an AlertsDLX block.
-		const isAlertsDLXBlock = props.name && alertsDLXBlockNamespaces.includes( props.name );
+		const isAlertsDLXBlock =
+			props.name && alertsDLXBlockNamespaces.includes( props.name );
 
 		// If it's not an AlertsDLX block, return the original component without our panel.
 		if ( ! isAlertsDLXBlock ) {
 			return <BlockEdit { ...props } />;
 		}
 
-		// Return the original block edit component wrapped with our custom panel for AlertsDLX blocks.
-		return (
-			<Fragment>
-				<BlockEdit { ...props } />
-				<InspectorControls>
-					<PanelBody
-						title={ __( 'Editorial Options', 'alerts-dlx' ) }
-						initialOpen={ false }
-						className="alerts-dlx-panel"
-					>
-						<ToggleControl
-							label={ __( 'Make This Block Editorial Only', 'alerts-dlx' ) }
-							checked={ isBlockEditorialOnly }
-							onChange={ ( value ) => {
-								props.setAttributes( { isBlockEditorialOnly: value } );
-							} }
-							help={ __( 'This block will only be visible to viewers of this post in the editor. It will not be visible on the front end.', 'alerts-dlx' ) }
-						/>
-						{
-							isBlockEditorialOnly && (
+		const { isBlockEditorialOnly, isBlockReadOnly } = props.attributes;
+
+		// Create the block content with or without the panel.
+		let blockContent = <BlockEdit { ...props } />;
+
+		// Only show our panel when the block is selected in the editor and user has permissions.
+		if ( props.isSelected && alertsDlxBlock.isAdmin && alertsDlxBlock.isEditor ) {
+			blockContent = (
+				<Fragment>
+					<BlockEdit { ...props } />
+					<InspectorControls>
+						<PanelBody
+							title={ __( 'Editorial Options', 'alerts-dlx' ) }
+							initialOpen={ false }
+							className="alerts-dlx-panel"
+						>
+							<ToggleControl
+								label={ __( 'Make This Block Editorial Only', 'alerts-dlx' ) }
+								checked={ isBlockEditorialOnly }
+								onChange={ ( value ) => {
+									props.setAttributes( { isBlockEditorialOnly: value } );
+								} }
+								help={ __(
+									'This block will only be visible to viewers of this post in the editor. It will not be visible on the front end.',
+									'alerts-dlx'
+								) }
+							/>
+							{ isBlockEditorialOnly && (
 								<ToggleControl
 									label={ __( 'Make This Block Read Only', 'alerts-dlx' ) }
 									checked={ isBlockReadOnly }
 									onChange={ ( value ) => {
 										props.setAttributes( { isBlockReadOnly: value } );
 									} }
-									help={ __( 'This block will not be editable by the user. It will behave as a normal alert in the editor.', 'alerts-dlx' ) }
+									help={ __(
+										'This block will not be editable by the user. It will behave as a normal alert in the editor.',
+										'alerts-dlx'
+									) }
 								/>
-							)
-						}
-					</PanelBody>
-				</InspectorControls>
-			</Fragment>
-		);
+							) }
+						</PanelBody>
+					</InspectorControls>
+				</Fragment>
+			);
+		}
+
+		return blockContent;
 	};
 }, 'withAlertsPanel' );
 
@@ -99,10 +99,27 @@ const withAlertsPanel = createHigherOrderComponent( ( BlockEdit ) => {
  * Apply our higher-order component to all blocks in the editor.
  *
  * This filter runs on every block edit component, allowing us to
- * inject our custom panel into the InspectorControls sidebar.
+ * inject our custom panel into the InspectorControls sidebar and
+ * add CSS classes for editorial-only and read-only blocks.
+ */
+addFilter( 'editor.BlockEdit', 'alerts-dlx/with-alerts-panel', withAlertsPanel );
+
+/**
+ * Add CSS classes to the block wrapper for editorial-only and read-only blocks.
+ *
+ * @param {Object} blockClasses - The block classes.
+ * @param {Object} attributes   - The block attributes.
+ *
+ * @return {Object} The block classes.
  */
 addFilter(
-	'editor.BlockEdit',
+	'alerts-dlx-block-classes',
 	'alerts-dlx/with-alerts-panel',
-	withAlertsPanel
+	( blockClasses, attributes ) => {
+		return {
+			...blockClasses,
+			'alerts-dlx-editorial-only': attributes.isBlockEditorialOnly,
+			'alerts-dlx-read-only': attributes.isBlockReadOnly,
+		};
+	}
 );

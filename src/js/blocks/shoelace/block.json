@@ -149,6 +149,14 @@
 		"colorLight": {
 			"type": "string",
 			"default": "var(--alerts-dlx-shoelace-color-light, #cfe2ff)"
+		},
+		"isBlockEditorialOnly": {
+			"type": "boolean",
+			"default": false
+		},
+		"isBlockReadOnly": {
+			"type": "boolean",
+			"default": false
 		}
 	},
 	"example": {
