@@ -51,10 +51,30 @@ const withAlertsPanel = createHigherOrderComponent( ( BlockEdit ) => {
 		let blockContent = <BlockEdit { ...props } />;
 
 		// Only show our panel when the block is selected in the editor and user has permissions.
-		if ( props.isSelected && alertsDlxBlock.isAdmin && alertsDlxBlock.isEditor ) {
+		if ( alertsDlxBlock.isAdmin && alertsDlxBlock.isEditor ) {
 			blockContent = (
 				<Fragment>
 					<BlockEdit { ...props } />
+					<style>
+						{
+							`
+								.alerts-dlx-editorial-only:before {
+									content: '${ __( 'Editorial Only', 'alerts-dlx' ) }';
+									position: absolute;
+									top: 0px;
+									left: 0px;
+									display: inline-block;
+									padding: 4px 6px;
+									font-size: 14px;
+									font-weight: 600;
+									color: #333;
+									line-height: 1.5;
+									z-index: 1;
+									background: #ff9800;
+								}
+							`
+						}
+					</style>
 					<InspectorControls>
 						<PanelBody
 							title={ __( 'Editorial Options', 'alerts-dlx' ) }

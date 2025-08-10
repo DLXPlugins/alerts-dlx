@@ -2363,7 +2363,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
    *
    * @return {Object} The block classes.
    */
-  var blockClasses = (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_2__.applyFilters)('alerts-dlx-block-classes', {
+  var blockClasses = (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_2__.applyFilters)('alerts-dlx/block-classes', {
     'custom-fonts-enabled': enableCustomFonts,
     'is-appearance-default': 'default' === variant,
     'is-appearance-centered': 'centered' === variant,
@@ -5743,8 +5743,8 @@ var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createH
     var blockContent = /*#__PURE__*/React.createElement(BlockEdit, props);
 
     // Only show our panel when the block is selected in the editor and user has permissions.
-    if (props.isSelected && alertsDlxBlock.isAdmin && alertsDlxBlock.isEditor) {
-      blockContent = /*#__PURE__*/React.createElement(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.Fragment, null, /*#__PURE__*/React.createElement(BlockEdit, props), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+    if (alertsDlxBlock.isAdmin && alertsDlxBlock.isEditor) {
+      blockContent = /*#__PURE__*/React.createElement(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.Fragment, null, /*#__PURE__*/React.createElement(BlockEdit, props), /*#__PURE__*/React.createElement("style", null, "\n\t\t\t\t\t\t\t\t.alerts-dlx-editorial-only:before {\n\t\t\t\t\t\t\t\t\tcontent: '".concat((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Editorial Only', 'alerts-dlx'), "';\n\t\t\t\t\t\t\t\t\tposition: absolute;\n\t\t\t\t\t\t\t\t\ttop: 0px;\n\t\t\t\t\t\t\t\t\tleft: 0px;\n\t\t\t\t\t\t\t\t\tdisplay: inline-block;\n\t\t\t\t\t\t\t\t\tpadding: 4px 6px;\n\t\t\t\t\t\t\t\t\tfont-size: 14px;\n\t\t\t\t\t\t\t\t\tfont-weight: 600;\n\t\t\t\t\t\t\t\t\tcolor: #333;\n\t\t\t\t\t\t\t\t\tline-height: 1.5;\n\t\t\t\t\t\t\t\t\tz-index: 1;\n\t\t\t\t\t\t\t\t\tbackground: #ff9800;\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t")), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)('Editorial Options', 'alerts-dlx'),
         initialOpen: false,
         className: "alerts-dlx-panel"

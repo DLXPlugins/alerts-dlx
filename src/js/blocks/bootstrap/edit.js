@@ -582,7 +582,7 @@ const BootstrapAlerts = ( props ) => {
 	 * @return {Object} The block classes.
 	 */
 	const blockClasses = applyFilters(
-		'alerts-dlx-block-classes',
+		'alerts-dlx/block-classes',
 		{
 			'custom-fonts-enabled': enableCustomFonts,
 			'is-appearance-default': 'default' === variant,
