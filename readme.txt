@@ -1,6 +1,6 @@
-=== Alerts DLX - Alerts, Callouts, and Notifications Block and Shortcode ===
+=== Alerts DLX - Alert Box, Callout Box, and Notifications ===
 Contributors: ronalfy
-Tags: alerts, notifications, notice, shortcode, blocks
+Tags: alert box, notifications, alerts, shortcode, blocks
 Requires at least: 5.9
 Tested up to: 6.8
 Stable tag: 2.1.0
@@ -9,17 +9,21 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://github.com/sponsors/DLXPlugins
 
-A beautiful and easy to use alerts block, with support for shortcodes.
+A beautiful and easy to use alert and callout box, with support for blocks and shortcodes.
 
 == Description ==
 
-AlertsDLX offers beautifully styled alerts and notifications blocks for the Block Editor, Classic Editor, or anywhere blocks and shortcodes can go.
+AlertsDLX offers beautifully styled alerts, callouts, and notification boxes for the Block Editor, Classic Editor, or anywhere blocks and shortcodes can go.
 
 This plugin is perfect for adding alerts, callouts, and notifications to your site. It comes with four alert styles: Material, Bootstrap, Chakra, and Shoelace. Each alert style has its own unique look and feel.
 
+Coupled with a free plugin like <a href="https://blockvisibilitywp.com/">Block Visibility</a>, your imagine can really go wild.
+
 https://www.youtube.com/watch?v=7dKpw5uBi5o
 
-> <strong>Alert Shortcodes are here!</strong> <a href="https://docs.dlxplugins.com/v/alertsdlx/shortcode-usage">See shortcode usage</a>.
+> <strong>Alert Shortcodes are here!</strong> Create alert boxes from shortcodes. <a href="https://docs.dlxplugins.com/v/alertsdlx/shortcode-usage">See shortcode usage</a>.
+
+> Check out the demo above for all alert types and variations.
 
 Major features:
 
