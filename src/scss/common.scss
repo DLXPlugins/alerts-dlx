@@ -181,10 +181,17 @@ figure.alerts-dlx-alert {
 	font-size: 1.2em;
 }
 
+.editor-styles-wrapper .alerts-dlx-alert[role="alert"] .alerts-dlx-content p {
+	font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+	font-weight: 400;
+	font-size: 1.2em;
+}
 .template-chakra .alerts-dlx-alert[role="alert"] .alerts-dlx-chakra .alerts-dlx-content p,
 .template-bootstrap .alerts-dlx-alert[role="alert"] .alerts-dlx-bootstrap .alerts-dlx-content p,
 .template-material .alerts-dlx-alert[role="alert"] .alerts-dlx-material .alerts-dlx-content p,
 .template-shoelace .alerts-dlx-alert[role="alert"] .alerts-dlx-shoelace .alerts-dlx-content p {
+	font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+	font-weight: 400;
 	font-size: 1.2em;
 }
 
