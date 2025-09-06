@@ -104,6 +104,104 @@ figure.alerts-dlx-alert {
 	box-sizing: border-box;
 	position: relative;
 }
+
+/* Font size reset and inheritance - using high specificity selectors */
+.alerts-dlx-alert[role="alert"] {
+	font-size: var(--alerts-dlx-base-font-size, 16px);
+	
+	/* Ensure all child elements inherit the base font size */
+	* {
+		font-size: inherit;
+	}
+	
+	/* Specific overrides for alert content with higher specificity */
+	section h2.alerts-dlx-title {
+		font-size: 1.2em;
+	}
+	
+	.alerts-dlx-content p {
+		font-size: 1.2em;
+	}
+	
+	button.button-reset,
+	a.alerts-dlx-button,
+	button.button-reset.components-button {
+		font-size: 1.2em;
+	}
+	
+	/* Icon sizing */
+	.alerts-dlx-icon-preview svg {
+		width: 1.4em;
+		height: 1.4em;
+	}
+	
+	.alerts-dlx-icon-frontend .alerts-dlx-icon-preview {
+		font-size: 1.2em;
+		line-height: 2.2em;
+	}
+}
+
+/* Theme-specific font size inheritance with higher specificity */
+.template-chakra .alerts-dlx-alert[role="alert"],
+.template-bootstrap .alerts-dlx-alert[role="alert"],
+.template-material .alerts-dlx-alert[role="alert"],
+.template-shoelace .alerts-dlx-alert[role="alert"] {
+	font-size: var(--alerts-dlx-base-font-size, 16px);
+}
+
+/* Multiple instances support with even higher specificity */
+.alerts-dlx .template-chakra .alerts-dlx-alert[role="alert"],
+.alerts-dlx .template-bootstrap .alerts-dlx-alert[role="alert"],
+.alerts-dlx .template-material .alerts-dlx-alert[role="alert"],
+.alerts-dlx .template-shoelace .alerts-dlx-alert[role="alert"] {
+	font-size: var(--alerts-dlx-base-font-size, 16px);
+}
+
+/* High specificity selectors to override theme-specific font sizes */
+.template-chakra .alerts-dlx-alert[role="alert"] .alerts-dlx-chakra,
+.template-bootstrap .alerts-dlx-alert[role="alert"] .alerts-dlx-bootstrap,
+.template-material .alerts-dlx-alert[role="alert"] .alerts-dlx-material,
+.template-shoelace .alerts-dlx-alert[role="alert"] .alerts-dlx-shoelace {
+	font-size: inherit;
+}
+
+/* Ensure proper font inheritance for all child elements */
+.template-chakra .alerts-dlx-alert[role="alert"] .alerts-dlx-chakra *,
+.template-bootstrap .alerts-dlx-alert[role="alert"] .alerts-dlx-bootstrap *,
+.template-material .alerts-dlx-alert[role="alert"] .alerts-dlx-material *,
+.template-shoelace .alerts-dlx-alert[role="alert"] .alerts-dlx-shoelace * {
+	font-size: inherit;
+}
+
+/* Specific overrides for content elements with high specificity */
+.template-chakra .alerts-dlx-alert[role="alert"] .alerts-dlx-chakra section h2.alerts-dlx-title,
+.template-bootstrap .alerts-dlx-alert[role="alert"] .alerts-dlx-bootstrap section h2.alerts-dlx-title,
+.template-material .alerts-dlx-alert[role="alert"] .alerts-dlx-material section h2.alerts-dlx-title,
+.template-shoelace .alerts-dlx-alert[role="alert"] .alerts-dlx-shoelace section h2.alerts-dlx-title {
+	font-size: 1.2em;
+}
+
+.template-chakra .alerts-dlx-alert[role="alert"] .alerts-dlx-chakra .alerts-dlx-content p,
+.template-bootstrap .alerts-dlx-alert[role="alert"] .alerts-dlx-bootstrap .alerts-dlx-content p,
+.template-material .alerts-dlx-alert[role="alert"] .alerts-dlx-material .alerts-dlx-content p,
+.template-shoelace .alerts-dlx-alert[role="alert"] .alerts-dlx-shoelace .alerts-dlx-content p {
+	font-size: 1.2em;
+}
+
+.template-chakra .alerts-dlx-alert[role="alert"] .alerts-dlx-chakra button.button-reset,
+.template-chakra .alerts-dlx-alert[role="alert"] .alerts-dlx-chakra a.alerts-dlx-button,
+.template-chakra .alerts-dlx-alert[role="alert"] .alerts-dlx-chakra button.button-reset.components-button,
+.template-bootstrap .alerts-dlx-alert[role="alert"] .alerts-dlx-bootstrap button.button-reset,
+.template-bootstrap .alerts-dlx-alert[role="alert"] .alerts-dlx-bootstrap a.alerts-dlx-button,
+.template-bootstrap .alerts-dlx-alert[role="alert"] .alerts-dlx-bootstrap button.button-reset.components-button,
+.template-material .alerts-dlx-alert[role="alert"] .alerts-dlx-material button.button-reset,
+.template-material .alerts-dlx-alert[role="alert"] .alerts-dlx-material a.alerts-dlx-button,
+.template-material .alerts-dlx-alert[role="alert"] .alerts-dlx-material button.button-reset.components-button,
+.template-shoelace .alerts-dlx-alert[role="alert"] .alerts-dlx-shoelace button.button-reset,
+.template-shoelace .alerts-dlx-alert[role="alert"] .alerts-dlx-shoelace a.alerts-dlx-button,
+.template-shoelace .alerts-dlx-alert[role="alert"] .alerts-dlx-shoelace button.button-reset.components-button {
+	font-size: 1.2em;
+}
 .alerts-dlx-content a,
 .alerts-dlx-content a:hover {
 	color: inherit;
