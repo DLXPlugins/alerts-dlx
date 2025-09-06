@@ -419,8 +419,8 @@ class Blocks {
 		<style>
 			#<?php echo esc_html( $unique_id ); ?> {
 				max-width: <?php echo esc_html( $maximum_width ); ?><?php echo esc_html( $maximum_width_unit ); ?>;
-				font-size: <?php echo esc_html( $base_font_size ); ?>px;
-				font-size: clamp(0.75rem, 2vw + 1rem, <?php echo esc_html( $base_font_size ); ?>px);
+				--alerts-dlx-base-font-size: <?php echo esc_html( $base_font_size ); ?>px;
+				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-base-size: <?php echo esc_html( $base_font_size ); ?>px;
 			}
 		</style>
 		<div
