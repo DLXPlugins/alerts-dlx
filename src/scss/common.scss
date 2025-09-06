@@ -225,3 +225,9 @@ figure.alerts-dlx-alert {
 	animation-timing-function: ease-in-out;
 	animation-fill-mode: forwards;
 }
+
+.entry-content .alerts-dlx-alert section,
+.alerts-dlx-alert section {
+	margin: 0;
+	padding: 0;
+}
