@@ -190,14 +190,15 @@ $bootstrap-dark-color-light: #d3d3d4;
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: var(--alerts-dlx-bootstrap-color-light, $white);
+					color: var(--alerts-dlx-bootstrap-color-alt-text, $white);
 					border: 1px solid transparent;
 
 					background-color: var(--alerts-dlx-bootstrap-color-alt, $bootstrap-primary-color-alt);
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: var(--alerts-dlx-bootstrap-color-accent, $bootstrap-primary-color-accent);
+					background-color: var(--alerts-dlx-bootstrap-color-alt-hover, $bootstrap-primary-color-accent);
+					color: var(--alerts-dlx-bootstrap-color-alt-text-hover, $bootstrap-primary-color-accent);
 				}
 			}
 		}

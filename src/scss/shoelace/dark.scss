@@ -542,7 +542,7 @@ $shoelace-dark-danger-color-accent: #ef437f;
 		a.alerts-dlx-button,
 		a.alerts-dlx-button:hover,
 		button.button-reset.alerts-dlx-button:hover {
-			color: $white;
+			color: var( --alerts-dlx-shoelace-color-alt-text, $white );
 			border: 1px solid transparent;
 
 			background: var(--alerts-dlx-shoelace-color-alt, $shoelace-dark-primary-color );
@@ -558,7 +558,8 @@ $shoelace-dark-danger-color-accent: #ef437f;
 		}
 		a.alerts-dlx-button:hover,
 		button.button-reset.alerts-dlx-button:hover {
-			background: var(--alerts-dlx-shoelace-color-alt, $shoelace-dark-primary-color-accent );
+			background: var(--alerts-dlx-shoelace-color-alt-hover, $shoelace-dark-primary-color-accent );
+			color: var( --alerts-dlx-shoelace-color-alt-text-hover, $white );
 		}
 
 		svg,
@@ -597,23 +598,23 @@ $shoelace-dark-danger-color-accent: #ef437f;
 			figure {
 				position: relative;
 				border: 1px solid transparent;
-				background: var(--alerts-dlx-shoelace-color-primary, $shoelace-dark-primary-color );
-				color: var( --alerts-dlx-shoelace-color-bold, $white );
+				background: var(--alerts-dlx-shoelace-color-light, $shoelace-dark-primary-color );
+				color: var( --alerts-dlx-shoelace-color-primary, $white );
 			}
 			svg {
 				color: var( --alerts-dlx-shoelace-color-bold, $white );
 				fill: var( --alerts-dlx-shoelace-color-bold, $white );
 			}
 			h2, p {
-				color: var( --alerts-dlx-shoelace-color-bold, $white );
+				color: var( --alerts-dlx-shoelace-color-primary, $white );
 			}
 			section .alerts-dlx-button {
-				background: var(--alerts-dlx-shoelace-color-accent, $shoelace-dark-primary-color-accent );
-				color: var( --alerts-dlx-shoelace-color-bold, $white );
+				background: var(--alerts-dlx-shoelace-color-alt, $shoelace-dark-primary-color-accent );
+				color: var( --alerts-dlx-shoelace-color-alt-text, $white );
 			}
 			section .alerts-dlx-button:hover {
-				background: var(--alerts-dlx-shoelace-color-accent, $shoelace-dark-primary-color-accent );
-				color: var( --alerts-dlx-shoelace-color-bold, $white );
+				background: var(--alerts-dlx-shoelace-color-alt-hover, $shoelace-dark-primary-color-accent );
+				color: var( --alerts-dlx-shoelace-color-alt-text-hover, $white );
 			}
 		}
 	}

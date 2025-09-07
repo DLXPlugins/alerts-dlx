@@ -325,14 +325,15 @@ $chakra-dark-error-color-border: #302A33;
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: var(--alerts-dlx-chakra-color-light, $chakra-dark-info-color-light);
+					color: var(--alerts-dlx-chakra-color-alt-text, $chakra-dark-info-color-light);
 					border: 1px solid transparent;
 
 					background-color: var(--alerts-dlx-chakra-color-alt, $chakra-dark-info-color-alt);
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: var(--alerts-dlx-chakra-color-accent, $chakra-dark-info-color-accent);
+					background-color: var(--alerts-dlx-chakra-color-alt-hover, $chakra-dark-info-color-accent);
+					color: var(--alerts-dlx-chakra-color-alt-text-hover, $chakra-dark-info-color-accent);
 				}
 
 				.alerts-dlx-icon {
@@ -373,14 +374,15 @@ $chakra-dark-error-color-border: #302A33;
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: var(--alerts-dlx-chakra-color-light, $chakra-dark-info-color-light);
+					color: var(--alerts-dlx-chakra-color-alt-text, $chakra-dark-info-color-light);
 					border: 1px solid transparent;
 
 					background-color: var(--alerts-dlx-chakra-color-alt, $chakra-dark-info-color-alt);
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: var(--alerts-dlx-chakra-color-accent, $chakra-dark-info-color-accent);
+					color: var(--alerts-dlx-chakra-color-alt-text-hover, $chakra-dark-info-color-alt);
+					background-color: var(--alerts-dlx-chakra-color-alt-hover, $chakra-dark-info-color-alt);
 				}
 
 				.alerts-dlx-icon {
@@ -421,14 +423,15 @@ $chakra-dark-error-color-border: #302A33;
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: var(--alerts-dlx-chakra-color-light, $chakra-dark-info-color-light);
+					color: var(--alerts-dlx-chakra-color-alt-text, $chakra-dark-info-color-light);
 					border: 1px solid transparent;
 
 					background-color: var(--alerts-dlx-chakra-color-alt, $chakra-dark-info-color-alt);
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: var(--alerts-dlx-chakra-color-accent, $chakra-dark-info-color-accent);
+					background-color: var(--alerts-dlx-chakra-color-alt-hover, $chakra-dark-info-color-accent);
+					color: var(--alerts-dlx-chakra-color-alt-text-hover, $chakra-dark-info-color-accent);
 				}
 
 				.alerts-dlx-icon {
@@ -466,14 +469,14 @@ $chakra-dark-error-color-border: #302A33;
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: var(--alerts-dlx-chakra-color-light, $chakra-dark-info-color-light);
+					color: var(--alerts-dlx-chakra-color-alt-text, $chakra-dark-info-color-light);
 					border: 2px solid var( --alerts-dlx-chakra-color-border, $chakra-dark-info-color-border);
 					background-color: var( --alerts-dlx-chakra-color-alt, $chakra-dark-info-color-alt);
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: var(--alerts-dlx-chakra-color-accent, $chakra-dark-info-color-accent);
-					color: var( --alerts-dlx-chakra-color-light, $chakra-dark-info-color-light);
+					background-color: var(--alerts-dlx-chakra-color-alt-hover, $chakra-dark-info-color-accent);
+					color: var(--alerts-dlx-chakra-color-alt-text-hover, $chakra-dark-info-color-accent);
 					border: 2px solid var( --alerts-dlx-chakra-color-border, $chakra-dark-info-color-border);
 				}
 
