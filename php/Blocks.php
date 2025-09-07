@@ -114,6 +114,9 @@ class Blocks {
 			'color_border'            => '',
 			'color_accent'            => '',
 			'color_alt'               => '',
+			'color_alt_hover'         => '',
+			'color_alt_text'          => '',
+			'color_alt_text_hover'    => '',
 			'color_bold'              => '',
 			'color_light'             => '',
 			'close_button_enabled'    => false,
@@ -391,6 +394,9 @@ class Blocks {
 				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-alt: <?php echo esc_html( $color_alt ); ?>;
 				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-bold: <?php echo esc_html( $color_bold ); ?>;
 				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-light: <?php echo esc_html( $color_light ); ?>;
+				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-alt-hover: <?php echo esc_html( $color_alt_hover ); ?>;
+				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-alt-text: <?php echo esc_html( $color_alt_text ); ?>;
+				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-alt-text-hover: <?php echo esc_html( $color_alt_text_hover ); ?>;
 			}
 			<?php
 			$custom_css = ob_get_clean();
