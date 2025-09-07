@@ -666,10 +666,13 @@ $material-error-color-light: #fdeded;
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: $white;
+					color: var( --alerts-dlx-material-color-alt-text, $white );
 					border: 1px solid transparent;
-
 					background-color: var(--alerts-dlx-material-color-alt, $material-info-color-light);
+				}
+				a.alerts-dlx-button:hover,
+				button.button-reset.alerts-dlx-button:hover {
+					background-color: var( --alerts-dlx-material-color-alt-hover, $material-info-color-accent );
 				}
 				svg,
 				svg path {
@@ -680,7 +683,7 @@ $material-error-color-light: #fdeded;
 		}
 		&.is-appearance-outlined {
 			.alerts-dlx-material {
-				background-color: $white;
+				background-color: var( --alerts-dlx-material-color-light, $white );
 				color: var( --alerts-dlx-material-color-primary, $material-info-color );
 				border: 2px solid var( --alerts-dlx-material-color-border, $material-info-color-bold );
 
@@ -688,14 +691,14 @@ $material-error-color-light: #fdeded;
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: var( --alerts-dlx-material-color-primary, $material-info-color );
+					color: var( --alerts-dlx-material-color-alt-text, $material-info-color );
 					border: 2px solid var( --alerts-dlx-material-color-border, $material-info-color-bold );
-					background-color: $white;
+					background-color: var( --alerts-dlx-material-color-alt, $white );
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: var( --alerts-dlx-material-color-alt, $material-info-color-accent );
-					color: $white;
+					background-color: var( --alerts-dlx-material-color-alt-hover, $material-info-color-accent );
+					color: var( --alerts-dlx-material-color-alt-text-hover, $white );
 					border: 2px solid var( --alerts-dlx-material-color-alt, $material-info-color-accent );
 				}
 
@@ -710,22 +713,22 @@ $material-error-color-light: #fdeded;
 		&.is-appearance-filled {
 			.alerts-dlx-material {
 				background-color: var( --alerts-dlx-material-color-light, $material-info-color-light );
-				color: $white;
+				color: var( --alerts-dlx-material-color-alt-text, $white );
 				border: 2px solid var( --alerts-dlx-material-color-border, $material-info-color-bold );
 
 				button.button-reset.alerts-dlx-button,
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: var( --alerts-dlx-material-color-alt, $material-info-color );
+					color: var( --alerts-dlx-material-color-alt-text, $material-info-color );
 					border: 2px solid var( --alerts-dlx-material-color-alt, $material-info-color );
-					background-color: $white;
+					background-color: var( --alerts-dlx-material-color-alt, $white );
 				}
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: var( --alerts-dlx-material-color-alt, $material-info-color-accent );
-					color: $white;
-					border: 2px solid $white;
+					background-color: var( --alerts-dlx-material-color-alt-hover, $material-info-color-accent );
+					color: var( --alerts-dlx-material-color-alt-text-hover, $white );
+					border: 2px solid var( --alerts-dlx-material-color-alt, $white );
 				}
 				
 				svg,

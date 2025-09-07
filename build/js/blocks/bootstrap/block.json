@@ -80,6 +80,18 @@
       "type": "string",
       "default": "var(--alerts-dlx-bootstrap-color-alt, #084298)"
     },
+    "colorAltHover": {
+      "type": "string",
+      "default": "var(--alerts-dlx-bootstrap-color-alt-hover, #084298)"
+    },
+    "colorAltText": {
+      "type": "string",
+      "default": "var(--alerts-dlx-bootstrap-color-alt-text, #ffffff)"
+    },
+    "colorAltTextHover": {
+      "type": "string",
+      "default": "var(--alerts-dlx-bootstrap-color-alt-text-hover, #ffffff)"
+    },
     "colorBold": {
       "type": "string",
       "default": "var(--alerts-dlx-bootstrap-color-bold, #084298)"

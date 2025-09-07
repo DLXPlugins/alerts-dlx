@@ -148,6 +148,18 @@
       "type": "string",
       "default": "var(--alerts-dlx-material-color-alt, #2d76bb)"
     },
+    "colorAltHover": {
+      "type": "string",
+      "default": "var(--alerts-dlx-material-color-alt-hover, #2d76bb)"
+    },
+    "colorAltText": {
+      "type": "string",
+      "default": "var(--alerts-dlx-material-color-alt-text, #ffffff)"
+    },
+    "colorAltTextHover": {
+      "type": "string",
+      "default": "var(--alerts-dlx-material-color-alt-text-hover, #ffffff)"
+    },
     "colorBold": {
       "type": "string",
       "default": "var(--alerts-dlx-material-color-bold, #2d76bb)"

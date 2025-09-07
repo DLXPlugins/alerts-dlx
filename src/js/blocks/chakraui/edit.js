@@ -31,7 +31,6 @@ import {
 	useBlockProps,
 	useInnerBlocksProps,
 	store,
-	PanelColorSettings,
 } from '@wordpress/block-editor';
 
 import { useInstanceId } from '@wordpress/compose';
@@ -121,16 +120,6 @@ const ChakraAlerts = ( props ) => {
 		}
 	}, [] );
 
-	const styles = `
-		#${ uniqueId } {
-			--alerts-dlx-chakra-color-primary: ${ colorPrimary };
-			--alerts-dlx-chakra-color-border: ${ colorBorder };
-			--alerts-dlx-chakra-color-accent: ${ colorAccent };
-			--alerts-dlx-chakra-color-alt: ${ colorAlt };
-			--alerts-dlx-chakra-color-bold: ${ colorBold };
-			--alerts-dlx-chakra-color-light: ${ colorLight };
-		}`;
-
 	const inspectorControls = (
 		<>
 			<PanelBody title={ __( 'Alert Settings', 'alerts-dlx' ) }>
@@ -210,62 +199,6 @@ const ChakraAlerts = ( props ) => {
 					}
 				</>
 			</PanelBody>
-			{
-				'custom' === alertType && (
-					<PanelColorSettings
-						__experimentalIsRenderedInSidebar
-						title={ __( 'Custom Color Settings', 'alerts-dlx' ) }
-						colorSettings={
-							[
-								{
-									label: __( 'Text Color', 'alerts-dlx' ),
-									value: colorPrimary,
-									onChange: ( value ) => {
-										setAttributes( { colorPrimary: value } );
-									},
-								},
-								{
-									label: __( 'Border Color', 'alerts-dlx' ),
-									value: colorBorder,
-									onChange: ( value ) => {
-										setAttributes( { colorBorder: value } );
-									},
-								},
-								{
-									label: __( 'Accent Color', 'alerts-dlx' ),
-									value: colorAccent,
-									onChange: ( value ) => {
-										setAttributes( { colorAccent: value } );
-									},
-								},
-								{
-									label: __( 'Button Color', 'alerts-dlx' ),
-									value: colorAlt,
-									onChange: ( value ) => {
-										setAttributes( { colorAlt: value } );
-									},
-								},
-								{
-									label: __( 'Icon Color', 'alerts-dlx' ),
-									value: colorBold,
-									onChange: ( value ) => {
-										setAttributes( { colorBold: value } );
-									},
-								},
-								{
-									label: __( 'Background Color', 'alerts-dlx' ),
-									value: colorLight,
-									onChange: ( value ) => {
-										setAttributes( { colorLight: value } );
-									},
-								},
-							]
-						}
-						colors={ chakraColors }
-					/>
-
-				)
-			}
 			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'quotes-dlx' ) }>
 				<>
 					<UnitChooser
@@ -465,11 +398,6 @@ const ChakraAlerts = ( props ) => {
 			<InspectorControls>{ inspectorControls }</InspectorControls>
 			<InspectorAdvancedControls>{ advancedControls }</InspectorAdvancedControls>
 			<style>{ baseFontSizeStyles }</style>
-			{
-				'custom' === alertType && (
-					<style>{ styles }</style>
-				)
-			}
 			<figure
 				role="alert"
 				className={ classnames( 'alerts-dlx-alert alerts-dlx-chakra', {

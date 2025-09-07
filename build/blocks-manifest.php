@@ -83,6 +83,18 @@ return array(
 				'type' => 'string',
 				'default' => 'var(--alerts-dlx-bootstrap-color-alt, #084298)'
 			),
+			'colorAltHover' => array(
+				'type' => 'string',
+				'default' => 'var(--alerts-dlx-bootstrap-color-alt-hover, #084298)'
+			),
+			'colorAltText' => array(
+				'type' => 'string',
+				'default' => 'var(--alerts-dlx-bootstrap-color-alt-text, #ffffff)'
+			),
+			'colorAltTextHover' => array(
+				'type' => 'string',
+				'default' => 'var(--alerts-dlx-bootstrap-color-alt-text-hover, #ffffff)'
+			),
 			'colorBold' => array(
 				'type' => 'string',
 				'default' => 'var(--alerts-dlx-bootstrap-color-bold, #084298)'
@@ -393,6 +405,18 @@ return array(
 				'type' => 'string',
 				'default' => 'var(--alerts-dlx-chakra-color-alt, #2d76bb)'
 			),
+			'colorAltHover' => array(
+				'type' => 'string',
+				'default' => 'var(--alerts-dlx-chakra-color-alt-hover, #2d76bb)'
+			),
+			'colorAltText' => array(
+				'type' => 'string',
+				'default' => 'var(--alerts-dlx-chakra-color-alt-text, #ffffff)'
+			),
+			'colorAltTextHover' => array(
+				'type' => 'string',
+				'default' => 'var(--alerts-dlx-chakra-color-alt-text-hover, #ffffff)'
+			),
 			'colorBold' => array(
 				'type' => 'string',
 				'default' => 'var(--alerts-dlx-chakra-color-bold, #2d76bb)'
@@ -606,6 +630,18 @@ return array(
 			'colorAlt' => array(
 				'type' => 'string',
 				'default' => 'var(--alerts-dlx-material-color-alt, #2d76bb)'
+			),
+			'colorAltHover' => array(
+				'type' => 'string',
+				'default' => 'var(--alerts-dlx-material-color-alt-hover, #2d76bb)'
+			),
+			'colorAltText' => array(
+				'type' => 'string',
+				'default' => 'var(--alerts-dlx-material-color-alt-text, #ffffff)'
+			),
+			'colorAltTextHover' => array(
+				'type' => 'string',
+				'default' => 'var(--alerts-dlx-material-color-alt-text-hover, #ffffff)'
 			),
 			'colorBold' => array(
 				'type' => 'string',
@@ -824,6 +860,18 @@ return array(
 			'colorAlt' => array(
 				'type' => 'string',
 				'default' => 'var(--alerts-dlx-shoelace-color-alt, #084298)'
+			),
+			'colorAltHover' => array(
+				'type' => 'string',
+				'default' => 'var(--alerts-dlx-shoelace-color-alt-hover, #084298)'
+			),
+			'colorAltText' => array(
+				'type' => 'string',
+				'default' => 'var(--alerts-dlx-shoelace-color-alt-text, #ffffff)'
+			),
+			'colorAltTextHover' => array(
+				'type' => 'string',
+				'default' => 'var(--alerts-dlx-shoelace-color-alt-text-hover, #ffffff)'
 			),
 			'colorBold' => array(
 				'type' => 'string',
