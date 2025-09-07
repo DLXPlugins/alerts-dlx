@@ -3,7 +3,7 @@ Contributors: ronalfy
 Tags: alert box, notifications, alerts, shortcode, blocks
 Requires at least: 5.9
 Tested up to: 6.8
-Stable tag: 2.1.0
+Stable tag: 2.1.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -107,6 +107,12 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Changelog ==
 
+= 2.1.2 =
+* Released 2025-09-06
+* Bug fix: several fonts were out of proportion, so this has been addressed with this update.
+* Bug fix: several custom colors were missing for button styles.
+* Bug fix: section and font styles were being overridden by themes causing the boxes to look warped.
+
 = 2.1.0 =
 * Released 2025-08-10
 * New feature: Place blocks in "Editorial Only" mode so they only show up in the block editor and not the frontend.
@@ -180,5 +186,5 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Upgrade Notice ==
 
-= 2.1.0 =
-Added Editorial Only feature so you can mark blocks that only show up in the block editor. Added theme colors to custom colors. Added block manifests to speed up block performance.
+= 2.1.2 =
+General font fixes. Added missing button colors for custom colors. Fixing theme style issues.
