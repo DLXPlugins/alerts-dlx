@@ -70,18 +70,6 @@
 			"type": "string",
 			"default": "var(--alerts-dlx-bootstrap-color-alt, #084298)"
 		},
-		"colorAltHover": {
-			"type": "string",
-			"default": "var(--alerts-dlx-bootstrap-color-alt-hover, #084298)"
-		},
-		"colorAltText": {
-			"type": "string",
-			"default": "var(--alerts-dlx-bootstrap-color-alt-text, #ffffff)"
-		},
-		"colorAltTextHover": {
-			"type": "string",
-			"default": "var(--alerts-dlx-bootstrap-color-alt-text-hover, #ffffff)"
-		},
 		"colorBold": {
 			"type": "string",
 			"default": "var(--alerts-dlx-bootstrap-color-bold, #084298)"
@@ -207,5 +195,5 @@
 		"className": true
 	},
 	"editorScript": "alerts-dlx-block",
-	"editorStyle": [ "alerts-dlx-block-editor-styles", "alerts-dlx-bootstrap-light-css","alerts-dlx-bootstrap-dark-css", "alerts-dlx-block-editor-styles-lato" ]
+	"editorStyle": [ "alerts-dlx-block-editor-styles", "alerts-dlx-all-blocks-css", "alerts-dlx-block-editor-styles-lato" ]
 }

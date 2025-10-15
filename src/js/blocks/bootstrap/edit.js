@@ -31,6 +31,7 @@ import {
 	RichText,
 	useBlockProps,
 	useInnerBlocksProps,
+	PanelColorSettings,
 	store,
 } from '@wordpress/block-editor';
 
@@ -123,6 +124,16 @@ const BootstrapAlerts = ( props ) => {
 		}
 	}, [ innerBlocksRef ] );
 
+	const styles = `
+		#${ uniqueId } {
+			--alerts-dlx-bootstrap-color-primary: ${ colorPrimary };
+			--alerts-dlx-bootstrap-color-border: ${ colorBorder };
+			--alerts-dlx-bootstrap-color-accent: ${ colorAccent };
+			--alerts-dlx-bootstrap-color-alt: ${ colorAlt };
+			--alerts-dlx-bootstrap-color-bold: ${ colorBold };
+			--alerts-dlx-bootstrap-color-light: ${ colorLight };
+		}`;
+
 	const inspectorControls = (
 		<>
 			<PanelBody title={ __( 'Alert Settings', 'alerts-dlx' ) }>
@@ -206,6 +217,57 @@ const BootstrapAlerts = ( props ) => {
 					) }
 				</>
 			</PanelBody>
+			{ 'custom' === alertType && (
+				<PanelColorSettings
+					__experimentalIsRenderedInSidebar
+					title={ __( 'Custom Color Settings', 'alerts-dlx' ) }
+					colorSettings={ [
+						{
+							label: __( 'Text Color', 'alerts-dlx' ),
+							value: colorPrimary,
+							onChange: ( value ) => {
+								setAttributes( { colorPrimary: value } );
+							},
+						},
+						{
+							label: __( 'Border Color', 'alerts-dlx' ),
+							value: colorBorder,
+							onChange: ( value ) => {
+								setAttributes( { colorBorder: value } );
+							},
+						},
+						{
+							label: __( 'Accent Color', 'alerts-dlx' ),
+							value: colorAccent,
+							onChange: ( value ) => {
+								setAttributes( { colorAccent: value } );
+							},
+						},
+						{
+							label: __( 'Button Color', 'alerts-dlx' ),
+							value: colorAlt,
+							onChange: ( value ) => {
+								setAttributes( { colorAlt: value } );
+							},
+						},
+						{
+							label: __( 'Icon Color', 'alerts-dlx' ),
+							value: colorBold,
+							onChange: ( value ) => {
+								setAttributes( { colorBold: value } );
+							},
+						},
+						{
+							label: __( 'Background Color', 'alerts-dlx' ),
+							value: colorLight,
+							onChange: ( value ) => {
+								setAttributes( { colorLight: value } );
+							},
+						},
+					] }
+					colors={ BootstrapColors }
+				/>
+			) }
 			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'alerts-dlx' ) }>
 				<>
 					<UnitChooser
@@ -398,6 +460,7 @@ const BootstrapAlerts = ( props ) => {
 			<InspectorControls>{ inspectorControls }</InspectorControls>
 			<InspectorAdvancedControls>{ advancedControls }</InspectorAdvancedControls>
 			<style>{ baseFontSizeStyles }</style>
+			{ 'custom' === alertType && <style>{ styles }</style> }
 			<link rel="stylesheet" href={ `${ alertsDlxBlock.font_stylesheet }` } />
 			<figure
 				role="alert"
