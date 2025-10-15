@@ -32,6 +32,7 @@ import {
 	useInnerBlocksProps,
 	InnerBlocks,
 	store,
+	PanelColorSettings,
 } from '@wordpress/block-editor';
 
 import { useInstanceId } from '@wordpress/compose';
@@ -41,6 +42,7 @@ import UnitChooser from '../components/unit-picker';
 import IconPicker from '../components/IconPicker';
 import materialSvgs from '../components/icons/MaterialIcons';
 import { MaterialCloseIcon } from '../components/CloseButtonIcons';
+import materialColors from './colors';
 
 const MaterialAlerts = ( props ) => {
 	const generatedUniqueId = useInstanceId( MaterialAlerts, 'adlx-material' );
@@ -92,6 +94,16 @@ const MaterialAlerts = ( props ) => {
 			renderAppender: InnerBlocks.DefaultBlockAppender,
 		}
 	);
+
+	const styles = `
+		#${ uniqueId } {
+			--alerts-dlx-material-color-primary: ${ colorPrimary };
+			--alerts-dlx-material-color-border: ${ colorBorder };
+			--alerts-dlx-material-color-accent: ${ colorAccent };
+			--alerts-dlx-material-color-alt: ${ colorAlt };
+			--alerts-dlx-material-color-bold: ${ colorBold };
+			--alerts-dlx-material-color-light: ${ colorLight };
+		}`;
 
 	/**
 	 * Migrate RichText to InnerBlocks.
@@ -189,6 +201,57 @@ const MaterialAlerts = ( props ) => {
 					) }
 				</>
 			</PanelBody>
+			{ 'custom' === alertType && (
+				<PanelColorSettings
+					__experimentalIsRenderedInSidebar
+					title={ __( 'Custom Color Settings', 'alerts-dlx' ) }
+					colorSettings={ [
+						{
+							label: __( 'Text Color', 'alerts-dlx' ),
+							value: colorPrimary,
+							onChange: ( value ) => {
+								setAttributes( { colorPrimary: value } );
+							},
+						},
+						{
+							label: __( 'Border Color', 'alerts-dlx' ),
+							value: colorBorder,
+							onChange: ( value ) => {
+								setAttributes( { colorBorder: value } );
+							},
+						},
+						{
+							label: __( 'Accent Color', 'alerts-dlx' ),
+							value: colorAccent,
+							onChange: ( value ) => {
+								setAttributes( { colorAccent: value } );
+							},
+						},
+						{
+							label: __( 'Button Color', 'alerts-dlx' ),
+							value: colorAlt,
+							onChange: ( value ) => {
+								setAttributes( { colorAlt: value } );
+							},
+						},
+						{
+							label: __( 'Icon Color', 'alerts-dlx' ),
+							value: colorBold,
+							onChange: ( value ) => {
+								setAttributes( { colorBold: value } );
+							},
+						},
+						{
+							label: __( 'Background Color', 'alerts-dlx' ),
+							value: colorLight,
+							onChange: ( value ) => {
+								setAttributes( { colorLight: value } );
+							},
+						},
+					] }
+					colors={ materialColors }
+				/>
+			) }
 			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'quotes-dlx' ) }>
 				<>
 					<UnitChooser
@@ -422,6 +485,7 @@ const MaterialAlerts = ( props ) => {
 			<InspectorControls>{ inspectorControls }</InspectorControls>
 			<InspectorAdvancedControls>{ advancedControls }</InspectorAdvancedControls>
 			<style>{ baseFontSizeStyles }</style>
+			{ 'custom' === alertType && <style>{ styles }</style> }
 			<figure
 				role="alert"
 				className={ classnames( 'alerts-dlx-alert alerts-dlx-material', {
