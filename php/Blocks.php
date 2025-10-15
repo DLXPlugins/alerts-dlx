@@ -114,9 +114,6 @@ class Blocks {
 			'color_border'            => '',
 			'color_accent'            => '',
 			'color_alt'               => '',
-			'color_alt_hover'         => '',
-			'color_alt_text'          => '',
-			'color_alt_text_hover'    => '',
 			'color_bold'              => '',
 			'color_light'             => '',
 			'close_button_enabled'    => false,
@@ -160,32 +157,8 @@ class Blocks {
 		if ( ! wp_style_is( 'alerts-dlx-block-editor-styles-lato', 'done' ) ) {
 			$style_handles_to_print[] = 'alerts-dlx-block-editor-styles-lato';
 		}
-
-		switch ( $atts['alert_group'] ) {
-			case 'bootstrap':
-				if ( ! wp_style_is( 'alerts-dlx-bootstrap-light-css', 'done' ) ) {
-					$style_handles_to_print[] = 'alerts-dlx-bootstrap-light-css';
-					$style_handles_to_print[] = 'alerts-dlx-bootstrap-dark-css';
-				}
-				break;
-			case 'chakra':
-				if ( ! wp_style_is( 'alerts-dlx-chakra-light-css', 'done' ) ) {
-					$style_handles_to_print[] = 'alerts-dlx-chakra-light-css';
-					$style_handles_to_print[] = 'alerts-dlx-chakra-dark-css';
-				}
-				break;
-			case 'material':
-				if ( ! wp_style_is( 'alerts-dlx-material-light-css', 'done' ) ) {
-					$style_handles_to_print[] = 'alerts-dlx-material-light-css';
-					$style_handles_to_print[] = 'alerts-dlx-material-dark-css';
-				}
-				break;
-			case 'shoelace':
-				if ( ! wp_style_is( 'alerts-dlx-shoelace-light-css', 'done' ) ) {
-					$style_handles_to_print[] = 'alerts-dlx-shoelace-light-css';
-					$style_handles_to_print[] = 'alerts-dlx-shoelace-dark-css';
-				}
-				break;
+		if ( ! wp_style_is( 'alerts-dlx-all-blocks-css', 'done' ) ) {
+			$style_handles_to_print[] = 'alerts-dlx-all-blocks-css';
 		}
 		ob_start();
 
@@ -198,9 +171,6 @@ class Blocks {
 				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-border: <?php echo esc_html( $atts['color_border'] ); ?>;
 				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-accent: <?php echo esc_html( $atts['color_accent'] ); ?>;
 				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-alt: <?php echo esc_html( $atts['color_alt'] ); ?>;
-				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-alt-hover: <?php echo esc_html( $atts['color_alt_hover'] ); ?>;
-				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-alt-text: <?php echo esc_html( $atts['color_alt_text'] ); ?>;
-				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-alt-text-hover: <?php echo esc_html( $atts['color_alt_text_hover'] ); ?>;
 				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-bold: <?php echo esc_html( $atts['color_bold'] ); ?>;
 				--alerts-dlx-<?php echo esc_html( $atts['alert_group'] ); ?>-color-light: <?php echo esc_html( $atts['color_light'] ); ?>;
 			}
@@ -257,9 +227,6 @@ class Blocks {
 		$color_border            = Functions::sanitize_attribute( $attributes, 'colorBorder', 'text' );
 		$color_accent            = Functions::sanitize_attribute( $attributes, 'colorAccent', 'text' );
 		$color_alt               = Functions::sanitize_attribute( $attributes, 'colorAlt', 'text' );
-		$color_alt_hover         = Functions::sanitize_attribute( $attributes, 'colorAltHover', 'text' );
-		$color_alt_text          = Functions::sanitize_attribute( $attributes, 'colorAltText', 'text' );
-		$color_alt_text_hover    = Functions::sanitize_attribute( $attributes, 'colorAltTextHover', 'text' );
 		$color_bold              = Functions::sanitize_attribute( $attributes, 'colorBold', 'text' );
 		$color_light             = Functions::sanitize_attribute( $attributes, 'colorLight', 'text' );
 		$close_button_enabled    = Functions::sanitize_attribute( $attributes, 'closeButtonEnabled', 'boolean' );
@@ -297,77 +264,13 @@ class Blocks {
 		// Register scripts.
 		$this->register_block_editor_scripts();
 
-		// Print block styles.
-		switch ( $alert_group ) {
-			case 'bootstrap':
-				if ( 'dark' === $mode ) {
-					wp_print_styles(
-						array(
-							'alerts-dlx-bootstrap-dark-css',
-							'alerts-dlx-block-editor-styles-lato',
-						)
-					);
-				} else {
-					wp_print_styles(
-						array(
-							'alerts-dlx-bootstrap-light-css',
-							'alerts-dlx-block-editor-styles-lato',
-						)
-					);
-				}
-				break;
-			case 'chakra':
-				if ( 'dark' === $mode ) {
-					wp_print_styles(
-						array(
-							'alerts-dlx-chakra-dark-css',
-							'alerts-dlx-block-editor-styles-lato',
-						)
-					);
-				} else {
-					wp_print_styles(
-						array(
-							'alerts-dlx-chakra-light-css',
-							'alerts-dlx-block-editor-styles-lato',
-						)
-					);
-				}
-				break;
-			case 'material':
-				if ( 'dark' === $mode ) {
-					wp_print_styles(
-						array(
-							'alerts-dlx-material-dark-css',
-							'alerts-dlx-block-editor-styles-lato',
-						)
-					);
-				} else {
-					wp_print_styles(
-						array(
-							'alerts-dlx-material-light-css',
-							'alerts-dlx-block-editor-styles-lato',
-						)
-					);
-				}
-				break;
-			case 'shoelace':
-				if ( 'dark' === $mode ) {
-					wp_print_styles(
-						array(
-							'alerts-dlx-shoelace-dark-css',
-							'alerts-dlx-block-editor-styles-lato',
-						)
-					);
-				} else {
-					wp_print_styles(
-						array(
-							'alerts-dlx-shoelace-light-css',
-							'alerts-dlx-block-editor-styles-lato',
-						)
-					);
-				}
-				break;
-		}
+		// Print consolidated block styles (includes all blocks and modes).
+		wp_print_styles(
+			array(
+				'alerts-dlx-all-blocks-css',
+				'alerts-dlx-block-editor-styles-lato',
+			)
+		);
 
 		// Close button footer and scripts.
 		if ( $close_button_enabled ) {
@@ -394,9 +297,6 @@ class Blocks {
 				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-alt: <?php echo esc_html( $color_alt ); ?>;
 				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-bold: <?php echo esc_html( $color_bold ); ?>;
 				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-light: <?php echo esc_html( $color_light ); ?>;
-				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-alt-hover: <?php echo esc_html( $color_alt_hover ); ?>;
-				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-alt-text: <?php echo esc_html( $color_alt_text ); ?>;
-				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-color-alt-text-hover: <?php echo esc_html( $color_alt_text_hover ); ?>;
 			}
 			<?php
 			$custom_css = ob_get_clean();
@@ -665,6 +565,13 @@ class Blocks {
 		wp_register_style(
 			'alerts-dlx-block-editor-styles-lato',
 			Functions::get_plugin_url( 'dist/alerts-dlx-gfont-lato.css' ),
+			array(),
+			Functions::get_plugin_version(),
+			'all'
+		);
+		wp_register_style(
+			'alerts-dlx-all-blocks-css',
+			Functions::get_plugin_url( 'dist/alerts-dlx-all-blocks.css' ),
 			array(),
 			Functions::get_plugin_version(),
 			'all'
