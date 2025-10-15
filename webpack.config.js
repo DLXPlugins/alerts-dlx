@@ -19,6 +19,7 @@ module.exports = ( env ) => {
 				'alerts-dlx-block-editor': './src/scss/block-editor.scss',
 				'alerts-dlx-gfont-roboto': { import: './src/scss/fonts/roboto.scss' },
 				'alerts-dlx-gfont-lato': { import: './src/scss/fonts/lato.scss' },
+				'alerts-dlx-all-blocks': './src/scss/alerts-dlx-all-blocks.scss',
 				'alerts-dlx-bootstrap-dark': './src/scss/bootstrap/dark.scss',
 				'alerts-dlx-bootstrap-light': './src/scss/bootstrap/light.scss',
 				'alerts-dlx-chakra-dark': './src/scss/chakra/dark.scss',
