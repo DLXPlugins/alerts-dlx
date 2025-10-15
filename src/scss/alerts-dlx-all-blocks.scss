@@ -1,0 +1,29 @@
+/**
+ * Consolidated AlertsDLX Styles
+ * 
+ * This file includes all block styles (Bootstrap, Chakra, Material, Shoelace)
+ * for both light and dark modes in a single CSS file.
+ * 
+ * This approach:
+ * - Reduces HTTP requests (1 file instead of 8)
+ * - Better browser caching
+ * - Simpler implementation
+ * - Better for HTTP/2 multiplexing
+ */
+
+// Import Bootstrap styles
+@import './bootstrap/light.scss';
+@import './bootstrap/dark.scss';
+
+// Import Chakra UI styles  
+@import './chakra/light.scss';
+@import './chakra/dark.scss';
+
+// Import Material UI styles
+@import './material/light.scss';
+@import './material/dark.scss';
+
+// Import Shoelace styles
+@import './shoelace/light.scss';
+@import './shoelace/dark.scss';
+
