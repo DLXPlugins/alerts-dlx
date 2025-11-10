@@ -933,8 +933,7 @@ return array(
 		'editorScript' => 'alerts-dlx-block',
 		'editorStyle' => array(
 			'alerts-dlx-block-editor-styles',
-			'alerts-dlx-shoelace-light-css',
-			'alerts-dlx-shoelace-dark-css',
+			'alerts-dlx-shoelace-styles',
 			'alerts-dlx-block-editor-styles-lato'
 		)
 	)

@@ -22,8 +22,7 @@ module.exports = ( env ) => {
 				'alerts-dlx-bootstrap-styles': './src/scss/bootstrap/styles.scss',
 				'alerts-dlx-chakra-styles': './src/scss/chakra/styles.scss',
 				'alerts-dlx-material-styles': './src/scss/material/styles.scss',
-				'alerts-dlx-shoelace-dark': './src/scss/shoelace/dark.scss',
-				'alerts-dlx-shoelace-light': './src/scss/shoelace/light.scss',
+				'alerts-dlx-shoelace-styles': './src/scss/shoelace/styles.scss',
 				'alerts-dlx-dismiss': './src/js/dismiss/index.js',
 			},
 			resolve: {

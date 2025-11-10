@@ -179,9 +179,8 @@ class Blocks {
 				}
 				break;
 			case 'shoelace':
-				if ( ! wp_style_is( 'alerts-dlx-shoelace-light-css', 'done' ) ) {
-					$style_handles_to_print[] = 'alerts-dlx-shoelace-light-css';
-					$style_handles_to_print[] = 'alerts-dlx-shoelace-dark-css';
+				if ( ! wp_style_is( 'alerts-dlx-shoelace-styles', 'done' ) ) {
+					$style_handles_to_print[] = 'alerts-dlx-shoelace-styles';
 				}
 				break;
 		}
@@ -322,21 +321,12 @@ class Blocks {
 				);
 				break;
 			case 'shoelace':
-				if ( 'dark' === $mode ) {
-					wp_print_styles(
-						array(
-							'alerts-dlx-shoelace-dark-css',
-							'alerts-dlx-block-editor-styles-lato',
-						)
-					);
-				} else {
-					wp_print_styles(
-						array(
-							'alerts-dlx-shoelace-light-css',
-							'alerts-dlx-block-editor-styles-lato',
-						)
-					);
-				}
+				wp_print_styles(
+					array(
+						'alerts-dlx-shoelace-styles',
+						'alerts-dlx-block-editor-styles-lato',
+					)
+				);
 				break;
 		}
 
@@ -606,15 +596,8 @@ class Blocks {
 			'all'
 		);
 		wp_register_style(
-			'alerts-dlx-shoelace-light-css',
-			Functions::get_plugin_url( 'dist/alerts-dlx-shoelace-light.css' ),
-			array(),
-			Functions::get_plugin_version(),
-			'all'
-		);
-		wp_register_style(
-			'alerts-dlx-shoelace-dark-css',
-			Functions::get_plugin_url( 'dist/alerts-dlx-shoelace-dark.css' ),
+			'alerts-dlx-shoelace-styles',
+			Functions::get_plugin_url( 'dist/alerts-dlx-shoelace-styles.css' ),
 			array(),
 			Functions::get_plugin_version(),
 			'all'
