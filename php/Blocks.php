@@ -163,9 +163,8 @@ class Blocks {
 
 		switch ( $atts['alert_group'] ) {
 			case 'bootstrap':
-				if ( ! wp_style_is( 'alerts-dlx-bootstrap-light-css', 'done' ) ) {
-					$style_handles_to_print[] = 'alerts-dlx-bootstrap-light-css';
-					$style_handles_to_print[] = 'alerts-dlx-bootstrap-dark-css';
+				if ( ! wp_style_is( 'alerts-dlx-bootstrap-styles', 'done' ) ) {
+					$style_handles_to_print[] = 'alerts-dlx-bootstrap-styles';
 				}
 				break;
 			case 'chakra':
@@ -300,21 +299,12 @@ class Blocks {
 		// Print block styles.
 		switch ( $alert_group ) {
 			case 'bootstrap':
-				if ( 'dark' === $mode ) {
-					wp_print_styles(
-						array(
-							'alerts-dlx-bootstrap-dark-css',
-							'alerts-dlx-block-editor-styles-lato',
-						)
-					);
-				} else {
-					wp_print_styles(
-						array(
-							'alerts-dlx-bootstrap-light-css',
-							'alerts-dlx-block-editor-styles-lato',
-						)
-					);
-				}
+				wp_print_styles(
+					array(
+						'alerts-dlx-bootstrap-styles',
+						'alerts-dlx-block-editor-styles-lato',
+					)
+				);
 				break;
 			case 'chakra':
 				if ( 'dark' === $mode ) {
@@ -607,15 +597,8 @@ class Blocks {
 		);
 
 		wp_register_style(
-			'alerts-dlx-bootstrap-light-css',
-			Functions::get_plugin_url( 'dist/alerts-dlx-bootstrap-light.css' ),
-			array(),
-			Functions::get_plugin_version(),
-			'all'
-		);
-		wp_register_style(
-			'alerts-dlx-bootstrap-dark-css',
-			Functions::get_plugin_url( 'dist/alerts-dlx-bootstrap-dark.css' ),
+			'alerts-dlx-bootstrap-styles',
+			Functions::get_plugin_url( 'dist/alerts-dlx-bootstrap-styles.css' ),
 			array(),
 			Functions::get_plugin_version(),
 			'all'
