@@ -21,8 +21,7 @@ module.exports = ( env ) => {
 				'alerts-dlx-gfont-lato': { import: './src/scss/fonts/lato.scss' },
 				'alerts-dlx-bootstrap-styles': './src/scss/bootstrap/styles.scss',
 				'alerts-dlx-chakra-styles': './src/scss/chakra/styles.scss',
-				'alerts-dlx-material-dark': './src/scss/material/dark.scss',
-				'alerts-dlx-material-light': './src/scss/material/light.scss',
+				'alerts-dlx-material-styles': './src/scss/material/styles.scss',
 				'alerts-dlx-shoelace-dark': './src/scss/shoelace/dark.scss',
 				'alerts-dlx-shoelace-light': './src/scss/shoelace/light.scss',
 				'alerts-dlx-dismiss': './src/js/dismiss/index.js',
@@ -33,7 +32,7 @@ module.exports = ( env ) => {
 				},
 			},
 			mode: env.mode,
-			devtool: 'source-map',
+			devtool: env.mode === 'development' ? 'source-map' : false,
 			output: {
 				filename: '[name].js',
 				sourceMapFilename: '[file].map[query]',

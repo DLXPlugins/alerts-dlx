@@ -700,8 +700,7 @@ return array(
 		'editorScript' => 'alerts-dlx-block',
 		'editorStyle' => array(
 			'alerts-dlx-block-editor-styles',
-			'alerts-dlx-material-light-css',
-			'alerts-dlx-material-dark-css',
+			'alerts-dlx-material-styles',
 			'alerts-dlx-block-editor-styles-lato'
 		)
 	),
