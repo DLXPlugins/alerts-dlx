@@ -1,0 +1,896 @@
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/scss/material/light.scss ***!
+  \**************************************************************************************************************************************************************************************************************************/
+button.button-reset, button.button-reset:focus, button.button-reset:hover {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  text-transform: unset;
+}
+button.button-reset.show-cursor {
+  cursor: pointer;
+}
+
+.button-reset button,
+.button-reset:focus button,
+.button-reset:hover button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+  text-transform: unset;
+}
+
+button.button-reset.alerts-dlx-icon-preview-button.components-button,
+button.button-reset.alerts-dlx-icon-preview-button.components-button:hover {
+  margin: 0;
+  padding: 0;
+}
+
+.template-material,
+.template-chakra,
+.template-bootstrap {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.dlx-admin-only-block-expires .components-number-control {
+  margin-bottom: 0;
+}
+
+.alerts-dlx-editorial-only {
+  padding: 48px;
+  border: 4px dashed #ff9800;
+}
+
+/* MaterialUI Fonts */
+.template-material *,
+.template-chakra *,
+.template-bootstrap * {
+  font-family: "Lato", "Helvetica", "Arial", sans-serif;
+}
+
+a.alerts-dlx-button.button-reset,
+a.alerts-dlx-button,
+button.button-reset,
+button.button-reset:hover,
+a.alerts-dlx-button,
+button.button-reset.components-button,
+button.button-reset.components-button:hover {
+  padding: 10px 30px;
+  border-radius: 0.3125em;
+  margin-top: 0.8em;
+  line-height: 1.2em;
+  font-size: 1em;
+  height: auto;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+a.alerts-dlx-button.button-reset ~ .button-reset, a.alerts-dlx-button.button-reset ~ .button-reset:hover,
+a.alerts-dlx-button ~ .button-reset,
+a.alerts-dlx-button ~ .button-reset:hover,
+button.button-reset ~ .button-reset,
+button.button-reset ~ .button-reset:hover,
+button.button-reset:hover ~ .button-reset,
+button.button-reset:hover ~ .button-reset:hover,
+a.alerts-dlx-button ~ .button-reset,
+a.alerts-dlx-button ~ .button-reset:hover,
+button.button-reset.components-button ~ .button-reset,
+button.button-reset.components-button ~ .button-reset:hover,
+button.button-reset.components-button:hover ~ .button-reset,
+button.button-reset.components-button:hover ~ .button-reset:hover {
+  margin-top: 0.5em;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.template-chakra a.alerts-dlx-button.button-reset,
+.template-chakra a.alerts-dlx-button,
+.template-chakra button.button-reset,
+.template-chakra button.button-reset:hover,
+.template-chakra a.alerts-dlx-button,
+.template-chakra button.button-reset.components-button,
+.template-chakra button.button-reset.components-button:hover {
+  border-radius: 0;
+}
+
+/* Block margins on front-end and block editor */
+.template-material,
+.template-chakra,
+.template-bootstrap,
+.template-shoelace {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-block-start: 1.5rem;
+  margin-block-end: 1.5rem;
+}
+.template-material section h2,
+.template-chakra section h2,
+.template-bootstrap section h2,
+.template-shoelace section h2 {
+  font-family: "Lato", "Helvetica", "Arial", sans-serif;
+  font-weight: 900;
+}
+
+.alerts-dlx-close {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  padding: 1.25rem 1rem;
+  padding-top: 0.75rem;
+}
+.alerts-dlx-close svg,
+.alerts-dlx-close svg:hover {
+  transition: color 0.3s ease-in-out;
+  width: 16px;
+  height: 16px;
+}
+
+/* Consolidate variants for ChakraUI options */
+.alerts-dlx-chakra-variants .components-button-group,
+.alerts-dlx-material-variants .components-button-group,
+.alerts-dlx-shoelace-variants .components-button-group,
+.alerts-dlx-chakra-mode .components-button-group,
+.alerts-dlx-material-mode .components-button-group,
+.alerts-dlx-bootstrap-mode .components-button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 8px;
+  column-gap: 8px;
+  justify-content: center;
+}
+.alerts-dlx-chakra-variants .components-button-group button,
+.alerts-dlx-material-variants .components-button-group button,
+.alerts-dlx-shoelace-variants .components-button-group button,
+.alerts-dlx-chakra-mode .components-button-group button,
+.alerts-dlx-material-mode .components-button-group button,
+.alerts-dlx-bootstrap-mode .components-button-group button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+figure.alerts-dlx-alert {
+  text-align: left;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Font size reset and inheritance - using high specificity selectors */
+.alerts-dlx-alert[role=alert] {
+  font-size: var(--alerts-dlx-base-font-size, 16px);
+  /* Ensure all child elements inherit the base font size */
+  /* Specific overrides for alert content with higher specificity */
+  /* Icon sizing */
+}
+.alerts-dlx-alert[role=alert] * {
+  font-size: inherit;
+}
+.alerts-dlx-alert[role=alert] section h2.alerts-dlx-title {
+  font-size: 1.2em;
+}
+.alerts-dlx-alert[role=alert] .alerts-dlx-content p {
+  font-size: 1.2em;
+}
+.alerts-dlx-alert[role=alert] button.button-reset,
+.alerts-dlx-alert[role=alert] a.alerts-dlx-button,
+.alerts-dlx-alert[role=alert] button.button-reset.components-button {
+  font-size: 1.2em;
+}
+.alerts-dlx-alert[role=alert] .alerts-dlx-icon-preview svg {
+  width: 1.4em;
+  height: 1.4em;
+}
+.alerts-dlx-alert[role=alert] .alerts-dlx-icon-frontend .alerts-dlx-icon-preview {
+  font-size: 1.2em;
+  line-height: 2.2em;
+}
+
+/* Theme-specific font size inheritance with higher specificity */
+.template-chakra .alerts-dlx-alert[role=alert],
+.template-bootstrap .alerts-dlx-alert[role=alert],
+.template-material .alerts-dlx-alert[role=alert],
+.template-shoelace .alerts-dlx-alert[role=alert] {
+  font-size: var(--alerts-dlx-base-font-size, 16px);
+}
+
+/* Multiple instances support with even higher specificity */
+.alerts-dlx .template-chakra .alerts-dlx-alert[role=alert],
+.alerts-dlx .template-bootstrap .alerts-dlx-alert[role=alert],
+.alerts-dlx .template-material .alerts-dlx-alert[role=alert],
+.alerts-dlx .template-shoelace .alerts-dlx-alert[role=alert] {
+  font-size: var(--alerts-dlx-base-font-size, 16px);
+}
+
+/* High specificity selectors to override theme-specific font sizes */
+.template-chakra .alerts-dlx-alert[role=alert] .alerts-dlx-chakra,
+.template-bootstrap .alerts-dlx-alert[role=alert] .alerts-dlx-bootstrap,
+.template-material .alerts-dlx-alert[role=alert] .alerts-dlx-material,
+.template-shoelace .alerts-dlx-alert[role=alert] .alerts-dlx-shoelace {
+  font-size: inherit;
+}
+
+/* Ensure proper font inheritance for all child elements */
+.template-chakra .alerts-dlx-alert[role=alert] .alerts-dlx-chakra *,
+.template-bootstrap .alerts-dlx-alert[role=alert] .alerts-dlx-bootstrap *,
+.template-material .alerts-dlx-alert[role=alert] .alerts-dlx-material *,
+.template-shoelace .alerts-dlx-alert[role=alert] .alerts-dlx-shoelace * {
+  font-size: inherit;
+}
+
+/* Specific overrides for content elements with high specificity */
+.template-chakra .alerts-dlx-alert[role=alert] .alerts-dlx-chakra section h2.alerts-dlx-title,
+.template-bootstrap .alerts-dlx-alert[role=alert] .alerts-dlx-bootstrap section h2.alerts-dlx-title,
+.template-material .alerts-dlx-alert[role=alert] .alerts-dlx-material section h2.alerts-dlx-title,
+.template-shoelace .alerts-dlx-alert[role=alert] .alerts-dlx-shoelace section h2.alerts-dlx-title {
+  font-size: 1.2em;
+}
+
+.editor-styles-wrapper .alerts-dlx-alert[role=alert] .alerts-dlx-content p {
+  font-family: "Lato", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+.template-chakra .alerts-dlx-alert[role=alert] .alerts-dlx-chakra .alerts-dlx-content p,
+.template-bootstrap .alerts-dlx-alert[role=alert] .alerts-dlx-bootstrap .alerts-dlx-content p,
+.template-material .alerts-dlx-alert[role=alert] .alerts-dlx-material .alerts-dlx-content p,
+.template-shoelace .alerts-dlx-alert[role=alert] .alerts-dlx-shoelace .alerts-dlx-content p {
+  font-family: "Lato", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+.template-chakra .alerts-dlx-alert[role=alert] .alerts-dlx-chakra button.button-reset,
+.template-chakra .alerts-dlx-alert[role=alert] .alerts-dlx-chakra a.alerts-dlx-button,
+.template-chakra .alerts-dlx-alert[role=alert] .alerts-dlx-chakra button.button-reset.components-button,
+.template-bootstrap .alerts-dlx-alert[role=alert] .alerts-dlx-bootstrap button.button-reset,
+.template-bootstrap .alerts-dlx-alert[role=alert] .alerts-dlx-bootstrap a.alerts-dlx-button,
+.template-bootstrap .alerts-dlx-alert[role=alert] .alerts-dlx-bootstrap button.button-reset.components-button,
+.template-material .alerts-dlx-alert[role=alert] .alerts-dlx-material button.button-reset,
+.template-material .alerts-dlx-alert[role=alert] .alerts-dlx-material a.alerts-dlx-button,
+.template-material .alerts-dlx-alert[role=alert] .alerts-dlx-material button.button-reset.components-button,
+.template-shoelace .alerts-dlx-alert[role=alert] .alerts-dlx-shoelace button.button-reset,
+.template-shoelace .alerts-dlx-alert[role=alert] .alerts-dlx-shoelace a.alerts-dlx-button,
+.template-shoelace .alerts-dlx-alert[role=alert] .alerts-dlx-shoelace button.button-reset.components-button {
+  font-size: 1.2em;
+}
+
+.alerts-dlx-content a,
+.alerts-dlx-content a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+@keyframes alerts-dlx-dismiss {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+}
+/** Animation for removal **/
+.alerts-dlx-remove {
+  animation-name: alerts-dlx-dismiss;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.entry-content .alerts-dlx-alert section,
+.alerts-dlx-alert section {
+  margin: 0;
+  padding: 0;
+}
+
+.template-material {
+  /* MaterialUI Success */
+  /* Dropshadows */
+}
+.template-material .alerts-dlx-material {
+  display: grid;
+  grid-template-columns: 1fr;
+  font-size: var(--alerts-dlx-material-base-size, 16px);
+  padding: 16px;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+.template-material .alerts-dlx-material .alerts-dlx-icon-preview svg {
+  width: 1.8em;
+  height: 1.8em;
+}
+.template-material .alerts-dlx-material.alerts-dlx-has-icon {
+  grid-template-columns: 3.8em 1fr;
+  padding-left: 0;
+}
+.template-material .alerts-dlx-material section h2.alerts-dlx-title {
+  font-size: 1.2em;
+  font-weight: 900;
+  line-height: 1.5em;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.35em;
+}
+.template-material .alerts-dlx-material .alerts-dlx-content p {
+  font-size: 1.2em;
+  font-weight: 400;
+  line-height: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+.template-material .alerts-dlx-material .alerts-dlx-content p:not(:first-child) {
+  margin-top: 0.5em;
+}
+.template-material .alerts-dlx-material button.button-reset,
+.template-material .alerts-dlx-material a.alerts-dlx-button,
+.template-material .alerts-dlx-material button.button-reset.components-button {
+  font-size: 1.2em;
+}
+.template-material .alerts-dlx-material .alerts-dlx-icon-preview svg {
+  width: 1.4em;
+  height: 1.4em;
+}
+.template-material .alerts-dlx-material .alerts-dlx-icon-frontend .alerts-dlx-icon-preview {
+  font-size: 1.2em;
+  line-height: 2.2em;
+}
+.template-material .alerts-dlx-material .alerts-dlx-icon {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.template-material.icon-vertical-align-centered .alerts-dlx-icon {
+  align-items: center;
+}
+.template-material.is-style-success.is-dropshadow-enabled.is-appearance-default .alerts-dlx-material {
+  box-shadow: 1px 1px 5px 1px rgba(46, 125, 50, 0.2);
+}
+.template-material.is-style-info.is-dropshadow-enabled.is-appearance-default .alerts-dlx-material {
+  box-shadow: 1px 1px 5px 1px rgba(2, 119, 189, 0.2);
+}
+.template-material.is-style-warning.is-dropshadow-enabled.is-appearance-default .alerts-dlx-material {
+  box-shadow: 1px 1px 5px 1px rgba(237, 108, 2, 0.2);
+}
+.template-material.is-style-error.is-dropshadow-enabled.is-appearance-default .alerts-dlx-material {
+  box-shadow: 1px 1px 5px 1px rgba(211, 47, 47, 0.2);
+}
+.template-material.is-appearance-centered .alerts-dlx-material {
+  display: block;
+}
+.template-material.is-appearance-centered .alerts-dlx-icon-preview svg {
+  width: 1.6em;
+  height: 1.6em;
+}
+.template-material.is-appearance-centered section {
+  text-align: center;
+}
+.template-material.is-appearance-centered .alerts-dlx-button-wrapper {
+  position: relative;
+  flex-wrap: wrap;
+}
+.template-material.is-appearance-centered .alerts-dlx-button-wrapper button:first-child {
+  width: 100%;
+  justify-content: center;
+}
+.template-material.is-appearance-centered .alerts-dlx-button-wrapper button:not(:first-child) {
+  position: absolute;
+  right: -35px;
+}
+.template-material.is-style-success.is-appearance-default h2.alerts-dlx-title, .template-material.is-style-success.is-appearance-centered h2.alerts-dlx-title {
+  color: #1e4620;
+}
+.template-material.is-style-success.is-appearance-default .alerts-dlx-content p, .template-material.is-style-success.is-appearance-centered .alerts-dlx-content p {
+  color: #1e4620;
+}
+.template-material.is-style-success.is-appearance-default .alerts-dlx-material, .template-material.is-style-success.is-appearance-centered .alerts-dlx-material {
+  background-color: #edf7ed;
+  color: #1e4620;
+}
+.template-material.is-style-success.is-appearance-default .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-success.is-appearance-default .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-success.is-appearance-default .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-success.is-appearance-default .alerts-dlx-material button.button-reset.alerts-dlx-button:hover, .template-material.is-style-success.is-appearance-centered .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-success.is-appearance-centered .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-success.is-appearance-centered .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-success.is-appearance-centered .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  color: #ffffff;
+  border: 1px solid transparent;
+  background-color: #1e4620;
+}
+.template-material.is-style-success.is-appearance-default .alerts-dlx-material .alerts-dlx-close svg, .template-material.is-style-success.is-appearance-centered .alerts-dlx-material .alerts-dlx-close svg {
+  color: #4caf50;
+}
+.template-material.is-style-success.is-appearance-default .alerts-dlx-material .alerts-dlx-close svg:hover, .template-material.is-style-success.is-appearance-centered .alerts-dlx-material .alerts-dlx-close svg:hover {
+  color: #295e2c;
+}
+.template-material.is-style-success.is-appearance-default .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-success.is-appearance-default .alerts-dlx-material button.button-reset.alerts-dlx-button:hover, .template-material.is-style-success.is-appearance-centered .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-success.is-appearance-centered .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  background-color: #295e2c;
+}
+.template-material.is-style-success.is-appearance-default .alerts-dlx-material svg,
+.template-material.is-style-success.is-appearance-default .alerts-dlx-material svg path, .template-material.is-style-success.is-appearance-centered .alerts-dlx-material svg,
+.template-material.is-style-success.is-appearance-centered .alerts-dlx-material svg path {
+  fill: #4caf50;
+}
+.template-material.is-style-success.is-appearance-outlined h2.alerts-dlx-title {
+  color: #1e4620;
+}
+.template-material.is-style-success.is-appearance-outlined .alerts-dlx-content p {
+  color: #1e4620;
+}
+.template-material.is-style-success.is-appearance-outlined .alerts-dlx-material {
+  background-color: #ffffff;
+  color: #1e4620;
+  border: 2px solid #4caf50;
+}
+.template-material.is-style-success.is-appearance-outlined .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-success.is-appearance-outlined .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-success.is-appearance-outlined .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-success.is-appearance-outlined .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  color: #1e4620;
+  border: 2px solid #4caf50;
+  background-color: #ffffff;
+}
+.template-material.is-style-success.is-appearance-outlined .alerts-dlx-material .alerts-dlx-close svg {
+  color: #4caf50;
+}
+.template-material.is-style-success.is-appearance-outlined .alerts-dlx-material .alerts-dlx-close svg:hover {
+  color: #295e2c;
+}
+.template-material.is-style-success.is-appearance-outlined .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-success.is-appearance-outlined .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  background-color: #2e7d32;
+  color: #ffffff;
+  border: 2px solid #2e7d32;
+}
+.template-material.is-style-success.is-appearance-outlined .alerts-dlx-material svg,
+.template-material.is-style-success.is-appearance-outlined .alerts-dlx-material svg path {
+  fill: #4caf50;
+}
+.template-material.is-style-success.is-appearance-filled h2.alerts-dlx-title {
+  color: #ffffff;
+}
+.template-material.is-style-success.is-appearance-filled .alerts-dlx-content p {
+  color: #ffffff;
+}
+.template-material.is-style-success.is-appearance-filled .alerts-dlx-material {
+  background-color: #2e7d32;
+  color: #ffffff;
+  border: 2px solid #2e7d32;
+}
+.template-material.is-style-success.is-appearance-filled .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-success.is-appearance-filled .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-success.is-appearance-filled .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-success.is-appearance-filled .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  color: #2e7d32;
+  border: 2px solid #2e7d32;
+  background-color: #ffffff;
+}
+.template-material.is-style-success.is-appearance-filled .alerts-dlx-material .alerts-dlx-close svg {
+  color: #ffffff;
+}
+.template-material.is-style-success.is-appearance-filled .alerts-dlx-material .alerts-dlx-close svg:hover {
+  color: #295e2c;
+}
+.template-material.is-style-success.is-appearance-filled .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-success.is-appearance-filled .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  background-color: #2e7d32;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+.template-material.is-style-success.is-appearance-filled .alerts-dlx-material svg,
+.template-material.is-style-success.is-appearance-filled .alerts-dlx-material svg path {
+  fill: #ffffff;
+}
+.template-material.is-style-info.is-appearance-default h2.alerts-dlx-title, .template-material.is-style-info.is-appearance-centered h2.alerts-dlx-title {
+  color: #014361;
+}
+.template-material.is-style-info.is-appearance-default .alerts-dlx-content p, .template-material.is-style-info.is-appearance-centered .alerts-dlx-content p {
+  color: #014361;
+}
+.template-material.is-style-info.is-appearance-default .alerts-dlx-material, .template-material.is-style-info.is-appearance-centered .alerts-dlx-material {
+  background-color: #e5f6fd;
+  color: #014361;
+}
+.template-material.is-style-info.is-appearance-default .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-info.is-appearance-default .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-info.is-appearance-default .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-info.is-appearance-default .alerts-dlx-material button.button-reset.alerts-dlx-button:hover, .template-material.is-style-info.is-appearance-centered .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-info.is-appearance-centered .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-info.is-appearance-centered .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-info.is-appearance-centered .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  color: #ffffff;
+  border: 1px solid transparent;
+  background-color: #014361;
+}
+.template-material.is-style-info.is-appearance-default .alerts-dlx-material .alerts-dlx-close svg, .template-material.is-style-info.is-appearance-centered .alerts-dlx-material .alerts-dlx-close svg {
+  color: #03a9f4;
+}
+.template-material.is-style-info.is-appearance-default .alerts-dlx-material .alerts-dlx-close svg:hover, .template-material.is-style-info.is-appearance-centered .alerts-dlx-material .alerts-dlx-close svg:hover {
+  color: #035e88;
+}
+.template-material.is-style-info.is-appearance-default .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-info.is-appearance-default .alerts-dlx-material button.button-reset.alerts-dlx-button:hover, .template-material.is-style-info.is-appearance-centered .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-info.is-appearance-centered .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  background-color: #035e88;
+}
+.template-material.is-style-info.is-appearance-default .alerts-dlx-material svg,
+.template-material.is-style-info.is-appearance-default .alerts-dlx-material svg path, .template-material.is-style-info.is-appearance-centered .alerts-dlx-material svg,
+.template-material.is-style-info.is-appearance-centered .alerts-dlx-material svg path {
+  fill: #03a9f4;
+}
+.template-material.is-style-info.is-appearance-outlined h2.alerts-dlx-title {
+  color: #014361;
+}
+.template-material.is-style-info.is-appearance-outlined .alerts-dlx-content p {
+  color: #014361;
+}
+.template-material.is-style-info.is-appearance-outlined .alerts-dlx-material {
+  background-color: #ffffff;
+  color: #014361;
+  border: 2px solid #03a9f4;
+}
+.template-material.is-style-info.is-appearance-outlined .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-info.is-appearance-outlined .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-info.is-appearance-outlined .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-info.is-appearance-outlined .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  color: #014361;
+  border: 2px solid #03a9f4;
+  background-color: #ffffff;
+}
+.template-material.is-style-info.is-appearance-outlined .alerts-dlx-material .alerts-dlx-close svg {
+  color: #03a9f4;
+}
+.template-material.is-style-info.is-appearance-outlined .alerts-dlx-material .alerts-dlx-close svg:hover {
+  color: #035e88;
+}
+.template-material.is-style-info.is-appearance-outlined .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-info.is-appearance-outlined .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  background-color: #0277bd;
+  color: #ffffff;
+  border: 2px solid #0277bd;
+}
+.template-material.is-style-info.is-appearance-outlined .alerts-dlx-material svg,
+.template-material.is-style-info.is-appearance-outlined .alerts-dlx-material svg path {
+  fill: #03a9f4;
+}
+.template-material.is-style-info.is-appearance-filled h2.alerts-dlx-title {
+  color: #ffffff;
+}
+.template-material.is-style-info.is-appearance-filled .alerts-dlx-content p {
+  color: #ffffff;
+}
+.template-material.is-style-info.is-appearance-filled .alerts-dlx-material {
+  background-color: #0277bd;
+  color: #ffffff;
+  border: 2px solid #0277bd;
+}
+.template-material.is-style-info.is-appearance-filled .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-info.is-appearance-filled .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-info.is-appearance-filled .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-info.is-appearance-filled .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  color: #0277bd;
+  border: 2px solid #0277bd;
+  background-color: #ffffff;
+}
+.template-material.is-style-info.is-appearance-filled .alerts-dlx-material .alerts-dlx-close svg {
+  color: #ffffff;
+}
+.template-material.is-style-info.is-appearance-filled .alerts-dlx-material .alerts-dlx-close svg:hover {
+  color: #035e88;
+}
+.template-material.is-style-info.is-appearance-filled .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-info.is-appearance-filled .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  background-color: #0277bd;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+.template-material.is-style-info.is-appearance-filled .alerts-dlx-material svg,
+.template-material.is-style-info.is-appearance-filled .alerts-dlx-material svg path {
+  fill: #ffffff;
+}
+.template-material.is-style-warning.is-appearance-default h2.alerts-dlx-title, .template-material.is-style-warning.is-appearance-centered h2.alerts-dlx-title {
+  color: #663c00;
+}
+.template-material.is-style-warning.is-appearance-default .alerts-dlx-content p, .template-material.is-style-warning.is-appearance-centered .alerts-dlx-content p {
+  color: #663c00;
+}
+.template-material.is-style-warning.is-appearance-default .alerts-dlx-material, .template-material.is-style-warning.is-appearance-centered .alerts-dlx-material {
+  background-color: #fff4e5;
+  color: #663c00;
+}
+.template-material.is-style-warning.is-appearance-default .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-warning.is-appearance-default .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-warning.is-appearance-default .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-warning.is-appearance-default .alerts-dlx-material button.button-reset.alerts-dlx-button:hover, .template-material.is-style-warning.is-appearance-centered .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-warning.is-appearance-centered .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-warning.is-appearance-centered .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-warning.is-appearance-centered .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  color: #ffffff;
+  border: 1px solid transparent;
+  background-color: #663c00;
+}
+.template-material.is-style-warning.is-appearance-default .alerts-dlx-material .alerts-dlx-close svg, .template-material.is-style-warning.is-appearance-centered .alerts-dlx-material .alerts-dlx-close svg {
+  color: #ff9800;
+}
+.template-material.is-style-warning.is-appearance-default .alerts-dlx-material .alerts-dlx-close svg:hover, .template-material.is-style-warning.is-appearance-centered .alerts-dlx-material .alerts-dlx-close svg:hover {
+  color: #8c5e00;
+}
+.template-material.is-style-warning.is-appearance-default .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-warning.is-appearance-default .alerts-dlx-material button.button-reset.alerts-dlx-button:hover, .template-material.is-style-warning.is-appearance-centered .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-warning.is-appearance-centered .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  background-color: #8c5e00;
+}
+.template-material.is-style-warning.is-appearance-default .alerts-dlx-material svg,
+.template-material.is-style-warning.is-appearance-default .alerts-dlx-material svg path, .template-material.is-style-warning.is-appearance-centered .alerts-dlx-material svg,
+.template-material.is-style-warning.is-appearance-centered .alerts-dlx-material svg path {
+  fill: #ff9800;
+}
+.template-material.is-style-warning.is-appearance-outlined h2.alerts-dlx-title {
+  color: #663c00;
+}
+.template-material.is-style-warning.is-appearance-outlined .alerts-dlx-content p {
+  color: #663c00;
+}
+.template-material.is-style-warning.is-appearance-outlined .alerts-dlx-material {
+  background-color: #ffffff;
+  color: #663c00;
+  border: 2px solid #ff9800;
+}
+.template-material.is-style-warning.is-appearance-outlined .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-warning.is-appearance-outlined .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-warning.is-appearance-outlined .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-warning.is-appearance-outlined .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  color: #663c00;
+  border: 2px solid #ff9800;
+  background-color: #ffffff;
+}
+.template-material.is-style-warning.is-appearance-outlined .alerts-dlx-material .alerts-dlx-close svg {
+  color: #ff9800;
+}
+.template-material.is-style-warning.is-appearance-outlined .alerts-dlx-material .alerts-dlx-close svg:hover {
+  color: #8c5e00;
+}
+.template-material.is-style-warning.is-appearance-outlined .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-warning.is-appearance-outlined .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  background-color: #ed6c02;
+  color: #ffffff;
+  border: 2px solid #ed6c02;
+}
+.template-material.is-style-warning.is-appearance-outlined .alerts-dlx-material svg,
+.template-material.is-style-warning.is-appearance-outlined .alerts-dlx-material svg path {
+  fill: #ff9800;
+}
+.template-material.is-style-warning.is-appearance-filled h2.alerts-dlx-title {
+  color: #ffffff;
+}
+.template-material.is-style-warning.is-appearance-filled .alerts-dlx-content p {
+  color: #ffffff;
+}
+.template-material.is-style-warning.is-appearance-filled .alerts-dlx-material {
+  background-color: #ed6c02;
+  color: #ffffff;
+  border: 2px solid #ed6c02;
+}
+.template-material.is-style-warning.is-appearance-filled .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-warning.is-appearance-filled .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-warning.is-appearance-filled .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-warning.is-appearance-filled .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  color: #ed6c02;
+  border: 2px solid #ed6c02;
+  background-color: #ffffff;
+}
+.template-material.is-style-warning.is-appearance-filled .alerts-dlx-material .alerts-dlx-close svg {
+  color: #ffffff;
+}
+.template-material.is-style-warning.is-appearance-filled .alerts-dlx-material .alerts-dlx-close svg:hover {
+  color: #8c5e00;
+}
+.template-material.is-style-warning.is-appearance-filled .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-warning.is-appearance-filled .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  background-color: #ed6c02;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+.template-material.is-style-warning.is-appearance-filled .alerts-dlx-material svg,
+.template-material.is-style-warning.is-appearance-filled .alerts-dlx-material svg path {
+  fill: #ffffff;
+}
+.template-material.is-style-error.is-appearance-default h2.alerts-dlx-title, .template-material.is-style-error.is-appearance-centered h2.alerts-dlx-title {
+  color: #5f2120;
+}
+.template-material.is-style-error.is-appearance-default .alerts-dlx-content p, .template-material.is-style-error.is-appearance-centered .alerts-dlx-content p {
+  color: #5f2120;
+}
+.template-material.is-style-error.is-appearance-default .alerts-dlx-material, .template-material.is-style-error.is-appearance-centered .alerts-dlx-material {
+  background-color: #fdeded;
+  color: #5f2120;
+}
+.template-material.is-style-error.is-appearance-default .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-error.is-appearance-default .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-error.is-appearance-default .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-error.is-appearance-default .alerts-dlx-material button.button-reset.alerts-dlx-button:hover, .template-material.is-style-error.is-appearance-centered .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-error.is-appearance-centered .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-error.is-appearance-centered .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-error.is-appearance-centered .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  color: #ffffff;
+  border: 1px solid transparent;
+  background-color: #5f2120;
+}
+.template-material.is-style-error.is-appearance-default .alerts-dlx-material .alerts-dlx-close svg, .template-material.is-style-error.is-appearance-centered .alerts-dlx-material .alerts-dlx-close svg {
+  color: #ef5350;
+}
+.template-material.is-style-error.is-appearance-default .alerts-dlx-material .alerts-dlx-close svg:hover, .template-material.is-style-error.is-appearance-centered .alerts-dlx-material .alerts-dlx-close svg:hover {
+  color: #8c2d2b;
+}
+.template-material.is-style-error.is-appearance-default .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-error.is-appearance-default .alerts-dlx-material button.button-reset.alerts-dlx-button:hover, .template-material.is-style-error.is-appearance-centered .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-error.is-appearance-centered .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  background-color: #8c2d2b;
+}
+.template-material.is-style-error.is-appearance-default .alerts-dlx-material svg,
+.template-material.is-style-error.is-appearance-default .alerts-dlx-material svg path, .template-material.is-style-error.is-appearance-centered .alerts-dlx-material svg,
+.template-material.is-style-error.is-appearance-centered .alerts-dlx-material svg path {
+  fill: #ef5350;
+}
+.template-material.is-style-error.is-appearance-outlined h2.alerts-dlx-title {
+  color: #5f2120;
+}
+.template-material.is-style-error.is-appearance-outlined .alerts-dlx-content p {
+  color: #5f2120;
+}
+.template-material.is-style-error.is-appearance-outlined .alerts-dlx-material {
+  background-color: #ffffff;
+  color: #5f2120;
+  border: 2px solid #ef5350;
+}
+.template-material.is-style-error.is-appearance-outlined .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-error.is-appearance-outlined .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-error.is-appearance-outlined .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-error.is-appearance-outlined .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  color: #5f2120;
+  border: 2px solid #ef5350;
+  background-color: #ffffff;
+}
+.template-material.is-style-error.is-appearance-outlined .alerts-dlx-material .alerts-dlx-close svg {
+  color: #ef5350;
+}
+.template-material.is-style-error.is-appearance-outlined .alerts-dlx-material .alerts-dlx-close svg:hover {
+  color: #8c2d2b;
+}
+.template-material.is-style-error.is-appearance-outlined .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-error.is-appearance-outlined .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  background-color: #d32f2f;
+  color: #ffffff;
+  border: 2px solid #d32f2f;
+}
+.template-material.is-style-error.is-appearance-outlined .alerts-dlx-material svg,
+.template-material.is-style-error.is-appearance-outlined .alerts-dlx-material svg path {
+  fill: #ef5350;
+}
+.template-material.is-style-error.is-appearance-filled h2.alerts-dlx-title {
+  color: #ffffff;
+}
+.template-material.is-style-error.is-appearance-filled .alerts-dlx-content p {
+  color: #ffffff;
+}
+.template-material.is-style-error.is-appearance-filled .alerts-dlx-material {
+  background-color: #d32f2f;
+  color: #ffffff;
+  border: 2px solid #d32f2f;
+}
+.template-material.is-style-error.is-appearance-filled .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-error.is-appearance-filled .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-error.is-appearance-filled .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-error.is-appearance-filled .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  color: #d32f2f;
+  border: 2px solid #d32f2f;
+  background-color: #ffffff;
+}
+.template-material.is-style-error.is-appearance-filled .alerts-dlx-material .alerts-dlx-close svg {
+  color: #ffffff;
+}
+.template-material.is-style-error.is-appearance-filled .alerts-dlx-material .alerts-dlx-close svg:hover {
+  color: #8c2d2b;
+}
+.template-material.is-style-error.is-appearance-filled .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-error.is-appearance-filled .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  background-color: #d32f2f;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+.template-material.is-style-error.is-appearance-filled .alerts-dlx-material svg,
+.template-material.is-style-error.is-appearance-filled .alerts-dlx-material svg path {
+  fill: #ffffff;
+}
+.template-material.is-style-custom h2.alerts-dlx-title {
+  color: var(--alerts-dlx-material-color-primary, #014361);
+}
+.template-material.is-style-custom .alerts-dlx-content p {
+  color: var(--alerts-dlx-material-color-primary, #014361);
+}
+.template-material.is-style-custom.is-appearance-default .alerts-dlx-material, .template-material.is-style-custom.is-appearance-centered .alerts-dlx-material {
+  background-color: var(--alerts-dlx-material-color-light, #e5f6fd);
+  color: var(--alerts-dlx-material-color-primary, #014361);
+}
+.template-material.is-style-custom.is-appearance-default .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-custom.is-appearance-default .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-custom.is-appearance-default .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-custom.is-appearance-default .alerts-dlx-material button.button-reset.alerts-dlx-button:hover, .template-material.is-style-custom.is-appearance-centered .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-custom.is-appearance-centered .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-custom.is-appearance-centered .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-custom.is-appearance-centered .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  color: var(--alerts-dlx-material-color-alt-text, #ffffff);
+  border: 1px solid transparent;
+  background-color: var(--alerts-dlx-material-color-alt, #e5f6fd);
+}
+.template-material.is-style-custom.is-appearance-default .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-custom.is-appearance-default .alerts-dlx-material button.button-reset.alerts-dlx-button:hover, .template-material.is-style-custom.is-appearance-centered .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-custom.is-appearance-centered .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  background-color: var(--alerts-dlx-material-color-alt-hover, #035e88);
+}
+.template-material.is-style-custom.is-appearance-default .alerts-dlx-material svg,
+.template-material.is-style-custom.is-appearance-default .alerts-dlx-material svg path, .template-material.is-style-custom.is-appearance-centered .alerts-dlx-material svg,
+.template-material.is-style-custom.is-appearance-centered .alerts-dlx-material svg path {
+  color: var(--alerts-dlx-material-color-bold, #03a9f4);
+  fill: var(--alerts-dlx-material-color-bold, #03a9f4);
+}
+.template-material.is-style-custom.is-appearance-outlined .alerts-dlx-material {
+  background-color: var(--alerts-dlx-material-color-light, #ffffff);
+  color: var(--alerts-dlx-material-color-primary, #014361);
+  border: 2px solid var(--alerts-dlx-material-color-border, #03a9f4);
+}
+.template-material.is-style-custom.is-appearance-outlined .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-custom.is-appearance-outlined .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-custom.is-appearance-outlined .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-custom.is-appearance-outlined .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  color: var(--alerts-dlx-material-color-alt-text, #014361);
+  border: 2px solid var(--alerts-dlx-material-color-border, #03a9f4);
+  background-color: var(--alerts-dlx-material-color-alt, #ffffff);
+}
+.template-material.is-style-custom.is-appearance-outlined .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-custom.is-appearance-outlined .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  background-color: var(--alerts-dlx-material-color-alt-hover, #035e88);
+  color: var(--alerts-dlx-material-color-alt-text-hover, #ffffff);
+  border: 2px solid var(--alerts-dlx-material-color-alt, #035e88);
+}
+.template-material.is-style-custom.is-appearance-outlined .alerts-dlx-material svg,
+.template-material.is-style-custom.is-appearance-outlined .alerts-dlx-material svg path {
+  color: var(--alerts-dlx-material-color-bold, #03a9f4);
+  fill: var(--alerts-dlx-material-color-bold, #03a9f4);
+}
+.template-material.is-style-custom.is-appearance-filled .alerts-dlx-material {
+  background-color: var(--alerts-dlx-material-color-light, #e5f6fd);
+  color: var(--alerts-dlx-material-color-alt-text, #ffffff);
+  border: 2px solid var(--alerts-dlx-material-color-border, #03a9f4);
+}
+.template-material.is-style-custom.is-appearance-filled .alerts-dlx-material button.button-reset.alerts-dlx-button,
+.template-material.is-style-custom.is-appearance-filled .alerts-dlx-material a.alerts-dlx-button,
+.template-material.is-style-custom.is-appearance-filled .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-custom.is-appearance-filled .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  color: var(--alerts-dlx-material-color-alt-text, #014361);
+  border: 2px solid var(--alerts-dlx-material-color-alt, #014361);
+  background-color: var(--alerts-dlx-material-color-alt, #ffffff);
+}
+.template-material.is-style-custom.is-appearance-filled .alerts-dlx-material a.alerts-dlx-button:hover,
+.template-material.is-style-custom.is-appearance-filled .alerts-dlx-material button.button-reset.alerts-dlx-button:hover {
+  background-color: var(--alerts-dlx-material-color-alt-hover, #035e88);
+  color: var(--alerts-dlx-material-color-alt-text-hover, #ffffff);
+  border: 2px solid var(--alerts-dlx-material-color-alt, #ffffff);
+}
+.template-material.is-style-custom.is-appearance-filled .alerts-dlx-material svg,
+.template-material.is-style-custom.is-appearance-filled .alerts-dlx-material svg path {
+  color: var(--alerts-dlx-material-color-bold, #03a9f4);
+  fill: var(--alerts-dlx-material-color-bold, #03a9f4);
+}
+
+/*# sourceMappingURL=alerts-dlx-material-light.css.map*/

@@ -475,8 +475,7 @@ return array(
 		'editorScript' => 'alerts-dlx-block',
 		'editorStyle' => array(
 			'alerts-dlx-block-editor-styles',
-			'alerts-dlx-chakra-light-css',
-			'alerts-dlx-chakra-dark-css',
+			'alerts-dlx-chakra-styles',
 			'alerts-dlx-block-editor-styles-lato'
 		)
 	),

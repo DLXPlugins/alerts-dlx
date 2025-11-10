@@ -307,21 +307,12 @@ class Blocks {
 				);
 				break;
 			case 'chakra':
-				if ( 'dark' === $mode ) {
-					wp_print_styles(
-						array(
-							'alerts-dlx-chakra-dark-css',
-							'alerts-dlx-block-editor-styles-lato',
-						)
-					);
-				} else {
-					wp_print_styles(
-						array(
-							'alerts-dlx-chakra-light-css',
-							'alerts-dlx-block-editor-styles-lato',
-						)
-					);
-				}
+				wp_print_styles(
+					array(
+						'alerts-dlx-chakra-styles',
+						'alerts-dlx-block-editor-styles-lato',
+					)
+				);
 				break;
 			case 'material':
 				if ( 'dark' === $mode ) {
@@ -604,8 +595,8 @@ class Blocks {
 			'all'
 		);
 		wp_register_style(
-			'alerts-dlx-chakra-light-css',
-			Functions::get_plugin_url( 'dist/alerts-dlx-chakra-light.css' ),
+			'alerts-dlx-chakra-styles',
+			Functions::get_plugin_url( 'dist/alerts-dlx-chakra-styles.css' ),
 			array(),
 			Functions::get_plugin_version(),
 			'all'
