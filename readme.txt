@@ -1,6 +1,6 @@
 === Alerts DLX - Alert Box, Callout Box, and Notifications ===
 Contributors: ronalfy
-Tags: alert box, notifications, alerts, shortcode, blocks
+Tags: alert box, notifications, alerts, notify, blocks
 Requires at least: 5.9
 Tested up to: 6.9
 Stable tag: 2.2.0
