@@ -2,8 +2,8 @@
 Contributors: ronalfy
 Tags: alert box, notifications, alerts, shortcode, blocks
 Requires at least: 5.9
-Tested up to: 6.8
-Stable tag: 2.1.2
+Tested up to: 6.9
+Stable tag: 2.2.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -107,6 +107,11 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Changelog ==
 
+= 2.2.0 =
+* Released 2025-11-13
+* Consolidated light and dark stylesheets, saving over 200kb in size.
+* Tested with WP 6.9.
+
 = 2.1.2 =
 * Released 2025-09-06
 * Bug fix: several fonts were out of proportion, so this has been addressed with this update.
@@ -186,5 +191,5 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Upgrade Notice ==
 
-= 2.1.2 =
-General font fixes. Added missing button colors for custom colors. Fixing theme style issues.
+= 2.2.0 =
+Consolidated dark and light stylesheets, saving over 200kb in total size of the plugin.
