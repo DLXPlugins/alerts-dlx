@@ -207,5 +207,5 @@
 		"className": true
 	},
 	"editorScript": "alerts-dlx-block",
-	"editorStyle": [ "alerts-dlx-block-editor-styles", "alerts-dlx-bootstrap-light-css","alerts-dlx-bootstrap-dark-css", "alerts-dlx-block-editor-styles-lato" ]
+	"editorStyle": [ "alerts-dlx-block-editor-styles", "alerts-dlx-bootstrap-styles", "alerts-dlx-block-editor-styles-lato" ]
 }

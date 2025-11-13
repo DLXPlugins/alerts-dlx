@@ -250,8 +250,7 @@ return array(
 		'editorScript' => 'alerts-dlx-block',
 		'editorStyle' => array(
 			'alerts-dlx-block-editor-styles',
-			'alerts-dlx-bootstrap-light-css',
-			'alerts-dlx-bootstrap-dark-css',
+			'alerts-dlx-bootstrap-styles',
 			'alerts-dlx-block-editor-styles-lato'
 		)
 	),
@@ -476,8 +475,7 @@ return array(
 		'editorScript' => 'alerts-dlx-block',
 		'editorStyle' => array(
 			'alerts-dlx-block-editor-styles',
-			'alerts-dlx-chakra-light-css',
-			'alerts-dlx-chakra-dark-css',
+			'alerts-dlx-chakra-styles',
 			'alerts-dlx-block-editor-styles-lato'
 		)
 	),
@@ -702,8 +700,7 @@ return array(
 		'editorScript' => 'alerts-dlx-block',
 		'editorStyle' => array(
 			'alerts-dlx-block-editor-styles',
-			'alerts-dlx-material-light-css',
-			'alerts-dlx-material-dark-css',
+			'alerts-dlx-material-styles',
 			'alerts-dlx-block-editor-styles-lato'
 		)
 	),
@@ -936,8 +933,7 @@ return array(
 		'editorScript' => 'alerts-dlx-block',
 		'editorStyle' => array(
 			'alerts-dlx-block-editor-styles',
-			'alerts-dlx-shoelace-light-css',
-			'alerts-dlx-shoelace-dark-css',
+			'alerts-dlx-shoelace-styles',
 			'alerts-dlx-block-editor-styles-lato'
 		)
 	)
