@@ -1,9 +1,9 @@
 === Alerts DLX - Alert Box, Callout Box, and Notifications ===
 Contributors: ronalfy
 Tags: alert box, notifications, alerts, notify, blocks
-Requires at least: 5.9
+Requires at least: 6.5
 Tested up to: 6.9
-Stable tag: 2.2.0
+Stable tag: 2.2.2
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -107,6 +107,11 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Changelog ==
 
+= 2.2.2 =
+* Released 2025-12-05
+* Fixed frontend rendering for those not using footer hooks.
+* Fixed SVG default icon size, to prevent jumping when rendering.
+
 = 2.2.0 =
 * Released 2025-11-13
 * Consolidated light and dark stylesheets, saving over 200kb in size.
@@ -191,5 +196,5 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Upgrade Notice ==
 
-= 2.2.0 =
-Consolidated dark and light stylesheets, saving over 200kb in total size of the plugin.
+= 2.2.2 =
+Fixing frontend rendering on some themes, and setting max size on SVGs to prevent jumping.
