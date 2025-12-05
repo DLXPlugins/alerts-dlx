@@ -418,6 +418,10 @@ class Blocks {
 				--alerts-dlx-base-font-size: <?php echo esc_html( $base_font_size ); ?>px;
 				--alerts-dlx-<?php echo esc_html( $alert_group ); ?>-base-size: <?php echo esc_html( $base_font_size ); ?>px;
 			}
+			#<?php echo esc_html( $unique_id ); ?> .alerts-dlx-icon-preview svg {
+				max-width: 1.8em;
+				max-height: 1.8em;
+			}
 		</style>
 		<div
 			class="<?php echo esc_html( implode( ' ', $container_classes ) ); ?>"

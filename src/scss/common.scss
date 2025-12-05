@@ -110,7 +110,7 @@ figure.alerts-dlx-alert {
 	font-size: var(--alerts-dlx-base-font-size, 16px);
 	
 	/* Ensure all child elements inherit the base font size */
-	* {
+	*:not(svg, svg path, svg g) {
 		font-size: inherit;
 	}
 	
