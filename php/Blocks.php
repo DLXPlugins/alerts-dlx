@@ -60,7 +60,8 @@ class Blocks {
 		}
 
 		// Enqueue block assets.
-		add_action( 'enqueue_block_assets', array( $this, 'register_block_editor_scripts' ) );
+		add_action( 'enqueue_block_assets', array( $this, 'register_block_editor_scripts_iframe' ) );
+		add_action( 'enqueue_block_editor_assets', array( $this, 'register_block_editor_scripts' ) );
 
 		// Add alertsdlx block category.
 		add_filter(
@@ -164,17 +165,19 @@ class Blocks {
 		switch ( $atts['alert_group'] ) {
 			case 'bootstrap':
 				if ( ! wp_style_is( 'alerts-dlx-bootstrap-styles', 'done' ) ) {
+					wp_enqueue_style( 'alerts-dlx-bootstrap-styles' );
 					$style_handles_to_print[] = 'alerts-dlx-bootstrap-styles';
 				}
 				break;
 			case 'chakra':
-				if ( ! wp_style_is( 'alerts-dlx-chakra-light-css', 'done' ) ) {
-					$style_handles_to_print[] = 'alerts-dlx-chakra-light-css';
-					$style_handles_to_print[] = 'alerts-dlx-chakra-dark-css';
+				if ( ! wp_style_is( 'alerts-dlx-chakra-styles', 'done' ) ) {
+					wp_enqueue_style( 'alerts-dlx-chakra-styles' );
+					$style_handles_to_print[] = 'alerts-dlx-chakra-styles';
 				}
 				break;
 			case 'material':
 				if ( ! wp_style_is( 'alerts-dlx-material-styles', 'done' ) ) {
+					wp_enqueue_style( 'alerts-dlx-material-styles' );
 					$style_handles_to_print[] = 'alerts-dlx-material-styles';
 				}
 				break;
@@ -297,35 +300,55 @@ class Blocks {
 		// Print block styles.
 		switch ( $alert_group ) {
 			case 'bootstrap':
-				wp_print_styles(
-					array(
-						'alerts-dlx-bootstrap-styles',
-						'alerts-dlx-block-editor-styles-lato',
-					)
+				add_action(
+					'wp_footer',
+					function () {
+						wp_print_styles(
+							array(
+								'alerts-dlx-bootstrap-styles',
+								'alerts-dlx-block-editor-styles-lato',
+							)
+						);
+					}
 				);
 				break;
 			case 'chakra':
-				wp_print_styles(
-					array(
-						'alerts-dlx-chakra-styles',
-						'alerts-dlx-block-editor-styles-lato',
-					)
+				add_action(
+					'wp_footer',
+					function () {
+						wp_print_styles(
+							array(
+								'alerts-dlx-chakra-styles',
+								'alerts-dlx-block-editor-styles-lato',
+							)
+						);
+					}
 				);
 				break;
 			case 'material':
-				wp_print_styles(
-					array(
-						'alerts-dlx-material-styles',
-						'alerts-dlx-block-editor-styles-lato',
-					)
+				add_action(
+					'wp_footer',
+					function () {
+						wp_print_styles(
+							array(
+								'alerts-dlx-material-styles',
+								'alerts-dlx-block-editor-styles-lato',
+							)
+						);
+					}
 				);
 				break;
 			case 'shoelace':
-				wp_print_styles(
-					array(
-						'alerts-dlx-shoelace-styles',
-						'alerts-dlx-block-editor-styles-lato',
-					)
+				add_action(
+					'wp_footer',
+					function () {
+						wp_print_styles(
+							array(
+								'alerts-dlx-shoelace-styles',
+								'alerts-dlx-block-editor-styles-lato',
+							)
+						);
+					}
 				);
 				break;
 		}
@@ -523,6 +546,16 @@ class Blocks {
 		<!-- end AlertsDLX output -->
 		<?php
 		return ob_get_clean();
+	}
+
+	/**
+	 * Register the block editor script for the iframe.
+	 */
+	public function register_block_editor_scripts_iframe() {
+		if ( ! is_admin() ) {
+			return;
+		}
+		$this->register_block_editor_scripts();
 	}
 
 	/**
