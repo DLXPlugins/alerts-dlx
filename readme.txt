@@ -111,6 +111,7 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 * Released 2025-12-05
 * Fixed frontend rendering for those not using footer hooks.
 * Fixed SVG default icon size, to prevent jumping when rendering.
+* Fixed shortcode not rendering due to editorial blocks parameter.
 
 = 2.2.0 =
 * Released 2025-11-13
@@ -197,4 +198,4 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 == Upgrade Notice ==
 
 = 2.2.2 =
-Fixing frontend rendering on some themes, and setting max size on SVGs to prevent jumping.
+Fixing frontend rendering on some themes, and setting max size on SVGs to prevent jumping. Fixing shortcode not rendering with editorial blocks.
