@@ -122,6 +122,7 @@ class Blocks {
 			'color_light'             => '',
 			'close_button_enabled'    => false,
 			'close_button_expiration' => 0,
+			'is_block_editorial_only' => false,
 		);
 		$atts     = shortcode_atts( $defaults, $atts, 'alertsdlx' );
 
