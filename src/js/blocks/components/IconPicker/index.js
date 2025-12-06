@@ -116,12 +116,8 @@ const IconPicker = ( props ) => {
 				<div className="alerts-dlx-icon-preview">
 					<Button
 						className="button-reset alerts-dlx-icon-preview-button"
-						onClick={ ( e ) => {
-							if ( isFocusedOutside ) {
-								setIsFocusedOutside( false );
-								return;
-							}
-							toggleVisible();
+						onMouseDown={ () => {
+							setIsPopOverVisible( true );
 						} }
 					>
 						<span dangerouslySetInnerHTML={ { __html: sanitizeSVG( defaultSvg ) } } />
@@ -129,8 +125,7 @@ const IconPicker = ( props ) => {
 				</div>
 			</BaseControl>
 			{ isPopoverVisible && (
-				<Popover noArrow={ false } className="alerts-dlx-icon-popover" onFocusOutside={ () => {
-					setIsFocusedOutside( true );
+				<Popover noArrow={ false } className="alerts-dlx-icon-popover" onClose={ () => {
 					setIsPopOverVisible( false );
 				} }>
 					<BaseControl className="alerts-dlx-icon-picker">

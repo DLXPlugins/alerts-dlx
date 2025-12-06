@@ -3308,12 +3308,8 @@ var IconPicker = function IconPicker(props) {
     className: "alerts-dlx-icon-preview"
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     className: "button-reset alerts-dlx-icon-preview-button",
-    onClick: function onClick(e) {
-      if (isFocusedOutside) {
-        setIsFocusedOutside(false);
-        return;
-      }
-      toggleVisible();
+    onMouseDown: function onMouseDown() {
+      setIsPopOverVisible(true);
     }
   }, /*#__PURE__*/React.createElement("span", {
     dangerouslySetInnerHTML: {
@@ -3322,8 +3318,7 @@ var IconPicker = function IconPicker(props) {
   })))), isPopoverVisible && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Popover, {
     noArrow: false,
     className: "alerts-dlx-icon-popover",
-    onFocusOutside: function onFocusOutside() {
-      setIsFocusedOutside(true);
+    onClose: function onClose() {
       setIsPopOverVisible(false);
     }
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
