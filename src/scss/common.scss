@@ -134,6 +134,13 @@ figure.alerts-dlx-alert {
 		width: 1.4em;
 		height: 1.4em;
 	}
+
+	.alerts-dlx-icon img {
+		max-width: 1.8em;
+		max-height: 1.8em;
+		object-fit: cover;
+		margin-bottom: 0.5em;
+	}
 	
 	.alerts-dlx-icon-frontend .alerts-dlx-icon-preview {
 		font-size: 1.2em;

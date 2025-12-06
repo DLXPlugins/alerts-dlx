@@ -1955,12 +1955,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_icons_BootstrapIcons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/icons/BootstrapIcons */ "./src/js/blocks/components/icons/BootstrapIcons.js");
 /* harmony import */ var _colors__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./colors */ "./src/js/blocks/bootstrap/colors.js");
 /* harmony import */ var _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/CloseButtonIcons */ "./src/js/blocks/components/CloseButtonIcons/index.js");
+/* harmony import */ var _components_BlockMain__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/BlockMain */ "./src/js/blocks/components/BlockMain/index.js");
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
 /**
  * External dependencies
  */
+
 
 
 
@@ -2230,55 +2232,15 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
       });
     }
   }, [className]);
-  var getIconSets = function getIconSets() {
-    return _components_icons_BootstrapIcons__WEBPACK_IMPORTED_MODULE_12__["default"];
-  };
-
-  // Calculate max width.
-  var maxWidthStyle = {
-    maxWidth: maximumWidth + maximumWidthUnit
-  };
-  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
-  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__.InspectorAdvancedControls, null, advancedControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("link", {
-    rel: "stylesheet",
-    href: "".concat(alertsDlxBlock.font_stylesheet)
-  }), /*#__PURE__*/React.createElement("figure", {
-    role: "alert",
-    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('alerts-dlx-alert alerts-dlx-bootstrap', {
-      'alerts-dlx-has-icon': iconEnabled,
-      'alerts-dlx-has-description': descriptionEnabled,
-      'alerts-dlx-has-button': buttonEnabled
-    }),
-    style: maxWidthStyle,
-    id: uniqueId
-  }, iconEnabled && /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-icon",
-    "aria-hidden": "true"
-  }, /*#__PURE__*/React.createElement(_components_IconPicker__WEBPACK_IMPORTED_MODULE_11__["default"], {
-    defaultSvg: icon,
-    setAttributes: setAttributes,
-    alertType: alertType,
-    icons: getIconSets()
-  })), /*#__PURE__*/React.createElement("section", null, closeButtonEnabled && /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-close"
-  }, /*#__PURE__*/React.createElement(_components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_14__.BootstrapCloseIcon, null)), titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__.RichText, {
-    tagName: "h2",
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Alert title', 'alerts-dlx'),
-    value: alertTitle,
-    className: "alerts-dlx-title",
-    disableLineBreaks: true,
-    allowedFormats: [],
-    onChange: function onChange(value) {
-      setAttributes({
-        alertTitle: value
-      });
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-content-wrapper"
-  }, descriptionEnabled && /*#__PURE__*/React.createElement("div", innerBlockProps), buttonEnabled && /*#__PURE__*/React.createElement(_components_AlertButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  var block = /*#__PURE__*/React.createElement(_components_BlockMain__WEBPACK_IMPORTED_MODULE_15__["default"], {
     attributes: attributes,
-    setAttributes: setAttributes
-  })))));
+    setAttributes: setAttributes,
+    iconSet: _components_icons_BootstrapIcons__WEBPACK_IMPORTED_MODULE_12__["default"],
+    inspectorControls: inspectorControls,
+    advancedControls: advancedControls,
+    CloseButtonIcon: _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_14__.BootstrapCloseIcon,
+    innerBlockProps: innerBlockProps
+  });
 
   /**
    * Filter: alertsDlx.blockClasses
@@ -3100,6 +3062,130 @@ var AlertButton = function AlertButton(props) {
   })))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AlertButton);
+
+/***/ }),
+
+/***/ "./src/js/blocks/components/BlockMain/index.js":
+/*!*****************************************************!*\
+  !*** ./src/js/blocks/components/BlockMain/index.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _IconPicker__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../IconPicker */ "./src/js/blocks/components/IconPicker/index.js");
+/* harmony import */ var _AlertButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../AlertButton */ "./src/js/blocks/components/AlertButton/index.js");
+/**
+ * Main Block Interface (what is shown to the user in the editor).
+ */
+
+
+
+
+
+
+
+/**
+ * Main Block Interface (what is shown to the user in the editor).
+ *
+ * @param {Object}      props                   - The props of the block.
+ * @param {Object}      props.attributes        - The attributes of the block.
+ * @param {Function}    props.setAttributes     - The function to set the attributes of the block.
+ * @param {Object}      props.iconSet           - The icon set of the block.
+ * @param {JSX.Element} props.inspectorControls - The inspector controls of the block.
+ * @param {JSX.Element} props.advancedControls  - The advanced controls of the block.
+ * @param {JSX.Element} props.CloseButtonIcon   - The close button icon of the block.
+ * @param {Object}      props.innerBlockProps   - The inner block props of the block.
+ * @return {JSX.Element} - The main block interface.
+ */
+var BlockMain = function BlockMain(props) {
+  var attributes = props.attributes,
+    setAttributes = props.setAttributes,
+    iconSet = props.iconSet,
+    inspectorControls = props.inspectorControls,
+    advancedControls = props.advancedControls,
+    CloseButtonIcon = props.CloseButtonIcon,
+    innerBlockProps = props.innerBlockProps;
+  var iconEnabled = attributes.iconEnabled,
+    iconSource = attributes.iconSource,
+    descriptionEnabled = attributes.descriptionEnabled,
+    buttonEnabled = attributes.buttonEnabled,
+    uniqueId = attributes.uniqueId,
+    icon = attributes.icon,
+    imageUrl = attributes.imageUrl,
+    alertType = attributes.alertType,
+    closeButtonEnabled = attributes.closeButtonEnabled,
+    titleEnabled = attributes.titleEnabled,
+    alertTitle = attributes.alertTitle,
+    maximumWidth = attributes.maximumWidth,
+    maximumWidthUnit = attributes.maximumWidthUnit,
+    baseFontSize = attributes.baseFontSize;
+
+  // Calculate max width.
+  var maxWidthStyle = {
+    maxWidth: maximumWidth + maximumWidthUnit
+  };
+  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorAdvancedControls, null, advancedControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("link", {
+    rel: "stylesheet",
+    href: "".concat(alertsDlxBlock.font_stylesheet)
+  }), /*#__PURE__*/React.createElement("figure", {
+    role: "alert",
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('alerts-dlx-alert alerts-dlx-bootstrap', {
+      'alerts-dlx-has-icon': iconEnabled,
+      'alerts-dlx-has-description': descriptionEnabled,
+      'alerts-dlx-has-button': buttonEnabled
+    }),
+    style: maxWidthStyle,
+    id: uniqueId
+  }, 'icon' === iconSource && iconEnabled && /*#__PURE__*/React.createElement("div", {
+    className: "alerts-dlx-icon",
+    "aria-hidden": "true"
+  }, /*#__PURE__*/React.createElement(_IconPicker__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    defaultSvg: icon,
+    setAttributes: setAttributes,
+    alertType: alertType,
+    icons: iconSet
+  })), 'image' === iconSource && iconEnabled && /*#__PURE__*/React.createElement("div", {
+    className: "alerts-dlx-icon",
+    "aria-hidden": "true"
+  }, imageUrl && /*#__PURE__*/React.createElement("img", {
+    src: imageUrl,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert image', 'alerts-dlx')
+  }), !imageUrl && /*#__PURE__*/React.createElement("img", {
+    src: alertsDlxBlock.default_image,
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Placeholder Alert image', 'alerts-dlx')
+  })), /*#__PURE__*/React.createElement("section", null, closeButtonEnabled && /*#__PURE__*/React.createElement("div", {
+    className: "alerts-dlx-close"
+  }, /*#__PURE__*/React.createElement(CloseButtonIcon, null)), titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
+    tagName: "h2",
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert title', 'alerts-dlx'),
+    value: alertTitle,
+    className: "alerts-dlx-title",
+    disableLineBreaks: true,
+    allowedFormats: [],
+    onChange: function onChange(value) {
+      setAttributes({
+        alertTitle: value
+      });
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "alerts-dlx-content-wrapper"
+  }, descriptionEnabled && /*#__PURE__*/React.createElement("div", innerBlockProps), buttonEnabled && /*#__PURE__*/React.createElement(_AlertButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    attributes: attributes,
+    setAttributes: setAttributes
+  })))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BlockMain);
 
 /***/ }),
 
