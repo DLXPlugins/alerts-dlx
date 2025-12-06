@@ -20,6 +20,8 @@ import {
 	ButtonGroup,
 	RangeControl,
 	BaseControl,
+	createSlotFill,
+	Slot,
 } from '@wordpress/components';
 
 import { rawHandler } from '@wordpress/blocks';
@@ -206,6 +208,7 @@ const BootstrapAlerts = ( props ) => {
 					) }
 				</>
 			</PanelBody>
+			<Slot name="alertsDLXSettingsPanelAfter" fillProps={ props } />
 			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'alerts-dlx' ) }>
 				<>
 					<UnitChooser
