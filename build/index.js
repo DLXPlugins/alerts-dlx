@@ -6134,7 +6134,9 @@ __webpack_require__.r(__webpack_exports__);
       var _useMediaUploader = (0,_hooks_useMediaUploader__WEBPACK_IMPORTED_MODULE_3__["default"])(),
         openMediaUploader = _useMediaUploader.openMediaUploader;
       var getImageButtons = function getImageButtons() {
-        return /*#__PURE__*/React.createElement(React.Fragment, null, imageUrl && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+        return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+          className: "alerts-dlx-icon-image-buttons-wrapper"
+        }, imageUrl && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
           variant: "secondary",
           isDestructive: true,
           onClick: function onClick() {
@@ -6161,7 +6163,7 @@ __webpack_require__.r(__webpack_exports__);
               });
             });
           }
-        }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Select Image', 'alerts-dlx')));
+        }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Select Image', 'alerts-dlx'))));
       };
       var getImage = function getImage() {
         if (!imageUrl) {
@@ -6191,7 +6193,9 @@ __webpack_require__.r(__webpack_exports__);
       }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
         value: "image",
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Image', 'alerts-dlx')
-      })), iconSource === 'image' && /*#__PURE__*/React.createElement(React.Fragment, null, getImage(), getImageButtons())));
+      })), iconSource === 'image' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+        className: "alerts-dlx-icon-image-wrapper"
+      }, getImage(), getImageButtons()))));
     });
   }
 });

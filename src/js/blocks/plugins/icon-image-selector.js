@@ -21,38 +21,40 @@ registerPlugin( 'custom-slot-fills', {
 					const getImageButtons = () => {
 						return (
 							<>
-								{ imageUrl && (
+								<div className="alerts-dlx-icon-image-buttons-wrapper">
+									{ imageUrl && (
+										<Button
+											variant="secondary"
+											isDestructive={ true }
+											onClick={ () => {
+												setAttributes( { imageUrl: '', imageId: 0 } );
+											} }
+										>
+											{ __( 'Remove Image', 'alerts-dlx' ) }
+										</Button>
+									) }
 									<Button
 										variant="secondary"
-										isDestructive={ true }
 										onClick={ () => {
-											setAttributes( { imageUrl: '', imageId: 0 } );
+											openMediaUploader(
+												{
+													title: __( 'Set Your Image', 'alerts-dlx' ),
+													buttonLabel: __( 'Save Image', 'alerts-dlx' ),
+													removeLabel: __( 'Remove Image', 'alerts-dlx' ),
+													suggestedWidth: 96,
+													suggestedHeight: 96,
+													aspectRatio: '1:1',
+													attachmentId: imageId || 0,
+												},
+												( attachment ) => {
+													setAttributes( { imageUrl: attachment.url, imageId: attachment.id } );
+												}
+											);
 										} }
 									>
-										{ __( 'Remove Image', 'alerts-dlx' ) }
+										{ __( 'Select Image', 'alerts-dlx' ) }
 									</Button>
-								) }
-								<Button
-									variant="secondary"
-									onClick={ () => {
-										openMediaUploader(
-											{
-												title: __( 'Set Your Image', 'alerts-dlx' ),
-												buttonLabel: __( 'Save Image', 'alerts-dlx' ),
-												removeLabel: __( 'Remove Image', 'alerts-dlx' ),
-												suggestedWidth: 96,
-												suggestedHeight: 96,
-												aspectRatio: '1:1',
-												attachmentId: imageId || 0,
-											},
-											( attachment ) => {
-												setAttributes( { imageUrl: attachment.url, imageId: attachment.id } );
-											}
-										);
-									} }
-								>
-									{ __( 'Select Image', 'alerts-dlx' ) }
-								</Button>
+								</div>
 							</>
 						);
 					};
@@ -96,8 +98,10 @@ registerPlugin( 'custom-slot-fills', {
 								</ToggleGroupControl>
 								{ iconSource === 'image' && (
 									<>
-										{ getImage() }
-										{ getImageButtons() }
+										<div className="alerts-dlx-icon-image-wrapper">
+											{ getImage() }
+											{ getImageButtons() }
+										</div>
 									</>
 								) }
 							</PanelBody>
