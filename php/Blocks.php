@@ -209,9 +209,6 @@ class Blocks {
 			<?php
 		}
 
-		// Print styles.
-		wp_print_styles( $style_handles_to_print );
-
 		// Convert atts to camelCase.
 		$new_atts = array();
 		foreach ( $atts as $key => $value ) {
@@ -556,7 +553,7 @@ class Blocks {
 	/**
 	 * Register the block editor script for the iframe.
 	 */
-	public function register_block_editor_scripts_iframe() {
+	public function register_block_editor_scripts_iframe(): void {
 		if ( ! is_admin() ) {
 			return;
 		}
@@ -615,13 +612,6 @@ class Blocks {
 		wp_register_style(
 			'alerts-dlx-chakra-styles',
 			Functions::get_plugin_url( 'dist/alerts-dlx-chakra-styles.css' ),
-			array(),
-			Functions::get_plugin_version(),
-			'all'
-		);
-		wp_register_style(
-			'alerts-dlx-chakra-dark-css',
-			Functions::get_plugin_url( 'dist/alerts-dlx-chakra-dark.css' ),
 			array(),
 			Functions::get_plugin_version(),
 			'all'

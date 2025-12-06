@@ -3,7 +3,7 @@ Contributors: ronalfy
 Tags: alert box, notifications, alerts, notify, blocks
 Requires at least: 6.5
 Tested up to: 6.9
-Stable tag: 2.2.2
+Stable tag: 2.2.3
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -107,6 +107,10 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Changelog ==
 
+= 2.2.3 =
+* Released 2025-12-06
+* Fixed shortcode CSS not loading on the frontend.
+
 = 2.2.2 =
 * Released 2025-12-05
 * Fixed frontend rendering for those not using footer hooks.
@@ -197,5 +201,5 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Upgrade Notice ==
 
-= 2.2.2 =
-Fixing frontend rendering on some themes, and setting max size on SVGs to prevent jumping. Fixing shortcode not rendering with editorial blocks.
+= 2.2.3 =
+Fixing shortcode CSS not loading on the frontend.
