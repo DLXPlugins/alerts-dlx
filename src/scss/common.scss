@@ -136,8 +136,8 @@ figure.alerts-dlx-alert {
 	}
 
 	.alerts-dlx-icon img {
-		max-width: 1.8em;
-		max-height: 1.8em;
+		max-width: 2em;
+		max-height: 2em;
 		object-fit: cover;
 		margin-bottom: 0.5em;
 	}
@@ -146,6 +146,9 @@ figure.alerts-dlx-alert {
 		font-size: 1.2em;
 		line-height: 2.2em;
 	}
+}
+body .alerts-dlx-alert[role=alert] section .alerts-dlx-close ~ h2.alerts-dlx-title {
+	margin-right: 16px;
 }
 
 /* Theme-specific font size inheritance with higher specificity */
