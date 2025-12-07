@@ -19,15 +19,13 @@ import {
 	ButtonGroup,
 	RangeControl,
 	BaseControl,
+	Slot,
 } from '@wordpress/components';
 
 import { rawHandler } from '@wordpress/blocks';
 import { useDispatch } from '@wordpress/data';
 
 import {
-	InspectorControls,
-	InspectorAdvancedControls,
-	RichText,
 	useBlockProps,
 	useInnerBlocksProps,
 	InnerBlocks,
@@ -36,11 +34,10 @@ import {
 
 import { useInstanceId } from '@wordpress/compose';
 
-import AlertButton from '../components/AlertButton';
 import UnitChooser from '../components/unit-picker';
-import IconPicker from '../components/IconPicker';
-import materialSvgs from '../components/icons/MaterialIcons';
+import MaterialIcons from '../components/icons/MaterialIcons';
 import { MaterialCloseIcon } from '../components/CloseButtonIcons';
+import BlockMain from '../components/BlockMain';
 
 const MaterialAlerts = ( props ) => {
 	const generatedUniqueId = useInstanceId( MaterialAlerts, 'adlx-material' );
@@ -108,6 +105,7 @@ const MaterialAlerts = ( props ) => {
 
 	const inspectorControls = (
 		<>
+			<Slot name="alertsDLXPanelStart" fillProps={ props } />
 			<PanelBody initialOpen={ true } title={ __( 'Alert Settings', 'quotes-dlx' ) }>
 				<>
 					<PanelRow>
@@ -187,6 +185,7 @@ const MaterialAlerts = ( props ) => {
 							/>
 						</PanelRow>
 					) }
+					<Slot name="alertsDLXSettingsPanelEnd" fillProps={ props } />
 				</>
 			</PanelBody>
 			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'quotes-dlx' ) }>
@@ -365,6 +364,7 @@ const MaterialAlerts = ( props ) => {
 						/>
 					</PanelRow>
 				) }
+				<Slot name="alertsDLXAppearancePanelEnd" fillProps={ props } />
 			</PanelBody>
 		</>
 	);
@@ -406,73 +406,16 @@ const MaterialAlerts = ( props ) => {
 		}
 	}, [ className ] );
 
-	const getIconSets = () => {
-		return materialSvgs;
-	};
-
-	// Calculate max width.
-	const maxWidthStyle = {
-		maxWidth: maximumWidth + maximumWidthUnit,
-	};
-	const baseFontSizeStyles = `#${ uniqueId } { font-size: ${ parseInt(
-		baseFontSize
-	) }px; }`;
 	const block = (
-		<>
-			<InspectorControls>{ inspectorControls }</InspectorControls>
-			<InspectorAdvancedControls>{ advancedControls }</InspectorAdvancedControls>
-			<style>{ baseFontSizeStyles }</style>
-			<figure
-				role="alert"
-				className={ classnames( 'alerts-dlx-alert alerts-dlx-material', {
-					'alerts-dlx-has-icon': iconEnabled,
-					'alerts-dlx-has-description': descriptionEnabled,
-					'alerts-dlx-has-button': buttonEnabled,
-				} ) }
-				style={ maxWidthStyle }
-				id={ uniqueId }
-			>
-				{ iconEnabled && (
-					<div className="alerts-dlx-icon" aria-hidden="true">
-						<IconPicker
-							defaultSvg={ icon }
-							setAttributes={ setAttributes }
-							alertType={ alertType }
-							icons={ getIconSets() }
-						/>
-					</div>
-				) }
-				<section>
-					{ closeButtonEnabled && (
-						<div className="alerts-dlx-close">
-							<MaterialCloseIcon />
-						</div>
-					) }
-					{ titleEnabled && (
-						<RichText
-							tagName="h2"
-							placeholder={ __( 'Alert title', 'quotes-dlx' ) }
-							value={ alertTitle }
-							className="alerts-dlx-title"
-							disableLineBreaks={ true }
-							allowedFormats={ [] }
-							onChange={ ( value ) => {
-								setAttributes( { alertTitle: value } );
-							} }
-						/>
-					) }
-					<div className="alerts-dlx-content-wrapper">
-						{ descriptionEnabled && <div { ...innerBlockProps } /> }
-						{ buttonEnabled && (
-							<AlertButton
-								attributes={ attributes }
-								setAttributes={ setAttributes }
-							/>
-						) }
-					</div>
-				</section>
-			</figure>
-		</>
+		<BlockMain
+			attributes={ attributes }
+			setAttributes={ setAttributes }
+			iconSet={ MaterialIcons }
+			inspectorControls={ inspectorControls }
+			advancedControls={ advancedControls }
+			CloseButtonIcon={ MaterialCloseIcon }
+			innerBlockProps={ innerBlockProps }
+		/>
 	);
 
 	/**

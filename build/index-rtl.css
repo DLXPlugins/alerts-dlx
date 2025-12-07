@@ -1,33 +1,4 @@
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/js/blocks/components/AlertButton/editor.scss ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************/
-.alerts-dlx-button-popover-base-control {
-  padding: 16px;
-}
-
-.alertx-dlx-button-link {
-  max-width: 100%;
-  border: 1px solid #ddd;
-  border-radius: 2px;
-}
-
-.alerts-dlx-button-wrapper {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-
-.alerts-dlx-button-wrapper .alertx-dlx-button-link-icon {
-  visibility: hidden;
-}
-.alerts-dlx-button-wrapper:hover .alertx-dlx-button-link-icon, .alerts-dlx-button-wrapper:focus .alertx-dlx-button-link-icon {
-  visibility: visible;
-}
-
-.alerts-dlx-link-toggle {
-  margin-top: 15px;
-}
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/js/blocks/components/unit-picker/editor.scss ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************************/
 /* Unit Picker Component - Forked from @GenerateBlocks */
@@ -128,4 +99,33 @@ button.components-button.alerts-dlx-icon-preview-button {
   margin: 0;
   font-size: inherit;
   line-height: 0;
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/js/blocks/components/AlertButton/editor.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************/
+.alerts-dlx-button-popover-base-control {
+  padding: 16px;
+}
+
+.alertx-dlx-button-link {
+  max-width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+
+.alerts-dlx-button-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.alerts-dlx-button-wrapper .alertx-dlx-button-link-icon {
+  visibility: hidden;
+}
+.alerts-dlx-button-wrapper:hover .alertx-dlx-button-link-icon, .alerts-dlx-button-wrapper:focus .alertx-dlx-button-link-icon {
+  visibility: visible;
+}
+
+.alerts-dlx-link-toggle {
+  margin-top: 15px;
 }

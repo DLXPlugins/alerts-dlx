@@ -14,13 +14,11 @@ import {
 	PanelBody,
 	PanelRow,
 	ToggleControl,
-	DateTimePicker,
 	TextControl,
 	Button,
 	ButtonGroup,
 	RangeControl,
 	BaseControl,
-	createSlotFill,
 	Slot,
 } from '@wordpress/components';
 
@@ -28,21 +26,13 @@ import { rawHandler } from '@wordpress/blocks';
 import { useDispatch } from '@wordpress/data';
 
 import {
-	InspectorControls,
-	InspectorAdvancedControls,
-	RichText,
 	useBlockProps,
 	useInnerBlocksProps,
 	store,
 } from '@wordpress/block-editor';
 
-import { useInstanceId } from '@wordpress/compose';
-
-import AlertButton from '../components/AlertButton';
 import UnitChooser from '../components/unit-picker';
-import IconPicker from '../components/IconPicker';
 import BootstrapIcons from '../components/icons/BootstrapIcons';
-import BootstrapColors from './colors';
 import { BootstrapCloseIcon } from '../components/CloseButtonIcons';
 import BlockMain from '../components/BlockMain';
 

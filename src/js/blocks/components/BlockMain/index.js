@@ -45,6 +45,7 @@ const BlockMain = ( props ) => {
 		icon,
 		imageUrl,
 		alertType,
+		alertGroup,
 		closeButtonEnabled,
 		titleEnabled,
 		alertTitle,
@@ -60,7 +61,6 @@ const BlockMain = ( props ) => {
 	const baseFontSizeStyles = `#${ uniqueId } { font-size: ${ parseInt(
 		baseFontSize
 	) }px; }`;
-
 	return (
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
@@ -69,7 +69,7 @@ const BlockMain = ( props ) => {
 			<link rel="stylesheet" href={ `${ alertsDlxBlock.font_stylesheet }` } />
 			<figure
 				role="alert"
-				className={ classnames( 'alerts-dlx-alert alerts-dlx-bootstrap', {
+				className={ classnames( `alerts-dlx-alert alerts-dlx-${ alertGroup }`, {
 					'alerts-dlx-has-icon': iconEnabled,
 					'alerts-dlx-has-description': descriptionEnabled,
 					'alerts-dlx-has-button': buttonEnabled,

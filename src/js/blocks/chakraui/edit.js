@@ -19,28 +19,22 @@ import {
 	ButtonGroup,
 	RangeControl,
 	BaseControl,
+	Slot,
 } from '@wordpress/components';
 
 import { rawHandler } from '@wordpress/blocks';
 import { useDispatch } from '@wordpress/data';
 
 import {
-	InspectorControls,
-	InspectorAdvancedControls,
-	RichText,
 	useBlockProps,
 	useInnerBlocksProps,
 	store,
 } from '@wordpress/block-editor';
 
-import { useInstanceId } from '@wordpress/compose';
-
-import AlertButton from '../components/AlertButton';
 import UnitChooser from '../components/unit-picker';
-import IconPicker from '../components/IconPicker';
-import chakraColors from './colors';
 import ChakraIcons from '../components/icons/ChakraIcons';
 import { ChakraCloseIcon } from '../components/CloseButtonIcons';
+import BlockMain from '../components/BlockMain';
 
 // For storing unique IDs.
 const uniqueIds = [];
@@ -122,6 +116,7 @@ const ChakraAlerts = ( props ) => {
 
 	const inspectorControls = (
 		<>
+			<Slot name="alertsDLXPanelStart" fillProps={ props } />
 			<PanelBody title={ __( 'Alert Settings', 'alerts-dlx' ) }>
 				<>
 					<PanelRow>
@@ -197,6 +192,7 @@ const ChakraAlerts = ( props ) => {
 							</PanelRow>
 						)
 					}
+					<Slot name="alertsDLXSettingsPanelEnd" fillProps={ props } />
 				</>
 			</PanelBody>
 			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'quotes-dlx' ) }>
@@ -350,6 +346,7 @@ const ChakraAlerts = ( props ) => {
 						help={ __( 'Set the base font size for the alert.', 'alerts-dlx' ) }
 					/>
 				</PanelRow>
+				<Slot name="alertsDLXAppearancePanelEnd" fillProps={ props } />
 			</PanelBody>
 		</>
 	);
@@ -384,75 +381,16 @@ const ChakraAlerts = ( props ) => {
 		}
 	}, [ className ] );
 
-	const getIconSets = () => {
-		return ChakraIcons;
-	};
-
-	// Calculate max width.
-	const maxWidthStyle = {
-		maxWidth: maximumWidth + maximumWidthUnit,
-	};
-	const baseFontSizeStyles = `#${ uniqueId } { font-size: ${ parseInt( baseFontSize ) }px; }`;
 	const block = (
-		<>
-			<InspectorControls>{ inspectorControls }</InspectorControls>
-			<InspectorAdvancedControls>{ advancedControls }</InspectorAdvancedControls>
-			<style>{ baseFontSizeStyles }</style>
-			<figure
-				role="alert"
-				className={ classnames( 'alerts-dlx-alert alerts-dlx-chakra', {
-					'alerts-dlx-has-icon': iconEnabled,
-					'alerts-dlx-has-description': descriptionEnabled,
-					'alerts-dlx-has-button': buttonEnabled,
-				} ) }
-				style={ maxWidthStyle }
-				id={ uniqueId }
-			>
-				{ iconEnabled && (
-					<div className="alerts-dlx-icon" aria-hidden="true">
-						<IconPicker
-							defaultSvg={ icon }
-							setAttributes={ setAttributes }
-							alertType={ alertType }
-							icons={ getIconSets() }
-						/>
-					</div>
-				) }
-				<section>
-					{
-						closeButtonEnabled && (
-							<div className="alerts-dlx-close">
-								<ChakraCloseIcon />
-							</div>
-						)
-					}
-					{ titleEnabled && (
-						<RichText
-							tagName="h2"
-							placeholder={ __( 'Alert title', 'quotes-dlx' ) }
-							value={ alertTitle }
-							className="alerts-dlx-title"
-							disableLineBreaks={ true }
-							allowedFormats={ [] }
-							onChange={ ( value ) => {
-								setAttributes( { alertTitle: value } );
-							} }
-						/>
-					) }
-					<div className="alerts-dlx-content-wrapper">
-						{ descriptionEnabled && (
-							<div { ...innerBlockProps } />
-						) }
-						{ buttonEnabled && (
-							<AlertButton
-								attributes={ attributes }
-								setAttributes={ setAttributes }
-							/>
-						) }
-					</div>
-				</section>
-			</figure>
-		</>
+		<BlockMain
+			attributes={ attributes }
+			setAttributes={ setAttributes }
+			iconSet={ ChakraIcons }
+			inspectorControls={ inspectorControls }
+			advancedControls={ advancedControls }
+			CloseButtonIcon={ ChakraCloseIcon }
+			innerBlockProps={ innerBlockProps }
+		/>
 	);
 
 	/**

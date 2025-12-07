@@ -1947,25 +1947,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
-/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _components_AlertButton__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/AlertButton */ "./src/js/blocks/components/AlertButton/index.js");
-/* harmony import */ var _components_unit_picker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/unit-picker */ "./src/js/blocks/components/unit-picker/index.js");
-/* harmony import */ var _components_IconPicker__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/IconPicker */ "./src/js/blocks/components/IconPicker/index.js");
-/* harmony import */ var _components_icons_BootstrapIcons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/icons/BootstrapIcons */ "./src/js/blocks/components/icons/BootstrapIcons.js");
-/* harmony import */ var _colors__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./colors */ "./src/js/blocks/bootstrap/colors.js");
-/* harmony import */ var _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/CloseButtonIcons */ "./src/js/blocks/components/CloseButtonIcons/index.js");
-/* harmony import */ var _components_BlockMain__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/BlockMain */ "./src/js/blocks/components/BlockMain/index.js");
+/* harmony import */ var _components_unit_picker__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/unit-picker */ "./src/js/blocks/components/unit-picker/index.js");
+/* harmony import */ var _components_icons_BootstrapIcons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/icons/BootstrapIcons */ "./src/js/blocks/components/icons/BootstrapIcons.js");
+/* harmony import */ var _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/CloseButtonIcons */ "./src/js/blocks/components/CloseButtonIcons/index.js");
+/* harmony import */ var _components_BlockMain__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/BlockMain */ "./src/js/blocks/components/BlockMain/index.js");
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
 /**
  * External dependencies
  */
-
-
-
-
 
 
 
@@ -2122,7 +2113,7 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
   }))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     initialOpen: true,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Appearance', 'alerts-dlx')
-  }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_components_unit_picker__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_components_unit_picker__WEBPACK_IMPORTED_MODULE_8__["default"], {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Maximum Width', 'alerts-dlx'),
     value: maximumWidthUnit,
     units: ['px', '%', 'vw'],
@@ -2238,13 +2229,13 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
       });
     }
   }, [className]);
-  var block = /*#__PURE__*/React.createElement(_components_BlockMain__WEBPACK_IMPORTED_MODULE_15__["default"], {
+  var block = /*#__PURE__*/React.createElement(_components_BlockMain__WEBPACK_IMPORTED_MODULE_11__["default"], {
     attributes: attributes,
     setAttributes: setAttributes,
-    iconSet: _components_icons_BootstrapIcons__WEBPACK_IMPORTED_MODULE_12__["default"],
+    iconSet: _components_icons_BootstrapIcons__WEBPACK_IMPORTED_MODULE_9__["default"],
     inspectorControls: inspectorControls,
     advancedControls: advancedControls,
-    CloseButtonIcon: _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_14__.BootstrapCloseIcon,
+    CloseButtonIcon: _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_10__.BootstrapCloseIcon,
     innerBlockProps: innerBlockProps
   });
 
@@ -2356,7 +2347,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"Chakra Alert","apiVersion":3,"name":"mediaron/alerts-dlx-chakra","category":"alertsdlx","icon":"<svg width=\'100%\' height=\'100%\' viewBox=\'0 0 804 804\' version=\'1.1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\' xml:space=\'preserve\' xmlns:serif=\'http://www.serif.com/\' style=\'fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;\'><path fill=\'#60BFC1\' d=\'M803.125,401.563c0,-221.629 -179.934,-401.563 -401.563,-401.563c-221.628,0 -401.562,179.934 -401.562,401.563c0,221.628 179.934,401.562 401.563,401.562c221.628,0 401.562,-179.934 401.562,-401.563Z\' style=\'fill:url(#_Linear1);\'/><path fill=\'#FFFFFF\' d=\'M217.369,418.703l273.725,-271.841c5.112,-5.078 13.344,1.102 9.89,7.428l-101.878,186.726c-2.275,4.162 0.741,9.243 5.485,9.243l176.062,0c5.672,0 8.409,6.947 4.263,10.819l-308.525,287.944c-5.532,5.162 -13.766,-2.113 -9.324,-8.238l146.049,-201.478c2.993,-4.131 0.043,-9.918 -5.06,-9.918l-186.283,-0c-5.579,-0 -8.362,-6.754 -4.404,-10.685Z\' style=\'fill:#fff;fill-rule:nonzero;\'/><defs><linearGradient id=\'_Linear1\' x1=\'0\' y1=\'0\' x2=\'1\' y2=\'0\' gradientUnits=\'userSpaceOnUse\' gradientTransform=\'matrix(4.91772e-14,803.125,-803.125,4.91772e-14,401.562,0)\'><stop offset=\'0\' style=\'stop-color:#7bcbd4;stop-opacity:1\'/><stop offset=\'1\' style=\'stop-color:#29c6b7;stop-opacity:1\'/></linearGradient></defs></svg>","description":"An alert and notification block inspired by Chakra UI.","keywords":["alert","info","hint","success","error","notice","notification","warning","chakra"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"align":{"type":"string","default":"center"},"alertType":{"type":"string","default":"success"},"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"descriptionEnabled":{"type":"boolean","default":true},"titleEnabled":{"type":"boolean","default":true},"buttonEnabled":{"type":"boolean","default":false},"iconEnabled":{"type":"boolean","default":true},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"boolean","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"string","default":"650"},"baseFontSize":{"type":"number","default":18},"icon":{"type":"string","default":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M24 44q-4.25 0-7.9-1.525-3.65-1.525-6.35-4.225-2.7-2.7-4.225-6.35Q4 28.25 4 24q0-4.2 1.525-7.85Q7.05 12.5 9.75 9.8q2.7-2.7 6.35-4.25Q19.75 4 24 4q3.75 0 7 1.2t5.85 3.3l-2.15 2.15q-2.2-1.75-4.9-2.7Q27.1 7 24 7q-7.25 0-12.125 4.875T7 24q0 7.25 4.875 12.125T24 41q7.25 0 12.125-4.875T41 24q0-1.5-.225-2.925-.225-1.425-.675-2.775l2.3-2.3q.8 1.85 1.2 3.85.4 2 .4 4.15 0 4.25-1.55 7.9-1.55 3.65-4.25 6.35-2.7 2.7-6.35 4.225Q28.2 44 24 44Zm-2.95-10.9-8.25-8.3 2.25-2.25 6 6 20.7-20.7 2.3 2.25Z\'/></svg>"},"enableCustomFonts":{"type":"boolean","default":true},"variant":{"type":"string","default":"subtle"},"mode":{"type":"string","default":"light"},"enableDropShadow":{"type":"boolean","default":false},"iconVerticalAlignment":{"type":"string","default":"top"},"uniqueId":{"type":"string","default":""},"alertGroup":{"type":"string","default":"chakra"},"closeButtonEnabled":{"type":"boolean","default":false},"closeButtonExpiration":{"type":"number","default":0},"innerBlocksEnabled":{"type":"boolean","default":false},"colorPrimary":{"type":"string","default":"var(--alerts-dlx-chakra-color-primary, #014361)"},"colorBorder":{"type":"string","default":"var(--alerts-dlx-chakra-color-border, #014361)"},"colorAccent":{"type":"string","default":"var(--alerts-dlx-chakra-color-accent, #3182ce)"},"colorAlt":{"type":"string","default":"var(--alerts-dlx-chakra-color-alt, #2d76bb)"},"colorAltHover":{"type":"string","default":"var(--alerts-dlx-chakra-color-alt-hover, #2d76bb)"},"colorAltText":{"type":"string","default":"var(--alerts-dlx-chakra-color-alt-text, #ffffff)"},"colorAltTextHover":{"type":"string","default":"var(--alerts-dlx-chakra-color-alt-text-hover, #ffffff)"},"colorBold":{"type":"string","default":"var(--alerts-dlx-chakra-color-bold, #2d76bb)"},"colorLight":{"type":"string","default":"var(--alerts-dlx-chakra-color-light, #bee3f8)"},"isBlockEditorialOnly":{"type":"boolean","default":false},"isBlockReadOnly":{"type":"boolean","default":false}},"example":{"attributes":{"alertType":"info","alertTitle":"Sample alert title","alertDescription":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>","buttonEnabled":true,"baseFontSize":14,"buttonText":"Learn More","icon":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M22.65 34h3V22h-3ZM24 18.3q.7 0 1.175-.45.475-.45.475-1.15t-.475-1.2Q24.7 15 24 15q-.7 0-1.175.5-.475.5-.475 1.2t.475 1.15q.475.45 1.175.45ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z\' /></svg>"}},"styles":[{"name":"success","label":"Success","isDefault":true},{"name":"info","label":"Info"},{"name":"warning","label":"Warning"},{"name":"error","label":"Error"},{"name":"custom","label":"Custom"}],"supports":{"anchor":true,"align":true,"className":true},"editorScript":"alerts-dlx-block","editorStyle":["alerts-dlx-block-editor-styles","alerts-dlx-chakra-styles","alerts-dlx-block-editor-styles-lato"]}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"Chakra Alert","apiVersion":3,"name":"mediaron/alerts-dlx-chakra","category":"alertsdlx","icon":"<svg width=\'100%\' height=\'100%\' viewBox=\'0 0 804 804\' version=\'1.1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\' xml:space=\'preserve\' xmlns:serif=\'http://www.serif.com/\' style=\'fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;\'><path fill=\'#60BFC1\' d=\'M803.125,401.563c0,-221.629 -179.934,-401.563 -401.563,-401.563c-221.628,0 -401.562,179.934 -401.562,401.563c0,221.628 179.934,401.562 401.563,401.562c221.628,0 401.562,-179.934 401.562,-401.563Z\' style=\'fill:url(#_Linear1);\'/><path fill=\'#FFFFFF\' d=\'M217.369,418.703l273.725,-271.841c5.112,-5.078 13.344,1.102 9.89,7.428l-101.878,186.726c-2.275,4.162 0.741,9.243 5.485,9.243l176.062,0c5.672,0 8.409,6.947 4.263,10.819l-308.525,287.944c-5.532,5.162 -13.766,-2.113 -9.324,-8.238l146.049,-201.478c2.993,-4.131 0.043,-9.918 -5.06,-9.918l-186.283,-0c-5.579,-0 -8.362,-6.754 -4.404,-10.685Z\' style=\'fill:#fff;fill-rule:nonzero;\'/><defs><linearGradient id=\'_Linear1\' x1=\'0\' y1=\'0\' x2=\'1\' y2=\'0\' gradientUnits=\'userSpaceOnUse\' gradientTransform=\'matrix(4.91772e-14,803.125,-803.125,4.91772e-14,401.562,0)\'><stop offset=\'0\' style=\'stop-color:#7bcbd4;stop-opacity:1\'/><stop offset=\'1\' style=\'stop-color:#29c6b7;stop-opacity:1\'/></linearGradient></defs></svg>","description":"An alert and notification block inspired by Chakra UI.","keywords":["alert","info","hint","success","error","notice","notification","warning","chakra"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"align":{"type":"string","default":"center"},"alertType":{"type":"string","default":"success"},"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"descriptionEnabled":{"type":"boolean","default":true},"titleEnabled":{"type":"boolean","default":true},"buttonEnabled":{"type":"boolean","default":false},"iconEnabled":{"type":"boolean","default":true},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"boolean","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"string","default":"650"},"baseFontSize":{"type":"number","default":18},"icon":{"type":"string","default":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M24 44q-4.25 0-7.9-1.525-3.65-1.525-6.35-4.225-2.7-2.7-4.225-6.35Q4 28.25 4 24q0-4.2 1.525-7.85Q7.05 12.5 9.75 9.8q2.7-2.7 6.35-4.25Q19.75 4 24 4q3.75 0 7 1.2t5.85 3.3l-2.15 2.15q-2.2-1.75-4.9-2.7Q27.1 7 24 7q-7.25 0-12.125 4.875T7 24q0 7.25 4.875 12.125T24 41q7.25 0 12.125-4.875T41 24q0-1.5-.225-2.925-.225-1.425-.675-2.775l2.3-2.3q.8 1.85 1.2 3.85.4 2 .4 4.15 0 4.25-1.55 7.9-1.55 3.65-4.25 6.35-2.7 2.7-6.35 4.225Q28.2 44 24 44Zm-2.95-10.9-8.25-8.3 2.25-2.25 6 6 20.7-20.7 2.3 2.25Z\'/></svg>"},"enableCustomFonts":{"type":"boolean","default":true},"variant":{"type":"string","default":"subtle"},"mode":{"type":"string","default":"light"},"enableDropShadow":{"type":"boolean","default":false},"iconVerticalAlignment":{"type":"string","default":"top"},"uniqueId":{"type":"string","default":""},"alertGroup":{"type":"string","default":"chakra"},"closeButtonEnabled":{"type":"boolean","default":false},"closeButtonExpiration":{"type":"number","default":0},"innerBlocksEnabled":{"type":"boolean","default":false},"colorPrimary":{"type":"string","default":"var(--alerts-dlx-chakra-color-primary, #014361)"},"colorBorder":{"type":"string","default":"var(--alerts-dlx-chakra-color-border, #014361)"},"colorAccent":{"type":"string","default":"var(--alerts-dlx-chakra-color-accent, #3182ce)"},"colorAlt":{"type":"string","default":"var(--alerts-dlx-chakra-color-alt, #2d76bb)"},"colorAltHover":{"type":"string","default":"var(--alerts-dlx-chakra-color-alt-hover, #2d76bb)"},"colorAltText":{"type":"string","default":"var(--alerts-dlx-chakra-color-alt-text, #ffffff)"},"colorAltTextHover":{"type":"string","default":"var(--alerts-dlx-chakra-color-alt-text-hover, #ffffff)"},"colorBold":{"type":"string","default":"var(--alerts-dlx-chakra-color-bold, #2d76bb)"},"colorLight":{"type":"string","default":"var(--alerts-dlx-chakra-color-light, #bee3f8)"},"isBlockEditorialOnly":{"type":"boolean","default":false},"isBlockReadOnly":{"type":"boolean","default":false},"iconSource":{"type":"string","default":"icon"},"imageUrl":{"type":"string","default":""},"imageId":{"type":"number","default":0}},"example":{"attributes":{"alertType":"info","alertTitle":"Sample alert title","alertDescription":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>","buttonEnabled":true,"baseFontSize":14,"buttonText":"Learn More","icon":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M22.65 34h3V22h-3ZM24 18.3q.7 0 1.175-.45.475-.45.475-1.15t-.475-1.2Q24.7 15 24 15q-.7 0-1.175.5-.475.5-.475 1.2t.475 1.15q.475.45 1.175.45ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z\' /></svg>"}},"styles":[{"name":"success","label":"Success","isDefault":true},{"name":"info","label":"Info"},{"name":"warning","label":"Warning"},{"name":"error","label":"Error"},{"name":"custom","label":"Custom"}],"supports":{"anchor":true,"align":true,"className":true},"editorScript":"alerts-dlx-block","editorStyle":["alerts-dlx-block-editor-styles","alerts-dlx-chakra-styles","alerts-dlx-block-editor-styles-lato"]}');
 
 /***/ }),
 
@@ -2462,14 +2453,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
-/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _components_AlertButton__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/AlertButton */ "./src/js/blocks/components/AlertButton/index.js");
-/* harmony import */ var _components_unit_picker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/unit-picker */ "./src/js/blocks/components/unit-picker/index.js");
-/* harmony import */ var _components_IconPicker__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/IconPicker */ "./src/js/blocks/components/IconPicker/index.js");
-/* harmony import */ var _colors__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./colors */ "./src/js/blocks/chakraui/colors.js");
-/* harmony import */ var _components_icons_ChakraIcons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/icons/ChakraIcons */ "./src/js/blocks/components/icons/ChakraIcons.js");
-/* harmony import */ var _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/CloseButtonIcons */ "./src/js/blocks/components/CloseButtonIcons/index.js");
+/* harmony import */ var _components_unit_picker__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/unit-picker */ "./src/js/blocks/components/unit-picker/index.js");
+/* harmony import */ var _components_icons_ChakraIcons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/icons/ChakraIcons */ "./src/js/blocks/components/icons/ChakraIcons.js");
+/* harmony import */ var _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/CloseButtonIcons */ "./src/js/blocks/components/CloseButtonIcons/index.js");
+/* harmony import */ var _components_BlockMain__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/BlockMain */ "./src/js/blocks/components/BlockMain/index.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
@@ -2482,9 +2469,6 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * External dependencies
  */
-
-
-
 
 
 
@@ -2577,7 +2561,10 @@ var ChakraAlerts = function ChakraAlerts(props) {
       uniqueIds.push(uniqueId);
     }
   }, []);
-  var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+  var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
+    name: "alertsDLXPanelStart",
+    fillProps: props
+  }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Alert Settings', 'alerts-dlx')
   }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enable Alert Icon', 'alerts-dlx'),
@@ -2630,10 +2617,13 @@ var ChakraAlerts = function ChakraAlerts(props) {
     },
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Set the expiration time in seconds for the close button to reappear. Set to zero to never expire.', 'alerts-dlx'),
     type: 'number'
-  })))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
+    name: "alertsDLXSettingsPanelEnd",
+    fillProps: props
+  }))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     initialOpen: true,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Appearance', 'quotes-dlx')
-  }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_components_unit_picker__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_components_unit_picker__WEBPACK_IMPORTED_MODULE_8__["default"], {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Maximum Width', 'quotes-dlx'),
     value: maximumWidthUnit,
     units: ['px', '%', 'vw'],
@@ -2740,7 +2730,10 @@ var ChakraAlerts = function ChakraAlerts(props) {
       });
     },
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Set the base font size for the alert.', 'alerts-dlx')
-  }))));
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
+    name: "alertsDLXAppearancePanelEnd",
+    fillProps: props
+  })));
   var advancedControls = /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enable Flexible InnerBlocks', 'alerts-dlx'),
     checked: innerBlocksEnabled,
@@ -2767,52 +2760,15 @@ var ChakraAlerts = function ChakraAlerts(props) {
       });
     }
   }, [className]);
-  var getIconSets = function getIconSets() {
-    return _components_icons_ChakraIcons__WEBPACK_IMPORTED_MODULE_13__["default"];
-  };
-
-  // Calculate max width.
-  var maxWidthStyle = {
-    maxWidth: maximumWidth + maximumWidthUnit
-  };
-  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
-  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__.InspectorAdvancedControls, null, advancedControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("figure", {
-    role: "alert",
-    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('alerts-dlx-alert alerts-dlx-chakra', {
-      'alerts-dlx-has-icon': iconEnabled,
-      'alerts-dlx-has-description': descriptionEnabled,
-      'alerts-dlx-has-button': buttonEnabled
-    }),
-    style: maxWidthStyle,
-    id: uniqueId
-  }, iconEnabled && /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-icon",
-    "aria-hidden": "true"
-  }, /*#__PURE__*/React.createElement(_components_IconPicker__WEBPACK_IMPORTED_MODULE_11__["default"], {
-    defaultSvg: icon,
-    setAttributes: setAttributes,
-    alertType: alertType,
-    icons: getIconSets()
-  })), /*#__PURE__*/React.createElement("section", null, closeButtonEnabled && /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-close"
-  }, /*#__PURE__*/React.createElement(_components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_14__.ChakraCloseIcon, null)), titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__.RichText, {
-    tagName: "h2",
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Alert title', 'quotes-dlx'),
-    value: alertTitle,
-    className: "alerts-dlx-title",
-    disableLineBreaks: true,
-    allowedFormats: [],
-    onChange: function onChange(value) {
-      setAttributes({
-        alertTitle: value
-      });
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-content-wrapper"
-  }, descriptionEnabled && /*#__PURE__*/React.createElement("div", innerBlockProps), buttonEnabled && /*#__PURE__*/React.createElement(_components_AlertButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  var block = /*#__PURE__*/React.createElement(_components_BlockMain__WEBPACK_IMPORTED_MODULE_11__["default"], {
     attributes: attributes,
-    setAttributes: setAttributes
-  })))));
+    setAttributes: setAttributes,
+    iconSet: _components_icons_ChakraIcons__WEBPACK_IMPORTED_MODULE_9__["default"],
+    inspectorControls: inspectorControls,
+    advancedControls: advancedControls,
+    CloseButtonIcon: _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_10__.ChakraCloseIcon,
+    innerBlockProps: innerBlockProps
+  });
 
   /**
    * Filter: alertsDlx.blockClasses
@@ -3129,6 +3085,7 @@ var BlockMain = function BlockMain(props) {
     icon = attributes.icon,
     imageUrl = attributes.imageUrl,
     alertType = attributes.alertType,
+    alertGroup = attributes.alertGroup,
     closeButtonEnabled = attributes.closeButtonEnabled,
     titleEnabled = attributes.titleEnabled,
     alertTitle = attributes.alertTitle,
@@ -3146,7 +3103,7 @@ var BlockMain = function BlockMain(props) {
     href: "".concat(alertsDlxBlock.font_stylesheet)
   }), /*#__PURE__*/React.createElement("figure", {
     role: "alert",
-    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('alerts-dlx-alert alerts-dlx-bootstrap', {
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()("alerts-dlx-alert alerts-dlx-".concat(alertGroup), {
       'alerts-dlx-has-icon': iconEnabled,
       'alerts-dlx-has-description': descriptionEnabled,
       'alerts-dlx-has-button': buttonEnabled
@@ -3317,10 +3274,10 @@ var IconPicker = function IconPicker(props) {
     _useState6 = _slicedToArray(_useState5, 2),
     isPopoverVisible = _useState6[0],
     setIsPopOverVisible = _useState6[1];
-  var _useState7 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
+  var _useState7 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(null),
     _useState8 = _slicedToArray(_useState7, 2),
-    isFocusedOutside = _useState8[0],
-    setIsFocusedOutside = _useState8[1];
+    popoverRef = _useState8[0],
+    setPopoverRef = _useState8[1];
   var defaultSvg = props.defaultSvg,
     setAttributes = props.setAttributes,
     icons = props.icons;
@@ -3389,11 +3346,6 @@ var IconPicker = function IconPicker(props) {
       }
     }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Back to Icons', 'alerts-dlx'))));
   };
-  var toggleVisible = function toggleVisible() {
-    setIsPopOverVisible(function (state) {
-      return !state;
-    });
-  };
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
     className: "alerts-dlx-icon-wrapper"
   }, /*#__PURE__*/React.createElement("div", {
@@ -3402,13 +3354,15 @@ var IconPicker = function IconPicker(props) {
     className: "button-reset alerts-dlx-icon-preview-button",
     onMouseDown: function onMouseDown() {
       setIsPopOverVisible(true);
-    }
+    },
+    ref: setPopoverRef
   }, /*#__PURE__*/React.createElement("span", {
     dangerouslySetInnerHTML: {
       __html: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])(defaultSvg)
     }
   })))), isPopoverVisible && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Popover, {
     noArrow: false,
+    ref: popoverRef,
     className: "alerts-dlx-icon-popover",
     onClose: function onClose() {
       setIsPopOverVisible(false);
@@ -5304,7 +5258,7 @@ var useMediaUploader = function useMediaUploader(props) {
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"Material UI Alert","apiVersion":3,"name":"mediaron/alerts-dlx-material","category":"alertsdlx","icon":"<svg version=\'1.1\' viewBox=\'0 0 600 477\' xmlns=\'http://www.w3.org/2000/svg\'><g><path d=\'m0 260v-260l225 130v86.6l-150-86.6v173z\' fill=\'#1EA0FF\'/><path d=\'m225 130 225-130v260l-150 86.6-75-43.3 150-86.6v-86.6l-150 86.6z\' fill=\'#156DC1\'/><path d=\'m225 303v86.6l150 86.6v-86.6z\' fill=\'#1EA0FF\'/><path d=\'m375 476 225-130v-173l-75 43.3v86.6l-150 86.6zm150-346v-86.6l75-43.3v86.6z\' fill=\'#156DC1\'/></g></svg>","description":"An alert and notification block inspired by Material UI.","keywords":["alert","info","hint","success","error","notice","notification","warning","material"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"align":{"type":"string","default":"center"},"alertType":{"type":"string","default":"success"},"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"descriptionEnabled":{"type":"boolean","default":true},"titleEnabled":{"type":"boolean","default":true},"buttonEnabled":{"type":"boolean","default":false},"iconEnabled":{"type":"boolean","default":true},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"boolean","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"string","default":"650"},"baseFontSize":{"type":"number","default":18},"icon":{"type":"string","default":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M24 44q-4.25 0-7.9-1.525-3.65-1.525-6.35-4.225-2.7-2.7-4.225-6.35Q4 28.25 4 24q0-4.2 1.525-7.85Q7.05 12.5 9.75 9.8q2.7-2.7 6.35-4.25Q19.75 4 24 4q3.75 0 7 1.2t5.85 3.3l-2.15 2.15q-2.2-1.75-4.9-2.7Q27.1 7 24 7q-7.25 0-12.125 4.875T7 24q0 7.25 4.875 12.125T24 41q7.25 0 12.125-4.875T41 24q0-1.5-.225-2.925-.225-1.425-.675-2.775l2.3-2.3q.8 1.85 1.2 3.85.4 2 .4 4.15 0 4.25-1.55 7.9-1.55 3.65-4.25 6.35-2.7 2.7-6.35 4.225Q28.2 44 24 44Zm-2.95-10.9-8.25-8.3 2.25-2.25 6 6 20.7-20.7 2.3 2.25Z\'/></svg>"},"enableCustomFonts":{"type":"boolean","default":true},"variant":{"type":"string","default":"default"},"mode":{"type":"string","default":"light"},"enableDropShadow":{"type":"boolean","default":false},"iconVerticalAlignment":{"type":"string","default":"top"},"uniqueId":{"type":"string","default":""},"alertGroup":{"type":"string","default":"material"},"closeButtonEnabled":{"type":"boolean","default":false},"closeButtonExpiration":{"type":"number","default":0},"innerBlocksEnabled":{"type":"boolean","default":false},"colorPrimary":{"type":"string","default":"var(--alerts-dlx-material-color-primary, #014361)"},"colorBorder":{"type":"string","default":"var(--alerts-dlx-material-color-border, #014361)"},"colorAccent":{"type":"string","default":"var(--alerts-dlx-material-color-accent, #3182ce)"},"colorAlt":{"type":"string","default":"var(--alerts-dlx-material-color-alt, #2d76bb)"},"colorAltHover":{"type":"string","default":"var(--alerts-dlx-material-color-alt-hover, #2d76bb)"},"colorAltText":{"type":"string","default":"var(--alerts-dlx-material-color-alt-text, #ffffff)"},"colorAltTextHover":{"type":"string","default":"var(--alerts-dlx-material-color-alt-text-hover, #ffffff)"},"colorBold":{"type":"string","default":"var(--alerts-dlx-material-color-bold, #2d76bb)"},"colorLight":{"type":"string","default":"var(--alerts-dlx-material-color-light, #bee3f8)"},"isBlockEditorialOnly":{"type":"boolean","default":false},"isBlockReadOnly":{"type":"boolean","default":false}},"example":{"attributes":{"alertType":"info","alertTitle":"Sample alert title","alertDescription":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>","buttonEnabled":true,"baseFontSize":14,"buttonText":"Learn More","icon":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M22.65 34h3V22h-3ZM24 18.3q.7 0 1.175-.45.475-.45.475-1.15t-.475-1.2Q24.7 15 24 15q-.7 0-1.175.5-.475.5-.475 1.2t.475 1.15q.475.45 1.175.45ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z\' /></svg>"}},"styles":[{"name":"success","label":"Success","isDefault":true},{"name":"info","label":"Info"},{"name":"warning","label":"Warning"},{"name":"error","label":"Error"},{"name":"custom","label":"Custom"}],"supports":{"anchor":true,"align":true,"className":true},"editorScript":"alerts-dlx-block","editorStyle":["alerts-dlx-block-editor-styles","alerts-dlx-material-styles","alerts-dlx-block-editor-styles-lato"]}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"Material UI Alert","apiVersion":3,"name":"mediaron/alerts-dlx-material","category":"alertsdlx","icon":"<svg version=\'1.1\' viewBox=\'0 0 600 477\' xmlns=\'http://www.w3.org/2000/svg\'><g><path d=\'m0 260v-260l225 130v86.6l-150-86.6v173z\' fill=\'#1EA0FF\'/><path d=\'m225 130 225-130v260l-150 86.6-75-43.3 150-86.6v-86.6l-150 86.6z\' fill=\'#156DC1\'/><path d=\'m225 303v86.6l150 86.6v-86.6z\' fill=\'#1EA0FF\'/><path d=\'m375 476 225-130v-173l-75 43.3v86.6l-150 86.6zm150-346v-86.6l75-43.3v86.6z\' fill=\'#156DC1\'/></g></svg>","description":"An alert and notification block inspired by Material UI.","keywords":["alert","info","hint","success","error","notice","notification","warning","material"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"align":{"type":"string","default":"center"},"alertType":{"type":"string","default":"success"},"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"descriptionEnabled":{"type":"boolean","default":true},"titleEnabled":{"type":"boolean","default":true},"buttonEnabled":{"type":"boolean","default":false},"iconEnabled":{"type":"boolean","default":true},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"boolean","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"string","default":"650"},"baseFontSize":{"type":"number","default":18},"icon":{"type":"string","default":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M24 44q-4.25 0-7.9-1.525-3.65-1.525-6.35-4.225-2.7-2.7-4.225-6.35Q4 28.25 4 24q0-4.2 1.525-7.85Q7.05 12.5 9.75 9.8q2.7-2.7 6.35-4.25Q19.75 4 24 4q3.75 0 7 1.2t5.85 3.3l-2.15 2.15q-2.2-1.75-4.9-2.7Q27.1 7 24 7q-7.25 0-12.125 4.875T7 24q0 7.25 4.875 12.125T24 41q7.25 0 12.125-4.875T41 24q0-1.5-.225-2.925-.225-1.425-.675-2.775l2.3-2.3q.8 1.85 1.2 3.85.4 2 .4 4.15 0 4.25-1.55 7.9-1.55 3.65-4.25 6.35-2.7 2.7-6.35 4.225Q28.2 44 24 44Zm-2.95-10.9-8.25-8.3 2.25-2.25 6 6 20.7-20.7 2.3 2.25Z\'/></svg>"},"enableCustomFonts":{"type":"boolean","default":true},"variant":{"type":"string","default":"default"},"mode":{"type":"string","default":"light"},"enableDropShadow":{"type":"boolean","default":false},"iconVerticalAlignment":{"type":"string","default":"top"},"uniqueId":{"type":"string","default":""},"alertGroup":{"type":"string","default":"material"},"closeButtonEnabled":{"type":"boolean","default":false},"closeButtonExpiration":{"type":"number","default":0},"innerBlocksEnabled":{"type":"boolean","default":false},"colorPrimary":{"type":"string","default":"var(--alerts-dlx-material-color-primary, #014361)"},"colorBorder":{"type":"string","default":"var(--alerts-dlx-material-color-border, #014361)"},"colorAccent":{"type":"string","default":"var(--alerts-dlx-material-color-accent, #3182ce)"},"colorAlt":{"type":"string","default":"var(--alerts-dlx-material-color-alt, #2d76bb)"},"colorAltHover":{"type":"string","default":"var(--alerts-dlx-material-color-alt-hover, #2d76bb)"},"colorAltText":{"type":"string","default":"var(--alerts-dlx-material-color-alt-text, #ffffff)"},"colorAltTextHover":{"type":"string","default":"var(--alerts-dlx-material-color-alt-text-hover, #ffffff)"},"colorBold":{"type":"string","default":"var(--alerts-dlx-material-color-bold, #2d76bb)"},"colorLight":{"type":"string","default":"var(--alerts-dlx-material-color-light, #bee3f8)"},"isBlockEditorialOnly":{"type":"boolean","default":false},"isBlockReadOnly":{"type":"boolean","default":false},"iconSource":{"type":"string","default":"icon"},"imageUrl":{"type":"string","default":""},"imageId":{"type":"number","default":0}},"example":{"attributes":{"alertType":"info","alertTitle":"Sample alert title","alertDescription":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>","buttonEnabled":true,"baseFontSize":14,"buttonText":"Learn More","icon":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M22.65 34h3V22h-3ZM24 18.3q.7 0 1.175-.45.475-.45.475-1.15t-.475-1.2Q24.7 15 24 15q-.7 0-1.175.5-.475.5-.475 1.2t.475 1.15q.475.45 1.175.45ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z\' /></svg>"}},"styles":[{"name":"success","label":"Success","isDefault":true},{"name":"info","label":"Info"},{"name":"warning","label":"Warning"},{"name":"error","label":"Error"},{"name":"custom","label":"Custom"}],"supports":{"anchor":true,"align":true,"className":true},"editorScript":"alerts-dlx-block","editorStyle":["alerts-dlx-block-editor-styles","alerts-dlx-material-styles","alerts-dlx-block-editor-styles-lato"]}');
 
 /***/ }),
 
@@ -5421,11 +5375,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
 /* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _components_AlertButton__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/AlertButton */ "./src/js/blocks/components/AlertButton/index.js");
-/* harmony import */ var _components_unit_picker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/unit-picker */ "./src/js/blocks/components/unit-picker/index.js");
-/* harmony import */ var _components_IconPicker__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/IconPicker */ "./src/js/blocks/components/IconPicker/index.js");
-/* harmony import */ var _components_icons_MaterialIcons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/icons/MaterialIcons */ "./src/js/blocks/components/icons/MaterialIcons.js");
-/* harmony import */ var _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/CloseButtonIcons */ "./src/js/blocks/components/CloseButtonIcons/index.js");
+/* harmony import */ var _components_unit_picker__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/unit-picker */ "./src/js/blocks/components/unit-picker/index.js");
+/* harmony import */ var _components_icons_MaterialIcons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/icons/MaterialIcons */ "./src/js/blocks/components/icons/MaterialIcons.js");
+/* harmony import */ var _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/CloseButtonIcons */ "./src/js/blocks/components/CloseButtonIcons/index.js");
+/* harmony import */ var _components_BlockMain__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/BlockMain */ "./src/js/blocks/components/BlockMain/index.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
@@ -5438,7 +5391,6 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * External dependencies
  */
-
 
 
 
@@ -5517,7 +5469,10 @@ var _MaterialAlerts = function MaterialAlerts(props) {
       });
     }
   }, [innerBlocksRef]);
-  var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+  var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
+    name: "alertsDLXPanelStart",
+    fillProps: props
+  }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     initialOpen: true,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Alert Settings', 'quotes-dlx')
   }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
@@ -5571,10 +5526,13 @@ var _MaterialAlerts = function MaterialAlerts(props) {
     },
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Set the expiration time in seconds for the close button to reappear. Set to zero to never expire.', 'alerts-dlx'),
     type: 'number'
-  })))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
+    name: "alertsDLXSettingsPanelEnd",
+    fillProps: props
+  }))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     initialOpen: true,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Appearance', 'quotes-dlx')
-  }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_components_unit_picker__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_components_unit_picker__WEBPACK_IMPORTED_MODULE_9__["default"], {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Maximum Width', 'quotes-dlx'),
     value: maximumWidthUnit,
     units: ['px', '%', 'vw'],
@@ -5683,7 +5641,10 @@ var _MaterialAlerts = function MaterialAlerts(props) {
       });
     },
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enable or disable the drop shadow for the default variant.', 'alerts-dlx')
-  }))));
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
+    name: "alertsDLXAppearancePanelEnd",
+    fillProps: props
+  })));
   var advancedControls = /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enable Flexible InnerBlocks', 'alerts-dlx'),
     checked: innerBlocksEnabled,
@@ -5715,52 +5676,15 @@ var _MaterialAlerts = function MaterialAlerts(props) {
       });
     }
   }, [className]);
-  var getIconSets = function getIconSets() {
-    return _components_icons_MaterialIcons__WEBPACK_IMPORTED_MODULE_12__["default"];
-  };
-
-  // Calculate max width.
-  var maxWidthStyle = {
-    maxWidth: maximumWidth + maximumWidthUnit
-  };
-  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
-  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__.InspectorAdvancedControls, null, advancedControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("figure", {
-    role: "alert",
-    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('alerts-dlx-alert alerts-dlx-material', {
-      'alerts-dlx-has-icon': iconEnabled,
-      'alerts-dlx-has-description': descriptionEnabled,
-      'alerts-dlx-has-button': buttonEnabled
-    }),
-    style: maxWidthStyle,
-    id: uniqueId
-  }, iconEnabled && /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-icon",
-    "aria-hidden": "true"
-  }, /*#__PURE__*/React.createElement(_components_IconPicker__WEBPACK_IMPORTED_MODULE_11__["default"], {
-    defaultSvg: icon,
-    setAttributes: setAttributes,
-    alertType: alertType,
-    icons: getIconSets()
-  })), /*#__PURE__*/React.createElement("section", null, closeButtonEnabled && /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-close"
-  }, /*#__PURE__*/React.createElement(_components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_13__.MaterialCloseIcon, null)), titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__.RichText, {
-    tagName: "h2",
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Alert title', 'quotes-dlx'),
-    value: alertTitle,
-    className: "alerts-dlx-title",
-    disableLineBreaks: true,
-    allowedFormats: [],
-    onChange: function onChange(value) {
-      setAttributes({
-        alertTitle: value
-      });
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-content-wrapper"
-  }, descriptionEnabled && /*#__PURE__*/React.createElement("div", innerBlockProps), buttonEnabled && /*#__PURE__*/React.createElement(_components_AlertButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  var block = /*#__PURE__*/React.createElement(_components_BlockMain__WEBPACK_IMPORTED_MODULE_12__["default"], {
     attributes: attributes,
-    setAttributes: setAttributes
-  })))));
+    setAttributes: setAttributes,
+    iconSet: _components_icons_MaterialIcons__WEBPACK_IMPORTED_MODULE_10__["default"],
+    inspectorControls: inspectorControls,
+    advancedControls: advancedControls,
+    CloseButtonIcon: _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_11__.MaterialCloseIcon,
+    innerBlockProps: innerBlockProps
+  });
 
   /**
    * Filter: alertsDlx.blockClasses
@@ -6278,7 +6202,7 @@ __webpack_require__.r(__webpack_exports__);
       }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
         value: "image",
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Image', 'alerts-dlx')
-      }))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelRow, null, iconSource === 'image' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+      }))), iconSource === 'image' && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelRow, null, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
         className: "alerts-dlx-icon-image-wrapper"
       }, getImage(), getImageButtons()))));
     });
@@ -6294,7 +6218,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"Shoelace Alert","apiVersion":3,"name":"mediaron/alerts-dlx-shoelace","category":"alertsdlx","icon":"<svg viewBox=\'0 0 127 141\' version=\'1.1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\'><g stroke=\'none\' stroke-width=\'1\' fill=\'none\' fill-rule=\'evenodd\'><g fill-rule=\'nonzero\' fill=\'#0ea5e9\'><path d=\'M102.375,90.85 C102.979,90.557 103.57,90.215 104.15,89.826 L106.425,88.501 C106.848,88.19 107.64,87.573 108.8,86.65 L108.95,86.501 C109.883,85.567 110.916,85.117 112.05,85.15 C112.55,85.15 113.133,85.284 113.8,85.55 L122.3,78 C122.533,77.8 122.767,77.633 123,77.5 L123.05,77.5 C123.95,76.967 124.7,77 125.3,77.6 C126.367,78.166 126.45,79.133 125.55,80.5 L116.65,88.399 C116.717,88.533 116.75,88.666 116.75,88.799 C116.883,89.399 116.833,89.999 116.6,90.599 C116.4,90.999 116.117,91.382 115.75,91.749 C115.379,92.145 114.996,92.528 114.6,92.898 L109.45,96.648 C108.99,96.97 108.523,97.27 108.05,97.548 C107.46,97.906 106.86,98.232 106.25,98.523 C105.985,98.644 105.718,98.76 105.45,98.874 C103.841,99.559 102.174,100.017 100.45,100.249 C99.65,106.982 97.35,113.183 93.55,118.849 C88.75,125.915 82.183,131.299 73.85,134.999 C65.55,138.699 56.567,140.549 46.9,140.549 C33.567,140.415 22.75,137.415 14.45,131.549 C4.817,124.75 0,115.7 0,104.399 L0,102.849 C0.333,95.149 2.6,87.849 6.8,80.95 C10.933,74.116 16.983,69.5 24.95,67.1 C29.05,65.9 33.166,65.3 37.3,65.3 C41.567,65.3 45.967,66.083 50.5,67.65 C55.033,69.216 60.15,71.916 65.85,75.75 L80.7,85.7 C84.833,88.399 88.6,90.233 92,91.2 C91.3,84.3 88.8,78.399 84.5,73.5 C80.2,68.533 74.717,64.9 68.05,62.6 L61.65,60.4 C55.783,58.333 51.417,56.3 48.55,54.3 C40.817,49.067 36.517,41.883 35.65,32.75 L35.5,30.05 C35.5,21.25 39.067,13.883 46.2,7.95 C52.567,2.65 60.133,0 68.9,0 C75.5,0 81.417,1.9 86.65,5.7 C91.917,9.533 94.9,14.967 95.6,22 L95.75,24.75 C95.75,29.85 94.433,34.216 91.8,37.85 C89.1,41.483 86.717,43.3 84.65,43.3 C84.21,43.269 83.802,43.21 83.425,43.125 L74.1,51.9 C72.6,52.733 71.583,52.583 71.05,51.45 C70.517,50.85 70.567,50.1 71.2,49.2 L71.25,49.15 C71.383,48.95 71.567,48.733 71.8,48.5 L80.475,40.275 C80.376,39.872 80.318,39.431 80.3,38.95 C80.3,37.817 80.75,36.867 81.65,36.1 C85.45,32.7 87.35,28.784 87.35,24.35 C87.35,19.95 85.683,16.25 82.35,13.25 C79.017,10.25 74.467,8.716 68.7,8.65 C61.5,8.65 55.583,10.817 50.95,15.15 C46.317,19.483 44,24.683 44,30.75 C44,35.65 45.883,40.066 49.65,44 C53.383,47.9 59.15,50.966 66.95,53.2 C77.883,56.367 86.233,61.7 92,69.2 C97.133,75.833 100,83.283 100.6,91.55 C101.199,91.365 101.791,91.132 102.375,90.85 Z M71.95,49.05 C71.95,49.35 72.117,49.5 72.45,49.5 C72.483,49.5 75.117,47.066 80.35,42.2 C80.35,41.533 78.95,42.45 76.15,44.95 C73.35,47.483 71.95,48.85 71.95,49.05 Z M74.15,50.8 C74.15,50.533 74.017,50.4 73.75,50.4 C73.45,50.4 73.183,50.55 72.95,50.85 C72.416,50.817 72.033,50.884 71.8,51.05 C71.7,51.117 71.65,51.183 71.65,51.25 C71.65,51.45 71.783,51.6 72.05,51.7 L72.95,51.7 C73.75,51.4 74.15,51.1 74.15,50.8 Z M80.35,45.35 C80.35,44.583 79.9,44.583 79,45.35 C78.567,45.75 78.017,46.317 77.35,47.05 C77.117,47.217 76.633,47.667 75.9,48.4 C75.133,49.2 74.75,49.683 74.75,49.85 L74.8,50.2 C75,50.267 75.133,50.3 75.2,50.3 C75.233,50.3 76.1,49.5 77.8,47.9 C79.5,46.3 80.35,45.45 80.35,45.35 Z M124.2,78.3 L115.8,85.7 C116.3,85.967 116.667,86.349 116.9,86.849 L125.2,79.45 C125.266,79.116 125.217,78.849 125.05,78.649 C124.883,78.517 124.6,78.399 124.2,78.3 Z M123.75,78.05 L123.55,77.85 L116.15,83.85 L116.6,84.4 L123.75,78.05 Z M91.85,99.899 C89.65,99.333 87.617,98.649 85.75,97.849 C81.55,96.149 76.333,93.183 70.1,88.95 L59.85,82 C55.517,79.233 51.567,77.166 48,75.8 C44.4,74.467 40.867,73.8 37.4,73.8 L35.9,73.8 C27.067,74.267 20.2,77.583 15.3,83.75 C10.734,89.45 8.45,96.184 8.45,103.95 C8.45,112.683 11.95,119.516 18.95,124.45 C25.916,129.416 35.467,131.899 47.6,131.899 C57.133,131.899 65.166,130.2 71.7,126.799 C78.2,123.399 83.25,118.899 86.85,113.299 C89.55,109.033 91.217,104.566 91.85,99.899 Z\'></path></g></g></svg>","description":"An alert and notification block inspired by Shoelace.","keywords":["alert","info","hint","success","error","notice","notification","warning","shoelace"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"align":{"type":"string","default":"center"},"alertType":{"type":"string","default":"success"},"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"descriptionEnabled":{"type":"boolean","default":true},"titleEnabled":{"type":"boolean","default":true},"buttonEnabled":{"type":"boolean","default":false},"iconEnabled":{"type":"boolean","default":true},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"boolean","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"string","default":"650"},"baseFontSize":{"type":"number","default":18},"icon":{"type":"string","default":"<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' fill=\'currentColor\' className=\'bi bi-check\' viewBox=\'0 0 16 16\'><path d=\'M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z\' /></svg>"},"enableCustomFonts":{"type":"boolean","default":true},"variant":{"type":"string","default":"top-accent"},"iconAppearance":{"type":"string","default":"rounded"},"mode":{"type":"string","default":"light"},"enableDropShadow":{"type":"boolean","default":false},"iconVerticalAlignment":{"type":"string","default":"top"},"uniqueId":{"type":"string","default":""},"alertGroup":{"type":"string","default":"shoelace"},"innerBlocksEnabled":{"type":"boolean","default":false},"closeButtonEnabled":{"type":"boolean","default":false},"closeButtonExpiration":{"type":"number","default":0},"colorPrimary":{"type":"string","default":"var(--alerts-dlx-shoelace-color-primary, #084298)"},"colorBorder":{"type":"string","default":"var(--alerts-dlx-shoelace-color-border, #b6d4fe)"},"colorAccent":{"type":"string","default":"var(--alerts-dlx-shoelace-color-accent, #26559c)"},"colorAlt":{"type":"string","default":"var(--alerts-dlx-shoelace-color-alt, #084298)"},"colorAltHover":{"type":"string","default":"var(--alerts-dlx-shoelace-color-alt-hover, #084298)"},"colorAltText":{"type":"string","default":"var(--alerts-dlx-shoelace-color-alt-text, #ffffff)"},"colorAltTextHover":{"type":"string","default":"var(--alerts-dlx-shoelace-color-alt-text-hover, #ffffff)"},"colorBold":{"type":"string","default":"var(--alerts-dlx-shoelace-color-bold, #084298)"},"colorLight":{"type":"string","default":"var(--alerts-dlx-shoelace-color-light, #cfe2ff)"},"isBlockEditorialOnly":{"type":"boolean","default":false},"isBlockReadOnly":{"type":"boolean","default":false}},"example":{"attributes":{"alertType":"success","alertTitle":"Sample alert title","alertDescription":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>","buttonEnabled":true,"baseFontSize":14,"buttonText":"Learn More","icon":"<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' fill=\'currentColor\' className=\'bi bi-check\' viewBox=\'0 0 16 16\'><path d=\'M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z\' /></svg>"}},"styles":[{"name":"primary","label":"Primary","isDefault":true},{"name":"success","label":"Success"},{"name":"neutral","label":"Neutral"},{"name":"warning","label":"Warning"},{"name":"danger","label":"Danger"},{"name":"custom","label":"Custom"}],"supports":{"anchor":true,"align":true,"className":true},"editorScript":"alerts-dlx-block","editorStyle":["alerts-dlx-block-editor-styles","alerts-dlx-shoelace-styles","alerts-dlx-block-editor-styles-lato"]}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"Shoelace Alert","apiVersion":3,"name":"mediaron/alerts-dlx-shoelace","category":"alertsdlx","icon":"<svg viewBox=\'0 0 127 141\' version=\'1.1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\'><g stroke=\'none\' stroke-width=\'1\' fill=\'none\' fill-rule=\'evenodd\'><g fill-rule=\'nonzero\' fill=\'#0ea5e9\'><path d=\'M102.375,90.85 C102.979,90.557 103.57,90.215 104.15,89.826 L106.425,88.501 C106.848,88.19 107.64,87.573 108.8,86.65 L108.95,86.501 C109.883,85.567 110.916,85.117 112.05,85.15 C112.55,85.15 113.133,85.284 113.8,85.55 L122.3,78 C122.533,77.8 122.767,77.633 123,77.5 L123.05,77.5 C123.95,76.967 124.7,77 125.3,77.6 C126.367,78.166 126.45,79.133 125.55,80.5 L116.65,88.399 C116.717,88.533 116.75,88.666 116.75,88.799 C116.883,89.399 116.833,89.999 116.6,90.599 C116.4,90.999 116.117,91.382 115.75,91.749 C115.379,92.145 114.996,92.528 114.6,92.898 L109.45,96.648 C108.99,96.97 108.523,97.27 108.05,97.548 C107.46,97.906 106.86,98.232 106.25,98.523 C105.985,98.644 105.718,98.76 105.45,98.874 C103.841,99.559 102.174,100.017 100.45,100.249 C99.65,106.982 97.35,113.183 93.55,118.849 C88.75,125.915 82.183,131.299 73.85,134.999 C65.55,138.699 56.567,140.549 46.9,140.549 C33.567,140.415 22.75,137.415 14.45,131.549 C4.817,124.75 0,115.7 0,104.399 L0,102.849 C0.333,95.149 2.6,87.849 6.8,80.95 C10.933,74.116 16.983,69.5 24.95,67.1 C29.05,65.9 33.166,65.3 37.3,65.3 C41.567,65.3 45.967,66.083 50.5,67.65 C55.033,69.216 60.15,71.916 65.85,75.75 L80.7,85.7 C84.833,88.399 88.6,90.233 92,91.2 C91.3,84.3 88.8,78.399 84.5,73.5 C80.2,68.533 74.717,64.9 68.05,62.6 L61.65,60.4 C55.783,58.333 51.417,56.3 48.55,54.3 C40.817,49.067 36.517,41.883 35.65,32.75 L35.5,30.05 C35.5,21.25 39.067,13.883 46.2,7.95 C52.567,2.65 60.133,0 68.9,0 C75.5,0 81.417,1.9 86.65,5.7 C91.917,9.533 94.9,14.967 95.6,22 L95.75,24.75 C95.75,29.85 94.433,34.216 91.8,37.85 C89.1,41.483 86.717,43.3 84.65,43.3 C84.21,43.269 83.802,43.21 83.425,43.125 L74.1,51.9 C72.6,52.733 71.583,52.583 71.05,51.45 C70.517,50.85 70.567,50.1 71.2,49.2 L71.25,49.15 C71.383,48.95 71.567,48.733 71.8,48.5 L80.475,40.275 C80.376,39.872 80.318,39.431 80.3,38.95 C80.3,37.817 80.75,36.867 81.65,36.1 C85.45,32.7 87.35,28.784 87.35,24.35 C87.35,19.95 85.683,16.25 82.35,13.25 C79.017,10.25 74.467,8.716 68.7,8.65 C61.5,8.65 55.583,10.817 50.95,15.15 C46.317,19.483 44,24.683 44,30.75 C44,35.65 45.883,40.066 49.65,44 C53.383,47.9 59.15,50.966 66.95,53.2 C77.883,56.367 86.233,61.7 92,69.2 C97.133,75.833 100,83.283 100.6,91.55 C101.199,91.365 101.791,91.132 102.375,90.85 Z M71.95,49.05 C71.95,49.35 72.117,49.5 72.45,49.5 C72.483,49.5 75.117,47.066 80.35,42.2 C80.35,41.533 78.95,42.45 76.15,44.95 C73.35,47.483 71.95,48.85 71.95,49.05 Z M74.15,50.8 C74.15,50.533 74.017,50.4 73.75,50.4 C73.45,50.4 73.183,50.55 72.95,50.85 C72.416,50.817 72.033,50.884 71.8,51.05 C71.7,51.117 71.65,51.183 71.65,51.25 C71.65,51.45 71.783,51.6 72.05,51.7 L72.95,51.7 C73.75,51.4 74.15,51.1 74.15,50.8 Z M80.35,45.35 C80.35,44.583 79.9,44.583 79,45.35 C78.567,45.75 78.017,46.317 77.35,47.05 C77.117,47.217 76.633,47.667 75.9,48.4 C75.133,49.2 74.75,49.683 74.75,49.85 L74.8,50.2 C75,50.267 75.133,50.3 75.2,50.3 C75.233,50.3 76.1,49.5 77.8,47.9 C79.5,46.3 80.35,45.45 80.35,45.35 Z M124.2,78.3 L115.8,85.7 C116.3,85.967 116.667,86.349 116.9,86.849 L125.2,79.45 C125.266,79.116 125.217,78.849 125.05,78.649 C124.883,78.517 124.6,78.399 124.2,78.3 Z M123.75,78.05 L123.55,77.85 L116.15,83.85 L116.6,84.4 L123.75,78.05 Z M91.85,99.899 C89.65,99.333 87.617,98.649 85.75,97.849 C81.55,96.149 76.333,93.183 70.1,88.95 L59.85,82 C55.517,79.233 51.567,77.166 48,75.8 C44.4,74.467 40.867,73.8 37.4,73.8 L35.9,73.8 C27.067,74.267 20.2,77.583 15.3,83.75 C10.734,89.45 8.45,96.184 8.45,103.95 C8.45,112.683 11.95,119.516 18.95,124.45 C25.916,129.416 35.467,131.899 47.6,131.899 C57.133,131.899 65.166,130.2 71.7,126.799 C78.2,123.399 83.25,118.899 86.85,113.299 C89.55,109.033 91.217,104.566 91.85,99.899 Z\'></path></g></g></svg>","description":"An alert and notification block inspired by Shoelace.","keywords":["alert","info","hint","success","error","notice","notification","warning","shoelace"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"align":{"type":"string","default":"center"},"alertType":{"type":"string","default":"success"},"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"descriptionEnabled":{"type":"boolean","default":true},"titleEnabled":{"type":"boolean","default":true},"buttonEnabled":{"type":"boolean","default":false},"iconEnabled":{"type":"boolean","default":true},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"boolean","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"string","default":"650"},"baseFontSize":{"type":"number","default":18},"icon":{"type":"string","default":"<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' fill=\'currentColor\' className=\'bi bi-check\' viewBox=\'0 0 16 16\'><path d=\'M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z\' /></svg>"},"enableCustomFonts":{"type":"boolean","default":true},"variant":{"type":"string","default":"top-accent"},"iconAppearance":{"type":"string","default":"rounded"},"mode":{"type":"string","default":"light"},"enableDropShadow":{"type":"boolean","default":false},"iconVerticalAlignment":{"type":"string","default":"top"},"uniqueId":{"type":"string","default":""},"alertGroup":{"type":"string","default":"shoelace"},"innerBlocksEnabled":{"type":"boolean","default":false},"closeButtonEnabled":{"type":"boolean","default":false},"closeButtonExpiration":{"type":"number","default":0},"colorPrimary":{"type":"string","default":"var(--alerts-dlx-shoelace-color-primary, #084298)"},"colorBorder":{"type":"string","default":"var(--alerts-dlx-shoelace-color-border, #b6d4fe)"},"colorAccent":{"type":"string","default":"var(--alerts-dlx-shoelace-color-accent, #26559c)"},"colorAlt":{"type":"string","default":"var(--alerts-dlx-shoelace-color-alt, #084298)"},"colorAltHover":{"type":"string","default":"var(--alerts-dlx-shoelace-color-alt-hover, #084298)"},"colorAltText":{"type":"string","default":"var(--alerts-dlx-shoelace-color-alt-text, #ffffff)"},"colorAltTextHover":{"type":"string","default":"var(--alerts-dlx-shoelace-color-alt-text-hover, #ffffff)"},"colorBold":{"type":"string","default":"var(--alerts-dlx-shoelace-color-bold, #084298)"},"colorLight":{"type":"string","default":"var(--alerts-dlx-shoelace-color-light, #cfe2ff)"},"isBlockEditorialOnly":{"type":"boolean","default":false},"isBlockReadOnly":{"type":"boolean","default":false},"iconSource":{"type":"string","default":"icon"},"imageUrl":{"type":"string","default":""},"imageId":{"type":"number","default":0}},"example":{"attributes":{"alertType":"success","alertTitle":"Sample alert title","alertDescription":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>","buttonEnabled":true,"baseFontSize":14,"buttonText":"Learn More","icon":"<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' fill=\'currentColor\' className=\'bi bi-check\' viewBox=\'0 0 16 16\'><path d=\'M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z\' /></svg>"}},"styles":[{"name":"primary","label":"Primary","isDefault":true},{"name":"success","label":"Success"},{"name":"neutral","label":"Neutral"},{"name":"warning","label":"Warning"},{"name":"danger","label":"Danger"},{"name":"custom","label":"Custom"}],"supports":{"anchor":true,"align":true,"className":true},"editorScript":"alerts-dlx-block","editorStyle":["alerts-dlx-block-editor-styles","alerts-dlx-shoelace-styles","alerts-dlx-block-editor-styles-lato"]}');
 
 /***/ }),
 
@@ -6393,6 +6317,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_icons_BootstrapIcons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/icons/BootstrapIcons */ "./src/js/blocks/components/icons/BootstrapIcons.js");
 /* harmony import */ var _colors__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./colors */ "./src/js/blocks/shoelace/colors.js");
 /* harmony import */ var _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/CloseButtonIcons */ "./src/js/blocks/components/CloseButtonIcons/index.js");
+/* harmony import */ var _components_BlockMain__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/BlockMain */ "./src/js/blocks/components/BlockMain/index.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
@@ -6405,6 +6330,7 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 /**
  * External dependencies
  */
+
 
 
 
@@ -6501,7 +6427,10 @@ var _ShoelaceAlerts = function ShoelaceAlerts(props) {
       });
     }
   }, [innerBlocksRef]);
-  var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+  var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
+    name: "alertsDLXPanelStart",
+    fillProps: props
+  }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     initialOpen: true,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Alert Settings', 'quotes-dlx')
   }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
@@ -6555,7 +6484,10 @@ var _ShoelaceAlerts = function ShoelaceAlerts(props) {
     },
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Set the expiration time in seconds for the close button to reappear. Set to zero to never expire.', 'alerts-dlx'),
     type: 'number'
-  })))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
+    name: "alertsDLXSettingsPanelEnd",
+    fillProps: props
+  }))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     initialOpen: true,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Appearance', 'quotes-dlx')
   }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_components_unit_picker__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -6658,7 +6590,10 @@ var _ShoelaceAlerts = function ShoelaceAlerts(props) {
       });
     },
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Set the base font size for the alert.', 'alerts-dlx')
-  }))));
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
+    name: "alertsDLXAppearancePanelEnd",
+    fillProps: props
+  })));
   var advancedControls = /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enable Flexible InnerBlocks', 'alerts-dlx'),
     checked: innerBlocksEnabled,
@@ -6690,52 +6625,15 @@ var _ShoelaceAlerts = function ShoelaceAlerts(props) {
       });
     }
   }, [className]);
-  var getIconSets = function getIconSets() {
-    return _components_icons_BootstrapIcons__WEBPACK_IMPORTED_MODULE_12__["default"];
-  };
-
-  // Calculate max width.
-  var maxWidthStyle = {
-    maxWidth: maximumWidth + maximumWidthUnit
-  };
-  var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
-  var block = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__.InspectorAdvancedControls, null, advancedControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("figure", {
-    role: "alert",
-    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('alerts-dlx-alert alerts-dlx-shoelace', {
-      'alerts-dlx-has-icon': iconEnabled,
-      'alerts-dlx-has-description': descriptionEnabled,
-      'alerts-dlx-has-button': buttonEnabled
-    }),
-    style: maxWidthStyle,
-    id: uniqueId
-  }, iconEnabled && /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-icon",
-    "aria-hidden": "true"
-  }, /*#__PURE__*/React.createElement(_components_IconPicker__WEBPACK_IMPORTED_MODULE_11__["default"], {
-    defaultSvg: icon,
-    setAttributes: setAttributes,
-    alertType: alertType,
-    icons: getIconSets()
-  })), /*#__PURE__*/React.createElement("section", null, closeButtonEnabled && /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-close"
-  }, /*#__PURE__*/React.createElement(_components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_14__.ShoeLaceCloseIcon, null)), titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__.RichText, {
-    tagName: "h2",
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Alert title', 'quotes-dlx'),
-    value: alertTitle,
-    className: "alerts-dlx-title",
-    disableLineBreaks: true,
-    allowedFormats: [],
-    onChange: function onChange(value) {
-      setAttributes({
-        alertTitle: value
-      });
-    }
-  }), /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-content-wrapper"
-  }, descriptionEnabled && /*#__PURE__*/React.createElement("div", innerBlockProps), buttonEnabled && /*#__PURE__*/React.createElement(_components_AlertButton__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  var block = /*#__PURE__*/React.createElement(_components_BlockMain__WEBPACK_IMPORTED_MODULE_15__["default"], {
     attributes: attributes,
-    setAttributes: setAttributes
-  })))));
+    setAttributes: setAttributes,
+    iconSet: _components_icons_BootstrapIcons__WEBPACK_IMPORTED_MODULE_12__["default"],
+    inspectorControls: inspectorControls,
+    advancedControls: advancedControls,
+    CloseButtonIcon: _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_14__.ShoeLaceCloseIcon,
+    innerBlockProps: innerBlockProps
+  });
 
   /**
    * Filter: alertsDlx.blockClasses

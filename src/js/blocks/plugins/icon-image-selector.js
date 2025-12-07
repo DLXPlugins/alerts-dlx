@@ -107,16 +107,16 @@ registerPlugin( 'custom-slot-fills', {
 									/>
 								</ToggleGroupControl>
 							</PanelRow>
-							<PanelRow>
-								{ iconSource === 'image' && (
+							{ iconSource === 'image' && (
+								<PanelRow>
 									<>
 										<div className="alerts-dlx-icon-image-wrapper">
 											{ getImage() }
 											{ getImageButtons() }
 										</div>
 									</>
-								) }
-							</PanelRow>
+								</PanelRow>
+							) }
 						</>
 					);
 				} }

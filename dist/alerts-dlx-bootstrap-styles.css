@@ -209,7 +209,8 @@ figure.alerts-dlx-alert {
 .alerts-dlx-alert[role=alert] .alerts-dlx-icon img {
   max-width: 2em;
   max-height: 2em;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
   margin-bottom: 0.5em;
 }
 .alerts-dlx-alert[role=alert] .alerts-dlx-icon-frontend .alerts-dlx-icon-preview {
@@ -218,7 +219,15 @@ figure.alerts-dlx-alert {
 }
 
 body .alerts-dlx-alert[role=alert] section .alerts-dlx-close ~ h2.alerts-dlx-title {
-  margin-right: 16px;
+  padding-right: 16px;
+}
+
+body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] {
+  padding: 0.75em 1.25em;
+}
+body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .alerts-dlx-icon img {
+  max-width: 3.8em;
+  max-height: 3.8em;
 }
 
 /* Theme-specific font size inheritance with higher specificity */
