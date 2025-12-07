@@ -2060,7 +2060,10 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
       });
     }
   }, [innerBlocksRef]);
-  var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+  var inspectorControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
+    name: "alertsDLXPanelStart",
+    fillProps: props
+  }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Alert Settings', 'alerts-dlx')
   }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enable Alert Icon', 'alerts-dlx'),
@@ -2113,10 +2116,10 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
     },
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Set the expiration time in seconds for the close button to reappear. Set to zero to never expire.', 'alerts-dlx'),
     type: 'number'
-  })))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
-    name: "alertsDLXSettingsPanelAfter",
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
+    name: "alertsDLXSettingsPanelEnd",
     fillProps: props
-  }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+  }))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     initialOpen: true,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Appearance', 'alerts-dlx')
   }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_components_unit_picker__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -2205,7 +2208,10 @@ var BootstrapAlerts = function BootstrapAlerts(props) {
       });
     },
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Set the base font size for the alert.', 'alerts-dlx')
-  }))));
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
+    name: "alertsDLXAppearancePanelEnd",
+    fillProps: props
+  })));
   var advancedControls = /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enable Flexible InnerBlocks', 'alerts-dlx'),
     checked: innerBlocksEnabled,
@@ -6205,7 +6211,7 @@ __webpack_require__.r(__webpack_exports__);
 (0,_wordpress_plugins__WEBPACK_IMPORTED_MODULE_1__.registerPlugin)('custom-slot-fills', {
   render: function render() {
     return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Fill, {
-      name: "alertsDLXSettingsPanelAfter"
+      name: "alertsDLXAppearancePanelEnd"
     }, function (_ref) {
       var attributes = _ref.attributes,
         setAttributes = _ref.setAttributes;
@@ -6256,9 +6262,7 @@ __webpack_require__.r(__webpack_exports__);
           alt: "Alerts DLX icon"
         }));
       };
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
-        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Icon and Image Selector', 'alerts-dlx')
-      }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControl, {
+      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControl, {
         value: iconSource,
         onChange: function onChange(value) {
           setAttributes({
@@ -6267,14 +6271,14 @@ __webpack_require__.r(__webpack_exports__);
         },
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Icon Source', 'alerts-dlx'),
         className: "alerts-dlx-icon-source-toggle-group",
-        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Select the source of the icon or image for the alert.', 'alerts-dlx')
+        help: 'icon' === iconSource ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('An icon is displayed in the alert. You can edit the icon by clicking on the icon in the alert.', 'alerts-dlx') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('An image is displayed in the alert. You can edit the image by changing the image below.', 'alerts-dlx')
       }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
         value: "icon",
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Icon', 'alerts-dlx')
       }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
         value: "image",
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Image', 'alerts-dlx')
-      })), iconSource === 'image' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+      }))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelRow, null, iconSource === 'image' && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
         className: "alerts-dlx-icon-image-wrapper"
       }, getImage(), getImageButtons()))));
     });

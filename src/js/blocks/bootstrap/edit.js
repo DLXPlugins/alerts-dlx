@@ -128,6 +128,7 @@ const BootstrapAlerts = ( props ) => {
 
 	const inspectorControls = (
 		<>
+			<Slot name="alertsDLXPanelStart" fillProps={ props } />
 			<PanelBody title={ __( 'Alert Settings', 'alerts-dlx' ) }>
 				<>
 					<PanelRow>
@@ -207,9 +208,9 @@ const BootstrapAlerts = ( props ) => {
 							/>
 						</PanelRow>
 					) }
+					<Slot name="alertsDLXSettingsPanelEnd" fillProps={ props } />
 				</>
 			</PanelBody>
-			<Slot name="alertsDLXSettingsPanelAfter" fillProps={ props } />
 			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'alerts-dlx' ) }>
 				<>
 					<UnitChooser
@@ -349,6 +350,7 @@ const BootstrapAlerts = ( props ) => {
 						help={ __( 'Set the base font size for the alert.', 'alerts-dlx' ) }
 					/>
 				</PanelRow>
+				<Slot name="alertsDLXAppearancePanelEnd" fillProps={ props } />
 			</PanelBody>
 		</>
 	);

@@ -1,6 +1,6 @@
 import {
 	ToggleControl,
-	PanelBody,
+	PanelRow,
 	Fill,
 	Button,
 	__experimentalToggleGroupControl as ToggleGroupControl,
@@ -12,7 +12,7 @@ import useMediaUploader from '../hooks/useMediaUploader';
 registerPlugin( 'custom-slot-fills', {
 	render: () => {
 		return (
-			<Fill name="alertsDLXSettingsPanelAfter">
+			<Fill name="alertsDLXAppearancePanelEnd">
 				{ ( { attributes, setAttributes } ) => {
 					const { iconSource, imageUrl, imageId } = attributes;
 
@@ -47,7 +47,10 @@ registerPlugin( 'custom-slot-fills', {
 													attachmentId: imageId || 0,
 												},
 												( attachment ) => {
-													setAttributes( { imageUrl: attachment.url, imageId: attachment.id } );
+													setAttributes( {
+														imageUrl: attachment.url,
+														imageId: attachment.id,
+													} );
 												}
 											);
 										} }
@@ -74,7 +77,7 @@ registerPlugin( 'custom-slot-fills', {
 					};
 					return (
 						<>
-							<PanelBody title={ __( 'Icon and Image Selector', 'alerts-dlx' ) }>
+							<PanelRow>
 								<ToggleGroupControl
 									value={ iconSource }
 									onChange={ ( value ) => {
@@ -82,10 +85,17 @@ registerPlugin( 'custom-slot-fills', {
 									} }
 									label={ __( 'Icon Source', 'alerts-dlx' ) }
 									className="alerts-dlx-icon-source-toggle-group"
-									help={ __(
-										'Select the source of the icon or image for the alert.',
-										'alerts-dlx'
-									) }
+									help={
+										'icon' === iconSource
+											? __(
+												'An icon is displayed in the alert. You can edit the icon by clicking on the icon in the alert.',
+												'alerts-dlx'
+											)
+											: __(
+												'An image is displayed in the alert. You can edit the image by changing the image below.',
+												'alerts-dlx'
+											)
+									}
 								>
 									<ToggleGroupControlOption
 										value="icon"
@@ -96,6 +106,8 @@ registerPlugin( 'custom-slot-fills', {
 										label={ __( 'Image', 'alerts-dlx' ) }
 									/>
 								</ToggleGroupControl>
+							</PanelRow>
+							<PanelRow>
 								{ iconSource === 'image' && (
 									<>
 										<div className="alerts-dlx-icon-image-wrapper">
@@ -104,7 +116,7 @@ registerPlugin( 'custom-slot-fills', {
 										</div>
 									</>
 								) }
-							</PanelBody>
+							</PanelRow>
 						</>
 					);
 				} }
