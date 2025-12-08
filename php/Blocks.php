@@ -123,6 +123,9 @@ class Blocks {
 			'close_button_enabled'    => false,
 			'close_button_expiration' => 0,
 			'is_block_editorial_only' => false,
+			'icon_source'             => 'icon',
+			'image_url'               => '',
+			'image_id'                => 0,
 		);
 		$atts     = shortcode_atts( $defaults, $atts, 'alertsdlx' );
 
@@ -153,7 +156,7 @@ class Blocks {
 		$atts['button_enabled']      = ! empty( $atts['button_text'] ) && ! empty( $atts['button_url'] );
 		$atts['description_enabled'] = ! empty( $atts['alert_description'] );
 		$atts['title_enabled']       = ! empty( $atts['alert_title'] );
-		$atts['icon_enabled']        = ! empty( $atts['icon'] );
+		$atts['icon_enabled']        = ! empty( $atts['icon'] ) || ! empty( $atts['image_url'] );
 
 		// Register scripts.
 		$this->register_block_editor_scripts();
@@ -263,6 +266,9 @@ class Blocks {
 		$close_button_enabled    = Functions::sanitize_attribute( $attributes, 'closeButtonEnabled', 'boolean' );
 		$close_button_expiration = Functions::sanitize_attribute( $attributes, 'closeButtonExpiration', 'integer' );
 		$is_block_editorial_only = Functions::sanitize_attribute( $attributes, 'isBlockEditorialOnly', 'boolean' );
+		$icon_source             = Functions::sanitize_attribute( $attributes, 'iconSource', 'text' );
+		$image_url               = Functions::sanitize_attribute( $attributes, 'imageUrl', 'text' );
+		$image_id                = Functions::sanitize_attribute( $attributes, 'imageId', 'integer' );
 
 		// If block is editorial only, return early.
 		if ( $is_block_editorial_only ) {
@@ -431,12 +437,26 @@ class Blocks {
 				id="<?php echo esc_attr( $unique_id ); ?>"
 			>
 				<?php
-				if ( $icon_enabled ) {
+				if ( $icon_enabled && 'icon' === $icon_source ) {
 					?>
 					<div class="alerts-dlx-icon alerts-dlx-icon-frontend" aria-hidden="true">
 						<div class="alerts-dlx-icon-preview">
 							<?php echo wp_kses( $icon, Functions::get_kses_allowed_html() ); ?>
 						</div>
+					</div>
+					<?php
+				}
+				if ( $icon_enabled && 'image' === $icon_source && ! empty( $image_url ) ) {
+					$image = '<img src="' . esc_url( $image_url ) . '" alt="' . esc_attr( __( 'Alert image', 'alerts-dlx' ) ) . '" />';
+					if ( 0 !== $image_id ) {
+						$maybe_image = wp_get_attachment_image( $image_id, 'full' );
+						if ( ! empty( $maybe_image ) ) {
+							$image = $maybe_image;
+						}
+					}
+					?>
+					<div class="alerts-dlx-icon alerts-dlx-icon-frontend" aria-hidden="true">
+						<?php echo wp_kses_post( $image ); ?>
 					</div>
 					<?php
 				}

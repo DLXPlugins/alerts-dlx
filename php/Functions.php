@@ -48,7 +48,7 @@ class Functions {
 	 * @param string $attribute  The attribute to sanitize.
 	 * @param string $type       The type of sanitization you need (values can be integer, text, float, boolean, url).
 	 *
-	 * @return mixed Sanitized attribute. wp_error on failure.
+	 * @return mixed Sanitized attribute. Empty string on failure.
 	 */
 	public static function sanitize_attribute( $attributes, $attribute, $type = 'text' ) {
 		if ( isset( $attributes[ $attribute ] ) ) {
@@ -75,10 +75,10 @@ class Functions {
 				case 'url':
 					return esc_url( $attributes[ $attribute ] );
 				case 'default':
-					return new \WP_Error( 'alerts_dlx_unknown_type', __( 'Unknown type.', 'alerts-dlx' ) );
+					return '';
 			}
 		}
-		return new \WP_Error( 'alerts_dlx_attribute_not_found', __( 'Attribute not found.', 'alerts-dlx' ) );
+		return '';
 	}
 
 	/**
@@ -461,4 +461,3 @@ class Functions {
 		return $highest_priority;
 	}
 }
-
