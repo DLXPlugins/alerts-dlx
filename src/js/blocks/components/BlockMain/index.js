@@ -93,7 +93,7 @@ const BlockMain = ( props ) => {
 							<img src={ imageUrl } alt={ __( 'Alert image', 'alerts-dlx' ) } />
 						) }
 						{ ! imageUrl && (
-							<img src={ alertsDlxBlock.default_image } alt={ __( 'Placeholder Alert image', 'alerts-dlx' ) } />
+							<img src={ alertsDlxBlock.defaultImage } alt={ __( 'Placeholder Alert image', 'alerts-dlx' ) } />
 						) }
 					</div>
 				) }

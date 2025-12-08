@@ -12,6 +12,7 @@ const getCropSettings = ( overrides = {} ) => {
 		title: __( 'Image', 'alerts-dlx' ),
 		buttonLabel: __( 'Add Image', 'alerts-dlx' ),
 		main: this,
+		canSkipCrop: false,
 	};
 	settings = { ...settings, ...overrides };
 	return settings;
@@ -57,7 +58,7 @@ const useMediaUploader = ( props ) => {
 		let canSkipCrop = false;
 
 		// If ratios match, can skip crop.
-		if ( ratio === ratioReal ) {
+		if ( settings.canSkipCrop || ratio === ratioReal ) {
 			canSkipCrop = true;
 		}
 		controller.set( 'canSkipCrop', canSkipCrop );

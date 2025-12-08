@@ -45,6 +45,7 @@ registerPlugin( 'custom-slot-fills', {
 													suggestedHeight: 96,
 													aspectRatio: '1:1',
 													attachmentId: imageId || 0,
+													canSkipCrop: true,
 												},
 												( attachment ) => {
 													setAttributes( {

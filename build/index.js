@@ -3125,7 +3125,7 @@ var BlockMain = function BlockMain(props) {
     src: imageUrl,
     alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert image', 'alerts-dlx')
   }), !imageUrl && /*#__PURE__*/React.createElement("img", {
-    src: alertsDlxBlock.default_image,
+    src: alertsDlxBlock.defaultImage,
     alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Placeholder Alert image', 'alerts-dlx')
   })), /*#__PURE__*/React.createElement("section", null, closeButtonEnabled && /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-close"
@@ -5046,7 +5046,8 @@ var getCropSettings = function getCropSettings() {
     postId: 0,
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Image', 'alerts-dlx'),
     buttonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add Image', 'alerts-dlx'),
-    main: _this
+    main: _this,
+    canSkipCrop: false
   };
   settings = _objectSpread(_objectSpread({}, settings), overrides);
   return settings;
@@ -5092,7 +5093,7 @@ var useMediaUploader = function useMediaUploader(props) {
     var canSkipCrop = false;
 
     // If ratios match, can skip crop.
-    if (ratio === ratioReal) {
+    if (settings.canSkipCrop || ratio === ratioReal) {
       canSkipCrop = true;
     }
     controller.set('canSkipCrop', canSkipCrop);
@@ -6166,7 +6167,8 @@ __webpack_require__.r(__webpack_exports__);
               suggestedWidth: 96,
               suggestedHeight: 96,
               aspectRatio: '1:1',
-              attachmentId: imageId || 0
+              attachmentId: imageId || 0,
+              canSkipCrop: true
             }, function (attachment) {
               setAttributes({
                 imageUrl: attachment.url,

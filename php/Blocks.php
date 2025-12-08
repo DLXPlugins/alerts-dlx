@@ -599,6 +599,7 @@ class Blocks {
 				'isAuthor'        => current_user_can( 'edit_posts' ),
 				'isAdmin'         => current_user_can( 'manage_options' ),
 				'colorPalette'    => Functions::get_theme_color_palette(),
+				'defaultImage'    => Functions::get_plugin_url( 'assets/bell.png' ),
 			)
 		);
 
