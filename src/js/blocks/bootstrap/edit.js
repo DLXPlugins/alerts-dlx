@@ -14,34 +14,27 @@ import {
 	PanelBody,
 	PanelRow,
 	ToggleControl,
-	DateTimePicker,
 	TextControl,
 	Button,
 	ButtonGroup,
 	RangeControl,
 	BaseControl,
+	Slot,
 } from '@wordpress/components';
 
 import { rawHandler } from '@wordpress/blocks';
 import { useDispatch } from '@wordpress/data';
 
 import {
-	InspectorControls,
-	InspectorAdvancedControls,
-	RichText,
 	useBlockProps,
 	useInnerBlocksProps,
 	store,
 } from '@wordpress/block-editor';
 
-import { useInstanceId } from '@wordpress/compose';
-
-import AlertButton from '../components/AlertButton';
 import UnitChooser from '../components/unit-picker';
-import IconPicker from '../components/IconPicker';
 import BootstrapIcons from '../components/icons/BootstrapIcons';
-import BootstrapColors from './colors';
 import { BootstrapCloseIcon } from '../components/CloseButtonIcons';
+import BlockMain from '../components/BlockMain';
 
 // For storing unique IDs.
 const uniqueIds = [];
@@ -125,6 +118,7 @@ const BootstrapAlerts = ( props ) => {
 
 	const inspectorControls = (
 		<>
+			<Slot name="alertsDLXPanelStart" fillProps={ props } />
 			<PanelBody title={ __( 'Alert Settings', 'alerts-dlx' ) }>
 				<>
 					<PanelRow>
@@ -204,6 +198,7 @@ const BootstrapAlerts = ( props ) => {
 							/>
 						</PanelRow>
 					) }
+					<Slot name="alertsDLXSettingsPanelEnd" fillProps={ props } />
 				</>
 			</PanelBody>
 			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'alerts-dlx' ) }>
@@ -345,6 +340,7 @@ const BootstrapAlerts = ( props ) => {
 						help={ __( 'Set the base font size for the alert.', 'alerts-dlx' ) }
 					/>
 				</PanelRow>
+				<Slot name="alertsDLXAppearancePanelEnd" fillProps={ props } />
 			</PanelBody>
 		</>
 	);
@@ -382,74 +378,16 @@ const BootstrapAlerts = ( props ) => {
 		}
 	}, [ className ] );
 
-	const getIconSets = () => {
-		return BootstrapIcons;
-	};
-
-	// Calculate max width.
-	const maxWidthStyle = {
-		maxWidth: maximumWidth + maximumWidthUnit,
-	};
-	const baseFontSizeStyles = `#${ uniqueId } { font-size: ${ parseInt(
-		baseFontSize
-	) }px; }`;
 	const block = (
-		<>
-			<InspectorControls>{ inspectorControls }</InspectorControls>
-			<InspectorAdvancedControls>{ advancedControls }</InspectorAdvancedControls>
-			<style>{ baseFontSizeStyles }</style>
-			<link rel="stylesheet" href={ `${ alertsDlxBlock.font_stylesheet }` } />
-			<figure
-				role="alert"
-				className={ classnames( 'alerts-dlx-alert alerts-dlx-bootstrap', {
-					'alerts-dlx-has-icon': iconEnabled,
-					'alerts-dlx-has-description': descriptionEnabled,
-					'alerts-dlx-has-button': buttonEnabled,
-				} ) }
-				style={ maxWidthStyle }
-				id={ uniqueId }
-			>
-				{ iconEnabled && (
-					<div className="alerts-dlx-icon" aria-hidden="true">
-						<IconPicker
-							defaultSvg={ icon }
-							setAttributes={ setAttributes }
-							alertType={ alertType }
-							icons={ getIconSets() }
-						/>
-					</div>
-				) }
-				<section>
-					{ closeButtonEnabled && (
-						<div className="alerts-dlx-close">
-							<BootstrapCloseIcon />
-						</div>
-					) }
-					{ titleEnabled && (
-						<RichText
-							tagName="h2"
-							placeholder={ __( 'Alert title', 'alerts-dlx' ) }
-							value={ alertTitle }
-							className="alerts-dlx-title"
-							disableLineBreaks={ true }
-							allowedFormats={ [] }
-							onChange={ ( value ) => {
-								setAttributes( { alertTitle: value } );
-							} }
-						/>
-					) }
-					<div className="alerts-dlx-content-wrapper">
-						{ descriptionEnabled && <div { ...innerBlockProps } /> }
-						{ buttonEnabled && (
-							<AlertButton
-								attributes={ attributes }
-								setAttributes={ setAttributes }
-							/>
-						) }
-					</div>
-				</section>
-			</figure>
-		</>
+		<BlockMain
+			attributes={ attributes }
+			setAttributes={ setAttributes }
+			iconSet={ BootstrapIcons }
+			inspectorControls={ inspectorControls }
+			advancedControls={ advancedControls }
+			CloseButtonIcon={ BootstrapCloseIcon }
+			innerBlockProps={ innerBlockProps }
+		/>
 	);
 
 	/**

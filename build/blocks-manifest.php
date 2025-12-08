@@ -190,6 +190,18 @@ return array(
 			'isBlockReadOnly' => array(
 				'type' => 'boolean',
 				'default' => false
+			),
+			'iconSource' => array(
+				'type' => 'string',
+				'default' => 'icon'
+			),
+			'imageUrl' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'imageId' => array(
+				'type' => 'number',
+				'default' => 0
 			)
 		),
 		'example' => array(
@@ -431,6 +443,18 @@ return array(
 			'isBlockReadOnly' => array(
 				'type' => 'boolean',
 				'default' => false
+			),
+			'iconSource' => array(
+				'type' => 'string',
+				'default' => 'icon'
+			),
+			'imageUrl' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'imageId' => array(
+				'type' => 'number',
+				'default' => 0
 			)
 		),
 		'example' => array(
@@ -656,6 +680,18 @@ return array(
 			'isBlockReadOnly' => array(
 				'type' => 'boolean',
 				'default' => false
+			),
+			'iconSource' => array(
+				'type' => 'string',
+				'default' => 'icon'
+			),
+			'imageUrl' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'imageId' => array(
+				'type' => 'number',
+				'default' => 0
 			)
 		),
 		'example' => array(
@@ -885,6 +921,18 @@ return array(
 			'isBlockReadOnly' => array(
 				'type' => 'boolean',
 				'default' => false
+			),
+			'iconSource' => array(
+				'type' => 'string',
+				'default' => 'icon'
+			),
+			'imageUrl' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'imageId' => array(
+				'type' => 'number',
+				'default' => 0
 			)
 		),
 		'example' => array(

@@ -4,6 +4,7 @@ import './js/blocks/bootstrap';
 import './js/blocks/shoelace';
 import './js/blocks/plugins/editorial-only';
 import './js/blocks/plugins/custom-colors';
+import './js/blocks/plugins/icon-image-selector';
 import AlertsLogo from './js/blocks/components/icons/AlertsLogo';
 
 ( function() {

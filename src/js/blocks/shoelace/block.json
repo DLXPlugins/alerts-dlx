@@ -169,6 +169,18 @@
 		"isBlockReadOnly": {
 			"type": "boolean",
 			"default": false
+		},
+		"iconSource": {
+			"type": "string",
+			"default": "icon"
+		},
+		"imageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"imageId": {
+			"type": "number",
+			"default": 0
 		}
 	},
 	"example": {

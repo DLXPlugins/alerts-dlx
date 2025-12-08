@@ -14,8 +14,7 @@ const IconPicker = ( props ) => {
 	const [ isCustomIcon, setIsCustomIcon ] = useState( false );
 	const [ selectedIcon, setSelectedIcon ] = useState( props.defaultSvg );
 	const [ isPopoverVisible, setIsPopOverVisible ] = useState( false );
-	const [ isFocusedOutside, setIsFocusedOutside ] = useState( false );
-
+	const [ popoverRef, setPopoverRef ] = useState( null );
 	const { defaultSvg, setAttributes, icons } = props;
 
 	/**
@@ -106,31 +105,23 @@ const IconPicker = ( props ) => {
 		);
 	};
 
-	const toggleVisible = () => {
-		setIsPopOverVisible( ( state ) => ! state );
-	};
-
 	return (
 		<>
 			<BaseControl className="alerts-dlx-icon-wrapper">
 				<div className="alerts-dlx-icon-preview">
 					<Button
 						className="button-reset alerts-dlx-icon-preview-button"
-						onClick={ ( e ) => {
-							if ( isFocusedOutside ) {
-								setIsFocusedOutside( false );
-								return;
-							}
-							toggleVisible();
+						onMouseDown={ () => {
+							setIsPopOverVisible( true );
 						} }
+						ref={ setPopoverRef }
 					>
 						<span dangerouslySetInnerHTML={ { __html: sanitizeSVG( defaultSvg ) } } />
 					</Button>
 				</div>
 			</BaseControl>
 			{ isPopoverVisible && (
-				<Popover noArrow={ false } className="alerts-dlx-icon-popover" onFocusOutside={ () => {
-					setIsFocusedOutside( true );
+				<Popover noArrow={ false } ref={ popoverRef } className="alerts-dlx-icon-popover" onClose={ () => {
 					setIsPopOverVisible( false );
 				} }>
 					<BaseControl className="alerts-dlx-icon-picker">

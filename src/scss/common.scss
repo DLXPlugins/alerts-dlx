@@ -7,7 +7,7 @@ $white: #ffffff;
 .template-material *,
 .template-chakra *,
 .template-bootstrap * {
-	font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+	font-family: var(--alerts-dlx-font-family, 'Helvetica', 'Arial', sans-serif);
 }
 
 a.alerts-dlx-button.button-reset,
@@ -57,7 +57,7 @@ button.button-reset.components-button:hover {
     margin-block-end: 1.5rem;
 
 	section h2 {
-		font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+		font-family: var(--alerts-dlx-font-family, 'Helvetica', 'Arial', sans-serif);
 		font-weight: 900;
 	}
 }
@@ -134,10 +134,29 @@ figure.alerts-dlx-alert {
 		width: 1.4em;
 		height: 1.4em;
 	}
+
+	.alerts-dlx-icon img {
+		max-width: 2em;
+		max-height: 2em;
+		width: 100%;
+		height: auto;
+		margin-bottom: 0.5em;
+	}
 	
 	.alerts-dlx-icon-frontend .alerts-dlx-icon-preview {
 		font-size: 1.2em;
 		line-height: 2.2em;
+	}
+}
+body .alerts-dlx-alert[role=alert] section .alerts-dlx-close ~ h2.alerts-dlx-title {
+	padding-right: 16px;
+}
+body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] {
+	padding: 0.75em 1.25em;
+
+	.alerts-dlx-icon img {
+		max-width: 3.8em;
+		max-height: 3.8em;
 	}
 }
 
@@ -182,7 +201,7 @@ figure.alerts-dlx-alert {
 }
 
 .editor-styles-wrapper .alerts-dlx-alert[role="alert"] .alerts-dlx-content p {
-	font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+	font-family: var(--alerts-dlx-font-family, 'Helvetica', 'Arial', sans-serif);
 	font-weight: 400;
 	font-size: 1.2em;
 }
@@ -190,7 +209,7 @@ figure.alerts-dlx-alert {
 .template-bootstrap .alerts-dlx-alert[role="alert"] .alerts-dlx-bootstrap .alerts-dlx-content p,
 .template-material .alerts-dlx-alert[role="alert"] .alerts-dlx-material .alerts-dlx-content p,
 .template-shoelace .alerts-dlx-alert[role="alert"] .alerts-dlx-shoelace .alerts-dlx-content p {
-	font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+	font-family: var(--alerts-dlx-font-family, 'Helvetica', 'Arial', sans-serif);
 	font-weight: 400;
 	font-size: 1.2em;
 }

@@ -19,6 +19,7 @@ import {
 	ButtonGroup,
 	RangeControl,
 	BaseControl,
+	Slot,
 } from '@wordpress/components';
 
 import { rawHandler } from '@wordpress/blocks';
@@ -41,6 +42,7 @@ import IconPicker from '../components/IconPicker';
 import BootstrapIcons from '../components/icons/BootstrapIcons';
 import shoelaceColors from './colors';
 import { ShoeLaceCloseIcon } from '../components/CloseButtonIcons';
+import BlockMain from '../components/BlockMain';
 
 // For storing unique IDs.
 const uniqueIds = [];
@@ -126,6 +128,7 @@ const ShoelaceAlerts = ( props ) => {
 
 	const inspectorControls = (
 		<>
+			<Slot name="alertsDLXPanelStart" fillProps={ props } />
 			<PanelBody initialOpen={ true } title={ __( 'Alert Settings', 'quotes-dlx' ) }>
 				<>
 					<PanelRow>
@@ -201,6 +204,7 @@ const ShoelaceAlerts = ( props ) => {
 							</PanelRow>
 						)
 					}
+					<Slot name="alertsDLXSettingsPanelEnd" fillProps={ props } />
 				</>
 			</PanelBody>
 			<PanelBody initialOpen={ true } title={ __( 'Appearance', 'quotes-dlx' ) }>
@@ -344,6 +348,7 @@ const ShoelaceAlerts = ( props ) => {
 						help={ __( 'Set the base font size for the alert.', 'alerts-dlx' ) }
 					/>
 				</PanelRow>
+				<Slot name="alertsDLXAppearancePanelEnd" fillProps={ props } />
 			</PanelBody>
 		</>
 	);
@@ -382,75 +387,16 @@ const ShoelaceAlerts = ( props ) => {
 		}
 	}, [ className ] );
 
-	const getIconSets = () => {
-		return BootstrapIcons;
-	};
-
-	// Calculate max width.
-	const maxWidthStyle = {
-		maxWidth: maximumWidth + maximumWidthUnit,
-	};
-	const baseFontSizeStyles = `#${ uniqueId } { font-size: ${ parseInt( baseFontSize ) }px; }`;
 	const block = (
-		<>
-			<InspectorControls>{ inspectorControls }</InspectorControls>
-			<InspectorAdvancedControls>{ advancedControls }</InspectorAdvancedControls>
-			<style>{ baseFontSizeStyles }</style>
-			<figure
-				role="alert"
-				className={ classnames( 'alerts-dlx-alert alerts-dlx-shoelace', {
-					'alerts-dlx-has-icon': iconEnabled,
-					'alerts-dlx-has-description': descriptionEnabled,
-					'alerts-dlx-has-button': buttonEnabled,
-				} ) }
-				style={ maxWidthStyle }
-				id={ uniqueId }
-			>
-				{ iconEnabled && (
-					<div className="alerts-dlx-icon" aria-hidden="true">
-						<IconPicker
-							defaultSvg={ icon }
-							setAttributes={ setAttributes }
-							alertType={ alertType }
-							icons={ getIconSets() }
-						/>
-					</div>
-				) }
-				<section>
-					{
-						closeButtonEnabled && (
-							<div className="alerts-dlx-close">
-								<ShoeLaceCloseIcon />
-							</div>
-						)
-					}
-					{ titleEnabled && (
-						<RichText
-							tagName="h2"
-							placeholder={ __( 'Alert title', 'quotes-dlx' ) }
-							value={ alertTitle }
-							className="alerts-dlx-title"
-							disableLineBreaks={ true }
-							allowedFormats={ [] }
-							onChange={ ( value ) => {
-								setAttributes( { alertTitle: value } );
-							} }
-						/>
-					) }
-					<div className="alerts-dlx-content-wrapper">
-						{ descriptionEnabled && (
-							<div { ...innerBlockProps } />
-						) }
-						{ buttonEnabled && (
-							<AlertButton
-								attributes={ attributes }
-								setAttributes={ setAttributes }
-							/>
-						) }
-					</div>
-				</section>
-			</figure>
-		</>
+		<BlockMain
+			attributes={ attributes }
+			setAttributes={ setAttributes }
+			iconSet={ BootstrapIcons }
+			inspectorControls={ inspectorControls }
+			advancedControls={ advancedControls }
+			CloseButtonIcon={ ShoeLaceCloseIcon }
+			innerBlockProps={ innerBlockProps }
+		/>
 	);
 
 	/**
