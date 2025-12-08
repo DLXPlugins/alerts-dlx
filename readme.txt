@@ -3,7 +3,7 @@ Contributors: ronalfy
 Tags: alert box, notifications, alerts, notify, blocks
 Requires at least: 6.5
 Tested up to: 6.9
-Stable tag: 2.2.3
+Stable tag: 2.3.0
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -107,6 +107,11 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Changelog ==
 
+= 2.3.0 =
+* Released 2025-12-08
+* New: Added ability to add custom image via block or shortcode.
+* New: Can disable custom fonts and use your own via WP filters.
+
 = 2.2.3 =
 * Released 2025-12-06
 * Fixed shortcode CSS not loading on the frontend.
@@ -201,5 +206,5 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Upgrade Notice ==
 
-= 2.2.3 =
-Fixing shortcode CSS not loading on the frontend.
+= 2.3.0 =
+You can use custom images now instead of icons. Fonts can be disabled programmatically.
