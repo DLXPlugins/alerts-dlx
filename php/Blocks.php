@@ -651,13 +651,43 @@ class Blocks {
 			Functions::get_plugin_version(),
 			'all'
 		);
-		wp_register_style(
-			'alerts-dlx-block-editor-styles-lato',
-			Functions::get_plugin_url( 'dist/alerts-dlx-gfont-lato.css' ),
-			array(),
-			Functions::get_plugin_version(),
-			'all'
-		);
+
+		/**
+		 * Filter whether to load the Lato font stylesheet.
+		 *
+		 * @param bool $load_lato_font Whether to load the Lato font stylesheet.
+		 * @return bool
+		 */
+		if ( apply_filters( 'alerts_dlx_load_fonts', true ) ) {
+			wp_register_style(
+				'alerts-dlx-block-editor-styles-lato',
+				Functions::get_plugin_url( 'dist/alerts-dlx-gfont-lato.css' ),
+				array(),
+				Functions::get_plugin_version(),
+				'all'
+			);
+			wp_add_inline_style(
+				'alerts-dlx-block-editor-styles-lato',
+				':root {
+					--alerts-dlx-font-family: "Lato", "Helvetica", "Arial", sans-serif;
+				}'
+			);
+		} else {
+			wp_register_style(
+				'alerts-dlx-block-editor-styles-lato',
+				false,
+				array(),
+				Functions::get_plugin_version(),
+				'all'
+			);
+			$default_font_family = apply_filters( 'alerts_dlx_default_font_family', '"Helvetica", "Arial", sans-serif' );
+			wp_add_inline_style(
+				'alerts-dlx-block-editor-styles-lato',
+				':root {
+					--alerts-dlx-font-family: ' . esc_attr( $default_font_family ) . ';
+				}'
+			);
+		}
 	}
 
 	/**

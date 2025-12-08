@@ -7,7 +7,7 @@ $white: #ffffff;
 .template-material *,
 .template-chakra *,
 .template-bootstrap * {
-	font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+	font-family: var(--alerts-dlx-font-family, 'Helvetica', 'Arial', sans-serif);
 }
 
 a.alerts-dlx-button.button-reset,
@@ -57,7 +57,7 @@ button.button-reset.components-button:hover {
     margin-block-end: 1.5rem;
 
 	section h2 {
-		font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+		font-family: var(--alerts-dlx-font-family, 'Helvetica', 'Arial', sans-serif);
 		font-weight: 900;
 	}
 }
@@ -201,7 +201,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] {
 }
 
 .editor-styles-wrapper .alerts-dlx-alert[role="alert"] .alerts-dlx-content p {
-	font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+	font-family: var(--alerts-dlx-font-family, 'Helvetica', 'Arial', sans-serif);
 	font-weight: 400;
 	font-size: 1.2em;
 }
@@ -209,7 +209,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] {
 .template-bootstrap .alerts-dlx-alert[role="alert"] .alerts-dlx-bootstrap .alerts-dlx-content p,
 .template-material .alerts-dlx-alert[role="alert"] .alerts-dlx-material .alerts-dlx-content p,
 .template-shoelace .alerts-dlx-alert[role="alert"] .alerts-dlx-shoelace .alerts-dlx-content p {
-	font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+	font-family: var(--alerts-dlx-font-family, 'Helvetica', 'Arial', sans-serif);
 	font-weight: 400;
 	font-size: 1.2em;
 }
