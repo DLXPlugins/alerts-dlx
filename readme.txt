@@ -3,7 +3,7 @@ Contributors: ronalfy
 Tags: alert box, notifications, alerts, notify, blocks
 Requires at least: 6.5
 Tested up to: 6.9
-Stable tag: 2.3.0
+Stable tag: 2.3.1
 Requires PHP: 7.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -107,6 +107,10 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Changelog ==
 
+= 2.3.1 =
+* Released 2025-12-13
+* Fix: Disabling the Lato font via filter wasn't loading the alternate stylesheet font.
+
 = 2.3.0 =
 * Released 2025-12-08
 * New: Added ability to add custom image via block or shortcode.
@@ -206,5 +210,5 @@ Yes. The icon picker allows you to enter an SVG. For the shortcode, you must sup
 
 == Upgrade Notice ==
 
-= 2.3.0 =
-You can use custom images now instead of icons. Fonts can be disabled programmatically.
+= 2.3.1 =
+Fix: Disabling the Lato font via filter wasn't loading the alternate stylesheet font.
