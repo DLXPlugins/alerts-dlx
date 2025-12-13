@@ -684,7 +684,7 @@ class Blocks {
 			wp_add_inline_style(
 				'alerts-dlx-block-editor-styles-lato',
 				':root {
-					--alerts-dlx-font-family: ' . esc_attr( $default_font_family ) . ';
+					--alerts-dlx-font-family: ' . wp_strip_all_tags( $default_font_family ) . ';
 				}'
 			);
 		}
