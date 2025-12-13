@@ -9,36 +9,34 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Donate link: https://github.com/sponsors/DLXPlugins
 
-A beautiful and easy to use alert and callout box, with support for blocks and shortcodes.
+Add beautiful tips, warnings, notes, and callout boxes to your WordPress posts and pages in seconds.
 
 == Description ==
 
-AlertsDLX offers beautifully styled alerts, callouts, and notification boxes for the Block Editor, Classic Editor, or anywhere blocks and shortcodes can go.
+AlertsDLX offers beautifully styled alerts, callouts, and notification boxes for Gutenberg (the Block Editor), Full-Site Editing (FSE), the Classic Editor, or anywhere blocks and shortcodes are supported, including most page builders.
 
-This plugin is perfect for adding alerts, callouts, and notifications to your site. It comes with four alert styles: Material, Bootstrap, Chakra, and Shoelace. Each alert style has its own unique look and feel.
+This plugin is a clean and modern timesaving solution to quickly adding customizable alerts, with a focus on being lightweight and user friendly.
 
-Coupled with a free plugin like <a href="https://blockvisibilitywp.com/">Block Visibility</a>, your imagine can really go wild.
+Coupled with a free plugin like <a href="https://blockvisibilitywp.com/">Block Visibility</a>, your imagine can really go wild. For example, you can create an "Empty Cart" alert for WooCommerce or Easy Digital Downloads when a cart is empty. Create dismissible alerts for site-wide notices, or per-page notifications that can be dismissed.
 
 https://www.youtube.com/watch?v=7dKpw5uBi5o
 
-> <strong>Alert Shortcodes are here!</strong> Create alert boxes from shortcodes. <a href="https://docs.dlxplugins.com/v/alertsdlx/shortcode-usage">See shortcode usage</a>.
+## Quick Links
 
-> Check out the demo above for all alert types and variations.
+<a href="https://docs.dlxplugins.com/v/alertsdlx/">AlertsDLX Docs</a> | <a href="https://dlxplugins.com/plugins/alerts-dlx/">AlertsDLX Home</a> | <a href="https://docs.dlxplugins.com/v/alertsdlx/shortcode-usage">Shortcode Usage</a> | <a href="https://dlxplugins.com/support/">Support</a>
 
-Major features:
+> Check out the demo above for most alert types and variations.
 
-1. Four alert styles: Material, Bootstrap, Chakra, and Shoelace.
-2. Use branded colors, or choose custom for your own styles.
-3. Add your own SVG icons, or choose from the ones included.
+## Major features
+
+1. Four modern alert styles: Material, Bootstrap, Chakra, and Shoelace.
+2. Use pre-selected colors, styles, and variants, or choose custom for your own branded colors.
+3. Add your own SVG icons, or choose from the ones included. Include a custom image if desired.
 4. Add dismissble alerts, and have it remember the user's choice.
 5. Add an optional title, description, and button.
-
-Quick Links:
-
-* <a href="https://dlxplugins.com/plugins/alertsdlx/">AlertsDLX Home</a>
-* <a href="https://docs.dlxplugins.com/v/alertsdlx/">AlertsDLX Documentation</a>
-* <a href="https://docs.dlxplugins.com/v/alertsdlx/shortcode-usage">Shortcode Usage</a>
-* <a href="https://dlxplugins.com/support/">AlertsDLX Support</a>
+6. Mark an Alert Block as Editorial, and have it only visible in the block editor.
+7. Shortcode/page builder support: use AlertsDLX anywhere shortcodes are supported.
+8. Lightweight: the plugin only loads what is needed where it's needed.
 
 Blocks are styled with inspiration from:
 
@@ -55,26 +53,34 @@ Icons included are from:
 * <a href="https://github.com/chakra-ui/chakra-ui/tree/main/packages/components/icons/src">Chakra UI Icons</a> (GitHub)
 * <a href="https://icons.getbootstrap.com/">Bootstrap Icons</a>
 
-Development:
+## Development
 
 Development happens on GitHub. Please <a href="https://github.com/dlxplugins/alerts-dlx">check out the GitHub code repository for AlertsDLX</a>.
+
+❤️ Please help spread the word about this plugin <a href="https://wordpress.org/support/plugin/alerts-dlx/reviews/#new-post">through your kind review</a>.
 
 == Installation ==
 
 1. Search for AlertsDLX on the Add Plugins screen.
 2. Install and activate.
 
-> <a href="https://docs.dlxplugins.com/v/alertsdlx/">In-depth Documentation</a> - Please check out our thorough documentation ❤️️
-
 == Frequently Asked Questions ==
 
-= Does this work with the Classic Editor and Page Builders? =
+= Does AlertsDLX work with the Classic Editor and Page Builders? =
 
 Yes. AlertsDLX works with the Classic Editor <a href="https://docs.dlxplugins.com/v/alertsdlx/shortcode-usage">via its shortcode support</a>.
 
-= Does this work with the Block Editor? =
+= Does AlertsDLX work with Elementor or Divi? =
 
-Yes, AlertsDLX comes with four blocks, one for each style of alert (Bootstrap, Chakra, Material, and Shoelace).
+Yes, via the <a href="ttps://docs.dlxplugins.com/v/alertsdlx/shortcode-usage">built-in shortcode</a>, you can output in just about any page builder, including Elementor and Divi.
+
+= Does AlertsDLX work with shortcodes? =
+
+Yes, via the <a href="ttps://docs.dlxplugins.com/v/alertsdlx/shortcode-usage">built-in shortcode</a>.
+
+= Does this work with the Block Editor (aka, Gutenberg)? =
+
+Yes, AlertsDLX comes with four blocks, one for each style of alert (Bootstrap, Chakra, Material, and Shoelace). The blocks are fully featured, and are native to the block editor.
 
 = What alert styles does the plugin support? =
 
@@ -83,27 +89,55 @@ Yes, AlertsDLX comes with four blocks, one for each style of alert (Bootstrap, C
 * <a href="https://chakra-ui.com/docs/components/alert">Chakra UI</a>
 * <a href="https://shoelace.style/">Shoelace</a>
 
-= Can I customize the colors? =
+= Can I create dismissible notices? =
 
-Yes, you can choose custom colors via the shortcode or built-in blocks.
+Yes, each alert can be dismissed, and can be set to expire after a certain amount of time. For example, create a terms of service alert on the homepage that can be dismissed, with the expiration lasting a week.
 
-= How can I get help? =
+= Where are the admin settings? =
 
-Please leave a note on <a href="https://dlxplugins.com/support/">our support page</a>.
+There are no admin settings for this plugin. Please use the included blocks or shortcode to output the alerts notification.
 
-= Can I use my own icons? =
+= Can I use custom colors? =
+
+Yes, you can customize the colors via the shortcode or built-in blocks by selecting "Custom" as a block style.
+
+= Can I use my own custom SVG icons? =
 
 Yes. The icon picker allows you to enter an SVG. For the shortcode, you must supply your own SVG.
+
+= Can I use my own custom images? =
+
+Yes. It's recommended to use a square image, and there is a built-in cropper available. Custom images look best center-aligned.
+
+= Does AlertsDLX work on Multisite? =
+
+Yes. There are no admin options, so there's nothing to configure on a network.
+
+= Can I show alerts on specific posts or pages? =
+
+AlertsDLX can be used in conjunction with free plugin <a href="https://blockvisibilitywp.com/">Block Visibility</a> to display a notification under certain conditions. While AlertsDLX in itself is not a site-wide notification tool, it can be used as one if put in a global template such as with FSE.
+
+= Does the plugin support countdowns? =
+
+AlertsDLX does not support countdowns or auto-expiration. If you need an alert to auto-expire, I suggest using it with <a href="https://blockvisibilitywp.com/">Block Visibility</a> and setting a date-based visibility setting.
+
+= Can I disable the custom font used (Lato)? =
+
+Yes, you can improve performance further by disabling the custom font supplied with AlertsDLX and supplying your own. Please see <a href="https://docs.dlxplugins.com/alertsdlx/developers/how-to-use-and-disable-custom-fonts-in-alertsdlx">disabling custom fonts in AlertsDLX</a>
+
+= How can I get support or leave a feature request? =
+
+Please leave a note on <a href="https://dlxplugins.com/support/">our support page</a> or leave a detailed support request here on .org.
 
 
 == Screenshots ==
 
-1. Warning Alert and Options
-2. Centered Warning Alert
-3. Example Success Alert
-4. Block Style Previews
-5. Icon Selector
-6. Font Size Option
+1. Dismissible alert with custom image icon selected, and alert button displaying.
+2. Adding the alert box via the block editor shows four alert types.
+3. Edit the icon, add an alert button, and create a dismissible alert easily in Gutenberg (the Block Editor).
+4. Block editor sidebar options showing style, alert settings, variants, and custom colors.
+5. Add a shortcode wherever shortcodes are supported, such as a form plugin, page builder, or widget.
+6. Each alert type supports light and dark mode colors.
 
 == Changelog ==
 
