@@ -14,7 +14,17 @@ registerPlugin( 'custom-slot-fills', {
 		return (
 			<Fill name="alertsDLXAppearancePanelEnd">
 				{ ( { attributes, setAttributes } ) => {
-					const { iconSource, imageUrl, imageId } = attributes;
+					const { iconSource, imageUrl, imageId, alertStyleId } = attributes;
+
+					const setAttributesWithIconFlag = ( updates ) => {
+						const iconKeys = [ 'icon', 'iconSource', 'imageId', 'imageUrl' ];
+						const touchesIcon = iconKeys.some( ( key ) => Object.prototype.hasOwnProperty.call( updates, key ) );
+						if ( touchesIcon && alertStyleId > 0 ) {
+							setAttributes( { ...updates, hasCustomIcon: true } );
+							return;
+						}
+						setAttributes( updates );
+					};
 
 					const { openMediaUploader } = useMediaUploader();
 
@@ -27,7 +37,7 @@ registerPlugin( 'custom-slot-fills', {
 											variant="secondary"
 											isDestructive={ true }
 											onClick={ () => {
-												setAttributes( { imageUrl: '', imageId: 0 } );
+												setAttributesWithIconFlag( { imageUrl: '', imageId: 0 } );
 											} }
 										>
 											{ __( 'Remove Image', 'alerts-dlx' ) }
@@ -48,7 +58,7 @@ registerPlugin( 'custom-slot-fills', {
 													canSkipCrop: true,
 												},
 												( attachment ) => {
-													setAttributes( {
+													setAttributesWithIconFlag( {
 														imageUrl: attachment.url,
 														imageId: attachment.id,
 													} );
@@ -82,7 +92,7 @@ registerPlugin( 'custom-slot-fills', {
 								<ToggleGroupControl
 									value={ iconSource }
 									onChange={ ( value ) => {
-										setAttributes( { iconSource: value } );
+										setAttributesWithIconFlag( { iconSource: value } );
 									} }
 									label={ __( 'Icon Source', 'alerts-dlx' ) }
 									className="alerts-dlx-icon-source-toggle-group"

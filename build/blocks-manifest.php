@@ -202,6 +202,14 @@ return array(
 			'imageId' => array(
 				'type' => 'number',
 				'default' => 0
+			),
+			'alertStyleId' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'hasCustomIcon' => array(
+				'type' => 'boolean',
+				'default' => false
 			)
 		),
 		'example' => array(
@@ -455,6 +463,14 @@ return array(
 			'imageId' => array(
 				'type' => 'number',
 				'default' => 0
+			),
+			'alertStyleId' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'hasCustomIcon' => array(
+				'type' => 'boolean',
+				'default' => false
 			)
 		),
 		'example' => array(
@@ -692,6 +708,14 @@ return array(
 			'imageId' => array(
 				'type' => 'number',
 				'default' => 0
+			),
+			'alertStyleId' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'hasCustomIcon' => array(
+				'type' => 'boolean',
+				'default' => false
 			)
 		),
 		'example' => array(
@@ -933,6 +957,14 @@ return array(
 			'imageId' => array(
 				'type' => 'number',
 				'default' => 0
+			),
+			'alertStyleId' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'hasCustomIcon' => array(
+				'type' => 'boolean',
+				'default' => false
 			)
 		),
 		'example' => array(

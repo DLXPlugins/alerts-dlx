@@ -66,6 +66,7 @@ class AlertsDLX {
 
 		Options::run();
 		( new Admin() )->run();
+		AlertStyles::run();
 		Blocks::run();
 
 		/**

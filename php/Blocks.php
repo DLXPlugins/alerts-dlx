@@ -254,6 +254,8 @@ class Blocks {
 	 */
 	public function frontend( array $attributes, string $content ) {
 
+		$attributes = AlertStyleMerger::resolve_attributes( $attributes );
+
 		$unique_id               = Functions::sanitize_attribute( $attributes, 'uniqueId', 'text' );
 		$alert_group             = Functions::sanitize_attribute( $attributes, 'alertGroup', 'text' );
 		$alert_type              = Functions::sanitize_attribute( $attributes, 'alertType', 'text' );
@@ -646,6 +648,12 @@ class Blocks {
 				'defaultImage'       => Functions::get_plugin_url( 'assets/bell.png' ),
 				'headlineStyle'      => Options::get_headline_style(),
 				'enabledBlockStyles' => Options::get_enabled_block_styles(),
+				'alertStyles'        => array(
+					'canManageStyles' => current_user_can( 'edit_others_posts' ),
+					'loadNonce'       => wp_create_nonce( 'alerts_dlx_load_alert_styles' ),
+					'saveNonce'       => wp_create_nonce( 'alerts_dlx_save_alert_style' ),
+					'getNonce'        => wp_create_nonce( 'alerts_dlx_get_alert_style' ),
+				),
 			)
 		);
 

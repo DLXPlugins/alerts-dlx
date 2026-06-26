@@ -52,7 +52,18 @@ const BlockMain = ( props ) => {
 		maximumWidth,
 		maximumWidthUnit,
 		baseFontSize,
+		alertStyleId,
 	} = attributes;
+
+	const setAttributesWithIconFlag = ( updates ) => {
+		const iconKeys = [ 'icon', 'iconSource', 'imageId', 'imageUrl' ];
+		const touchesIcon = iconKeys.some( ( key ) => Object.prototype.hasOwnProperty.call( updates, key ) );
+		if ( touchesIcon && alertStyleId > 0 ) {
+			setAttributes( { ...updates, hasCustomIcon: true } );
+			return;
+		}
+		setAttributes( updates );
+	};
 
 	// Calculate max width.
 	const maxWidthStyle = {
@@ -87,7 +98,7 @@ const BlockMain = ( props ) => {
 					<div className="alerts-dlx-icon" aria-hidden="true">
 						<IconPicker
 							defaultSvg={ icon }
-							setAttributes={ setAttributes }
+							setAttributes={ setAttributesWithIconFlag }
 							alertType={ alertType }
 							icons={ iconSet }
 						/>
