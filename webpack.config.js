@@ -1,6 +1,7 @@
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const RemoveEmptyScriptsPlugin = require( 'webpack-remove-empty-scripts' );
+const DependencyExtractionWebpackPlugin = require( '@wordpress/dependency-extraction-webpack-plugin' );
 const path = require( 'path' );
 module.exports = ( env ) => {
 	return [
@@ -24,10 +25,16 @@ module.exports = ( env ) => {
 				'alerts-dlx-material-styles': './src/scss/material/styles.scss',
 				'alerts-dlx-shoelace-styles': './src/scss/shoelace/styles.scss',
 				'alerts-dlx-dismiss': './src/js/dismiss/index.js',
+				'alerts-dlx-admin-style': './src/admin.scss',
+				'alerts-dlx-admin-settings': './src/react/Settings/index.js',
 			},
 			resolve: {
 				alias: {
 					react: path.resolve( 'node_modules/react' ),
+					'react-dom': path.resolve( 'node_modules/react-dom' ),
+					'@wordpress/i18n': path.resolve( 'node_modules/@wordpress/i18n' ),
+					'@wordpress/element': path.resolve( 'node_modules/@wordpress/element' ),
+					'@wordpress/components': path.resolve( 'node_modules/@wordpress/components' ),
 				},
 			},
 			mode: env.mode,
@@ -99,7 +106,22 @@ module.exports = ( env ) => {
 					},
 				],
 			},
-			plugins: [ new RemoveEmptyScriptsPlugin(), new MiniCssExtractPlugin() ],
+			plugins: [
+				new RemoveEmptyScriptsPlugin(),
+				new MiniCssExtractPlugin(),
+				new DependencyExtractionWebpackPlugin( {
+					requestToExternal( request ) {
+						if ( 'react-dom/client' === request ) {
+							return [ 'ReactDOM', 'client' ];
+						}
+					},
+					requestToHandle( request ) {
+						if ( 'react-dom/client' === request ) {
+							return 'react-dom';
+						}
+					},
+				} ),
+			],
 		},
 	];
 };

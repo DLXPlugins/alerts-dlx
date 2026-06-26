@@ -191,8 +191,9 @@ figure.alerts-dlx-alert {
 .alerts-dlx-alert[role=alert] *:not(svg, svg path, svg g) {
   font-size: inherit;
 }
-.alerts-dlx-alert[role=alert] section h2.alerts-dlx-title {
+.alerts-dlx-alert[role=alert] section .alerts-dlx-title {
   font-size: 1.2em;
+  font-weight: 600;
 }
 .alerts-dlx-alert[role=alert] .alerts-dlx-content p {
   font-size: 1.2em;
@@ -218,7 +219,7 @@ figure.alerts-dlx-alert {
   line-height: 2.2em;
 }
 
-body .alerts-dlx-alert[role=alert] section .alerts-dlx-close ~ h2.alerts-dlx-title {
+body .alerts-dlx-alert[role=alert] section .alerts-dlx-close ~ .alerts-dlx-title {
   padding-right: 16px;
 }
 
@@ -264,10 +265,10 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 }
 
 /* Specific overrides for content elements with high specificity */
-.template-chakra .alerts-dlx-alert[role=alert] .alerts-dlx-chakra section h2.alerts-dlx-title,
-.template-bootstrap .alerts-dlx-alert[role=alert] .alerts-dlx-bootstrap section h2.alerts-dlx-title,
-.template-material .alerts-dlx-alert[role=alert] .alerts-dlx-material section h2.alerts-dlx-title,
-.template-shoelace .alerts-dlx-alert[role=alert] .alerts-dlx-shoelace section h2.alerts-dlx-title {
+.template-chakra .alerts-dlx-alert[role=alert] .alerts-dlx-chakra section .alerts-dlx-title,
+.template-bootstrap .alerts-dlx-alert[role=alert] .alerts-dlx-bootstrap section .alerts-dlx-title,
+.template-material .alerts-dlx-alert[role=alert] .alerts-dlx-material section .alerts-dlx-title,
+.template-shoelace .alerts-dlx-alert[role=alert] .alerts-dlx-shoelace section .alerts-dlx-title {
   font-size: 1.2em;
 }
 
@@ -508,7 +509,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   grid-template-columns: 3.8em 1fr;
   padding-left: 0;
 }
-.template-material .alerts-dlx-material section h2.alerts-dlx-title {
+.template-material .alerts-dlx-material section .alerts-dlx-title {
   font-size: 1.2em;
   font-weight: var(--alerts-dlx-material-title-weight, 900);
   line-height: 1.5em;
@@ -576,7 +577,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   position: absolute;
   right: -35px;
 }
-.template-material.is-style-custom h2.alerts-dlx-title {
+.template-material.is-style-custom .alerts-dlx-title {
   color: var(--alerts-dlx-material-color-primary, var(--material-info-color));
 }
 .template-material.is-style-custom .alerts-dlx-content p {
@@ -657,7 +658,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   color: var(--alerts-dlx-material-color-bold, var(--material-info-color-bold));
   fill: var(--alerts-dlx-material-color-bold, var(--material-info-color-bold));
 }
-.template-material.is-style-success.is-appearance-default h2.alerts-dlx-title, .template-material.is-style-success.is-appearance-centered h2.alerts-dlx-title {
+.template-material.is-style-success.is-appearance-default .alerts-dlx-title, .template-material.is-style-success.is-appearance-centered .alerts-dlx-title {
   color: var(--material-success-color);
 }
 .template-material.is-style-success.is-appearance-default .alerts-dlx-content p, .template-material.is-style-success.is-appearance-centered .alerts-dlx-content p {
@@ -695,7 +696,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-material.is-style-success.is-appearance-default .alerts-dlx-close svg:hover, .template-material.is-style-success.is-appearance-centered .alerts-dlx-close svg:hover {
   color: var(--material-success-color-accent);
 }
-.template-material.is-style-success.is-appearance-outlined h2.alerts-dlx-title {
+.template-material.is-style-success.is-appearance-outlined .alerts-dlx-title {
   color: var(--material-success-color);
 }
 .template-material.is-style-success.is-appearance-outlined .alerts-dlx-content p {
@@ -730,7 +731,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-material.is-style-success.is-appearance-outlined .alerts-dlx-close svg:hover {
   color: var(--material-success-color-accent);
 }
-.template-material.is-style-success.is-appearance-filled h2.alerts-dlx-title {
+.template-material.is-style-success.is-appearance-filled .alerts-dlx-title {
   color: #ffffff;
 }
 .template-material.is-style-success.is-appearance-filled .alerts-dlx-content p {
@@ -765,7 +766,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-material.is-style-success.is-appearance-filled .alerts-dlx-close svg:hover {
   color: var(--material-success-color-accent);
 }
-.template-material.is-style-info.is-appearance-default h2.alerts-dlx-title, .template-material.is-style-info.is-appearance-centered h2.alerts-dlx-title {
+.template-material.is-style-info.is-appearance-default .alerts-dlx-title, .template-material.is-style-info.is-appearance-centered .alerts-dlx-title {
   color: var(--material-info-color);
 }
 .template-material.is-style-info.is-appearance-default .alerts-dlx-content p, .template-material.is-style-info.is-appearance-centered .alerts-dlx-content p {
@@ -803,7 +804,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-material.is-style-info.is-appearance-default .alerts-dlx-close svg:hover, .template-material.is-style-info.is-appearance-centered .alerts-dlx-close svg:hover {
   color: var(--material-info-color-accent);
 }
-.template-material.is-style-info.is-appearance-outlined h2.alerts-dlx-title {
+.template-material.is-style-info.is-appearance-outlined .alerts-dlx-title {
   color: var(--material-info-color);
 }
 .template-material.is-style-info.is-appearance-outlined .alerts-dlx-content p {
@@ -838,7 +839,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-material.is-style-info.is-appearance-outlined .alerts-dlx-close svg:hover {
   color: var(--material-info-color-accent);
 }
-.template-material.is-style-info.is-appearance-filled h2.alerts-dlx-title {
+.template-material.is-style-info.is-appearance-filled .alerts-dlx-title {
   color: #ffffff;
 }
 .template-material.is-style-info.is-appearance-filled .alerts-dlx-content p {
@@ -873,7 +874,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-material.is-style-info.is-appearance-filled .alerts-dlx-close svg:hover {
   color: var(--material-info-color-accent);
 }
-.template-material.is-style-warning.is-appearance-default h2.alerts-dlx-title, .template-material.is-style-warning.is-appearance-centered h2.alerts-dlx-title {
+.template-material.is-style-warning.is-appearance-default .alerts-dlx-title, .template-material.is-style-warning.is-appearance-centered .alerts-dlx-title {
   color: var(--material-warning-color);
 }
 .template-material.is-style-warning.is-appearance-default .alerts-dlx-content p, .template-material.is-style-warning.is-appearance-centered .alerts-dlx-content p {
@@ -911,7 +912,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-material.is-style-warning.is-appearance-default .alerts-dlx-close svg:hover, .template-material.is-style-warning.is-appearance-centered .alerts-dlx-close svg:hover {
   color: var(--material-warning-color-accent);
 }
-.template-material.is-style-warning.is-appearance-outlined h2.alerts-dlx-title {
+.template-material.is-style-warning.is-appearance-outlined .alerts-dlx-title {
   color: var(--material-warning-color);
 }
 .template-material.is-style-warning.is-appearance-outlined .alerts-dlx-content p {
@@ -946,7 +947,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-material.is-style-warning.is-appearance-outlined .alerts-dlx-close svg:hover {
   color: var(--material-warning-color-accent);
 }
-.template-material.is-style-warning.is-appearance-filled h2.alerts-dlx-title {
+.template-material.is-style-warning.is-appearance-filled .alerts-dlx-title {
   color: #ffffff;
 }
 .template-material.is-style-warning.is-appearance-filled .alerts-dlx-content p {
@@ -981,7 +982,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-material.is-style-warning.is-appearance-filled .alerts-dlx-close svg:hover {
   color: var(--material-warning-color-accent);
 }
-.template-material.is-style-error.is-appearance-default h2.alerts-dlx-title, .template-material.is-style-error.is-appearance-centered h2.alerts-dlx-title {
+.template-material.is-style-error.is-appearance-default .alerts-dlx-title, .template-material.is-style-error.is-appearance-centered .alerts-dlx-title {
   color: var(--material-error-color);
 }
 .template-material.is-style-error.is-appearance-default .alerts-dlx-content p, .template-material.is-style-error.is-appearance-centered .alerts-dlx-content p {
@@ -1019,7 +1020,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-material.is-style-error.is-appearance-default .alerts-dlx-close svg:hover, .template-material.is-style-error.is-appearance-centered .alerts-dlx-close svg:hover {
   color: var(--material-error-color-accent);
 }
-.template-material.is-style-error.is-appearance-outlined h2.alerts-dlx-title {
+.template-material.is-style-error.is-appearance-outlined .alerts-dlx-title {
   color: var(--material-error-color);
 }
 .template-material.is-style-error.is-appearance-outlined .alerts-dlx-content p {
@@ -1054,7 +1055,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-material.is-style-error.is-appearance-outlined .alerts-dlx-close svg:hover {
   color: var(--material-error-color-accent);
 }
-.template-material.is-style-error.is-appearance-filled h2.alerts-dlx-title {
+.template-material.is-style-error.is-appearance-filled .alerts-dlx-title {
   color: #ffffff;
 }
 .template-material.is-style-error.is-appearance-filled .alerts-dlx-content p {

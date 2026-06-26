@@ -205,7 +205,7 @@ $chakra-dark-palette: (
 			padding-left: 0;
 		}
 
-		section h2.alerts-dlx-title {
+		section .alerts-dlx-title {
 			font-size: 1.2em;
 			font-weight: var(--alerts-dlx-chakra-title-weight, 900);
 			line-height: 1.5em;
@@ -293,7 +293,7 @@ $chakra-dark-palette: (
 				color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 			}
 
-			h2.alerts-dlx-title {
+			.alerts-dlx-title {
 				color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 			}
 
@@ -344,7 +344,7 @@ $chakra-dark-palette: (
 				color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 			}
 
-			h2.alerts-dlx-title {
+			.alerts-dlx-title {
 				color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 			}
 
@@ -395,7 +395,7 @@ $chakra-dark-palette: (
 				color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 			}
 
-			h2.alerts-dlx-title {
+			.alerts-dlx-title {
 				color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 			}
 
@@ -440,7 +440,7 @@ $chakra-dark-palette: (
 		}
 
 		&.is-appearance-solid {
-			h2.alerts-dlx-title {
+			.alerts-dlx-title {
 				color: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-info-solid-foreground));
 			}
 
@@ -494,7 +494,7 @@ $chakra-dark-palette: (
 		&.is-style-#{$variant} {
 			&.is-appearance-subtle,
 			&.is-appearance-centered {
-				h2.alerts-dlx-title {
+				.alerts-dlx-title {
 					color: var(--chakra-#{$variant}-color);
 				}
 
@@ -548,7 +548,7 @@ $chakra-dark-palette: (
 					color: var(--alerts-dlx-chakra-color-primary, var(--chakra-#{$variant}-color));
 				}
 
-				h2.alerts-dlx-title {
+				.alerts-dlx-title {
 					color: var(--chakra-#{$variant}-color);
 				}
 
@@ -599,7 +599,7 @@ $chakra-dark-palette: (
 					color: var(--alerts-dlx-chakra-color-primary, var(--chakra-#{$variant}-color));
 				}
 
-				h2.alerts-dlx-title {
+				.alerts-dlx-title {
 					color: var(--chakra-#{$variant}-color);
 				}
 
@@ -644,7 +644,7 @@ $chakra-dark-palette: (
 			}
 
 			&.is-appearance-solid {
-				h2.alerts-dlx-title {
+				.alerts-dlx-title {
 					color: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-#{$variant}-solid-foreground));
 				}
 

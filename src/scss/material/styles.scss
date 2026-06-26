@@ -347,7 +347,7 @@ $material-dark-palette: (
 			padding-left: 0;
 		}
 
-		section h2.alerts-dlx-title {
+		section .alerts-dlx-title {
 			font-size: 1.2em;
 			font-weight: var( --alerts-dlx-material-title-weight, 900 );
 			line-height: 1.5em;
@@ -439,7 +439,7 @@ $material-dark-palette: (
 	}
 
 	&.is-style-custom {
-		h2.alerts-dlx-title {
+		.alerts-dlx-title {
 			color: var( --alerts-dlx-material-color-primary, var( --material-info-color ) );
 		}
 
@@ -541,7 +541,7 @@ $material-dark-palette: (
 		&.is-style-#{$variant} {
 			&.is-appearance-default,
 			&.is-appearance-centered {
-				h2.alerts-dlx-title {
+				.alerts-dlx-title {
 					color: var( --material-#{$variant}-color );
 				}
 
@@ -586,7 +586,7 @@ $material-dark-palette: (
 			}
 
 			&.is-appearance-outlined {
-				h2.alerts-dlx-title {
+				.alerts-dlx-title {
 					color: var( --material-#{$variant}-color );
 				}
 
@@ -633,7 +633,7 @@ $material-dark-palette: (
 			}
 
 			&.is-appearance-filled {
-				h2.alerts-dlx-title {
+				.alerts-dlx-title {
 					color: $white;
 				}
 

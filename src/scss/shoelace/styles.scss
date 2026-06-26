@@ -192,7 +192,7 @@ $shoelace-modes: (
 		border-top: 3px solid var(--alerts-dlx-shoelace-color-border, var(--alerts-dlx-shoelace-color-alt, var(--alerts-dlx-shoelace-text-color, #000)));
 	}
 
-	h2.alerts-dlx-title {
+	.alerts-dlx-title {
 		color: var(--alerts-dlx-shoelace-text-color, #000);
 	}
 
@@ -335,7 +335,7 @@ $shoelace-modes: (
 			padding-left: 0;
 		}
 
-		section h2.alerts-dlx-title {
+		section .alerts-dlx-title {
 			font-size: 1.2em;
 			font-weight: 900;
 			line-height: 1.5em;
@@ -440,7 +440,7 @@ $shoelace-modes: (
 			border-top: 3px solid var(--alerts-dlx-shoelace-color-border, #0284c7);
 		}
 
-		h2.alerts-dlx-title {
+		.alerts-dlx-title {
 			color: var(--alerts-dlx-shoelace-color-primary, var(--alerts-dlx-shoelace-text-color, #000));
 		}
 

@@ -191,8 +191,9 @@ figure.alerts-dlx-alert {
 .alerts-dlx-alert[role=alert] *:not(svg, svg path, svg g) {
   font-size: inherit;
 }
-.alerts-dlx-alert[role=alert] section h2.alerts-dlx-title {
+.alerts-dlx-alert[role=alert] section .alerts-dlx-title {
   font-size: 1.2em;
+  font-weight: 600;
 }
 .alerts-dlx-alert[role=alert] .alerts-dlx-content p {
   font-size: 1.2em;
@@ -218,7 +219,7 @@ figure.alerts-dlx-alert {
   line-height: 2.2em;
 }
 
-body .alerts-dlx-alert[role=alert] section .alerts-dlx-close ~ h2.alerts-dlx-title {
+body .alerts-dlx-alert[role=alert] section .alerts-dlx-close ~ .alerts-dlx-title {
   padding-right: 16px;
 }
 
@@ -264,10 +265,10 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 }
 
 /* Specific overrides for content elements with high specificity */
-.template-chakra .alerts-dlx-alert[role=alert] .alerts-dlx-chakra section h2.alerts-dlx-title,
-.template-bootstrap .alerts-dlx-alert[role=alert] .alerts-dlx-bootstrap section h2.alerts-dlx-title,
-.template-material .alerts-dlx-alert[role=alert] .alerts-dlx-material section h2.alerts-dlx-title,
-.template-shoelace .alerts-dlx-alert[role=alert] .alerts-dlx-shoelace section h2.alerts-dlx-title {
+.template-chakra .alerts-dlx-alert[role=alert] .alerts-dlx-chakra section .alerts-dlx-title,
+.template-bootstrap .alerts-dlx-alert[role=alert] .alerts-dlx-bootstrap section .alerts-dlx-title,
+.template-material .alerts-dlx-alert[role=alert] .alerts-dlx-material section .alerts-dlx-title,
+.template-shoelace .alerts-dlx-alert[role=alert] .alerts-dlx-shoelace section .alerts-dlx-title {
   font-size: 1.2em;
 }
 
@@ -478,7 +479,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   grid-template-columns: 3.8em 1fr;
   padding-left: 0;
 }
-.template-bootstrap .alerts-dlx-bootstrap section h2.alerts-dlx-title {
+.template-bootstrap .alerts-dlx-bootstrap section .alerts-dlx-title {
   font-size: 1.2em;
   font-weight: 900;
   line-height: 1.5em;
@@ -542,7 +543,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-bootstrap.is-style-custom.is-appearance-default .alerts-dlx-bootstrap, .template-bootstrap.is-style-custom.is-appearance-centered .alerts-dlx-bootstrap {
   border-color: var(--alerts-dlx-bootstrap-color-border, var(--bootstrap-primary-color-border));
 }
-.template-bootstrap.is-style-custom.is-appearance-default h2.alerts-dlx-title, .template-bootstrap.is-style-custom.is-appearance-centered h2.alerts-dlx-title {
+.template-bootstrap.is-style-custom.is-appearance-default .alerts-dlx-title, .template-bootstrap.is-style-custom.is-appearance-centered .alerts-dlx-title {
   color: var(--alerts-dlx-bootstrap-color-primary, var(--bootstrap-primary-color));
 }
 .template-bootstrap.is-style-custom.is-appearance-default .alerts-dlx-content p, .template-bootstrap.is-style-custom.is-appearance-centered .alerts-dlx-content p {
@@ -584,7 +585,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-bootstrap.is-style-primary.is-appearance-default .alerts-dlx-bootstrap, .template-bootstrap.is-style-primary.is-appearance-centered .alerts-dlx-bootstrap {
   border-color: var(--bootstrap-primary-color-border);
 }
-.template-bootstrap.is-style-primary.is-appearance-default h2.alerts-dlx-title, .template-bootstrap.is-style-primary.is-appearance-centered h2.alerts-dlx-title {
+.template-bootstrap.is-style-primary.is-appearance-default .alerts-dlx-title, .template-bootstrap.is-style-primary.is-appearance-centered .alerts-dlx-title {
   color: var(--bootstrap-primary-color);
 }
 .template-bootstrap.is-style-primary.is-appearance-default .alerts-dlx-content p, .template-bootstrap.is-style-primary.is-appearance-centered .alerts-dlx-content p {
@@ -625,7 +626,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-bootstrap.is-style-secondary.is-appearance-default .alerts-dlx-bootstrap, .template-bootstrap.is-style-secondary.is-appearance-centered .alerts-dlx-bootstrap {
   border-color: var(--bootstrap-secondary-color-border);
 }
-.template-bootstrap.is-style-secondary.is-appearance-default h2.alerts-dlx-title, .template-bootstrap.is-style-secondary.is-appearance-centered h2.alerts-dlx-title {
+.template-bootstrap.is-style-secondary.is-appearance-default .alerts-dlx-title, .template-bootstrap.is-style-secondary.is-appearance-centered .alerts-dlx-title {
   color: var(--bootstrap-secondary-color);
 }
 .template-bootstrap.is-style-secondary.is-appearance-default .alerts-dlx-content p, .template-bootstrap.is-style-secondary.is-appearance-centered .alerts-dlx-content p {
@@ -666,7 +667,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-bootstrap.is-style-success.is-appearance-default .alerts-dlx-bootstrap, .template-bootstrap.is-style-success.is-appearance-centered .alerts-dlx-bootstrap {
   border-color: var(--bootstrap-success-color-border);
 }
-.template-bootstrap.is-style-success.is-appearance-default h2.alerts-dlx-title, .template-bootstrap.is-style-success.is-appearance-centered h2.alerts-dlx-title {
+.template-bootstrap.is-style-success.is-appearance-default .alerts-dlx-title, .template-bootstrap.is-style-success.is-appearance-centered .alerts-dlx-title {
   color: var(--bootstrap-success-color);
 }
 .template-bootstrap.is-style-success.is-appearance-default .alerts-dlx-content p, .template-bootstrap.is-style-success.is-appearance-centered .alerts-dlx-content p {
@@ -707,7 +708,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-bootstrap.is-style-danger.is-appearance-default .alerts-dlx-bootstrap, .template-bootstrap.is-style-danger.is-appearance-centered .alerts-dlx-bootstrap {
   border-color: var(--bootstrap-danger-color-border);
 }
-.template-bootstrap.is-style-danger.is-appearance-default h2.alerts-dlx-title, .template-bootstrap.is-style-danger.is-appearance-centered h2.alerts-dlx-title {
+.template-bootstrap.is-style-danger.is-appearance-default .alerts-dlx-title, .template-bootstrap.is-style-danger.is-appearance-centered .alerts-dlx-title {
   color: var(--bootstrap-danger-color);
 }
 .template-bootstrap.is-style-danger.is-appearance-default .alerts-dlx-content p, .template-bootstrap.is-style-danger.is-appearance-centered .alerts-dlx-content p {
@@ -748,7 +749,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-bootstrap.is-style-warning.is-appearance-default .alerts-dlx-bootstrap, .template-bootstrap.is-style-warning.is-appearance-centered .alerts-dlx-bootstrap {
   border-color: var(--bootstrap-warning-color-border);
 }
-.template-bootstrap.is-style-warning.is-appearance-default h2.alerts-dlx-title, .template-bootstrap.is-style-warning.is-appearance-centered h2.alerts-dlx-title {
+.template-bootstrap.is-style-warning.is-appearance-default .alerts-dlx-title, .template-bootstrap.is-style-warning.is-appearance-centered .alerts-dlx-title {
   color: var(--bootstrap-warning-color);
 }
 .template-bootstrap.is-style-warning.is-appearance-default .alerts-dlx-content p, .template-bootstrap.is-style-warning.is-appearance-centered .alerts-dlx-content p {
@@ -789,7 +790,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-bootstrap.is-style-info.is-appearance-default .alerts-dlx-bootstrap, .template-bootstrap.is-style-info.is-appearance-centered .alerts-dlx-bootstrap {
   border-color: var(--bootstrap-info-color-border);
 }
-.template-bootstrap.is-style-info.is-appearance-default h2.alerts-dlx-title, .template-bootstrap.is-style-info.is-appearance-centered h2.alerts-dlx-title {
+.template-bootstrap.is-style-info.is-appearance-default .alerts-dlx-title, .template-bootstrap.is-style-info.is-appearance-centered .alerts-dlx-title {
   color: var(--bootstrap-info-color);
 }
 .template-bootstrap.is-style-info.is-appearance-default .alerts-dlx-content p, .template-bootstrap.is-style-info.is-appearance-centered .alerts-dlx-content p {
@@ -830,7 +831,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-bootstrap.is-style-light.is-appearance-default .alerts-dlx-bootstrap, .template-bootstrap.is-style-light.is-appearance-centered .alerts-dlx-bootstrap {
   border-color: var(--bootstrap-light-color-border);
 }
-.template-bootstrap.is-style-light.is-appearance-default h2.alerts-dlx-title, .template-bootstrap.is-style-light.is-appearance-centered h2.alerts-dlx-title {
+.template-bootstrap.is-style-light.is-appearance-default .alerts-dlx-title, .template-bootstrap.is-style-light.is-appearance-centered .alerts-dlx-title {
   color: var(--bootstrap-light-color);
 }
 .template-bootstrap.is-style-light.is-appearance-default .alerts-dlx-content p, .template-bootstrap.is-style-light.is-appearance-centered .alerts-dlx-content p {
@@ -871,7 +872,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 .template-bootstrap.is-style-dark.is-appearance-default .alerts-dlx-bootstrap, .template-bootstrap.is-style-dark.is-appearance-centered .alerts-dlx-bootstrap {
   border-color: var(--bootstrap-dark-color-border);
 }
-.template-bootstrap.is-style-dark.is-appearance-default h2.alerts-dlx-title, .template-bootstrap.is-style-dark.is-appearance-centered h2.alerts-dlx-title {
+.template-bootstrap.is-style-dark.is-appearance-default .alerts-dlx-title, .template-bootstrap.is-style-dark.is-appearance-centered .alerts-dlx-title {
   color: var(--bootstrap-dark-color);
 }
 .template-bootstrap.is-style-dark.is-appearance-default .alerts-dlx-content p, .template-bootstrap.is-style-dark.is-appearance-centered .alerts-dlx-content p {

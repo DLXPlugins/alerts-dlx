@@ -61,6 +61,12 @@ const BlockMain = ( props ) => {
 	const baseFontSizeStyles = `#${ uniqueId } { font-size: ${ parseInt(
 		baseFontSize
 	) }px; }`;
+
+	const allowedHeadlineStyles = [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div' ];
+	const headlineTag = allowedHeadlineStyles.includes( alertsDlxBlock.headlineStyle )
+		? alertsDlxBlock.headlineStyle
+		: 'h2';
+
 	return (
 		<>
 			<InspectorControls>{ inspectorControls }</InspectorControls>
@@ -105,7 +111,7 @@ const BlockMain = ( props ) => {
 					) }
 					{ titleEnabled && (
 						<RichText
-							tagName="h2"
+							tagName={ headlineTag }
 							placeholder={ __( 'Alert title', 'alerts-dlx' ) }
 							value={ alertTitle }
 							className="alerts-dlx-title"

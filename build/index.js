@@ -3098,6 +3098,8 @@ var BlockMain = function BlockMain(props) {
     maxWidth: maximumWidth + maximumWidthUnit
   };
   var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
+  var allowedHeadlineStyles = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div'];
+  var headlineTag = allowedHeadlineStyles.includes(alertsDlxBlock.headlineStyle) ? alertsDlxBlock.headlineStyle : 'h2';
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorAdvancedControls, null, advancedControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("link", {
     rel: "stylesheet",
     href: "".concat(alertsDlxBlock.font_stylesheet)
@@ -3130,7 +3132,7 @@ var BlockMain = function BlockMain(props) {
   })), /*#__PURE__*/React.createElement("section", null, closeButtonEnabled && /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-close"
   }, /*#__PURE__*/React.createElement(CloseButtonIcon, null)), titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-    tagName: "h2",
+    tagName: headlineTag,
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert title', 'alerts-dlx'),
     value: alertTitle,
     className: "alerts-dlx-title",

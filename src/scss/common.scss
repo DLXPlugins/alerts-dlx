@@ -26,8 +26,8 @@ button.button-reset.components-button:hover {
 	text-decoration: none;
 	transition: all 0.3s ease-in-out;
 
-	& ~ .button-reset,
-	& ~ .button-reset:hover {
+	&~.button-reset,
+	&~.button-reset:hover {
 		margin-top: 0.5em;
 		padding: 0;
 		transition: all 0.3s ease-in-out;
@@ -35,6 +35,7 @@ button.button-reset.components-button:hover {
 }
 
 .template-chakra {
+
 	a.alerts-dlx-button.button-reset,
 	a.alerts-dlx-button,
 	button.button-reset,
@@ -54,7 +55,7 @@ button.button-reset.components-button:hover {
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
 	margin-block-start: 1.5rem;
-    margin-block-end: 1.5rem;
+	margin-block-end: 1.5rem;
 
 	section h2 {
 		font-family: var(--alerts-dlx-font-family, 'Helvetica', 'Arial', sans-serif);
@@ -91,6 +92,7 @@ button.button-reset.components-button:hover {
 		row-gap: 8px;
 		column-gap: 8px;
 		justify-content: center;
+
 		button {
 			display: flex;
 			justify-content: center;
@@ -108,27 +110,28 @@ figure.alerts-dlx-alert {
 /* Font size reset and inheritance - using high specificity selectors */
 .alerts-dlx-alert[role="alert"] {
 	font-size: var(--alerts-dlx-base-font-size, 16px);
-	
+
 	/* Ensure all child elements inherit the base font size */
 	*:not(svg, svg path, svg g) {
 		font-size: inherit;
 	}
-	
+
 	/* Specific overrides for alert content with higher specificity */
-	section h2.alerts-dlx-title {
+	section .alerts-dlx-title {
 		font-size: 1.2em;
+		font-weight: 600;
 	}
-	
+
 	.alerts-dlx-content p {
 		font-size: 1.2em;
 	}
-	
+
 	button.button-reset,
 	a.alerts-dlx-button,
 	button.button-reset.components-button {
 		font-size: 1.2em;
 	}
-	
+
 	/* Icon sizing */
 	.alerts-dlx-icon-preview svg {
 		width: 1.4em;
@@ -142,15 +145,17 @@ figure.alerts-dlx-alert {
 		height: auto;
 		margin-bottom: 0.5em;
 	}
-	
+
 	.alerts-dlx-icon-frontend .alerts-dlx-icon-preview {
 		font-size: 1.2em;
 		line-height: 2.2em;
 	}
 }
-body .alerts-dlx-alert[role=alert] section .alerts-dlx-close ~ h2.alerts-dlx-title {
+
+body .alerts-dlx-alert[role=alert] section .alerts-dlx-close~.alerts-dlx-title {
 	padding-right: 16px;
 }
+
 body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] {
 	padding: 0.75em 1.25em;
 
@@ -194,10 +199,10 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] {
 }
 
 /* Specific overrides for content elements with high specificity */
-.template-chakra .alerts-dlx-alert[role="alert"] .alerts-dlx-chakra section h2.alerts-dlx-title,
-.template-bootstrap .alerts-dlx-alert[role="alert"] .alerts-dlx-bootstrap section h2.alerts-dlx-title,
-.template-material .alerts-dlx-alert[role="alert"] .alerts-dlx-material section h2.alerts-dlx-title,
-.template-shoelace .alerts-dlx-alert[role="alert"] .alerts-dlx-shoelace section h2.alerts-dlx-title {
+.template-chakra .alerts-dlx-alert[role="alert"] .alerts-dlx-chakra section .alerts-dlx-title,
+.template-bootstrap .alerts-dlx-alert[role="alert"] .alerts-dlx-bootstrap section .alerts-dlx-title,
+.template-material .alerts-dlx-alert[role="alert"] .alerts-dlx-material section .alerts-dlx-title,
+.template-shoelace .alerts-dlx-alert[role="alert"] .alerts-dlx-shoelace section .alerts-dlx-title {
 	font-size: 1.2em;
 }
 
@@ -206,6 +211,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] {
 	font-weight: 400;
 	font-size: 1.2em;
 }
+
 .template-chakra .alerts-dlx-alert[role="alert"] .alerts-dlx-chakra .alerts-dlx-content p,
 .template-bootstrap .alerts-dlx-alert[role="alert"] .alerts-dlx-bootstrap .alerts-dlx-content p,
 .template-material .alerts-dlx-alert[role="alert"] .alerts-dlx-material .alerts-dlx-content p,
@@ -229,6 +235,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] {
 .template-shoelace .alerts-dlx-alert[role="alert"] .alerts-dlx-shoelace button.button-reset.components-button {
 	font-size: 1.2em;
 }
+
 .alerts-dlx-content a,
 .alerts-dlx-content a:hover {
 	color: inherit;
@@ -239,6 +246,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] {
 	0% {
 		opacity: 1;
 	}
+
 	100% {
 		opacity: 0;
 		height: 0;

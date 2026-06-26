@@ -232,7 +232,7 @@ $bootstrap-dark-palette: (
 			padding-left: 0;
 		}
 
-		section h2.alerts-dlx-title {
+		section .alerts-dlx-title {
 			font-size: 1.2em;
 			font-weight: 900;
 			line-height: 1.5em;
@@ -319,7 +319,7 @@ $bootstrap-dark-palette: (
 				border-color: var(--alerts-dlx-bootstrap-color-border, var(--bootstrap-primary-color-border));
 			}
 
-			h2.alerts-dlx-title {
+			.alerts-dlx-title {
 				color: var(--alerts-dlx-bootstrap-color-primary, var(--bootstrap-primary-color));
 			}
 
@@ -375,7 +375,7 @@ $bootstrap-dark-palette: (
 					border-color: var(--bootstrap-#{$variant}-color-border);
 				}
 
-				h2.alerts-dlx-title {
+				.alerts-dlx-title {
 					color: var(--bootstrap-#{$variant}-color);
 				}
 

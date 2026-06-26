@@ -191,8 +191,9 @@ figure.alerts-dlx-alert {
 .alerts-dlx-alert[role=alert] *:not(svg, svg path, svg g) {
   font-size: inherit;
 }
-.alerts-dlx-alert[role=alert] section h2.alerts-dlx-title {
+.alerts-dlx-alert[role=alert] section .alerts-dlx-title {
   font-size: 1.2em;
+  font-weight: 600;
 }
 .alerts-dlx-alert[role=alert] .alerts-dlx-content p {
   font-size: 1.2em;
@@ -218,7 +219,7 @@ figure.alerts-dlx-alert {
   line-height: 2.2em;
 }
 
-body .alerts-dlx-alert[role=alert] section .alerts-dlx-close ~ h2.alerts-dlx-title {
+body .alerts-dlx-alert[role=alert] section .alerts-dlx-close ~ .alerts-dlx-title {
   padding-right: 16px;
 }
 
@@ -264,10 +265,10 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
 }
 
 /* Specific overrides for content elements with high specificity */
-.template-chakra .alerts-dlx-alert[role=alert] .alerts-dlx-chakra section h2.alerts-dlx-title,
-.template-bootstrap .alerts-dlx-alert[role=alert] .alerts-dlx-bootstrap section h2.alerts-dlx-title,
-.template-material .alerts-dlx-alert[role=alert] .alerts-dlx-material section h2.alerts-dlx-title,
-.template-shoelace .alerts-dlx-alert[role=alert] .alerts-dlx-shoelace section h2.alerts-dlx-title {
+.template-chakra .alerts-dlx-alert[role=alert] .alerts-dlx-chakra section .alerts-dlx-title,
+.template-bootstrap .alerts-dlx-alert[role=alert] .alerts-dlx-bootstrap section .alerts-dlx-title,
+.template-material .alerts-dlx-alert[role=alert] .alerts-dlx-material section .alerts-dlx-title,
+.template-shoelace .alerts-dlx-alert[role=alert] .alerts-dlx-shoelace section .alerts-dlx-title {
   font-size: 1.2em;
 }
 
@@ -479,7 +480,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   grid-template-columns: 3.8em 1fr;
   padding-left: 0;
 }
-.template-chakra .alerts-dlx-chakra section h2.alerts-dlx-title {
+.template-chakra .alerts-dlx-chakra section .alerts-dlx-title {
   font-size: 1.2em;
   font-weight: var(--alerts-dlx-chakra-title-weight, 900);
   line-height: 1.5em;
@@ -544,7 +545,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   background-color: var(--alerts-dlx-chakra-color-light, var(--chakra-info-color-light));
   color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 }
-.template-chakra.is-style-custom.is-appearance-subtle h2.alerts-dlx-title, .template-chakra.is-style-custom.is-appearance-centered h2.alerts-dlx-title {
+.template-chakra.is-style-custom.is-appearance-subtle .alerts-dlx-title, .template-chakra.is-style-custom.is-appearance-centered .alerts-dlx-title {
   color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 }
 .template-chakra.is-style-custom.is-appearance-subtle .alerts-dlx-content p, .template-chakra.is-style-custom.is-appearance-centered .alerts-dlx-content p {
@@ -584,7 +585,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   background-color: var(--alerts-dlx-chakra-color-light, var(--chakra-info-color-light));
   color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 }
-.template-chakra.is-style-custom.is-appearance-left-accent h2.alerts-dlx-title {
+.template-chakra.is-style-custom.is-appearance-left-accent .alerts-dlx-title {
   color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 }
 .template-chakra.is-style-custom.is-appearance-left-accent .alerts-dlx-content p {
@@ -619,7 +620,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   background-color: var(--alerts-dlx-chakra-color-light, var(--chakra-info-color-light));
   color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 }
-.template-chakra.is-style-custom.is-appearance-top-accent h2.alerts-dlx-title {
+.template-chakra.is-style-custom.is-appearance-top-accent .alerts-dlx-title {
   color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 }
 .template-chakra.is-style-custom.is-appearance-top-accent .alerts-dlx-content p {
@@ -649,7 +650,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   background-color: var(--alerts-dlx-chakra-color-alt-hover, var(--chakra-info-color-accent));
   color: var(--alerts-dlx-chakra-color-alt-text-hover, var(--chakra-info-color-contrast));
 }
-.template-chakra.is-style-custom.is-appearance-solid h2.alerts-dlx-title {
+.template-chakra.is-style-custom.is-appearance-solid .alerts-dlx-title {
   color: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-info-solid-foreground));
 }
 .template-chakra.is-style-custom.is-appearance-solid .alerts-dlx-content p {
@@ -685,7 +686,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   color: var(--alerts-dlx-chakra-color-solid-button-text-hover, var(--chakra-info-solid-button-text-hover));
   border: 2px solid var(--alerts-dlx-chakra-color-solid-button-border-hover, var(--chakra-info-solid-button-border-hover));
 }
-.template-chakra.is-style-success.is-appearance-subtle h2.alerts-dlx-title, .template-chakra.is-style-success.is-appearance-centered h2.alerts-dlx-title {
+.template-chakra.is-style-success.is-appearance-subtle .alerts-dlx-title, .template-chakra.is-style-success.is-appearance-centered .alerts-dlx-title {
   color: var(--chakra-success-color);
 }
 .template-chakra.is-style-success.is-appearance-subtle .alerts-dlx-content p, .template-chakra.is-style-success.is-appearance-centered .alerts-dlx-content p {
@@ -729,7 +730,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   background-color: var(--alerts-dlx-chakra-color-light, var(--chakra-success-color-light));
   color: var(--alerts-dlx-chakra-color-primary, var(--chakra-success-color));
 }
-.template-chakra.is-style-success.is-appearance-left-accent h2.alerts-dlx-title {
+.template-chakra.is-style-success.is-appearance-left-accent .alerts-dlx-title {
   color: var(--chakra-success-color);
 }
 .template-chakra.is-style-success.is-appearance-left-accent .alerts-dlx-content p {
@@ -764,7 +765,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   background-color: var(--alerts-dlx-chakra-color-light, var(--chakra-success-color-light));
   color: var(--alerts-dlx-chakra-color-primary, var(--chakra-success-color));
 }
-.template-chakra.is-style-success.is-appearance-top-accent h2.alerts-dlx-title {
+.template-chakra.is-style-success.is-appearance-top-accent .alerts-dlx-title {
   color: var(--chakra-success-color);
 }
 .template-chakra.is-style-success.is-appearance-top-accent .alerts-dlx-content p {
@@ -794,7 +795,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   background-color: var(--alerts-dlx-chakra-color-alt-hover, var(--chakra-success-color-accent));
   color: var(--alerts-dlx-chakra-color-alt-text-hover, var(--chakra-success-color-contrast));
 }
-.template-chakra.is-style-success.is-appearance-solid h2.alerts-dlx-title {
+.template-chakra.is-style-success.is-appearance-solid .alerts-dlx-title {
   color: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-success-solid-foreground));
 }
 .template-chakra.is-style-success.is-appearance-solid .alerts-dlx-content p {
@@ -830,7 +831,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   color: var(--alerts-dlx-chakra-color-solid-button-text-hover, var(--chakra-success-solid-button-text-hover));
   border: 2px solid var(--alerts-dlx-chakra-color-solid-button-border-hover, var(--chakra-success-solid-button-border-hover));
 }
-.template-chakra.is-style-info.is-appearance-subtle h2.alerts-dlx-title, .template-chakra.is-style-info.is-appearance-centered h2.alerts-dlx-title {
+.template-chakra.is-style-info.is-appearance-subtle .alerts-dlx-title, .template-chakra.is-style-info.is-appearance-centered .alerts-dlx-title {
   color: var(--chakra-info-color);
 }
 .template-chakra.is-style-info.is-appearance-subtle .alerts-dlx-content p, .template-chakra.is-style-info.is-appearance-centered .alerts-dlx-content p {
@@ -874,7 +875,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   background-color: var(--alerts-dlx-chakra-color-light, var(--chakra-info-color-light));
   color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 }
-.template-chakra.is-style-info.is-appearance-left-accent h2.alerts-dlx-title {
+.template-chakra.is-style-info.is-appearance-left-accent .alerts-dlx-title {
   color: var(--chakra-info-color);
 }
 .template-chakra.is-style-info.is-appearance-left-accent .alerts-dlx-content p {
@@ -909,7 +910,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   background-color: var(--alerts-dlx-chakra-color-light, var(--chakra-info-color-light));
   color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 }
-.template-chakra.is-style-info.is-appearance-top-accent h2.alerts-dlx-title {
+.template-chakra.is-style-info.is-appearance-top-accent .alerts-dlx-title {
   color: var(--chakra-info-color);
 }
 .template-chakra.is-style-info.is-appearance-top-accent .alerts-dlx-content p {
@@ -939,7 +940,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   background-color: var(--alerts-dlx-chakra-color-alt-hover, var(--chakra-info-color-accent));
   color: var(--alerts-dlx-chakra-color-alt-text-hover, var(--chakra-info-color-contrast));
 }
-.template-chakra.is-style-info.is-appearance-solid h2.alerts-dlx-title {
+.template-chakra.is-style-info.is-appearance-solid .alerts-dlx-title {
   color: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-info-solid-foreground));
 }
 .template-chakra.is-style-info.is-appearance-solid .alerts-dlx-content p {
@@ -975,7 +976,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   color: var(--alerts-dlx-chakra-color-solid-button-text-hover, var(--chakra-info-solid-button-text-hover));
   border: 2px solid var(--alerts-dlx-chakra-color-solid-button-border-hover, var(--chakra-info-solid-button-border-hover));
 }
-.template-chakra.is-style-warning.is-appearance-subtle h2.alerts-dlx-title, .template-chakra.is-style-warning.is-appearance-centered h2.alerts-dlx-title {
+.template-chakra.is-style-warning.is-appearance-subtle .alerts-dlx-title, .template-chakra.is-style-warning.is-appearance-centered .alerts-dlx-title {
   color: var(--chakra-warning-color);
 }
 .template-chakra.is-style-warning.is-appearance-subtle .alerts-dlx-content p, .template-chakra.is-style-warning.is-appearance-centered .alerts-dlx-content p {
@@ -1019,7 +1020,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   background-color: var(--alerts-dlx-chakra-color-light, var(--chakra-warning-color-light));
   color: var(--alerts-dlx-chakra-color-primary, var(--chakra-warning-color));
 }
-.template-chakra.is-style-warning.is-appearance-left-accent h2.alerts-dlx-title {
+.template-chakra.is-style-warning.is-appearance-left-accent .alerts-dlx-title {
   color: var(--chakra-warning-color);
 }
 .template-chakra.is-style-warning.is-appearance-left-accent .alerts-dlx-content p {
@@ -1054,7 +1055,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   background-color: var(--alerts-dlx-chakra-color-light, var(--chakra-warning-color-light));
   color: var(--alerts-dlx-chakra-color-primary, var(--chakra-warning-color));
 }
-.template-chakra.is-style-warning.is-appearance-top-accent h2.alerts-dlx-title {
+.template-chakra.is-style-warning.is-appearance-top-accent .alerts-dlx-title {
   color: var(--chakra-warning-color);
 }
 .template-chakra.is-style-warning.is-appearance-top-accent .alerts-dlx-content p {
@@ -1084,7 +1085,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   background-color: var(--alerts-dlx-chakra-color-alt-hover, var(--chakra-warning-color-accent));
   color: var(--alerts-dlx-chakra-color-alt-text-hover, var(--chakra-warning-color-contrast));
 }
-.template-chakra.is-style-warning.is-appearance-solid h2.alerts-dlx-title {
+.template-chakra.is-style-warning.is-appearance-solid .alerts-dlx-title {
   color: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-warning-solid-foreground));
 }
 .template-chakra.is-style-warning.is-appearance-solid .alerts-dlx-content p {
@@ -1120,7 +1121,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   color: var(--alerts-dlx-chakra-color-solid-button-text-hover, var(--chakra-warning-solid-button-text-hover));
   border: 2px solid var(--alerts-dlx-chakra-color-solid-button-border-hover, var(--chakra-warning-solid-button-border-hover));
 }
-.template-chakra.is-style-error.is-appearance-subtle h2.alerts-dlx-title, .template-chakra.is-style-error.is-appearance-centered h2.alerts-dlx-title {
+.template-chakra.is-style-error.is-appearance-subtle .alerts-dlx-title, .template-chakra.is-style-error.is-appearance-centered .alerts-dlx-title {
   color: var(--chakra-error-color);
 }
 .template-chakra.is-style-error.is-appearance-subtle .alerts-dlx-content p, .template-chakra.is-style-error.is-appearance-centered .alerts-dlx-content p {
@@ -1164,7 +1165,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   background-color: var(--alerts-dlx-chakra-color-light, var(--chakra-error-color-light));
   color: var(--alerts-dlx-chakra-color-primary, var(--chakra-error-color));
 }
-.template-chakra.is-style-error.is-appearance-left-accent h2.alerts-dlx-title {
+.template-chakra.is-style-error.is-appearance-left-accent .alerts-dlx-title {
   color: var(--chakra-error-color);
 }
 .template-chakra.is-style-error.is-appearance-left-accent .alerts-dlx-content p {
@@ -1199,7 +1200,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   background-color: var(--alerts-dlx-chakra-color-light, var(--chakra-error-color-light));
   color: var(--alerts-dlx-chakra-color-primary, var(--chakra-error-color));
 }
-.template-chakra.is-style-error.is-appearance-top-accent h2.alerts-dlx-title {
+.template-chakra.is-style-error.is-appearance-top-accent .alerts-dlx-title {
   color: var(--chakra-error-color);
 }
 .template-chakra.is-style-error.is-appearance-top-accent .alerts-dlx-content p {
@@ -1229,7 +1230,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   background-color: var(--alerts-dlx-chakra-color-alt-hover, var(--chakra-error-color-accent));
   color: var(--alerts-dlx-chakra-color-alt-text-hover, var(--chakra-error-color-contrast));
 }
-.template-chakra.is-style-error.is-appearance-solid h2.alerts-dlx-title {
+.template-chakra.is-style-error.is-appearance-solid .alerts-dlx-title {
   color: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-error-solid-foreground));
 }
 .template-chakra.is-style-error.is-appearance-solid .alerts-dlx-content p {

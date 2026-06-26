@@ -47,6 +47,29 @@ class Blocks {
 			2
 		);
 
+		add_filter(
+			'register_block_type_args',
+			function ( $args, $block_name ) {
+				$style_map = array(
+					'mediaron/alerts-dlx-bootstrap' => 'bootstrap',
+					'mediaron/alerts-dlx-chakra'    => 'chakra',
+					'mediaron/alerts-dlx-material'  => 'material',
+					'mediaron/alerts-dlx-shoelace'  => 'shoelace',
+				);
+
+				if ( isset( $style_map[ $block_name ] ) && ! Options::is_block_style_enabled( $style_map[ $block_name ] ) ) {
+					if ( ! isset( $args['supports'] ) || ! is_array( $args['supports'] ) ) {
+						$args['supports'] = array();
+					}
+					$args['supports']['inserter'] = false;
+				}
+
+				return $args;
+			},
+			10,
+			2
+		);
+
 		if ( function_exists( 'wp_register_block_types_from_metadata_collection' ) ) {
 			wp_register_block_types_from_metadata_collection( Functions::get_plugin_dir( 'build/js/blocks/' ), Functions::get_plugin_dir( 'build/blocks-manifest.php' ) );
 		} else {
@@ -502,11 +525,12 @@ class Blocks {
 						<?php
 					}
 					if ( $title_enabled ) {
-						?>
-						<h2 class="alerts-dlx-title">
-							<?php echo esc_html( $alert_title ); ?>
-						</h2>
-						<?php
+						$title_tag = Options::get_headline_style();
+						printf(
+							'<%1$s class="alerts-dlx-title">%2$s</%1$s>',
+							tag_escape( $title_tag ),
+							esc_html( $alert_title )
+						);
 					}
 					?>
 					<div class="alerts-dlx-content-wrapper">
@@ -614,12 +638,14 @@ class Blocks {
 			'alerts-dlx-block',
 			'alertsDlxBlock',
 			array(
-				'font_stylesheet' => Functions::get_plugin_url( 'dist/alerts-dlx-gfont-lato.css' ),
-				'isEditor'        => current_user_can( 'edit_others_posts' ),
-				'isAuthor'        => current_user_can( 'edit_posts' ),
-				'isAdmin'         => current_user_can( 'manage_options' ),
-				'colorPalette'    => Functions::get_theme_color_palette(),
-				'defaultImage'    => Functions::get_plugin_url( 'assets/bell.png' ),
+				'font_stylesheet'    => Functions::get_plugin_url( 'dist/alerts-dlx-gfont-lato.css' ),
+				'isEditor'           => current_user_can( 'edit_others_posts' ),
+				'isAuthor'           => current_user_can( 'edit_posts' ),
+				'isAdmin'            => current_user_can( 'manage_options' ),
+				'colorPalette'       => Functions::get_theme_color_palette(),
+				'defaultImage'       => Functions::get_plugin_url( 'assets/bell.png' ),
+				'headlineStyle'      => Options::get_headline_style(),
+				'enabledBlockStyles' => Options::get_enabled_block_styles(),
 			)
 		);
 

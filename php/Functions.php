@@ -150,6 +150,55 @@ class Functions {
 	}
 
 	/**
+	 * Take a camelCase field and convert to underlines.
+	 *
+	 * @param string $field Field to convert to underlines.
+	 *
+	 * @return string underlined field.
+	 */
+	public static function to_underlines( string $field ) {
+		$regex = '/([a-z])([A-Z])/';
+		if ( preg_match( $regex, $field ) ) {
+			$field = strtolower( preg_replace( $regex, '$1_$2', $field ) );
+		}
+		return $field;
+	}
+
+	/**
+	 * Take a camelcase key array and converts it to underline case.
+	 *
+	 * @param array $fields Array of fields to convert to underline case.
+	 *
+	 * @return array Array of fields in underline case.
+	 */
+	public static function to_underlines_recursive( array $fields ) {
+		foreach ( $fields as $key => $value ) {
+			if ( is_numeric( $key ) || is_bool( $key ) ) {
+				continue;
+			}
+			$old_key = $key;
+			$key     = self::to_underlines( $key );
+			if ( is_array( $value ) ) {
+				$value = self::to_underlines_recursive( $value );
+			}
+			$fields[ $key ] = $value;
+			if ( $key !== $old_key ) {
+				unset( $fields[ $old_key ] );
+			}
+		}
+		return $fields;
+	}
+
+	/**
+	 * Return the URL to the admin settings screen.
+	 *
+	 * @return string URL to admin screen. Output is not escaped.
+	 */
+	public static function get_settings_url() {
+		return admin_url( 'options-general.php?page=alerts-dlx' );
+	}
+
+	/**
 	 * Return the plugin slug.
 	 *
 	 * @return string plugin slug.

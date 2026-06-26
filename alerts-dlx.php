@@ -64,6 +64,8 @@ class AlertsDLX {
 			basename( __DIR__ ) . '/languages'
 		);
 
+		Options::run();
+		( new Admin() )->run();
 		Blocks::run();
 
 		/**
