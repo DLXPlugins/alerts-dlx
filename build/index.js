@@ -5853,7 +5853,7 @@ __webpack_require__.r(__webpack_exports__);
 var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createHigherOrderComponent)(function (BlockEdit) {
   return function (props) {
     // List of AlertsDLX block namespaces.
-    var alertsDLXBlockNamespaces = ['mediaron/alerts-dlx-bootstrap', 'mediaron/alerts-dlx-chakra', 'mediaron/alerts-dlx-material', 'mediaron/alerts-dlx-shoelace'];
+    var alertsDLXBlockNamespaces = ["mediaron/alerts-dlx-bootstrap", "mediaron/alerts-dlx-chakra", "mediaron/alerts-dlx-material", "mediaron/alerts-dlx-shoelace"];
 
     // Check if this is an AlertsDLX block.
     var isAlertsDLXBlock = props.name && alertsDLXBlockNamespaces.includes(props.name);
@@ -5876,7 +5876,7 @@ var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createH
       uniqueId = _props$attributes.uniqueId,
       alertGroup = _props$attributes.alertGroup;
     var setAttributes = props.setAttributes;
-    if ('custom' !== alertType) {
+    if ("custom" !== alertType) {
       return /*#__PURE__*/React.createElement(BlockEdit, props);
     }
 
@@ -5886,13 +5886,13 @@ var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createH
     // Get the colors for the block.
     var getColors = function getColors() {
       switch (props.name) {
-        case 'mediaron/alerts-dlx-bootstrap':
+        case "mediaron/alerts-dlx-bootstrap":
           return _bootstrap_colors__WEBPACK_IMPORTED_MODULE_5__["default"];
-        case 'mediaron/alerts-dlx-chakra':
+        case "mediaron/alerts-dlx-chakra":
           return _chakraui_colors__WEBPACK_IMPORTED_MODULE_6__["default"];
-        case 'mediaron/alerts-dlx-material':
+        case "mediaron/alerts-dlx-material":
           return _material_colors__WEBPACK_IMPORTED_MODULE_7__["default"];
-        case 'mediaron/alerts-dlx-shoelace':
+        case "mediaron/alerts-dlx-shoelace":
           return _shoelace_colors__WEBPACK_IMPORTED_MODULE_8__["default"];
         default:
           return [];
@@ -5901,15 +5901,17 @@ var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createH
     var styles = "\n\t\t#".concat(uniqueId, " {\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-primary: ").concat(colorPrimary, ";\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-border: ").concat(colorBorder, ";\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-accent: ").concat(colorAccent, ";\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-alt: ").concat(colorAlt, ";\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-alt-hover: ").concat(colorAltHover, ";\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-alt-text: ").concat(colorAltText, ";\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-alt-text-hover: ").concat(colorAltTextHover, ";\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-bold: ").concat(colorBold, ";\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-light: ").concat(colorLight, ";\n\t\t}");
 
     // Only show our panel when the block is selected in the editor and user has permissions.
-    blockContent = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("style", null, styles), /*#__PURE__*/React.createElement(BlockEdit, props), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Custom Colors', 'alerts-dlx'),
+    blockContent = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("style", null, styles), /*#__PURE__*/React.createElement(BlockEdit, props), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
+      group: "styles"
+    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Custom Colors", "alerts-dlx"),
       initialOpen: true,
       className: "alerts-dlx-panel"
     }, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
       __experimentalIsRenderedInSidebar: true,
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Alert Colors', 'alerts-dlx'),
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Alert Colors", "alerts-dlx"),
       colorSettings: [{
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Text Color', 'alerts-dlx'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Text Color", "alerts-dlx"),
         value: colorPrimary,
         onChange: function onChange(value) {
           setAttributes({
@@ -5917,7 +5919,7 @@ var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createH
           });
         }
       }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Border Color', 'alerts-dlx'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Border Color", "alerts-dlx"),
         value: colorBorder,
         onChange: function onChange(value) {
           setAttributes({
@@ -5925,7 +5927,7 @@ var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createH
           });
         }
       }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Accent Color', 'alerts-dlx'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Accent Color", "alerts-dlx"),
         value: colorAccent,
         onChange: function onChange(value) {
           setAttributes({
@@ -5933,7 +5935,7 @@ var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createH
           });
         }
       }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Button Color', 'alerts-dlx'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Button Color", "alerts-dlx"),
         value: colorAlt,
         onChange: function onChange(value) {
           setAttributes({
@@ -5941,7 +5943,7 @@ var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createH
           });
         }
       }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Button Hover Color', 'alerts-dlx'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Button Hover Color", "alerts-dlx"),
         value: colorAltHover,
         onChange: function onChange(value) {
           setAttributes({
@@ -5949,7 +5951,7 @@ var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createH
           });
         }
       }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Button Text Color', 'alerts-dlx'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Button Text Color", "alerts-dlx"),
         value: colorAltText,
         onChange: function onChange(value) {
           setAttributes({
@@ -5957,7 +5959,7 @@ var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createH
           });
         }
       }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Button Text Hover Color', 'alerts-dlx'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Button Text Hover Color", "alerts-dlx"),
         value: colorAltTextHover,
         onChange: function onChange(value) {
           setAttributes({
@@ -5965,7 +5967,7 @@ var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createH
           });
         }
       }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Icon Color', 'alerts-dlx'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Icon Color", "alerts-dlx"),
         value: colorBold,
         onChange: function onChange(value) {
           setAttributes({
@@ -5973,7 +5975,7 @@ var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createH
           });
         }
       }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Background Color', 'alerts-dlx'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Background Color", "alerts-dlx"),
         value: colorLight,
         onChange: function onChange(value) {
           setAttributes({
@@ -5985,7 +5987,7 @@ var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createH
     }))));
     return blockContent;
   };
-}, 'withAlertsPanel');
+}, "withAlertsPanel");
 
 /**
  * Apply our higher-order component to all blocks in the editor.
@@ -5994,7 +5996,7 @@ var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createH
  * inject our custom panel into the InspectorControls sidebar and
  * add CSS classes for editorial-only and read-only blocks.
  */
-(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.addFilter)('editor.BlockEdit', 'alerts-dlx/with-alerts-panel', withAlertsPanel);
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.addFilter)("editor.BlockEdit", "alerts-dlx/with-alerts-panel", withAlertsPanel);
 
 /***/ }),
 
