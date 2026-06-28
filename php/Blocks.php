@@ -419,7 +419,19 @@ class Blocks {
 				'alerts-dlx-custom-css',
 				$custom_css
 			);
-			wp_print_styles( 'alerts-dlx-custom-css' );
+			if ( wp_style_is( 'alerts-dlx-custom-css', 'registered' ) ) {
+				wp_enqueue_style( 'alerts-dlx-custom-css' );
+			}
+
+			add_action(
+				'wp_footer',
+				function () {
+					if ( ! wp_style_is( 'alerts-dlx-custom-css', 'done' ) ) {
+						wp_print_styles( 'alerts-dlx-custom-css' );
+					}
+				},
+				100
+			);
 		}
 
 		// Add base classes to container element.
