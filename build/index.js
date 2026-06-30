@@ -2521,12 +2521,12 @@ var ChakraAlerts = function ChakraAlerts(props) {
     closeButtonExpiration = attributes.closeButtonExpiration,
     innerBlocksEnabled = attributes.innerBlocksEnabled;
   var innerBlockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__.useInnerBlocksProps)({
-    className: 'alerts-dlx-content',
+    className: "alerts-dlx-content",
     ref: innerBlocksRef
   }, {
-    allowedBlocks: innerBlocksEnabled ? true : ['core/paragraph'],
-    template: [['core/paragraph', {
-      placeholder: ''
+    allowedBlocks: innerBlocksEnabled ? true : ["core/paragraph"],
+    template: [["core/paragraph", {
+      placeholder: ""
     }]]
   });
 
@@ -2535,14 +2535,14 @@ var ChakraAlerts = function ChakraAlerts(props) {
    */
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     // Port shareText attribute to use innerBlocks instead.
-    if (alertDescription !== '' && null !== innerBlocksRef.current) {
+    if (alertDescription !== "" && null !== innerBlocksRef.current) {
       // Convert text over to blocks.
       var richTextConvertedToBlocks = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_5__.rawHandler)({
         HTML: alertDescription
       });
       replaceInnerBlocks(clientId, richTextConvertedToBlocks);
       setAttributes({
-        alertDescription: ''
+        alertDescription: ""
       });
     }
   }, [innerBlocksRef]);
@@ -2551,8 +2551,8 @@ var ChakraAlerts = function ChakraAlerts(props) {
    * Get a unique ID for the block for inline styling if necessary.
    */
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    if (null === uniqueId || uniqueIds.includes(uniqueId) || '' === uniqueId) {
-      var newUniqueId = 'alerts-dlx-' + clientId.substr(2, 9).replace('-', '');
+    if (null === uniqueId || uniqueIds.includes(uniqueId) || "" === uniqueId) {
+      var newUniqueId = "alerts-dlx-" + clientId.substr(2, 9).replace("-", "");
       setAttributes({
         uniqueId: newUniqueId
       });
@@ -2565,9 +2565,9 @@ var ChakraAlerts = function ChakraAlerts(props) {
     name: "alertsDLXPanelStart",
     fillProps: props
   }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Alert Settings', 'alerts-dlx')
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Alert Settings", "alerts-dlx")
   }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enable Alert Icon', 'alerts-dlx'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enable Alert Icon", "alerts-dlx"),
     checked: iconEnabled,
     onChange: function onChange(value) {
       setAttributes({
@@ -2575,7 +2575,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
       });
     }
   })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enable Title', 'alerts-dlx'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enable Title", "alerts-dlx"),
     checked: titleEnabled,
     onChange: function onChange(value) {
       setAttributes({
@@ -2583,7 +2583,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
       });
     }
   })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enable Alert Description', 'alerts-dlx'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enable Alert Description", "alerts-dlx"),
     checked: descriptionEnabled,
     onChange: function onChange(value) {
       setAttributes({
@@ -2591,7 +2591,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
       });
     }
   })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enable Alert Button', 'alerts-dlx'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enable Alert Button", "alerts-dlx"),
     checked: buttonEnabled,
     onChange: function onChange(value) {
       setAttributes({
@@ -2599,41 +2599,54 @@ var ChakraAlerts = function ChakraAlerts(props) {
       });
     }
   })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enable Close Button', 'alerts-dlx'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enable Close Button", "alerts-dlx"),
     checked: closeButtonEnabled,
     onChange: function onChange(value) {
       setAttributes({
         closeButtonEnabled: value
       });
     },
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enable this option to allow the alert to be dismissible.', 'alerts-dlx')
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enable this option to allow the alert to be dismissible.", "alerts-dlx")
   })), closeButtonEnabled && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Set the Close Button save expiration', 'alerts-dlx'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Set the Close Button save expiration", "alerts-dlx"),
     value: closeButtonExpiration,
     onChange: function onChange(value) {
       setAttributes({
         closeButtonExpiration: parseInt(value)
       });
     },
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Set the expiration time in seconds for the close button to reappear. Set to zero to never expire.', 'alerts-dlx'),
-    type: 'number'
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Set the expiration time in seconds for the close button to reappear. Set to zero to never expire.", "alerts-dlx"),
+    type: "number"
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enable Flexible InnerBlocks", "alerts-dlx"),
+    checked: innerBlocksEnabled,
+    onChange: function onChange(value) {
+      setAttributes({
+        innerBlocksEnabled: value
+      });
+    },
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enable this option to allow the use of any block within the alert.", "alerts-dlx")
   })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
     name: "alertsDLXSettingsPanelEnd",
     fillProps: props
-  }))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+  }))));
+  var styleControls = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
+    name: "alertsDLXStylePanelStart",
+    fillProps: props
+  }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     initialOpen: true,
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Appearance', 'quotes-dlx')
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Appearance", "quotes-dlx")
   }, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_components_unit_picker__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Maximum Width', 'quotes-dlx'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Maximum Width", "quotes-dlx"),
     value: maximumWidthUnit,
-    units: ['px', '%', 'vw'],
+    units: ["px", "%", "vw"],
     onClick: function onClick(value) {
       setAttributes({
         maximumWidthUnit: value
       });
     }
   }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
-    type: 'text',
+    type: "text",
     value: maximumWidth,
     onChange: function onChange(value) {
       setAttributes({
@@ -2642,81 +2655,81 @@ var ChakraAlerts = function ChakraAlerts(props) {
     }
   })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.BaseControl, {
     id: "alerts-dlx-variants-button-group",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Set the Alert Variant', 'quotes-dlx'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Set the Alert Variant", "quotes-dlx"),
     className: "alerts-dlx-chakra-variants"
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ButtonGroup, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
-    variant: variant === 'subtle' ? 'primary' : 'secondary',
+    variant: variant === "subtle" ? "primary" : "secondary",
     onClick: function onClick(e) {
       setAttributes({
-        variant: 'subtle'
+        variant: "subtle"
       });
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Subtle', 'alerts-dlx')), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
-    variant: variant === 'solid' ? 'primary' : 'secondary',
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Subtle", "alerts-dlx")), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+    variant: variant === "solid" ? "primary" : "secondary",
     onClick: function onClick(e) {
       setAttributes({
-        variant: 'solid'
+        variant: "solid"
       });
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Solid', 'alerts-dlx')), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
-    variant: variant === 'left-accent' ? 'primary' : 'secondary',
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Solid", "alerts-dlx")), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+    variant: variant === "left-accent" ? "primary" : "secondary",
     onClick: function onClick(e) {
       setAttributes({
-        variant: 'left-accent'
+        variant: "left-accent"
       });
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Left Accent', 'alerts-dlx')), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
-    variant: variant === 'top-accent' ? 'primary' : 'secondary',
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Left Accent", "alerts-dlx")), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+    variant: variant === "top-accent" ? "primary" : "secondary",
     onClick: function onClick(e) {
       setAttributes({
-        variant: 'top-accent'
+        variant: "top-accent"
       });
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Top Accent', 'alerts-dlx')), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
-    variant: variant === 'centered' ? 'primary' : 'secondary',
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Top Accent", "alerts-dlx")), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+    variant: variant === "centered" ? "primary" : "secondary",
     onClick: function onClick(e) {
       setAttributes({
-        variant: 'centered'
+        variant: "centered"
       });
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Centered', 'alerts-dlx'))))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.BaseControl, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Centered", "alerts-dlx"))))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.BaseControl, {
     id: "alerts-dlx-mode-button-group",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Set Light or Dark Mode', 'quotes-dlx'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Set Light or Dark Mode", "quotes-dlx"),
     className: "alerts-dlx-chakra-mode"
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ButtonGroup, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
-    variant: mode === 'light' ? 'primary' : 'secondary',
+    variant: mode === "light" ? "primary" : "secondary",
     onClick: function onClick(e) {
       setAttributes({
-        mode: 'light'
+        mode: "light"
       });
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Light Mode', 'alerts-dlx')), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
-    variant: mode === 'dark' ? 'primary' : 'secondary',
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Light Mode", "alerts-dlx")), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+    variant: mode === "dark" ? "primary" : "secondary",
     onClick: function onClick(e) {
       setAttributes({
-        mode: 'dark'
+        mode: "dark"
       });
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Dark Mode', 'alerts-dlx'))))), iconEnabled && 'centered' !== variant && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.BaseControl, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Dark Mode", "alerts-dlx"))))), iconEnabled && "centered" !== variant && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.BaseControl, {
     id: "alerts-dlx-button-group-icon-alignment",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Icon Vertical Alignment', 'quotes-dlx'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Icon Vertical Alignment", "quotes-dlx"),
     className: "alerts-dlx-material-variants"
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ButtonGroup, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
-    variant: iconVerticalAlignment === 'top' ? 'primary' : 'secondary',
+    variant: iconVerticalAlignment === "top" ? "primary" : "secondary",
     onClick: function onClick(e) {
       setAttributes({
-        iconVerticalAlignment: 'top'
+        iconVerticalAlignment: "top"
       });
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Top', 'alerts-dlx')), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
-    variant: iconVerticalAlignment === 'centered' ? 'primary' : 'secondary',
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Top", "alerts-dlx")), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Button, {
+    variant: iconVerticalAlignment === "centered" ? "primary" : "secondary",
     onClick: function onClick(e) {
       setAttributes({
-        iconVerticalAlignment: 'centered'
+        iconVerticalAlignment: "centered"
       });
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Centered', 'alerts-dlx'))))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Set the Base Font Size', 'alerts-dlx'),
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Centered", "alerts-dlx"))))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.RangeControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Set the Base Font Size", "alerts-dlx"),
     step: 1,
     value: baseFontSize,
     max: 36,
@@ -2729,21 +2742,15 @@ var ChakraAlerts = function ChakraAlerts(props) {
         baseFontSize: fontSizeValue
       });
     },
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Set the base font size for the alert.', 'alerts-dlx')
+    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Set the base font size for the alert.", "alerts-dlx")
   })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
     name: "alertsDLXAppearancePanelEnd",
     fillProps: props
-  })));
-  var advancedControls = /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enable Flexible InnerBlocks', 'alerts-dlx'),
-    checked: innerBlocksEnabled,
-    onChange: function onChange(value) {
-      setAttributes({
-        innerBlocksEnabled: value
-      });
-    },
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Enable this option to allow the use of any block within the alert.', 'alerts-dlx')
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
+    name: "alertsDLXStylePanelEnd",
+    fillProps: props
   }));
+  var advancedControls = null;
 
   /**
    * Attempt to check when block styles are changed.
@@ -2765,6 +2772,7 @@ var ChakraAlerts = function ChakraAlerts(props) {
     setAttributes: setAttributes,
     iconSet: _components_icons_ChakraIcons__WEBPACK_IMPORTED_MODULE_9__["default"],
     inspectorControls: inspectorControls,
+    styleControls: styleControls,
     advancedControls: advancedControls,
     CloseButtonIcon: _components_CloseButtonIcons__WEBPACK_IMPORTED_MODULE_10__.ChakraCloseIcon,
     innerBlockProps: innerBlockProps
@@ -2780,16 +2788,16 @@ var ChakraAlerts = function ChakraAlerts(props) {
    *
    * @return {Object} The block classes.
    */
-  var blockClasses = (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_2__.applyFilters)('alertsDlx.blockClasses', {
-    'is-dark-mode': 'dark' === mode,
-    'custom-fonts-enabled': enableCustomFonts,
-    'is-appearance-subtle': 'subtle' === variant,
-    'is-appearance-solid': 'solid' === variant,
-    'is-appearance-left-accent': 'left-accent' === variant,
-    'is-appearance-top-accent': 'top-accent' === variant,
-    'is-appearance-centered': 'centered' === variant,
-    'icon-vertical-align-top': 'top' === iconVerticalAlignment,
-    'icon-vertical-align-centered': 'centered' === iconVerticalAlignment
+  var blockClasses = (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_2__.applyFilters)("alertsDlx.blockClasses", {
+    "is-dark-mode": "dark" === mode,
+    "custom-fonts-enabled": enableCustomFonts,
+    "is-appearance-subtle": "subtle" === variant,
+    "is-appearance-solid": "solid" === variant,
+    "is-appearance-left-accent": "left-accent" === variant,
+    "is-appearance-top-accent": "top-accent" === variant,
+    "is-appearance-centered": "centered" === variant,
+    "icon-vertical-align-top": "top" === iconVerticalAlignment,
+    "icon-vertical-align-centered": "centered" === iconVerticalAlignment
   }, attributes);
   var blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_7__.useBlockProps)({
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, "alerts-dlx template-chakra is-style-".concat(alertType), _objectSpread({}, blockClasses))
@@ -3064,6 +3072,7 @@ __webpack_require__.r(__webpack_exports__);
  * @param {Function}    props.setAttributes     - The function to set the attributes of the block.
  * @param {Object}      props.iconSet           - The icon set of the block.
  * @param {JSX.Element} props.inspectorControls - The inspector controls of the block.
+ * @param {JSX.Element} props.styleControls     - The style controls of the block.
  * @param {JSX.Element} props.advancedControls  - The advanced controls of the block.
  * @param {JSX.Element} props.CloseButtonIcon   - The close button icon of the block.
  * @param {Object}      props.innerBlockProps   - The inner block props of the block.
@@ -3074,7 +3083,10 @@ var BlockMain = function BlockMain(props) {
     setAttributes = props.setAttributes,
     iconSet = props.iconSet,
     inspectorControls = props.inspectorControls,
-    advancedControls = props.advancedControls,
+    _props$styleControls = props.styleControls,
+    styleControls = _props$styleControls === void 0 ? null : _props$styleControls,
+    _props$advancedContro = props.advancedControls,
+    advancedControls = _props$advancedContro === void 0 ? null : _props$advancedContro,
     CloseButtonIcon = props.CloseButtonIcon,
     innerBlockProps = props.innerBlockProps;
   var iconEnabled = attributes.iconEnabled,
@@ -3098,21 +3110,23 @@ var BlockMain = function BlockMain(props) {
     maxWidth: maximumWidth + maximumWidthUnit
   };
   var baseFontSizeStyles = "#".concat(uniqueId, " { font-size: ").concat(parseInt(baseFontSize), "px; }");
-  var allowedHeadlineStyles = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'div'];
-  var headlineTag = allowedHeadlineStyles.includes(alertsDlxBlock.headlineStyle) ? alertsDlxBlock.headlineStyle : 'h2';
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, null, inspectorControls), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorAdvancedControls, null, advancedControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("link", {
+  var allowedHeadlineStyles = ["h1", "h2", "h3", "h4", "h5", "h6", "div"];
+  var headlineTag = allowedHeadlineStyles.includes(alertsDlxBlock.headlineStyle) ? alertsDlxBlock.headlineStyle : "h2";
+  return /*#__PURE__*/React.createElement(React.Fragment, null, inspectorControls && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, null, inspectorControls), styleControls && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+    group: "styles"
+  }, styleControls), advancedControls && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorAdvancedControls, null, advancedControls), /*#__PURE__*/React.createElement("style", null, baseFontSizeStyles), /*#__PURE__*/React.createElement("link", {
     rel: "stylesheet",
     href: "".concat(alertsDlxBlock.font_stylesheet)
   }), /*#__PURE__*/React.createElement("figure", {
     role: "alert",
     className: classnames__WEBPACK_IMPORTED_MODULE_1___default()("alerts-dlx-alert alerts-dlx-".concat(alertGroup), {
-      'alerts-dlx-has-icon': iconEnabled,
-      'alerts-dlx-has-description': descriptionEnabled,
-      'alerts-dlx-has-button': buttonEnabled
+      "alerts-dlx-has-icon": iconEnabled,
+      "alerts-dlx-has-description": descriptionEnabled,
+      "alerts-dlx-has-button": buttonEnabled
     }),
     style: maxWidthStyle,
     id: uniqueId
-  }, 'icon' === iconSource && iconEnabled && /*#__PURE__*/React.createElement("div", {
+  }, "icon" === iconSource && iconEnabled && /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-icon",
     "aria-hidden": "true"
   }, /*#__PURE__*/React.createElement(_IconPicker__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -3120,20 +3134,20 @@ var BlockMain = function BlockMain(props) {
     setAttributes: setAttributes,
     alertType: alertType,
     icons: iconSet
-  })), 'image' === iconSource && iconEnabled && /*#__PURE__*/React.createElement("div", {
+  })), "image" === iconSource && iconEnabled && /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-icon",
     "aria-hidden": "true"
   }, imageUrl && /*#__PURE__*/React.createElement("img", {
     src: imageUrl,
-    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert image', 'alerts-dlx')
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Alert image", "alerts-dlx")
   }), !imageUrl && /*#__PURE__*/React.createElement("img", {
     src: alertsDlxBlock.defaultImage,
-    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Placeholder Alert image', 'alerts-dlx')
+    alt: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Placeholder Alert image", "alerts-dlx")
   })), /*#__PURE__*/React.createElement("section", null, closeButtonEnabled && /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-close"
   }, /*#__PURE__*/React.createElement(CloseButtonIcon, null)), titleEnabled && /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
     tagName: headlineTag,
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Alert title', 'alerts-dlx'),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Alert title", "alerts-dlx"),
     value: alertTitle,
     className: "alerts-dlx-title",
     disableLineBreaks: true,
@@ -5813,12 +5827,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _bootstrap_colors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../bootstrap/colors */ "./src/js/blocks/bootstrap/colors.js");
-/* harmony import */ var _chakraui_colors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../chakraui/colors */ "./src/js/blocks/chakraui/colors.js");
-/* harmony import */ var _material_colors__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../material/colors */ "./src/js/blocks/material/colors.js");
-/* harmony import */ var _shoelace_colors__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../shoelace/colors */ "./src/js/blocks/shoelace/colors.js");
+/* harmony import */ var _wordpress_plugins__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/plugins */ "@wordpress/plugins");
+/* harmony import */ var _wordpress_plugins__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_plugins__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _bootstrap_colors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../bootstrap/colors */ "./src/js/blocks/bootstrap/colors.js");
+/* harmony import */ var _chakraui_colors__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../chakraui/colors */ "./src/js/blocks/chakraui/colors.js");
+/* harmony import */ var _material_colors__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../material/colors */ "./src/js/blocks/material/colors.js");
+/* harmony import */ var _shoelace_colors__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../shoelace/colors */ "./src/js/blocks/shoelace/colors.js");
 /**
  * AlertsDLX Admin-Only Plugin
  *
@@ -5839,6 +5855,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+// Get the colors for the block.
+var getColors = function getColors(alertGroup) {
+  switch (alertGroup) {
+    case "bootstrap":
+      return _bootstrap_colors__WEBPACK_IMPORTED_MODULE_6__["default"];
+    case "chakra":
+      return _chakraui_colors__WEBPACK_IMPORTED_MODULE_7__["default"];
+    case "material":
+      return _material_colors__WEBPACK_IMPORTED_MODULE_8__["default"];
+    case "shoelace":
+      return _shoelace_colors__WEBPACK_IMPORTED_MODULE_9__["default"];
+    default:
+      return [];
+  }
+};
 
 /**
  * Higher-order component that wraps block edit functions to add our custom panel.
@@ -5882,109 +5915,10 @@ var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createH
 
     // Create the block content with or without the panel.
     var blockContent = /*#__PURE__*/React.createElement(BlockEdit, props);
-
-    // Get the colors for the block.
-    var getColors = function getColors() {
-      switch (props.name) {
-        case "mediaron/alerts-dlx-bootstrap":
-          return _bootstrap_colors__WEBPACK_IMPORTED_MODULE_5__["default"];
-        case "mediaron/alerts-dlx-chakra":
-          return _chakraui_colors__WEBPACK_IMPORTED_MODULE_6__["default"];
-        case "mediaron/alerts-dlx-material":
-          return _material_colors__WEBPACK_IMPORTED_MODULE_7__["default"];
-        case "mediaron/alerts-dlx-shoelace":
-          return _shoelace_colors__WEBPACK_IMPORTED_MODULE_8__["default"];
-        default:
-          return [];
-      }
-    };
     var styles = "\n\t\t#".concat(uniqueId, " {\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-primary: ").concat(colorPrimary, ";\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-border: ").concat(colorBorder, ";\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-accent: ").concat(colorAccent, ";\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-alt: ").concat(colorAlt, ";\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-alt-hover: ").concat(colorAltHover, ";\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-alt-text: ").concat(colorAltText, ";\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-alt-text-hover: ").concat(colorAltTextHover, ";\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-bold: ").concat(colorBold, ";\n\t\t\t--alerts-dlx-").concat(alertGroup, "-color-light: ").concat(colorLight, ";\n\t\t}");
 
     // Only show our panel when the block is selected in the editor and user has permissions.
-    blockContent = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("style", null, styles), /*#__PURE__*/React.createElement(BlockEdit, props), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
-      group: "styles"
-    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Custom Colors", "alerts-dlx"),
-      initialOpen: true,
-      className: "alerts-dlx-panel"
-    }, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
-      __experimentalIsRenderedInSidebar: true,
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Alert Colors", "alerts-dlx"),
-      colorSettings: [{
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Text Color", "alerts-dlx"),
-        value: colorPrimary,
-        onChange: function onChange(value) {
-          setAttributes({
-            colorPrimary: value
-          });
-        }
-      }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Border Color", "alerts-dlx"),
-        value: colorBorder,
-        onChange: function onChange(value) {
-          setAttributes({
-            colorBorder: value
-          });
-        }
-      }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Accent Color", "alerts-dlx"),
-        value: colorAccent,
-        onChange: function onChange(value) {
-          setAttributes({
-            colorAccent: value
-          });
-        }
-      }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Button Color", "alerts-dlx"),
-        value: colorAlt,
-        onChange: function onChange(value) {
-          setAttributes({
-            colorAlt: value
-          });
-        }
-      }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Button Hover Color", "alerts-dlx"),
-        value: colorAltHover,
-        onChange: function onChange(value) {
-          setAttributes({
-            colorAltHover: value
-          });
-        }
-      }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Button Text Color", "alerts-dlx"),
-        value: colorAltText,
-        onChange: function onChange(value) {
-          setAttributes({
-            colorAltText: value
-          });
-        }
-      }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Button Text Hover Color", "alerts-dlx"),
-        value: colorAltTextHover,
-        onChange: function onChange(value) {
-          setAttributes({
-            colorAltTextHover: value
-          });
-        }
-      }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Icon Color", "alerts-dlx"),
-        value: colorBold,
-        onChange: function onChange(value) {
-          setAttributes({
-            colorBold: value
-          });
-        }
-      }, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Background Color", "alerts-dlx"),
-        value: colorLight,
-        onChange: function onChange(value) {
-          setAttributes({
-            colorLight: value
-          });
-        }
-      }],
-      colors: getColors()
-    }))));
+    blockContent = /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("style", null, styles), /*#__PURE__*/React.createElement(BlockEdit, props));
     return blockContent;
   };
 }, "withAlertsPanel");
@@ -5997,6 +5931,110 @@ var withAlertsPanel = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createH
  * add CSS classes for editorial-only and read-only blocks.
  */
 (0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.addFilter)("editor.BlockEdit", "alerts-dlx/with-alerts-panel", withAlertsPanel);
+(0,_wordpress_plugins__WEBPACK_IMPORTED_MODULE_4__.registerPlugin)("custom-colors", {
+  render: function render() {
+    return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Fill, {
+      name: "alertsDLXStylePanelStart"
+    }, function (_ref) {
+      var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+      if ("custom" !== attributes.alertType) {
+        return null;
+      }
+      var colorPrimary = attributes.colorPrimary,
+        colorBorder = attributes.colorBorder,
+        colorAccent = attributes.colorAccent,
+        colorAlt = attributes.colorAlt,
+        colorAltHover = attributes.colorAltHover,
+        colorAltText = attributes.colorAltText,
+        colorAltTextHover = attributes.colorAltTextHover,
+        colorBold = attributes.colorBold,
+        colorLight = attributes.colorLight;
+      return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)("Custom Alert Colors", "alerts-dlx"),
+        initialOpen: true,
+        className: "alerts-dlx-panel"
+      }, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+        __experimentalIsRenderedInSidebar: true,
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)("Alert Colors", "alerts-dlx"),
+        colorSettings: [{
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)("Text Color", "alerts-dlx"),
+          value: colorPrimary,
+          onChange: function onChange(value) {
+            setAttributes({
+              colorPrimary: value
+            });
+          }
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)("Border Color", "alerts-dlx"),
+          value: colorBorder,
+          onChange: function onChange(value) {
+            setAttributes({
+              colorBorder: value
+            });
+          }
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)("Accent Color", "alerts-dlx"),
+          value: colorAccent,
+          onChange: function onChange(value) {
+            setAttributes({
+              colorAccent: value
+            });
+          }
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)("Button Color", "alerts-dlx"),
+          value: colorAlt,
+          onChange: function onChange(value) {
+            setAttributes({
+              colorAlt: value
+            });
+          }
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)("Button Hover Color", "alerts-dlx"),
+          value: colorAltHover,
+          onChange: function onChange(value) {
+            setAttributes({
+              colorAltHover: value
+            });
+          }
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)("Button Text Color", "alerts-dlx"),
+          value: colorAltText,
+          onChange: function onChange(value) {
+            setAttributes({
+              colorAltText: value
+            });
+          }
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)("Button Text Hover Color", "alerts-dlx"),
+          value: colorAltTextHover,
+          onChange: function onChange(value) {
+            setAttributes({
+              colorAltTextHover: value
+            });
+          }
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)("Icon Color", "alerts-dlx"),
+          value: colorBold,
+          onChange: function onChange(value) {
+            setAttributes({
+              colorBold: value
+            });
+          }
+        }, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_5__.__)("Background Color", "alerts-dlx"),
+          value: colorLight,
+          onChange: function onChange(value) {
+            setAttributes({
+              colorLight: value
+            });
+          }
+        }],
+        colors: getColors(attributes.alertGroup)
+      }));
+    });
+  }
+});
 
 /***/ }),
 
@@ -6137,10 +6175,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(0,_wordpress_plugins__WEBPACK_IMPORTED_MODULE_1__.registerPlugin)('custom-slot-fills', {
+(0,_wordpress_plugins__WEBPACK_IMPORTED_MODULE_1__.registerPlugin)("custom-slot-fills", {
   render: function render() {
     return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Fill, {
-      name: "alertsDLXAppearancePanelEnd"
+      name: "alertsDLXSettingsPanelEnd"
     }, function (_ref) {
       var attributes = _ref.attributes,
         setAttributes = _ref.setAttributes;
@@ -6157,20 +6195,20 @@ __webpack_require__.r(__webpack_exports__);
           isDestructive: true,
           onClick: function onClick() {
             setAttributes({
-              imageUrl: '',
+              imageUrl: "",
               imageId: 0
             });
           }
-        }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Remove Image', 'alerts-dlx')), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+        }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Remove Image", "alerts-dlx")), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
           variant: "secondary",
           onClick: function onClick() {
             openMediaUploader({
-              title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Set Your Image', 'alerts-dlx'),
-              buttonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Save Image', 'alerts-dlx'),
-              removeLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Remove Image', 'alerts-dlx'),
+              title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Set Your Image", "alerts-dlx"),
+              buttonLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Save Image", "alerts-dlx"),
+              removeLabel: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Remove Image", "alerts-dlx"),
               suggestedWidth: 96,
               suggestedHeight: 96,
-              aspectRatio: '1:1',
+              aspectRatio: "1:1",
               attachmentId: imageId || 0,
               canSkipCrop: true
             }, function (attachment) {
@@ -6180,7 +6218,7 @@ __webpack_require__.r(__webpack_exports__);
               });
             });
           }
-        }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Select Image', 'alerts-dlx'))));
+        }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Select Image", "alerts-dlx"))));
       };
       var getImage = function getImage() {
         if (!imageUrl) {
@@ -6199,16 +6237,16 @@ __webpack_require__.r(__webpack_exports__);
             iconSource: value
           });
         },
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Icon Source', 'alerts-dlx'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Icon Source", "alerts-dlx"),
         className: "alerts-dlx-icon-source-toggle-group",
-        help: 'icon' === iconSource ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('An icon is displayed in the alert. You can edit the icon by clicking on the icon in the alert.', 'alerts-dlx') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('An image is displayed in the alert. You can edit the image by changing the image below.', 'alerts-dlx')
+        help: "icon" === iconSource ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("An icon is displayed in the alert. You can edit the icon by clicking on the icon in the alert.", "alerts-dlx") : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("An image is displayed in the alert. You can edit the image by changing the image below.", "alerts-dlx")
       }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
         value: "icon",
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Icon', 'alerts-dlx')
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Icon", "alerts-dlx")
       }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.__experimentalToggleGroupControlOption, {
         value: "image",
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Image', 'alerts-dlx')
-      }))), iconSource === 'image' && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelRow, null, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Image", "alerts-dlx")
+      }))), iconSource === "image" && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelRow, null, /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
         className: "alerts-dlx-icon-image-wrapper"
       }, getImage(), getImageButtons()))));
     });
