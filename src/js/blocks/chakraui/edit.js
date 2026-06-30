@@ -197,21 +197,6 @@ const ChakraAlerts = (props) => {
               />
             </PanelRow>
           )}
-          <PanelRow>
-            <ToggleControl
-              label={__("Enable Flexible InnerBlocks", "alerts-dlx")}
-              checked={innerBlocksEnabled}
-              onChange={(value) => {
-                setAttributes({
-                  innerBlocksEnabled: value,
-                });
-              }}
-              help={__(
-                "Enable this option to allow the use of any block within the alert.",
-                "alerts-dlx"
-              )}
-            />
-          </PanelRow>
           <Slot name="alertsDLXSettingsPanelEnd" fillProps={props} />
         </>
       </PanelBody>

@@ -2617,15 +2617,6 @@ var ChakraAlerts = function ChakraAlerts(props) {
     },
     help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Set the expiration time in seconds for the close button to reappear. Set to zero to never expire.", "alerts-dlx"),
     type: "number"
-  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enable Flexible InnerBlocks", "alerts-dlx"),
-    checked: innerBlocksEnabled,
-    onChange: function onChange(value) {
-      setAttributes({
-        innerBlocksEnabled: value
-      });
-    },
-    help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Enable this option to allow the use of any block within the alert.", "alerts-dlx")
   })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Slot, {
     name: "alertsDLXSettingsPanelEnd",
     fillProps: props
@@ -5811,6 +5802,47 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/blocks/plugins/advanced-inner-blocks.js":
+/*!********************************************************!*\
+  !*** ./src/js/blocks/plugins/advanced-inner-blocks.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_plugins__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/plugins */ "@wordpress/plugins");
+/* harmony import */ var _wordpress_plugins__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_plugins__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+(0,_wordpress_plugins__WEBPACK_IMPORTED_MODULE_1__.registerPlugin)("alerts-dlx-advanced-inner-blocks-slot-fills", {
+  render: function render() {
+    return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Fill, {
+      name: "alertsDLXSettingsPanelEnd"
+    }, function (_ref) {
+      var attributes = _ref.attributes,
+        setAttributes = _ref.setAttributes;
+      var innerBlocksEnabled = attributes.innerBlocksEnabled;
+      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelRow, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enable Flexible InnerBlocks", "alerts-dlx"),
+        checked: innerBlocksEnabled,
+        onChange: function onChange(value) {
+          setAttributes({
+            innerBlocksEnabled: value
+          });
+        },
+        help: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Enable this option to allow the use of any block within the alert.", "alerts-dlx")
+      })));
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "./src/js/blocks/plugins/custom-colors.js":
 /*!************************************************!*\
   !*** ./src/js/blocks/plugins/custom-colors.js ***!
@@ -7029,10 +7061,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_blocks_chakraui__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/blocks/chakraui */ "./src/js/blocks/chakraui/index.js");
 /* harmony import */ var _js_blocks_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/blocks/bootstrap */ "./src/js/blocks/bootstrap/index.js");
 /* harmony import */ var _js_blocks_shoelace__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/blocks/shoelace */ "./src/js/blocks/shoelace/index.js");
-/* harmony import */ var _js_blocks_plugins_editorial_only__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/blocks/plugins/editorial-only */ "./src/js/blocks/plugins/editorial-only.js");
-/* harmony import */ var _js_blocks_plugins_custom_colors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/blocks/plugins/custom-colors */ "./src/js/blocks/plugins/custom-colors.js");
-/* harmony import */ var _js_blocks_plugins_icon_image_selector__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/blocks/plugins/icon-image-selector */ "./src/js/blocks/plugins/icon-image-selector.js");
-/* harmony import */ var _js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/blocks/components/icons/AlertsLogo */ "./src/js/blocks/components/icons/AlertsLogo.js");
+/* harmony import */ var _js_blocks_plugins_advanced_inner_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/blocks/plugins/advanced-inner-blocks */ "./src/js/blocks/plugins/advanced-inner-blocks.js");
+/* harmony import */ var _js_blocks_plugins_editorial_only__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/blocks/plugins/editorial-only */ "./src/js/blocks/plugins/editorial-only.js");
+/* harmony import */ var _js_blocks_plugins_custom_colors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/blocks/plugins/custom-colors */ "./src/js/blocks/plugins/custom-colors.js");
+/* harmony import */ var _js_blocks_plugins_icon_image_selector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/blocks/plugins/icon-image-selector */ "./src/js/blocks/plugins/icon-image-selector.js");
+/* harmony import */ var _js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./js/blocks/components/icons/AlertsLogo */ "./src/js/blocks/components/icons/AlertsLogo.js");
+
 
 
 
@@ -7042,8 +7076,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 (function () {
-  wp.blocks.updateCategory('alertsdlx', {
-    icon: /*#__PURE__*/React.createElement(_js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  wp.blocks.updateCategory("alertsdlx", {
+    icon: /*#__PURE__*/React.createElement(_js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_8__["default"], {
       width: 16,
       height: 16
     })
