@@ -10,8 +10,7 @@ $chakra-variants: (
 );
 
 $chakra-light-palette: (
-	"success": (
-		"color": #2d3748,
+	"success": ("color": #2d3748,
 		"color-accent": #38a169,
 		"color-alt": #3dae71,
 		"color-bold": #38a169,
@@ -26,10 +25,8 @@ $chakra-light-palette: (
 		"solid-button-border": #3dae71,
 		"solid-button-border-hover": #ffffff,
 		"solid-close": #ffffff,
-		"solid-close-hover": #ffffff
-	),
-	"info": (
-		"color": #014361,
+		"solid-close-hover": #ffffff),
+	"info": ("color": #014361,
 		"color-accent": #3182ce,
 		"color-alt": #2d75b8,
 		"color-bold": #2d76bb,
@@ -44,10 +41,8 @@ $chakra-light-palette: (
 		"solid-button-border": #2d75b8,
 		"solid-button-border-hover": #ffffff,
 		"solid-close": #ffffff,
-		"solid-close-hover": #ffffff
-	),
-	"warning": (
-		"color": #2d3748,
+		"solid-close-hover": #ffffff),
+	"warning": ("color": #2d3748,
 		"color-accent": #dd6b20,
 		"color-alt": #b35719,
 		"color-bold": #dd6b20,
@@ -62,10 +57,8 @@ $chakra-light-palette: (
 		"solid-button-border": #b35719,
 		"solid-button-border-hover": #ffffff,
 		"solid-close": #ffffff,
-		"solid-close-hover": #ffffff
-	),
-	"error": (
-		"color": #2d3748,
+		"solid-close-hover": #ffffff),
+	"error": ("color": #2d3748,
 		"color-accent": #a92525,
 		"color-alt": #d32f2f,
 		"color-bold": #ef5350,
@@ -80,13 +73,11 @@ $chakra-light-palette: (
 		"solid-button-border": #d32f2f,
 		"solid-button-border-hover": #ffffff,
 		"solid-close": #ffffff,
-		"solid-close-hover": #ffffff
-	)
+		"solid-close-hover": #ffffff)
 );
 
 $chakra-dark-palette: (
-	"success": (
-		"color": #edf2f7,
+	"success": ("color": #edf2f7,
 		"color-accent": #75e09b,
 		"color-alt": #8ae3a9,
 		"color-bold": #9ae6b4,
@@ -101,10 +92,8 @@ $chakra-dark-palette: (
 		"solid-button-border": #8ae3a9,
 		"solid-button-border-hover": #243233,
 		"solid-close": #243233,
-		"solid-close-hover": #{darken(#243233, 10%)}
-	),
-	"info": (
-		"color": #edf2f7,
+		"solid-close-hover": #{darken(#243233, 10%)}),
+	"info": ("color": #edf2f7,
 		"color-accent": #469fd7,
 		"color-alt": #71c2f5,
 		"color-bold": #90cdf4,
@@ -119,10 +108,8 @@ $chakra-dark-palette: (
 		"solid-button-border": #71c2f5,
 		"solid-button-border-hover": #222e3c,
 		"solid-close": #222e3c,
-		"solid-close-hover": #{darken(#222e3c, 10%)}
-	),
-	"warning": (
-		"color": #edf2f7,
+		"solid-close-hover": #{darken(#222e3c, 10%)}),
+	"warning": ("color": #edf2f7,
 		"color-accent": #f0c16e,
 		"color-alt": #f6c97b,
 		"color-bold": #fbd38d,
@@ -137,10 +124,8 @@ $chakra-dark-palette: (
 		"solid-button-border": #f6c97b,
 		"solid-button-border-hover": #2f2e2d,
 		"solid-close": #2f2e2d,
-		"solid-close-hover": #{darken(#2f2e2d, 10%)}
-	),
-	"error": (
-		"color": #edf2f7,
+		"solid-close-hover": #{darken(#2f2e2d, 10%)}),
+	"error": ("color": #edf2f7,
 		"color-accent": #f46d6d,
 		"color-alt": #f68e8e,
 		"color-bold": #feb2b2,
@@ -155,8 +140,7 @@ $chakra-dark-palette: (
 		"solid-button-border": #f68e8e,
 		"solid-button-border-hover": #302a33,
 		"solid-close": #302a33,
-		"solid-close-hover": #{darken(#302a33, 10%)}
-	)
+		"solid-close-hover": #{darken(#302a33, 10%)})
 );
 
 @mixin chakra-css-vars($palette) {
@@ -221,7 +205,7 @@ $chakra-dark-palette: (
 			padding: 0;
 
 			&:not(:first-child) {
-                margin-top: 0.5em;
+				margin-top: 0.5em;
 			}
 		}
 
@@ -285,6 +269,7 @@ $chakra-dark-palette: (
 	}
 
 	&.is-style-custom {
+
 		&.is-appearance-subtle,
 		&.is-appearance-centered {
 			.alerts-dlx-chakra {
@@ -312,6 +297,7 @@ $chakra-dark-palette: (
 			}
 
 			.alerts-dlx-icon {
+
 				svg,
 				svg path svg g {
 					color: var(--alerts-dlx-chakra-color-bold, var(--chakra-info-color-bold));
@@ -320,6 +306,7 @@ $chakra-dark-palette: (
 			}
 
 			.alerts-dlx-chakra {
+
 				button.button-reset.alerts-dlx-button,
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
@@ -363,6 +350,7 @@ $chakra-dark-palette: (
 			}
 
 			.alerts-dlx-icon {
+
 				svg,
 				svg path svg g {
 					color: var(--alerts-dlx-chakra-color-bold, var(--chakra-info-color-bold));
@@ -371,6 +359,7 @@ $chakra-dark-palette: (
 			}
 
 			.alerts-dlx-chakra {
+
 				button.button-reset.alerts-dlx-button,
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
@@ -414,6 +403,7 @@ $chakra-dark-palette: (
 			}
 
 			.alerts-dlx-icon {
+
 				svg,
 				svg path svg g {
 					color: var(--alerts-dlx-chakra-color-bold, var(--chakra-info-color-bold));
@@ -422,6 +412,7 @@ $chakra-dark-palette: (
 			}
 
 			.alerts-dlx-chakra {
+
 				button.button-reset.alerts-dlx-button,
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
@@ -441,50 +432,51 @@ $chakra-dark-palette: (
 
 		&.is-appearance-solid {
 			.alerts-dlx-title {
-				color: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-info-solid-foreground));
+				color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 			}
 
 			.alerts-dlx-content p {
-				color: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-info-solid-foreground));
+				color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 			}
 
 			.alerts-dlx-close {
 				svg {
-					color: var(--alerts-dlx-chakra-color-solid-close, var(--chakra-info-solid-close));
+					color: var(--alerts-dlx-chakra-color-alt, var(--chakra-info-color-alt));
 
 					&:hover {
-						color: var(--alerts-dlx-chakra-color-solid-close-hover, var(--chakra-info-solid-close-hover));
+						color: var(--alerts-dlx-chakra-color-accent, var(--chakra-info-color-accent));
 					}
 				}
 			}
 
 			.alerts-dlx-icon {
+
 				svg,
 				svg path svg g {
-					color: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-info-solid-foreground));
-					fill: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-info-solid-foreground));
+					color: var(--alerts-dlx-chakra-color-bold, var(--chakra-info-color-bold));
+					fill: var(--alerts-dlx-chakra-color-bold, var(--chakra-info-color-bold));
 				}
 			}
 
 			.alerts-dlx-chakra {
-				background-color: var(--alerts-dlx-chakra-color-solid-background, var(--chakra-info-color-alt));
-				color: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-info-solid-foreground));
-				border: 2px solid var(--alerts-dlx-chakra-color-solid-border, var(--chakra-info-solid-foreground));
+				background-color: var(--alerts-dlx-chakra-color-light, var(--chakra-info-color-light));
+				color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
+				border: 2px solid var(--alerts-dlx-chakra-color-border, var(--chakra-info-color-border));
 
 				button.button-reset.alerts-dlx-button,
 				a.alerts-dlx-button,
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					color: var(--alerts-dlx-chakra-color-solid-button-text, var(--chakra-info-solid-button-text));
-					border: 2px solid var(--alerts-dlx-chakra-color-solid-button-border, var(--chakra-info-solid-button-border));
-					background-color: var(--alerts-dlx-chakra-color-solid-button-background, var(--chakra-info-solid-button-background));
+					color: var(--alerts-dlx-chakra-color-alt-text, var(--chakra-info-color-contrast));
+					border: 2px solid var(--alerts-dlx-chakra-color-alt, var(--chakra-info-color-alt));
+					background-color: var(--alerts-dlx-chakra-color-alt, var(--chakra-info-color-alt));
 				}
 
 				a.alerts-dlx-button:hover,
 				button.button-reset.alerts-dlx-button:hover {
-					background-color: var(--alerts-dlx-chakra-color-solid-button-background-hover, var(--chakra-info-solid-button-background-hover));
-					color: var(--alerts-dlx-chakra-color-solid-button-text-hover, var(--chakra-info-solid-button-text-hover));
-					border: 2px solid var(--alerts-dlx-chakra-color-solid-button-border-hover, var(--chakra-info-solid-button-border-hover));
+					background-color: var(--alerts-dlx-chakra-color-alt-hover, var(--chakra-info-color-accent));
+					color: var(--alerts-dlx-chakra-color-alt-text-hover, var(--chakra-info-color-contrast));
+					border: 2px solid var(--alerts-dlx-chakra-color-alt-hover, var(--chakra-info-color-accent));
 				}
 			}
 		}
@@ -492,6 +484,7 @@ $chakra-dark-palette: (
 
 	@each $variant in $chakra-variants {
 		&.is-style-#{$variant} {
+
 			&.is-appearance-subtle,
 			&.is-appearance-centered {
 				.alerts-dlx-title {
@@ -532,6 +525,7 @@ $chakra-dark-palette: (
 					}
 
 					.alerts-dlx-icon {
+
 						svg,
 						svg path svg g {
 							color: var(--chakra-#{$variant}-color-bold);
@@ -567,6 +561,7 @@ $chakra-dark-palette: (
 				}
 
 				.alerts-dlx-icon {
+
 					svg,
 					svg path svg g {
 						color: var(--chakra-#{$variant}-color-bold);
@@ -575,6 +570,7 @@ $chakra-dark-palette: (
 				}
 
 				.alerts-dlx-chakra {
+
 					button.button-reset.alerts-dlx-button,
 					a.alerts-dlx-button,
 					a.alerts-dlx-button:hover,
@@ -618,6 +614,7 @@ $chakra-dark-palette: (
 				}
 
 				.alerts-dlx-icon {
+
 					svg,
 					svg path svg g {
 						color: var(--chakra-#{$variant}-color-bold);
@@ -626,6 +623,7 @@ $chakra-dark-palette: (
 				}
 
 				.alerts-dlx-chakra {
+
 					button.button-reset.alerts-dlx-button,
 					a.alerts-dlx-button,
 					a.alerts-dlx-button:hover,
@@ -663,6 +661,7 @@ $chakra-dark-palette: (
 				}
 
 				.alerts-dlx-icon {
+
 					svg,
 					svg path svg g {
 						color: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-#{$variant}-solid-foreground));
@@ -695,4 +694,3 @@ $chakra-dark-palette: (
 		}
 	}
 }
-

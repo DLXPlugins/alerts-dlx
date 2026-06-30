@@ -651,40 +651,40 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   color: var(--alerts-dlx-chakra-color-alt-text-hover, var(--chakra-info-color-contrast));
 }
 .template-chakra.is-style-custom.is-appearance-solid .alerts-dlx-title {
-  color: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-info-solid-foreground));
+  color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 }
 .template-chakra.is-style-custom.is-appearance-solid .alerts-dlx-content p {
-  color: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-info-solid-foreground));
+  color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
 }
 .template-chakra.is-style-custom.is-appearance-solid .alerts-dlx-close svg {
-  color: var(--alerts-dlx-chakra-color-solid-close, var(--chakra-info-solid-close));
+  color: var(--alerts-dlx-chakra-color-alt, var(--chakra-info-color-alt));
 }
 .template-chakra.is-style-custom.is-appearance-solid .alerts-dlx-close svg:hover {
-  color: var(--alerts-dlx-chakra-color-solid-close-hover, var(--chakra-info-solid-close-hover));
+  color: var(--alerts-dlx-chakra-color-accent, var(--chakra-info-color-accent));
 }
 .template-chakra.is-style-custom.is-appearance-solid .alerts-dlx-icon svg,
 .template-chakra.is-style-custom.is-appearance-solid .alerts-dlx-icon svg path svg g {
-  color: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-info-solid-foreground));
-  fill: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-info-solid-foreground));
+  color: var(--alerts-dlx-chakra-color-bold, var(--chakra-info-color-bold));
+  fill: var(--alerts-dlx-chakra-color-bold, var(--chakra-info-color-bold));
 }
 .template-chakra.is-style-custom.is-appearance-solid .alerts-dlx-chakra {
-  background-color: var(--alerts-dlx-chakra-color-solid-background, var(--chakra-info-color-alt));
-  color: var(--alerts-dlx-chakra-color-solid-foreground, var(--chakra-info-solid-foreground));
-  border: 2px solid var(--alerts-dlx-chakra-color-solid-border, var(--chakra-info-solid-foreground));
+  background-color: var(--alerts-dlx-chakra-color-light, var(--chakra-info-color-light));
+  color: var(--alerts-dlx-chakra-color-primary, var(--chakra-info-color));
+  border: 2px solid var(--alerts-dlx-chakra-color-border, var(--chakra-info-color-border));
 }
 .template-chakra.is-style-custom.is-appearance-solid .alerts-dlx-chakra button.button-reset.alerts-dlx-button,
 .template-chakra.is-style-custom.is-appearance-solid .alerts-dlx-chakra a.alerts-dlx-button,
 .template-chakra.is-style-custom.is-appearance-solid .alerts-dlx-chakra a.alerts-dlx-button:hover,
 .template-chakra.is-style-custom.is-appearance-solid .alerts-dlx-chakra button.button-reset.alerts-dlx-button:hover {
-  color: var(--alerts-dlx-chakra-color-solid-button-text, var(--chakra-info-solid-button-text));
-  border: 2px solid var(--alerts-dlx-chakra-color-solid-button-border, var(--chakra-info-solid-button-border));
-  background-color: var(--alerts-dlx-chakra-color-solid-button-background, var(--chakra-info-solid-button-background));
+  color: var(--alerts-dlx-chakra-color-alt-text, var(--chakra-info-color-contrast));
+  border: 2px solid var(--alerts-dlx-chakra-color-alt, var(--chakra-info-color-alt));
+  background-color: var(--alerts-dlx-chakra-color-alt, var(--chakra-info-color-alt));
 }
 .template-chakra.is-style-custom.is-appearance-solid .alerts-dlx-chakra a.alerts-dlx-button:hover,
 .template-chakra.is-style-custom.is-appearance-solid .alerts-dlx-chakra button.button-reset.alerts-dlx-button:hover {
-  background-color: var(--alerts-dlx-chakra-color-solid-button-background-hover, var(--chakra-info-solid-button-background-hover));
-  color: var(--alerts-dlx-chakra-color-solid-button-text-hover, var(--chakra-info-solid-button-text-hover));
-  border: 2px solid var(--alerts-dlx-chakra-color-solid-button-border-hover, var(--chakra-info-solid-button-border-hover));
+  background-color: var(--alerts-dlx-chakra-color-alt-hover, var(--chakra-info-color-accent));
+  color: var(--alerts-dlx-chakra-color-alt-text-hover, var(--chakra-info-color-contrast));
+  border: 2px solid var(--alerts-dlx-chakra-color-alt-hover, var(--chakra-info-color-accent));
 }
 .template-chakra.is-style-success.is-appearance-subtle .alerts-dlx-title, .template-chakra.is-style-success.is-appearance-centered .alerts-dlx-title {
   color: var(--chakra-success-color);
