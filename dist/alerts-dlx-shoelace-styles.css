@@ -592,7 +592,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   background: var(--alerts-dlx-shoelace-solid-button-hover, var(--alerts-dlx-shoelace-solid-button-color, var(--alerts-dlx-shoelace-color-alt, var(--alerts-dlx-shoelace-color-border, var(--alerts-dlx-shoelace-text-color, #000)))));
   color: var(--alerts-dlx-shoelace-color-alt-text-hover, var(--alerts-dlx-shoelace-color-alt-text, #ffffff));
 }
-.template-shoelace.is-style-custom figure.alerts-dlx-alert.alerts-dlx-shoelace[role=alert] {
+.template-shoelace.is-style-custom figure.alerts-dlx-alert {
   background: var(--alerts-dlx-shoelace-color-light, #ffffff);
   border-top: 3px solid var(--alerts-dlx-shoelace-color-border, #0284c7);
 }
@@ -631,6 +631,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   border: 1px solid #e4e4e7;
   border-left-width: 0.25em;
   border-left-color: var(--alerts-dlx-shoelace-color-border, #0284c7);
+  border-top: 0;
 }
 .template-shoelace.is-style-custom.is-appearance-left-accent .alerts-dlx-has-icon {
   display: flex;
@@ -745,6 +746,7 @@ body .alerts-dlx.is-appearance-centered figure.alerts-dlx-alert[role=alert] .ale
   color: var(--alerts-dlx-shoelace-text-color, #fff);
 }
 .template-shoelace.is-dark-mode.is-style-custom figure.alerts-dlx-alert.alerts-dlx-shoelace[role=alert] {
+  background: var(--alerts-dlx-shoelace-color-light, #242428);
   border-top: 3px solid var(--alerts-dlx-shoelace-color-border, #27bafd);
 }
 .template-shoelace.is-dark-mode.is-style-custom button.button-reset.alerts-dlx-button,
