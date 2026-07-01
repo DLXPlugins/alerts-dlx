@@ -6,6 +6,7 @@ import "./js/blocks/plugins/advanced-inner-blocks";
 import "./js/blocks/plugins/editorial-only";
 import "./js/blocks/plugins/custom-colors";
 import "./js/blocks/plugins/icon-image-selector";
+import "./js/blocks/plugins/inner-block-parent-toolbar";
 import AlertsLogo from "./js/blocks/components/icons/AlertsLogo";
 
 (function () {
