@@ -5910,6 +5910,97 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/blocks/plugins/alert-close-expiration-toolbar.js":
+/*!*****************************************************************!*\
+  !*** ./src/js/blocks/plugins/alert-close-expiration-toolbar.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/hooks */ "@wordpress/hooks");
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
+/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _utils_alert_parent_inspector__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/alert-parent-inspector */ "./src/js/blocks/utils/alert-parent-inspector.js");
+/* harmony import */ var _utils_alert_close_expiration_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/alert-close-expiration-utils */ "./src/js/blocks/utils/alert-close-expiration-utils.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+/**
+ * Block toolbar dropdown for close button expiration on AlertsDLX blocks.
+ */
+
+
+
+
+
+
+
+
+
+/**
+ * HOC that adds close button expiration presets to alert block toolbars.
+ *
+ * @param {Function} BlockEdit Original BlockEdit component.
+ * @return {Function}
+ */
+var withAlertCloseExpirationToolbar = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createHigherOrderComponent)(function (BlockEdit) {
+  return function (props) {
+    var name = props.name,
+      attributes = props.attributes,
+      setAttributes = props.setAttributes;
+    if (!_utils_alert_parent_inspector__WEBPACK_IMPORTED_MODULE_5__.ALERT_BLOCK_NAMES.includes(name)) {
+      return /*#__PURE__*/React.createElement(BlockEdit, props);
+    }
+    var closeButtonEnabled = attributes.closeButtonEnabled,
+      closeButtonExpiration = attributes.closeButtonExpiration;
+    if (!closeButtonEnabled) {
+      return /*#__PURE__*/React.createElement(BlockEdit, props);
+    }
+    return /*#__PURE__*/React.createElement(React.Fragment, null, " ", /*#__PURE__*/React.createElement(BlockEdit, props), /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToolbarGroup, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Close expiration", "alerts-dlx")
+    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToolbarItem, null, function (toggleProps) {
+      return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.DropdownMenu, {
+        icon: "clock",
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Close duration", "alerts-dlx"),
+        className: "alerts-dlx-close-expiration-toolbar",
+        toggleProps: _objectSpread(_objectSpread({}, toggleProps), {}, {
+          children: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("span", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Close duration", "alerts-dlx")))
+        })
+      }, function (_ref) {
+        var onClose = _ref.onClose;
+        return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.MenuGroup, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Close alert for", "alerts-dlx")
+        }, _utils_alert_close_expiration_utils__WEBPACK_IMPORTED_MODULE_6__.ALERT_CLOSE_EXPIRATION_PRESETS.map(function (preset) {
+          return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.MenuItem, {
+            key: preset.seconds,
+            role: "menuitemradio",
+            isSelected: closeButtonExpiration === preset.seconds,
+            icon: closeButtonExpiration === preset.seconds ? "yes" : null,
+            onClick: function onClick() {
+              (0,_utils_alert_close_expiration_utils__WEBPACK_IMPORTED_MODULE_6__.applyCloseButtonExpiration)(preset.seconds, setAttributes);
+              onClose();
+            }
+          }, preset.label);
+        }));
+      });
+    }))));
+  };
+}, "withAlertCloseExpirationToolbar");
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.addFilter)("editor.BlockEdit", "alerts-dlx/alert-close-expiration-toolbar", withAlertCloseExpirationToolbar);
+
+/***/ }),
+
 /***/ "./src/js/blocks/plugins/alert-elements-toolbar.js":
 /*!*********************************************************!*\
   !*** ./src/js/blocks/plugins/alert-elements-toolbar.js ***!
@@ -5983,7 +6074,7 @@ var withAlertElementsToolbar = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1_
     }))), /*#__PURE__*/React.createElement(BlockEdit, props));
   };
 }, "withAlertElementsToolbar");
-(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.addFilter)("editor.BlockEdit", "alerts-dlx/alert-elements-toolbar", withAlertElementsToolbar);
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.addFilter)("editor.BlockEdit", "alerts-dlx/alert-elements-toolbar", withAlertElementsToolbar, 10);
 
 /***/ }),
 
@@ -7164,6 +7255,77 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/blocks/utils/alert-close-expiration-utils.js":
+/*!*************************************************************!*\
+  !*** ./src/js/blocks/utils/alert-close-expiration-utils.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ALERT_CLOSE_EXPIRATION_PRESETS: () => (/* binding */ ALERT_CLOSE_EXPIRATION_PRESETS),
+/* harmony export */   applyCloseButtonExpiration: () => (/* binding */ applyCloseButtonExpiration)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/**
+ * Close button expiration preset helpers for toolbar controls.
+ */
+
+
+var MINUTE_SECONDS = 60;
+var HOUR_SECONDS = 60 * MINUTE_SECONDS;
+var DAY_SECONDS = 24 * HOUR_SECONDS;
+var WEEK_SECONDS = 7 * DAY_SECONDS;
+var MONTH_SECONDS = 30 * DAY_SECONDS;
+
+/**
+ * Preset close button expiration values in seconds.
+ */
+var ALERT_CLOSE_EXPIRATION_PRESETS = [{
+  seconds: 0,
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Every Time', 'alerts-dlx')
+}, {
+  seconds: 5 * MINUTE_SECONDS,
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('5 Minutes', 'alerts-dlx')
+}, {
+  seconds: 30 * MINUTE_SECONDS,
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('30 Minutes', 'alerts-dlx')
+}, {
+  seconds: HOUR_SECONDS,
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('1 Hour', 'alerts-dlx')
+}, {
+  seconds: DAY_SECONDS,
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('1 Day', 'alerts-dlx')
+}, {
+  seconds: 3 * DAY_SECONDS,
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('3 Days', 'alerts-dlx')
+}, {
+  seconds: WEEK_SECONDS,
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('1 Week', 'alerts-dlx')
+}, {
+  seconds: MONTH_SECONDS,
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('1 Month', 'alerts-dlx')
+}, {
+  seconds: 6 * MONTH_SECONDS,
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('6 Months', 'alerts-dlx')
+}];
+
+/**
+ * Apply a close button expiration preset.
+ *
+ * @param {number}   seconds        Expiration time in seconds.
+ * @param {Function} setAttributes  Set attributes callback.
+ */
+function applyCloseButtonExpiration(seconds, setAttributes) {
+  setAttributes({
+    closeButtonExpiration: seconds
+  });
+}
+
+/***/ }),
+
 /***/ "./src/js/blocks/utils/alert-elements-utils.js":
 /*!*****************************************************!*\
   !*** ./src/js/blocks/utils/alert-elements-utils.js ***!
@@ -7662,7 +7824,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_blocks_plugins_inner_block_parent_toolbar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./js/blocks/plugins/inner-block-parent-toolbar */ "./src/js/blocks/plugins/inner-block-parent-toolbar.js");
 /* harmony import */ var _js_blocks_plugins_alert_style_toolbar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/blocks/plugins/alert-style-toolbar */ "./src/js/blocks/plugins/alert-style-toolbar.js");
 /* harmony import */ var _js_blocks_plugins_alert_elements_toolbar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./js/blocks/plugins/alert-elements-toolbar */ "./src/js/blocks/plugins/alert-elements-toolbar.js");
-/* harmony import */ var _js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./js/blocks/components/icons/AlertsLogo */ "./src/js/blocks/components/icons/AlertsLogo.js");
+/* harmony import */ var _js_blocks_plugins_alert_close_expiration_toolbar__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./js/blocks/plugins/alert-close-expiration-toolbar */ "./src/js/blocks/plugins/alert-close-expiration-toolbar.js");
+/* harmony import */ var _js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./js/blocks/components/icons/AlertsLogo */ "./src/js/blocks/components/icons/AlertsLogo.js");
+
 
 
 
@@ -7677,7 +7841,7 @@ __webpack_require__.r(__webpack_exports__);
 
 (function () {
   wp.blocks.updateCategory("alertsdlx", {
-    icon: /*#__PURE__*/React.createElement(_js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    icon: /*#__PURE__*/React.createElement(_js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_12__["default"], {
       width: 16,
       height: 16
     })

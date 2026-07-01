@@ -84,5 +84,6 @@ const withAlertElementsToolbar = createHigherOrderComponent((BlockEdit) => {
 addFilter(
   "editor.BlockEdit",
   "alerts-dlx/alert-elements-toolbar",
-  withAlertElementsToolbar
+  withAlertElementsToolbar,
+  10
 );
