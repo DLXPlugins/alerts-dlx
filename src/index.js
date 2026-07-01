@@ -7,6 +7,7 @@ import "./js/blocks/plugins/editorial-only";
 import "./js/blocks/plugins/custom-colors";
 import "./js/blocks/plugins/icon-image-selector";
 import "./js/blocks/plugins/inner-block-parent-toolbar";
+import "./js/blocks/plugins/alert-style-toolbar";
 import AlertsLogo from "./js/blocks/components/icons/AlertsLogo";
 
 (function () {

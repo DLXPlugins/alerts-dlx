@@ -493,7 +493,11 @@ return array(
 		),
 		'supports' => array(
 			'anchor' => true,
-			'align' => true,
+			'align' => array(
+				'center',
+				'wide',
+				'full'
+			),
 			'className' => true
 		),
 		'editorScript' => 'alerts-dlx-block',

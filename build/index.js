@@ -2414,7 +2414,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"Chakra Alert","apiVersion":3,"name":"mediaron/alerts-dlx-chakra","category":"alertsdlx","icon":"<svg width=\'100%\' height=\'100%\' viewBox=\'0 0 804 804\' version=\'1.1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\' xml:space=\'preserve\' xmlns:serif=\'http://www.serif.com/\' style=\'fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;\'><path fill=\'#60BFC1\' d=\'M803.125,401.563c0,-221.629 -179.934,-401.563 -401.563,-401.563c-221.628,0 -401.562,179.934 -401.562,401.563c0,221.628 179.934,401.562 401.563,401.562c221.628,0 401.562,-179.934 401.562,-401.563Z\' style=\'fill:url(#_Linear1);\'/><path fill=\'#FFFFFF\' d=\'M217.369,418.703l273.725,-271.841c5.112,-5.078 13.344,1.102 9.89,7.428l-101.878,186.726c-2.275,4.162 0.741,9.243 5.485,9.243l176.062,0c5.672,0 8.409,6.947 4.263,10.819l-308.525,287.944c-5.532,5.162 -13.766,-2.113 -9.324,-8.238l146.049,-201.478c2.993,-4.131 0.043,-9.918 -5.06,-9.918l-186.283,-0c-5.579,-0 -8.362,-6.754 -4.404,-10.685Z\' style=\'fill:#fff;fill-rule:nonzero;\'/><defs><linearGradient id=\'_Linear1\' x1=\'0\' y1=\'0\' x2=\'1\' y2=\'0\' gradientUnits=\'userSpaceOnUse\' gradientTransform=\'matrix(4.91772e-14,803.125,-803.125,4.91772e-14,401.562,0)\'><stop offset=\'0\' style=\'stop-color:#7bcbd4;stop-opacity:1\'/><stop offset=\'1\' style=\'stop-color:#29c6b7;stop-opacity:1\'/></linearGradient></defs></svg>","description":"An alert and notification block inspired by Chakra UI.","keywords":["alert","info","hint","success","error","notice","notification","warning","chakra"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"align":{"type":"string","default":"center"},"alertType":{"type":"string","default":"success"},"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"descriptionEnabled":{"type":"boolean","default":true},"titleEnabled":{"type":"boolean","default":true},"buttonEnabled":{"type":"boolean","default":false},"iconEnabled":{"type":"boolean","default":true},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"boolean","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"string","default":"650"},"baseFontSize":{"type":"number","default":18},"icon":{"type":"string","default":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M24 44q-4.25 0-7.9-1.525-3.65-1.525-6.35-4.225-2.7-2.7-4.225-6.35Q4 28.25 4 24q0-4.2 1.525-7.85Q7.05 12.5 9.75 9.8q2.7-2.7 6.35-4.25Q19.75 4 24 4q3.75 0 7 1.2t5.85 3.3l-2.15 2.15q-2.2-1.75-4.9-2.7Q27.1 7 24 7q-7.25 0-12.125 4.875T7 24q0 7.25 4.875 12.125T24 41q7.25 0 12.125-4.875T41 24q0-1.5-.225-2.925-.225-1.425-.675-2.775l2.3-2.3q.8 1.85 1.2 3.85.4 2 .4 4.15 0 4.25-1.55 7.9-1.55 3.65-4.25 6.35-2.7 2.7-6.35 4.225Q28.2 44 24 44Zm-2.95-10.9-8.25-8.3 2.25-2.25 6 6 20.7-20.7 2.3 2.25Z\'/></svg>"},"enableCustomFonts":{"type":"boolean","default":true},"variant":{"type":"string","default":"subtle"},"mode":{"type":"string","default":"light"},"enableDropShadow":{"type":"boolean","default":false},"iconVerticalAlignment":{"type":"string","default":"top"},"uniqueId":{"type":"string","default":""},"alertGroup":{"type":"string","default":"chakra"},"closeButtonEnabled":{"type":"boolean","default":false},"closeButtonExpiration":{"type":"number","default":0},"innerBlocksEnabled":{"type":"boolean","default":false},"colorPrimary":{"type":"string","default":"var(--alerts-dlx-chakra-color-primary, #014361)"},"colorBorder":{"type":"string","default":"var(--alerts-dlx-chakra-color-border, #014361)"},"colorAccent":{"type":"string","default":"var(--alerts-dlx-chakra-color-accent, #3182ce)"},"colorAlt":{"type":"string","default":"var(--alerts-dlx-chakra-color-alt, #2d76bb)"},"colorAltHover":{"type":"string","default":"var(--alerts-dlx-chakra-color-alt-hover, #2d76bb)"},"colorAltText":{"type":"string","default":"var(--alerts-dlx-chakra-color-alt-text, #ffffff)"},"colorAltTextHover":{"type":"string","default":"var(--alerts-dlx-chakra-color-alt-text-hover, #ffffff)"},"colorBold":{"type":"string","default":"var(--alerts-dlx-chakra-color-bold, #2d76bb)"},"colorLight":{"type":"string","default":"var(--alerts-dlx-chakra-color-light, #bee3f8)"},"isBlockEditorialOnly":{"type":"boolean","default":false},"isBlockReadOnly":{"type":"boolean","default":false},"iconSource":{"type":"string","default":"icon"},"imageUrl":{"type":"string","default":""},"imageId":{"type":"number","default":0}},"example":{"attributes":{"alertType":"info","alertTitle":"Sample alert title","alertDescription":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>","buttonEnabled":true,"baseFontSize":14,"buttonText":"Learn More","icon":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M22.65 34h3V22h-3ZM24 18.3q.7 0 1.175-.45.475-.45.475-1.15t-.475-1.2Q24.7 15 24 15q-.7 0-1.175.5-.475.5-.475 1.2t.475 1.15q.475.45 1.175.45ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z\' /></svg>"}},"styles":[{"name":"success","label":"Success","isDefault":true},{"name":"info","label":"Info"},{"name":"warning","label":"Warning"},{"name":"error","label":"Error"},{"name":"custom","label":"Custom"}],"supports":{"anchor":true,"align":true,"className":true},"editorScript":"alerts-dlx-block","editorStyle":["alerts-dlx-block-editor-styles","alerts-dlx-chakra-styles","alerts-dlx-block-editor-styles-lato"]}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","title":"Chakra Alert","apiVersion":3,"name":"mediaron/alerts-dlx-chakra","category":"alertsdlx","icon":"<svg width=\'100%\' height=\'100%\' viewBox=\'0 0 804 804\' version=\'1.1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\' xml:space=\'preserve\' xmlns:serif=\'http://www.serif.com/\' style=\'fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;\'><path fill=\'#60BFC1\' d=\'M803.125,401.563c0,-221.629 -179.934,-401.563 -401.563,-401.563c-221.628,0 -401.562,179.934 -401.562,401.563c0,221.628 179.934,401.562 401.563,401.562c221.628,0 401.562,-179.934 401.562,-401.563Z\' style=\'fill:url(#_Linear1);\'/><path fill=\'#FFFFFF\' d=\'M217.369,418.703l273.725,-271.841c5.112,-5.078 13.344,1.102 9.89,7.428l-101.878,186.726c-2.275,4.162 0.741,9.243 5.485,9.243l176.062,0c5.672,0 8.409,6.947 4.263,10.819l-308.525,287.944c-5.532,5.162 -13.766,-2.113 -9.324,-8.238l146.049,-201.478c2.993,-4.131 0.043,-9.918 -5.06,-9.918l-186.283,-0c-5.579,-0 -8.362,-6.754 -4.404,-10.685Z\' style=\'fill:#fff;fill-rule:nonzero;\'/><defs><linearGradient id=\'_Linear1\' x1=\'0\' y1=\'0\' x2=\'1\' y2=\'0\' gradientUnits=\'userSpaceOnUse\' gradientTransform=\'matrix(4.91772e-14,803.125,-803.125,4.91772e-14,401.562,0)\'><stop offset=\'0\' style=\'stop-color:#7bcbd4;stop-opacity:1\'/><stop offset=\'1\' style=\'stop-color:#29c6b7;stop-opacity:1\'/></linearGradient></defs></svg>","description":"An alert and notification block inspired by Chakra UI.","keywords":["alert","info","hint","success","error","notice","notification","warning","chakra"],"version":"1.0.0","textdomain":"alerts-dlx","attributes":{"align":{"type":"string","default":"center"},"alertType":{"type":"string","default":"success"},"alertTitle":{"type":"string","default":""},"alertDescription":{"type":"string","default":""},"descriptionEnabled":{"type":"boolean","default":true},"titleEnabled":{"type":"boolean","default":true},"buttonEnabled":{"type":"boolean","default":false},"iconEnabled":{"type":"boolean","default":true},"buttonText":{"type":"string","default":""},"buttonUrl":{"type":"string","default":""},"buttonHasUrl":{"type":"boolean","default":false},"buttonTarget":{"type":"boolean","default":false},"buttonRelNoFollow":{"type":"boolean","default":false},"buttonRelSponsored":{"type":"boolean","default":false},"maximumWidthUnit":{"type":"string","default":"px"},"maximumWidth":{"type":"string","default":"650"},"baseFontSize":{"type":"number","default":18},"icon":{"type":"string","default":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M24 44q-4.25 0-7.9-1.525-3.65-1.525-6.35-4.225-2.7-2.7-4.225-6.35Q4 28.25 4 24q0-4.2 1.525-7.85Q7.05 12.5 9.75 9.8q2.7-2.7 6.35-4.25Q19.75 4 24 4q3.75 0 7 1.2t5.85 3.3l-2.15 2.15q-2.2-1.75-4.9-2.7Q27.1 7 24 7q-7.25 0-12.125 4.875T7 24q0 7.25 4.875 12.125T24 41q7.25 0 12.125-4.875T41 24q0-1.5-.225-2.925-.225-1.425-.675-2.775l2.3-2.3q.8 1.85 1.2 3.85.4 2 .4 4.15 0 4.25-1.55 7.9-1.55 3.65-4.25 6.35-2.7 2.7-6.35 4.225Q28.2 44 24 44Zm-2.95-10.9-8.25-8.3 2.25-2.25 6 6 20.7-20.7 2.3 2.25Z\'/></svg>"},"enableCustomFonts":{"type":"boolean","default":true},"variant":{"type":"string","default":"subtle"},"mode":{"type":"string","default":"light"},"enableDropShadow":{"type":"boolean","default":false},"iconVerticalAlignment":{"type":"string","default":"top"},"uniqueId":{"type":"string","default":""},"alertGroup":{"type":"string","default":"chakra"},"closeButtonEnabled":{"type":"boolean","default":false},"closeButtonExpiration":{"type":"number","default":0},"innerBlocksEnabled":{"type":"boolean","default":false},"colorPrimary":{"type":"string","default":"var(--alerts-dlx-chakra-color-primary, #014361)"},"colorBorder":{"type":"string","default":"var(--alerts-dlx-chakra-color-border, #014361)"},"colorAccent":{"type":"string","default":"var(--alerts-dlx-chakra-color-accent, #3182ce)"},"colorAlt":{"type":"string","default":"var(--alerts-dlx-chakra-color-alt, #2d76bb)"},"colorAltHover":{"type":"string","default":"var(--alerts-dlx-chakra-color-alt-hover, #2d76bb)"},"colorAltText":{"type":"string","default":"var(--alerts-dlx-chakra-color-alt-text, #ffffff)"},"colorAltTextHover":{"type":"string","default":"var(--alerts-dlx-chakra-color-alt-text-hover, #ffffff)"},"colorBold":{"type":"string","default":"var(--alerts-dlx-chakra-color-bold, #2d76bb)"},"colorLight":{"type":"string","default":"var(--alerts-dlx-chakra-color-light, #bee3f8)"},"isBlockEditorialOnly":{"type":"boolean","default":false},"isBlockReadOnly":{"type":"boolean","default":false},"iconSource":{"type":"string","default":"icon"},"imageUrl":{"type":"string","default":""},"imageId":{"type":"number","default":0}},"example":{"attributes":{"alertType":"info","alertTitle":"Sample alert title","alertDescription":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>","buttonEnabled":true,"baseFontSize":14,"buttonText":"Learn More","icon":"<svg xmlns=\'http://www.w3.org/2000/svg\' height=\'48\' width=\'48\' viewBox=\'0 0 48 48\'><path d=\'M22.65 34h3V22h-3ZM24 18.3q.7 0 1.175-.45.475-.45.475-1.15t-.475-1.2Q24.7 15 24 15q-.7 0-1.175.5-.475.5-.475 1.2t.475 1.15q.475.45 1.175.45ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z\' /></svg>"}},"styles":[{"name":"success","label":"Success","isDefault":true},{"name":"info","label":"Info"},{"name":"warning","label":"Warning"},{"name":"error","label":"Error"},{"name":"custom","label":"Custom"}],"supports":{"anchor":true,"align":["center","wide","full"],"className":true},"editorScript":"alerts-dlx-block","editorStyle":["alerts-dlx-block-editor-styles","alerts-dlx-chakra-styles","alerts-dlx-block-editor-styles-lato"]}');
 
 /***/ }),
 
@@ -5910,6 +5910,116 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/blocks/plugins/alert-style-toolbar.js":
+/*!******************************************************!*\
+  !*** ./src/js/blocks/plugins/alert-style-toolbar.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/hooks */ "@wordpress/hooks");
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
+/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/styles.js");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _utils_alert_parent_inspector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/alert-parent-inspector */ "./src/js/blocks/utils/alert-parent-inspector.js");
+/* harmony import */ var _utils_alert_style_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../utils/alert-style-utils */ "./src/js/blocks/utils/alert-style-utils.js");
+/**
+ * Block toolbar dropdown for selecting alert styles on AlertsDLX blocks.
+ */
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * HOC that adds an alert style dropdown to alert block toolbars.
+ *
+ * @param {Function} BlockEdit Original BlockEdit component.
+ * @return {Function}
+ */
+var withAlertStyleToolbar = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_2__.createHigherOrderComponent)(function (BlockEdit) {
+  return function (props) {
+    var name = props.name,
+      attributes = props.attributes,
+      setAttributes = props.setAttributes,
+      clientId = props.clientId;
+    if (!_utils_alert_parent_inspector__WEBPACK_IMPORTED_MODULE_7__.ALERT_BLOCK_NAMES.includes(name)) {
+      return /*#__PURE__*/React.createElement(BlockEdit, props);
+    }
+    var alertType = attributes.alertType,
+      className = attributes.className;
+    var _useMemo = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+        return (0,_utils_alert_style_utils__WEBPACK_IMPORTED_MODULE_8__.getAlertStyleOptions)(name);
+      }, [name]),
+      presets = _useMemo.presets,
+      customLabel = _useMemo.customLabel;
+    var currentStyleLabel = (0,_utils_alert_style_utils__WEBPACK_IMPORTED_MODULE_8__.getCurrentStyleLabel)(alertType, presets, customLabel);
+    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.BlockControls, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToolbarGroup, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__.__)("Alert style", "alerts-dlx")
+    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ToolbarItem, null, function (toggleProps) {
+      return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.DropdownMenu, {
+        icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__.__)("Alert style", "alerts-dlx"),
+        text: currentStyleLabel,
+        className: "alerts-dlx-alert-style-toolbar",
+        toggleProps: toggleProps
+      }, function (_ref) {
+        var onClose = _ref.onClose;
+        return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.MenuGroup, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_6__.__)("Styles", "alerts-dlx")
+        }, presets.map(function (style) {
+          return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.MenuItem, {
+            key: style.name,
+            role: "menuitemradio",
+            isSelected: alertType === style.name,
+            onClick: function onClick() {
+              (0,_utils_alert_style_utils__WEBPACK_IMPORTED_MODULE_8__.applyAlertStyle)({
+                className: className,
+                styleName: style.name,
+                setAttributes: setAttributes
+              });
+              onClose();
+            },
+            icon: alertType === style.name ? "yes" : null
+          }, style.label);
+        }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.MenuItem, {
+          role: "menuitemradio",
+          isSelected: "custom" === alertType,
+          onClick: function onClick() {
+            (0,_utils_alert_style_utils__WEBPACK_IMPORTED_MODULE_8__.applyAlertStyle)({
+              className: className,
+              styleName: "custom",
+              setAttributes: setAttributes
+            });
+            (0,_utils_alert_style_utils__WEBPACK_IMPORTED_MODULE_8__.openAlertInspectorTab)(clientId, "styles");
+            onClose();
+          },
+          icon: alertType === "custom" ? "yes" : null
+        }, customLabel)));
+      });
+    }))), /*#__PURE__*/React.createElement(BlockEdit, props));
+  };
+}, "withAlertStyleToolbar");
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_1__.addFilter)("editor.BlockEdit", "alerts-dlx/alert-style-toolbar", withAlertStyleToolbar);
+
+/***/ }),
+
 /***/ "./src/js/blocks/plugins/custom-colors.js":
 /*!************************************************!*\
   !*** ./src/js/blocks/plugins/custom-colors.js ***!
@@ -7074,6 +7184,106 @@ function openAlertParentInspectorTab(alertClientId, tab) {
 
 /***/ }),
 
+/***/ "./src/js/blocks/utils/alert-style-utils.js":
+/*!**************************************************!*\
+  !*** ./src/js/blocks/utils/alert-style-utils.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   applyAlertStyle: () => (/* binding */ applyAlertStyle),
+/* harmony export */   getAlertStyleOptions: () => (/* binding */ getAlertStyleOptions),
+/* harmony export */   getCurrentStyleLabel: () => (/* binding */ getCurrentStyleLabel),
+/* harmony export */   openAlertInspectorTab: () => (/* binding */ openAlertInspectorTab)
+/* harmony export */ });
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _alert_parent_inspector__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./alert-parent-inspector */ "./src/js/blocks/utils/alert-parent-inspector.js");
+/**
+ * Alert block style helpers for toolbar style picker.
+ */
+
+
+
+
+
+/**
+ * Read preset and custom style options from block registration.
+ *
+ * @param {string} blockName Block name.
+ * @return {{ presets: Object[], hasCustom: boolean, customLabel: string }}
+ */
+function getAlertStyleOptions(blockName) {
+  var _getBlockType$styles, _getBlockType, _customFromMeta$label;
+  var blockStyles = (_getBlockType$styles = (_getBlockType = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.getBlockType)(blockName)) === null || _getBlockType === void 0 ? void 0 : _getBlockType.styles) !== null && _getBlockType$styles !== void 0 ? _getBlockType$styles : [];
+  var presets = blockStyles.filter(function (style) {
+    return style.name !== 'custom';
+  });
+  var customFromMeta = blockStyles.find(function (style) {
+    return style.name === 'custom';
+  });
+  return {
+    presets: presets,
+    hasCustom: true,
+    customLabel: (_customFromMeta$label = customFromMeta === null || customFromMeta === void 0 ? void 0 : customFromMeta.label) !== null && _customFromMeta$label !== void 0 ? _customFromMeta$label : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Custom', 'alerts-dlx')
+  };
+}
+
+/**
+ * Apply an alert style to block attributes.
+ *
+ * @param {Object}   params              Parameters.
+ * @param {string}   params.className    Current block className.
+ * @param {string}   params.styleName    Style slug to apply.
+ * @param {Function} params.setAttributes Set attributes callback.
+ */
+function applyAlertStyle(_ref) {
+  var className = _ref.className,
+    styleName = _ref.styleName,
+    setAttributes = _ref.setAttributes;
+  var trimmedClassName = (className || '').replace(/\bis-style-\S+/g, '').trim().replace(/\s+/g, ' ');
+  var newClassName = trimmedClassName ? "".concat(trimmedClassName, " is-style-").concat(styleName) : "is-style-".concat(styleName);
+  setAttributes({
+    alertType: styleName,
+    className: newClassName
+  });
+}
+
+/**
+ * Open an alert block inspector tab.
+ *
+ * @param {string} clientId Block client ID.
+ * @param {string} tab      Inspector tab: 'settings' or 'styles'.
+ */
+function openAlertInspectorTab(clientId, tab) {
+  (0,_alert_parent_inspector__WEBPACK_IMPORTED_MODULE_2__.openAlertParentInspectorTab)(clientId, tab);
+}
+
+/**
+ * Get the display label for the current alert style.
+ *
+ * @param {string}   alertType   Current alert type slug.
+ * @param {Object[]} presets    Preset style options.
+ * @param {string}   customLabel Custom style label.
+ * @return {string}
+ */
+function getCurrentStyleLabel(alertType, presets, customLabel) {
+  var _match$label;
+  if ('custom' === alertType) {
+    return customLabel;
+  }
+  var match = presets.find(function (style) {
+    return style.name === alertType;
+  });
+  return (_match$label = match === null || match === void 0 ? void 0 : match.label) !== null && _match$label !== void 0 ? _match$label : alertType;
+}
+
+/***/ }),
+
 /***/ "./src/js/blocks/utils/sanitize-svg/index.js":
 /*!***************************************************!*\
   !*** ./src/js/blocks/utils/sanitize-svg/index.js ***!
@@ -7316,7 +7526,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_blocks_plugins_custom_colors__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/blocks/plugins/custom-colors */ "./src/js/blocks/plugins/custom-colors.js");
 /* harmony import */ var _js_blocks_plugins_icon_image_selector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/blocks/plugins/icon-image-selector */ "./src/js/blocks/plugins/icon-image-selector.js");
 /* harmony import */ var _js_blocks_plugins_inner_block_parent_toolbar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./js/blocks/plugins/inner-block-parent-toolbar */ "./src/js/blocks/plugins/inner-block-parent-toolbar.js");
-/* harmony import */ var _js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/blocks/components/icons/AlertsLogo */ "./src/js/blocks/components/icons/AlertsLogo.js");
+/* harmony import */ var _js_blocks_plugins_alert_style_toolbar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/blocks/plugins/alert-style-toolbar */ "./src/js/blocks/plugins/alert-style-toolbar.js");
+/* harmony import */ var _js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./js/blocks/components/icons/AlertsLogo */ "./src/js/blocks/components/icons/AlertsLogo.js");
+
 
 
 
@@ -7329,7 +7541,7 @@ __webpack_require__.r(__webpack_exports__);
 
 (function () {
   wp.blocks.updateCategory("alertsdlx", {
-    icon: /*#__PURE__*/React.createElement(_js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    icon: /*#__PURE__*/React.createElement(_js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_10__["default"], {
       width: 16,
       height: 16
     })
