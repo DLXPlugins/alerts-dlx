@@ -5910,6 +5910,83 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/blocks/plugins/alert-elements-toolbar.js":
+/*!*********************************************************!*\
+  !*** ./src/js/blocks/plugins/alert-elements-toolbar.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/hooks */ "@wordpress/hooks");
+/* harmony import */ var _wordpress_hooks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/compose */ "@wordpress/compose");
+/* harmony import */ var _wordpress_compose__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _utils_alert_parent_inspector__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/alert-parent-inspector */ "./src/js/blocks/utils/alert-parent-inspector.js");
+/* harmony import */ var _utils_alert_elements_utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/alert-elements-utils */ "./src/js/blocks/utils/alert-elements-utils.js");
+/**
+ * Block toolbar dropdown for alert element visibility on AlertsDLX blocks.
+ */
+
+
+
+
+
+
+
+
+
+/**
+ * HOC that adds alert element visibility toggles to alert block toolbars.
+ *
+ * @param {Function} BlockEdit Original BlockEdit component.
+ * @return {Function}
+ */
+var withAlertElementsToolbar = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_1__.createHigherOrderComponent)(function (BlockEdit) {
+  return function (props) {
+    var name = props.name,
+      attributes = props.attributes,
+      setAttributes = props.setAttributes;
+    if (!_utils_alert_parent_inspector__WEBPACK_IMPORTED_MODULE_5__.ALERT_BLOCK_NAMES.includes(name)) {
+      return /*#__PURE__*/React.createElement(BlockEdit, props);
+    }
+    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToolbarGroup, {
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Alert elements", "alerts-dlx")
+    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToolbarItem, null, function (toggleProps) {
+      return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.DropdownMenu, {
+        icon: "admin-generic",
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Alert elements", "alerts-dlx"),
+        className: "alerts-dlx-alert-elements-toolbar",
+        toggleProps: toggleProps
+      }, function () {
+        return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.MenuGroup, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Alert elements", "alerts-dlx")
+        }, _utils_alert_elements_utils__WEBPACK_IMPORTED_MODULE_6__.ALERT_ELEMENT_TOGGLES.map(function (toggle) {
+          var isEnabled = attributes[toggle.attribute];
+          return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.MenuItem, {
+            key: toggle.attribute,
+            role: "menuitemcheckbox",
+            isSelected: isEnabled,
+            icon: isEnabled ? "yes" : null,
+            onClick: function onClick() {
+              (0,_utils_alert_elements_utils__WEBPACK_IMPORTED_MODULE_6__.toggleAlertElement)(toggle.attribute, isEnabled, setAttributes);
+            }
+          }, toggle.label);
+        }));
+      });
+    }))), /*#__PURE__*/React.createElement(BlockEdit, props));
+  };
+}, "withAlertElementsToolbar");
+(0,_wordpress_hooks__WEBPACK_IMPORTED_MODULE_0__.addFilter)("editor.BlockEdit", "alerts-dlx/alert-elements-toolbar", withAlertElementsToolbar);
+
+/***/ }),
+
 /***/ "./src/js/blocks/plugins/alert-style-toolbar.js":
 /*!******************************************************!*\
   !*** ./src/js/blocks/plugins/alert-style-toolbar.js ***!
@@ -7087,6 +7164,63 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/js/blocks/utils/alert-elements-utils.js":
+/*!*****************************************************!*\
+  !*** ./src/js/blocks/utils/alert-elements-utils.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ALERT_ELEMENT_TOGGLES: () => (/* binding */ ALERT_ELEMENT_TOGGLES),
+/* harmony export */   toggleAlertElement: () => (/* binding */ toggleAlertElement)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+/**
+ * Alert block element visibility toggle helpers for toolbar controls.
+ */
+
+
+
+/**
+ * Toolbar toggle configuration for alert element visibility.
+ */
+var ALERT_ELEMENT_TOGGLES = [{
+  attribute: 'iconEnabled',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Icon', 'alerts-dlx')
+}, {
+  attribute: 'titleEnabled',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Title', 'alerts-dlx')
+}, {
+  attribute: 'descriptionEnabled',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description', 'alerts-dlx')
+}, {
+  attribute: 'buttonEnabled',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button', 'alerts-dlx')
+}, {
+  attribute: 'closeButtonEnabled',
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Close Button', 'alerts-dlx')
+}];
+
+/**
+ * Toggle an alert element visibility attribute.
+ *
+ * @param {string}   attribute      Attribute name to toggle.
+ * @param {boolean}  currentValue   Current attribute value.
+ * @param {Function} setAttributes  Set attributes callback.
+ */
+function toggleAlertElement(attribute, currentValue, setAttributes) {
+  setAttributes(_defineProperty({}, attribute, !currentValue));
+}
+
+/***/ }),
+
 /***/ "./src/js/blocks/utils/alert-parent-inspector.js":
 /*!*******************************************************!*\
   !*** ./src/js/blocks/utils/alert-parent-inspector.js ***!
@@ -7527,7 +7661,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_blocks_plugins_icon_image_selector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/blocks/plugins/icon-image-selector */ "./src/js/blocks/plugins/icon-image-selector.js");
 /* harmony import */ var _js_blocks_plugins_inner_block_parent_toolbar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./js/blocks/plugins/inner-block-parent-toolbar */ "./src/js/blocks/plugins/inner-block-parent-toolbar.js");
 /* harmony import */ var _js_blocks_plugins_alert_style_toolbar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/blocks/plugins/alert-style-toolbar */ "./src/js/blocks/plugins/alert-style-toolbar.js");
-/* harmony import */ var _js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./js/blocks/components/icons/AlertsLogo */ "./src/js/blocks/components/icons/AlertsLogo.js");
+/* harmony import */ var _js_blocks_plugins_alert_elements_toolbar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./js/blocks/plugins/alert-elements-toolbar */ "./src/js/blocks/plugins/alert-elements-toolbar.js");
+/* harmony import */ var _js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./js/blocks/components/icons/AlertsLogo */ "./src/js/blocks/components/icons/AlertsLogo.js");
+
 
 
 
@@ -7541,7 +7677,7 @@ __webpack_require__.r(__webpack_exports__);
 
 (function () {
   wp.blocks.updateCategory("alertsdlx", {
-    icon: /*#__PURE__*/React.createElement(_js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    icon: /*#__PURE__*/React.createElement(_js_blocks_components_icons_AlertsLogo__WEBPACK_IMPORTED_MODULE_11__["default"], {
       width: 16,
       height: 16
     })
