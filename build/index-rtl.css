@@ -39,14 +39,17 @@
 }
 
 .alerts-dlx-icon-picker {
+  position: relative;
   padding: 16px;
+  padding-top: 12px;
   text-align: center;
 }
 
 .alerts-dlx-icon-picker-header {
-  display: flex;
-  justify-content: flex-end;
-  margin: -8px 0 4px -8px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  z-index: 1;
 }
 
 .alerts-dlx-icon-picker-close.components-button.has-icon {
@@ -58,6 +61,7 @@
 .alerts-dlx-icon-tab-panel .components-tab-panel__tabs {
   justify-content: center;
   margin-bottom: 12px;
+  padding-left: 28px;
 }
 .alerts-dlx-icon-tab-panel .components-tab-panel__tabs-item {
   font-weight: 500;

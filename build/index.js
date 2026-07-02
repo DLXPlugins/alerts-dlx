@@ -3242,6 +3242,7 @@ var AlertButton = function AlertButton(props) {
     _useState4 = _slicedToArray(_useState3, 2),
     linkIconAnchor = _useState4[0],
     setLinkIconAnchor = _useState4[1];
+  var ignoreCloseRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useRef)(false);
   var attributes = props.attributes,
     setAttributes = props.setAttributes;
   var buttonText = attributes.buttonText,
@@ -3249,32 +3250,50 @@ var AlertButton = function AlertButton(props) {
     buttonTarget = attributes.buttonTarget,
     buttonRelNoFollow = attributes.buttonRelNoFollow,
     buttonRelSponsored = attributes.buttonRelSponsored;
-  var toggleLinkPopover = function toggleLinkPopover() {
-    setIsPopOverVisible(function (isOpen) {
-      return !isOpen;
+  var closeLinkPopover = function closeLinkPopover() {
+    if (ignoreCloseRef.current) {
+      return;
+    }
+    setIsPopOverVisible(false);
+  };
+  var openLinkPopover = function openLinkPopover() {
+    ignoreCloseRef.current = true;
+    setIsPopOverVisible(true);
+    requestAnimationFrame(function () {
+      ignoreCloseRef.current = false;
     });
   };
   var onLinkToggleMouseDown = function onLinkToggleMouseDown(event) {
     event.preventDefault();
-    toggleLinkPopover();
+    if (isPopOverVisible) {
+      ignoreCloseRef.current = false;
+      setIsPopOverVisible(false);
+    } else {
+      openLinkPopover();
+    }
   };
   var onLinkToggleKeyDown = function onLinkToggleKeyDown(event) {
-    if ('Enter' !== event.key && ' ' !== event.key) {
+    if ("Enter" !== event.key && " " !== event.key) {
       return;
     }
     event.preventDefault();
-    toggleLinkPopover();
+    if (isPopOverVisible) {
+      ignoreCloseRef.current = false;
+      setIsPopOverVisible(false);
+    } else {
+      openLinkPopover();
+    }
   };
   return /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-button-wrapper",
     style: {
-      display: 'inline-flex'
+      display: "inline-flex"
     }
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
     className: "alerts-dlx-button button-reset"
   }, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
     tagName: "span",
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Button text', 'alerts-dlx'),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Button text", "alerts-dlx"),
     value: buttonText,
     className: "alerts-dlx-button-text",
     disableLineBreaks: true,
@@ -3289,17 +3308,16 @@ var AlertButton = function AlertButton(props) {
     className: "button-reset alertx-dlx-button-link-icon",
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_2__["default"],
     iconSize: 25,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Choose Link', 'alerts-dlx'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Choose Link", "alerts-dlx"),
     onMouseDown: onLinkToggleMouseDown,
     onKeyDown: onLinkToggleKeyDown
   }), isPopOverVisible && linkIconAnchor && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Popover, {
     anchor: linkIconAnchor,
     noArrow: false,
-    onClose: function onClose() {
-      return setIsPopOverVisible(false);
-    }
+    focusOnMount: false,
+    onClose: closeLinkPopover
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BaseControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Button Link', 'alerts-dlx'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Button Link", "alerts-dlx"),
     className: "alerts-dlx-button-popover-base-control"
   }, /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-button-link-select"
@@ -3309,8 +3327,8 @@ var AlertButton = function AlertButton(props) {
     inlinePicker: true,
     isActive: isPopOverVisible
   }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Open link in a new tab', 'alerts-dlx'),
-    checked: buttonTarget || '',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Open link in a new tab", "alerts-dlx"),
+    checked: buttonTarget || "",
     onChange: function onChange(value) {
       setAttributes({
         buttonTarget: value
@@ -3318,8 +3336,8 @@ var AlertButton = function AlertButton(props) {
     },
     className: "alerts-dlx-link-toggle"
   }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Add rel="nofollow"', 'alerts-dlx'),
-    checked: buttonRelNoFollow || '',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Add rel="nofollow"', "alerts-dlx"),
+    checked: buttonRelNoFollow || "",
     onChange: function onChange(value) {
       setAttributes({
         buttonRelNoFollow: value
@@ -3327,8 +3345,8 @@ var AlertButton = function AlertButton(props) {
     },
     className: "alerts-dlx-link-toggle"
   }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Add rel="sponsored"', 'alerts-dlx'),
-    checked: buttonRelSponsored || '',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Add rel="sponsored"', "alerts-dlx"),
+    checked: buttonRelSponsored || "",
     onChange: function onChange(value) {
       setAttributes({
         buttonRelSponsored: value
@@ -3420,6 +3438,7 @@ var AlertButtonUrlPopover = function AlertButtonUrlPopover(_ref) {
   }
   return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Popover, {
     anchor: anchor,
+    focusOnMount: false,
     onClose: onClose,
     className: "alerts-dlx-button-link-popover"
   }, /*#__PURE__*/React.createElement("div", {
@@ -3946,15 +3965,6 @@ var IconPicker = function IconPicker(props) {
   var closeIconPopover = function closeIconPopover() {
     setIsPopOverVisible(false);
   };
-  var toggleIconPopover = function toggleIconPopover() {
-    if (isPopoverVisible) {
-      setIsPopOverVisible(false);
-      return;
-    }
-    setSelectedIcon(defaultSvg);
-    setInitialTabName(isPresetIcon(defaultSvg) ? "icons" : "custom");
-    setIsPopOverVisible(true);
-  };
   var onIconPreviewMouseDown = function onIconPreviewMouseDown(event) {
     event.preventDefault();
     setIsPopOverVisible(!isPopoverVisible);
@@ -3987,14 +3997,7 @@ var IconPicker = function IconPicker(props) {
     onClose: closeIconPopover
   }, /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-icon-picker"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-icon-picker-header"
-  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"],
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Close", "alerts-dlx"),
-    onClick: closeIconPopover,
-    className: "alerts-dlx-icon-picker-close"
-  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TabPanel, {
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TabPanel, {
     key: initialTabName,
     className: "alerts-dlx-icon-tab-panel",
     activeClass: "is-active",
@@ -4019,7 +4022,14 @@ var IconPicker = function IconPicker(props) {
       setAttributes: setAttributes,
       onApply: closeIconPopover
     });
-  }))));
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "alerts-dlx-icon-picker-header"
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"],
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Close", "alerts-dlx"),
+    onClick: closeIconPopover,
+    className: "alerts-dlx-icon-picker-close"
+  })))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IconPicker);
 

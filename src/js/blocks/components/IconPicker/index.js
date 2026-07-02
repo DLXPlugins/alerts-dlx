@@ -139,17 +139,6 @@ const IconPicker = (props) => {
     setIsPopOverVisible(false);
   };
 
-  const toggleIconPopover = () => {
-    if (isPopoverVisible) {
-      setIsPopOverVisible(false);
-      return;
-    }
-
-    setSelectedIcon(defaultSvg);
-    setInitialTabName(isPresetIcon(defaultSvg) ? "icons" : "custom");
-    setIsPopOverVisible(true);
-  };
-
   const onIconPreviewMouseDown = (event) => {
     event.preventDefault();
     setIsPopOverVisible(!isPopoverVisible);
@@ -191,14 +180,6 @@ const IconPicker = (props) => {
           onClose={closeIconPopover}
         >
           <div className="alerts-dlx-icon-picker">
-            <div className="alerts-dlx-icon-picker-header">
-              <Button
-                icon={closeSmall}
-                label={__("Close", "alerts-dlx")}
-                onClick={closeIconPopover}
-                className="alerts-dlx-icon-picker-close"
-              />
-            </div>
             <TabPanel
               key={initialTabName}
               className="alerts-dlx-icon-tab-panel"
@@ -232,6 +213,14 @@ const IconPicker = (props) => {
                 );
               }}
             </TabPanel>
+            <div className="alerts-dlx-icon-picker-header">
+              <Button
+                icon={closeSmall}
+                label={__("Close", "alerts-dlx")}
+                onClick={closeIconPopover}
+                className="alerts-dlx-icon-picker-close"
+              />
+            </div>
           </div>
         </Popover>
       )}

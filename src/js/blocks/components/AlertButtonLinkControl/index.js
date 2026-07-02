@@ -37,6 +37,7 @@ const AlertButtonUrlPopover = ({
   return (
     <Popover
       anchor={anchor}
+      focusOnMount={false}
       onClose={onClose}
       className="alerts-dlx-button-link-popover"
     >
