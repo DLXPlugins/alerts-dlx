@@ -3877,21 +3877,24 @@ var CustomIconTab = function CustomIconTab(_ref2) {
     }
   })), /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-custom-icon-input"
-  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('SVG Code', 'alerts-dlx'),
-    value: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])(selectedIcon),
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextareaControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("SVG Code", "alerts-dlx"),
+    value: selectedIcon,
     onChange: function onChange(value) {
       setSelectedIcon(value);
-    }
+    },
+    className: "alerts-dlx-custom-icon-textarea",
+    rows: 7
   }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     variant: "primary",
     onClick: function onClick() {
+      var sanitizedIcon = (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])(selectedIcon);
       setAttributes({
-        icon: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])(selectedIcon)
+        icon: sanitizedIcon
       });
-      setSelectedIcon(selectedIcon);
+      setSelectedIcon(sanitizedIcon);
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Set Icon', 'alerts-dlx'))));
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Set Icon", "alerts-dlx"))));
 };
 var IconPicker = function IconPicker(props) {
   var _useState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(props.defaultSvg),
@@ -3906,7 +3909,7 @@ var IconPicker = function IconPicker(props) {
     _useState6 = _slicedToArray(_useState5, 2),
     popoverRef = _useState6[0],
     setPopoverRef = _useState6[1];
-  var _useState7 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)('icons'),
+  var _useState7 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)("icons"),
     _useState8 = _slicedToArray(_useState7, 2),
     initialTabName = _useState8[0],
     setInitialTabName = _useState8[1];
@@ -3931,7 +3934,7 @@ var IconPicker = function IconPicker(props) {
   };
   var openIconPopover = function openIconPopover() {
     setSelectedIcon(defaultSvg);
-    setInitialTabName(isPresetIcon(defaultSvg) ? 'icons' : 'custom');
+    setInitialTabName(isPresetIcon(defaultSvg) ? "icons" : "custom");
     setIsPopOverVisible(true);
   };
   var onIconPreviewMouseDown = function onIconPreviewMouseDown(event) {
@@ -3939,7 +3942,7 @@ var IconPicker = function IconPicker(props) {
     openIconPopover();
   };
   var onIconPreviewKeyDown = function onIconPreviewKeyDown(event) {
-    if ('Enter' !== event.key && ' ' !== event.key) {
+    if ("Enter" !== event.key && " " !== event.key) {
       return;
     }
     event.preventDefault();
@@ -3951,7 +3954,7 @@ var IconPicker = function IconPicker(props) {
     className: "alerts-dlx-icon-preview"
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     className: "button-reset alerts-dlx-icon-preview-button",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select icon', 'alerts-dlx'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Select icon", "alerts-dlx"),
     ref: setPopoverRef,
     onMouseDown: onIconPreviewMouseDown,
     onKeyDown: onIconPreviewKeyDown
@@ -3974,14 +3977,14 @@ var IconPicker = function IconPicker(props) {
     activeClass: "is-active",
     initialTabName: initialTabName,
     tabs: [{
-      name: 'icons',
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Icons', 'alerts-dlx')
+      name: "icons",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Icons", "alerts-dlx")
     }, {
-      name: 'custom',
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Set Icon', 'alerts-dlx')
+      name: "custom",
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Custom SVG", "alerts-dlx")
     }]
   }, function (tab) {
-    if ('icons' === tab.name) {
+    if ("icons" === tab.name) {
       return /*#__PURE__*/React.createElement(IconsTab, {
         icons: icons,
         setAttributes: setAttributes

@@ -35,7 +35,7 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/js/blocks/components/IconPicker/editor.scss ***!
   \********************************************************************************************************************************************************************************************************************************************************************************************************/
 .alerts-dlx-icon-popover .components-popover__content > div {
-  min-width: 250px;
+  min-width: 280px;
 }
 
 .alerts-dlx-icon-picker {
@@ -57,7 +57,7 @@
 
 .alerts-dlx-icon-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(max(47px, (100% - 30px) / 4), 1fr));
   grid-gap: 10px;
   justify-content: center;
   max-height: 220px;
@@ -74,8 +74,23 @@
   height: 24px;
 }
 
+.alerts-dlx-custom-icon-input {
+  text-align: left;
+}
+.alerts-dlx-custom-icon-input .alerts-dlx-custom-icon-textarea {
+  margin-bottom: 0;
+}
+.alerts-dlx-custom-icon-input .alerts-dlx-custom-icon-textarea textarea.components-textarea-control__input {
+  width: 100%;
+  min-height: 120px;
+  max-height: 200px;
+  resize: vertical;
+  font-family: monospace;
+  font-size: 12px;
+  line-height: 1.5;
+}
 .alerts-dlx-custom-icon-input .components-button.is-primary {
-  margin-top: 8px;
+  margin-top: 16px;
 }
 
 .components-base-control.alerts-dlx-icon-wrapper {
@@ -94,11 +109,20 @@
 }
 
 .alerts-dlx-custom-icon-preview {
-  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background: #f6f7f7;
+  border: 1px solid #dcdcde;
+  border-radius: 2px;
 }
 .alerts-dlx-custom-icon-preview svg {
-  max-width: 48px;
-  max-height: 48px;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
 }
 
 button.components-button.alerts-dlx-icon-preview-button {
