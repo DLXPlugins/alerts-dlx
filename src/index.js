@@ -10,6 +10,7 @@ import "./js/blocks/plugins/inner-block-parent-toolbar";
 import "./js/blocks/plugins/alert-style-toolbar";
 import "./js/blocks/plugins/alert-elements-toolbar";
 import "./js/blocks/plugins/alert-close-expiration-toolbar";
+import "./js/blocks/plugins/button-sidebar-panel";
 import AlertsLogo from "./js/blocks/components/icons/AlertsLogo";
 
 (function () {

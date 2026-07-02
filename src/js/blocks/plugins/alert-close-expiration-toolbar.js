@@ -50,19 +50,27 @@ const withAlertCloseExpirationToolbar = createHigherOrderComponent(
                 {(toggleProps) => (
                   <DropdownMenu
                     icon={"clock"}
-                    label={__("Close duration", "alerts-dlx")}
+                    label={__(
+                      "Close button and expiration visibility duration",
+                      "alerts-dlx"
+                    )}
                     className="alerts-dlx-close-expiration-toolbar"
                     toggleProps={{
                       ...toggleProps,
                       children: (
                         <>
-                          <span>{__("Close duration", "alerts-dlx")}</span>
+                          <span>{__("Close Settings", "alerts-dlx")}</span>
                         </>
                       ),
                     }}
                   >
                     {({ onClose }) => (
-                      <MenuGroup label={__("Close alert for", "alerts-dlx")}>
+                      <MenuGroup
+                        label={__(
+                          "Close alert for how long when closed?",
+                          "alerts-dlx"
+                        )}
+                      >
                         {ALERT_CLOSE_EXPIRATION_PRESETS.map((preset) => (
                           <MenuItem
                             key={preset.seconds}

@@ -1,6 +1,9 @@
-.alerts-dlx-icon-popover .components-popover__content > div {
-	min-width: 350px;
+.alerts-dlx-icon-popover .components-popover__content {}
+
+.alerts-dlx-icon-popover .components-popover__content>div {
+	min-width: 250px;
 }
+
 .alerts-dlx-icon-picker {
 	padding: 16px;
 	text-align: center;
@@ -10,6 +13,7 @@
 		padding: 0;
 	}
 }
+
 .alerts-dlx-icon-list {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -22,40 +26,48 @@
 	li {
 		text-align: center;
 	}
+
 	svg {
 		width: 24px;
 		height: 24px;
 	}
 }
+
 .alerts-dlx-custom-icon-input {
 	button {
 		&:first-child {
 			margin-right: 15px;
 		}
+
 		&:last-child {
 			margin-left: 15px;
 		}
 	}
 }
+
 .components-base-control.alerts-dlx-icon-wrapper {
 	font-size: 1em;
 }
+
 .alerts-dlx-icon-preview {
 	display: flex;
 	justify-content: center;
 	font-size: 1em;
+
 	svg {
 		width: 1.2em;
 		height: 1.2em;
 		margin-top: 0.175em;
 	}
 }
+
 .alerts-dlx-custom-icon-preview {
 	svg {
 		max-width: 48px;
 		max-height: 48px;
 	}
 }
+
 button.components-button.alerts-dlx-icon-preview-button {
 	display: flex;
 	align-items: flex-start;

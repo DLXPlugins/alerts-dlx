@@ -67,6 +67,7 @@ class AlertsDLX {
 		Options::run();
 		( new Admin() )->run();
 		Blocks::run();
+		Rest::run();
 
 		/**
 		 * When AlertsDLX can be extended.
