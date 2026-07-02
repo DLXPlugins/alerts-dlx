@@ -42,9 +42,17 @@
   padding: 16px;
   text-align: center;
 }
-.alerts-dlx-icon-picker h2 {
-  margin: 0;
-  padding: 0;
+
+.alerts-dlx-icon-tab-panel .components-tab-panel__tabs {
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.alerts-dlx-icon-tab-panel .components-tab-panel__tabs-item {
+  font-weight: 500;
+}
+.alerts-dlx-icon-tab-panel .components-tab-panel__tabs-item.is-active {
+  color: var(--wp-admin-theme-color);
+  box-shadow: inset 0 -2px 0 var(--wp-admin-theme-color);
 }
 
 .alerts-dlx-icon-list {
@@ -52,9 +60,11 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
   justify-content: center;
-  max-height: 350px;
+  max-height: 220px;
   overflow: auto;
-  padding-top: 15px;
+  padding-top: 4px;
+  margin: 0;
+  list-style: none;
 }
 .alerts-dlx-icon-list li {
   text-align: center;
@@ -64,11 +74,8 @@
   height: 24px;
 }
 
-.alerts-dlx-custom-icon-input button:first-child {
-  margin-right: 15px;
-}
-.alerts-dlx-custom-icon-input button:last-child {
-  margin-left: 15px;
+.alerts-dlx-custom-icon-input .components-button.is-primary {
+  margin-top: 8px;
 }
 
 .components-base-control.alerts-dlx-icon-wrapper {
@@ -86,6 +93,9 @@
   margin-top: 0.175em;
 }
 
+.alerts-dlx-custom-icon-preview {
+  margin-bottom: 12px;
+}
 .alerts-dlx-custom-icon-preview svg {
   max-width: 48px;
   max-height: 48px;

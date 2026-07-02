@@ -3823,90 +3823,127 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+
+/**
+ * Icon grid tab content.
+ *
+ * @param {Object}   props              Component props.
+ * @param {Object}   props.icons        Preset icon map.
+ * @param {Function} props.setAttributes Block setAttributes callback.
+ * @return {import('react').JSX.Element} Icons tab content.
+ */
+var IconsTab = function IconsTab(_ref) {
+  var icons = _ref.icons,
+    setAttributes = _ref.setAttributes;
+  return /*#__PURE__*/React.createElement("ul", {
+    className: "alerts-dlx-icon-list"
+  }, Object.keys(icons).map(function (svg, i) {
+    return /*#__PURE__*/React.createElement("li", {
+      key: "alerts-dlx-icon-".concat(i)
+    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
+      text: icons[svg].label
+    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+      className: "editor-block-list-item-button",
+      label: icons[svg].label,
+      onClick: function onClick() {
+        setAttributes({
+          icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.renderToString)(icons[svg].icon)
+        });
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "editor-block-types-list__item-icon"
+    }, icons[svg].icon))));
+  }));
+};
+
+/**
+ * Custom SVG tab content.
+ *
+ * @param {Object}   props              Component props.
+ * @param {string}   props.selectedIcon Current SVG draft value.
+ * @param {Function} props.setSelectedIcon Set selected icon draft.
+ * @param {Function} props.setAttributes Block setAttributes callback.
+ * @return {import('react').JSX.Element} Custom icon tab content.
+ */
+var CustomIconTab = function CustomIconTab(_ref2) {
+  var selectedIcon = _ref2.selectedIcon,
+    setSelectedIcon = _ref2.setSelectedIcon,
+    setAttributes = _ref2.setAttributes;
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    className: "alerts-dlx-custom-icon-preview"
+  }, /*#__PURE__*/React.createElement("span", {
+    dangerouslySetInnerHTML: {
+      __html: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])(selectedIcon)
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    className: "alerts-dlx-custom-icon-input"
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('SVG Code', 'alerts-dlx'),
+    value: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])(selectedIcon),
+    onChange: function onChange(value) {
+      setSelectedIcon(value);
+    }
+  }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    variant: "primary",
+    onClick: function onClick() {
+      setAttributes({
+        icon: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])(selectedIcon)
+      });
+      setSelectedIcon(selectedIcon);
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Set Icon', 'alerts-dlx'))));
+};
 var IconPicker = function IconPicker(props) {
-  var _useState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
+  var _useState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(props.defaultSvg),
     _useState2 = _slicedToArray(_useState, 2),
-    isCustomIcon = _useState2[0],
-    setIsCustomIcon = _useState2[1];
-  var _useState3 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(props.defaultSvg),
+    selectedIcon = _useState2[0],
+    setSelectedIcon = _useState2[1];
+  var _useState3 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
     _useState4 = _slicedToArray(_useState3, 2),
-    selectedIcon = _useState4[0],
-    setSelectedIcon = _useState4[1];
-  var _useState5 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(false),
+    isPopoverVisible = _useState4[0],
+    setIsPopOverVisible = _useState4[1];
+  var _useState5 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(null),
     _useState6 = _slicedToArray(_useState5, 2),
-    isPopoverVisible = _useState6[0],
-    setIsPopOverVisible = _useState6[1];
-  var _useState7 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)(null),
+    popoverRef = _useState6[0],
+    setPopoverRef = _useState6[1];
+  var _useState7 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useState)('icons'),
     _useState8 = _slicedToArray(_useState7, 2),
-    popoverRef = _useState8[0],
-    setPopoverRef = _useState8[1];
+    initialTabName = _useState8[0],
+    setInitialTabName = _useState8[1];
   var defaultSvg = props.defaultSvg,
     setAttributes = props.setAttributes,
     icons = props.icons;
 
   /**
-   * Retrieve popover content for custom icons or regular icons.
+   * Check whether the SVG matches a preset icon.
    *
-   * @return {string} Popover content.
+   * @param {string} svg SVG string to check.
+   * @return {boolean} Whether the SVG is a preset icon.
    */
-  var getPopoverContent = function getPopoverContent() {
-    if (!isCustomIcon) {
-      return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("ul", {
-        className: "alerts-dlx-icon-list"
-      }, Object.keys(icons).map(function (svg, i) {
-        return /*#__PURE__*/React.createElement("li", {
-          key: "alerts-dlx-icon-".concat(i)
-        }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {
-          text: icons[svg].label
-        }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-          className: "editor-block-list-item-button",
-          onClick: function onClick() {
-            setAttributes({
-              icon: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.renderToString)(icons[svg].icon)
-            });
-          }
-        }, /*#__PURE__*/React.createElement("span", {
-          className: "editor-block-types-list__item-icon"
-        }, icons[svg].icon))));
-      })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-        className: "alerts-dlx-custom-icon-button",
-        variant: "secondary",
-        showTooltip: true,
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Add in a custom SVG instead of selecting an icon.', 'alerts-dlx'),
-        onClick: function onClick() {
-          setIsCustomIcon(true);
-        }
-      }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Set a Custom Icon', 'alerts-dlx')));
+  var isPresetIcon = function isPresetIcon(svg) {
+    if (!svg) {
+      return false;
     }
-    // Return custom icon interface.
-    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
-      className: "alerts-dlx-custom-icon-preview"
-    }, /*#__PURE__*/React.createElement("span", {
-      dangerouslySetInnerHTML: {
-        __html: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])(selectedIcon)
-      }
-    })), /*#__PURE__*/React.createElement("div", {
-      className: "alerts-dlx-custom-icon-input"
-    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('SVG Code', 'alerts-dlx'),
-      value: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])(selectedIcon),
-      onChange: function onChange(value) {
-        setSelectedIcon(value);
-      }
-    }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-      isPrimary: true,
-      onClick: function onClick() {
-        setAttributes({
-          icon: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])(selectedIcon)
-        });
-        setSelectedIcon(selectedIcon);
-      }
-    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Set Icon', 'alerts-dlx')), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-      variant: "tertiary",
-      onClick: function onClick() {
-        setIsCustomIcon(false);
-      }
-    }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Back to Icons', 'alerts-dlx'))));
+    var normalized = (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])(svg);
+    return Object.keys(icons).some(function (key) {
+      return normalized === (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.renderToString)(icons[key].icon));
+    });
+  };
+  var openIconPopover = function openIconPopover() {
+    setSelectedIcon(defaultSvg);
+    setInitialTabName(isPresetIcon(defaultSvg) ? 'icons' : 'custom');
+    setIsPopOverVisible(true);
+  };
+  var onIconPreviewMouseDown = function onIconPreviewMouseDown(event) {
+    event.preventDefault();
+    openIconPopover();
+  };
+  var onIconPreviewKeyDown = function onIconPreviewKeyDown(event) {
+    if ('Enter' !== event.key && ' ' !== event.key) {
+      return;
+    }
+    event.preventDefault();
+    openIconPopover();
   };
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
     className: "alerts-dlx-icon-wrapper"
@@ -3914,24 +3951,48 @@ var IconPicker = function IconPicker(props) {
     className: "alerts-dlx-icon-preview"
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     className: "button-reset alerts-dlx-icon-preview-button",
-    onMouseDown: function onMouseDown() {
-      setIsPopOverVisible(true);
-    },
-    ref: setPopoverRef
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select icon', 'alerts-dlx'),
+    ref: setPopoverRef,
+    onMouseDown: onIconPreviewMouseDown,
+    onKeyDown: onIconPreviewKeyDown
   }, /*#__PURE__*/React.createElement("span", {
     dangerouslySetInnerHTML: {
       __html: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])(defaultSvg)
     }
-  })))), isPopoverVisible && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Popover, {
+  })))), isPopoverVisible && popoverRef && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Popover, {
     noArrow: false,
-    ref: popoverRef,
+    anchor: popoverRef,
     className: "alerts-dlx-icon-popover",
     onClose: function onClose() {
       setIsPopOverVisible(false);
     }
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
     className: "alerts-dlx-icon-picker"
-  }, /*#__PURE__*/React.createElement("h2", null, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Select an Icon', 'alerts-dlx')), getPopoverContent())));
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TabPanel, {
+    key: initialTabName,
+    className: "alerts-dlx-icon-tab-panel",
+    activeClass: "is-active",
+    initialTabName: initialTabName,
+    tabs: [{
+      name: 'icons',
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Icons', 'alerts-dlx')
+    }, {
+      name: 'custom',
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Set Icon', 'alerts-dlx')
+    }]
+  }, function (tab) {
+    if ('icons' === tab.name) {
+      return /*#__PURE__*/React.createElement(IconsTab, {
+        icons: icons,
+        setAttributes: setAttributes
+      });
+    }
+    return /*#__PURE__*/React.createElement(CustomIconTab, {
+      selectedIcon: selectedIcon,
+      setSelectedIcon: setSelectedIcon,
+      setAttributes: setAttributes
+    });
+  }))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IconPicker);
 
