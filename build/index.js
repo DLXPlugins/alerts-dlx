@@ -3811,13 +3811,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/sanitize-svg */ "./src/js/blocks/utils/sanitize-svg/index.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/close-small.js");
+/* harmony import */ var _utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/sanitize-svg */ "./src/js/blocks/utils/sanitize-svg/index.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
@@ -3863,17 +3865,26 @@ var IconsTab = function IconsTab(_ref) {
  * @param {string}   props.selectedIcon Current SVG draft value.
  * @param {Function} props.setSelectedIcon Set selected icon draft.
  * @param {Function} props.setAttributes Block setAttributes callback.
+ * @param {Function} props.onApply         Callback after the custom icon is applied.
  * @return {import('react').JSX.Element} Custom icon tab content.
  */
 var CustomIconTab = function CustomIconTab(_ref2) {
   var selectedIcon = _ref2.selectedIcon,
     setSelectedIcon = _ref2.setSelectedIcon,
-    setAttributes = _ref2.setAttributes;
+    setAttributes = _ref2.setAttributes,
+    onApply = _ref2.onApply;
+  var applyCustomIcon = function applyCustomIcon() {
+    var sanitizedIcon = (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_5__["default"])(selectedIcon);
+    setAttributes({
+      icon: sanitizedIcon
+    });
+    onApply();
+  };
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-custom-icon-preview"
   }, /*#__PURE__*/React.createElement("span", {
     dangerouslySetInnerHTML: {
-      __html: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])(selectedIcon)
+      __html: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_5__["default"])(selectedIcon)
     }
   })), /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-custom-icon-input"
@@ -3884,15 +3895,15 @@ var CustomIconTab = function CustomIconTab(_ref2) {
       setSelectedIcon(value);
     },
     className: "alerts-dlx-custom-icon-textarea",
-    rows: 7
+    rows: 5
   }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     variant: "primary",
-    onClick: function onClick() {
-      var sanitizedIcon = (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])(selectedIcon);
-      setAttributes({
-        icon: sanitizedIcon
-      });
-      setSelectedIcon(sanitizedIcon);
+    onMouseDown: function onMouseDown(event) {
+      event.preventDefault();
+    },
+    onClick: function onClick(event) {
+      event.stopPropagation();
+      applyCustomIcon();
     }
   }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Set Icon", "alerts-dlx"))));
 };
@@ -3927,26 +3938,33 @@ var IconPicker = function IconPicker(props) {
     if (!svg) {
       return false;
     }
-    var normalized = (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])(svg);
+    var normalized = (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_5__["default"])(svg);
     return Object.keys(icons).some(function (key) {
-      return normalized === (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.renderToString)(icons[key].icon));
+      return normalized === (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_5__["default"])((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.renderToString)(icons[key].icon));
     });
   };
-  var openIconPopover = function openIconPopover() {
+  var closeIconPopover = function closeIconPopover() {
+    setIsPopOverVisible(false);
+  };
+  var toggleIconPopover = function toggleIconPopover() {
+    if (isPopoverVisible) {
+      setIsPopOverVisible(false);
+      return;
+    }
     setSelectedIcon(defaultSvg);
     setInitialTabName(isPresetIcon(defaultSvg) ? "icons" : "custom");
     setIsPopOverVisible(true);
   };
   var onIconPreviewMouseDown = function onIconPreviewMouseDown(event) {
     event.preventDefault();
-    openIconPopover();
+    setIsPopOverVisible(!isPopoverVisible);
   };
   var onIconPreviewKeyDown = function onIconPreviewKeyDown(event) {
     if ("Enter" !== event.key && " " !== event.key) {
       return;
     }
     event.preventDefault();
-    openIconPopover();
+    setIsPopOverVisible(!isPopoverVisible);
   };
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
     className: "alerts-dlx-icon-wrapper"
@@ -3960,18 +3978,23 @@ var IconPicker = function IconPicker(props) {
     onKeyDown: onIconPreviewKeyDown
   }, /*#__PURE__*/React.createElement("span", {
     dangerouslySetInnerHTML: {
-      __html: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_4__["default"])(defaultSvg)
+      __html: (0,_utils_sanitize_svg__WEBPACK_IMPORTED_MODULE_5__["default"])(defaultSvg)
     }
   })))), isPopoverVisible && popoverRef && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Popover, {
     noArrow: false,
     anchor: popoverRef,
     className: "alerts-dlx-icon-popover",
-    onClose: function onClose() {
-      setIsPopOverVisible(false);
-    }
-  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.BaseControl, {
+    onClose: closeIconPopover
+  }, /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-icon-picker"
-  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TabPanel, {
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "alerts-dlx-icon-picker-header"
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"],
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Close", "alerts-dlx"),
+    onClick: closeIconPopover,
+    className: "alerts-dlx-icon-picker-close"
+  })), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TabPanel, {
     key: initialTabName,
     className: "alerts-dlx-icon-tab-panel",
     activeClass: "is-active",
@@ -3993,7 +4016,8 @@ var IconPicker = function IconPicker(props) {
     return /*#__PURE__*/React.createElement(CustomIconTab, {
       selectedIcon: selectedIcon,
       setSelectedIcon: setSelectedIcon,
-      setAttributes: setAttributes
+      setAttributes: setAttributes,
+      onApply: closeIconPopover
     });
   }))));
 };

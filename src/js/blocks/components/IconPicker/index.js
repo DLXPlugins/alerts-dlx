@@ -10,6 +10,7 @@ import {
   Popover,
   TabPanel,
 } from "@wordpress/components";
+import { closeSmall } from "@wordpress/icons";
 import sanitizeSVG from "../../utils/sanitize-svg";
 
 /**
@@ -55,9 +56,24 @@ const IconsTab = ({ icons, setAttributes }) => {
  * @param {string}   props.selectedIcon Current SVG draft value.
  * @param {Function} props.setSelectedIcon Set selected icon draft.
  * @param {Function} props.setAttributes Block setAttributes callback.
+ * @param {Function} props.onApply         Callback after the custom icon is applied.
  * @return {import('react').JSX.Element} Custom icon tab content.
  */
-const CustomIconTab = ({ selectedIcon, setSelectedIcon, setAttributes }) => {
+const CustomIconTab = ({
+  selectedIcon,
+  setSelectedIcon,
+  setAttributes,
+  onApply,
+}) => {
+  const applyCustomIcon = () => {
+    const sanitizedIcon = sanitizeSVG(selectedIcon);
+
+    setAttributes({
+      icon: sanitizedIcon,
+    });
+    onApply();
+  };
+
   return (
     <>
       <div className="alerts-dlx-custom-icon-preview">
@@ -75,16 +91,16 @@ const CustomIconTab = ({ selectedIcon, setSelectedIcon, setAttributes }) => {
             setSelectedIcon(value);
           }}
           className="alerts-dlx-custom-icon-textarea"
-          rows={7}
+          rows={5}
         />
         <Button
           variant="primary"
-          onClick={() => {
-            const sanitizedIcon = sanitizeSVG(selectedIcon);
-            setAttributes({
-              icon: sanitizedIcon,
-            });
-            setSelectedIcon(sanitizedIcon);
+          onMouseDown={(event) => {
+            event.preventDefault();
+          }}
+          onClick={(event) => {
+            event.stopPropagation();
+            applyCustomIcon();
           }}
         >
           {__("Set Icon", "alerts-dlx")}
@@ -119,7 +135,16 @@ const IconPicker = (props) => {
     });
   };
 
-  const openIconPopover = () => {
+  const closeIconPopover = () => {
+    setIsPopOverVisible(false);
+  };
+
+  const toggleIconPopover = () => {
+    if (isPopoverVisible) {
+      setIsPopOverVisible(false);
+      return;
+    }
+
     setSelectedIcon(defaultSvg);
     setInitialTabName(isPresetIcon(defaultSvg) ? "icons" : "custom");
     setIsPopOverVisible(true);
@@ -127,7 +152,7 @@ const IconPicker = (props) => {
 
   const onIconPreviewMouseDown = (event) => {
     event.preventDefault();
-    openIconPopover();
+    setIsPopOverVisible(!isPopoverVisible);
   };
 
   const onIconPreviewKeyDown = (event) => {
@@ -136,7 +161,7 @@ const IconPicker = (props) => {
     }
 
     event.preventDefault();
-    openIconPopover();
+    setIsPopOverVisible(!isPopoverVisible);
   };
 
   return (
@@ -163,11 +188,17 @@ const IconPicker = (props) => {
           noArrow={false}
           anchor={popoverRef}
           className="alerts-dlx-icon-popover"
-          onClose={() => {
-            setIsPopOverVisible(false);
-          }}
+          onClose={closeIconPopover}
         >
-          <BaseControl className="alerts-dlx-icon-picker">
+          <div className="alerts-dlx-icon-picker">
+            <div className="alerts-dlx-icon-picker-header">
+              <Button
+                icon={closeSmall}
+                label={__("Close", "alerts-dlx")}
+                onClick={closeIconPopover}
+                className="alerts-dlx-icon-picker-close"
+              />
+            </div>
             <TabPanel
               key={initialTabName}
               className="alerts-dlx-icon-tab-panel"
@@ -196,11 +227,12 @@ const IconPicker = (props) => {
                     selectedIcon={selectedIcon}
                     setSelectedIcon={setSelectedIcon}
                     setAttributes={setAttributes}
+                    onApply={closeIconPopover}
                   />
                 );
               }}
             </TabPanel>
-          </BaseControl>
+          </div>
         </Popover>
       )}
     </>
