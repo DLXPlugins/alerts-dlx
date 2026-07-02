@@ -14,18 +14,13 @@ import { UP, DOWN, ENTER, TAB } from "@wordpress/keycodes";
 import { speak } from "@wordpress/a11y";
 import { Button, Spinner } from "@wordpress/components";
 import { useInstanceId, useDebounce } from "@wordpress/compose";
-import { isURL, filterURLForDisplay } from "@wordpress/url";
+import { filterURLForDisplay } from "@wordpress/url";
 import apiFetch from "@wordpress/api-fetch";
-import {
-  search,
-  keyboardReturn,
-  closeSmall,
-  external,
-  page,
-  post,
-} from "@wordpress/icons";
+import { search, keyboardReturn, page, post } from "@wordpress/icons";
 
 const SEARCH_PAGES_PATH = "/dlxplugins/alerts-dlx/v1/search/pages";
+
+import isURL from "../../utils/isURL";
 
 /**
  * URL picker for searching posts/pages or pasting a URL.
@@ -41,6 +36,7 @@ const URLPicker = (props) => {
     onItemSelect = () => {},
     hasInititialFocus = false,
     savedValue,
+    prefillInputValue = "",
   } = props;
 
   const generatedUniqueId = useInstanceId(URLPicker, "app");
@@ -53,8 +49,12 @@ const URLPicker = (props) => {
   const [currentSuggestion, setCurrentSuggestion] = useState(null);
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(null);
   const [suggestionListboxId] = useState("");
-  const [suggestionValue, setSuggestionValue] = useState("");
-  const [savedSuggestionValue, setSavedSuggestionValue] = useState(savedValue);
+  const [suggestionValue, setSuggestionValue] = useState(
+    prefillInputValue || ""
+  );
+  const [savedSuggestionValue, setSavedSuggestionValue] = useState(
+    prefillInputValue ? "" : savedValue
+  );
   const [uniqueInstanceId] = useState(`url-input-control-${generatedUniqueId}`);
   const [loading, setLoading] = useState(false);
 
@@ -63,7 +63,7 @@ const URLPicker = (props) => {
   }, 200);
 
   useEffect(() => {
-    if ("" !== savedSuggestionValue) {
+    if ("" !== savedSuggestionValue && null !== savedSuggestionValue) {
       setSuggestionValue(savedSuggestionValue);
       const newSuggestion = {
         permalink: savedSuggestionValue,
@@ -81,10 +81,12 @@ const URLPicker = (props) => {
   }, [suggestionValue]);
 
   useEffect(() => {
-    if (inputRef.current && hasInititialFocus) {
-      inputRef.current.focus();
+    if (prefillInputValue === "" && !savedSuggestionValue) {
+      setCurrentSuggestion(null);
+      setSavedSuggestionValue(null);
+      setSuggestionValue("");
     }
-  }, [inputRef, hasInititialFocus]);
+  }, [prefillInputValue]);
 
   const onChange = (event) => {
     setSuggestionValue(event.target.value);
@@ -254,33 +256,6 @@ const URLPicker = (props) => {
     <div className="alerts-dlx-url-input">
       <div className="alerts-dlx-pub-url-input__wrapper">
         <div className="alerts-dlx-pub-url-input__input-wrapper">
-          {null !== currentSuggestion && (
-            <div className="alerts-dlx-pub-url-input__suggestion">
-              <div className="alerts-dlx-pub-url-input__suggestion-item">
-                <span className="alerts-dlx-pub-url-input__suggestion-label">
-                  <Button
-                    variant="link"
-                    icon={external}
-                    iconPosition="right"
-                    label={__("Open in new tab", "alerts-dlx")}
-                    href={currentSuggestion.permalink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {filterURLForDisplay(currentSuggestion.permalink)}
-                  </Button>
-                </span>
-                <Button
-                  variant="secondary"
-                  icon={closeSmall}
-                  label={__("Remove Current Selection", "alerts-dlx")}
-                  onClick={() => {
-                    setCurrentSuggestion(null);
-                  }}
-                />
-              </div>
-            </div>
-          )}
           {null === currentSuggestion && (
             <div className="alerts-dlx-pub-url-search-wrapper">
               <input

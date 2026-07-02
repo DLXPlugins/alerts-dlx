@@ -147,6 +147,13 @@ button.components-button.alerts-dlx-icon-preview-button {
   justify-content: flex-start;
   text-align: left;
 }
+.alerts-dlx-button-link-preview .alerts-dlx-button-link-preview__actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 2px;
+}
+.alerts-dlx-button-link-preview .alerts-dlx-button-link-preview__edit,
 .alerts-dlx-button-link-preview .alerts-dlx-button-link-preview__remove {
   flex-shrink: 0;
 }

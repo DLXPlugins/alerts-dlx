@@ -67,10 +67,10 @@ const cog = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_w
 
 /***/ }),
 
-/***/ "./node_modules/@wordpress/icons/build-module/library/external.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/@wordpress/icons/build-module/library/external.js ***!
-  \************************************************************************/
+/***/ "./node_modules/@wordpress/icons/build-module/library/edit.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@wordpress/icons/build-module/library/edit.js ***!
+  \********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -78,24 +78,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/primitives */ "@wordpress/primitives");
-/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_1__);
-
-
+/* harmony import */ var _pencil__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pencil */ "./node_modules/@wordpress/icons/build-module/library/pencil.js");
 /**
- * WordPress dependencies
+ * Internal dependencies
  */
 
-const external = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_1__.SVG, {
-  xmlns: "http://www.w3.org/2000/svg",
-  viewBox: "0 0 24 24"
-}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_1__.Path, {
-  d: "M18.2 17c0 .7-.6 1.2-1.2 1.2H7c-.7 0-1.2-.6-1.2-1.2V7c0-.7.6-1.2 1.2-1.2h3.2V4.2H7C5.5 4.2 4.2 5.5 4.2 7v10c0 1.5 1.2 2.8 2.8 2.8h10c1.5 0 2.8-1.2 2.8-2.8v-3.6h-1.5V17zM14.9 3v1.5h3.7l-6.4 6.4 1.1 1.1 6.4-6.4v3.7h1.5V3h-6.3z"
-}));
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (external);
-//# sourceMappingURL=external.js.map
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_pencil__WEBPACK_IMPORTED_MODULE_0__["default"]);
+//# sourceMappingURL=edit.js.map
 
 /***/ }),
 
@@ -192,6 +181,38 @@ const page = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_
 }));
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (page);
 //# sourceMappingURL=page.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@wordpress/icons/build-module/library/pencil.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@wordpress/icons/build-module/library/pencil.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/primitives */ "@wordpress/primitives");
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_1__);
+
+
+/**
+ * WordPress dependencies
+ */
+
+const pencil = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_1__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24"
+}, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_1__.Path, {
+  d: "M20.1 5.1L16.9 2 6.2 12.7l-1.3 4.4 4.5-1.3L20.1 5.1zM4 20.8h8v-1.5H4v1.5z"
+}));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pencil);
+//# sourceMappingURL=pencil.js.map
 
 /***/ }),
 
@@ -3319,8 +3340,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/close-small.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/link.js");
-/* harmony import */ var _URLPicker__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../URLPicker */ "./src/js/blocks/components/URLPicker/index.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/edit.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/link.js");
+/* harmony import */ var _URLPicker__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../URLPicker */ "./src/js/blocks/components/URLPicker/index.js");
+/* harmony import */ var _utils_isURL__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils/isURL */ "./src/js/blocks/utils/isURL.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -3339,77 +3362,133 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+
 /**
- * Sidebar link control with preview, clear, and URLPicker popover.
+ * Shared URLPicker popover for add/edit link flows.
+ *
+ * @param {Object}   props                 Component props.
+ * @param {boolean}  props.isOpen          Whether the popover is open.
+ * @param {Object}   props.anchor          Popover anchor element.
+ * @param {Function} props.onClose         Close handler.
+ * @param {string}   props.prefillInputValue Initial URL input value.
+ * @param {Function} props.onItemSelect    URL selection handler.
+ * @return {import('react').JSX.Element|null} Popover component.
+ */
+var AlertButtonUrlPopover = function AlertButtonUrlPopover(_ref) {
+  var isOpen = _ref.isOpen,
+    anchor = _ref.anchor,
+    onClose = _ref.onClose,
+    prefillInputValue = _ref.prefillInputValue,
+    onItemSelect = _ref.onItemSelect;
+  if (!isOpen || !anchor) {
+    return null;
+  }
+  return /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Popover, {
+    anchor: anchor,
+    onClose: onClose,
+    className: "alerts-dlx-button-link-popover"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "alerts-dlx-button-link-popover__content"
+  }, /*#__PURE__*/React.createElement(_URLPicker__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    key: prefillInputValue || "new-link",
+    prefillInputValue: prefillInputValue,
+    hasInititialFocus: true,
+    onItemSelect: onItemSelect
+  })));
+};
+
+/**
+ * Sidebar link control with preview, edit, clear, and URLPicker popover.
  *
  * @param {Object}   props              Component props.
  * @param {string}   props.buttonUrl    Current button URL.
- * @param {Function} props.setAttributes  Block setAttributes callback.
+ * @param {Function} props.setAttributes Block setAttributes callback.
  * @return {import('react').JSX.Element} AlertButtonLinkControl component.
  */
-var AlertButtonLinkControl = function AlertButtonLinkControl(_ref) {
-  var buttonUrl = _ref.buttonUrl,
-    setAttributes = _ref.setAttributes;
+var AlertButtonLinkControl = function AlertButtonLinkControl(_ref2) {
+  var buttonUrl = _ref2.buttonUrl,
+    setAttributes = _ref2.setAttributes;
   var _useState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
     _useState2 = _slicedToArray(_useState, 2),
     isPopoverOpen = _useState2[0],
     setIsPopoverOpen = _useState2[1];
   var _useState3 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
     _useState4 = _slicedToArray(_useState3, 2),
-    addLinkAnchor = _useState4[0],
-    setAddLinkAnchor = _useState4[1];
+    popoverAnchor = _useState4[0],
+    setPopoverAnchor = _useState4[1];
+  var _useState5 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+    _useState6 = _slicedToArray(_useState5, 2),
+    pickerPrefill = _useState6[0],
+    setPickerPrefill = _useState6[1];
+  var closePopover = function closePopover() {
+    setIsPopoverOpen(false);
+  };
+  var openPopover = function openPopover(anchor) {
+    var prefill = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+    setPopoverAnchor(anchor);
+    setPickerPrefill(prefill);
+    setIsPopoverOpen(true);
+  };
   var clearUrl = function clearUrl() {
     setAttributes({
       buttonUrl: "",
       buttonHasUrl: false
     });
+    setPickerPrefill("");
   };
-  if (buttonUrl) {
-    return /*#__PURE__*/React.createElement("div", {
-      className: "alerts-dlx-button-link-preview"
-    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-      variant: "link",
-      className: "alerts-dlx-button-link-preview__url",
-      href: buttonUrl,
-      target: "_blank",
-      rel: "noopener noreferrer"
-    }, (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_3__.filterURLForDisplay)(buttonUrl)), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
-      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Remove link", "alerts-dlx"),
-      onClick: clearUrl,
-      className: "alerts-dlx-button-link-preview__remove",
-      variant: "secondary"
-    }));
-  }
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
-    ref: setAddLinkAnchor,
-    variant: "secondary",
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
-    onClick: function onClick() {
-      return setIsPopoverOpen(true);
+  var handleItemSelect = function handleItemSelect(e, url) {
+    var linkUrl = "string" === typeof url ? url : url === null || url === void 0 ? void 0 : url.permalink;
+    if (linkUrl) {
+      setAttributes({
+        buttonUrl: linkUrl,
+        buttonHasUrl: true
+      });
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Add Link", "alerts-dlx")), isPopoverOpen && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Popover, {
-    anchor: addLinkAnchor,
-    onClose: function onClose() {
-      return setIsPopoverOpen(false);
-    },
-    className: "alerts-dlx-button-link-popover"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-button-link-popover__content"
-  }, /*#__PURE__*/React.createElement(_URLPicker__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    savedValue: buttonUrl,
-    hasInititialFocus: true,
-    onItemSelect: function onItemSelect(e, url) {
-      var linkUrl = "string" === typeof url ? url : url === null || url === void 0 ? void 0 : url.permalink;
-      if (linkUrl) {
-        setAttributes({
-          buttonUrl: linkUrl,
-          buttonHasUrl: true
-        });
+    closePopover();
+  };
+  return /*#__PURE__*/React.createElement(React.Fragment, null, buttonUrl && (0,_utils_isURL__WEBPACK_IMPORTED_MODULE_9__["default"])(buttonUrl) ? /*#__PURE__*/React.createElement("div", {
+    className: "alerts-dlx-button-link-preview"
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+    variant: "link",
+    className: "alerts-dlx-button-link-preview__url",
+    href: buttonUrl,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    onClick: function onClick(event) {
+      event.preventDefault();
+      if ((0,_utils_isURL__WEBPACK_IMPORTED_MODULE_9__["default"])(buttonUrl)) {
+        window.open(buttonUrl, "_blank");
       }
-      setIsPopoverOpen(false);
     }
-  }))));
+  }, (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_3__.filterURLForDisplay)(buttonUrl)), /*#__PURE__*/React.createElement("div", {
+    className: "alerts-dlx-button-link-preview__actions"
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Edit link", "alerts-dlx"),
+    onClick: function onClick(event) {
+      openPopover(event.currentTarget, buttonUrl);
+    },
+    className: "alerts-dlx-button-link-preview__edit",
+    variant: "secondary"
+  }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Remove link", "alerts-dlx"),
+    onClick: clearUrl,
+    className: "alerts-dlx-button-link-preview__remove",
+    variant: "secondary"
+  }))) : /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+    variant: "secondary",
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
+    onClick: function onClick(event) {
+      openPopover(event.currentTarget, "");
+    }
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Add Link", "alerts-dlx")), /*#__PURE__*/React.createElement(AlertButtonUrlPopover, {
+    isOpen: isPopoverOpen,
+    anchor: popoverAnchor,
+    onClose: closePopover,
+    prefillInputValue: pickerPrefill,
+    onItemSelect: handleItemSelect
+  }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AlertButtonLinkControl);
 
@@ -3814,12 +3893,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_url__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_wordpress_url__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch");
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/close-small.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/external.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/keyboard-return.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/page.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/post.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/search.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/keyboard-return.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/page.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/post.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/search.js");
+/* harmony import */ var _utils_isURL__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../utils/isURL */ "./src/js/blocks/utils/isURL.js");
 function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
@@ -3851,6 +3929,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 var SEARCH_PAGES_PATH = "/dlxplugins/alerts-dlx/v1/search/pages";
 
+
 /**
  * URL picker for searching posts/pages or pasting a URL.
  *
@@ -3865,7 +3944,9 @@ var _URLPicker = function URLPicker(props) {
     onItemSelect = _props$onItemSelect === void 0 ? function () {} : _props$onItemSelect,
     _props$hasInititialFo = props.hasInititialFocus,
     hasInititialFocus = _props$hasInititialFo === void 0 ? false : _props$hasInititialFo,
-    savedValue = props.savedValue;
+    savedValue = props.savedValue,
+    _props$prefillInputVa = props.prefillInputValue,
+    prefillInputValue = _props$prefillInputVa === void 0 ? "" : _props$prefillInputVa;
   var generatedUniqueId = (0,_wordpress_compose__WEBPACK_IMPORTED_MODULE_7__.useInstanceId)(_URLPicker, "app");
   var _useState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
     _useState2 = _slicedToArray(_useState, 2),
@@ -3894,11 +3975,11 @@ var _URLPicker = function URLPicker(props) {
   var _useState11 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
     _useState12 = _slicedToArray(_useState11, 1),
     suggestionListboxId = _useState12[0];
-  var _useState13 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+  var _useState13 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(prefillInputValue || ""),
     _useState14 = _slicedToArray(_useState13, 2),
     suggestionValue = _useState14[0],
     setSuggestionValue = _useState14[1];
-  var _useState15 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(savedValue),
+  var _useState15 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(prefillInputValue ? "" : savedValue),
     _useState16 = _slicedToArray(_useState15, 2),
     savedSuggestionValue = _useState16[0],
     setSavedSuggestionValue = _useState16[1];
@@ -3913,7 +3994,7 @@ var _URLPicker = function URLPicker(props) {
     updateSuggestions(value);
   }, 200);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    if ("" !== savedSuggestionValue) {
+    if ("" !== savedSuggestionValue && null !== savedSuggestionValue) {
       setSuggestionValue(savedSuggestionValue);
       var newSuggestion = {
         permalink: savedSuggestionValue,
@@ -3930,16 +4011,18 @@ var _URLPicker = function URLPicker(props) {
     }
   }, [suggestionValue]);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    if (inputRef.current && hasInititialFocus) {
-      inputRef.current.focus();
+    if (prefillInputValue === "" && !savedSuggestionValue) {
+      setCurrentSuggestion(null);
+      setSavedSuggestionValue(null);
+      setSuggestionValue("");
     }
-  }, [inputRef, hasInititialFocus]);
+  }, [prefillInputValue]);
   var onChange = function onChange(event) {
     setSuggestionValue(event.target.value);
   };
   var onFocus = function onFocus(event) {
     event.preventDefault();
-    if (null === selectedSuggestion && "" !== suggestionValue && !(0,_wordpress_url__WEBPACK_IMPORTED_MODULE_8__.isURL)(suggestionValue)) {
+    if (null === selectedSuggestion && "" !== suggestionValue && !(0,_utils_isURL__WEBPACK_IMPORTED_MODULE_14__["default"])(suggestionValue)) {
       debouncedRequest(suggestionValue);
     }
   };
@@ -3965,7 +4048,7 @@ var _URLPicker = function URLPicker(props) {
         case _wordpress_keycodes__WEBPACK_IMPORTED_MODULE_4__.ENTER:
           {
             event.preventDefault();
-            if ((0,_wordpress_url__WEBPACK_IMPORTED_MODULE_8__.isURL)(event.target.value)) {
+            if ((0,_utils_isURL__WEBPACK_IMPORTED_MODULE_14__["default"])(event.target.value)) {
               onItemSelect(event, event.target.value);
               inputRef.current.focus();
               return;
@@ -4037,7 +4120,7 @@ var _URLPicker = function URLPicker(props) {
     var isInitialSuggestions = !((_value = value) !== null && _value !== void 0 && _value.length);
     value = value.toString();
     value = value.trim();
-    if ((0,_wordpress_url__WEBPACK_IMPORTED_MODULE_8__.isURL)(value)) {
+    if ((0,_utils_isURL__WEBPACK_IMPORTED_MODULE_14__["default"])(value)) {
       setSuggestions([]);
       setShowSuggestions(false);
       setLoading(false);
@@ -4103,28 +4186,7 @@ var _URLPicker = function URLPicker(props) {
     className: "alerts-dlx-pub-url-input__wrapper"
   }, /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-pub-url-input__input-wrapper"
-  }, null !== currentSuggestion && /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-pub-url-input__suggestion"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "alerts-dlx-pub-url-input__suggestion-item"
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "alerts-dlx-pub-url-input__suggestion-label"
-  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.Button, {
-    variant: "link",
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_11__["default"],
-    iconPosition: "right",
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Open in new tab", "alerts-dlx"),
-    href: currentSuggestion.permalink,
-    target: "_blank",
-    rel: "noopener noreferrer"
-  }, (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_8__.filterURLForDisplay)(currentSuggestion.permalink))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.Button, {
-    variant: "secondary",
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_10__["default"],
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Remove Current Selection", "alerts-dlx"),
-    onClick: function onClick() {
-      setCurrentSuggestion(null);
-    }
-  }))), null === currentSuggestion && /*#__PURE__*/React.createElement("div", {
+  }, null === currentSuggestion && /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-pub-url-search-wrapper"
   }, /*#__PURE__*/React.createElement("input", {
     type: "text",
@@ -4140,16 +4202,16 @@ var _URLPicker = function URLPicker(props) {
     ref: inputRef
   }), loading && /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-pub-url-input__loading"
-  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.Spinner, null)), !loading && !(0,_wordpress_url__WEBPACK_IMPORTED_MODULE_8__.isURL)(suggestionValue) && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.Button, {
+  }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.Spinner, null)), !loading && !(0,_utils_isURL__WEBPACK_IMPORTED_MODULE_14__["default"])(suggestionValue) && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.Button, {
     className: "alerts-dlx-pub-url-input__search-button",
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Search for a Page", "alerts-dlx"),
     onClick: function onClick() {
       setShowSuggestions(true);
     }
-  }), !loading && (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_8__.isURL)(suggestionValue) && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.Button, {
+  }), !loading && (0,_utils_isURL__WEBPACK_IMPORTED_MODULE_14__["default"])(suggestionValue) && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.Button, {
     className: "alerts-dlx-pub-url-input__apply-button",
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_12__["default"],
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_10__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)("Apply Link", "alerts-dlx"),
     onClick: function onClick(e) {
       var newSuggestion = {
@@ -4186,7 +4248,7 @@ var _URLPicker = function URLPicker(props) {
         setShowSuggestions(false);
         onItemSelect(e, suggestion.permalink);
       },
-      icon: "post" === suggestion.type ? _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"] : _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__["default"],
+      icon: "post" === suggestion.type ? _wordpress_icons__WEBPACK_IMPORTED_MODULE_12__["default"] : _wordpress_icons__WEBPACK_IMPORTED_MODULE_11__["default"],
       iconPosition: "left"
     }, /*#__PURE__*/React.createElement("span", {
       className: "alerts-dlx-search-item"
@@ -8434,6 +8496,35 @@ function getCurrentStyleLabel(alertType, presets, customLabel) {
   });
   return (_match$label = match === null || match === void 0 ? void 0 : match.label) !== null && _match$label !== void 0 ? _match$label : alertType;
 }
+
+/***/ }),
+
+/***/ "./src/js/blocks/utils/isURL.js":
+/*!**************************************!*\
+  !*** ./src/js/blocks/utils/isURL.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_url__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/url */ "@wordpress/url");
+/* harmony import */ var _wordpress_url__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_url__WEBPACK_IMPORTED_MODULE_0__);
+
+var isURL = function isURL(value) {
+  if ("" === value) {
+    return false;
+  }
+  var isUrl = (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_0__.isURL)(value);
+  // If URL is a valid anchor link, return true
+  if (!isUrl && (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_0__.isValidFragment)(value)) {
+    return true;
+  }
+  return isUrl;
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (isURL);
 
 /***/ }),
 
