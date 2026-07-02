@@ -1,6 +1,20 @@
 .alerts-dlx-button-popover-base-control {
 	padding: 16px;
 	min-width: 280px;
+	max-width: 400px;
+
+	.components-base-control__label {
+		font-weight: 600;
+		margin-bottom: 8px;
+	}
+}
+
+.alerts-dlx-button-link-select {
+	.alerts-dlx-url-input {
+		display: block;
+		max-width: 100%;
+		width: 100%;
+	}
 }
 
 .alerts-dlx-button-wrapper {

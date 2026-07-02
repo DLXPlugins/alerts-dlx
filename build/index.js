@@ -3218,7 +3218,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _URLPicker__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../URLPicker */ "./src/js/blocks/components/URLPicker/index.js");
+/* harmony import */ var _AlertButtonLinkControl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../AlertButtonLinkControl */ "./src/js/blocks/components/AlertButtonLinkControl/index.js");
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./editor.scss */ "./src/js/blocks/components/AlertButton/editor.scss");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -3254,16 +3254,27 @@ var AlertButton = function AlertButton(props) {
       return !isOpen;
     });
   };
+  var onLinkToggleMouseDown = function onLinkToggleMouseDown(event) {
+    event.preventDefault();
+    toggleLinkPopover();
+  };
+  var onLinkToggleKeyDown = function onLinkToggleKeyDown(event) {
+    if ('Enter' !== event.key && ' ' !== event.key) {
+      return;
+    }
+    event.preventDefault();
+    toggleLinkPopover();
+  };
   return /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-button-wrapper",
     style: {
-      display: "inline-flex"
+      display: 'inline-flex'
     }
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
     className: "alerts-dlx-button button-reset"
   }, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
     tagName: "span",
-    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Button text", "alerts-dlx"),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Button text', 'alerts-dlx'),
     value: buttonText,
     className: "alerts-dlx-button-text",
     disableLineBreaks: true,
@@ -3278,8 +3289,9 @@ var AlertButton = function AlertButton(props) {
     className: "button-reset alertx-dlx-button-link-icon",
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_2__["default"],
     iconSize: 25,
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Choose Link", "alerts-dlx"),
-    onMouseDown: toggleLinkPopover
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Choose Link', 'alerts-dlx'),
+    onMouseDown: onLinkToggleMouseDown,
+    onKeyDown: onLinkToggleKeyDown
   }), isPopOverVisible && linkIconAnchor && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Popover, {
     anchor: linkIconAnchor,
     noArrow: false,
@@ -3287,31 +3299,18 @@ var AlertButton = function AlertButton(props) {
       return setIsPopOverVisible(false);
     }
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BaseControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Button Link', 'alerts-dlx'),
     className: "alerts-dlx-button-popover-base-control"
   }, /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-button-link-select"
-  }, /*#__PURE__*/React.createElement(_URLPicker__WEBPACK_IMPORTED_MODULE_5__["default"], {
-    key: buttonUrl || "empty",
-    savedValue: buttonUrl,
-    hasInititialFocus: true,
-    onItemSelect: function onItemSelect(e, url) {
-      var linkUrl = "string" === typeof url ? url : url === null || url === void 0 ? void 0 : url.permalink;
-      if (linkUrl) {
-        setAttributes({
-          buttonUrl: linkUrl,
-          buttonHasUrl: true
-        });
-      }
-    },
-    onItemClear: function onItemClear() {
-      setAttributes({
-        buttonUrl: "",
-        buttonHasUrl: false
-      });
-    }
+  }, /*#__PURE__*/React.createElement(_AlertButtonLinkControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    buttonUrl: buttonUrl,
+    setAttributes: setAttributes,
+    inlinePicker: true,
+    isActive: isPopOverVisible
   }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Open link in a new tab", "alerts-dlx"),
-    checked: buttonTarget || "",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Open link in a new tab', 'alerts-dlx'),
+    checked: buttonTarget || '',
     onChange: function onChange(value) {
       setAttributes({
         buttonTarget: value
@@ -3319,8 +3318,8 @@ var AlertButton = function AlertButton(props) {
     },
     className: "alerts-dlx-link-toggle"
   }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Add rel="nofollow"', "alerts-dlx"),
-    checked: buttonRelNoFollow || "",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Add rel="nofollow"', 'alerts-dlx'),
+    checked: buttonRelNoFollow || '',
     onChange: function onChange(value) {
       setAttributes({
         buttonRelNoFollow: value
@@ -3328,8 +3327,8 @@ var AlertButton = function AlertButton(props) {
     },
     className: "alerts-dlx-link-toggle"
   }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.ToggleControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Add rel="sponsored"', "alerts-dlx"),
-    checked: buttonRelSponsored || "",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)('Add rel="sponsored"', 'alerts-dlx'),
+    checked: buttonRelSponsored || '',
     onChange: function onChange(value) {
       setAttributes({
         buttonRelSponsored: value
@@ -3400,14 +3399,14 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 /**
- * Shared URLPicker popover for add/edit link flows.
+ * Shared URLPicker popover for sidebar add/edit link flows.
  *
- * @param {Object}   props                 Component props.
- * @param {boolean}  props.isOpen          Whether the popover is open.
- * @param {Object}   props.anchor          Popover anchor element.
- * @param {Function} props.onClose         Close handler.
+ * @param {Object}   props                   Component props.
+ * @param {boolean}  props.isOpen            Whether the popover is open.
+ * @param {Object}   props.anchor            Popover anchor element.
+ * @param {Function} props.onClose           Close handler.
  * @param {string}   props.prefillInputValue Initial URL input value.
- * @param {Function} props.onItemSelect    URL selection handler.
+ * @param {Function} props.onItemSelect      URL selection handler.
  * @return {import('react').JSX.Element|null} Popover component.
  */
 var AlertButtonUrlPopover = function AlertButtonUrlPopover(_ref) {
@@ -3434,55 +3433,19 @@ var AlertButtonUrlPopover = function AlertButtonUrlPopover(_ref) {
 };
 
 /**
- * Sidebar link control with preview, edit, clear, and URLPicker popover.
+ * Link preview row with edit and remove actions.
  *
- * @param {Object}   props              Component props.
- * @param {string}   props.buttonUrl    Current button URL.
- * @param {Function} props.setAttributes Block setAttributes callback.
- * @return {import('react').JSX.Element} AlertButtonLinkControl component.
+ * @param {Object}   props            Component props.
+ * @param {string}   props.buttonUrl  Current button URL.
+ * @param {Function} props.onEdit     Edit button handler.
+ * @param {Function} props.onClear    Remove button handler.
+ * @return {import('react').JSX.Element} Link preview row.
  */
-var AlertButtonLinkControl = function AlertButtonLinkControl(_ref2) {
+var AlertButtonLinkPreview = function AlertButtonLinkPreview(_ref2) {
   var buttonUrl = _ref2.buttonUrl,
-    setAttributes = _ref2.setAttributes;
-  var _useState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-    _useState2 = _slicedToArray(_useState, 2),
-    isPopoverOpen = _useState2[0],
-    setIsPopoverOpen = _useState2[1];
-  var _useState3 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
-    _useState4 = _slicedToArray(_useState3, 2),
-    popoverAnchor = _useState4[0],
-    setPopoverAnchor = _useState4[1];
-  var _useState5 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
-    _useState6 = _slicedToArray(_useState5, 2),
-    pickerPrefill = _useState6[0],
-    setPickerPrefill = _useState6[1];
-  var closePopover = function closePopover() {
-    setIsPopoverOpen(false);
-  };
-  var openPopover = function openPopover(anchor) {
-    var prefill = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
-    setPopoverAnchor(anchor);
-    setPickerPrefill(prefill);
-    setIsPopoverOpen(true);
-  };
-  var clearUrl = function clearUrl() {
-    setAttributes({
-      buttonUrl: "",
-      buttonHasUrl: false
-    });
-    setPickerPrefill("");
-  };
-  var handleItemSelect = function handleItemSelect(e, url) {
-    var linkUrl = "string" === typeof url ? url : url === null || url === void 0 ? void 0 : url.permalink;
-    if (linkUrl) {
-      setAttributes({
-        buttonUrl: linkUrl,
-        buttonHasUrl: true
-      });
-    }
-    closePopover();
-  };
-  return /*#__PURE__*/React.createElement(React.Fragment, null, buttonUrl && (0,_utils_isURL__WEBPACK_IMPORTED_MODULE_9__["default"])(buttonUrl) ? /*#__PURE__*/React.createElement("div", {
+    onEdit = _ref2.onEdit,
+    onClear = _ref2.onClear;
+  return /*#__PURE__*/React.createElement("div", {
     className: "alerts-dlx-button-link-preview"
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
     variant: "link",
@@ -3501,24 +3464,112 @@ var AlertButtonLinkControl = function AlertButtonLinkControl(_ref2) {
   }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_6__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Edit link", "alerts-dlx"),
-    onClick: function onClick(event) {
-      openPopover(event.currentTarget, buttonUrl);
-    },
+    onClick: onEdit,
     className: "alerts-dlx-button-link-preview__edit",
     variant: "secondary"
   }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_5__["default"],
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Remove link", "alerts-dlx"),
-    onClick: clearUrl,
+    onClick: onClear,
     className: "alerts-dlx-button-link-preview__remove",
     variant: "secondary"
-  }))) : /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+  })));
+};
+
+/**
+ * Link control with preview, edit, clear, and URLPicker.
+ *
+ * @param {Object}   props              Component props.
+ * @param {string}   props.buttonUrl    Current button URL.
+ * @param {Function} props.setAttributes Block setAttributes callback.
+ * @param {boolean}  props.inlinePicker  Render URLPicker inline instead of a nested popover.
+ * @param {boolean}  props.isActive      Whether the parent popover is open (inline mode).
+ * @return {import('react').JSX.Element} AlertButtonLinkControl component.
+ */
+var AlertButtonLinkControl = function AlertButtonLinkControl(_ref3) {
+  var buttonUrl = _ref3.buttonUrl,
+    setAttributes = _ref3.setAttributes,
+    _ref3$inlinePicker = _ref3.inlinePicker,
+    inlinePicker = _ref3$inlinePicker === void 0 ? false : _ref3$inlinePicker,
+    _ref3$isActive = _ref3.isActive,
+    isActive = _ref3$isActive === void 0 ? true : _ref3$isActive;
+  var _useState = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+    _useState2 = _slicedToArray(_useState, 2),
+    isPopoverOpen = _useState2[0],
+    setIsPopoverOpen = _useState2[1];
+  var _useState3 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(null),
+    _useState4 = _slicedToArray(_useState3, 2),
+    popoverAnchor = _useState4[0],
+    setPopoverAnchor = _useState4[1];
+  var _useState5 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+    _useState6 = _slicedToArray(_useState5, 2),
+    pickerPrefill = _useState6[0],
+    setPickerPrefill = _useState6[1];
+  var _useState7 = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+    _useState8 = _slicedToArray(_useState7, 2),
+    isEditingInline = _useState8[0],
+    setIsEditingInline = _useState8[1];
+  var hasValidUrl = buttonUrl && (0,_utils_isURL__WEBPACK_IMPORTED_MODULE_9__["default"])(buttonUrl);
+  var showPreview = hasValidUrl && (!inlinePicker || !isEditingInline);
+  var showInlinePicker = inlinePicker && (!hasValidUrl || isEditingInline);
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    if (!isActive) {
+      setIsEditingInline(false);
+    }
+  }, [isActive]);
+  var closePopover = function closePopover() {
+    setIsPopoverOpen(false);
+  };
+  var openPopover = function openPopover(anchor) {
+    var prefill = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+    setPopoverAnchor(anchor);
+    setPickerPrefill(prefill);
+    setIsPopoverOpen(true);
+  };
+  var clearUrl = function clearUrl() {
+    setAttributes({
+      buttonUrl: "",
+      buttonHasUrl: false
+    });
+    setPickerPrefill("");
+    setIsEditingInline(false);
+  };
+  var handleItemSelect = function handleItemSelect(e, url) {
+    var linkUrl = "string" === typeof url ? url : url === null || url === void 0 ? void 0 : url.permalink;
+    if (linkUrl) {
+      setAttributes({
+        buttonUrl: linkUrl,
+        buttonHasUrl: true
+      });
+    }
+    if (inlinePicker) {
+      setIsEditingInline(false);
+      return;
+    }
+    closePopover();
+  };
+  return /*#__PURE__*/React.createElement(React.Fragment, null, showPreview && /*#__PURE__*/React.createElement(AlertButtonLinkPreview, {
+    buttonUrl: buttonUrl,
+    onEdit: function onEdit(event) {
+      if (inlinePicker) {
+        setIsEditingInline(true);
+        return;
+      }
+      openPopover(event.currentTarget, buttonUrl);
+    },
+    onClear: clearUrl
+  }), !inlinePicker && !hasValidUrl && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
     variant: "secondary",
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_7__["default"],
     onClick: function onClick(event) {
       openPopover(event.currentTarget, "");
     }
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Add Link", "alerts-dlx")), /*#__PURE__*/React.createElement(AlertButtonUrlPopover, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_4__.__)("Add Link", "alerts-dlx")), showInlinePicker && /*#__PURE__*/React.createElement(_URLPicker__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    key: isEditingInline ? "edit-".concat(buttonUrl) : "new-link",
+    prefillInputValue: isEditingInline ? buttonUrl : "",
+    hasInititialFocus: true,
+    onItemSelect: handleItemSelect
+  }), !inlinePicker && /*#__PURE__*/React.createElement(AlertButtonUrlPopover, {
     isOpen: isPopoverOpen,
     anchor: popoverAnchor,
     onClose: closePopover,

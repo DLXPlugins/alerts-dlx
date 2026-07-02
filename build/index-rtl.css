@@ -100,6 +100,40 @@ button.components-button.alerts-dlx-icon-preview-button {
   font-size: inherit;
   line-height: 0;
 }
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/js/blocks/components/AlertButtonLinkControl/editor.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************/
+.alerts-dlx-button-link-preview {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 100%;
+}
+.alerts-dlx-button-link-preview .alerts-dlx-button-link-preview__url {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  justify-content: flex-start;
+  text-align: right;
+}
+.alerts-dlx-button-link-preview .alerts-dlx-button-link-preview__actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 2px;
+}
+.alerts-dlx-button-link-preview .alerts-dlx-button-link-preview__edit,
+.alerts-dlx-button-link-preview .alerts-dlx-button-link-preview__remove {
+  flex-shrink: 0;
+}
+
+.alerts-dlx-button-link-popover__content {
+  padding: 16px;
+  min-width: 280px;
+  max-width: 400px;
+}
 /*!*******************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/js/blocks/components/URLPicker/editor.scss ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -264,6 +298,17 @@ button.components-button.alerts-dlx-icon-preview-button {
 .alerts-dlx-button-popover-base-control {
   padding: 16px;
   min-width: 280px;
+  max-width: 400px;
+}
+.alerts-dlx-button-popover-base-control .components-base-control__label {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.alerts-dlx-button-link-select .alerts-dlx-url-input {
+  display: block;
+  max-width: 100%;
+  width: 100%;
 }
 
 .alerts-dlx-button-wrapper {
@@ -281,38 +326,4 @@ button.components-button.alerts-dlx-icon-preview-button {
 
 .alerts-dlx-link-toggle {
   margin-top: 15px;
-}
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/@wordpress/scripts/node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/js/blocks/components/AlertButtonLinkControl/editor.scss ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************/
-.alerts-dlx-button-link-preview {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  max-width: 100%;
-}
-.alerts-dlx-button-link-preview .alerts-dlx-button-link-preview__url {
-  flex: 1;
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  justify-content: flex-start;
-  text-align: right;
-}
-.alerts-dlx-button-link-preview .alerts-dlx-button-link-preview__actions {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  gap: 2px;
-}
-.alerts-dlx-button-link-preview .alerts-dlx-button-link-preview__edit,
-.alerts-dlx-button-link-preview .alerts-dlx-button-link-preview__remove {
-  flex-shrink: 0;
-}
-
-.alerts-dlx-button-link-popover__content {
-  padding: 16px;
-  min-width: 280px;
-  max-width: 400px;
 }
